@@ -1,0 +1,16 @@
+source:
+  name: uniprot
+  label: UniProt
+  prefix: http://purl.uniprot.org/uniprot/
+target:
+  name: hgnc
+  label: HGNC
+  prefix: http://identifiers.org/hgnc/
+link:
+  name: rdfs
+  label: seeAlso
+  prefix: http://www.w3.org/2000/01/rdf-schema#
+  predicate: seeAlso
+#  directed: true
+  directed: false
+  file: pair.tsv
