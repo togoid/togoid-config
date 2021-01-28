@@ -1,0 +1,19 @@
+source:
+  name: ko
+  label: KEGG Orthology
+  prefix: http://identifiers.org/kegg.orthology/
+target:
+  name: go
+  label: Gene Ontology
+  prefix: http://purl.obolibrary.org/obo/
+link:
+  name: rdfs
+  label: seeAlso
+  prefix: http://www.w3.org/2000/01/rdf-schema#
+  predicate: seeAlso
+#  directed: true
+  directed: false
+#  file: link.tsv
+  file:
+    - link.1.tsv
+    - link.2.tsv
