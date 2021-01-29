@@ -25,16 +25,34 @@ module TogoID
     end
   end
 
+  class Update
+    attr_reader :date, :name, :method
+    def initialize(hash)
+      @date = hash["date"]
+      @name = hash["name"]
+      @method = hash["method"]
+    end
+
+    def run(path)
+      Dir.chdir(path) do
+        ENV['PATH'] = ".:#{ENV['PATH']}"
+        system(@method)
+      end
+    end
+  end
+
   class Config
     def initialize(config_file)
-      if File.exists?(config_file)
+      begin
         config = YAML.load(File.read(config_file))
         @path = File.dirname(config_file)
         @source = Node.new(config["source"])
         @target = Node.new(config["target"])
         @link = Edge.new(config["link"])
-      else
-        raise "Config file '#{config_file}' does not exist."
+        @update = Update.new(config["update"])
+      rescue => error
+        puts error
+        exit 1
       end
     end
 
@@ -59,6 +77,10 @@ module TogoID
         end
       end
     end
+
+    def update
+      @update.run(@path)
+    end
   end
 
 end
@@ -67,6 +89,9 @@ end
 if __FILE__ == $0
   # Example usage
   config = TogoID::Config.new(ARGV.shift)
+
+  # Update link data
+  #config.update
 
   # Output RDF/Turtle
   config.convert

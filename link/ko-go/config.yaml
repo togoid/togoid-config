@@ -1,19 +1,25 @@
 source:
   name: ko
+  type: Ortholog
   label: KEGG Orthology
   prefix: http://identifiers.org/kegg.orthology/
 target:
   name: go
+  type: Function
   label: Gene Ontology
   prefix: http://purl.obolibrary.org/obo/
 link:
-  name: rdfs
-  label: seeAlso
-  prefix: http://www.w3.org/2000/01/rdf-schema#
-  predicate: seeAlso
-#  directed: true
+  name: ro
+  label: Functionally related to
+  prefix: http://purl.obolibrary.org/obo/
+  predicate: RO_0002328
   directed: false
-#  file: link.tsv
-  file:
-    - link.1.tsv
-    - link.2.tsv
+  file: link.tsv
+#  file:
+#    - link.1.tsv
+#    - link.2.tsv
+
+update:
+  date: 2021-01-29
+  name: Yuki Moriya
+  method: curl http://rest.genome.jp/link/go/ko | perl -pe 's/ko://; s/go:/GO_/' > link.tsv

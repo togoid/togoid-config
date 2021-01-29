@@ -23,6 +23,9 @@ Metadata for pair of databases and their relation.
 source:
   # Human readable label (intended to be used in a Web UI)
   label: KEGG Orthology
+  # Category (should be a class defined in the TogoID ontology; TBD)
+  type: Ortholog
+  # Unique short name (intended to be used as a name space in RDF)
   name: ko
   # URI prefix (intended to be used as a prefix in RDF)
   prefix: http://identifiers.org/kegg.orthology/
@@ -35,20 +38,27 @@ target:
 
 # Relation of the pair of database identifiers
 link:
-  label: Link to
-  name: rdfs
+  label: Functionally related to
+  name: ro
   # Ontology URI which defines predicates
-  prefix: http://www.w3.org/2000/01/rdf-schema#
+  prefix: http://purl.obolibrary.org/obo/
   # Selected predicate defined in the above ontology
-  predicate: seeAlso
+  predicate: RO_0002328
   # If set to true, reverse link will also be generated
 #  directed: true
   directed: false
   # File name(s) of link data
-#  file: link.tsv
-  file:
-    - link.1.tsv
-    - link.2.tsv
+  file: link.tsv
+#  file:
+#    - link.1.tsv
+#    - link.2.tsv
+
+# Metadata for updating link data
+update:
+  date: 2021-01-29
+  name: Taro Togo
+  # Update procedure of link data (can be a script name etc.)
+  method: curl http://rest.genome.jp/link/go/ko | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
 ```
 
 ## Usage
