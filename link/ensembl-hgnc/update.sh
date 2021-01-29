@@ -1,10 +1,8 @@
 #!/bin/sh
 
 ENDPOINT='https://integbio.jp/rdf/ebi/sparql'
-OUTPUT='pair.tsv'
 
 printf 'ENDPOINT: %s \n' ${ENDPOINT}
-printf 'OUTPUT: %s \n' ${OUTPUT}
 
 cat - << EOS > sparql.rq
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -25,4 +23,4 @@ WHERE {
 EOS
 
 echo "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/ebi/sparql | tail +2 | tr -d '\"' > ./pair.tsv"
-curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"' > ./${OUTPUT}
+curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"'

@@ -18,4 +18,4 @@ link:
 update:
   date: 2021-01-29
   name: Shuichi Kawashima
-  method: update.sh
+  method: update.sh > pair.tsv
