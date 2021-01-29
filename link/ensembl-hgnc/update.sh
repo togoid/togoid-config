@@ -1,10 +1,8 @@
 #!/bin/sh
 
-#SPARQL='sparql.rq'
 ENDPOINT='https://integbio.jp/rdf/ebi/sparql'
 OUTPUT='pair.tsv'
 
-printf 'SPARQL: %s \n' ${SPARQL}
 printf 'ENDPOINT: %s \n' ${ENDPOINT}
 printf 'OUTPUT: %s \n' ${OUTPUT}
 
@@ -13,13 +11,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX identifiers: <http://identifiers.org/>
 
-SELECT ?ensg_id ?hgnc_id
+SELECT DISTINCT ?ensg_id ?hgnc_id
 WHERE {
   ?ensg obo:RO_0002162 taxon:9606 ;
         dc:identifier ?ensg_id ;
         rdfs:seeAlso ?hgnc .
-  ?hgnc dct:identifier ?hgnc_id .
+  ?hgnc a identifiers:hgnc .
+  ?hgnc dc:identifier ?hgnc_compact_id .
+  BIND(STRAFTER(?hgnc_compact_id, "HGNC:") AS ?hgnc_id)
 }
 EOS
 
