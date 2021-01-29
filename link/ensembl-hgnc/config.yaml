@@ -1,0 +1,21 @@
+source:
+  name: ensembl
+  type: Gene
+  label: Ensembl
+  prefix: http://identifiers.org/ensembl/
+target:
+  name: hgnc
+  type: Gene
+  label: HGNC
+  prefix: http://identifiers.org/hgnc/
+link:
+  name: rdfs
+  label: seeAlso
+  prefix: http://www.w3.org/2000/01/rdf-schema#
+  predicate: seeAlso
+  directed: false
+  file: pair.tsv
+update:
+  date: 2021-01-29
+  name: Shuichi Kawashima
+  method: update.sh
