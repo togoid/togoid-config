@@ -18,7 +18,7 @@ DB1ID3	DB2IDz
 
 Metadata for pair of databases and their relation.
 
-```
+```yaml
 # Source database (the 1st column of the link data file)
 source:
   # Human readable label (intended to be used in a Web UI)
