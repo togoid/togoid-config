@@ -33,6 +33,7 @@ source:
 # Target database (the 2nd column of the link data file)
 target:
   label: Gene Ontology
+  type: Function
   name: go
   prefix: http://purl.obolibrary.org/obo/
 
@@ -55,8 +56,8 @@ link:
 
 # Metadata for updating link data
 update:
-  date: 2021-01-29
-  name: Taro Togo
+  # How often the source data is updated
+  frequency: Monthly
   # Update procedure of link data (can be a script name etc.)
   method: curl http://rest.genome.jp/link/go/ko | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
 ```
