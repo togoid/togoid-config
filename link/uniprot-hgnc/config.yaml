@@ -9,16 +9,17 @@ target:
   label: HGNC
   prefix: http://identifiers.org/hgnc/
 link:
-  name: ro
-  label: Gene product of
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002204
   file: pair.tsv
-reverse_link:
-  name: ro
-  label: has gene product
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002205
+  forward:
+    name: ro
+    label: gene product of
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
+  reverse:
+    name: ro
+    label: has gene product
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002205
 update:
   frequency: Monthly
   method: update.pl > pair.tsv

@@ -40,32 +40,35 @@ target:
 
 # Relation of the pair of database identifiers
 link:
-  label: functionally related to
-  name: ro
-  # Ontology URI which defines predicates
-  prefix: http://purl.obolibrary.org/obo/
-  # Selected predicate defined in the above ontology
-  predicate: RO_0002328
   # File name(s) of link data
   file: link.tsv
 #  file:
 #    - link.1.tsv
 #    - link.2.tsv
-
-# (Optional) if reverse links should also be generated, define the inverse predicate
-reverse_link:
-  label: enabled by
-  name: ro
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002333
+  # Forward link (source to target)
+  forward:
+    label: functionally related to
+    name: ro
+    # Ontology URI which defines predicates
+    prefix: http://purl.obolibrary.org/obo/
+    # Selected predicate defined in the above ontology
+    predicate: RO_0002328
+  # Reverse link (optional; target to source)
+  reverse:
+    label: enabled by
+    name: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002333
 
 # Metadata for updating link data
 update:
-  # How often the source data is updated (should use [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms)
+  # How often the source data is updated
   frequency: Monthly
   # Update procedure of link data (can be a script name or a command like)
   method: curl http://rest.genome.jp/link/go/ko | cut -f 1,2 | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
 ```
+
+Recommended to use Dublin Core™ Collection Description Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
 
 ## Usage
 
