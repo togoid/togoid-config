@@ -1,0 +1,20 @@
+source:
+  name: ensembl
+  type: Gene
+  label: Ensembl
+  prefix: http://identifiers.org/ensembl/
+target:
+  name: omim
+  type: Disease
+  label: OMIM
+  prefix: http://identifiers.org/omim/
+link:
+  name: rdfs
+  label: seeAlso
+  prefix: http://www.w3.org/2000/01/rdf-schema#
+  predicate: seeAlso
+  directed: false
+  file: pair.tsv
+update:
+  frequency: About four times a year
+  method: update.sh
