@@ -67,7 +67,7 @@ foreach my $res (@{$json->{results}->{bindings}}) {
     }
 }
 
-system("mv log log.bk");
+#system("mv log log.bk");
 
 sub get {
     my $params = $_[0];
