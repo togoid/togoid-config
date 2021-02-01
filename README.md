@@ -45,6 +45,7 @@ link:
 #  file:
 #    - link.1.tsv
 #    - link.2.tsv
+
   # Forward link (source to target)
   forward:
     label: functionally related to
@@ -53,6 +54,7 @@ link:
     prefix: http://purl.obolibrary.org/obo/
     # Selected predicate defined in the above ontology
     predicate: RO_0002328
+
   # Reverse link (optional; target to source)
   reverse:
     label: enabled by
