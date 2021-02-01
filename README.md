@@ -18,7 +18,7 @@ DB1ID3	DB2IDz
 
 Metadata for pair of databases and their relation.
 
-```
+```yaml
 # Source database (the 1st column of the link data file)
 source:
   # Human readable label (intended to be used in a Web UI)
@@ -61,11 +61,13 @@ reverse_link:
 
 # Metadata for updating link data
 update:
-  # How often the source data is updated (should use [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms)
+  # How often the source data is updated
   frequency: Monthly
   # Update procedure of link data (can be a script name or a command like)
   method: curl http://rest.genome.jp/link/go/ko | cut -f 1,2 | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
 ```
+
+Recommended to use Dublin Core™ Collection Description Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
 
 ## Usage
 
