@@ -56,14 +56,15 @@ sub run {
     {lock $LOOPC; $LOOPC++;}
 
     my $tax = $d->{org}->{value};
-    $tax =~ s/http:\/\/purl\.uniprot\.org\/taxonomy\//tax:/;
-    return 0 if ($LOG{$tax});  # for resume
+    my $tax_tmp = $tax;
+    $tax_tmp =~ s/^.+\/(\d+)$/tax:$1/;
+    return 0 if ($LOG{$tax_tmp});  # for resume
 
     # get ID list
     my $query_main = $QUERY;
     $query_main =~ s/__TAXON__/${tax}/;
-    $json = &get("?query=".uri_escape($query_main), $tax);
-    print STDERR $tax, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
+    $json = &get("?query=".uri_escape($query_main), $tax_tmp);
+    print STDERR $tax_tmp, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
 
     threads::yield();
     
