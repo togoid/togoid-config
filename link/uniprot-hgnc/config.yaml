@@ -13,10 +13,13 @@ link:
   label: Gene product of
   prefix: http://purl.obolibrary.org/obo/
   predicate: RO_0002204
-  directed: false
   file: pair.tsv
+reverse_link:
+  name: ro
+  label: has gene product
+  prefix: http://purl.obolibrary.org/obo/
+  predicate: RO_0002205
 update:
-  date: 2021-01-29
-  name: Yuki Moriya
+  frequency: Monthly
   method: update.pl > pair.tsv
 
