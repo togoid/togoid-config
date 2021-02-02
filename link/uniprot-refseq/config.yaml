@@ -18,4 +18,4 @@ link:
 update:
   date: 2021-02-01
   name: Yuki Moriya
-  method: update.pl > pair.tsv
+  method: update.pl > pair.tsv 2> log
