@@ -22,11 +22,10 @@ WHERE {
 our $QUERY = "PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
-PREFIX tax: <http://purl.uniprot.org/taxonomy/>
 SELECT DISTINCT ?source ?target
 WHERE {
   ?source a up:Protein ;
-           up:organism __TAXON__ ;
+           up:organism <__TAXON__> ;
            rdfs:seeAlso ?target .
   ?target up:database db:HGNC .
 }";
