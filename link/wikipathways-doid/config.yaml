@@ -6,7 +6,7 @@ source:
 target:
   name: doid
   type: Disease
-  label: Disease Ontology 
+  label: Human Disease Ontology 
   prefix: http://purl.obolibrary.org/obo/
 link:
   name: rdfs
