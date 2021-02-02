@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
-use strict;
+# 20210202 moriya
+
 use JSON;
 use URI::Escape;
 use LWP::UserAgent;
@@ -8,47 +9,9 @@ use threads;
 use Thread::Semaphore;
 use threads::shared;
 
-# Thread limit of SPARQL query
-my $thread_limit = 10;
+require './update_params.pl';
 
-# Endpoint
-our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
-our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
-
-# SPARQL query for get-taxonomy-list
-my $query_tax = "PREFIX up: <http://purl.uniprot.org/core/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX db: <http://purl.uniprot.org/database/>
-SELECT DISTINCT ?org
-WHERE {
-  ?org ^up:organism [ 
-    a up:Protein ;
-    rdfs:seeAlso [ 
-      up:database db:RefSeq
-    ] ] .
-}";
-
-# SPARQL query for get-ID-list
-our $QUERY = "PREFIX up: <http://purl.uniprot.org/core/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX db: <http://purl.uniprot.org/database/>
-PREFIX tax: <http://purl.uniprot.org/taxonomy/>
-SELECT DISTINCT ?source ?target
-WHERE {
-  ?source a up:Protein ;
-           up:organism __TAXON__ ;
-           rdfs:seeAlso [
-    up:database db:RefSeq ;
-    rdfs:comment ?target ] .
-}";
-
-# regex : req. double escape backslash (e.g. '\d' -> '\\d')
-our $SOURCE_REGEX = "http://purl.uniprot.org/uniprot/(.+)";
-our $TARGET_REGEX = "(.+)\\.\\d";
-
-##########################
-
-# for resume 
+# for resume
 our %LOG;
 if (-f "./log") {
     open(DATA, "./log");
@@ -63,12 +26,12 @@ if (-f "./log") {
 our $LOOPC : shared = 0;
 our $THREAD_COUNT : shared = 0;
 $| = 1;
-our $SEMA = new Thread::Semaphore($thread_limit);
+our $SEMA = new Thread::Semaphore($THREAD_LIMIT);
  
 my %th;
 
 # get taxonomy list
-my $json = &get("?query=".uri_escape($query_tax));
+my $json = &get("?query=".uri_escape($QUERY_TAX), "get tax:");
 
 # make threads
 for my $id (0 .. $#{$json->{results}->{bindings}}) {
@@ -98,10 +61,9 @@ sub run {
 
     # get ID list
     my $query_main = $QUERY;
-    print STDERR $tax, "\t";
     $query_main =~ s/__TAXON__/${tax}/;
-    $json = &get("?query=".uri_escape($query_main));
-    print STDERR $#{$json->{results}->{bindings}} + 1, "\n";
+    $json = &get("?query=".uri_escape($query_main), $tax);
+    print STDERR $tax, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
 
     threads::yield();
     
@@ -116,7 +78,7 @@ sub run {
 }
 
 sub get {
-    my $params = $_[0];
+    my ($params, $e) = @_;
     
     my $ua = LWP::UserAgent->new;
     
@@ -132,7 +94,7 @@ sub get {
 	decode_json($srj);
 	1
     } or do {
-	print STDERR "Fetch error.\n";
+	print STDERR $e, "\tFetch error.\n";
 	exit 0;
     };
     

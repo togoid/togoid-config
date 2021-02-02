@@ -4,22 +4,16 @@ source:
   label: UniProt
   prefix: http://purl.uniprot.org/uniprot/
 target:
-  name: hgnc
+  name: ncbigene
   type: Gene
-  label: HGNC
-  prefix: http://identifiers.org/hgnc/
+  label: NCBI Gene
+  prefix: http://identifiers.org/ncbigene/
 link:
   name: ro
   label: Gene product of
   prefix: http://purl.obolibrary.org/obo/
   predicate: RO_0002204
   file: pair.tsv
-reverse_link:
-  name: ro
-  label: has gene product
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002205
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
-
