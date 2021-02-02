@@ -10,16 +10,10 @@ target:
   prefix: http://purl.obolibrary.org/obo/
 link:
   name: ro
-  label: Functionally related to
+  label: functionally related to
   prefix: http://purl.obolibrary.org/obo/
   predicate: RO_0002328
-  directed: false
   file: link.tsv
-#  file:
-#    - link.1.tsv
-#    - link.2.tsv
-
 update:
-  date: 2021-01-29
-  name: Yuki Moriya
-  method: curl http://rest.genome.jp/link/go/ko | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
+  frequency: Monthly
+  method: curl http://rest.genome.jp/link/go/ko | cut -f 1,2 | perl -pe 's/ko://; s/go:/GO_/' > link.tsv

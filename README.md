@@ -18,7 +18,7 @@ DB1ID3	DB2IDz
 
 Metadata for pair of databases and their relation.
 
-```
+```yaml
 # Source database (the 1st column of the link data file)
 source:
   # Human readable label (intended to be used in a Web UI)
@@ -26,7 +26,8 @@ source:
   # Category (should be a class defined in the TogoID ontology; TBD)
   type: Ortholog
   # Unique short name (intended to be used as a name space in RDF)
-  name: ko
+  # Recommended to use the prefix name defined at prefixcommons.org
+  name: kegg.orthology
   # URI prefix (intended to be used as a prefix in RDF)
   prefix: http://identifiers.org/kegg.orthology/
 
@@ -39,35 +40,46 @@ target:
 
 # Relation of the pair of database identifiers
 link:
-  label: Functionally related to
+  label: functionally related to
   name: ro
   # Ontology URI which defines predicates
   prefix: http://purl.obolibrary.org/obo/
   # Selected predicate defined in the above ontology
   predicate: RO_0002328
-  # If set to true, reverse link will also be generated
-#  directed: true
-  directed: false
   # File name(s) of link data
   file: link.tsv
 #  file:
 #    - link.1.tsv
 #    - link.2.tsv
 
+# (Optional) if reverse links should also be generated, define the inverse predicate
+reverse_link:
+  label: enabled by
+  name: ro
+  prefix: http://purl.obolibrary.org/obo/
+  predicate: RO_0002333
+
 # Metadata for updating link data
 update:
   # How often the source data is updated
   frequency: Monthly
-  # Update procedure of link data (can be a script name etc.)
-  method: curl http://rest.genome.jp/link/go/ko | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
+  # Update procedure of link data (can be a script name or a command like)
+  method: curl http://rest.genome.jp/link/go/ko | cut -f 1,2 | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
 ```
 
+Recommended to use Dublin Core™ Collection Description Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
+
 ## Usage
+
+To update link data from the data source, run the following command.
+
+```
+% ruby bin/togoid-config.rb link/uniprot-hgnc/config.yaml update
+```
 
 To generate a RDF/Turtle file for the given link data, run the following command.
 
 ```
-% ruby bin/togoid-config.rb link/ko-go/config.yaml > ko-go.ttl
-% ruby bin/togoid-config.rb link/uniprot-hgnc/config.yaml > uniprot-hgnc.ttl
+% ruby bin/togoid-config.rb link/uniprot-hgnc/config.yaml convert > uniprot-hgnc.ttl
 ```
 
