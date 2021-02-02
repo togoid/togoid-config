@@ -48,8 +48,6 @@ system("mv ./log ./log.bk");
 # run threads
 sub run {
     my ($id, $d, $sema) = @_;
-
-    my $json;
     
     $sema->down();   
     {lock $THREAD_COUNT; $THREAD_COUNT++;}
@@ -63,8 +61,7 @@ sub run {
     # get ID list
     my $query_main = $QUERY;
     $query_main =~ s/__TAXON__/${tax}/;
-    $json = &get("?query=".uri_escape($query_main), $tax_tmp);
-    print STDERR $tax_tmp, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
+    my $json = &get("?query=".uri_escape($query_main), $tax_tmp);
 
     threads::yield();
     
@@ -76,6 +73,7 @@ sub run {
 	$el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
 	print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
     }
+    print STDERR $tax_tmp, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
 }
 
 sub get {
