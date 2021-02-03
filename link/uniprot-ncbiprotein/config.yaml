@@ -1,20 +1,25 @@
 source:
-  name: uniprot
+  namespace: uniprot
   type: Protein
   label: UniProt
   prefix: http://purl.uniprot.org/uniprot/
 target:
-  name: ncbiprotein
+  namespace: ncbiprotein
   type: Protein
   label: NCBI Protein
   prefix: http://identifiers.org/ncbiprotein/
 link:
-  name: rdfs
-  label: seeAlso
-  prefix: http://www.w3.org/2000/01/rdf-schema#
-  predicate: seeAlso
-  directed: false
   file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log

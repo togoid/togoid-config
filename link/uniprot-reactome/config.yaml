@@ -1,20 +1,25 @@
 source:
-  name: uniprot
+  namespace: uniprot
   type: Protein
   label: UniProt
   prefix: http://purl.uniprot.org/uniprot/
 target:
-  name: reactome
+  namespace: reactome
   type: Pathway
   label: Reactome
   prefix: http://identifiers.org/reactome/
 link:
-  name: rdfs
-  label: seeAlso
-  prefix: http://www.w3.org/2000/01/rdf-schema#
-  predicate: seeAlso
-  directed: false
   file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: ro
+    label: has component
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002180
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log

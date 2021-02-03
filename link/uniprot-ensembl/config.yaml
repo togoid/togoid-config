@@ -1,19 +1,25 @@
 source:
-  name: uniprot
+  namespace: uniprot
   type: Protein
   label: UniProt
   prefix: http://purl.uniprot.org/uniprot/
 target:
-  name: ensembl
+  namespace: ensembl
   type: Gene
   label: Ensembl Gene
   prefix: http://identifiers.org/ensembl/
 link:
-  name: ro
-  label: Gene product of
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002204
   file: pair.tsv
+  forward:
+    namespace: ro
+    label: gene product of
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
+  reverse:
+    namespace: ro
+    label: has gene product
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002205
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
