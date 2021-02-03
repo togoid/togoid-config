@@ -14,16 +14,24 @@ module TogoID
   end
 
   class Edge
-    attr_reader :ns, :label, :prefix, :predicate, :files
+    attr_reader :ns, :label, :prefix, :predicate
     def initialize(hash)
       @ns = hash["name"]
       @label = hash["label"]
       @prefix = hash["prefix"]
       @predicate = hash["predicate"]
-      @files = ([] << hash["file"]).flatten
     end
   end
 
+  class Link
+    attr_reader :files, :fwd, :rev
+    def initialize(hash)
+      @files = ([] << hash["file"]).flatten
+      @fwd = Edge.new(hash["forward"]) if hash["forward"]
+      @rev = Edge.new(hash["reverse"]) if hash["reverse"]
+    end
+  end
+  
   class Update
     attr_reader :date, :name, :method
     def initialize(hash)
@@ -47,10 +55,7 @@ module TogoID
         @path = File.dirname(config_file)
         @source = Node.new(config["source"])
         @target = Node.new(config["target"])
-        @link = Edge.new(config["link"])
-        if hash = config["reverse_link"]
-          @reverse = Edge.new(config["link"].merge(hash))
-        end
+        @link = Link.new(config["link"])
         @update = Update.new(config["update"])
       rescue => error
         puts error
@@ -68,9 +73,11 @@ module TogoID
     end
 
     def prefix
-      puts triple("@prefix", "#{@link.ns}:", "<#{@link.prefix}>")
-      if @reverse and @link.ns != @reverse.ns
-        puts triple("@prefix", "#{@reverse.ns}:", "<#{@reverse.prefix}>")
+      if @link.fwd
+        puts triple("@prefix", "#{@link.fwd.ns}:", "<#{@link.fwd.prefix}>")
+      end
+      if @link.rev and (! @link.fwd or (@link.fwd.ns != @link.rev.ns))
+        puts triple("@prefix", "#{@link.rev.ns}:", "<#{@link.rev.prefix}>")
       end
       puts triple("@prefix", "#{@source.ns}:", "<#{@source.prefix}>")
       puts triple("@prefix", "#{@target.ns}:", "<#{@target.prefix}>")
@@ -82,8 +89,8 @@ module TogoID
       @link.files.each do |file|
         File.open("#{@path}/#{file}").each do |line|
           source_id, target_id, = line.strip.split(/\s+/)
-          puts triple("#{@source.ns}:#{source_id}", "#{@link.ns}:#{@link.predicate}", "#{@target.ns}:#{target_id}")
-          puts triple("#{@target.ns}:#{target_id}", "#{@reverse.ns}:#{@reverse.predicate}", "#{@source.ns}:#{source_id}") if @reverse
+          puts triple("#{@source.ns}:#{source_id}", "#{@link.fwd.ns}:#{@link.fwd.predicate}", "#{@target.ns}:#{target_id}") if @link.fwd
+          puts triple("#{@target.ns}:#{target_id}", "#{@link.rev.ns}:#{@link.rev.predicate}", "#{@source.ns}:#{source_id}") if @link.rev
         end
       end
     end
