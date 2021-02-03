@@ -17,4 +17,4 @@ link:
   file: pair.tsv
 update:
   frequency: About four times a year
-  method: rm pair.tsv; update.rb >> pair.tsv
+  method: update.rb --limit all > pair.tsv
