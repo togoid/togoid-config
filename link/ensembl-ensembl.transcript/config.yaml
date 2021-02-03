@@ -1,20 +1,25 @@
 source:
-  name: ensembl
-  type: Gene
   label: Ensembl
+  type: Gene
+  namespace: ensembl
   prefix: http://identifiers.org/ensembl/
 target:
-  name: ensembl.transcript
-  type: Transcript
   label: Ensembl Transcript
+  type: Transcript
+  namespace: ensembl.transcript
   prefix: http://identifiers.org/omim/
 link:
-  name: obo
-  label: transcribed to 
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002511
-  directed: true
-  file: pair.tsv
+  file: link.tsv
+  forward:
+    label: transcribed to 
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002511
+  reverse:
+    label: transcribed from
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002510
 update:
   frequency: About four times a year
-  method: update.rb --limit all > pair.tsv
+  method: update.rb --limit all > link.tsv
