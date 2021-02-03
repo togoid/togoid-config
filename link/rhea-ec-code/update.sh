@@ -1,13 +1,11 @@
 #!/bin/sh
 
 ENDPOINT='https://integbio.jp/rdf/misc/sparql'
-OUTPUT='pair.tsv'
 if ["${LIMIT}" = ""]; then
   LIMIT=10
 fi
 
 printf 'ENDPOINT: %s \n' ${ENDPOINT}
-printf 'OUTPUT: %s \n' ${OUTPUT}
 
 cat - << EOS > sparql.rq
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -18,7 +16,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX identifiers: <http://identifiers.org/>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 
-SELECT DISTINCT ?ec_id ?rhea_id
+SELECT DISTINCT ?rhea_id ?ec_id
 FROM <http://integbio.jp/rdf/mirror/rhea>
 WHERE {
   {
@@ -37,4 +35,4 @@ LIMIT ${LIMIT}
 EOS
 
 echo "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/misc/sparql | tail +2 | tr -d '\"' > ./pair.tsv"
-curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"' > ./${OUTPUT}
+curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"'}
