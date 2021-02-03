@@ -43,7 +43,7 @@ for (0 .. $#{$json->{results}->{bindings}}) {
 }
 
 # finish flag
-system("mv ./log ./log.bk");
+system("mv ./log ./log.bk") if(-f "./log");
 
 # run threads
 sub run {

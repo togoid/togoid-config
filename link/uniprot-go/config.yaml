@@ -1,0 +1,20 @@
+source:
+  name: uniprot
+  type: Protein
+  label: UniProt
+  prefix: http://purl.uniprot.org/uniprot/
+target:
+  name: go
+  type: Function
+  label: Gene Ontology
+  prefix: http://purl.obolibrary.org/obo/
+link:
+  name: ro
+  label: functionally related to
+  prefix: http://purl.obolibrary.org/obo/
+  predicate: RO_0002328
+  directed: false
+  file: pair.tsv
+update:
+  frequency: Monthly
+  method: update.pl > pair.tsv 2> log

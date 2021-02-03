@@ -1,0 +1,20 @@
+source:
+  name: uniprot
+  type: Protein
+  label: UniProt
+  prefix: http://purl.uniprot.org/uniprot/
+target:
+  name: ensembl.protein
+  type: Protein
+  label: Ensembl Protein
+  prefix: http://identifiers.org/ensembl/
+link:
+  name: rdfs
+  label: seeAlso
+  prefix: http://www.w3.org/2000/01/rdf-schema#
+  predicate: seeAlso
+  directed: false
+  file: pair.tsv
+update:
+  frequency: Monthly
+  method: update.pl > pair.tsv 2> log

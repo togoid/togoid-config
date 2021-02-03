@@ -1,0 +1,19 @@
+source:
+  name: uniprot
+  type: Protein
+  label: UniProt
+  prefix: http://purl.uniprot.org/uniprot/
+target:
+  name: ensembl.transcript
+  type: Transcript
+  label: Ensembl Transcript
+  prefix: http://identifiers.org/ensembl/
+link:
+  name: ro
+  label: Ribosomal translation of
+  prefix: http://purl.obolibrary.org/obo/
+  predicate: RO_0002512
+  file: pair.tsv
+update:
+  frequency: Monthly
+  method: update.pl > pair.tsv 2> log
