@@ -1,6 +1,14 @@
 #!/usr/bin/env perl
 
-# 20210202 moriya
+# 20210203 moriya
+
+# 生物種リストをSPARQLで取得して、種毎にIDリストをSPARQLで並列に取得
+# SPARQLクエリやprefix、並列スレッド数は update_params.pl に記述
+# usage: update.pl > pair.tsv 2> log
+#   - 終了時 log ファイルが log.bk になっていれば正常終了
+#      - endpoint の出力 limit を超えた場合に未対応（正常応答になるため）
+#   - fetch error などで log ファイル残っている場合
+#     update.pl >> pair.tsv 2>> log で途中から再開して追記
 
 use JSON;
 use URI::Escape;
