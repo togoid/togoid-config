@@ -27,7 +27,7 @@ source:
   type: Ortholog
   # Unique short name (intended to be used as a name space in RDF)
   # Recommended to use the prefix name defined at prefixcommons.org
-  name: kegg.orthology
+  namespace: kegg.orthology
   # URI prefix (intended to be used as a prefix in RDF)
   prefix: http://identifiers.org/kegg.orthology/
 
@@ -35,7 +35,7 @@ source:
 target:
   label: Gene Ontology
   type: Function
-  name: go
+  namespace: go
   prefix: http://purl.obolibrary.org/obo/
 
 # Relation of the pair of database identifiers
@@ -49,7 +49,7 @@ link:
   # Forward link (source to target)
   forward:
     label: functionally related to
-    name: ro
+    namespace: ro
     # Ontology URI which defines predicates
     prefix: http://purl.obolibrary.org/obo/
     # Selected predicate defined in the above ontology
@@ -58,7 +58,7 @@ link:
   # Reverse link (optional; target to source)
   reverse:
     label: enabled by
-    name: ro
+    namespace: ro
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002333
 

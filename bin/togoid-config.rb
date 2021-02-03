@@ -7,7 +7,7 @@ module TogoID
   class Node
     attr_reader :ns, :label, :prefix
     def initialize(hash)
-      @ns = hash["name"]
+      @ns = hash["namespace"]
       @label = hash["label"]
       @prefix = hash["prefix"]
     end
@@ -16,7 +16,7 @@ module TogoID
   class Edge
     attr_reader :ns, :label, :prefix, :predicate
     def initialize(hash)
-      @ns = hash["name"]
+      @ns = hash["namespace"]
       @label = hash["label"]
       @prefix = hash["prefix"]
       @predicate = hash["predicate"]
@@ -36,7 +36,7 @@ module TogoID
     attr_reader :date, :name, :method
     def initialize(hash)
       @date = hash["date"]
-      @name = hash["name"]
+      @name = hash["namespace"]
       @method = hash["method"]
     end
 
