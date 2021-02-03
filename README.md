@@ -40,24 +40,27 @@ target:
 
 # Relation of the pair of database identifiers
 link:
-  label: functionally related to
-  name: ro
-  # Ontology URI which defines predicates
-  prefix: http://purl.obolibrary.org/obo/
-  # Selected predicate defined in the above ontology
-  predicate: RO_0002328
   # File name(s) of link data
   file: link.tsv
 #  file:
 #    - link.1.tsv
 #    - link.2.tsv
 
-# (Optional) if reverse links should also be generated, define the inverse predicate
-reverse_link:
-  label: enabled by
-  name: ro
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002333
+  # Forward link (source to target)
+  forward:
+    label: functionally related to
+    name: ro
+    # Ontology URI which defines predicates
+    prefix: http://purl.obolibrary.org/obo/
+    # Selected predicate defined in the above ontology
+    predicate: RO_0002328
+
+  # Reverse link (optional; target to source)
+  reverse:
+    label: enabled by
+    name: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002333
 
 # Metadata for updating link data
 update:
