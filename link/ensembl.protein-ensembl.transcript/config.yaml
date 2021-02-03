@@ -1,20 +1,26 @@
 source:
-  name: ensembl.protein
-  type: Protein
   label: Ensembl Protein
+  type: Protein
+  namespace: ensembl.protein
+  type: Protein
   prefix: http://identifiers.org/ensembl/
 target:
-  name: ensembl.transcript
-  type: Transcript
   label: Ensembl Transcript
+  type: Transcript
+  namespace: ensembl.transcript
   prefix: http://identifiers.org/omim/
 link:
-  name: obo
-  label: ribosomal translation of 
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002512
-  directed: true
-  file: pair.tsv
+  file: link.tsv
+  forward:
+    label: ribosomal translation of 
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002512
+  reverse:
+    label: ribosomally translates to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002513
 update:
   frequency: About four times a year
-  method: rm pair.tsv; update.rb --limit all >> pair.tsv
+  method: update.rb --limit all > link.tsv
