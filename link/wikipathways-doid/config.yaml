@@ -1,20 +1,25 @@
 source:
-  name: wikipathways
+  namespace: wikipathways
   type: Pathway
   label: WikiPathways
   prefix: http://identifiers.org/wikipathways/
 target:
-  name: doid
+  namespace: doid
   type: Disease
   label: Human Disease Ontology 
   prefix: http://purl.obolibrary.org/obo/
 link:
-  name: rdfs
-  label: seeAlso
-  prefix: http://www.w3.org/2000/01/rdf-schema#
-  predicate: seeAlso
-  directed: false
   file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
 update:
   frequency: Monthly
   method: update.pl > pair.tsv

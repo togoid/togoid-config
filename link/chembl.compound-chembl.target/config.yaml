@@ -1,20 +1,25 @@
 source:
-  name: chembl.compound
+  namespace: chembl.compound
   type: Compound
   label: ChEMBL compound
   prefix: http://identifiers.org/chembl.compound/
 target:
-  name: chembl.target
+  namespace: chembl.target
   type: Protein
   label: ChEMBL target
   prefix: http://identifiers.org/chembl.target/
 link:
-  name: rdfs
-  label: seeAlso
-  prefix: http://www.w3.org/2000/01/rdf-schema#
-  predicate: seeAlso
-  directed: false
   file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
