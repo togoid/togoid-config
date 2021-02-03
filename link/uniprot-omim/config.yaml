@@ -1,20 +1,25 @@
 source:
-  name: uniprot
+  namespace: uniprot
   type: Protein
   label: UniProt
   prefix: http://purl.uniprot.org/uniprot/
 target:
-  name: omim
+  namespace: omim
   type: Phenotype
   label: OMIM
   prefix: http://identifiers.org/mim/
 link:
-  name: ro
-  label: has phenotype
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002200
-  directed: false
   file: pair.tsv
+  forward:
+    namespace: ro
+    label: has phenotype
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002200
+  reverse:
+    namespace: ro
+    label: phenotype of
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002201
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log

@@ -1,20 +1,25 @@
 source:
-  name: uniprot
+  namespace: uniprot
   type: Protein
   label: UniProt
   prefix: http://purl.uniprot.org/uniprot/
 target:
-  name: go
+  namespace: go
   type: Function
   label: Gene Ontology
   prefix: http://purl.obolibrary.org/obo/
 link:
-  name: ro
-  label: functionally related to
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002328
-  directed: false
   file: pair.tsv
+  forward:
+    namespace: ro
+    label: functionally related to
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002328
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
