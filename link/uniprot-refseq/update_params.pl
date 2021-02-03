@@ -1,9 +1,10 @@
 # Thread limit of SPARQL query
 our $THREAD_LIMIT = 10;
 
-# Endpoint
+# Endpoint 
 our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
 our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
+#our $EP_MIRROR = undef; # no mirror
 
 # SPARQL query for get-taxonomy-list
 our $QUERY_TAX = "PREFIX up: <http://purl.uniprot.org/core/>
