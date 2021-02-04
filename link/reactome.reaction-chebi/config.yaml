@@ -7,7 +7,7 @@ target:
   namespace: chebi
   type: Compound
   label: ChEBI
-  prefix: http://identifiers.org/CHEBI:
+  prefix: http://identifiers.org/chebi/
 link:
   file: pair.tsv
   forward:
