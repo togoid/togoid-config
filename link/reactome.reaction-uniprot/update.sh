@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # 20210204 moriya
 
 # SPARQL query
