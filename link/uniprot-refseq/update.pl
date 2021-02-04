@@ -107,7 +107,7 @@ sub run {
 	$el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
 	print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
     }
-    print STDERR $tax_tmp, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
+    print STDERR $tmp_id, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
 }
 
 sub get {
