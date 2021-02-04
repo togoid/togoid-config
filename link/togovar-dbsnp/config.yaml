@@ -11,12 +11,12 @@ target:
 link:
   file: pair.tsv
   forward:
-    namespace: ro
+    namespace: rdfs
     label: which position is similar to 
     prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: http://www.w3.org/2000/01/rdf-schema#seeAlso
+    predicate: seeAlso
 update:
   frequency: Monthly
   # NBDC will update the conversion table (tgvid2dbSNP.tsv)  
-method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2dbSNP.tsv && mv tgvid2dbSNP.tsv pair.tsv
+  method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2dbSNP.tsv && mv tgvid2dbSNP.tsv pair.tsv
 
