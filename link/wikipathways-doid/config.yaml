@@ -22,4 +22,4 @@ link:
     predicate: seeAlso
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: update.sh > pair.tsv
