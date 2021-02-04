@@ -7,7 +7,7 @@ target:
   namespace: pubmed
   type: Publication
   label: PubMed ID
-  prefix: https://www.ncbi.nlm.nih.gov/pubmed/
+  prefix: http://rdf.ncbi.nlm.nih.gov/pubmed/
 link:
   file: pair.tsv
   forward:
