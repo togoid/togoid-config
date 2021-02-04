@@ -5,7 +5,7 @@ our $THREAD_LIMIT = 10;
 our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
 our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
 
-# SPARQL query for get-taxonomy-list
+# SPARQL query for get-target-list
 our $QUERY_TAX = "PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
