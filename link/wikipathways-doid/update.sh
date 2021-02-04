@@ -11,5 +11,5 @@ WHERE {
 }"
 
 # curl -> format -> delete header
-curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" http://sparql.wikipathways.org/sparql | sed -e 's/\"//g; s/http:\/\/identifiers\.org\/wikipathways\///g; s/http:\/\/purl\.obolibrary\.org\/obo\///g; s/,/\t/g' | sed -n 2,\$p
+curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" http://sparql.wikipathways.org/sparql | sed -e 's/\"//g; s/http:\/\/identifiers\.org\/wikipathways\///g; s/http:\/\/purl\.obolibrary\.org\/obo\///g; s/,/\t/g' | tail +2 
 

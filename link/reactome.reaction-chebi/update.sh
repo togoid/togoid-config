@@ -21,5 +21,5 @@ WHERE {
 }"
 
 # curl -> format -> delete header
-curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/mirror/ebi/sparql | sed -e 's/\"//g; s/,/\t/g; s/CHEBI://g' | sed -n 2,\$p
+curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/mirror/ebi/sparql | sed -e 's/\"//g; s/,/\t/g; s/CHEBI://g' | tail +2 
 
