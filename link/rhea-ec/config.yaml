@@ -6,7 +6,7 @@ source:
 target:
   label: Enzyme Nomenclature
   type: Reaction
-  namespace: ec-code
+  namespace: ec
   prefix: http://identifiers.org/ec-code/
 link:
   file: link.tsv
@@ -21,5 +21,5 @@ link:
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 update:
-  frequency: About six times a year
+  frequency: Bimonthly
   method: update.sh > link.tsv
