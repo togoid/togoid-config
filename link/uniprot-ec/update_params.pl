@@ -9,12 +9,9 @@ our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
 our $QUERY_TAX = "PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
-SELECT DISTINCT ?org
+SELECT DISTINCT ?target
 WHERE {
-  ?org ^up:organism [ 
-    a up:Protein ;
-    up:enzyme ?ec
-  ] .
+  ?s up:enzyme ?target . 
 }";
 
 # SPARQL query for get-ID-list
@@ -23,8 +20,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
 SELECT DISTINCT ?source ?target
 WHERE {
+  VALUES ?target { <__TARGET__> }
   ?source a up:Protein ;
-          up:organism <__TAXON__> ;
           up:enzyme ?target .
 }";
 
