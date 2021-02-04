@@ -1,0 +1,24 @@
+source:
+  label: MBGD (Organism)
+  type: Ortholog
+  name: mbgd
+  prefix: http://mbgd.genome.ad.jp/rdf/resource/organism/
+
+target:
+  label: NCBI Taxonomy
+  type: Taxonomy
+  name: tax
+  prefix: http://identifiers.org/taxonomy/
+
+link:
+  file: pair.tsv
+
+  forward:
+    label: in taxon
+    namespace: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002162
+
+update:
+  frequency: Monthly
+  method: https://is.gd/Lpmycy
