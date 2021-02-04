@@ -1,7 +1,6 @@
 #!/bin/sh
 
 ENDPOINT='https://integbio.jp/rdf/ebi/sparql'
-OUTPUT='pair.tsv'
 if ["${LIMIT}" = ""]; then
   LIMIT=10
 fi
@@ -28,4 +27,4 @@ LIMIT ${LIMIT}
 EOS
 
 echo "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/ebi/sparql | tail +2 | tr -d '\"' > ./pair.tsv"
-curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"' > ./${OUTPUT}
+curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"'
