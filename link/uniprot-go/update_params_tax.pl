@@ -5,28 +5,25 @@ our $THREAD_LIMIT = 10;
 our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
 our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
 
-# GO の種取得が重いので、全 GO 取得して、GO 毎にリストを取得
-#
 # SPARQL query for get-taxonomy-list
-# mome: ?org は GO
 our $QUERY_TAX = "PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
 SELECT DISTINCT ?org
 WHERE {
-  ?org up:database db:go .
+  ?org ^up:organism/up:classifiedWith/up:database db:go .
 }";
 
 # SPARQL query for get-ID-list
-# memo: __TAXON__ は GO
 our $QUERY = "PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
 SELECT DISTINCT ?source ?target
 WHERE {
-  VALUES ?target { <__TAXON__> }
   ?source a up:Protein ;
+           up:organism <__TAXON__> ;
            up:classifiedWith ?target .
+  ?target up:database db:go .
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
