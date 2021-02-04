@@ -7,7 +7,7 @@ target:
   namespace: ensg
   type: Gene
   label: Ensembl Gene
-  prefix: 
+  prefix: http://rdf.ebi.ac.uk/resource/ensembl/ 
 link:
   file: pair.tsv
   forward:
