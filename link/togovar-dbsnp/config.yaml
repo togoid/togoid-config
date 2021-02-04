@@ -1,0 +1,22 @@
+source:
+  namespace: togovar
+  type: Variant
+  label: TogoVar variant
+  prefix: http://togovar.biosciencedbc.jp/variation/
+target:
+  namespace: dbSNP
+  type: Variant
+  label: dbSNP
+  prefix: http://identifiers.org/dbsnp/
+link:
+  file: pair.tsv
+  forward:
+    namespace: ro
+    label: which position is similar to 
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: http://www.w3.org/2000/01/rdf-schema#seeAlso
+update:
+  frequency: Monthly
+  # NBDC will update the conversion table (tgvid2dbSNP.tsv)  
+method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2dbSNP.tsv && mv tgvid2dbSNP.tsv pair.tsv
+
