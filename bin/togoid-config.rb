@@ -33,10 +33,9 @@ module TogoID
   end
   
   class Update
-    attr_reader :date, :name, :method
+    attr_reader :frequency, :method
     def initialize(hash)
-      @date = hash["date"]
-      @name = hash["namespace"]
+      @frequency = hash["frequency"]
       @method = hash["method"]
     end
 
