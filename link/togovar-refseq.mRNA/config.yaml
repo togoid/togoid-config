@@ -4,19 +4,18 @@ source:
   label: TogoVar variant
   prefix: http://togovar.biosciencedbc.jp/variation/
 target:
-  namespace: ensg
+  namespace: refseq
   type: Gene
-  label: Ensembl Gene
-  prefix: http://rdf.ebi.ac.uk/resource/ensembl/ 
+  label: RefSeq
+  prefix: http://identifiers.org/refseq/
 link:
   file: pair.tsv
   forward:
     namespace: ro
-    label: is located in  
+    label: is located in
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0001025
 update:
   frequency: Monthly
-  # NBDC will update the conversion table (tgvid2ensg.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2ensg.tsv && mv tgvid2ensg.tsv pair.tsv
-
+  # NBDC will update the conversion table (tgvid2refseqg.tsv)  
+  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2refseqg.tsv && mv tgvid2refseqg.tsv pair.tsv

@@ -7,7 +7,7 @@ target:
   namespace: medgen
   type: Disease
   label: MedGen 
-  prefix: http://www.ncbi.nlm.nih.gov/medgen
+  prefix: http://www.ncbi.nlm.nih.gov/medgen/
 link:
   file: pair.tsv
   forward:
@@ -18,4 +18,4 @@ link:
 update:
   frequency: Monthly
   # NBDC will update the conversion table (tgvid2medgen.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2medgen.tsv && mv tgvid2medgen.tsv pair.tsv
+  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2medgen.tsv && mv tgvid2medgen.tsv pair.tsv

@@ -7,7 +7,7 @@ target:
   namespace: ncbig
   type: Gene
   label: NCBI gene 
-  prefix: http://purl.uniprot.org/database/
+  prefix: http://identifiers.org/ncbigene/
 link:
   file: pair.tsv
   forward:
@@ -18,4 +18,4 @@ link:
 update:
   frequency: Monthly
   # NBDC will update the conversion table (tgvid2ncbig.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2ncbig.tsv && mv tgvid2ncbig.tsv pair.tsv
+  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2ncbig.tsv && mv tgvid2ncbig.tsv pair.tsv
