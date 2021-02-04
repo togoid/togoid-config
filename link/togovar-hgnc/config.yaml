@@ -4,10 +4,10 @@ source:
   label: TogoVar variant
   prefix: http://togovar.biosciencedbc.jp/variation/
 target:
-  namespace: clinvar
-  type: Variant
-  label: ClinVar
-  prefix: http://purl.jp/bin/10/clinvar/
+  namespace: hgnc
+  type: Gene
+  label: HGNC Gene
+  prefix: http://identifiers.org/hgnc/
 link:
   file: pair.tsv
   forward:
@@ -18,5 +18,5 @@ link:
 update:
   frequency: Monthly
   # NBDC will update the conversion table (tgvid2dbSNP.tsv)  
-method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2clinvar.tsv && mv tgvid2clinvar.tsv pair.tsv
+  method: wget -c https://togovar.biosciencedbc.jp/public/tgvid2clinvar.tsv && mv tgvid2clinvar.tsv pair.tsv
 
