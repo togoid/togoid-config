@@ -22,5 +22,5 @@ link:
     predicate: isHomologousMember
 update:
   frequency: Yearly or less frequently
-  method: curl ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data | cut -f 1,3 > link.tsv
+  method: curl -sSf ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data | cut -f 1,3 > link.tsv
 
