@@ -1,0 +1,25 @@
+source:
+  label: Ensembl
+  namespace: ensembl
+  type: Gene
+  prefix: http://identifiers.org/ensembl/
+target:
+  label: RefSeq
+  namespace: refseq
+  type: Gene
+  prefix: http://identifiers.org/refseq/
+link:
+  file: link.tsv
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Quarterly
+  method: update.rb --limit all --endpoint https://integbio.jp/rdf/ebi/sparql > link.tsv
