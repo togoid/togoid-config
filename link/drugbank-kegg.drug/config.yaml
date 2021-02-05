@@ -8,7 +8,7 @@ target:
   label: KEGG Drug
   type: Drug
   name: kegg.drug
-  prefix: http://bio2rdf.org/kegg.drug:
+  prefix: http://identifiers.org/kegg.drug/
 
 link:
   file: pair.tsv
