@@ -62,16 +62,21 @@ tax_id_ary.each do |tax_id|
 
   sparql_2 = <<"EOS"
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/> 
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX identifiers: <http://identifiers.org/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-SELECT DISTINCT ?ensg_id ?enst_id
+SELECT DISTINCT ?ensg_id ?refseq_id
 WHERE {
   ?ensg obo:RO_0002162 taxon:#{tax_id} .
   ?ensg dc:identifier ?ensg_id .
-  ?enst obo:SO_transcribed_from ?ensg ;
-        dc:identifier ?enst_id .
+  ?enst obo:SO_transcribed_from ?ensg .
+  ?enst rdfs:seeAlso ?refseq .
+  ?refseq a identifiers:refseq
+  BIND(STRAFTER(str(?refseq), "refseq/") AS ?refseq_id)
 }
 #{LIMIT}
 EOS
@@ -79,6 +84,5 @@ EOS
   STDERR.print "#{tax_id}\n"
 
   result, status = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql_2.gsub("\n", " ")}' #{ENDPOINT}| tail +2 | tr -d '\"'")
-
-  puts result
+  puts result unless result.size < 2
 end

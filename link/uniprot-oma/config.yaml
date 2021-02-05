@@ -11,15 +11,15 @@ target:
 link:
   file: pair.tsv
   forward:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+    namespace: orth
+    label: is homologous member
+    prefix: http://purl.org/net/orth#
+    predicate: isHomologousMember
   reverse:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+    namespace: orth
+    label: has homologous member
+    prefix: http://purl.org/net/orth#
+    predicate: hasHomologousMember
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
