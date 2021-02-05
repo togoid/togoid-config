@@ -1,5 +1,5 @@
 source:
-  namespace: chembl.compound
+  namespace: chembl
   type: Chemical compound
   label: ChEMBL compound
   prefix: http://identifiers.org/chembl.compound/
