@@ -2,7 +2,7 @@ source:
   label: DrugBank
   type: Drug
   name: drugbank
-  prefix: http://identifiers.org/drugbank
+  prefix: http://identifiers.org/drugbank/
 
 target:
   label: KEGG Drug
