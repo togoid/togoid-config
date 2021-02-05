@@ -16,10 +16,10 @@ link:
     prefix: http://semanticscience.org/resource/ 
     predicate: SIO_001380
   reverse:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+    namespace: sio
+    label: has member
+    prefix: http://semanticscience.org/resource/
+    predicate: SIO_000059
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
