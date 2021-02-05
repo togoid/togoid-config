@@ -1,6 +1,6 @@
 source:
   namespace: chembl.compound
-  type: Compound
+  type: Chemical compound
   label: ChEMBL compound
   prefix: http://identifiers.org/chembl.compound/
 target:
