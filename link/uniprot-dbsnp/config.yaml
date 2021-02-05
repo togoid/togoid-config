@@ -11,10 +11,10 @@ target:
 link:
   file: pair.tsv
   forward:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+    namespace: sio
+    label: genomic sequence variant
+    prefix: http://semanticscience.org/resource/ 
+    predicate: SIO_001381
   reverse:
     namespace: rdfs
     label: seeAlso
