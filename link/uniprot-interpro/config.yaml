@@ -12,9 +12,9 @@ link:
   file: pair.tsv
   forward:
     namespace: sio
-    label: protein family
+    label: is member of 
     prefix: http://semanticscience.org/resource/ 
-    predicate: SIO_001380
+    predicate: SIO_000095
   reverse:
     namespace: sio
     label: has member
