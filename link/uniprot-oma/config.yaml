@@ -12,14 +12,14 @@ link:
   file: pair.tsv
   forward:
     namespace: orth
-    label: is homolog member
+    label: is homologous member
     prefix: http://purl.org/net/orth#
-    predicate: isHomologMember
+    predicate: isHomologousMember
   reverse:
     namespace: orth
-    label: has homologous
+    label: has homologous member
     prefix: http://purl.org/net/orth#
-    predicate: hasHomologous
+    predicate: hasHomologousMember
 update:
   frequency: Monthly
   method: update.pl > pair.tsv 2> log
