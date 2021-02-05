@@ -7,7 +7,7 @@ target:
   label: Ensembl Transcript
   type: Transcript
   namespace: ensembl.transcript
-  prefix: http://identifiers.org/omim/
+  prefix: http://identifiers.org/ensembl.transcript/
 link:
   file: link.tsv
   forward:
@@ -22,4 +22,4 @@ link:
     predicate: RO_0002510
 update:
   frequency: About four times a year
-  method: update.rb --limit all > link.tsv
+  method: update.rb --limit all --endpoint https://integbio.jp/rdf/ebi/sparql > link.tsv
