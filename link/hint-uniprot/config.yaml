@@ -1,0 +1,21 @@
+#hint-uniprot
+source:
+  name: hint
+  type: Protein-Protein Interaction
+  label: HINT
+  prefix: http://purl.jp/10/hint/
+target:
+  name: uniprot
+  type: Protein
+  label: UniProt
+  prefix: http://identifiers.org/uniprot/
+link:
+  file: pair.tsv
+  forward:
+    namespace: bp3/obo
+    label: has part of participant
+    prefix: http://www.biopax.org/release/biopax-level3.owl#/, http://purl.obolibrary.org/obo/
+    predicate: participant/BFO_0000051
+update:
+  frequency: Irregular
+  method: readme.txt
