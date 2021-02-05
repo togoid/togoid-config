@@ -8,7 +8,7 @@ target:
   label: KEGG Compound
   type: Chemical compound
   name: kegg.compound
-  prefix: http://bio2rdf.org/kegg.compound:
+  prefix: http://identifiers.org/kegg.compound/
 
 link:
   file: pair.tsv
