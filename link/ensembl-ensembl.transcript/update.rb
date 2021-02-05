@@ -32,8 +32,8 @@ else
   LIMIT = "LIMIT 2"
 end
 
-STDERR.print "ENDPOINT: #{ENDPOINT}\n"
-STDERR.print "LIMIT: #{ENDPOINT}\n"
+STDERR.print "ENDPOINT #{ENDPOINT}\n"
+STDERR.print "#{LIMIT}\n"
 
 sparql_1 = <<"EOS"
 PREFIX obo: <http://purl.obolibrary.org/obo/>
