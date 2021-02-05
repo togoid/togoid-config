@@ -1,0 +1,29 @@
+source:
+  label: KEGG Compound
+  type: Chemical compound
+  name: kegg.compound
+  prefix: http://identifiers.org/drugbank/
+
+target:
+  label: KEGG Compound
+  type: Chemical compound
+  name: kegg.compound
+  prefix: http://identifiers.org/kegg.compound/
+
+link:
+  file: pairs.tsv
+
+  forward:
+    label: Further information about the subject resource
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+  reverse:
+    label: Further information about the subject resource
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+
+update:
+  frequency: Quarterly
+  method:  python3 make_pairs.py
