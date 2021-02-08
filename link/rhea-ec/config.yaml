@@ -22,4 +22,4 @@ link:
     predicate: seeAlso
 update:
   frequency: Bimonthly
-  method: update.sh > link.tsv
+  method: LIMIT=10000 ./update.sh > link.tsv
