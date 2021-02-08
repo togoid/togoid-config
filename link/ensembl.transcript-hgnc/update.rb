@@ -32,8 +32,8 @@ else
   LIMIT = "LIMIT 2"
 end
 
-STDERR.print "ENDPOINT: #{ENDPOINT}\n"
-STDERR.print "LIMIT: #{ENDPOINT}\n"
+STDERR.print "ENDPOINT #{ENDPOINT}\n"
+STDERR.print "#{LIMIT}\n"
 
 sparql = <<"EOS"
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

@@ -9,11 +9,12 @@ target:
   label: Gene Ontology
   prefix: http://purl.obolibrary.org/obo/
 link:
-  name: ro
-  label: functionally related to
-  prefix: http://purl.obolibrary.org/obo/
-  predicate: RO_0002328
   file: link.tsv
+  forward:
+    name: ro
+    label: functionally related to
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002328
 update:
   frequency: Monthly
   method: curl http://rest.genome.jp/link/go/ko | cut -f 1,2 | perl -pe 's/ko://; s/go:/GO_/' > link.tsv

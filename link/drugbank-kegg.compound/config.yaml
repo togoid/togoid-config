@@ -2,13 +2,13 @@ source:
   label: DrugBank
   type: Drug
   name: drugbank
-  prefix: http://identifiers.org/drugbank
+  prefix: http://identifiers.org/drugbank/
 
 target:
   label: KEGG Compound
   type: Chemical compound
   name: kegg.compound
-  prefix: http://bio2rdf.org/kegg.compound:
+  prefix: http://identifiers.org/kegg.compound/
 
 link:
   file: pair.tsv
