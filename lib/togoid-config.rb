@@ -1,13 +1,10 @@
-#!/usr/bin/env ruby
-
-require 'yaml'
-
 module TogoID
 
   class Node
-    attr_reader :ns, :label, :prefix
+    attr_reader :ns, :dt, :label, :prefix
     def initialize(hash)
       @ns = hash["namespace"]
+      @dt = hash["type"]
       @label = hash["label"]
       @prefix = hash["prefix"]
     end
@@ -39,7 +36,7 @@ module TogoID
       @method = hash["method"]
     end
 
-    def run(path)
+    def exec(path)
       Dir.chdir(path) do
         ENV['PATH'] = ".:#{ENV['PATH']}"
         system(@method)
@@ -48,7 +45,8 @@ module TogoID
   end
 
   class Config
-    def initialize(config_file, mode)
+    attr_reader :source, :target, :link, :update
+    def initialize(config_file)
       begin
         config = YAML.load(File.read(config_file))
         @path = File.dirname(config_file)
@@ -60,15 +58,10 @@ module TogoID
         puts error
         exit 1
       end
-      self.send(mode)
     end
 
     def triple(s, p, o)
       [s, p, o, "."].join("\t")
-    end
-
-    def check
-      pp self
     end
 
     def prefix
@@ -83,7 +76,7 @@ module TogoID
       puts
     end
 
-    def convert
+    def exec_convert
       prefix
       @link.files.each do |file|
         File.open("#{@path}/#{file}").each do |line|
@@ -94,22 +87,13 @@ module TogoID
       end
     end
 
-    def update
+    def exec_update
       @update.run(@path)
+    end
+
+    def exec_check
+      pp self
     end
   end
 
 end
-
-
-if __FILE__ == $0
-  yaml = ARGV.shift             # can be path/to/config.yaml or path/to
-  mode = ARGV.shift || "check"  # can be prefix, convert, or update
-
-  if File.directory?(yaml)
-    yaml += "/config.yaml"
-  end
-
-  TogoID::Config.new(yaml, mode)
-end
-

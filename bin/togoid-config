@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+#
+# Usage 
+#
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'yaml'
+require 'togoid-config'
+
+yaml = ARGV.shift             # can be path/to/config.yaml or path/to
+mode = ARGV.shift || "check"  # can be prefix, convert, or update
+
+if File.directory?(yaml)
+  yaml += "/config.yaml"
+end
+
+config = TogoID::Config.new(yaml)
+
+case mode
+when "convert"
+  config.exec_convert
+when "update"
+  config.exec_update
+else
+  config.exec_check
+end
+
+

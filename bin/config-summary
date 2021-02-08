@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+#
+# Usage: togoid-summary link/*/*.yaml
+#
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'yaml'
+require 'togoid-config'
+
+puts %w(db_pair s_ns s_type s_label s_prefix t_ns t_type t_label t_prefix f_ns f_label f_prefix f_pred r_ns r_label r_prefix r_pred u_freq u_method).join("\t")
+ARGV.each do |yaml|
+  begin
+    pair = File.basename(File.dirname(yaml))
+    c = TogoID::Config.new(yaml)
+    s = c.source
+    t = c.target
+    f = c.link.fwd
+    r = c.link.rev
+    u = c.update
+    puts [pair,
+          s.ns,
+          s.dt,
+          s.label,
+          s.prefix,
+          t.ns,
+          t.dt,
+          t.label,
+          t.prefix,
+          f.ns,
+          f.label,
+          f.prefix,
+          f.predicate,
+          (r ? r.ns : ''),
+          (r ? r.label : ''),
+          (r ? r.prefix : ''),
+          (r ? r.predicate : ''),
+          u.frequency,
+          u.method
+         ].join("\t")
+  rescue => error
+    puts [yaml, error].join("\t")
+    next
+  end
+end
+
+
+
