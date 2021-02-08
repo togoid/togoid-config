@@ -1,0 +1,25 @@
+source:
+  label: Human Protein Atlas
+  type: Protein
+  namespace: human.protein.atlas
+  prefix: http://www.proteinatlas.org/
+target:
+  label: Ensembl
+  type: Gene
+  namespace: ensembl
+  prefix: http://identifiers.org/ensembl/
+link:
+  file: link.tsv
+  forward:
+    namespace: obo
+    label: gene product of
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
+  reverse:
+    namespace: obo
+    label: has gene product
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002205
+update:
+  frequency:
+  method: update.rb --limit all > link.tsv
