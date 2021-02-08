@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 #
-# Usage 
+# Usage:
+#   Check config:
+#     togoid-config link/db1-db2/config.yaml
+#   Convert to RDF:
+#     togoid-config link/db1-db2/config.yaml convert
+#   Update link data:
+#     togoid-config link/db1-db2/config.yaml update
 #
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))

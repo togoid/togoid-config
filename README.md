@@ -74,15 +74,27 @@ Recommended to use Dublin Core™ Collection Description Frequency Vocabulary [D
 
 ## Usage
 
+To summarize all config settings, run the following command.
+
+```
+% ruby bin/config-summary link/*/config.yaml > config-summary.tsv
+```
+
+To check the syntax of the config YAML file, run the following command.
+
+```
+% ruby bin/togoid-config link/uniprot-hgnc/config.yaml
+```
+
 To update link data from the data source, run the following command.
 
 ```
-% ruby bin/togoid-config.rb link/uniprot-hgnc/config.yaml update
+% ruby bin/togoid-config link/uniprot-hgnc/config.yaml update
 ```
 
 To generate a RDF/Turtle file for the given link data, run the following command.
 
 ```
-% ruby bin/togoid-config.rb link/uniprot-hgnc/config.yaml convert > uniprot-hgnc.ttl
+% ruby bin/togoid-config link/uniprot-hgnc/config.yaml convert > uniprot-hgnc.ttl
 ```
 
