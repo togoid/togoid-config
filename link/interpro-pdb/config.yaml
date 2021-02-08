@@ -1,0 +1,25 @@
+source:
+  name: interpro
+  type: Protein family
+  label: InterPro
+  prefix: http://identifiers.org/interpro/
+target:
+  name: pdb
+  type: Protein structure
+  label: PDB
+  prefix: http://identifiers.org/pdb/
+link:
+  file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Bimonthly
+  method: update.sh PDB > pair.tsv
