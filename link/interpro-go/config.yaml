@@ -1,6 +1,6 @@
 source:
   name: interpro
-  type: Protein
+  type: Protein family
   label: InterPro
   prefix: http://identifiers.org/interpro/
 target:

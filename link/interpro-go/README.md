@@ -1,5 +1,3 @@
-# interpro_go
-
-- `type: Protein` としたが正確には Protein family など
+# interpro-go
 
 - predicate は uniprot-go と同じにしたが正しいか
