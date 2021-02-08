@@ -21,5 +21,5 @@ link:
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0040035
 update:
-  frequency: About four times a year
-  method: LIMIT=10000 update.sh > link.tsv
+  frequency: Quarterly
+  method: LIMIT=10000 ./update.sh > link.tsv
