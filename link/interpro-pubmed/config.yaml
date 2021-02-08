@@ -1,0 +1,20 @@
+source:
+  name: interpro
+  type: Protein family
+  label: InterPro
+  prefix: http://identifiers.org/interpro/
+target:
+  name: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://identifiers.org/pubmed/
+link:
+  file: pair.tsv
+  forward:
+    namespace: dcterms
+    label: references
+    prefix: http://purl.org/dc/terms/
+    predicate: references
+update:
+  frequency: Bimonthly
+  method: update.sh PUBMED > pair.tsv

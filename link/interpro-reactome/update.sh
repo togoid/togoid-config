@@ -1,0 +1,1 @@
+../interpro-pfam/update.sh
