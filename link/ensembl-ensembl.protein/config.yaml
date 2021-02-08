@@ -1,0 +1,25 @@
+source:
+  name: ensembl
+  type: Gene
+  label: Ensembl
+  prefix: http://identifiers.org/ensembl/
+target:
+  name: ensembl.protein
+  type: Protein
+  label: Ensembl Protein
+  prefix: http://identifiers.org/omim/
+link:
+  file: link.tsv
+  forward:
+    label: has gene product
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002205
+  reverse:
+    label: gene product of
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
+update:
+  frequency: Quarterly
+  method: update.rb --limit all > link.tsv
