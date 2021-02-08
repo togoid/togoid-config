@@ -21,7 +21,7 @@ end
 if params["endpoint"]
   ENDPOINT = params["endpoint"]
 else
-  ENDPOINT = 'https://integbio.jp/rdf/misc/sparql'
+  ENDPOINT = 'https://integbio.jp/rdf/protein-atlas/sparql'
 end
 
 if params["limit"] == "all"
@@ -36,28 +36,19 @@ STDERR.print "ENDPOINT #{ENDPOINT}\n"
 STDERR.print "#{LIMIT}\n"
 
 sparql = <<"EOS"
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX taxon: <http://identifiers.org/taxonomy/>
-PREFIX sio: <http://semanticscience.org/resource/>
-PREFIX identifiers: <http://identifiers.org/>
-PREFIX rhea: <http://rdf.rhea-db.org/>
+PREFIX : <http://www.proteinatlas.org/about/nanopubs/>
+PREFIX hpa: <http://www.proteinatlas.org/>
+PREFIX tissue: <http://purl.obolibrary.org/obo/caloha.obo#>
+PREFIX np: <http://www.nanopub.org/nschema#>
+PREFIX bfo: <http://purl.obolibrary.org/obo/>
+PREFIX nif: <http://ontology.neuinfo.org/NIF/Backend/NIF-Quality.owl#>
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 
-SELECT ?rhea_acc ?reactome_id
-FROM <http://integbio.jp/rdf/mirror/rhea>
+SELECT DISTINCT ?hpa_id ?ensembl_id
 WHERE {
-  {
-    ?rhea rdfs:subClassOf rhea:Reaction
-  } UNION {
-    ?rhea rdfs:subClassOf rhea:DirectionalReaction
-  } UNION {
-    ?rhea rdfs:subClassOf rhea:BidirectionalReaction
-  }
-  ?rhea rhea:accession ?rhea_acc ;
-        rdfs:seeAlso ?reactome .
-  FILTER(REGEX(?reactome, "reactome"))
-  BIND(STRAFTER(str(?reactome), "reactome/") AS ?reactome_id)
+  ?hpa a wp:GeneProduct
+  BIND(STRAFTER(str(?hpa), "org/") AS ?hpa_id)
+  BIND(?hpa_id AS ?ensembl_id)
 }
 #{LIMIT}
 EOS
@@ -65,6 +56,5 @@ EOS
 #STDERR.print "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query=#{sparql_1.gsub("\n", " ")}\' #{ENDPOINT}| tail +2 | tr -d '\"'\n"
 
 result, status = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql.gsub("\n", " ")}' #{ENDPOINT}| tail +2 | tr -d '\"'")
-
 puts result
 

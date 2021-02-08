@@ -1,13 +1,13 @@
 source:
-  namespace: chembl.compound
-  type: Compound
+  namespace: chembl
+  type: Chemical compound
   label: ChEMBL compound
   prefix: http://identifiers.org/chembl.compound/
 target:
-  namespace: uniprot
+  namespace: chembl.target
   type: Protein
-  label: UniProt
-  prefix: http://purl.uniprot.org/uniprot/
+  label: ChEMBL target
+  prefix: http://identifiers.org/chembl.target/
 link:
   file: pair.tsv
   forward:
