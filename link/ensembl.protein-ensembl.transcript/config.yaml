@@ -22,5 +22,5 @@ link:
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002513
 update:
-  frequency: About four times a year
+  frequency: Quarterly
   method: update.rb --limit all > link.tsv
