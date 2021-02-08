@@ -36,7 +36,7 @@ module TogoID
       @method = hash["method"]
     end
 
-    def exec(path)
+    def run(path)
       Dir.chdir(path) do
         ENV['PATH'] = ".:#{ENV['PATH']}"
         system(@method)
