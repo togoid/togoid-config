@@ -1,18 +1,18 @@
 source:
-  name: ko
-  type: Ortholog
   label: KEGG Orthology
+  type: Ortholog
+  namespace: ko
   prefix: http://identifiers.org/kegg.orthology/
 target:
-  name: go
-  type: Function
   label: Gene Ontology
+  type: Function
+  namespace: go
   prefix: http://purl.obolibrary.org/obo/
 link:
   file: link.tsv
   forward:
-    name: ro
     label: functionally related to
+    namespace: ro
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002328
 update:
