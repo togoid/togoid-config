@@ -1,5 +1,5 @@
 # Thread limit of SPARQL query
-our $THREAD_LIMIT = 10;
+our $THREAD_LIMIT = 5;
 
 # Endpoint 
 our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
