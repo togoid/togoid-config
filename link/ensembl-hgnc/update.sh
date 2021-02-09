@@ -2,7 +2,9 @@
 
 ENDPOINT='https://integbio.jp/rdf/ebi/sparql'
 
-printf 'ENDPOINT: %s \n' ${ENDPOINT}
+if ["${LIMIT}" = ""]; then
+  LIMIT=10
+fi
 
 cat - << EOS > sparql.rq
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -22,5 +24,5 @@ WHERE {
 }
 EOS
 
-echo "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/ebi/sparql | tail +2 | tr -d '\"' > ./pair.tsv"
-curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail +2 | tr -d '"'
+echo "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/ebi/sparql | tail -n +2 | tr -d '\"' > ./pair.tsv"
+curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail -n +2 | tr -d '"'
