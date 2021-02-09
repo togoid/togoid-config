@@ -13,7 +13,7 @@ cd ../interpro-pfam
 if [ ! -e $IPR_ALL_PAIRS_FILE ]; then
     wget ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro.xml.gz
     gunzip interpro.xml.gz
-    python3 interpro_xml_parse.py interpro.xml > $IPR_ALL_PAIRS_FILE
+    python interpro_xml_parse.py interpro.xml > $IPR_ALL_PAIRS_FILE
 fi
 
 cd $DIR
