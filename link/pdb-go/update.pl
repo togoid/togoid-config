@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# 20210204 moriya
+# 20210209 moriya
 # 20210203 moriya
 
 # 1. 生物種リストをSPARQLで取得して、種毎にIDリストをSPARQLで並列に取得
@@ -8,14 +8,20 @@
 # 2. ターゲットリストをSPARQLで取得して、ターゲット毎にIDリストをSPARQLで並列に取得
 #   - ターゲットが Ontology や Ortholog group のように種類が限られている時に
 #   - e.g. uniprot-pfam/update_params.pl
+#
 # SPARQLクエリやprefix、並列スレッド数は update_params.pl に記述
-# usage: update.pl > pair.tsv 2> log
+#   - Opt. '-t [integer]': スレッド数を強制指定
+#
+# Usage: update.pl > pair.tsv (-t [integer])
 #   - 終了時 log ファイルが log.bk になっていれば正常終了
-#      - endpoint の出力 limit を超えた場合に未対応（正常応答になるため）
-#      - 'x-sparql-maxrows' header は virtuoso は返すが、SPARQL-proxyは返さない。他のトリプルストアも不明
 #   - fetch error などで log ファイル残っている場合
-#     update.pl >> pair.tsv 2>> log で途中から再開して追記
+#     update.pl >> pair.tsv で途中から再開して追記
+#
+# Endpoint の結果の Limit を判定
+#   - binsings 数が 10000 で割り切れたら Limit かもしれないので limit, offset, order で回し直す
+#     ('x-sparql-maxrows' header は virtuoso は返すが、SPARQL-proxyは返さない。他のトリプルストアも不明)
 
+use Getopt::Std;
 use JSON;
 use URI::Escape;
 use LWP::UserAgent;
@@ -24,6 +30,10 @@ use Thread::Semaphore;
 use threads::shared;
 
 require './update_params.pl';
+
+my %OPT;
+getopts('t:', \%OPT);
+$THREAD_LIMIT = $OPT{t} if ($OPT{t});
 
 # for resume
 our %LOG;
@@ -37,15 +47,13 @@ if (-f "./log") {
     close DATA;
 }
 
-our $LOOPC : shared = 0;
-our $THREAD_COUNT : shared = 0;
-$| = 1;
+# varables for threads
+$| = 1;  # 標準出力のコマンドバッファリング有効
 our $SEMA = new Thread::Semaphore($THREAD_LIMIT);
- 
 my %th;
 
 # get taxonomy list
-my $json = &get("?query=".uri_escape($QUERY_TAX), "First-query:");
+my $json = &get($QUERY_TAX, "First-query:");
 
 # make threads
 for my $id (0 .. $#{$json->{results}->{bindings}}) {
@@ -57,15 +65,18 @@ for (0 .. $#{$json->{results}->{bindings}}) {
 }
 
 # finish flag
-system("mv ./log ./log.bk") if(-f "./log");
+my $e = `grep error ./log|wc -l`;
+if ($e >= 1) {
+    print STDERR "Error: refer to './log'\n";
+} else {
+    system("mv ./log ./log.bk") if(-f "./log");
+}
 
 # run threads
 sub run {
     my ($id, $d, $sema) = @_;
     
-    $sema->down();   
-    {lock $THREAD_COUNT; $THREAD_COUNT++;}
-    {lock $LOOPC; $LOOPC++;}
+    $sema->down(); # thread 数専有
 
     my $uri;
     my $taxon = 0;
@@ -78,7 +89,7 @@ sub run {
     } elsif ($d->{target}) {
 	$uri = $d->{target}->{value};
     } else {
-	print STDERR "First SPARQL result needs ?org or ?tax or ?target.\n";
+	&log("First SPARQL result needs ?org or ?tax or ?target.\n");
 	exit 0;
     }
 
@@ -92,44 +103,77 @@ sub run {
 	$tmp_id = "target:".$tmp_id;
 	$query_main =~ s/__TARGET__/${uri}/;
     }
-    return 0 if ($LOG{$tmp_id});  # for resume
     
     # get ID list
-    my $json = &get("?query=".uri_escape($query_main), $tmp_id);
-
-    threads::yield();
+    my $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
     
-    {lock $THREAD_COUNT; $THREAD_COUNT--;}
-    $sema->up();
-
-    foreach my $el (@{$json->{results}->{bindings}}) {
-	$el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
-	$el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
-	print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
+    if ($json->{results} && !$LOG{$tmp_id}) {  # for resume
+	foreach my $el (@{$json->{results}->{bindings}}) {
+	    $el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
+	    $el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
+	    print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
+	}
     }
-    print STDERR $tmp_id, "\t", $#{$json->{results}->{bindings}} + 1, "\n";
+    &log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
+    
+    $sema->up(); # thread 数解放
 }
 
 sub get {
+    my ($query, $tmp_id) = @_;
+
+    my $json = &get_req("?query=".uri_escape($query), $tmp_id);
+    return 0 if (!$json) ;
+    
+    ## Endpoint result-limit check
+    if (($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
+	my $limit = $#{$json->{results}->{bindings}} + 1;
+	@{$json->{results}->{bindings}} = [];
+	# get with limit, offset & order
+	my $order = "?source";
+	$order = "?org ?tax ?target" if ($tmp_id eq "First-query:");
+	while (($#{$json->{results}->{bindings}} + 1) == $limit) {
+	    my $offset = $loop * $limit;
+	    my $page = &get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
+	    return 0 if (!$page) ;
+	    push(@{$json->{results}->{bindings}}, @{$page->{results}->{bindings}});
+	}
+    }
+    return $json;
+}
+
+sub get_req {
     my ($params, $e) = @_;
     
     my $ua = LWP::UserAgent->new;
     
-    my $srj = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json') -> content;
+    my $res = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json');
+    my $err = "";
     eval {
-	decode_json($srj);
+	decode_json($res -> content);
 	1
     } or do {
-	$srj = $ua -> get($EP_MIRROR.$params, 'Accept' => 'application/sparql-results+json') -> content if ($EP_MIRROR);
+	$err .= "Endpoint ".$EP." : ".$res -> status_line."; ";
+	$res = $ua -> get($EP_MIRROR.$params, 'Accept' => 'application/sparql-results+json') if ($EP_MIRROR);
     };
 
     eval {
-	decode_json($srj);
+	decode_json($res -> content);
 	1
     } or do {
-	print STDERR $e, "\tFetch error.\n";
-	exit 0;
+	$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
+	&log($e."\tFetch error: ".$err."\n");
+	print STDERR $e, "\tFetch error: ", $err, "\n";
+	return 0;
     };
     
-    return decode_json($srj);
+    return decode_json($res -> content);
+}
+
+sub log{
+    my $err = $_[0];
+    open(my $fh, ">> ./log");
+    flock $fh, LOCK_EX;
+    print $fh $err;
+    close $fh;
 }
