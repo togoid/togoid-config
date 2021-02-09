@@ -32,8 +32,8 @@ else
   LIMIT = "LIMIT 2"
 end
 
-STDERR.print "ENDPOINT #{ENDPOINT}\n"
-STDERR.print "#{LIMIT}\n"
+STDERR.print "ENDPOINT #{ENDPOINT}\n" if $DEBUG
+STDERR.print "#{LIMIT}\n"             if $DEBUG
 
 sparql = <<"EOS"
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -62,9 +62,11 @@ WHERE {
 #{LIMIT}
 EOS
 
-#STDERR.print "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query=#{sparql_1.gsub("\n", " ")}\' #{ENDPOINT}| tail +2 | tr -d '\"'\n"
+#STDERR.print "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query=#{sparql_1.gsub("\n", " ")}\' #{ENDPOINT}| tail -n +2 | tr -d '\"'\n"
 
-result, status = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql.gsub("\n", " ")}' #{ENDPOINT}| tail +2 | tr -d '\"'")
+result, status = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql.gsub("\n", " ")}' #{ENDPOINT}| tail -n +2 | tr -d '\"'")
+
+STDERR.print "#{status}\n" if $DEBUG
 
 puts result
 
