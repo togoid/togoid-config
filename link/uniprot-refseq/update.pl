@@ -57,7 +57,8 @@ my $json = &get($QUERY_TAX, "First-query:");
 
 # make threads
 for my $id (0 .. $#{$json->{results}->{bindings}}) {
-    $th{$id} = new threads(\&run, $id, ${$json->{results}->{bindings}}[$id], $SEMA);
+    $SEMA->down(); # thread 数専有
+    $th{$id} = threads->new(\&run, $id, ${$json->{results}->{bindings}}[$id]);
 }
 
 for (0 .. $#{$json->{results}->{bindings}}) {
@@ -74,9 +75,7 @@ if ($e >= 1) {
 
 # run threads
 sub run {
-    my ($id, $d, $sema) = @_;
-    
-    $sema->down(); # thread 数専有
+    my ($id, $d) = @_;
 
     my $uri;
     my $taxon = 0;
@@ -89,7 +88,7 @@ sub run {
     } elsif ($d->{target}) {
 	$uri = $d->{target}->{value};
     } else {
-	&log("First SPARQL result needs ?org or ?tax or ?target.\n");
+	&log("SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n");
 	exit 0;
     }
 
@@ -105,7 +104,8 @@ sub run {
     }
     
     # get ID list
-    my $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
+    my $json = 0;
+    $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
     
     if ($json->{results} && !$LOG{$tmp_id}) {  # for resume
 	foreach my $el (@{$json->{results}->{bindings}}) {
@@ -116,7 +116,7 @@ sub run {
     }
     &log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     
-    $sema->up(); # thread 数解放
+    $SEMA->up(); # thread 数解放
 }
 
 sub get {
