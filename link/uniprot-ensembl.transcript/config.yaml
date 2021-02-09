@@ -22,4 +22,4 @@ link:
     predicate: RO_0002513 
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv 2> log
+  method: update.pl > pair.tsv
