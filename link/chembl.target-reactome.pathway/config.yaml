@@ -1,0 +1,25 @@
+source:
+  namespace: chembl.target
+  type: Protein
+  label: ChEMBL target
+  prefix: http://identifiers.org/chembl.target/
+
+target:
+  label: reactome.pathway
+  type: Pathway
+  name: Reactome Pathway
+  prefix: http://identifiers.org/reactome/
+
+link:
+  file: pair.tsv
+
+  forward:
+    namespace: rdfs
+    label: Protein2Pathway
+    # Sparqlクエリでこの述語を用いて検索しているため、そのまま流用した
+    prefix: http://rdf.ebi.ac.uk/terms/chembl#
+    predicate: targetCmptXref
+
+update:
+  frequency: Monthly
+  method: https://is.gd/alncsZ

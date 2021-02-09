@@ -1,0 +1,26 @@
+source:
+  namespace: chembl.target
+  type: Protein
+  label: ChEMBL target
+  prefix: http://identifiers.org/chembl.target/
+
+target:
+  label: Ensembl ENSG
+  type: Gene
+  name: Ensembl ENSG
+  prefix: http://identifiers.org/ensembl/
+
+link:
+  file: pair.tsv
+
+  forward:
+    namespace: rdfs
+    label: Protein2Gene
+    #Sparqlクエリに合わせてこのprefix/predicateにしたが、タンパク質→遺伝子ならもっと適切なものが絶対あると思う。
+    #Sparqlクエリに合わせるのか、ROからsource ofみたいなのを見つけて当てがうか、どちらがいいのか。
+    prefix: http://rdf.ebi.ac.uk/terms/chembl#
+    predicate: targetCmptXref
+
+update:
+  frequency: Monthly
+  method: https://is.gd/dGwEnj

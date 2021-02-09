@@ -1,0 +1,24 @@
+source:
+  namespace: chembl.target
+  type: Protein
+  label: ChEMBL target
+  prefix: http://identifiers.org/chembl.target/
+
+target:
+  label: InterPro
+  type: Protein
+  name: InterPro
+  prefix: http://identifiers.org/interpro/
+
+link:
+  file: pair.tsv
+
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+
+update:
+  frequency: Monthly
+  method: https://is.gd/pS9Dcd
