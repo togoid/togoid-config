@@ -126,7 +126,7 @@ sub get {
     return 0 if (!$json) ;
     
     ## Endpoint result-limit check
-    if (($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
+    if (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
 	my $limit = $#{$json->{results}->{bindings}} + 1;
 	@{$json->{results}->{bindings}} = ();
 	# get with limit, offset & order
