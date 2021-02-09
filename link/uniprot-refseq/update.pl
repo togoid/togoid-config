@@ -128,7 +128,7 @@ sub get {
     ## Endpoint result-limit check
     if (($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
 	my $limit = $#{$json->{results}->{bindings}} + 1;
-	@{$json->{results}->{bindings}} = [];
+	@{$json->{results}->{bindings}} = ();
 	# get with limit, offset & order
 	my $order = "?source";
 	$order = "?org ?tax ?target" if ($tmp_id eq "First-query:");
