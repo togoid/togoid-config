@@ -1,0 +1,24 @@
+source:
+  label: DrugBank
+  type: Drug
+  name: drugbank
+  prefix: http://identifiers.org/drugbank
+
+target:
+  label: PubMed
+  type: 
+  name: pubmed
+  prefix: http://bio2rdf.org/pubmed:
+
+link:
+  file: pair.tsv
+
+  forward:
+    label: PubMed ID
+    name: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_HOM0002558  # has evidence
+
+update:
+  frequency: Monthly
+  method: wget https://go.drugbank.com/releases/5-1-8/downloads/all-full-database; unzip all-full-database; python3 make_pairs.py

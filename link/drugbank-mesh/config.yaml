@@ -1,0 +1,24 @@
+source:
+  label: DrugBank
+  type: Drug
+  name: drugbank
+  prefix: http://identifiers.org/drugbank
+
+target:
+  label: MeSH
+  type: 
+  name: mesh
+  prefix: http://id.nlm.nih.gov/mesh/
+
+link:
+  file: pair.tsv
+
+  forward:
+    label: MeSH ID
+    name: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0001018  # contained in
+
+update:
+  frequency: Monthly
+  method: wget https://go.drugbank.com/releases/5-1-8/downloads/all-full-database; unzip all-full-database; python3 make_pairs.py

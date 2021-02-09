@@ -1,0 +1,24 @@
+source:
+  label: DrugBank
+  type: Drug
+  name: drugbank
+  prefix: http://identifiers.org/drugbank
+
+target:
+  label: The Human Metabolome Database
+  type: Chemical Compound
+  name: hmdb
+  prefix: http://identifiers.org/hmdb
+
+link:
+  file: pair.tsv
+
+  forward:
+    label: HMDB ID
+    name: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_HOM0000071  # in homotopy relationship with
+
+update:
+  frequency: Monthly
+  method: wget https://go.drugbank.com/releases/5-1-8/downloads/all-full-database; unzip all-full-database; python3 make_pairs.py
