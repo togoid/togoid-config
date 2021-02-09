@@ -48,8 +48,7 @@ if (-f "./log") {
 }
 
 # varables for threads
-our $THREAD_COUNT : shared = 0;
-$| = 1;
+$| = 1;  # 標準出力のコマンドバッファリング有効
 our $SEMA = new Thread::Semaphore($THREAD_LIMIT);
 my %th;
 
@@ -66,14 +65,18 @@ for (0 .. $#{$json->{results}->{bindings}}) {
 }
 
 # finish flag
-system("mv ./log ./log.bk") if(-f "./log");
+my $e = `grep error ./log|wc -l`;
+if ($e >= 1) {
+    print STDERR "Error: refer to './log'\n";
+} else {
+    system("mv ./log ./log.bk") if(-f "./log");
+}
 
 # run threads
 sub run {
     my ($id, $d, $sema) = @_;
     
-    $sema->down();   
-    {lock $THREAD_COUNT; $THREAD_COUNT++;}
+    $sema->down(); # thread 数専有
 
     my $uri;
     my $taxon = 0;
@@ -100,29 +103,27 @@ sub run {
 	$tmp_id = "target:".$tmp_id;
 	$query_main =~ s/__TARGET__/${uri}/;
     }
-
+    
     # get ID list
     my $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
-    threads::yield();
     
-    {lock $THREAD_COUNT; $THREAD_COUNT--;}
-    $sema->up();
-
-    if (!$LOG{$tmp_id}) {  # for resume
+    if ($json->{results} && !$LOG{$tmp_id}) {  # for resume
 	foreach my $el (@{$json->{results}->{bindings}}) {
-	    next if (!$el->{source} || !$el->{source}->{value} || !$el->{target} || !$el->{target}->{value});
 	    $el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
 	    $el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
 	    print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
 	}
-	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
+    &log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
+    
+    $sema->up(); # thread 数解放
 }
 
 sub get {
     my ($query, $tmp_id) = @_;
 
     my $json = &get_req("?query=".uri_escape($query), $tmp_id);
+    return 0 if (!$json) ;
     
     ## Endpoint result-limit check
     if (($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
@@ -134,6 +135,7 @@ sub get {
 	while (($#{$json->{results}->{bindings}} + 1) == $limit) {
 	    my $offset = $loop * $limit;
 	    my $page = &get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
+	    return 0 if (!$page) ;
 	    push(@{$json->{results}->{bindings}}, @{$page->{results}->{bindings}});
 	}
     }
@@ -162,7 +164,7 @@ sub get_req {
 	$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
 	&log($e."\tFetch error: ".$err."\n");
 	print STDERR $e, "\tFetch error: ", $err, "\n";
-	exit 0;
+	return 0;
     };
     
     return decode_json($res -> content);
