@@ -102,21 +102,15 @@ sub run {
 	$tmp_id = "target:".$tmp_id;
 	$query_main =~ s/__TARGET__/${uri}/;
     }
-    if ($LOG{$tmp_id}) {  # for resume
-	threads::yield();
-	{lock $THREAD_COUNT; $THREAD_COUNT--;}
-	$sema->up();
-	return 0;
-    } else {
-	# get ID list
-	my $json = &get($query_main, $tmp_id);
-	threads::yield();
-	
-	{lock $THREAD_COUNT; $THREAD_COUNT--;}
-	$sema->up();
-    }
+
+    # get ID list
+    my $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
+    threads::yield();
     
-    print STDERR $id, "\t", $tmp_id, "\n";
+    {lock $THREAD_COUNT; $THREAD_COUNT--;}
+    $sema->up();
+
+    return 0 if ($LOG{$tmp_id});  # for resume
 
     foreach my $el (@{$json->{results}->{bindings}}) {
 	next if (!$el->{source} || !$el->{source}->{value} || !$el->{target} || !$el->{target}->{value});
