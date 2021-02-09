@@ -48,7 +48,6 @@ if (-f "./log") {
 }
 
 # varables for threads
-our $LOOPC : shared = 0;
 our $THREAD_COUNT : shared = 0;
 $| = 1;
 our $SEMA = new Thread::Semaphore($THREAD_LIMIT);
@@ -75,7 +74,6 @@ sub run {
     
     $sema->down();   
     {lock $THREAD_COUNT; $THREAD_COUNT++;}
-    {lock $LOOPC; $LOOPC++;}
 
     my $uri;
     my $taxon = 0;
@@ -110,15 +108,15 @@ sub run {
     {lock $THREAD_COUNT; $THREAD_COUNT--;}
     $sema->up();
 
-    return 0 if ($LOG{$tmp_id});  # for resume
-
-    foreach my $el (@{$json->{results}->{bindings}}) {
-	next if (!$el->{source} || !$el->{source}->{value} || !$el->{target} || !$el->{target}->{value});
-	$el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
-	$el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
-	print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
+    if (!$LOG{$tmp_id}) {  # for resume
+	foreach my $el (@{$json->{results}->{bindings}}) {
+	    next if (!$el->{source} || !$el->{source}->{value} || !$el->{target} || !$el->{target}->{value});
+	    $el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
+	    $el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
+	    print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
+	}
+	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
-    &log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
 }
 
 sub get {
