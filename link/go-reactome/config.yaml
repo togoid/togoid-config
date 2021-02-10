@@ -1,0 +1,25 @@
+source:
+  namespace: go
+  type: Function
+  label: Gene Ontology
+  prefix: http://purl.obolibrary.org/obo/
+target:
+  namespace: reactome
+  type: Pathway
+  label: Reactome
+  prefix: http://identifiers.org/reactome/
+link:
+  file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Monthly
+  method: sparql.rq
