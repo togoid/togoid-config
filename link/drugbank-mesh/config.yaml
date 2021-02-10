@@ -1,13 +1,13 @@
 source:
+  namespace: drugbank
   label: DrugBank
   type: Drug
-  name: drugbank
   prefix: http://identifiers.org/drugbank
 
 target:
+  namespace: mesh
   label: MeSH
   type: 
-  name: mesh
   prefix: http://id.nlm.nih.gov/mesh/
 
 link:
