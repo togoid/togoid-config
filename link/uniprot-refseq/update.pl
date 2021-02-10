@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# 20210209 moriya
+# 20210210 moriya
 # 20210203 moriya
 
 # 1. 生物種リストをSPARQLで取得して、種毎にIDリストをSPARQLで並列に取得
@@ -56,13 +56,12 @@ my %th;
 my $json = &get($QUERY_TAX, "First-query:");
 
 # make threads
-for my $id (0 .. $#{$json->{results}->{bindings}}) {
-    $SEMA->down(); # thread 数専有
-    $th{$id} = threads->new(\&run, $id, ${$json->{results}->{bindings}}[$id]);
+foreach my $d (@{$json->{results}->{bindings}}) {
+    $SEMA->down();             # thread 数専有
+    threads->new(\&run, $d);
 }
-
-for (0 .. $#{$json->{results}->{bindings}}) {
-    $th{$_}->join();
+foreach my $thr (threads->list){
+    $thr->join;
 }
 
 # finish flag
@@ -75,7 +74,7 @@ if ($e >= 1) {
 
 # run threads
 sub run {
-    my ($id, $d) = @_;
+    my ($d) = @_;
 
     my $uri;
     my $taxon = 0;
@@ -116,6 +115,7 @@ sub run {
 	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
     
+    threads->detach();
     $SEMA->up(); # thread 数解放
 }
 
@@ -124,7 +124,7 @@ sub get {
 
     my $json = &get_req("?query=".uri_escape($query), $tmp_id);
     return 0 if (!$json) ;
-    
+
     ## Endpoint result-limit check
     if (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
 	my $limit = $#{$json->{results}->{bindings}} + 1;
@@ -134,11 +134,13 @@ sub get {
 	$order = "?org ?tax ?target" if ($tmp_id eq "First-query:");
 	while (($#{$json->{results}->{bindings}} + 1) == $limit) {
 	    my $offset = $loop * $limit;
-	    my $page = &get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
+	    my $page =&get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
 	    return 0 if (!$page) ;
 	    push(@{$json->{results}->{bindings}}, @{$page->{results}->{bindings}});
+	    undef $page;
 	}
     }
+    
     return $json;
 }
 
@@ -166,7 +168,7 @@ sub get_req {
 	print STDERR $e, "\tFetch error: ", $err, "\n";
 	return 0;
     };
-    
+
     return decode_json($res -> content);
 }
 
