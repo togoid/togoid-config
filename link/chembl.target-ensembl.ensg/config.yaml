@@ -7,7 +7,7 @@ source:
 target:
   label: Ensembl ENSG
   type: Gene
-  name: Ensembl ENSG
+  namespace: Ensembl ENSG
   prefix: http://identifiers.org/ensembl/
 
 link:
