@@ -1,13 +1,13 @@
 source:
   namespace: chembl.target
-  type: Protein
   label: ChEMBL target
+  type: Protein
   prefix: http://identifiers.org/chembl.target/
 
 target:
+  namespace: pdb
   label: PDB
   type: Protein
-  name: PDB
   prefix: http://identifiers.org/pdb/
 
 link:
