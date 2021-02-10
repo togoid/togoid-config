@@ -1,13 +1,13 @@
 source:
+  namespace: drugbank
   label: DrugBank
   type: Drug
-  name: drugbank
   prefix: http://identifiers.org/drugbank
 
 target:
+  namespace: chemble
   label: ChEMBL
   type: Chemical compound
-  name: chemble
   prefix: http://rdf.ebi.ac.uk/terms/chembl#
 
 link:
