@@ -60,9 +60,11 @@ foreach my $d (@{$json->{results}->{bindings}}) {
     $SEMA->down();             # thread 数専有
     threads->new(\&run, $d);
 }
+=pos
 foreach my $thr (threads->list){
-    $thr->join;
+    $thr->join;  # join してもクリーンナップ(メモリ解放)されないので detach する
 }
+=cut
 
 # finish flag
 my $e = `grep error ./log|wc -l`;
@@ -115,7 +117,7 @@ sub run {
 	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
     
-    threads->detach();
+    threads->detach(); # thread の終了とクリーンナップ
     $SEMA->up(); # thread 数解放
 }
 
