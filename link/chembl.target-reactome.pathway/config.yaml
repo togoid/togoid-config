@@ -1,13 +1,13 @@
 source:
   namespace: chembl.target
-  type: Protein
   label: ChEMBL target
+  type: Protein
   prefix: http://identifiers.org/chembl.target/
 
 target:
-  label: reactome.pathway
+  namespace: reactome.pathway
+  label: Reactome Pathway
   type: Pathway
-  name: Reactome Pathway
   prefix: http://identifiers.org/reactome/
 
 link:
