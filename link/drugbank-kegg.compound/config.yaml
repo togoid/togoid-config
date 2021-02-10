@@ -1,13 +1,13 @@
 source:
+  namespace: drugbank
   label: DrugBank
   type: Drug
-  name: drugbank
   prefix: http://identifiers.org/drugbank/
 
 target:
+  namespace: kegg.compound
   label: KEGG Compound
   type: Chemical compound
-  name: kegg.compound
   prefix: http://identifiers.org/kegg.compound/
 
 link:
