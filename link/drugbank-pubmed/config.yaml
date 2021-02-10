@@ -1,21 +1,21 @@
 source:
+  namespace: drugbank
   label: DrugBank
   type: Drug
-  name: drugbank
   prefix: http://identifiers.org/drugbank
 
 target:
+  namespace: pubmed
   label: PubMed
   type: 
-  name: pubmed
   prefix: http://bio2rdf.org/pubmed:
 
 link:
   file: pair.tsv
 
   forward:
+    namespace: pubmed.id
     label: PubMed ID
-    name: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_HOM0002558  # has evidence
 
