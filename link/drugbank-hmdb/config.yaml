@@ -1,13 +1,13 @@
 source:
+  namespace: drugbank
   label: DrugBank
   type: Drug
-  name: drugbank
   prefix: http://identifiers.org/drugbank
 
 target:
+  namespace: hmdb
   label: The Human Metabolome Database
   type: Chemical Compound
-  name: hmdb
   prefix: http://identifiers.org/hmdb
 
 link:
