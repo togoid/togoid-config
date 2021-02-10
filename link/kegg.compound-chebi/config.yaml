@@ -26,4 +26,4 @@ link:
 
 update:
   frequency: Quarterly
-  method:  python3 make_pairs.py -n 100
+  method:  python3 make_pairs.py 
