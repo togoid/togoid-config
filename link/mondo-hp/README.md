@@ -1,6 +1,6 @@
-Bashを動かすと、IDのデータが取れると思います。
-エンドポイントはミラーを利用しています。
-
+- Bashを動かすと、IDのデータが取れると思います。
+- エンドポイントはミラーを利用しています。
+```
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
@@ -11,3 +11,4 @@ WHERE {
   ?s oboInOwl:hasDbXref ?id.
    FILTER(contains(?id,'HP'))
         }
+```
