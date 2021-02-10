@@ -1,13 +1,13 @@
 source:
+  namespace: drugbank
   label: DrugBank
   type: Drug
-  name: drugbank
   prefix: http://identifiers.org/drugbank
 
 target:
+  namespace: pdb
   label: Protein Data Bank
   type: Protein
-  name: pdb
   prefix: https://rdf.wwpdb.org/pdb/
 
 link:
