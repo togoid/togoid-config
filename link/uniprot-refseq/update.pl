@@ -113,8 +113,8 @@ sub run {
 	    $el->{target}->{value} =~ s/^${TARGET_REGEX}$/$1/;
 	    print $el->{source}->{value}, "\t", $el->{target}->{value}, "\n";
 	}
+	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
-    &log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     
     $SEMA->up(); # thread 数解放
 }
