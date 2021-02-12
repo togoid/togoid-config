@@ -1,0 +1,25 @@
+source:
+  namespace: nando
+  type: Disease
+  label: NANDO
+  prefix: http://purl.obolibrary.org/obo/
+target: http://nanbyodata.jp/ontology/nando#
+  namespace: omim
+  type: Disease
+  label: KEGG DISEASE
+  prefix: http://identifiers.org/kegg.disease/
+link:
+  file: link.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: 
+  method: update.rb --limit all --endpoint https://integbio.jp/rdf/sparql > link.tsv
