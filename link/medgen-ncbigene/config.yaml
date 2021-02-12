@@ -1,0 +1,25 @@
+source:
+  namespace: medgen
+  type: Disease
+  label: MedGen
+  prefix: http://identifiers.org/medgen/
+target:
+  namespace: ncbigene
+  type: Gene
+  label: NCBI Gene
+  prefix: http://identifiers.org/ncbigene/
+link:
+  file: link.tsv
+  forward:
+    namespace: obo
+    label: disease has basis in
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0004019
+  reverse:
+    namespace: obo
+    label: causes or contributes to condition
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0003302
+update:
+  frequency: 
+  method: update.rb --limit all --endpoint https://integbio.jp/rdf/sparql > link.tsv
