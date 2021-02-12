@@ -2,8 +2,8 @@ source:
   namespace: nando
   type: Disease
   label: NANDO
-  prefix: http://purl.obolibrary.org/obo/
-target: http://nanbyodata.jp/ontology/nando#
+  prefix: http://nanbyodata.jp/ontology/nando#
+target:
   namespace: omim
   type: Disease
   label: KEGG DISEASE
