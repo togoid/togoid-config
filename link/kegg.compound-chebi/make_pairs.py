@@ -3,8 +3,16 @@
 import csv
 import json
 import re
+import argparse
 from SPARQLWrapper import SPARQLWrapper
 
+# 出力ファイル名とサンプル数を引数にする
+parser = argparse.ArgumentParser()
+parser.add_argument('-n', type=int, default=0, help='サンプルの数。0：全部')
+parser.add_argument('--filename',  default='pairs.tsv', help='出力ファイル名')
+args = parser.parse_args()
+filename=args.filename
+n=args.n
 # エンドポイント
 KEGG_Endpoint='https://www.genome.jp/sparql/linkdb'
 
@@ -33,9 +41,10 @@ kegg_sparql = SPARQLWrapper(endpoint=KEGG_Endpoint, returnFormat='json')
 kegg_sparql.setQuery(query)
 results = kegg_sparql.query().convert()['results']['bindings']
 
+if n==0:
+    n=len(results)
 
 
-with open('pairs.tsv', 'w') as f:
-    # for r in results[:100]:  # 全部
-    for r in results[:100]:  # サンプル100個
-        print(r['fromlabel']['value'].replace('cpd:',''),r['tolabel']['value'].replace('chebi:','CHEBI:'),sep='\t',file=f)
+with open(filename, "w") as f:
+    for r in results[:n]:
+        print(r['fromlabel']['value'].replace('cpd:',''), r['tolabel']['value'].replace('chebi:','CHEBI:'), sep='\t',file=f)
