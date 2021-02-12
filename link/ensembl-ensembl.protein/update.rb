@@ -52,9 +52,9 @@ WHERE {
 #{LIMIT}
 EOS
 
-#STDERR.print "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query=#{sparql_1.gsub("\n", " ")}\' #{ENDPOINT}| tail +2 | tr -d '\"'\n"
+#STDERR.print "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query=#{sparql_1.gsub("\n", " ")}\' #{ENDPOINT}| tail -n +2 | tr -d '\"'\n"
 
-tax_ids = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql_1.gsub("\n", " ")}' #{ENDPOINT}| tail +2 | tr -d '\"'")
+tax_ids = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql_1.gsub("\n", " ")}' #{ENDPOINT}| tail -n +2 | tr -d '\"'")
 
 
 tax_id_ary = tax_ids[0].split("\n")
