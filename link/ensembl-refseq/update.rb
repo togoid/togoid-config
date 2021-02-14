@@ -8,7 +8,7 @@ help = <<"EOS"
   Usage: update.rb [options]
     -l <number of limit | all>
     -e <endpoint uri>
-    -h
+    -h help
         --limit=<number of limit | all>
         --endpoint=<endpoint uri>
 EOS
@@ -20,14 +20,18 @@ end
 
 if params["endpoint"]
   ENDPOINT = params["endpoint"]
+elsif params["e"]
+  ENDPOINT = params["e"]
 else
   ENDPOINT = 'https://integbio.jp/rdf/ebi/sparql'
 end
 
-if params["limit"] == "all"
+if params["limit"] == "all" || params["l"] == "all"
   LIMIT = ""
 elsif params["limit"]
   LIMIT = "LIMIT #{params["limit"]}"
+elsif params["l"]
+  LIMIT = "LIMIT #{params["l"]}"
 else
   LIMIT = "LIMIT 2"
 end
