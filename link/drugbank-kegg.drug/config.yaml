@@ -14,7 +14,7 @@ link:
   file: pair.tsv
 
   forward:
-    namespace: rdfs
+    namespace: kegg.drug.id
     label: KEGG Drug ID
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
