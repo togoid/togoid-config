@@ -14,7 +14,7 @@ link:
   file: pair.tsv
 
   forward:
-    name: uniprot.id
+    namespace: uniprot.id
     label: UniProtKB ID
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_HOM0000071  # in homotopy relationship with
