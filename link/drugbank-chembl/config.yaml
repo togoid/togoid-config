@@ -5,7 +5,7 @@ source:
   prefix: http://identifiers.org/drugbank
 
 target:
-  namespace: chemble
+  namespace: chembl
   label: ChEMBL
   type: Chemical compound
   prefix: http://rdf.ebi.ac.uk/terms/chembl#
@@ -15,7 +15,7 @@ link:
 
   forward:
     label: ChEMBL ID
-    namespace: rdfs
+    namespace: chembl.id
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 
