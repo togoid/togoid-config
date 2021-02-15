@@ -1,13 +1,13 @@
 source:
   label: MBGD (Organism)
   type: Ortholog
-  name: mbgd
+  namespace: mbgd
   prefix: http://mbgd.genome.ad.jp/rdf/resource/organism/
 
 target:
   label: NCBI Taxonomy
   type: Taxonomy
-  name: tax
+  namespace: tax
   prefix: http://identifiers.org/taxonomy/
 
 link:
@@ -15,7 +15,7 @@ link:
 
   forward:
     label: in taxon
-    namespace: ro
+    namespace: intaxon
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002162
 
