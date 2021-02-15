@@ -23,4 +23,5 @@ link:
 
 update:
   frequency: Monthly
-  method: https://is.gd/7CuouX
+  method: update.sh > pair.tsv
+  #クエリ https://is.gd/7CuouX
