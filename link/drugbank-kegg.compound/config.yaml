@@ -15,7 +15,7 @@ link:
 
   forward:
     label: KEGG Compound ID
-    namespace: rdfs
+    namespace: kegg.compound.id
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 
