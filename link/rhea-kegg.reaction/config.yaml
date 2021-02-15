@@ -1,0 +1,25 @@
+source:
+  namespace: rhea
+  type: Reaction
+  label: Rhea
+  prefix: http://identifiers.org/rhea/
+target:
+  namespace: kegg.reaction
+  type: Reaction
+  label: KEGG Reaction
+  prefix: http://identifiers.org/kegg.reaction/
+link:
+  file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Monthly
+  method: update.sh > pair.tsv
