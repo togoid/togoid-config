@@ -15,7 +15,7 @@ link:
 
   forward:
     label: ChEBI ID
-    namespace: rdfs
+    namespace: chebi.id
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 
