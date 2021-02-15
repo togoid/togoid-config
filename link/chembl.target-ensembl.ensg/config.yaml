@@ -5,17 +5,17 @@ source:
   prefix: http://identifiers.org/chembl.target/
 
 target:
-  label: Ensembl ENSG
+  label: Ensembl Gene
   type: Gene
-  namespace: Ensembl ENSG
+  namespace: ensg
   prefix: http://identifiers.org/ensembl/
 
 link:
   file: pair.tsv
 
   forward:
-    namespace: rdfs
-    label: Protein2Gene
+    namespace: ensg.id
+    label: Ensembl Gene ID
     #Sparqlクエリに合わせてこのprefix/predicateにしたが、タンパク質→遺伝子ならもっと適切なものが絶対あると思う。
     #Sparqlクエリに合わせるのか、ROからsource ofみたいなのを見つけて当てがうか、どちらがいいのか。
     prefix: http://rdf.ebi.ac.uk/terms/chembl#
