@@ -4,7 +4,7 @@ source:
   label: NANDO
   prefix: http://nanbyodata.jp/ontology/nando#
 target:
-  namespace: omim
+  namespace: kegg
   type: Disease
   label: KEGG DISEASE
   prefix: http://identifiers.org/kegg.disease/
