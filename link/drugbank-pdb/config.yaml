@@ -14,7 +14,7 @@ link:
   file: pair.tsv
 
   forward:
-    namespace: obo
+    namespace: pdb.id
     label: PDB ID
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0001018  # contained in
