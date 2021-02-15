@@ -14,7 +14,7 @@ link:
   file: pair.tsv
 
   forward:
-    namespace: obo
+    namespace: mesh.id
     label: MeSH ID
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0001018  # contained in
