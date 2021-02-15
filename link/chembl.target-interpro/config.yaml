@@ -14,8 +14,8 @@ link:
   file: pair.tsv
 
   forward:
-    namespace: rdfs
-    label: seeAlso
+    namespace: interpro.id
+    label: InterPro ID
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 
