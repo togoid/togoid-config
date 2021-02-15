@@ -6,7 +6,7 @@ source:
 
 target:
   namespace: go
-  label: GO
+  label: Gene Ontology
   type: Gene
   prefix: http://identifiers.org/obo.go/
 
@@ -14,8 +14,8 @@ link:
   file: pair.tsv
 
   forward:
-    namespace: rdfs
-    label: Protein2Gene
+    namespace: go.id
+    label: Gene Ontology ID
     #Sparqlクエリに合わせてこのprefix/predicateにしたが、タンパク質→遺伝子ならもっと適切なものが絶対あると思う。
     #Sparqlクエリに合わせるのか、ROからsource ofみたいなのを見つけて当てがうか、どちらがいいのか。
     prefix: http://rdf.ebi.ac.uk/terms/chembl#
