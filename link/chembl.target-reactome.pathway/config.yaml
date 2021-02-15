@@ -14,8 +14,8 @@ link:
   file: pair.tsv
 
   forward:
-    namespace: rdfs
-    label: Protein2Pathway
+    namespace: reactome.pathway.id
+    label: Reactome Pathway ID
     # Sparqlクエリでこの述語を用いて検索しているため、そのまま流用した
     prefix: http://rdf.ebi.ac.uk/terms/chembl#
     predicate: targetCmptXref
