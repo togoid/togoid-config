@@ -14,8 +14,8 @@ link:
   file: pair.tsv
 
   forward:
+    namespace: obo 
     label: HMDB ID
-    name: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_HOM0000071  # in homotopy relationship with
 
