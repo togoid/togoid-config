@@ -15,7 +15,7 @@
 # Usage: update.pl > pair.tsv (-t [integer] -d)
 #   -t [integer] : スレッド数を強制指定
 #   -d : debug
-#     - 終了時 log ファイルが log.bk になっていれば正常終了
+#     - 終了時 log ファイルが log.ok になっていれば正常終了
 #     - fetch error などで log ファイル残っている場合
 #       update.pl -d >> pair.tsv で途中から再開して追記
 #
@@ -80,7 +80,7 @@ if ($DEBUG){
     if ($e >= 1) {
 	print STDERR "Error: refer to './log'\n";
     } else {
-	system("mv ./log ./log.bk") if(-f "./log");
+	system("mv ./log ./log.ok") if(-f "./log");
     }
 }
 
