@@ -1,0 +1,32 @@
+source:
+  label: KEGG Compound
+  type: Chemical compound
+  namespace: kegg.compound
+  prefix: http://identifiers.org/kegg.compound/
+
+target:
+  label: KEGG Pathway
+  type: Pathway
+  namespace: kegg.pathway
+  prefix: http://identifiers.org/kegg.pathway/
+
+link:
+  file: pairs.tsv
+
+  # Reverse の逆関係
+  forward:
+    label: participates in
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0000056
+
+  # PubchemのPathway-Compoundの関係を流用
+  reverse:
+    label: has participant
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0000057
+
+update:
+  frequency: Quarterly
+  method:  wget -O tmp.tsv http://rest.kegg.jp/link/pathway/compound ; sed  -E 's/[a-z]+://g' tmp.tsv > pairs.tsv; rm tmp.tsv
