@@ -1,29 +1,29 @@
 source:
   label: KEGG Compound
   type: Chemical compound
-  name: kegg.compound
+  namespace: kegg.compound
   prefix: http://identifiers.org/kegg.compound/
 
 target:
   label: ChEBI
   type: Chemical compound
-  name: ChEBI
+  namespace: ChEBI
   prefix: http://identifiers.org/chebi/
 
 link:
   file: pairs.tsv
 
   forward:
-    label: Further information about the subject resource
+    label: Equivalent
     namespace: linkdb
     prefix: https://www.genome.jp/linkdb/
     predicate: equivalent
   reverse:
-    label: Further information about the subject resource
+    label: Equivalent
     namespace: linkdb
     prefix: https://www.genome.jp/linkdb/
     predicate: equivalent
 
 update:
   frequency: Quarterly
-  method:  python3 make_pairs.py 
+  method:  python3 make_pairs.py
