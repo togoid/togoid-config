@@ -7,7 +7,7 @@ target:
   namespace: kegg
   type: Pathway
   label: Kegg Pathway
-  prefix: 	https://identifiers.org/kegg.pathway
+  prefix: https://identifiers.org/kegg.pathway
 link:
   file: link.tsv
   forward:
