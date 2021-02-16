@@ -1,10 +1,10 @@
 source:
-  name: interpro
+  namespace: interpro
   type: Protein family
   label: InterPro
   prefix: http://identifiers.org/interpro/
 target:
-  name: reactome
+  namespace: reactome
   type: Pathway
   label: Reactome
   prefix: http://identifiers.org/reactome/

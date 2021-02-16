@@ -1,10 +1,10 @@
 source:
-  name: interpro
+  namespace: interpro
   type: Protein family
   label: InterPro
   prefix: http://identifiers.org/interpro/
 target:
-  name: go
+  namespace: go
   type: Function
   label: Gene Ontology
   prefix: http://purl.obolibrary.org/obo/

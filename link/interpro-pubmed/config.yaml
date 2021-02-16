@@ -1,10 +1,10 @@
 source:
-  name: interpro
+  namespace: interpro
   type: Protein family
   label: InterPro
   prefix: http://identifiers.org/interpro/
 target:
-  name: pubmed
+  namespace: pubmed
   type: Publication
   label: PubMed
   prefix: http://identifiers.org/pubmed/
