@@ -7,7 +7,7 @@ target:
   namespace: mesh
   type: Terminology
   label: MeSH
-  prefix: 	https://identifiers.org/mesh/
+  prefix: https://identifiers.org/mesh/
 link:
   file: link.tsv
   forward:
