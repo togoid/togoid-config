@@ -1,11 +1,11 @@
 #hint-uniprot
 source:
-  name: hint
+  namespace: hint
   type: Protein-Protein Interaction
   label: HINT
   prefix: http://purl.jp/10/hint/
 target:
-  name: uniprot
+  namespace: uniprot
   type: Protein
   label: UniProt
   prefix: http://identifiers.org/uniprot/
@@ -18,4 +18,4 @@ link:
     predicate: participant/BFO_0000051
 update:
   frequency: Irregular
-  method: readme.txt
+  method: update.sh > pair.tsv
