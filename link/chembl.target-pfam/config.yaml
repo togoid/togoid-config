@@ -21,4 +21,5 @@ link:
 
 update:
   frequency: Monthly
-  method: https://is.gd/lawckp
+  method: update.sh > pair.tsv
+  #クエリ https://is.gd/lawckp
