@@ -1,0 +1,15 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?go ?intact
+WHERE {
+  FILTER(regex(?go, "GO_"))
+  ?go oboInOwl:hasDbXref ?intact .
+  FILTER(regex(?intact, "IntAct"))
+}
+#LIMIT 50
+
+
