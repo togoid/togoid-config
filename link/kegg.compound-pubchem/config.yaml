@@ -1,0 +1,29 @@
+source:
+  label: KEGG Compound
+  type: Chemical compound
+  namespace: kegg.compound
+  prefix: http://identifiers.org/kegg.compound/
+
+target:
+  label: Pubchem Substance
+  type: Chemical compound
+  namespace: pubchem.substance
+  prefix: http://identifiers.org/pubchem.substance/
+
+link:
+  file: pairs.tsv
+
+  forward:
+    label: Equivalent
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+  reverse:
+    label: Equivalent
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+
+update:
+  frequency: Quarterly
+  method:  python3 kegg_linkdb.py compound pubchem
