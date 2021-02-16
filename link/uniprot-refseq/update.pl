@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# 20210210 moriya
+# 20210216 moriya
 # 20210203 moriya
 
 # 1. 生物種リストをSPARQLで取得して、種毎にIDリストをSPARQLで並列に取得
@@ -12,10 +12,12 @@
 # SPARQLクエリやprefix、並列スレッド数は update_params.pl に記述
 #   - Opt. '-t [integer]': スレッド数を強制指定
 #
-# Usage: update.pl > pair.tsv (-t [integer])
-#   - 終了時 log ファイルが log.bk になっていれば正常終了
-#   - fetch error などで log ファイル残っている場合
-#     update.pl >> pair.tsv で途中から再開して追記
+# Usage: update.pl > pair.tsv (-t [integer] -d)
+#   -t [integer] : スレッド数を強制指定
+#   -d : debug
+#     - 終了時 log ファイルが log.bk になっていれば正常終了
+#     - fetch error などで log ファイル残っている場合
+#       update.pl -d >> pair.tsv で途中から再開して追記
 #
 # Endpoint の結果の Limit を判定
 #   - binsings 数が 10000 で割り切れたら Limit かもしれないので limit, offset, order で回し直す
@@ -32,20 +34,26 @@ use threads::shared;
 require './update_params.pl';
 
 my %OPT;
-getopts('t:', \%OPT);
+getopts('t:d', \%OPT);
 $THREAD_LIMIT = $OPT{t} if ($OPT{t});
+our $DEBUG = 1 if ($OPT{d});
 
 # for resume
 our %LOG;
 if (-f "./log") {
-    open(DATA, "./log");
-    while (<DATA>) {
-        chomp($_);
-        my @a = split(/\t/, $_);
-        $LOG{$a[0]} = 1 if ($a[1] =~ /^\d+$/);
+    if ($DEBUG) {
+	open(DATA, "./log");
+	while (<DATA>) {
+	    chomp($_);
+	    my @a = split(/\t/, $_);
+	    $LOG{$a[0]} = 1 if ($a[1] =~ /^\d+$/);
+	}
+	close DATA;
+    } else {
+	system("rm ./log");
     }
-    close DATA;
 }
+    
 
 # varables for threads
 $| = 1;  # 標準出力のコマンドバッファリング有効
@@ -67,11 +75,13 @@ foreach my $thr (threads->list){
 =cut
 
 # finish flag
-my $e = `grep error ./log|wc -l`;
-if ($e >= 1) {
-    print STDERR "Error: refer to './log'\n";
-} else {
-    system("mv ./log ./log.bk") if(-f "./log");
+if ($DEBUG){
+    my $e = `grep error ./log|wc -l`;
+    if ($e >= 1) {
+	print STDERR "Error: refer to './log'\n";
+    } else {
+	system("mv ./log ./log.bk") if(-f "./log");
+    }
 }
 
 # run threads
@@ -90,6 +100,7 @@ sub run {
 	$uri = $d->{target}->{value};
     } else {
 	&log("SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n");
+	print STDERR "SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n";
 	exit 0;
     }
 
@@ -176,8 +187,10 @@ sub get_req {
 
 sub log{
     my $err = $_[0];
-    open(my $fh, ">> ./log");
-    flock $fh, LOCK_EX;
-    print $fh $err;
-    close $fh;
+    if ($DEBUG) {
+	open(my $fh, ">> ./log");
+	flock $fh, LOCK_EX;
+	print $fh $err;
+	close $fh;
+    }
 }
