@@ -1,15 +1,16 @@
 #!/bin/sh
 # SPARQL query
 QUERY="PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
-SELECT ?moleculeid ?pdb
+SELECT   ?moleculeid ?ensg
 WHERE{
-  ?mechanism a cco:Mechanism ;
+?mechanism a cco:Mechanism ;
      cco:hasTarget ?target ;
      cco:hasMolecule ?molecule .
   ?target cco:hasTargetComponent ?component .
-  ?component cco:targetCmptXref ?pdb .
-  FILTER(CONTAINS(STR(?pdb), "pdb"))
-  ?molecule cco:chemblId ?moleculeid .     
+  ?component cco:targetCmptXref ?ensg_uri .
+  BIND (REPLACE(STR(?ensg_uri), 'http://identifiers.org/ensembl/', '') AS ?ensg)
+  FILTER(CONTAINS(?ensg, "ENSG"))
+  ?molecule cco:chemblId ?moleculeid .            
   }
 ORDER BY ?moleculeid"
 # curl -> format -> delete header
