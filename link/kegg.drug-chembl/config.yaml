@@ -1,14 +1,14 @@
 source:
-  label: KEGG Compound
-  type: Chemical compound
-  namespace: kegg.compound
-  prefix: http://identifiers.org/kegg.compound/
+  label: KEGG Drug
+  type: Drug
+  namespace: kegg.drug
+  prefix: http://identifiers.org/kegg.drug/
 
 target:
-  label: ChEBI
+  label: ChEMBL Compound
   type: Chemical compound
-  namespace: ChEBI
-  prefix: http://identifiers.org/chebi/
+  namespace: chembl.compound
+  prefix: 	https://identifiers.org/chembl.compound
 
 link:
   file: pairs.tsv
@@ -26,4 +26,4 @@ link:
 
 update:
   frequency: Quarterly
-  method:  python3 make_pairs.py
+  method:  python3 kegg_linkdb.py drug chembl

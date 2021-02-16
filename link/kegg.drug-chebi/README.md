@@ -1,5 +1,3 @@
-# KEGG Compound -> ChEBI
+# KEGG Drug -> ChEBI
 * make_pairs.py:
   GenomeNetのエンドポイントにSPQRQLクエリをかけます
-* pairs.tsv
-  サンプル100個です。

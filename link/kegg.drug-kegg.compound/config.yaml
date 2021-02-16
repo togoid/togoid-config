@@ -1,29 +1,30 @@
 source:
+  label: KEGG Drug
+  type: Drug
+  namespace: kegg.drug
+  prefix: http://identifiers.org/kegg.drug/
+
+target:
   label: KEGG Compound
   type: Chemical compound
   namespace: kegg.compound
   prefix: http://identifiers.org/kegg.compound/
 
-target:
-  label: ChEBI
-  type: Chemical compound
-  namespace: ChEBI
-  prefix: http://identifiers.org/chebi/
-
 link:
   file: pairs.tsv
 
+  # KEGG から外部DBへの変換ケースに合わせて下のようにしました
   forward:
-    label: Equivalent
+    label: equivalent
     namespace: linkdb
     prefix: https://www.genome.jp/linkdb/
     predicate: equivalent
   reverse:
-    label: Equivalent
+    label: equivalent
     namespace: linkdb
     prefix: https://www.genome.jp/linkdb/
     predicate: equivalent
 
 update:
   frequency: Quarterly
-  method:  python3 make_pairs.py
+  method:  wget -O tmp.tsv http://rest.kegg.jp/link/compound/drug ; sed  -E 's/dr:|cpd://g' tmp.tsv > pairs.tsv; rm tmp.tsv
