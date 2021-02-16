@@ -14,11 +14,11 @@ link:
   file: pair.tsv
 
   forward:
-    label: Related ID of OMIM
-    namespace: oboInOwl
-    prefix: http://www.geneontology.org/formats/oboInOwl#
-    predicate: hasDbXref
-
+    label: Related ID of ORPHA
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+    
   reverse:
     label: Related ID of mesh
     namespace: rdfs
