@@ -1,0 +1,31 @@
+source:
+  label: KEGG Compound
+  type: Chemical compound
+  name: kegg.compound
+  prefix: http://identifiers.org/kegg.compound/
+
+target:
+  label: KEGG Reaction
+  type: Reaction
+  name: kegg.reaction
+  prefix: http://identifiers.org/kegg.reaction/
+
+link:
+  file: pairs.tsv
+
+  # SIO:000062かもしれない
+  forward:
+    label: participates in
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0000056
+
+  # SIO:000132かもしれない
+  reverse:
+    label: has participant
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0000057
+update:
+  frequency: Quarterly
+  method:  wget -O tmp.tsv http://rest.kegg.jp/link/reaction/compound ; sed  -E 's/[a-z]+://g' tmp.tsv > pairs.tsv; rm tmp.tsv

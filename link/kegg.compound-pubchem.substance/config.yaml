@@ -5,10 +5,10 @@ source:
   prefix: http://identifiers.org/kegg.compound/
 
 target:
-  label: ChEBI
+  label: Pubchem Substance
   type: Chemical compound
-  namespace: ChEBI
-  prefix: http://identifiers.org/chebi/
+  namespace: pubchem.substance
+  prefix: http://identifiers.org/pubchem.substance/
 
 link:
   file: pairs.tsv
@@ -26,4 +26,4 @@ link:
 
 update:
   frequency: Quarterly
-  method:  python3 make_pairs.py
+  method:  python3 kegg_linkdb.py compound pubchem

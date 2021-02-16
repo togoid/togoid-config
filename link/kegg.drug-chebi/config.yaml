@@ -1,8 +1,8 @@
 source:
-  label: KEGG Compound
-  type: Chemical compound
-  namespace: kegg.compound
-  prefix: http://identifiers.org/kegg.compound/
+  label: KEGG Drug
+  type: Drug
+  namespace: kegg.drug
+  prefix: http://identifiers.org/kegg.drug/
 
 target:
   label: ChEBI
