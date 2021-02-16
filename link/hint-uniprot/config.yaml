@@ -13,9 +13,9 @@ link:
   file: pair.tsv
   forward:
     namespace: bp3/obo
-    label: has part of participant
-    prefix: http://www.biopax.org/release/biopax-level3.owl#/, http://purl.obolibrary.org/obo/
-    predicate: participant/BFO_0000051
+    label: molecularly interacts with
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002436  #molecularly interacts with
 update:
   frequency: Irregular
   method: update.sh > pair.tsv
