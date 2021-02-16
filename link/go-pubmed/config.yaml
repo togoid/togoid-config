@@ -1,0 +1,20 @@
+source:
+  namespace: go
+  type: Function
+  label: Gene Ontology
+  prefix: http://purl.obolibrary.org/obo/
+target:
+  namespace: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://identifiers.org/pubmed/
+link:
+  file: pair.tsv
+  forward:
+    namespace: dcterms
+    label: references
+    prefix: http://purl.org/dc/terms/
+    predicate: references
+update:
+  frequency: Monthly
+  method:
