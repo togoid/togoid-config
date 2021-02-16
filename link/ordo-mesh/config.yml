@@ -7,7 +7,7 @@ source:
 target:
   label: MeSH
   type: Terminology
-  namespace: mesh
+  namespace: MeSH
   prefix: http://identifiers.org/mesh/
 
 link:
