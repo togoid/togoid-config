@@ -43,12 +43,18 @@ our %LOG;
 if (-f "./log") {
     if ($DEBUG) {
 	open(DATA, "./log");
+	open(OUT, "> ./log_n");
 	while (<DATA>) {
 	    chomp($_);
 	    my @a = split(/\t/, $_);
-	    $LOG{$a[0]} = 1 if ($a[1] =~ /^\d+$/);
+	    if ($a[1] =~ /^\d+$/) {
+		$LOG{$a[0]} = 1;
+		print OUT $_,"\n";
+	    }
 	}
 	close DATA;
+	close OUT;
+	system("mv ./log_n ./log");
     } else {
 	system("rm ./log");
     }
