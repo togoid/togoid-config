@@ -1,0 +1,30 @@
+source:
+  label: Orphanet Rare Disease Ontology
+  type: Disease
+  namespace: ORPHA
+  prefix:	http://identifiers.org/orphanet/
+
+target:
+  label: Online Mendelian Inheritance in Man
+  type: Disease
+  namespace: OMIM
+  prefix: http://identifiers.org/omim/
+
+link:
+  file: pair.tsv
+
+  forward:
+    label: related OMIM
+    namespace: oboInOwl
+    prefix: http://www.geneontology.org/formats/oboInOwl#
+    predicate: hasDbXref
+
+  reverse:
+    label: related ORDO
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+
+update:
+  frequency: not stable
+  method: ordo_omim.bash
