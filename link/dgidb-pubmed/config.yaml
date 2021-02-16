@@ -1,0 +1,24 @@
+source:
+  namespace: dgidb
+  type: drug-gene interactions
+  label: DGIdb ID
+  prefix: http://identifiers.org/dgidb/interaction/
+
+target:
+  namespace: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://identifiers.org/pubmed/
+
+link:
+  file: pair.tsv
+
+  forward:
+    namespace: rdfs
+    label: PubMed ID
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+
+update:
+  frequency:
+  method: dgidb-pubmed.sh
