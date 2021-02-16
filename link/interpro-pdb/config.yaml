@@ -1,10 +1,10 @@
 source:
-  name: interpro
+  namespace: interpro
   type: Protein family
   label: InterPro
   prefix: http://identifiers.org/interpro/
 target:
-  name: pdb
+  namespace: pdb
   type: Protein structure
   label: PDB
   prefix: http://identifiers.org/pdb/

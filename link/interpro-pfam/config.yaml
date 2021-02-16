@@ -1,10 +1,10 @@
 source:
-  name: interpro
+  namespace: interpro
   type: Protein family
   label: InterPro
   prefix: http://identifiers.org/interpro/
 target:
-  name: pfam
+  namespace: pfam
   type: Protein family
   label: Pfam
   prefix: http://identifiers.org/pfam/
