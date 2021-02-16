@@ -1,10 +1,10 @@
 source:
-  name: ensembl
+  namespace: ensembl
   type: Gene
   label: Ensembl
   prefix: http://identifiers.org/ensembl/
 target:
-  name: ensembl.protein
+  namespace: ensembl.protein
   type: Protein
   label: Ensembl Protein
   prefix: http://identifiers.org/omim/
