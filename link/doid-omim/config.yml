@@ -7,7 +7,7 @@ target:
   namespace: omim
   type: Disease
   label: OMIM
-  prefix: 	https://identifiers.org/omim/
+  prefix: https://identifiers.org/omim/
 link:
   file: link.tsv
   forward:
