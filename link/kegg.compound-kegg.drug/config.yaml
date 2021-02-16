@@ -1,0 +1,31 @@
+source:
+  label: KEGG Compound
+  type: Chemical compound
+  namespace: kegg.compound
+  prefix: http://identifiers.org/kegg.compound/
+
+target:
+  label: KEGG Drug
+  type: Drug
+  namespace: kegg.drug
+  prefix: http://identifiers.org/kegg.drug/
+
+link:
+  file: pairs.tsv
+
+  # KEGG から外部DBへの変換ケースに合わせて下のようにしましたが
+  # Kskos:exactMatchとかのほうがいいでしょうか
+  forward:
+    label: equivalent
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+  reverse:
+    label:  equivalent
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+
+update:
+  frequency: Quarterly
+  method:  wget -O tmp.tsv http://rest.kegg.jp/link/drug/compound ; sed  -E 's/dr:|cpd://g' tmp.tsv > pairs.tsv; rm tmp.tsv
