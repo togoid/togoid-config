@@ -1,0 +1,29 @@
+source:
+  label: KEGG Drug
+  type: Drug
+  namespace: kegg.drug
+  prefix: http://identifiers.org/kegg.drug/
+
+target:
+  label: ChEMBL Compound
+  type: Chemical compound
+  namespace: chembl.compound
+  prefix: 	https://identifiers.org/chembl.compound
+
+link:
+  file: pairs.tsv
+
+  forward:
+    label: Equivalent
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+  reverse:
+    label: Equivalent
+    namespace: linkdb
+    prefix: https://www.genome.jp/linkdb/
+    predicate: equivalent
+
+update:
+  frequency: Quarterly
+  method:  python3 kegg_linkdb.py drug chembl
