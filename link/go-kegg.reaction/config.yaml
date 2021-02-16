@@ -7,7 +7,7 @@ target:
   namespace: kegg.reaction
   type: Reaction
   label: KEGG Reaction
-  prefix: http://identifiers.org/interpro/
+  prefix: http://identifiers.org/kegg.reaction/
 link:
   file: pair.tsv
   forward:
