@@ -10,4 +10,4 @@ WHERE {
 }
 ORDER BY ?gene"
 # curl -> format -> delete header
-curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://orth.dbcls.jp/sparql-dev | sed -e 's/\"//g;  s/,/\t/g' | sed -e '1d' > pair.tsv
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://orth.dbcls.jp/sparql-dev | sed -e 's/\"//g;  s/,/\t/g' | sed -e '1d' 
