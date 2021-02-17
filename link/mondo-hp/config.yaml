@@ -1,0 +1,25 @@
+source:
+  namespace: mondo
+  type: Disease
+  label: MONDO
+  prefix: http://purl.obolibrary.org/obo/
+target:
+  namespace: hp
+  type: Phenotype
+  label: Human Phenotype Ontology
+  prefix: http://purl.obolibrary.org/obo/
+link:
+  file: link.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency:
+  method: mondo-hp.sh > link.tsv
