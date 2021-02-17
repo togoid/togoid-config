@@ -3,7 +3,8 @@ source:
   type: Disease
   label: NANDO
   prefix: http://purl.obolibrary.org/obo/
-target: http://nanbyodata.jp/ontology/nando#
+# http://nanbyodata.jp/ontology/nando#  
+target: 
   namespace: mondo
   type: Disease
   label: MONDO
