@@ -15,4 +15,4 @@ WHERE {
 }
 ORDER BY ?omaprotein"
 # curl -> format -> delete header
-curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://sparql.omabrowser.org/sparql/ | sed -e 's/\"//g;  s/,/\t/g' | sed -e '1d' > pair.tsv
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://sparql.omabrowser.org/sparql/ | sed -e 's/\"//g;  s/,/\t/g' | sed -e '1d'
