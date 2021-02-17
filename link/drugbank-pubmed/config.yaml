@@ -8,7 +8,7 @@ target:
   namespace: pubmed
   label: PubMed
   type: 
-  prefix: http://bio2rdf.org/pubmed:
+  prefix: http://bio2rdf.org/pubmed
 
 link:
   file: pair.tsv
