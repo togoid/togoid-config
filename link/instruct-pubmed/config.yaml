@@ -1,0 +1,21 @@
+#instruct-pubmed
+source:
+  namespace: instruct
+  type: PPI
+  label: INstruct
+  prefix: http://purl.jp/10/instruct/
+target:
+  namespace: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://identifiers.org/pubmed/
+link:
+  file: link.tsv
+  forward:
+    namespace: obo
+    label: evidence publication
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002558  #has evidence
+update:
+  frequency: Irregular
+  method: update.sh > link.tsv

@@ -1,0 +1,21 @@
+#chembl.molecule-pubmed
+source:
+  namespace: chembl.molecule
+  type: substance
+  label: ChEMBL molecule
+  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/
+target:
+  namespace: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://identifiers.org/pubmed/
+link:
+  file: link.tsv
+  forward:
+    namespace: obo
+    label: evidence publication
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002558  #has evidence
+update:
+  frequency: threeTimesAYear
+  method: update.sh > link.tsv

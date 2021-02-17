@@ -1,0 +1,21 @@
+#chembl.molecule-hmdb
+source:
+  namespace: chembl.molecule
+  type: substance
+  label: ChEMBL molecule
+  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/
+target:
+  namespace: hmdb
+  type: Metabolite
+  label: HMDB
+  prefix: http://www.hmdb.ca/metabolites/
+link:
+  file: link.tsv
+  forward:
+    namespace: skos
+    label: closeMatch
+    prefix: http://www.w3.org/2004/02/skos/core#
+    predicate: closeMatch
+update:
+  frequency: threeTimesAYear
+  method: update.sh > link.tsv

@@ -1,0 +1,21 @@
+#instruct-uniprot
+source:
+  namespace: instruct
+  type: PPI
+  label: INstruct
+  prefix: http://purl.jp/10/instruct/
+target:
+  namespace: uniprot
+  type: Protein
+  label: UniProt
+  prefix: http://identifiers.org/uniprot/
+link:
+  file: link.tsv
+  forward:
+    namespace: obo
+    label: molecularly interacts with
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002436  #molecularly interacts with
+update:
+  frequency: Irregular
+  method: update.sh > link.tsv
