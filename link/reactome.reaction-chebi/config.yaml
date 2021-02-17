@@ -5,7 +5,7 @@ source:
   prefix: http://identifiers.org/reactome/
 target:
   namespace: chebi
-  type: Compound
+  type: Chemical compound
   label: ChEBI
   prefix: http://identifiers.org/chebi/
 link:
