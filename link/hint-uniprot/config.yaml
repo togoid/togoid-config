@@ -1,7 +1,7 @@
 #hint-uniprot
 source:
   namespace: hint
-  type: Protein-Protein Interaction
+  type: PPI
   label: HINT
   prefix: http://purl.jp/10/hint/
 target:
@@ -10,12 +10,12 @@ target:
   label: UniProt
   prefix: http://identifiers.org/uniprot/
 link:
-  file: pair.tsv
+  file: link.tsv
   forward:
-    namespace: bp3/obo
+    namespace: obo
     label: molecularly interacts with
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002436  #molecularly interacts with
 update:
   frequency: Irregular
-  method: update.sh > pair.tsv
+  method: update.sh > link.tsv
