@@ -7,7 +7,7 @@ target:
   namespace: clinvar.vcv
   type: Variant
   label: ClinVar variant
-  prefix: http://purl.jp/bio/10/clinvar/accession/
+  prefix: http://ncbi.nlm.nih.gov/clinvar/variation/
 link:
   file: pair.tsv
   forward:
@@ -17,6 +17,5 @@ link:
     predicate: seeAlso
 update:
   frequency: Monthly
-  # NBDC will update the conversion table (tgvid2dbSNP.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2clinvar.tsv && mv tgvid2clinvar.tsv pair.tsv
+  method: update.sh > pair.tsv
 
