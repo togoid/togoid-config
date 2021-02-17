@@ -1,0 +1,21 @@
+#instruct-pubmed
+source:
+  namespace: instruct
+  type: PPI
+  label: INstruct
+  prefix: http://purl.jp/10/instruct/
+target:
+  namespace: pfam
+  type: Protein
+  label: Pfam
+  prefix: http://identifiers.org/Pfam/
+link:
+  file: link.tsv
+  forward:
+    namespace: obo
+    label: participant domain
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002463  #target participant in
+update:
+  frequency: Irregular
+  method: update.sh > link.tsv

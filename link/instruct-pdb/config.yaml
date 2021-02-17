@@ -1,0 +1,21 @@
+#instruct-pdb
+source:
+  namespace: instruct
+  type: PPI
+  label: INstruct
+  prefix: http://purl.jp/10/instruct/
+target:
+  namespace: pdb
+  type: Protein
+  label: PDB
+  prefix: http://identifiers.org/pdb/
+link:
+  file: link.tsv
+  forward:
+    namespace: ro
+    label: structural evidence
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002558  #has evidence
+update:
+  frequency: Irregular
+  method: update.sh > link.tsv
