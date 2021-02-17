@@ -5,20 +5,20 @@ source:
   prefix: http://identifiers.org/dgidb/interaction/
 
 target:
-  namespace: chemble
-  type: Chemical compound
-  label: ChEMBL
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/#
+  namespace: ncbigene
+  type: Gene
+  label: NCBI Gene
+  prefix: http://identifiers.org/ncbigene/
 
 link:
   file: pair.tsv
 
   forward:
     namespace: rdfs
-    label: ChEMBL ID
+    label: NCBI Gene ID
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 
 update:
   frequency:
-  method: dgidb-chembl.sh
+  method: dgidb-ncbigene.sh
