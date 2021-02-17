@@ -5,20 +5,20 @@ source:
   prefix: http://identifiers.org/dgidb/interaction/
 
 target:
-  namespace: chemble
-  type: Chemical compound
-  label: ChEMBL
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/#
+  namespace: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://identifiers.org/pubmed/
 
 link:
   file: pair.tsv
 
   forward:
     namespace: rdfs
-    label: ChEMBL ID
+    label: PubMed ID
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 
 update:
   frequency:
-  method: dgidb-chembl.sh
+  method: dgidb-pubmed.sh
