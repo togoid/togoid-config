@@ -17,6 +17,5 @@ link:
     predicate: seeAlso
 update:
   frequency: Monthly
-  # NBDC will update the conversion table (tgvid2dbSNP.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2dbSNP.tsv && mv tgvid2dbSNP.tsv pair.tsv
+  method: update.sh 
 
