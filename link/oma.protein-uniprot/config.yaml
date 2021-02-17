@@ -21,7 +21,7 @@ link:
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 update:
-  frequency: 2x / year 
+  frequency: twoTimesAYear 
   # https://omabrowser.org/oma/archives/
   # https://questfororthologs.org/orthology_databases
   method: update.sh > pair.tsv
