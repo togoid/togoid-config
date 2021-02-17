@@ -14,4 +14,4 @@ WHERE {
   FILTER(regex(?kegg, 'KEGG'))
 }"
 # curl -> format -> delete header
-curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/sparql | sed -e 's/\"//g;  s/http:\/\/purl.obolibrary.org\/obo\///g; s/KEGG://g; s/,/\t/g' | sed -e '1d' > pair.tsv
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/sparql | sed -e 's/\"//g;  s/http:\/\/purl.obolibrary.org\/obo\///g; s/KEGG://g; s/,/\t/g' | sed -e '1d'
