@@ -58,7 +58,7 @@ EOS
 
 #STDERR.print "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query=#{sparql_1.gsub("\n", " ")}\' #{ENDPOINT}| tail -n +2 | tr -d '\"'\n"
 
-result, status = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql.gsub("\n", " ")}' #{ENDPOINT}| tail -n +2 | tr -d '\"'")
+result, status = Open3.capture2("curl -s -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql.gsub("\n", " ")}' #{ENDPOINT}| tail -n +2 | tr -d '\"'")
 
 STDERR.print "#{status}\n" if $DEBUG
 
