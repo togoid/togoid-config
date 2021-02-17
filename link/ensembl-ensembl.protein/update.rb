@@ -86,7 +86,7 @@ EOS
 
   STDERR.print "#{tax_id}\n" if $DEBUG
 
-  result, status = Open3.capture2("curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql_2.gsub("\n", " ")}' #{ENDPOINT}| tail -n +2 | tr -d '\"'")
+  result, status = Open3.capture2("curl -s -H 'Accept: text/tab-separated-values' --data-urlencode 'query=#{sparql_2.gsub("\n", " ")}' #{ENDPOINT}| tail -n +2 | tr -d '\"'")
 
   STDERR.print "#{status}\n" if $DEBUG
 
