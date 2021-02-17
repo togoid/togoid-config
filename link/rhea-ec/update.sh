@@ -32,5 +32,5 @@ WHERE {
 LIMIT ${LIMIT}
 EOS
 
-echo "curl -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/misc/sparql | tail -n +2 | tr -d '\"' > ./pair.tsv"
-curl -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail -n +2 | tr -d '"'}
+echo "curl -s -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/misc/sparql | tail -n +2 | tr -d '\"' > ./pair.tsv"
+curl -s -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail -n +2 | tr -d '"'}
