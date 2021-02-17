@@ -1,14 +1,15 @@
 source:
   namespace: dgidb
-  type: drug-gene interactions
-  label: DGIdb ID
-  prefix: http://identifiers.org/dgidb/interaction/
+  type: Drug
+  label: DGIdb
+  prefix: http://purl.jp/bio/10/dgidb/
 
 target:
   namespace: chemble
   type: Chemical compound
   label: ChEMBL
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/#
+  prefix: http://rdf.ebi.ac.uk/terms/chembl#
+  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL553025
 
 link:
   file: pair.tsv
@@ -20,5 +21,5 @@ link:
     predicate: seeAlso
 
 update:
-  frequency:
-  method: dgidb-chembl.sh
+  frequency: Monthly
+  method: https://www.dgidb.org/downloads
