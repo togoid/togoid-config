@@ -1,0 +1,31 @@
+---
+source:
+  label: SRA Project
+  type: DataSet
+  namespace: sra.project
+  prefix: http://identifiers.org/insdc.sra/
+target:
+  label: BioProject
+  type: DataSet
+  namespace: bioproject
+  prefix: http://identifiers.org/bioproject/
+link:
+  file: "./sra.project-bioproject.tsv"
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Daily
+  method: "[ $(ls -l /tmp/togoid/SRA_Accessions.tab | awk '{ print $5 }') -eq $(curl
+    -sI ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab | grep 'Content-Length'
+    | tr -d '\r' | awk '{ print $2 }') ] || (mkdir -p $(dirname /tmp/togoid/SRA_Accessions.tab)
+    && curl -s ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab > /tmp/togoid/SRA_Accessions.tab)
+    && awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.RP/ { print $1, $19 }' /tmp/togoid/SRA_Accessions.tab
+    | grep -v '-' > pair.tsv"
