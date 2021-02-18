@@ -1,0 +1,25 @@
+source:
+  namespace: hgnc
+  type: Gene
+  label: HGNC
+  prefix: http://identifiers.org/hgnc/
+target:
+  namespace: omim
+  type: Disease
+  label: OMIM
+  prefix: http://purl.obolibrary.org/omim/
+link:
+  file: pair.tsv
+  forward:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Bimonthly
+  method: ./update.sh omim > pair.tsv
