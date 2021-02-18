@@ -1,0 +1,20 @@
+source:
+  namespace: hgnc
+  type: Gene
+  label: HGNC
+  prefix: http://identifiers.org/hgnc/
+target:
+  namespace: pubmed
+  type: Publication
+  label: PubMed
+  prefix: http://purl.obolibrary.org/pubmed/
+link:
+  file: pair.tsv
+  forward:
+    namespace: dcterms
+    label: references
+    prefix: http://purl.org/dc/terms/
+    predicate: references
+update:
+  frequency: Bimonthly
+  method: ./update.sh > pair.tsv

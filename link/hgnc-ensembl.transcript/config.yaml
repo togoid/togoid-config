@@ -1,0 +1,25 @@
+source:
+  namespace: hgnc
+  type: Gene
+  label: HGNC
+  prefix: http://identifiers.org/hgnc/
+target:
+  namespace: ensembl.transcript
+  type: Transcript
+  label: Ensembl Transcript
+  prefix: http://purl.obolibrary.org/ensembl.transcript/
+link:
+  file: pair.tsv
+  forward:
+    label: transcribed to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002511
+  reverse:
+    label: transcribed from
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002510
+update:
+  frequency: Bimonthly
+  method: ./update.sh > pair.tsv
