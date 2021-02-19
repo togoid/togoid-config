@@ -1,14 +1,14 @@
 #chembl.molecule-pubchem.substance
 source:
-  namespace: chembl.molecule
-  type: substance
-  label: ChEMBL molecule
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/
+  namespace: chembl
+  type: Chemical compound
+  label: ChEMBL compound
+  prefix: http://identifiers.org/chembl.compound/
 target:
   namespace: pubchem.substance
   type: substance
   label: PubChem substance
-  prefix: http://pubchem.ncbi.nlm.nih.gov/substance
+  prefix: https://identifiers.org/pubchem.substance/
 link:
   file: link.tsv
   forward:
