@@ -1,3 +1,6 @@
+### DrugBankの利用について
+DrugBankのダウンロードデータのライセンスはCC BY-NC であるため、Togoサイトでの利用は難しいです。
+
 ### make_pairs.pyのロジック
 
 - 主ID
