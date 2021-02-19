@@ -8,7 +8,7 @@ target:
   namespace: uniprot
   type: Protein
   label: Uniprot
-  prefix: http://purl.uniprot.org/uniprot/
+  prefix: http://identifiers.org/uniprot/
 link:
   file: link.tsv
   forward:

@@ -1,4 +1,4 @@
-#instruct-pubmed
+#instruct-pfam
 source:
   namespace: instruct
   type: PPI

@@ -1,14 +1,14 @@
 #chembl.molecule-drugbank
 source:
-  namespace: chembl.molecule
-  type: substance
-  label: ChEMBL molecule
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/
+  namespace: chembl
+  type: Chemical compound
+  label: ChEMBL compound
+  prefix: http://identifiers.org/chembl.compound/
 target:
   namespace: drugbank
   type: Drug
   label: DrugBank
-  prefix: http://www.drugbank.ca/drugs/
+  prefix: https://identifiers.org/drugbank/
 link:
   file: link.tsv
   forward:
