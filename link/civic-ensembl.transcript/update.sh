@@ -2,7 +2,7 @@
 # SPARQL query
 QUERY="PREFIX m2r: <http://med2rdf.org/ontology/med2rdf#>
 PREFIX dct: <http://purl.org/dc/terms/>
-SELECT ?civicgene_id ?enst_id
+SELECT DISTINCT ?civicgene_id ?enst_id
 WHERE {
   ?civicgene a m2r:Gene;
       dct:identifier ?civicgene_id ;
