@@ -21,4 +21,4 @@ link:
 
 update:
   frequency: Monthly
-  method: wget https://go.drugbank.com/releases/5-1-8/downloads/all-full-database; unzip all-full-database; python3 make_pairs.py
+  method: #wget https://go.drugbank.com/releases/5-1-8/downloads/all-full-database; unzip all-full-database; python3 make_pairs.py
