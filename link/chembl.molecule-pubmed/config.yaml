@@ -1,9 +1,9 @@
 #chembl.molecule-pubmed
 source:
-  namespace: chembl.molecule
-  type: substance
-  label: ChEMBL molecule
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/
+  namespace: chembl
+  type: Chemical compound
+  label: ChEMBL compound
+  prefix: http://identifiers.org/chembl.compound/
 target:
   namespace: pubmed
   type: Publication

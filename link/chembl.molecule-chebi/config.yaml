@@ -1,14 +1,14 @@
 #chembl.molecule-chebi
 source:
-  namespace: chembl.molecule
-  type: substance
-  label: ChEMBL molecule
-  prefix: http://rdf.ebi.ac.uk/resource/chembl/molecule/
+  namespace: chembl
+  type: Chemical compound
+  label: ChEMBL compound
+  prefix: http://identifiers.org/chembl.compound/
 target:
   namespace: chebi
-  type: substance
-  label: ChEBI
-  prefix: http://purl.obolibrary.org/obo/chebi#
+  type: Chemical compound
+  label: ChEBI compound
+  prefix: https://identifiers.org/CHEBI/
 link:
   file: link.tsv
   forward:
