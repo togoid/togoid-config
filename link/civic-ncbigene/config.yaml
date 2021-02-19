@@ -1,0 +1,25 @@
+source:
+  label: CIVIC Gene
+  type: Gene
+  namespace: civic.gene
+  prefix: http://civic.genome.wustl.edu/links/genes/
+target:
+  label: NCBI Gene
+  type: Gene
+  namespace: ncbigene
+  prefix: http://identifiers.org/ncbigene/
+link:
+  file: pair.tsv
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: 
+  method: update.sh > pair.tsv
