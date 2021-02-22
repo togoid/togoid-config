@@ -1,10 +1,10 @@
 #!/bin/sh
 # SPARQL query
 
-if [ $# -ne 1 ]; then
-  echo "usage: ./update.sh TARGET" 1>&2
-  exit 1
-fi
+#if [ $# -ne 1 ]; then
+#  echo "usage: ./update.sh TARGET" 1>&2
+#  exit 1
+#fi
 TARGET=$1
 
 ENDPOINT="http://sparql.med2rdf.org/sparql"
