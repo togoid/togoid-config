@@ -24,4 +24,4 @@ link:
     predicate: seeAlso
 update:
   frequency:
-  method: doid-omim.sh
+  method: doid-omim.sh > link.tsv
