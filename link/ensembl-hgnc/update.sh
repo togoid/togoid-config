@@ -2,9 +2,9 @@
 
 ENDPOINT='https://integbio.jp/rdf/ebi/sparql'
 
-if ["${LIMIT}" = ""]; then
-  LIMIT=10
-fi
+#if ["${LIMIT}" = ""]; then
+#  LIMIT=10
+#fi
 
 cat - << EOS > sparql.rq
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
