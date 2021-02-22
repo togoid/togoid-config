@@ -7,7 +7,7 @@ target:
   namespace: pubmed
   type: Publication
   label: PubMed
-  prefix: http://purl.obolibrary.org/pubmed/
+  prefix: http://identifiers.org/pubmed/
 link:
   file: pair.tsv
   forward:

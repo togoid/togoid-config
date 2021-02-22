@@ -7,7 +7,7 @@ target:
   namespace: mirbase
   type: microRNA
   label: miRBase
-  prefix: http://purl.obolibrary.org/mirbase/
+  prefix: http://identifiers.org/mirbase/
 link:
   file: pair.tsv
   forward:

@@ -7,7 +7,7 @@ target:
   namespace: uniprot
   type: Protein
   label: UniProt
-  prefix: http://purl.obolibrary.org/uniprot/
+  prefix: http://identifiers.org/uniprot/
 link:
   file: pair.tsv
   forward:

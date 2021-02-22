@@ -7,7 +7,7 @@ target:
   namespace: ncbigene
   type: Gene
   label: NCBI Gene
-  prefix: http://purl.obolibrary.org/ncbigene/
+  prefix: http://identifiers.org/ncbigene/
 link:
   file: pair.tsv
   forward:
