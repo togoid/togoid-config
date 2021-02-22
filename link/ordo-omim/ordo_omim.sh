@@ -13,4 +13,4 @@ WHERE {
    FILTER(contains(?id,'OMIM'))
         }"
 # curl -> format -> delete header
-curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/mirror/bioportal/sparql | sed -e 's/\"//g; s/,/\t/g; s/http:\/\/www.orpha.net\/ORDO\/Orphanet_/ORPHA:/g' | sed -e '1d'> pair.tsv| sed -e '1d'> pair.txt
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/mirror/bioportal/sparql | sed -e 's/\"//g; s/,/\t/g; s/http:\/\/www.orpha.net\/ORDO\/Orphanet_//g; s/OMIM://' | sed -e '1d'
