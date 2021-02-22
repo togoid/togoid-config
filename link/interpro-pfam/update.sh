@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TMPDIR='/tmp/togoid'
+TMPDIR='/data/togoid/cache/interpro'
 XML_PATH='ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro.xml.gz'
 XML_GZ_FILENAME='interpro.xml.gz'
 XML_FILENAME='interpro.xml'
