@@ -7,7 +7,7 @@ target:
   namespace: refseq
   type: Gene
   label: RefSeq
-  prefix: http://purl.obolibrary.org/refseq/
+  prefix: http://identifiers.org/refseq/
 link:
   file: pair.tsv
   forward:

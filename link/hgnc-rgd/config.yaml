@@ -7,7 +7,7 @@ target:
   namespace: rgd
   type: Gene
   label: RGD
-  prefix: http://purl.obolibrary.org/rgd/
+  prefix: http://identifiers.org/rgd/
 link:
   file: pair.tsv
   forward:

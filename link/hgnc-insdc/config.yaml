@@ -7,7 +7,7 @@ target:
   namespace: insdc
   type: Gene
   label: INSDC
-  prefix: http://purl.obolibrary.org/insdc/
+  prefix: http://identifiers.org/insdc/
 link:
   file: pair.tsv
   forward:

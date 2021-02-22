@@ -7,7 +7,7 @@ target:
   namespace: orphanet
   type: Disease
   label: Orphanet
-  prefix: http://purl.obolibrary.org/orphanet/
+  prefix: http://identifiers.org/orphanet/
 link:
   file: pair.tsv
   forward:
