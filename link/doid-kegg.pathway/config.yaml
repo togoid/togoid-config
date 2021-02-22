@@ -24,4 +24,4 @@ link:
     predicate: seeAlso
 update:
   frequency:
-  method: doid-icd10.sh
+  method: doid-icd10.sh > link.tsv
