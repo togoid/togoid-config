@@ -7,7 +7,7 @@ target:
   namespace: omim
   type: Disease
   label: OMIM
-  prefix: http://purl.obolibrary.org/omim/
+  prefix: http://identifiers.org/omim/
 link:
   file: pair.tsv
   forward:

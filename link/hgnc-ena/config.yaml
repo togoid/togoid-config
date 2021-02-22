@@ -7,7 +7,7 @@ target:
   namespace: ena
   type: Gene
   label: ENA
-  prefix: http://purl.obolibrary.org/ena.embl/
+  prefix: http://identifiers.org/ena.embl/
 link:
   file: pair.tsv
   forward:
