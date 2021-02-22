@@ -12,4 +12,4 @@ WHERE {
   FILTER(contains(?id,'MESH'))
 }"
 # curl -> format -> delete header
-curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/mirror/bioportal/sparql | sed -e 's/\"//g; s/,/\t/g; s/http:\/\/purl.obolibrary.org\/obo\/DOID_//g; s/MESH://' | sed -e '1d'
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" https://integbio.jp/rdf/mirror/bioportal/sparql | sed -e 's/\"//g; s/,/\t/g; s/http:\/\/purl.obolibrary.org\/obo\/DOID_//g; s/MESH://' | sed -e '1d'
