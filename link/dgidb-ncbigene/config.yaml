@@ -21,4 +21,4 @@ link:
 
 update:
   frequency:
-  method: dgidb-ncbigene.sh
+  method: dgidb-ncbigene.sh > pair.tsv

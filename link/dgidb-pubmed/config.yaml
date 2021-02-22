@@ -21,4 +21,4 @@ link:
 
 update:
   frequency:
-  method: dgidb-pubmed.sh
+  method: dgidb-pubmed.sh > pair.tsv
