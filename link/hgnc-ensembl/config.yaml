@@ -7,7 +7,7 @@ target:
   namespace: ensembl
   type: Gene
   label: Ensembl
-  prefix: http://purl.obolibrary.org/ensembl/
+  prefix: http://identifiers.org/ensembl/
 link:
   file: pair.tsv
   forward:

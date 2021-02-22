@@ -7,7 +7,7 @@ target:
   namespace: go
   type: Function
   label: Gene Ontology
-  prefix: http://purl.obolibrary.org/obo/
+  prefix: http://identifiers.org/go/
 link:
   file: pair.tsv
   forward:
@@ -22,4 +22,4 @@ link:
     predicate: seeAlso
 update:
   frequency: Bimonthly
-  method: curl -sS ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro2go | awk '!/^!/{print gensub("InterPro:","","g",$1) "\t" gensub(/[^;]*; GO:/,"GO_","g")}' > pair.tsv
+  method: curl -sS ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro2go | awk '!/^!/{print gensub("InterPro:","","g",$1) "\t" gensub(/[^;]*; /,"","g")}' > pair.tsv

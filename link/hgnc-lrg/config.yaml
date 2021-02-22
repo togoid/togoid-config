@@ -7,7 +7,7 @@ target:
   namespace: lrg
   type: Gene
   label: LRG
-  prefix: http://purl.obolibrary.org/lrg/
+  prefix: http://identifiers.org/lrg/
 link:
   file: pair.tsv
   forward:

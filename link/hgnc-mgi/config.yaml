@@ -7,7 +7,7 @@ target:
   namespace: mgi
   type: Gene
   label: MGI
-  prefix: http://purl.obolibrary.org/mgi/
+  prefix: http://identifiers.org/mgi/
 link:
   file: pair.tsv
   forward:

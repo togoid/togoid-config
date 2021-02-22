@@ -7,7 +7,7 @@ target:
   namespace: ensembl.transcript
   type: Transcript
   label: Ensembl Transcript
-  prefix: http://purl.obolibrary.org/ensembl.transcript/
+  prefix: http://identifiers.org/ensembl/
 link:
   file: pair.tsv
   forward:

@@ -7,7 +7,7 @@ target:
   namespace: ccds
   type: Gene
   label: CCDS
-  prefix: http://purl.obolibrary.org/ccds/
+  prefix: http://identifiers.org/ccds/
 link:
   file: pair.tsv
   forward:
