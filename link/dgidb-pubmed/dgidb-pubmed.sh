@@ -13,4 +13,4 @@ WHERE {
   BIND (replace(str(?PubMed), 'http://identifiers.org/pubmed/', '') AS ?PubMed_id)
 }"
 # curl -> format -> delete header
-curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" http://sparql.med2rdf.org/sparql | sed -e 's/\"//g; s/,/\t/g' | sed -e '1d'> pair.tsv
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" http://sparql.med2rdf.org/sparql | sed -e 's/\"//g; s/,/\t/g' | sed -e '1d'
