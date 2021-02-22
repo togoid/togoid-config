@@ -15,4 +15,4 @@ WHERE {
   BIND (replace(str(?dgidb_drug), 'http://rdf.ebi.ac.uk/resource/chembl/molecule/', '') AS ?dgidb_drug_id)
 }"
 # curl -> format -> delete header
-curl -H "Accept: text/csv" --data-urlencode "query=$QUERY" http://sparql.med2rdf.org/sparql | sed -e 's/\"//g; s/,/\t/g' | sed -e '1d'> pair.tsv
+curl -s -H "Accept: text/csv" --data-urlencode "query=$QUERY" http://sparql.med2rdf.org/sparql | sed -e 's/\"//g; s/,/\t/g' | sed -e '1d'> pair.tsv
