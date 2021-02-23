@@ -28,7 +28,6 @@ use JSON;
 use URI::Escape;
 use LWP::UserAgent;
 use threads;
-use Thread::Semaphore;
 use threads::shared;
 
 require './update_params.pl';
@@ -63,18 +62,37 @@ if (-f "./log") {
 
 # varables for threads
 $| = 1;  # 標準出力のコマンドバッファリング有効
-our $SEMA = new Thread::Semaphore($THREAD_LIMIT);
-my %th;
 
 # get taxonomy list
+our @LIST : shared;
 my $json = &get($QUERY_TAX, "First-query:");
+our $TAXON = 0;
+foreach my $d (@{$json->{results}->{bindings}}) {
+    my $uri;
+    if ($d->{org}) {
+	$uri = $d->{org}->{value};
+	$TAXON = 1;
+    } elsif ($d->{tax}) {
+	$uri = $d->{tax}->{value};
+	$tTAXON = 1;
+    } elsif ($d->{target}) {
+	$uri = $d->{target}->{value};
+    } else {
+	&log("SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n");
+	print STDERR "SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n";
+	exit 0;
+    }
+    push(@LIST, $uri);
+}
+
 
 # make threads
-foreach my $d (@{$json->{results}->{bindings}}) {
-    $SEMA->down();             # thread 数専有
-    my $thr = threads->new(\&run, $d);
-    $thr->join; # ここで join するとクリーンナップのタイミングが揃う
+for (1..$THREAD_LIMIT) {
+    my $thr = threads->new(\&worker);
+}
 
+foreach my $thr (threads->list){
+    $thr->join;
 }
 
 # finish flag
@@ -88,29 +106,30 @@ if ($DEBUG){
 }
 
 # run threads
-sub run {
-    my ($d) = @_;
-    
-    my $uri;
-    my $taxon = 0;
-    if ($d->{org}) {
-	$uri = $d->{org}->{value};
-	$taxon = 1;
-    } elsif ($d->{tax}) {
-	$uri = $d->{tax}->{value};
-	$taxon = 1;
-    } elsif ($d->{target}) {
-	$uri = $d->{target}->{value};
-    } else {
-	&log("SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n");
-	print STDERR "SPARQL error: First SPARQL result needs ?org or ?tax or ?target.\n";
-	exit 0;
+sub worker {
+    my $uri = undef;
+    {
+	lock @LIST;
+	$uri = shift(@LIST) if($#LIST >= 0);
     }
+    while($uri){
+	&run($uri);
+	$uri = undef;
+	{
+	    lock @LIST;
+	    $uri = shift(@LIST) if($#LIST >= 0);
+	}
+    }
+}
 
+# each run
+sub run {
+    my ($uri) = @_;
+    
     my $tmp_id = $uri;
     my $query_main = $QUERY;
     $tmp_id =~ s/^.+\/([^\/]+)$/$1/;
-    if ($taxon){
+    if ($TAXON){
 	$tmp_id = "tax:".$tmp_id;
 	$query_main =~ s/__TAXON__/${uri}/;
     } else {
@@ -121,7 +140,7 @@ sub run {
     # get ID list
     my $json = 0;
     $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
-
+    
     if ($json->{results} && !$LOG{$tmp_id}) {  # for resume
 	foreach my $el (@{$json->{results}->{bindings}}) {
 	    $el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
@@ -130,9 +149,6 @@ sub run {
 	}
 	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
-  
-    threads->yield();
-    $SEMA->up(); # thread 数解放
 }
 
 sub get {
