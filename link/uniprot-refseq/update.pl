@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# 20210216 moriya
+# 20210223 moriya
 # 20210203 moriya
 
 # 1. 生物種リストをSPARQLで取得して、種毎にIDリストをSPARQLで並列に取得
@@ -72,13 +72,10 @@ my $json = &get($QUERY_TAX, "First-query:");
 # make threads
 foreach my $d (@{$json->{results}->{bindings}}) {
     $SEMA->down();             # thread 数専有
-    threads->new(\&run, $d);
+    my $thr = threads->new(\&run, $d);
+    $thr->join; # ここで join するとクリーンナップのタイミングが揃う
+
 }
-=pos
-foreach my $thr (threads->list){
-    $thr->join;  # join してもクリーンナップ(メモリ解放)されないので detach する
-}
-=cut
 
 # finish flag
 if ($DEBUG){
@@ -93,7 +90,7 @@ if ($DEBUG){
 # run threads
 sub run {
     my ($d) = @_;
-
+    
     my $uri;
     my $taxon = 0;
     if ($d->{org}) {
@@ -124,7 +121,7 @@ sub run {
     # get ID list
     my $json = 0;
     $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
-    
+
     if ($json->{results} && !$LOG{$tmp_id}) {  # for resume
 	foreach my $el (@{$json->{results}->{bindings}}) {
 	    $el->{source}->{value} =~ s/^${SOURCE_REGEX}$/$1/;
@@ -133,8 +130,8 @@ sub run {
 	}
 	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
-    
-    threads->detach(); # thread の終了とクリーンナップ
+  
+    threads->yield();
     $SEMA->up(); # thread 数解放
 }
 
