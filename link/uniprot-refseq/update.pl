@@ -113,7 +113,7 @@ sub worker {
 	$uri = shift(@LIST) if($#LIST >= 0);
     }
     while($uri){
-	&run($uri);
+	my $r = &run($uri);
 	$uri = undef;
 	{
 	    lock @LIST;
@@ -149,6 +149,7 @@ sub run {
 	}
 	&log($tmp_id."\t".($#{$json->{results}->{bindings}} + 1)."\n");
     }
+    return 1;
 }
 
 sub get {
