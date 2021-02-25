@@ -5,7 +5,7 @@ source:
   prefix: http://purl.uniprot.org/uniprot/
 target:
   namespace: omim
-  type: Phenotype
+  type: Disease
   label: OMIM
   prefix: http://identifiers.org/mim/
 link:

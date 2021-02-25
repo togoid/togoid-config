@@ -27,7 +27,8 @@ WHERE {
   ?source a up:Protein ;
            up:organism <__TAXON__> ;
            rdfs:seeAlso ?target .
-  ?target up:database db:MIM .
+  ?target up:database db:MIM ;
+          rdfs:comment 'phenotype' .
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
