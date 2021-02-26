@@ -4,7 +4,7 @@ source:
   label: Human Disease Ontology
   prefix: http://purl.obolibrary.org/obo/
 target:
-  namespace: kegg
+  namespace: kegg.pathway
   type: Pathway
   label: Kegg Pathway
   prefix: https://identifiers.org/kegg.pathway
