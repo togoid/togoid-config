@@ -4,7 +4,7 @@ source:
   label: Human Disease Ontology
   prefix: http://purl.obolibrary.org/obo/
 target:
-  namespace: omim
+  namespace: omim.phenotype
   type: Disease
   label: OMIM
   prefix: https://identifiers.org/omim/
