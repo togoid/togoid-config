@@ -7,7 +7,7 @@ target:
   namespace: orphanet.ordo
   type: Disease
   label: Orphanet
-  prefix: http://identifiers.org/orphanet/
+  prefix: http://identifiers.org/orphanet.ordo/
 link:
   file: link.tsv
   forward:
