@@ -1,8 +1,8 @@
 source:
   label: Orphanet Rare Disease Ontology
   type: Disease
-  namespace: ORPHA
-  prefix:	http://identifiers.org/orphanet/
+  namespace:orphanet.ordo
+  prefix:	http://identifiers.org/orphanet.ordo/
 
 target:
   label: HGNC
