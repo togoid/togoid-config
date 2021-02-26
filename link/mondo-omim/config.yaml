@@ -4,7 +4,7 @@ source:
   label: MONDO
   prefix: http://purl.obolibrary.org/obo/
 target:
-  namespace: omim
+  namespace: omim.phenotype
   type: Disease
   label: OMIM
   prefix: http://identifiers.org/omim/
