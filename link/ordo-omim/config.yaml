@@ -1,13 +1,13 @@
 source:
   label: Orphanet Rare Disease Ontology
   type: Disease
-  namespace: orpha
-  prefix: http://identifiers.org/orphanet/
+  namespace: orphanet.ordo
+  prefix: http://identifiers.org/orphanet.ordo/
 
 target:
   label: Online Mendelian Inheritance in Man
   type: Disease
-  namespace: omim
+  namespace: omim.phenotype
   prefix: http://identifiers.org/omim/
 
 link:
