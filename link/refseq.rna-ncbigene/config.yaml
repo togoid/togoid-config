@@ -1,0 +1,30 @@
+source:
+  label: RefSeq RNA
+  type: Gene
+  namespace: refseq
+  prefix: http://identifiers.org/refseq/
+
+target:
+  label: NCBI Gene
+  type: Gene
+  namespace: ncbigene
+  prefix: http://identifiers.org/ncbigene/
+
+link:
+  file: pair.tsv
+
+  forward:     ####################
+    label:     #
+    namespace: #  A-TO-DE-KA-KU
+    prefix:    #
+    predicate: ####################
+
+  reverse:     ####################
+    label:     #
+    namespace: #  A-TO-DE-KA-KU
+    prefix:    #
+    predicate: ####################
+
+update:
+  frequency: Weekly
+  method: curl -sSO 'ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.[1-8].rna.gbff.gz' && gzip -dc human.[1-8].rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid > pair.tsv && rm human.[1-8].rna.gbff.gz
