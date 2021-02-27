@@ -2,7 +2,7 @@
 
 ### RefSeq について
 
-NCBIの公開するRefSeqは、3つのmolecule typeに分かれている。
+NCBI の公開する RefSeq は、3つの molecule type に分かれている。
 
 ```
 Molecule Type    Accession Prefix
@@ -12,8 +12,8 @@ rna              NM_; NR_; XM_; XR_
 genomic          NC_; AC_; NG_; NT_; NW_; NZ_
 ```
 
-上記の `rna` （以下、RefSeq RNA）のエントリからIDの対応表を作成する。  
-RefSeq RNAには以下のエントリが含まれている。
+上記の `rna` （以下、RefSeq RNA）のエントリから ID の対応表を作成する。  
+RefSeq RNA には以下のエントリが含まれている。
 
 ```
 NM_     mRNA        protein-coding transcripts          Prefix followed by 6 or 9 numbers,
@@ -59,11 +59,11 @@ ftp://ftp.ncbi.nlm.nih.gov/refseq/daily/
 **生物種ごとのファイル**  
 ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/  
 ヒトやマウスなど代表的な生物種については専用の置き場がある。  
-更新はweekly。今回はヒトのみを対象とするためここから取得する。
+更新は weekly。今回はヒトのみを対象とするためここから取得する。
 
-### ID対応表の作成
+### ID 対応表の作成
 
-一次情報であるflat file (*.gbff) から各種IDを抽出するスクリプトを作成した。
+一次情報である flat file (*.gbff) から各種 ID を抽出するスクリプトを作成した。
 
 ```
 % gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid
@@ -80,12 +80,12 @@ NR_104272.2	27315
 [...]
 ```
 
-### NCBI Gene IDについて
+### NCBI Gene ID について
 
 * 特記事項なし
 
 ### 課題
 
-* ヒトのflat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。
-* refseq.rna の名称はとりあえずRefSeqの分類に合わせた。refseq.transcript とするかは検討事項。
+* ヒトの flat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。
+* refseq.rna の名称はとりあえず RefSeq の分類に合わせた。refseq.transcript とするかは検討事項。
 * config.yaml の記載事項をレビューしてほしい。
