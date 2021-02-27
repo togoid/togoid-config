@@ -12,7 +12,7 @@ rna              NM_; NR_; XM_; XR_
 genomic          NC_; AC_; NG_; NT_; NW_; NZ_
 ```
 
-上記の `rna` （以下、RefSeq RNA）のエントリからIDの対応表を作成する。
+上記の `rna` （以下、RefSeq RNA）のエントリからIDの対応表を作成する。  
 RefSeq RNAには以下のエントリが含まれている。
 
 ```
@@ -48,22 +48,22 @@ XR_     RNA         non-protein-coding transcripts,     Prefix followed by 6 or 
 
 ### ファイルの取得
 
-**リリースファイル**
-ftp://ftp.ncbi.nlm.nih.gov/refseq/release/
+**リリースファイル**  
+ftp://ftp.ncbi.nlm.nih.gov/refseq/release/  
 2ヶ月に1回リリースされる。2021年1月現在、release 204が最新。
 
-**日々更新ファイル**
-ftp://ftp.ncbi.nlm.nih.gov/refseq/daily/
+**日々更新ファイル**  
+ftp://ftp.ncbi.nlm.nih.gov/refseq/daily/  
 リリース以降の日々更新ファイルがここに置かれる。
 
-**生物種ごとのファイル**
-ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/
-ヒトやマウスなど代表的な生物については専用の置き場がある。
-更新はweekly。今回はヒトを対象とするためここから取得する。
+**生物種ごとのファイル**  
+ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/  
+ヒトやマウスなど代表的な生物種については専用の置き場がある。  
+更新はweekly。今回はヒトのみを対象とするためここから取得する。
 
 ### ID対応表の作成
 
-一次情報であるflat fileから各種IDを抽出するスクリプトを作成した。
+一次情報であるflat file (*.gbff) から各種IDを抽出するスクリプトを作成した。
 
 ```
 % gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid
@@ -87,4 +87,5 @@ NR_104272.2	27315
 ### 課題
 
 * ヒトのflat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。
-* refseq.rna の名称は、とりあえずRefSeqの分類に合わせた。refseq.transcript と置き換えるかは検討事項。
+* refseq.rna の名称はとりあえずRefSeqの分類に合わせた。refseq.transcript とするかは検討事項。
+* config.yaml の記載事項をレビューしてほしい。
