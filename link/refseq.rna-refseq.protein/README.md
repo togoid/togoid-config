@@ -66,17 +66,17 @@ ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/
 一次情報である flat file (*.gbff) から各種 ID を抽出するスクリプトを作成した。
 
 ```
-% gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid
-NM_001368885.1	1305
-NM_001368886.1	1305
-NR_158981.1	9910
-NR_148048.2	6867
-NR_148047.2	6867
-NR_148053.2	6867
-NM_001374457.1	6597
-NR_148052.2	6867
-NM_001354434.2	100526771
-NR_104272.2	27315
+% gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --protein
+NM_001368885.1  NP_001355814.1
+NM_001368886.1  NP_001355815.1
+NR_158981.1 
+NR_148048.2 
+NR_148047.2 
+NR_148053.2 
+NM_001374457.1  NP_001361386.1
+NR_148052.2 
+NM_001354434.2  NP_001341363.1
+NR_104272.2 
 [...]
 ```
 
