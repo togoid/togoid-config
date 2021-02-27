@@ -27,4 +27,4 @@ link:
 
 update:
   frequency: Weekly
-  method: curl -sSO 'ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.[1-8].rna.gbff.gz' && gzip -dc human.[1-8].rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid > pair.tsv && rm human.[1-8].rna.gbff.gz
+  method: wget 'ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz' && gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid > pair.tsv && rm human.*.rna.gbff.gz
