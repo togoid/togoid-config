@@ -91,7 +91,7 @@ while (<>){
 	while ($gbff =~ /
 		^(REFERENCE\ .*?)  # REFERENCE 全体にマッチ
 		^(?=\S)            # 次の項目の開始位置の手前まで
-	/smxg){
+	/smxg and $pmid_op){   # 出力オプション未指定の場合はループを実行しない
 		my $reference = $1 ;
 
 # REFERENCE -> PUBMED を抽出
@@ -160,7 +160,7 @@ while (<>){
 #   複数記載されている場合があるため while() ですべてのパタンマッチを抽出
 	while ($gene_feature =~ /
 		^\ +\/db_xref=\"MIM:(.*?)\"$
-	/mxg){
+	/mxg and $mim_op){                # 出力オプション未指定の場合はループを実行しない
 		my $mim = $1 ;
 		print "$version	$mim\n" if $mim_op ;  # RefSeq RNA -> MIM number の対応を出力
 	}
@@ -185,7 +185,7 @@ while (<>){
 	while ($features =~ /
 		^(\ {5}variation\ .*?)  # variation featureの範囲にマッチ
 		^(?!\ {6})              # 次の項目の開始位置の手前まで
-	/smxg){
+	/smxg and $dbsnp_op){       # 出力オプション未指定の場合はループを実行しない
 		my $variation_feature = $1 ;
 
 # FEATURES -> variation -> /db_xref="dbSNP:xxxxx" を抽出
