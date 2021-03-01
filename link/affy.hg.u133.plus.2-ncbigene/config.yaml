@@ -1,6 +1,6 @@
 source:
   label: Affymetrix Probeset
-  namespace: affymetrix
+  namespace: affy.probeset
   type: Gene
   prefix: http://identifiers.org/affy.probeset/
 target:
