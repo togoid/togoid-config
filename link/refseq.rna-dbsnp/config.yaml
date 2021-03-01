@@ -13,17 +13,11 @@ target:
 link:
   file: pair.tsv
 
-  forward:     ####################
-    label:     #
-    namespace: #  A-TO-DE-KA-KU
-    prefix:    #
-    predicate: ####################
-
-  reverse:     ####################
-    label:     #
-    namespace: #  A-TO-DE-KA-KU
-    prefix:    #
-    predicate: ####################
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
 
 update:
   frequency: Weekly
