@@ -89,3 +89,4 @@ NR_104272.2 HGNC:17893
 * ヒトの flat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。
 * refseq.rna の名称はとりあえず RefSeq の分類に合わせた。refseq.transcript とするかは検討事項。
 * config.yaml の記載事項をレビューしてほしい。
+  * とりあえず `forward:` は `seeAlso` 、 `reverse:` は未記載としたが、ID間の関係性をふまえて書き直す必要がある。
