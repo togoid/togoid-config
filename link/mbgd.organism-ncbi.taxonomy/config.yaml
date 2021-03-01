@@ -7,7 +7,7 @@ source:
 target:
   label: NCBI Taxonomy
   type: Taxonomy
-  namespace: tax
+  namespace: taxonomy
   prefix: http://identifiers.org/taxonomy/
 
 link:
