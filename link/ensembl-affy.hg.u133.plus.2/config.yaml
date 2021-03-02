@@ -1,7 +1,7 @@
 source:
   label: Ensembl
   type: Gene
-  namespace: ensembl
+  namespace: ensembl.gene
   prefix: http://identifiers.org/ensembl/
 target:
   label: Affymetrix Probeset
