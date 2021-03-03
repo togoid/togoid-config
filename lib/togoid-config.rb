@@ -108,7 +108,9 @@ module TogoID
       File.open(@tsv_file, "w") do |tsv_file|
         Dir.chdir(@path) do
           IO.popen(@update.method) do |io|
-            tsv_file.puts io.read
+            while buffer = io.gets
+              tsv_file.puts buffer
+            end
           end
         end
       end
