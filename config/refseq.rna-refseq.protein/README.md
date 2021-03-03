@@ -83,7 +83,7 @@ NR_104272.2
 ### RefSeq Protein について
 
 * `source:` および `target:` ともに `namespace: refseq`, `prefix: http://identifiers.org/refseq/` としたが、これでよいか。
-* `target:` は `uniprot-ncbiprotein/config.yaml` を参考に `type: Protein` としたが、これでよいか。
+* `target:` は `uniprot-ncbiprotein/config.yaml` を参考に `category: Protein` としたが、これでよいか。
 * 対応する RefSeq Protein が存在しないエントリ（ncRNA等）は第2要素を空文字列として出力しているが、それでよいか。
 
 ### 課題

@@ -7,7 +7,7 @@ source:
 target:
   label: Gene Symbol
   catalog: nbdc01774
-  type: Gene
+  category: Gene
   prefix: http://identifiers.org/hgnc.symbol/
 
 link:

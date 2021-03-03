@@ -7,7 +7,7 @@ source:
 target:
   label: OMIM
   catalog: nbdc00154
-  type: Disease
+  category: Disease
   prefix: http://identifiers.org/mim/
 
 link:

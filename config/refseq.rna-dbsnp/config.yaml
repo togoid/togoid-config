@@ -7,7 +7,7 @@ source:
 target:
   label: dbSNP
   catalog: nbdc00206
-  type: Variant
+  category: Variant
   prefix: http://identifiers.org/dbsnp/
 
 link:
