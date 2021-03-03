@@ -1,30 +1,24 @@
 source:
   label: RefSeq RNA
-  type: Gene
-  namespace: refseq
+  catalog: nbdc00187
+  category: Gene
   prefix: http://identifiers.org/refseq/
 
 target:
   label: Taxonomy
+  catalog: nbdc00700
   type: Taxonomy
-  namespace: taxonomy
   prefix: http://identifiers.org/taxonomy/
 
 link:
-  file: pair.tsv
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
 
-  forward:     ####################
-    label:     #
-    namespace: #  A-TO-DE-KA-KU
-    prefix:    #
-    predicate: ####################
-
-  reverse:     ####################
-    label:     #
-    namespace: #  A-TO-DE-KA-KU
-    prefix:    #
-    predicate: ####################
+  file: sample.tsv
 
 update:
   frequency: Weekly
-  method: wget 'ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz' && gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --taxon > pair.tsv && rm human.*.rna.gbff.gz
+  method: DL='../../input/refseq.rna' && mkdir -p $DL && setlock.rb $DL/download.lock "wget -Nq --directory-prefix=$DL ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz" && gzip -dc $DL/human.*.rna.gbff.gz | parse_refseq.rna_gbff.pl --taxon
