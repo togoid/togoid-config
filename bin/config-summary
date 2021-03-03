@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #
-# Usage: togoid-summary link/*/*.yaml
+# Usage: togoid-summary config/*/*.yaml
 #
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -8,7 +8,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'yaml'
 require 'togoid-config'
 
-puts %w(db_pair s_ns s_type s_label s_prefix t_ns t_type t_label t_prefix f_ns f_label f_prefix f_pred r_ns r_label r_prefix r_pred u_freq u_method).join("\t")
+puts %w(db_pair s_catalog s_category s_label s_prefix t_catalog t_category t_label t_prefix f_ns f_label f_prefix f_pred r_ns r_label r_prefix r_pred u_freq u_method).join("\t")
 ARGV.each do |yaml|
   begin
     pair = File.basename(File.dirname(yaml))
@@ -19,12 +19,12 @@ ARGV.each do |yaml|
     r = c.link.rev
     u = c.update
     puts [pair,
-          s.ns,
-          s.dt,
+          s.catalog,
+          s.category,
           s.label,
           s.prefix,
-          t.ns,
-          t.dt,
+          t.catalog,
+          t.category,
           t.label,
           t.prefix,
           f.ns,
