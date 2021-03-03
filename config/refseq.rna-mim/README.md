@@ -95,6 +95,6 @@ NR_137288.2 612494
   * `setlock.rb (ロックファイル) (コマンド)` で、ロックされている場合は解除を待って実行してくれる。
   * ロックファイルの有無ではなくロック状態で判定しているので終了後にロックファイルが残っていてよい。
 * `refseq.rna` の名称はとりあえず RefSeq の分類に合わせた。`refseq.transcript` とするかは検討事項。
-* Identifiers.org や NBD Cカタログには `refseq.rna` が存在しないので便宜上 `refseq` の値を記載。
+* Identifiers.org や NBDC カタログには `refseq.rna` が存在しないので便宜上 `refseq` の値を記載。
 * config.yaml の記載事項をレビューしてほしい。
   * とりあえず `forward:` は `seeAlso` 、 `reverse:` は未記載としたが、ID間の関係性をふまえて書き直す必要がある。
