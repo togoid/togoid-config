@@ -7,7 +7,7 @@ source:
 target:
   label: PubMed
   catalog: nbdc00179
-  type: Publication
+  category: Publication
   prefix: http://identifiers.org/pubmed/
 
 link:

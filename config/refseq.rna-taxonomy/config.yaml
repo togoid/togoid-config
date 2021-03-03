@@ -7,7 +7,7 @@ source:
 target:
   label: Taxonomy
   catalog: nbdc00700
-  type: Taxonomy
+  category: Taxonomy
   prefix: http://identifiers.org/taxonomy/
 
 link:

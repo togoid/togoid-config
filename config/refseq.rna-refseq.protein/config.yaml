@@ -7,7 +7,7 @@ source:
 target:
   label: RefSeq Protein
   catalog: nbdc00187
-  type: Protein
+  category: Protein
   prefix: http://identifiers.org/refseq/
 
 link:
