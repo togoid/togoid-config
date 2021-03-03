@@ -1,0 +1,25 @@
+source:
+  catalog: nbdc01774
+  category: Gene
+  label: HGNC
+  prefix: http://identifiers.org/hgnc/
+target:
+  catalog: nbdc00019
+  category: Reaction
+  label: Enzyme Nomenclature
+  prefix: http://identifiers.org/ec-code/
+link:
+  forward:
+    label: functionally related to
+    namespace: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002328
+  reverse:
+    label: gene product of
+    namespace: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: sparql_csv2tsv.sh query.rq "http://sparql.med2rdf.org/sparql"

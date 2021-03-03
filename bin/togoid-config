@@ -2,11 +2,11 @@
 #
 # Usage:
 #   Check config:
-#     togoid-config link/db1-db2/config.yaml
+#     togoid-config config/db1-db2 check
 #   Convert to RDF:
-#     togoid-config link/db1-db2/config.yaml convert
+#     togoid-config config/db1-db2 convert
 #   Update link data:
-#     togoid-config link/db1-db2/config.yaml update
+#     togoid-config config/db1-db2 update
 #
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -15,7 +15,7 @@ require 'yaml'
 require 'togoid-config'
 
 yaml = ARGV.shift             # can be path/to/config.yaml or path/to
-mode = ARGV.shift || "check"  # can be prefix, convert, or update
+mode = ARGV.shift || "check"  # can be check, convert, or update
 
 if File.directory?(yaml)
   yaml += "/config.yaml"
@@ -31,5 +31,4 @@ when "update"
 else
   config.exec_check
 end
-
 
