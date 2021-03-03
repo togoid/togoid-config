@@ -59,14 +59,14 @@ ftp://ftp.ncbi.nlm.nih.gov/refseq/daily/
 **生物種ごとのファイル**  
 ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/  
 ヒトやマウスなど代表的な生物種については専用の置き場がある。  
-更新は weekly。今回はヒトのみを対象とするためここから取得する。
+更新は Weekly。今回はヒトのみを対象とするためここから取得する。
 
 ### ID 対応表の作成
 
 一次情報である flat file (*.gbff) から各種 ID を抽出するスクリプトを作成した。
 
 ```
-% gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --geneid
+% gzip -dc human.*.rna.gbff.gz | ./parse_refseq.rna_gbff.pl --geneid
 NM_001368885.1	1305
 NM_001368886.1	1305
 NR_158981.1	9910
@@ -86,6 +86,13 @@ NR_104272.2	27315
 
 ### 課題
 
-* ヒトの flat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。
-* refseq.rna の名称はとりあえず RefSeq の分類に合わせた。refseq.transcript とするかは検討事項。
+* ~~ヒトの flat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。~~  
+→ 共通入力ファイル置き場 (input/) の利用により解決！
+* wgetが他と重複実行されないよう排他ロックをかけている。`bin/setlock.rb` を利用。
+  * [setlock の ruby 版](https://github.com/okaxaki/setlock) で、どの環境でも動作して使い勝手も良い。
+  * `setlock.rb (ロックファイル) (コマンド)` で、ロックされている場合は解除を待って実行してくれる。
+  * ロックファイルの有無ではなくロック状態で判定しているので終了後にロックファイルが残っていてよい。
+* `refseq.rna` の名称はとりあえず RefSeq の分類に合わせた。`refseq.transcript` とするかは検討事項。
+* Identifiers.org や NBD Cカタログには `refseq.rna` が存在しないので便宜上 `refseq` の値を記載。
 * config.yaml の記載事項をレビューしてほしい。
+  * とりあえず `forward:` は `seeAlso` 、 `reverse:` は未記載としたが、ID間の関係性をふまえて書き直す必要がある。
