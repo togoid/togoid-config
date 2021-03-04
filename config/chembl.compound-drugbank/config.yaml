@@ -1,21 +1,21 @@
 #chembl.molecule-drugbank
 source:
-  namespace: chembl
-  type: Chemical compound
+  catalog: nbdc02559
+  category: Chemical compound
   label: ChEMBL compound
-  prefix: http://identifiers.org/chembl.compound/
+  prefix: http://identifiers.org/chembl.compound/CHEMBL
 target:
-  namespace: drugbank
-  type: Drug
+  category: nbdc01071
+  category: Drug
   label: DrugBank
   prefix: https://identifiers.org/drugbank/
 link:
-  file: link.tsv
   forward:
-    namespace: skos
     label: closeMatch
+    namespace: skos
     prefix: http://www.w3.org/2004/02/skos/core#
     predicate: closeMatch
+  file: sample.tsv
 update:
   frequency: threeTimesAYear
-  method: update.sh > link.tsv
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
