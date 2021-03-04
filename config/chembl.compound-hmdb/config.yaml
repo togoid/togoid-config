@@ -4,10 +4,10 @@ source:
   label: ChEMBL compound
   prefix: http://identifiers.org/chembl.compound/CHEMBL
 target:
-  catalog: nbdc00027
-  category: Chemical compound
-  label: ChEBI compound
-  prefix: 'https://identifiers.org/chebi/CHEBI:'
+  catalog: nbdc00909
+  category: Metabolite
+  label: HMDB
+  prefix: https://identifiers.org/hmdb/HMDB
 link:
   forward:
     label: closeMatch
