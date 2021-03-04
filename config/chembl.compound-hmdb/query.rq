@@ -1,0 +1,13 @@
+# Endpoint: https://integbio.jp/rdf/mirror/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT DISTINCT ?chembl_id ?hmdb_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE{
+  ?molecule
+    a cco:SmallMolecule ;
+    cco:moleculeXref ?hmdb .
+  FILTER (contains(str(?hmdb), "hmdb"))
+  BIND (replace(str(?molecule), "http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL", "") AS ?chembl_id)
+  BIND (replace(str(?hmdb), "http://www.hmdb.ca/metabolites/HMDB", "") as ?hmdb_id) 
+}
