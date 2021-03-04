@@ -18,32 +18,6 @@
 
 * 同上
 
-## chembl.molecule-chebi/
-
-* sparql_csv2tsv.sh でよさげ
-* link.tsv と sample.tsv
-* CHEBI: は必要？
-
-## chembl.molecule-drugbank/
-
-* sparql_csv2tsv.sh でよさげ
-
-## chembl.molecule-hmdb/
-
-* sparql_csv2tsv.sh でよさげ
-
-## chembl.molecule-pubchem.compound/
-
-* sparql_csv2tsv.sh でよさげ
-
-## chembl.molecule-pubchem.substance/
-
-* sparql_csv2tsv.sh でよさげ
-
-## chembl.molecule-pubmed/
-
-* sparql_csv2tsv.sh でよさげ
-
 ## chembl.target-ensembl.ensg/
 
 * sparql_csv2tsv.sh でよさげ

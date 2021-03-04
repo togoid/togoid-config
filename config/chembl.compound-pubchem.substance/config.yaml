@@ -1,0 +1,20 @@
+source:
+  catalog: nbdc02559
+  category: Chemical compound
+  label: ChEMBL compound
+  prefix: http://identifiers.org/chembl.compound/CHEMBL
+target:
+  catalog: nbdc00642
+  category: Chemical compound
+  label: PubChem substance
+  prefix: https://identifiers.org/pubchem.substance/
+link:
+  forward:
+    label: closeMatch
+    namespace: skos
+    prefix: http://www.w3.org/2004/02/skos/core#
+    predicate: closeMatch
+  file: sample.tsv
+update:
+  frequency: threeTimesAYear
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
