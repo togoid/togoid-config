@@ -1,6 +1,7 @@
 # Endpoint: https://integbio.jp/rdf/mirror/ebi/sparql
 PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
-SELECT ?chembl_id ?drugbank_id
+
+SELECT DISTINCT ?chembl_id ?drugbank_id
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE{
   ?molecule  a cco:SmallMolecule ;
