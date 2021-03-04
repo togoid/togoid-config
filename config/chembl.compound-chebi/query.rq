@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/rdf/mirror/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+SELECT DISTINCT ?chembl_id ?chebi_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?molecule
+    a cco:SmallMolecule ;
+    cco:moleculeXref ?chebi .
+  FILTER (contains(str(?chebi), "chebi"))
+  BIND (replace(str(?molecule), "http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL", "") AS ?chembl_id)
+  BIND (strafter(str(?chebi), "chebiId=CHEBI%3A") AS ?chebi_id)
+}
