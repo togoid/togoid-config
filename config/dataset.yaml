@@ -1,0 +1,244 @@
+affy.probeset:
+  label: Affymetrix probeset
+  catalog: FIXME
+  category: Probe
+  regex: '^\d{4,}((_[asx])?_at)?$'
+  prefix: 'http://identifiers.org/affy.probeset/'
+chembl.compound:
+  label: ChEMBL compound
+  catalog: nbdc02559
+  category: Compound
+  regex: '^(CHEMBL)?(?<id>\d+)$'
+  internal_format: '{{id}}'
+  external_format: 'CHEMBL{{id}}'
+  prefix: 'http://identifiers.org/chembl.compound/CHEMBL'
+chebi:
+  label: ChEBI compound
+  catalog: nbdc00027
+  category: Compound
+  regex: '^(CHEBI:)?(?<id>\d+)$'
+  internal_format: '{{id}}'
+  external_format: 'CHEBI:{{id}}'
+  prefix: 'https://identifiers.org/chebi/CHEBI:'
+ensembl.gene:
+  label: Ensembl gene
+  catalog: nbdc00054
+  category: Gene
+  regex: '^(?<id>ENSG\d{11})(.\d+)?'
+  internal_format: '{{id}}'
+  external_format: '{{id}}'
+  prefix: 'http://identifiers.org/ensembl/'
+go:
+  label: Gene ontology
+  catalog: nbdc00074
+  category: Function
+  regex: '^(GO[:_])?(?<id>\d{7})$'
+  internal_format: '{{id}}'
+  external_format: 'GO:{{id}}'
+  prefix: 'http://purl.obolibrary.org/obo/GO_'
+---
+affy.probeset:
+  label: Affymetrix probeset
+  catalog: FIXME
+  category: Probe
+  prefix: 'http://identifiers.org/affy.probeset/'
+ccds:
+  label: Consensus CDS
+  catalog: nbdc00023
+  category: Gene
+  prefix: 'http://identifiers.org/ccds/'
+chebi:
+  label: ChEBI compound
+  catalog: nbdc00027
+  category: Compound
+  prefix: 'https://identifiers.org/chebi/CHEBI:'
+chembl.compound:
+  label: ChEMBL compound
+  catalog: nbdc02559
+  category: Compound
+  prefix: 'http://identifiers.org/chembl.compound/CHEMBL'
+chembl.target:
+  label: ChEMBL target
+  catalog: nbdc02555
+  category: Protein
+  prefix: 'http://identifiers.org/chembl.target/'
+civic.gene:
+  label: CIVIC gene
+  catalog: nbdc02558
+  category: Gene
+  prefix: 'http://civic.genome.wustl.edu/links/genes/'
+dbsnp:
+  label: dbSNP
+  catalog: nbdc00206
+  category: Variant
+  prefix: 'http://identifiers.org/dbsnp/'
+doid:
+  label: Disease ontology
+  catalog: nbdc00261
+  category: Disease
+  prefix: 'http://purl.obolibrary.org/obo/DOID_'
+drugbank:
+  label: DrugBank
+  category: nbdc01071
+  category: Drug
+  prefix: 'https://identifiers.org/drugbank/'
+ec:
+  label: Enzyme nomenclature
+  catalog: nbdc00019
+  category: Function
+  prefix: 'http://identifiers.org/ec-code/'
+ena:
+  catalog: nbdc00432
+  category: Gene
+  label: ENA
+  prefix: 'http://identifiers.org/ena.embl/'
+ensembl.gene:
+  label: Ensembl gene
+  catalog: nbdc00054
+  category: Gene
+  prefix: 'http://identifiers.org/ensembl/'
+ensembl.protein:
+  label: Ensembl protein
+  catalog: nbdc00054
+  category: Protein
+  prefix: 'http://identifiers.org/ensembl/'
+ensembl.transcript:
+  label: Ensembl transcript
+  catalog: nbdc00054
+  category: Gene
+  prefix: 'http://identifiers.org/ensembl/'
+go:
+  label: Gene ontology
+  catalog: nbdc00074
+  category: Function
+  prefix: 'http://purl.obolibrary.org/obo/GO_'
+hgnc:
+  label: HGNC
+  catalog: nbdc01774
+  category: Gene
+  prefix: 'http://identifiers.org/hgnc/'
+hgnc.symbol:
+  label: HGNC gene symbol
+  catalog: nbdc01774
+  category: Gene
+  prefix: 'http://identifiers.org/hgnc.symbol/'
+hmdb:
+  label: HMDB
+  catalog: nbdc00909
+  category: Metabolite
+  prefix: 'https://identifiers.org/hmdb/HMDB'
+insdc:
+  label: INSDC
+  catalog: FIXME
+  category: Gene
+  prefix: 'http://identifiers.org/insdc/'
+intact:
+  label: IntAct
+  catalog: nbdc00507
+  category: Interaction
+  prefix: 'http://identifiers.org/intact/'
+interpro:
+  label: InterPro
+  catalog: nbdc00108
+  category: Domain
+  prefix: 'http://identifiers.org/interpro/'
+lrg:
+  catalog: FIXME
+  category: Gene
+  label: Locus Reference Genomic record
+  prefix: 'http://identifiers.org/lrg/'
+mesh:
+  label: MeSH
+  catalog: nbdc00132
+  category: Terminology
+  prefix: 'https://identifiers.org/mesh/'
+mgi:
+  label: MGI
+  catalog: nbdc00135
+  category: Gene
+  prefix: 'http://identifiers.org/mgi/'
+mirbase:
+  label: miRBase
+  catalog: FIXME
+  category: microRNA
+  prefix: 'http://identifiers.org/mirbase/'
+ncbigene:
+  label: NCBI Gene
+  catalog: nbdc00073
+  category: Gene
+  prefix: 'http://identifiers.org/ncbigene/'
+omim.gene:
+  label: OMIM
+  catalog: nbdc00154
+  category: Gene
+  prefix: 'http://identifiers.org/mim/'
+omim.phenotype:
+  label: OMIM
+  catalog: nbdc00154
+  category: Disease
+  prefix: 'https://identifiers.org/omim/'
+orphanet:
+  label: Orphanet
+  catalog: nbdc01422
+  category: Gene
+  prefix: 'http://identifiers.org/orphanet/'
+pdb:
+  label: PDB
+  catalog: nbdc00156
+  category: Structure
+  prefix: 'https://rdf.wwpdb.org/pdb/'
+pfam:
+  label: Pfam
+  catalog: nbdc00163
+  category: Domain
+  prefix: 'http://identifiers.org/pfam/'
+pubchem.compound:
+  label: PubChem compound
+  catalog: nbdc00641
+  category: Compound
+  prefix: 'https://identifiers.org/pubchem.compound/'
+pubchem.substance:
+  label: PubChem substance
+  catalog: nbdc00642
+  category: Compound
+  prefix: 'https://identifiers.org/pubchem.substance/'
+pubmed:
+  label: PubMed
+  catalog: nbdc00179
+  category: Literature
+  prefix: 'http://identifiers.org/pubmed/'
+reactome.pathway:
+  label: Reactome pathway
+  catalog: nbdc00185
+  category: Pathway
+  prefix: 'http://identifiers.org/reactome/'
+refseq.protein:
+  label: RefSeq protein
+  catalog: nbdc00187
+  category: Protein
+  prefix: 'http://identifiers.org/refseq/'
+refseq.rna:
+  label: RefSeq RNA
+  catalog: nbdc00187
+  category: Gene
+  prefix: 'http://identifiers.org/refseq/'
+rgd:
+  label: RGD
+  catalog: nbdc00188
+  category: Gene
+  prefix: 'http://identifiers.org/rgd/'
+rhea:
+  label: Rhea
+  catalog: nbdc02083
+  category: Interaction
+  prefix: 'http://identifiers.org/rhea/'
+taxonomy:
+  label: Taxonomy
+  catalog: nbdc00700
+  category: Taxonomy
+  prefix: 'http://identifiers.org/taxonomy/'
+uniprot:
+  label: UniProt
+  catalog: nbdc00221
+  category: Protein
+  prefix: 'http://purl.uniprot.org/uniprot/'
