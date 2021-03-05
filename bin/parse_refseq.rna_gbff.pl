@@ -6,7 +6,7 @@
 # https://www.ddbj.nig.ac.jp/ddbj/flat-file.html
 #
 # usage:
-# gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl
+# gzip -dc human.*.rna.gbff.gz | ./parse_refseq.rna_gbff.pl
 #
 # options:
 #   --summary    RefSeq RNA と各種 ID の対応を1行に出力（デフォルト）
@@ -113,8 +113,9 @@ while (<>){
 #   RefSeq RNA においては、source は基本的に1つしかないはずなので、
 #   最初にマッチした箇所のみ抽出。2つ目以降は無視される。
 	my $source_feature = ($features =~ /
-		^(\ {5}source\ .*?)  # source feature 全体にマッチ
-		^(?!\ {6})           # 次の項目の開始位置の手前まで
+		^(\ {5}source\ .*?)(  # source feature 全体にマッチ
+		^(?!\ {6}) |          # 次の項目の開始位置の手前まで
+		\Z )                  # または FEATURES の末尾まで
 	/smx) ? $1 : '' ;
 
 # FEATURES -> source -> /db_xref="taxon:xxxxx" を抽出
@@ -128,8 +129,9 @@ while (<>){
 #   RefSeq RNA においては、gene は基本的に1つしかないはずなので、
 #   最初にパタンマッチした箇所のみ抽出。2つ目以降は無視される。
 	my $gene_feature = ($features =~ /
-		^(\ {5}gene\ .*?)  # gene feature 全体にマッチ
-		^(?!\ {6})         # 次の項目の開始位置の手前まで
+		^(\ {5}gene\ .*?)(  # gene feature 全体にマッチ
+		^(?!\ {6}) |        # 次の項目の開始位置の手前まで
+		\Z )                # または FEATURES の末尾まで
 	/smx) ? $1 : '' ;
 
 # FEATURES -> gene -> /gene="xxxxx" を抽出
@@ -169,8 +171,9 @@ while (<>){
 #   RefSeq RNA においては、CDS は基本的に1つしかないはずなので、
 #   最初にパタンマッチした箇所のみ抽出。2つ目以降は無視される。
 	my $cds_feature = ($features =~ /
-		^(\ {5}CDS\ .*?)  # CDS featureの範囲にマッチ
-		^(?!\ {6})        # 次の項目の開始位置の手前まで
+		^(\ {5}CDS\ .*?)(  # CDS feature の範囲にマッチ
+		^(?!\ {6}) |       # 次の項目の開始位置の手前まで
+		\Z )               # または FEATURES の末尾まで
 	/smx) ? $1 : '' ;
 
 # FEATURES -> CDS -> /protein_id="xxxxx" を抽出
@@ -183,9 +186,10 @@ while (<>){
 # FEATURES -> variation 全体を抽出
 #   複数記載されているため while() ですべてのパタンマッチを抽出
 	while ($features =~ /
-		^(\ {5}variation\ .*?)  # variation featureの範囲にマッチ
-		^(?!\ {6})              # 次の項目の開始位置の手前まで
-	/smxg and $dbsnp_op){       # 出力オプション未指定の場合はループを実行しない
+		^(\ {5}variation\ .*?)(  # variation feature の範囲にマッチ
+		^(?!\ {6}) |             # 次の項目の開始位置の手前まで
+		\Z )                     # または FEATURES の末尾まで
+	/smxg and $dbsnp_op){        # 出力オプション未指定の場合はループを実行しない
 		my $variation_feature = $1 ;
 
 # FEATURES -> variation -> /db_xref="dbSNP:xxxxx" を抽出
