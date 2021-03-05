@@ -180,6 +180,7 @@ while (<>){
 	my $protein_id = ($cds_feature =~ /
 		^\ +\/protein_id=\"(.*?)\"$
 	/mx) ? $1 : '' ;
+	$protein_id =~ s/\.\d+$// ;  # version 情報を削除
 	print "$locus	$protein_id\n" if $protein_op ;  # RefSeq RNA -> RefSeq Protein の対応を出力
 
 # FEATURES -> variation 全体を抽出
