@@ -6,7 +6,7 @@
 # https://www.ddbj.nig.ac.jp/ddbj/flat-file.html
 #
 # usage:
-# gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl
+# gzip -dc human.*.rna.gbff.gz | ./parse_refseq.rna_gbff.pl
 #
 # options:
 #   --summary    RefSeq RNA と各種 ID の対応を1行に出力（デフォルト）
@@ -79,8 +79,7 @@ while (<>){
 #   RefSeq においては、accession.version（例：NM_123456.7）が記載されている。
 #   当該エントリの塩基配列が訂正・更新されると version が変わることになる。
 #   前述の LOCUS と VERSION のどちらを主 ID に利用するかは要検討。
-#   このプログラムでは VERSION を採用することにする。
-#   .version の部分が不要なら後から除去すればよい（例：NM_123456.7 -> NM_123456）
+#   TogoID では version 情報までは不要なので、LOCUS を採用することにした。
 	my $version = ($gbff =~ /
 		^VERSION\ +(\S+)
 	/mx) ? $1 : '' ;
@@ -99,7 +98,7 @@ while (<>){
 		my $pubmed = ($reference =~ /
 			^\ +PUBMED\ +(\S+)
 		/mx) ? $1 : '' ;
-		print "$version	$pubmed\n" if $pmid_op ;  # RefSeq RNA -> PubMed ID の対応を出力
+		print "$locus	$pubmed\n" if $pmid_op ;  # RefSeq RNA -> PubMed ID の対応を出力
 	}
 
 # FEATURES 全体を抽出
@@ -113,8 +112,9 @@ while (<>){
 #   RefSeq RNA においては、source は基本的に1つしかないはずなので、
 #   最初にマッチした箇所のみ抽出。2つ目以降は無視される。
 	my $source_feature = ($features =~ /
-		^(\ {5}source\ .*?)  # source feature 全体にマッチ
-		^(?!\ {6})           # 次の項目の開始位置の手前まで
+		^(\ {5}source\ .*?)(  # source feature 全体にマッチ
+		^(?!\ {6}) |          # 次の項目の開始位置の手前まで
+		\Z )                  # または FEATURES の末尾まで
 	/smx) ? $1 : '' ;
 
 # FEATURES -> source -> /db_xref="taxon:xxxxx" を抽出
@@ -122,14 +122,15 @@ while (<>){
 	my $taxon = ($source_feature =~ /
 		^\ +\/db_xref=\"taxon:(.*?)\"$
 	/mx) ? $1 : '' ;
-	print "$version	$taxon\n" if $taxon_op ;  # RefSeq RNA -> Taxonomy ID の対応を出力
+	print "$locus	$taxon\n" if $taxon_op ;  # RefSeq RNA -> Taxonomy ID の対応を出力
 
 # FEATURES -> gene 全体を抽出
 #   RefSeq RNA においては、gene は基本的に1つしかないはずなので、
 #   最初にパタンマッチした箇所のみ抽出。2つ目以降は無視される。
 	my $gene_feature = ($features =~ /
-		^(\ {5}gene\ .*?)  # gene feature 全体にマッチ
-		^(?!\ {6})         # 次の項目の開始位置の手前まで
+		^(\ {5}gene\ .*?)(  # gene feature 全体にマッチ
+		^(?!\ {6}) |        # 次の項目の開始位置の手前まで
+		\Z )                # または FEATURES の末尾まで
 	/smx) ? $1 : '' ;
 
 # FEATURES -> gene -> /gene="xxxxx" を抽出
@@ -139,21 +140,21 @@ while (<>){
 	my $symbol = ($gene_feature =~ /
 		^\ +\/gene=\"(.*?)\"$
 	/mx) ? $1 : '' ;
-	print "$version	$symbol\n" if $symbol_op ;  # RefSeq RNA -> Gene Symbol の対応を出力
+	print "$locus	$symbol\n" if $symbol_op ;  # RefSeq RNA -> Gene Symbol の対応を出力
 
 # FEATURES -> gene -> /db_xref="GeneID:xxxxx" を抽出
 #   Gene ID（整数） NCBI Gene ID, 旧名 Entrez Gene ID
 	my $geneid = ($gene_feature =~ /
 		^\ +\/db_xref=\"GeneID:(.*?)\"$
 	/mx) ? $1 : '' ;
-	print "$version	$geneid\n" if $geneid_op ;  # RefSeq RNA -> Gene ID の対応を出力
+	print "$locus	$geneid\n" if $geneid_op ;  # RefSeq RNA -> Gene ID の対応を出力
 
 # FEATURES -> gene -> /db_xref="HGNC:xxxxx" を抽出
 #   HGNC ID（HGNC:整数）
 	my $hgnc = ($gene_feature =~ /
 		^\ +\/db_xref=\"HGNC:(.*?)\"$
 	/mx) ? $1 : '' ;
-	print "$version	$hgnc\n" if $hgnc_op ;  # RefSeq RNA -> HGNC ID の対応を出力
+	print "$locus	$hgnc\n" if $hgnc_op ;  # RefSeq RNA -> HGNC ID の対応を出力
 
 # FEATURES -> gene -> /db_xref="MIM:xxxxx" を抽出
 #   MIM number（整数）
@@ -162,15 +163,16 @@ while (<>){
 		^\ +\/db_xref=\"MIM:(.*?)\"$
 	/mxg and $mim_op){                # 出力オプション未指定の場合はループを実行しない
 		my $mim = $1 ;
-		print "$version	$mim\n" if $mim_op ;  # RefSeq RNA -> MIM number の対応を出力
+		print "$locus	$mim\n" if $mim_op ;  # RefSeq RNA -> MIM number の対応を出力
 	}
 
 # FEATURES -> CDS 全体を抽出
 #   RefSeq RNA においては、CDS は基本的に1つしかないはずなので、
 #   最初にパタンマッチした箇所のみ抽出。2つ目以降は無視される。
 	my $cds_feature = ($features =~ /
-		^(\ {5}CDS\ .*?)  # CDS featureの範囲にマッチ
-		^(?!\ {6})        # 次の項目の開始位置の手前まで
+		^(\ {5}CDS\ .*?)(  # CDS feature の範囲にマッチ
+		^(?!\ {6}) |       # 次の項目の開始位置の手前まで
+		\Z )               # または FEATURES の末尾まで
 	/smx) ? $1 : '' ;
 
 # FEATURES -> CDS -> /protein_id="xxxxx" を抽出
@@ -178,14 +180,16 @@ while (<>){
 	my $protein_id = ($cds_feature =~ /
 		^\ +\/protein_id=\"(.*?)\"$
 	/mx) ? $1 : '' ;
-	print "$version	$protein_id\n" if $protein_op ;  # RefSeq RNA -> RefSeq Protein の対応を出力
+	$protein_id =~ s/\.\d+$// ;  # version 情報を削除
+	print "$locus	$protein_id\n" if $protein_op ;  # RefSeq RNA -> RefSeq Protein の対応を出力
 
 # FEATURES -> variation 全体を抽出
 #   複数記載されているため while() ですべてのパタンマッチを抽出
 	while ($features =~ /
-		^(\ {5}variation\ .*?)  # variation featureの範囲にマッチ
-		^(?!\ {6})              # 次の項目の開始位置の手前まで
-	/smxg and $dbsnp_op){       # 出力オプション未指定の場合はループを実行しない
+		^(\ {5}variation\ .*?)(  # variation feature の範囲にマッチ
+		^(?!\ {6}) |             # 次の項目の開始位置の手前まで
+		\Z )                     # または FEATURES の末尾まで
+	/smxg and $dbsnp_op){        # 出力オプション未指定の場合はループを実行しない
 		my $variation_feature = $1 ;
 
 # FEATURES -> variation -> /db_xref="dbSNP:xxxxx" を抽出
@@ -195,7 +199,7 @@ while (<>){
 		my $dbsnp = ($variation_feature =~ /
 			^\ +\/db_xref=\"dbSNP:(.*?)\"$
 		/mx) ? $1 : '' ;
-		print "$version	rs$dbsnp\n" if $dbsnp_op ;  # RefSeq RNA -> dbSNP の対応を出力
+		print "$locus	rs$dbsnp\n" if $dbsnp_op ;  # RefSeq RNA -> dbSNP の対応を出力
 	}
 
 # エントリのまとめを1行で出力
