@@ -1,13 +1,3 @@
-source:
-  catalog: nbdc01774
-  category: Gene
-  label: HGNC
-  prefix: http://identifiers.org/hgnc/
-target:
-  catalog: nbdc00019
-  category: Reaction
-  label: Enzyme Nomenclature
-  prefix: http://identifiers.org/ec-code/
 link:
   forward:
     label: functionally related to
@@ -22,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: sparql_csv2tsv.sh query.rq "http://sparql.med2rdf.org/sparql"
+  method: sparql_csv2tsv.sh query.rq http://sparql.med2rdf.org/sparql
