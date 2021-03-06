@@ -3,12 +3,15 @@ require 'fileutils'
 module TogoID
 
   class Node
-    attr_reader :catalog, :category, :label, :prefix
+    attr_reader :catalog, :category, :label, :prefix, :regex, :internal_format, :external_format
     def initialize(hash)
       @catalog = hash["catalog"]
       @category = hash["category"]
       @label = hash["label"]
       @prefix = hash["prefix"]
+      @regex = hash["regex"]
+      @internal_format = hash["internal_format"]
+      @external_format = hash["external_format"]
     end
   end
 
@@ -40,18 +43,27 @@ module TogoID
   end
 
   class Config
+    class NoConfigError < StandardError; end
+
     attr_reader :source, :target, :link, :update
     def initialize(config_file)
       begin
         config = YAML.load(File.read(config_file))
         @path = File.dirname(config_file)
+        @dir = File.dirname(@path)
         @source_ns, @target_ns = File.basename(@path).split('-')
-        @source = Node.new(config["source"])
-        @target = Node.new(config["target"])
+        @dataset = YAML.load(File.read(File.join(@dir, 'dataset.yaml')))
+        raise NoConfigError, @source_ns unless @dataset[@source_ns]
+        raise NoConfigError, @target_ns unless @dataset[@target_ns]
+        @source = Node.new(@dataset[@source_ns])
+        @target = Node.new(@dataset[@target_ns])
         @link = Link.new(config["link"])
         @update = Update.new(config["update"])
+      rescue NoConfigError => error
+        puts "Error: dataset #{error.message} is not defined in the dataset.yaml file"
+        exit 1
       rescue => error
-        puts error
+        puts "Error: #{error.message}"
         exit 1
       end
       setup_files

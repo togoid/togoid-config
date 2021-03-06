@@ -1,13 +1,3 @@
-source:
-  catalog: nbdc02559
-  category: Chemical compound
-  label: ChEMBL compound
-  prefix: http://identifiers.org/chembl.compound/CHEMBL
-target:
-  catalog: nbdc00179
-  category: Bibliography
-  label: PubMed
-  prefix: http://identifiers.org/pubmed/
 link:
   forward:
     label: evidence publication
@@ -17,4 +7,4 @@ link:
   file: sample.tsv
 update:
   frequency: threeTimesAYear
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/ebi/sparql

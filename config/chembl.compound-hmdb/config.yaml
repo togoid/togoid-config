@@ -1,13 +1,3 @@
-source:
-  catalog: nbdc02559
-  category: Chemical compound
-  label: ChEMBL compound
-  prefix: http://identifiers.org/chembl.compound/CHEMBL
-target:
-  catalog: nbdc00909
-  category: Metabolite
-  label: HMDB
-  prefix: https://identifiers.org/hmdb/HMDB
 link:
   forward:
     label: closeMatch
@@ -17,4 +7,4 @@ link:
   file: sample.tsv
 update:
   frequency: threeTimesAYear
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/ebi/sparql
