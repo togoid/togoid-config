@@ -50,23 +50,32 @@ module TogoID
       begin
         config = YAML.load(File.read(config_file))
         @path = File.dirname(config_file)
-        @dir = File.dirname(@path)
         @source_ns, @target_ns = File.basename(@path).split('-')
-        @dataset = YAML.load(File.read(File.join(@dir, 'dataset.yaml')))
-        raise NoConfigError, @source_ns unless @dataset[@source_ns]
-        raise NoConfigError, @target_ns unless @dataset[@target_ns]
-        @source = Node.new(@dataset[@source_ns])
-        @target = Node.new(@dataset[@target_ns])
         @link = Link.new(config["link"])
         @update = Update.new(config["update"])
-      rescue NoConfigError => error
-        puts "Error: dataset #{error.message} is not defined in the dataset.yaml file"
-        exit 1
       rescue => error
         puts "Error: #{error.message}"
         exit 1
       end
+      load_dataset
       setup_files
+    end
+
+    def load_dataset
+      begin
+        yaml_path = File.join(File.dirname(@path), 'dataset.yaml')
+        unless File.exists?(yaml_path)
+          yaml_path = './config/dataset.yaml'
+        end
+        @dataset = YAML.load(File.read(yaml_path))
+        raise NoConfigError, @source_ns unless @dataset[@source_ns]
+        raise NoConfigError, @target_ns unless @dataset[@target_ns]
+        @source = Node.new(@dataset[@source_ns])
+        @target = Node.new(@dataset[@target_ns])
+      rescue NoConfigError => error
+        puts "Error: dataset #{error.message} is not defined in the dataset.yaml file"
+        exit 1
+      end
     end
 
     def setup_files
