@@ -12,7 +12,7 @@ rna              NM_; NR_; XM_; XR_
 genomic          NC_; AC_; NG_; NT_; NW_; NZ_
 ```
 
-上記の `rna` （以下、RefSeq RNA）のエントリから ID の対応表を作成する。  
+上記の rna（以下、RefSeq RNA）のエントリから ID の対応表を作成する。  
 RefSeq RNA には以下のエントリが含まれている。
 
 ```
@@ -66,7 +66,7 @@ ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/
 一次情報である flat file (*.gbff) から各種 ID を抽出するスクリプトを作成した。
 
 ```
-% gzip -dc human.*.rna.gbff.gz | ./parse_refseq.rna_gbff.pl --hgnc
+% gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl --hgnc
 NM_001368885	HGNC:2190
 NM_001368886	HGNC:2190
 NR_148047	HGNC:11522
@@ -84,7 +84,7 @@ NR_110936	HGNC:2861
 
 * 対応する HGNC が存在しないエントリは第2要素を空文字列として出力しているが、それでよいか。
 
-### 課題
+### メモ
 
 * ~~ヒトの flat file (human.*.rna.gbff.gz) は合計 2.4 GB もあるので他の対応表でも使いまわしたい。~~  
 → 共通入力ファイル置き場 (input/) の利用により解決！
@@ -92,7 +92,3 @@ NR_110936	HGNC:2861
   * [setlock の ruby 版](https://github.com/okaxaki/setlock) で、どの環境でも動作して使い勝手も良い。
   * `setlock.rb (ロックファイル) (コマンド)` で、ロックされている場合は解除を待って実行してくれる。
   * ロックファイルの有無ではなくロック状態で判定しているので終了後にロックファイルが残っていてよい。
-* `refseq.rna` の名称はとりあえず RefSeq の分類に合わせた。`refseq.transcript` とするかは検討事項。
-* Identifiers.org や NBDC カタログには `refseq.rna` が存在しないので便宜上 `refseq` の値を記載。
-* config.yaml の記載事項をレビューしてほしい。
-  * とりあえず `forward:` は `seeAlso` 、 `reverse:` は未記載としたが、ID間の関係性をふまえて書き直す必要がある。

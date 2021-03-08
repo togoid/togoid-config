@@ -1,6 +1,6 @@
-# RefSeq Protein -> UniProtKB
+# RefSeq protein -> UniProtKB
 
-### RefSeq Protein について
+### RefSeq protein について
 
 NCBI の公開する RefSeq は、3つの molecule type に分かれている。
 
@@ -12,9 +12,9 @@ rna              NM_; NR_; XM_; XR_
 genomic          NC_; AC_; NG_; NT_; NW_; NZ_
 ```
 
-上記の `protein` （以下、RefSeq Protein）のエントリと UniProtKB の対応表を作成する。  
+上記の protein（以下、RefSeq protein）のエントリと UniProtKB の対応表を作成する。  
 
-RefSeq Protein のエントリには対応が記載されていないが、NCBI が対応表を公開しているのでそれを利用することにする。
+RefSeq protein のエントリには対応が記載されていないが、NCBI が対応表を公開しているのでそれを利用することにする。
 
 ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz
 
@@ -48,11 +48,9 @@ UniProtKB protein accession:
            the corresponding UniProtKB protein accession
 ```
 
-### 課題
+### メモ
 
-* ~~accession のみで version 情報がない (例: NP_123456)。ちなみに refseq.rna -> refseq.protein の対応のほうには accession.version (例: NP_123456.7) が記載されている。version を補うか？（がんばればできる）~~  
-→ TogoID では、RefSeq RNA および RefSeq Protein の version は記載しないことにする（ゲノムは残す方針）。
+* ~~accession のみで version 情報がない (例: NP_123456)。ちなみに refseq_rna -> refseq_protein の対応のほうには accession.version (例: NP_123456.7) が記載されている。version を補うか？（がんばればできる）~~  
+→ TogoID では、RefSeq RNA `refseq_rna` および RefSeq protein `refseq_protein` の version は記載しないことにする（ゲノムは残す方針）。
 * ヒト以外の全生物種を含むのでサイズが大きい (約4600万行、約1GB)。
   * ヒトのみ抽出するか？（がんばればできる）
-* config.yaml の記載事項をレビューしてほしい。
-  * とりあえず `forward:` は `seeAlso` 、 `reverse:` は未記載としたが、ID間の関係性をふまえて書き直す必要がある。
