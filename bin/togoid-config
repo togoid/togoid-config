@@ -9,7 +9,8 @@
 #     togoid-config config/db1-db2 update
 #
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+ENV['TOGOID_ROOT'] = File.join(File.dirname(File.expand_path(__FILE__)), '..')
+$LOAD_PATH.unshift(File.join(ENV['TOGOID_ROOT'], 'lib'))
 
 require 'yaml'
 require 'togoid-config'
