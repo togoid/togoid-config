@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Weekly
-  method: DL='../../input/refseq.rna' && mkdir -p $DL && setlock.rb $DL/download.lock "wget -Nq --directory-prefix=$DL ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz" && gzip -dc $DL/human.*.rna.gbff.gz | parse_refseq.rna_gbff.pl --geneid
+  method: DL='../../input/refseq_rna' && mkdir -p $DL && setlock.rb $DL/download.lock "wget -Nq --directory-prefix=$DL ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz" && gzip -dc $DL/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --geneid
