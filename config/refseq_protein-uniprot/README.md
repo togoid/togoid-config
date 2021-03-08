@@ -51,6 +51,6 @@ UniProtKB protein accession:
 ### メモ
 
 * ~~accession のみで version 情報がない (例: NP_123456)。ちなみに refseq_rna -> refseq_protein の対応のほうには accession.version (例: NP_123456.7) が記載されている。version を補うか？（がんばればできる）~~  
-→ TogoID では、RefSeq RNA `refseq_rna` および RefSeq protein `refseq_protein` の version は記載しないことにする（ゲノムは残す方針）。
+→ TogoID では、RefSeq RNA `refseq_rna` および RefSeq protein `refseq_protein` の version は記載しないことにする（ゲノムは version を残す方針）。
 * ヒト以外の全生物種を含むのでサイズが大きい (約4600万行、約1GB)。
   * ヒトのみ抽出するか？（がんばればできる）
