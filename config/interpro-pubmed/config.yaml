@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: references
+    namespace: dcterms
+    prefix: http://purl.org/dc/terms/
+    predicate: references
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F '\t' -v db=PUBMED '$2 == db {print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
