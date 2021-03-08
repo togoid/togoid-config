@@ -89,7 +89,7 @@ namespace :prepare do
     input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro.xml.gz"
     if update_input_file(input_file, input_url)
       sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
-      sh "gunzip -f -k #{input_file}"
+      sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
     end
   end
 
