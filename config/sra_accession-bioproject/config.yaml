@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
+update:
+  frequency: Daily
+  method: awk 'BEGIN { FS=OFS="\t" } $1 ~ /^.RP/ { print $2, $19 }' $TOGOID_ROOT/input/sra/SRA_Accessions.tab | grep -v '-'
