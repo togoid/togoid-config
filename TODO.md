@@ -12,8 +12,24 @@
 ## affy.hg.u133.plus.2-ncbigene/
 
 * affy.hg.u133.plus.2 なのか affy.probeset なのか affymetrix なのか
-  * → affy_probeset で
+  * → affy_probeset に変更した
 * sparql_csv2tsv.sh でよさげ
+  * ?gene_id ?affy_id の順だったので query.rq を修正した
+  * しかし ?gene refexo:affyProbeset ?affy として取得しているので本来 ncbigene-affy_probeset なのでは？
+  * FROM <https://refex.dbcls.jp/rdf/RefEx_ID_Relation_human> を追加
+
+```
+91952_at        90379
+AFFX-HUMGAPDH/M33197_3_at       2597
+AFFX-HUMGAPDH/M33197_5_at       2597
+AFFX-HUMGAPDH/M33197_M_at       2597
+AFFX-HUMISGF3A/M97935_3_at      6772
+AFFX-HUMISGF3A/M97935_5_at      6772
+AFFX-HUMISGF3A/M97935_MA_at     6772
+AFFX-HUMISGF3A/M97935_MB_at     6772
+```
+
+最後に↑のような / 入りの ID が含まれているので RDF 化の際に困りそう。
 
 ## chembl-chembl.target/
 
