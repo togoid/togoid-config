@@ -372,6 +372,19 @@ IPR000003	GO_0003707
 IPR000003	GO_0008270
 ```
 
+→ GO_ を削った
+
+* interpro2go が古いようだが OK？
+
+```
+% ls -l input/interpro/interpro2go 
+-rw-r--r-- 1 ktym staff 3486079 2016-06-09 00:00:00 input/interpro/interpro2go
+```
+
+READMEより
+
+- predicate は uniprot-go と同じにしたが正しいか
+
 ## interpro-pdb/
 
 * EBI から interpro.xml.gz を curl でダウンロードして Python で処理するパターン
