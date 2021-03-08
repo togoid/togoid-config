@@ -225,7 +225,7 @@ mgi:
   prefix: 'http://identifiers.org/mgi/'
 mirbase:
   label: miRBase
-  catalog: FIXME
+  catalog: nbdc00136
   category: microRNA
   prefix: 'http://identifiers.org/mirbase/'
 mondo:
