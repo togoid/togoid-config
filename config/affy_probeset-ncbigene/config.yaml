@@ -1,15 +1,4 @@
-source:
-  label: Affymetrix Probeset
-  namespace: affy.probeset
-  type: Gene
-  prefix: http://identifiers.org/affy.probeset/
-target:
-  label: NCBI gene
-  namespace: ncbigene
-  type: Gene
-  prefix: http://identifiers.org/ncbigene/
 link:
-  file: pair.tsv
   forward:
     label: seeAlso
     namespace: rdfs
@@ -20,6 +9,7 @@ link:
     namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
   frequency: freeze
-  method: update.sh > pair.tsv
+  method: sparql_csv2tsv.sh query.rq https://orth.dbcls.jp/sparql-dev
