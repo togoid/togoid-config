@@ -1,17 +1,21 @@
 # TogoID
 
-# -q -N -r -np -nd -P
-WGET_OPTS = "--quiet --timestamping --recursive --no-parent --no-directories --directory-prefix"
+directory OUTPUT_TSV_DIR = "output/tsv/"
+directory OUTPUT_TTL_DIR = "output/ttl/"
 
 CFG_FILES = FileList["config/*/config.yaml"]
-TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, 'output/tsv/').sub(/$/, '.tsv')
-TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, 'output/ttl/').sub(/$/, '.ttl')
+TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
+TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
-OUTPUT_TSV_DIR = "output/tsv/"
-OUTPUT_TTL_DIR = "output/ttl/"
+desc "Default task"
+task :default => :convert
+desc "Update all TSV files"
+task :update  => [ OUTPUT_TSV_DIR, TSV_FILES ]
+desc "Update all TTL files"
+task :convert => [ OUTPUT_TTL_DIR, TTL_FILES ]
 
-directory OUTPUT_TSV_DIR
-directory OUTPUT_TTL_DIR
+# -q -N -r -np -nd -P
+WGET_OPTS = "--quiet --timestamping --recursive --no-parent --no-directories --directory-prefix"
 
 def prepare_task(taskname)
   case taskname
@@ -28,6 +32,13 @@ def prepare_task(taskname)
   end
 end
 
+# The wget --timestamping option should do this job but leave the method just in case.
+def compare_size(file, url)
+  file_size_old = File.size(file)
+  file_size_new = `curl -sI #{url} | grep 'Content-Length' | tr -d '\r' | awk '{print $2}'`
+  return file_size_old != file_size_new
+end
+
 # Generate dependency for preparation by target names
 rule /#{OUTPUT_TSV_DIR}.+\.tsv/ => method(:prepare_task) do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
@@ -39,10 +50,6 @@ rule /#{OUTPUT_TTL_DIR}.+\.ttl/ => '%{ttl,tsv}X.tsv' do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
   sh "togoid-config config/#{pair} convert"
 end
-
-task :default => :update
-task :update => TSV_FILES
-task :convert => TTL_FILES
 
 namespace :prepare do
   directory INPUT_DRUGBANK_DIR = "input/drugbank"
