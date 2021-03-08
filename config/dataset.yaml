@@ -1,4 +1,4 @@
-affy.probeset:
+affy_probeset:
   label: Affymetrix probeset
   catalog: FIXME
   category: Probe
@@ -24,24 +24,24 @@ chebi:
   catalog: nbdc00027
   category: Compound
   prefix: 'https://identifiers.org/chebi/CHEBI:'
-chembl.compound:
+chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02559
   category: Compound
   # FIXME: use 'http://rdf.ebi.ac.uk/resource/chembl/molecule/#' ?
   prefix: 'http://identifiers.org/chembl.compound/CHEMBL'
-chembl.target:
+chembl_target:
   label: ChEMBL target
   catalog: nbdc02555
   category: Protein
   prefix: 'http://identifiers.org/chembl.target/'
-civic.gene:
+civic_gene:
   label: CIVIC gene
   catalog: nbdc02558
   category: Gene
   # FIXME: valid in RDF?
   prefix: 'http://civic.genome.wustl.edu/links/genes/'
-clinvar.vcv:  # FIXME: clinvar?
+clinvar_vcv:  # FIXME: clinvar?
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
@@ -77,17 +77,17 @@ ena:
   category: Gene
   label: ENA
   prefix: 'http://identifiers.org/ena.embl/'
-ensembl.gene:
+ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
   prefix: 'http://identifiers.org/ensembl/'
-ensembl.protein:
+ensembl_protein:
   label: Ensembl protein
   catalog: nbdc00054
   category: Protein
   prefix: 'http://identifiers.org/ensembl/'
-ensembl.transcript:
+ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
   category: Gene
@@ -102,7 +102,7 @@ hgnc:
   catalog: nbdc01774
   category: Gene
   prefix: 'http://identifiers.org/hgnc/'
-hgnc.symbol:
+hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
   category: Gene
@@ -123,7 +123,7 @@ hp:
   catalog: nbdc02559
   category: Phenotype
   prefix: 'http://purl.obolibrary.org/obo/HP_'
-human.protein.atlas:  # FIXME: too long?
+human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
   catalog: nbdc00905
   category: Protein
@@ -150,38 +150,38 @@ interpro:
   catalog: nbdc00108
   category: Domain
   prefix: 'http://identifiers.org/interpro/'
-kegg.compound:
+kegg_compound:
   label: KEGG Compound
   catalog: nbdc00814
   category: Compound
   prefix: 'http://identifiers.org/kegg.compound/'
-kegg.disease:
+kegg_disease:
   catalog: nbdc00813
   category: Disease
   label: KEGG Disease
   prefix: 'http://identifiers.org/kegg.disease/'
-kegg.drug:
+kegg_drug:
   label: KEGG Drug
   catalog: nbdc00812
   category: Drug
   prefix: 'http://identifiers.org/kegg.drug/'
-kegg.genes:
+kegg_genes:
   label: KEGG Genes
   catalog: nbdc00532
   # FIXME: leave two categories as is?
   category: Gene, Protein
   prefix: 'http://identifiers.org/kegg.genes/'
-kegg.orthology:  # FIXME: ko?
+kegg_orthology:  # FIXME: ko?
   label: KEGG Orthology
   catalog: nbdc00817
   category: Ortholog
   prefix: 'http://identifiers.org/kegg.orthology/'
-kegg.pathway:
+kegg_pathway:
   label: KEGG Pathway
   catalog: nbdc00118
   category: Pathway
   prefix: 'https://identifiers.org/kegg.pathway/'
-kegg.reaction:
+kegg_reaction:
   label: KEGG Reaction
   catalog: nbdc00818
   category: Interaction
@@ -191,13 +191,13 @@ lrg:
   category: Gene
   label: Locus Reference Genomic record
   prefix: 'http://identifiers.org/lrg/'
-mbgd.gene:
+mbgd_gene:
   label: MBGD gene
   catalog: nbdc00130
   category: Ortholog
   # FIXME: valid in RDF?
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
-mbgd.organism:
+mbgd_organism:
   label: MBGD organism
   catalog: nbdc00130
   category: Ortholog
@@ -249,22 +249,22 @@ ncbiprotein:
   catalog: nbdc00584
   category: Protein
   prefix: 'http://identifiers.org/ncbiprotein/'
-oma.group:
+oma_group:
   label: OMA group
   catalog: nbdc02221
   category: Ortholog
   prefix: 'http://identifiers.org/oma.grp/'
-oma.protein:
+oma_protein:
   label: OMA protein
   catalog: nbdc02221
   category: Protein
   prefix: 'https://identifiers.org/oma.protein/'
-omim.gene:
+omim_gene:
   label: OMIM
   catalog: nbdc00154
   category: Gene
   prefix: 'http://identifiers.org/mim/'
-omim.phenotype:
+omim_phenotype:
   label: OMIM
   catalog: nbdc00154
   category: Disease
@@ -274,7 +274,7 @@ orphanet:
   catalog: nbdc01422
   category: Gene
   prefix: 'http://identifiers.org/orphanet/'
-orphanet.ordo:
+orphanet_ordo:
   label: Orphanet Rare Disease ontology
   catalog: nbdc01422
   category: Disease
@@ -289,12 +289,12 @@ pfam:
   catalog: nbdc00163
   category: Domain
   prefix: 'http://identifiers.org/pfam/'
-pubchem.compound:
+pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
   category: Compound
   prefix: 'https://identifiers.org/pubchem.compound/'
-pubchem.substance:
+pubchem_substance:
   label: PubChem substance
   catalog: nbdc00642
   category: Compound
@@ -304,29 +304,29 @@ pubmed:
   catalog: nbdc00179
   category: Literature
   prefix: 'http://identifiers.org/pubmed/'
-reactome.pathway:
+reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
   category: Pathway
   prefix: 'http://identifiers.org/reactome/'
-reactome.reaction:
+reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
   category: Interaction
   prefix: 'http://identifiers.org/reactome/'
-refseq.genomic:
+refseq_genomic:
   label: RefSeq genomic
   catalog: nbdc00187
   category: Genome
   # NC_; AC_; NG_; NT_; NW_; NZ_
   prefix: 'http://identifiers.org/refseq/'
-refseq.protein:
+refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
   category: Protein
   # NP_; XP_; AP_; YP_; WP_
   prefix: 'http://identifiers.org/refseq/'
-refseq.rna:
+refseq_rna:
   label: RefSeq RNA
   catalog: nbdc00187
   category: Gene
@@ -342,32 +342,32 @@ rhea:
   catalog: nbdc02083
   category: Interaction
   prefix: 'http://identifiers.org/rhea/'
-sra.accession:
+sra_accession:
   label: SRA accession
   catalog: nbdc00687
   category: FIXME
   prefix: 'http://identifiers.org/insdc.sra/'
-sra.analysis:
+sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
   category: FIXME
   prefix: 'http://identifiers.org/insdc.sra/'
-sra.experiment:
+sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
   category: FIXME
   prefix: 'http://identifiers.org/insdc.sra/'
-sra.project:
+sra_project:
   label: SRA project
   catalog: nbdc00687
   category: FIXME
   prefix: 'http://identifiers.org/insdc.sra/'
-sra.run:
+sra_run:
   label: SRA run
   catalog: nbdc00687
   category: FIXME
   prefix: 'http://identifiers.org/insdc.sra/'
-sra.sample:
+sra_sample:
   label: SRA sample
   catalog: nbdc00687
   category: FIXME
@@ -394,13 +394,13 @@ wikipathways:
   category: Pathway
   prefix: 'http://identifiers.org/wikipathways/'
 ---
-affy.probeset:
+affy_probeset:
   label: Affymetrix probeset
   catalog: FIXME
   category: Probe
   regex: '^\d{4,}((_[asx])?_at)?$'
   prefix: 'http://identifiers.org/affy.probeset/'
-chembl.compound:
+chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02559
   category: Compound
@@ -416,7 +416,7 @@ chebi:
   internal_format: '{{id}}'
   external_format: 'CHEBI:{{id}}'
   prefix: 'https://identifiers.org/chebi/CHEBI:'
-ensembl.gene:
+ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
