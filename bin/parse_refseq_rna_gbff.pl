@@ -6,7 +6,7 @@
 # https://www.ddbj.nig.ac.jp/ddbj/flat-file.html
 #
 # usage:
-# gzip -dc human.*.rna.gbff.gz | ./parse_refseq.rna_gbff.pl
+# gzip -dc human.*.rna.gbff.gz | ./parse_refseq_rna_gbff.pl
 #
 # options:
 #   --summary    RefSeq RNA と各種 ID の対応を1行に出力（デフォルト）
@@ -85,8 +85,8 @@ while (<>){
 	/mx) ? $1 : '' ;
 
 # REFERENCE を抽出
-#   このなかの PUBMED に PubMed ID (PMID) が記載されている
-#   複数記載されているため while() ですべてのパタンマッチを抽出
+#   このなかの PUBMED に PubMed ID (PMID) が記載されている。
+#   複数記載されているため while() ですべてのパタンマッチを抽出。
 	while ($gbff =~ /
 		^(REFERENCE\ .*?)  # REFERENCE 全体にマッチ
 		^(?=\S)            # 次の項目の開始位置の手前まで
@@ -158,7 +158,7 @@ while (<>){
 
 # FEATURES -> gene -> /db_xref="MIM:xxxxx" を抽出
 #   MIM number（整数）
-#   複数記載されている場合があるため while() ですべてのパタンマッチを抽出
+#   複数記載されている場合があるため while() ですべてのパタンマッチを抽出。
 	while ($gene_feature =~ /
 		^\ +\/db_xref=\"MIM:(.*?)\"$
 	/mxg and $mim_op){                # 出力オプション未指定の場合はループを実行しない
@@ -184,7 +184,7 @@ while (<>){
 	print "$locus	$protein_id\n" if $protein_op ;  # RefSeq RNA -> RefSeq Protein の対応を出力
 
 # FEATURES -> variation 全体を抽出
-#   複数記載されているため while() ですべてのパタンマッチを抽出
+#   複数記載されているため while() ですべてのパタンマッチを抽出。
 	while ($features =~ /
 		^(\ {5}variation\ .*?)(  # variation feature の範囲にマッチ
 		^(?!\ {6}) |             # 次の項目の開始位置の手前まで
