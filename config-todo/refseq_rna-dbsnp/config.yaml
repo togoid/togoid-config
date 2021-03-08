@@ -1,24 +1,10 @@
-source:
-  label: RefSeq RNA
-  catalog: nbdc00187
-  category: Gene
-  prefix: http://identifiers.org/refseq/
-
-target:
-  label: dbSNP
-  catalog: nbdc00206
-  category: Variant
-  prefix: http://identifiers.org/dbsnp/
-
 link:
   forward:
     label: seeAlso
     namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
-
   file: sample.tsv
-
 update:
   frequency: Weekly
   method: DL='../../input/refseq.rna' && mkdir -p $DL && setlock.rb $DL/download.lock "wget -Nq --directory-prefix=$DL ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz" && gzip -dc $DL/human.*.rna.gbff.gz | parse_refseq.rna_gbff.pl --dbsnp
