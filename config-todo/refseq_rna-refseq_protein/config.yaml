@@ -1,24 +1,15 @@
-source:
-  label: RefSeq RNA
-  catalog: nbdc00187
-  category: Gene
-  prefix: http://identifiers.org/refseq/
-
-target:
-  label: RefSeq Protein
-  catalog: nbdc00187
-  category: Protein
-  prefix: http://identifiers.org/refseq/
-
 link:
   forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-
+    label: ribosomally translates to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002513
+  reverse:
+    label: ribosomal translation of 
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002512
   file: sample.tsv
-
 update:
   frequency: Weekly
   method: DL='../../input/refseq.rna' && mkdir -p $DL && setlock.rb $DL/download.lock "wget -Nq --directory-prefix=$DL ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/human.*.rna.gbff.gz" && gzip -dc $DL/human.*.rna.gbff.gz | parse_refseq.rna_gbff.pl --protein
