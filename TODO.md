@@ -5,9 +5,14 @@
 * 時間のかかる SPARQL を分割して投げる場合のジョブコントロールをどうするか
 * link の predicate が rdfs:seeAlso のママのものが半数
 
+* config/db.1-db.2 を config/db_1-db_2 にする or config/db-1_db-2 にする？
+  * → MySQL のテーブル名で . が使えないことを避けるための変更なので、同じく使えない - ではなく _ にすべき
+  * → config/db_1-db_2 で
+
 ## affy.hg.u133.plus.2-ncbigene/
 
 * affy.hg.u133.plus.2 なのか affy.probeset なのか affymetrix なのか
+  * → affy_probeset で
 * sparql_csv2tsv.sh でよさげ
 
 ## chembl-chembl.target/
@@ -104,6 +109,7 @@
 * Mart に wget で XML クエリを投げているパターン
 * pair.tsv が長すぎ
 * target ID が無い行がある
+* source を ensembl.gene に変更
 
 ```
 ENSG00000210117	1553538_s_at
@@ -124,10 +130,12 @@ ENSG00000210135
 ## ensembl-ensembl.protein/
 
 * Ruby で taxonomy ID ごとに２つ目の SPARQL クエリを投げているパターン
+* source を ensembl.gene に変更
 
 ## ensembl-ensembl.transcript/
 
 * Ruby で taxonomy ID ごとに２つ目の SPARQL クエリを投げているパターン
+* source を ensembl.gene に変更
 
 ## ensembl-hgnc/
 
@@ -135,15 +143,18 @@ ENSG00000210135
 * ただし text/csv ではなく text/tab-separated-values を受け取っている（エンドポイント依存）
 * tail -n +2 | tr -d '"'
 * わざわざ echo で pair.tsv にコマンドラインを出力しないでくれ…
+* source を ensembl.gene に変更
 
 ## ensembl-omim/
 
 * 同上
+* source を ensembl.gene に変更
 
 ## ensembl-refseq/
 
 * Ruby で taxonomy ID ごとに２つ目の SPARQL クエリを投げているパターン
 * link.tsv がちょっと長い
+* source を ensembl.gene に変更
 
 ## ensembl.protein-ensembl.transcript/
 
@@ -789,3 +800,9 @@ WP202_r95798	DOID_114
 ## wikipathways-uniprot/
 
 * sparql_csv2tsv.sh で URI prefix を削る
+
+# insdc2ttl
+
+* git commit
+* fix variant URI, faldo:position
+
