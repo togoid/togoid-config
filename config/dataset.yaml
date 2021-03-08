@@ -1,3 +1,13 @@
+affy.probeset:
+  label: Affymetrix probeset
+  catalog: FIXME
+  category: Probe
+  prefix: 'http://identifiers.org/affy.probeset/'
+bioproject:
+  label: BioProject
+  catalog: nbdc00476 
+  category: FIXME
+  prefix: 'http://identifiers.org/bioproject/'
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
@@ -304,14 +314,8 @@ reactome.reaction:
   catalog: nbdc00185
   category: Interaction
   prefix: 'http://identifiers.org/reactome/'
-refseq.gene:
-  label: RefSeq gene
-  catalog: nbdc00187
-  category: Gene
-  # FIXME: what is the accession prefix for RefSeqGene? If NG_, why refseq.genome also uses NG_?
-  prefix: 'http://identifiers.org/refseq/'
-refseq.genome:
-  label: RefSeq genome
+refseq.genomic:
+  label: RefSeq genomic
   catalog: nbdc00187
   category: Genome
   # NC_; AC_; NG_; NT_; NW_; NZ_
@@ -396,11 +400,6 @@ affy.probeset:
   category: Probe
   regex: '^\d{4,}((_[asx])?_at)?$'
   prefix: 'http://identifiers.org/affy.probeset/'
-bioproject:
-  label: BioProject
-  catalog: nbdc00476 
-  category: FIXME
-  prefix: 'http://identifiers.org/bioproject/'
 chembl.compound:
   label: ChEMBL compound
   catalog: nbdc02559
