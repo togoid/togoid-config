@@ -388,6 +388,8 @@ READMEより
 ## interpro-pdb/
 
 * EBI から interpro.xml.gz を curl でダウンロードして Python で処理するパターン
+  * curl で取得する部分は Rakefile に切り出した
+  * 標準入力を受け付ける bin/interpro_xml2tsv.py に書き換えた
 
 * README より
 
@@ -396,10 +398,12 @@ READMEより
 - 各ディレクトリ内に、`ipr_all_pairs.tsv` から必要な関係を抽出し `pair.tsv` として出力
 - なお、`interpro-go` はダウンロード元のファイルが異なるので別
 
+→ Python で処理済みのファイルを ipr_all_pairs.tsv から $TOGOID_ROOT/input/interpro/interpro.tsv とした
+
 ## interpro-pfam/
 
 * 同上
-* pair.tsv が短い
+* pair.tsv が短い → head したものに置換した
 
 ## interpro-pubmed/
 
@@ -408,7 +412,7 @@ READMEより
 ## interpro-reactome/
 
 * 同上
-* pair.tsv が長い
+* pair.tsv が長い → head したものに置換した
 
 ## mbgd.gene-uniprot/
 
