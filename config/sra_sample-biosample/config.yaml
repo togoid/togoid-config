@@ -1,16 +1,5 @@
----
-source:
-  label: SRA Sample
-  type: DataSet
-  namespace: sra.sample
-  prefix: http://identifiers.org/insdc.sra/
-target:
-  label: BioSample
-  type: DataSet
-  namespace: biosample
-  prefix: http://identifiers.org/biosample/
 link:
-  file: "./sra.sample-biosample.tsv"
+  file: sample.tsv
   forward:
     label: seeAlso
     namespace: rdfs
@@ -23,9 +12,5 @@ link:
     predicate: seeAlso
 update:
   frequency: Daily
-  method: "[ $(ls -l /tmp/togoid/SRA_Accessions.tab | awk '{ print $5 }') -eq $(curl
-    -sI ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab | grep 'Content-Length'
-    | tr -d '\r' | awk '{ print $2 }') ] || (mkdir -p $(dirname /tmp/togoid/SRA_Accessions.tab)
-    && curl -s ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab > /tmp/togoid/SRA_Accessions.tab)
-    && awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.RS/ { print $1, $18 }' /tmp/togoid/SRA_Accessions.tab
-    | grep -v '-' > pair.tsv"
+  method: "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.RS/ { print $1, $18 }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\"
+    | grep -v '-'"
