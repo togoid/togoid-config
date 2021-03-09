@@ -1,0 +1,14 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX dc: <http://purl.org/dc/elements/1.1/> 
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX taxon: <http://identifiers.org/taxonomy/>
+
+SELECT DISTINCT ?ensp_id ?enst_id
+WHERE {
+  VALUES ?taxon { taxon:{{tax_id}} }
+  ?ensg obo:RO_0002162 ?taxon .
+  ?enst obo:SO_transcribed_from ?ensg ;
+        obo:SO_translates_to ?ensp ;
+        dc:identifier ?enst_id .
+  ?ensp dc:identifier ?ensp_id .
+}
