@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: wget -q 'ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz' && gzip -dc gene_refseq_uniprotkb_collab.gz | grep -v '^#' && rm gene_refseq_uniprotkb_collab.gz
+  method: gzip -dc $TOGOID_ROOT/input/refseq/gene_refseq_uniprotkb_collab.gz | grep -v '^#'

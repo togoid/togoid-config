@@ -101,6 +101,12 @@ namespace :prepare do
     input_file = "human.*.rna.gbff.gz"
     input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
     sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
+
+    input_file = "gene_refseq_uniprotkb_collab.gz"
+    input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+    if update_input_file(input_file, input_url)
+      sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
+    end
   end
 
   desc "Prepare required files for SRA"
