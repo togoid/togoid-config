@@ -11,6 +11,6 @@ WHERE {
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?xref_uri .
   ?xref_uri a cco:ProteinDataBankRef .
-  BIND (replace(lcase(str(?xref_uri)), 'http://identifiers.org/pdb/', '') AS ?xref_id)
+  BIND (ucase(replace(str(?xref_uri), 'http://identifiers.org/pdb/', '')) AS ?xref_id)
   BIND (replace(?molecule_id, 'CHEMBL', '') AS ?chembl_id)
 }

@@ -12,5 +12,5 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: awk -F '\t' -v db=PDB '$2 == db {print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
+  method: awk -F '\t' -v db=PDB '$2 == db {print $1 "\t" toupper($3)}' $TOGOID_ROOT/input/interpro/interpro.tsv
 
