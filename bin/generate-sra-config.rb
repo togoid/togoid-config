@@ -202,7 +202,7 @@ module Accessions
       def generate_config(pair_id, s_id, s_attrs, t_id, t_attrs, method)
         data = {
           "link" => {
-            "file" => File.join(".", "#{pair_id}.tsv"),
+            "file" => "sample.tsv",
             "forward" => link_attribute,
             "reverse" => link_attribute,
           },
