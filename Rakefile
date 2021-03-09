@@ -116,6 +116,7 @@ namespace :prepare do
     input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
     input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
     if update_input_file(input_file, input_url)
+      rm_rf input_file
       sh "wget #{WGET_OPTS} #{INPUT_SRA_DIR} #{input_url}"
     end
   end
