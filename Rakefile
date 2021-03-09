@@ -19,16 +19,18 @@ task :convert => [ OUTPUT_TTL_DIR, TTL_FILES ]
 # Some tasks require preparation to extract link data
 def prepare_task(taskname)
   case taskname
-  when /#{OUTPUT_TSV_DIR}refseq/
-    return "prepare:refseq"
-  when /#{OUTPUT_TSV_DIR}sra/
-    return "prepare:sra"
   when /#{OUTPUT_TSV_DIR}drugbank/
     return "prepare:drugbank"
+  when /#{OUTPUT_TSV_DIR}ensembl/
+    return "prepare:ensembl"
   when /#{OUTPUT_TSV_DIR}interpro/
     return "prepare:interpro"
   when /#{OUTPUT_TSV_DIR}ncbigene/
     return "prepare:ncbigene"
+  when /#{OUTPUT_TSV_DIR}refseq/
+    return "prepare:refseq"
+  when /#{OUTPUT_TSV_DIR}sra/
+    return "prepare:sra"
   else
     return "config/dataset.yaml"
   end
@@ -49,6 +51,7 @@ end
 # Preparatioin tasks
 namespace :prepare do
   directory INPUT_DRUGBANK_DIR = "input/drugbank"
+  directory INPUT_ENSEMBL_DIR  = "input/ensembl"
   directory INPUT_INTERPRO_DIR = "input/interpro"
   directory INPUT_NCBIGENE_DIR = "input/ncbigene"
   directory INPUT_REFSEQ_DIR   = "input/refseq"
@@ -67,7 +70,7 @@ namespace :prepare do
     return local_file_size != remote_file_size
   end
 
-  # Return true when file sizes differ or file doesn't exist
+  # Check if the file sizes differ or the file doesn't exist
   def update_input_file(file, url)
     if File.exists?(file)
       compare_file_size(file, url)
@@ -76,6 +79,14 @@ namespace :prepare do
     end
   end
 
+  # Check if the file is older than 7 (or given) days
+  def file_older_than_days(file, days = 7)
+    age = (Time.now - File.ctime(file)) / (24*60*60)
+    $stderr.puts "File #{file} is created #{age} days ago (only updated when >#{days} days)"
+    age > days
+  end
+
+  # Create file lock to avoid simultaneous access
   def download_lock(dir, &block)
     $stderr.puts "Checking lock file #{dir}/download.lock for download"
     File.open("#{dir}/download.lock", "w") do |lockfile|
@@ -92,6 +103,16 @@ namespace :prepare do
     $stderr.puts "TODO: implement prepare:drugbank"
     download_lock(INPUT_DRUGBANK_DIR) do
       # https://go.drugbank.com/releases/5-1-8/downloads/all-full-database
+    end
+  end
+
+  desc "Prepare taxonomy ID list for Ensembl"
+  task :ensembl => INPUT_ENSEMBL_DIR do
+    download_lock(INPUT_ENSEMBL_DIR) do
+      taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
+      if file_older_than_days(taxonomy_file, 10)
+        sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
+      end
     end
   end
 
