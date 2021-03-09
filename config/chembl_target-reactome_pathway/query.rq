@@ -10,7 +10,7 @@ WHERE {
   ?molecule cco:chemblId ?molecule_id .
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?xref_uri .
-  ?xref_uri a cco:PfamRef .
-  BIND (replace(str(?xref_uri), 'http://identifiers.org/pfam/', '') AS ?xref_id)
+  ?xref_uri a cco:ReactomeRef .
+  BIND (replace(str(?xref_uri), 'http://identifiers.org/reactome/', '') AS ?xref_id)
   BIND (replace(?molecule_id, 'CHEMBL', '') AS ?chembl_id)
 }
