@@ -6,7 +6,7 @@ require 'fileutils'
 module Accessions
   class GenerateConfig
     class << self
-      @@config_dir_path = File.join(File.dirname($0), "..", "link")
+      @@config_dir_path = File.join(File.dirname($0), "..", "config")
       @@accession_tab_path = "ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
 
       def nodes
