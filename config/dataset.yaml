@@ -270,11 +270,6 @@ omim_phenotype:
   category: Disease
   prefix: 'https://identifiers.org/mim/'
 orphanet:
-  label: Orphanet
-  catalog: nbdc01422
-  category: Gene
-  prefix: 'http://identifiers.org/orphanet/'
-orphanet_ordo:
   label: Orphanet Rare Disease ontology
   catalog: nbdc01422
   category: Disease
