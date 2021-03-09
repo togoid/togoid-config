@@ -57,7 +57,7 @@ namespace :prepare do
   # -q -r -np -nd -P (-P needs to take a directory name as an argument)
   WGET_OPTS = "--quiet --recursive --no-parent --no-directories --directory-prefix"
 
-  # The wget --timestamping (-N) option doesn't check the file size.
+  # The wget --timestamping (-N) option doesn't seem to check the file size.
   # Thus, if newer broken files exist in the input directory, wget won't work.
   def compare_file_size(file, url)
     local_file_size  = File.size(file)
@@ -76,96 +76,111 @@ namespace :prepare do
     end
   end
 
+  def download_lock(dir, &block)
+    $stderr.puts "Checking lock file #{dir}/download.lock for download"
+    File.open("#{dir}/download.lock", "w") do |lockfile|
+      if lockfile.flock(File::LOCK_EX)
+        lockfile.puts `date +%FT%T`
+        lockfile.flush
+        yield block
+      end
+    end
+  end
+
   desc "Prepare required files for Drugbank"
   task :drugbank => INPUT_DRUGBANK_DIR do
     $stderr.puts "TODO: implement prepare:drugbank"
-    # https://go.drugbank.com/releases/5-1-8/downloads/all-full-database
+    download_lock(INPUT_DRUGBANK_DIR) do
+      # https://go.drugbank.com/releases/5-1-8/downloads/all-full-database
+    end
   end
 
   desc "Prepare required files for InterPro"
   task :interpro => INPUT_INTERPRO_DIR do
-    input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
-    input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
-    if update_input_file(input_file, input_url)
-      sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
-    end
+    download_lock(INPUT_INTERPRO_DIR) do
+      input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
+      if update_input_file(input_file, input_url)
+        sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
+      end
 
-    input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
-    input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
-    if update_input_file(input_file, input_url)
-      sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
-      sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
+      input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
+      if update_input_file(input_file, input_url)
+        sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
+        sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
+      end
     end
   end
 
-  INPUT_REFSEQ_LOCK = "#{INPUT_REFSEQ_DIR}/download.lock"
+  desc "Prepare required files for NCBI Gene"
+  task :ncbigene=> INPUT_NCBIGENE_DIR do
+    download_lock(INPUT_NCBIGENE_DIR) do
+      input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
+      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
+      if update_input_file(input_file, input_url)
+        rm_rf input_file
+        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
+      end
+
+      input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
+      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz"
+      if update_input_file(input_file, input_url)
+        rm_rf input_file
+        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
+      end
+
+      input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
+      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz"
+      if update_input_file(input_file, input_url)
+        rm_rf input_file
+        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
+      end
+
+      input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
+      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
+      if update_input_file(input_file, input_url)
+        rm_rf input_file
+        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
+      end
+    end
+  end
 
   desc "Prepare required files for RefSeq"
   task :refseq => INPUT_REFSEQ_DIR do
-    File.open(INPUT_REFSEQ_LOCK, "w") do |lockfile|
-      $stderr.puts "Checking/waiting download lock file #{INPUT_REFSEQ_LOCK}"
-      if lockfile.flock(File::LOCK_EX)
-        sh "date +%FT%T > #{INPUT_REFSEQ_LOCK}"
-        # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
-        # However, NCBI ftp server is currently broken..
-        # (It is reported that large files are contaminated by illegal bytes occationally)
-        input_file = "human.*.rna.gbff.gz"
-        input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
-        sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
+    download_lock(INPUT_REFSEQ_DIR) do
+      sh "date +%FT%T > #{INPUT_REFSEQ_LOCK}"
+      # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
+      # However, NCBI ftp server is currently broken..
+      # (It is reported that large files are contaminated by illegal bytes occationally)
+      input_file = "human.*.rna.gbff.gz"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
+      sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
 
-        input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
-        input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
-        if update_input_file(input_file, input_url)
-          sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
-        end
+      input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+      if update_input_file(input_file, input_url)
+        sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
       end
     end
   end
 
   desc "Prepare required files for SRA"
   task :sra => INPUT_SRA_DIR do
-    input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
-    input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
-    if update_input_file(input_file, input_url)
-      rm_rf input_file
-      sh "wget #{WGET_OPTS} #{INPUT_SRA_DIR} #{input_url}"
+    download_lock(INPUT_SRA_DIR) do
+      input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
+      if update_input_file(input_file, input_url)
+        rm_rf input_file
+        sh "wget #{WGET_OPTS} #{INPUT_SRA_DIR} #{input_url}"
+      end
     end
   end
 
-  desc "Prepare required files for NCBI Gene"
-  task :ncbigene=> INPUT_NCBIGENE_DIR do
-    input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
-    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
-    if update_input_file(input_file, input_url)
-      rm_rf input_file
-      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
-      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
-    end
-
-    input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
-    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz"
-    if update_input_file(input_file, input_url)
-      rm_rf input_file
-      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
-      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
-    end
-
-    input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
-    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz"
-    if update_input_file(input_file, input_url)
-      rm_rf input_file
-      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
-      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
-    end
-
-    input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
-    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
-    if update_input_file(input_file, input_url)
-      rm_rf input_file
-      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
-      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
-    end
-  end
 end
 
 task :test do
