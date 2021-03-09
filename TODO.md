@@ -1,13 +1,17 @@
 # config-todo
 
+DONE:
 * ChEBI や GO や DOID などの prefix が表記ゆれ激しい
+  * → config/dataset.yaml で一律に定義することにした (SPARQLは適宜要修正）
 * ファイルを取ってきているようなものは RDF 化してから ID 抽出するほうが良さそう
+  * → Rakefile 化した
+* config/db.1-db.2 を config/db_1-db_2 にする or config/db-1_db-2 にする？
+  * →  MySQL のテーブル名で . が使えないことを避けるための変更なので、同じく使えない - ではなく _ にすべき
+  * →  config/db_1-db_2 で確定
+
+TODO:
 * 時間のかかる SPARQL を分割して投げる場合のジョブコントロールをどうするか
 * link の predicate が rdfs:seeAlso のママのものが半数
-
-* config/db.1-db.2 を config/db_1-db_2 にする or config/db-1_db-2 にする？
-  * → MySQL のテーブル名で . が使えないことを避けるための変更なので、同じく使えない - ではなく _ にすべき
-  * → config/db_1-db_2 で
 
 ## affy.hg.u133.plus.2-ncbigene/
 
@@ -16,7 +20,7 @@
 * sparql_csv2tsv.sh でよさげ
   * ?gene_id ?affy_id の順だったので query.rq を修正した
   * しかし ?gene refexo:affyProbeset ?affy として取得しているので本来 ncbigene-affy_probeset なのでは？
-  * FROM <https://refex.dbcls.jp/rdf/RefEx_ID_Relation_human> を追加
+  * FROM <https://refex.dbcls.jp/rdf/RefEx_ID_Relation_human> を追加した
 
 ```
 91952_at        90379
@@ -39,49 +43,10 @@ AFFX-HUMISGF3A/M97935_MB_at     6772
 
 * 同上
 
-## chembl.target-ensembl.ensg/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-
-## chembl.target-go/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-* GO: は必要？
-
-## chembl.target-intact/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-
-## chembl.target-interpro/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-
-## chembl.target-pdb/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-
-## chembl.target-pfam/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-
-## chembl.target-reactome.pathway/
-
-* sparql_csv2tsv.sh でよさげ
-* pair.tsv が長すぎ
-
-## civic-ensembl.transcript/
-
-* sparql_csv2tsv.sh でよさげ
-
 ## civic-ncbigene/
 
 * sparql_csv2tsv.sh でよさげ
+  * →  これはクエリをよく調べてみると GRAPH <http://med2rdf.org/graph/civic> ではなく <http://med2rdf.org/graph/hgnc> から取得していたので、civicgene_id に入っているのは HGNC ID のはず。hgnc-ncbigene はすでに存在するので削除することとする。
 
 ## dgidb-chembl/
 
