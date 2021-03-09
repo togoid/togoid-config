@@ -34,7 +34,7 @@ chembl_target:
   label: ChEMBL target
   catalog: nbdc02555
   category: Protein
-  prefix: 'http://identifiers.org/chembl.target/'
+  prefix: 'http://identifiers.org/chembl.target/CHEMBL'
 civic_gene:
   label: CIVIC gene
   catalog: nbdc02558
