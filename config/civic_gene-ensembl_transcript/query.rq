@@ -1,0 +1,13 @@
+# Endpoint: http://sparql.med2rdf.org/sparql
+PREFIX m2r: <http://med2rdf.org/ontology/med2rdf#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?civicgene_id ?enst_id
+FROM <http://med2rdf.org/graph/civic>
+WHERE {
+  ?civicgene a m2r:Gene;
+    dct:identifier ?civicgene_id ;
+    m2r:variation ?var .
+  ?var m2r:transcript ?enst .
+  BIND (replace(str(?enst), 'http://rdf.ebi.ac.uk/resource/ensembl.transcript/', '') AS ?enst_id)
+}
