@@ -1,0 +1,10 @@
+link:
+  forward:
+    namespace: dcterms
+    label: references
+    prefix: http://purl.org/dc/terms/
+    predicate: references
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: sparql_csv2tsv.sh query.rq http://sparql.med2rdf.org/sparql
