@@ -82,13 +82,13 @@ namespace :prepare do
   desc "Prepare required files for InterPro"
   task :interpro => INPUT_INTERPRO_DIR do
     input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
-    input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro2go"
+    input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
     if update_input_file(input_file, input_url)
       sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
     end
 
     input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
-    input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro.xml.gz"
+    input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
     if update_input_file(input_file, input_url)
       sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
       sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
