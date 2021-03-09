@@ -393,13 +393,13 @@ affy_probeset:
   label: Affymetrix probeset
   catalog: FIXME
   category: Probe
-  regex: '^\d{4,}((_[asx])?_at)?$'
+  regex: '/^\d{4,}((_[asx])?_at)?$/'
   prefix: 'http://identifiers.org/affy.probeset/'
 chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02559
   category: Compound
-  regex: '^(CHEMBL)?(?<id>\d+)$'
+  regex: '/^(CHEMBL)?(?<id>\d+)$/'
   internal_format: '{{id}}'
   external_format: 'CHEMBL{{id}}'
   prefix: 'http://identifiers.org/chembl.compound/CHEMBL'
@@ -407,7 +407,7 @@ chebi:
   label: ChEBI compound
   catalog: nbdc00027
   category: Compound
-  regex: '^(CHEBI:)?(?<id>\d+)$'
+  regex: '/^(CHEBI:)?(?<id>\d+)$/'
   internal_format: '{{id}}'
   external_format: 'CHEBI:{{id}}'
   prefix: 'https://identifiers.org/chebi/CHEBI:'
@@ -415,7 +415,7 @@ ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
-  regex: '^(?<id>ENSG\d{11})(.\d+)?'
+  regex: '/^(?<id>ENSG\d{11})(.\d+)?/'
   internal_format: '{{id}}'
   external_format: '{{id}}'
   prefix: 'http://identifiers.org/ensembl/'
@@ -423,7 +423,15 @@ go:
   label: Gene ontology
   catalog: nbdc00074
   category: Function
-  regex: '^(GO[:_])?(?<id>\d{7})$'
+  regex: '/^(GO[:_])?(?<id>\d{7})$/'
   internal_format: '{{id}}'
   external_format: 'GO:{{id}}'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
+pdb:
+  label: PDB
+  catalog: nbdc00156
+  category: Structure
+  regex: '/^\w{4}$/i'
+  internal_format: '{{id.upcase}}'
+  external_format: '{{id.upcase}}'
+  prefix: 'https://rdf.wwpdb.org/pdb/'
