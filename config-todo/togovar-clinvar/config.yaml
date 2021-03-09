@@ -11,5 +11,5 @@ link:
     predicate: seeAlso
   file: sample.tsv
 update:
-  frequency: Bimonthly
+  frequency: Monthly
   method: sparql_csv2tsv.sh query.rq https://togovar-dev.biosciencedbc.jp/sparql
