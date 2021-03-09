@@ -222,7 +222,7 @@ mgi:
   label: MGI
   catalog: nbdc00135
   category: Gene
-  prefix: 'http://identifiers.org/mgi/'
+  prefix: 'http://identifiers.org/mgi/MGI:'
 mirbase:
   label: miRBase
   catalog: nbdc00136
