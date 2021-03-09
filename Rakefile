@@ -104,7 +104,7 @@ namespace :prepare do
     input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
     sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
 
-    input_file = "gene_refseq_uniprotkb_collab.gz"
+    input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
     input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
     if update_input_file(input_file, input_url)
       sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
@@ -116,6 +116,7 @@ namespace :prepare do
     input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
     input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
     if update_input_file(input_file, input_url)
+      rm_rf input_file
       sh "wget #{WGET_OPTS} #{INPUT_SRA_DIR} #{input_url}"
     end
   end
