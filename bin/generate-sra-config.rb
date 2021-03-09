@@ -11,40 +11,40 @@ module Accessions
 
       def nodes
         {
-          "sra.accession" => {
+          "sra_accession" => {
             "label" => "SRA Accessions",
             "type" => "DataSet",
-            "namespace" => "sra.accession",
+            "namespace" => "sra_accession",
             "prefix" => "http://identifiers.org/insdc.sra/"
           },
-          "sra.experiment" => {
+          "sra_experiment" => {
             "label" => "SRA Experiment",
             "type" => "DataSet",
-            "namespace" => "sra.experiment",
+            "namespace" => "sra_experiment",
             "prefix" => "http://identifiers.org/insdc.sra/"
           },
-          "sra.project" => {
+          "sra_project" => {
             "label" => "SRA Project",
             "type" => "DataSet",
-            "namespace" => "sra.project",
+            "namespace" => "sra_project",
             "prefix" => "http://identifiers.org/insdc.sra/"
           },
-          "sra.sample" => {
+          "sra_sample" => {
             "label" => "SRA Sample",
             "type" => "DataSet",
-            "namespace" => "sra.sample",
+            "namespace" => "sra_sample",
             "prefix" => "http://identifiers.org/insdc.sra/"
           },
-          "sra.run" => {
+          "sra_run" => {
             "label" => "SRA Run",
             "type" => "DataSet",
-            "namespace" => "sra.run",
+            "namespace" => "sra_run",
             "prefix" => "http://identifiers.org/insdc.sra/"
           },
-          "sra.analysis" => {
+          "sra_analysis" => {
             "label" => "SRA Analysis",
             "type" => "DataSet",
-            "namespace" => "sra.analysis",
+            "namespace" => "sra_analysis",
             "prefix" => "http://identifiers.org/insdc.sra/"
           },
           "bioproject" => {
@@ -65,92 +65,92 @@ module Accessions
       def nodes_links
         [
           {
-            from: "sra.accession",
-            to: "sra.project",
+            from: "sra_accession",
+            to: "sra_project",
             method: parse_accession_tab("RP", 2, 1),
           },
           {
-            from: "sra.accession",
-            to: "sra.experiment",
+            from: "sra_accession",
+            to: "sra_experiment",
             method: parse_accession_tab("RX", 2, 1),
           },
           {
-            from: "sra.accession",
-            to: "sra.sample",
+            from: "sra_accession",
+            to: "sra_sample",
             method: parse_accession_tab("RS", 2, 1),
           },
           {
-            from: "sra.accession",
-            to: "sra.run",
+            from: "sra_accession",
+            to: "sra_run",
             method: parse_accession_tab("RR", 2, 1),
           },
           {
-            from: "sra.accession",
-            to: "sra.analysis",
+            from: "sra_accession",
+            to: "sra_analysis",
             method: parse_accession_tab("RZ", 2, 1),
           },
           {
-            from: "sra.accession",
+            from: "sra_accession",
             to: "biosample",
             method: parse_accession_tab("RS", 2, 18),
           },
           {
-            from: "sra.accession",
+            from: "sra_accession",
             to: "bioproject",
             method: parse_accession_tab("RP", 2, 19),
           },
           {
-            from: "sra.experiment",
-            to: "sra.sample",
+            from: "sra_experiment",
+            to: "sra_sample",
             method: parse_accession_tab("RX", 1, 12),
           },
           {
-            from: "sra.experiment",
-            to: "sra.project",
+            from: "sra_experiment",
+            to: "sra_project",
             method: parse_accession_tab("RX", 1, 13),
           },
           {
-            from: "sra.experiment",
+            from: "sra_experiment",
             to: "biosample",
             method: parse_accession_tab("RX", 1, 18),
           },
           {
-            from: "sra.experiment",
+            from: "sra_experiment",
             to: "bioproject",
             method: parse_accession_tab("RX", 1, 19),
           },
           {
-            from: "sra.run",
-            to: "sra.experiment",
+            from: "sra_run",
+            to: "sra_experiment",
             method: parse_accession_tab("RR", 1, 11),
           },
           {
-            from: "sra.run",
-            to: "sra.sample",
+            from: "sra_run",
+            to: "sra_sample",
             method: parse_accession_tab("RR", 1, 12),
           },
           {
-            from: "sra.run",
-            to: "sra.project",
+            from: "sra_run",
+            to: "sra_project",
             method: parse_accession_tab("RR", 1, 13),
           },
           {
-            from: "sra.run",
+            from: "sra_run",
             to: "biosample",
             method: parse_accession_tab("RR", 1, 18),
           },
           {
-            from: "sra.run",
+            from: "sra_run",
             to: "bioproject",
             method: parse_accession_tab("RR", 1, 19),
           },
           {
-            from: "sra.project",
+            from: "sra_project",
             to: "bioproject",
             method: parse_accession_tab("RP", 1, 19),
           },
           {
-            from: "sra.sample",
+            from: "sra_sample",
             to: "biosample",
             method: parse_accession_tab("RS", 1, 18),
           },
