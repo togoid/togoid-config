@@ -1,0 +1,17 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT DISTINCT ?chembl_id ?xref_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?mechanism a cco:Mechanism ;
+     cco:hasTarget ?target ;
+     cco:hasMolecule ?molecule .
+  ?molecule cco:chemblId ?molecule_id .
+  ?target cco:hasTargetComponent ?component .
+  ?component cco:targetCmptXref ?xref_uri .
+  ?xref_uri a cco:PfamRef .
+#  FILTER(CONTAINS(STR(?pfam), "pfam"))
+  BIND (replace(str(?xref_uri), 'http://identifiers.org/pfam/', '') AS ?xref_id)
+  BIND (replace(?molecule_id, 'CHEMBL', '') AS ?chembl_id)
+}
