@@ -1,1 +1,0 @@
-../hgnc-ensembl/update.sh
