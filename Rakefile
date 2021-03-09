@@ -27,6 +27,8 @@ def prepare_task(taskname)
     return "prepare:drugbank"
   when /#{OUTPUT_TSV_DIR}interpro/
     return "prepare:interpro"
+  when /#{OUTPUT_TSV_DIR}ncbigene/
+    return "prepare:ncbigene"
   else
     return "config/dataset.yaml"
   end
@@ -48,6 +50,7 @@ end
 namespace :prepare do
   directory INPUT_DRUGBANK_DIR = "input/drugbank"
   directory INPUT_INTERPRO_DIR = "input/interpro"
+  directory INPUT_NCBIGENE_DIR = "input/ncbigene"
   directory INPUT_REFSEQ_DIR   = "input/refseq"
   directory INPUT_SRA_DIR      = "input/sra"
 
@@ -126,6 +129,41 @@ namespace :prepare do
     if update_input_file(input_file, input_url)
       rm_rf input_file
       sh "wget #{WGET_OPTS} #{INPUT_SRA_DIR} #{input_url}"
+    end
+  end
+
+  desc "Prepare required files for NCBI Gene"
+  task :ncbigene=> INPUT_NCBIGENE_DIR do
+    input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
+    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
+    if update_input_file(input_file, input_url)
+      rm_rf input_file
+      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
+    end
+
+    input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
+    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz"
+    if update_input_file(input_file, input_url)
+      rm_rf input_file
+      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
+    end
+
+    input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
+    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz"
+    if update_input_file(input_file, input_url)
+      rm_rf input_file
+      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
+    end
+
+    input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
+    input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
+    if update_input_file(input_file, input_url)
+      rm_rf input_file
+      sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+      sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
     end
   end
 end
