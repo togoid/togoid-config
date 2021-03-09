@@ -160,7 +160,7 @@ module Accessions
       def parse_accession_tab(prefix, col_from, col_to)
         fname = File.basename(@@accession_tab_path)
         tmpf = "/tmp/togoid/#{fname}"
-        "[ $(ls -l #{tmpf} | awk '{ print $5 }') -eq $(curl -sI #{@@accession_tab_path} | grep 'Content-Length' | tr -d '\r' | awk '{ print $2 }') ] || (mkdir -p $(dirname #{tmpf}) && curl -s #{@@accession_tab_path} > #{tmpf}) && awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.#{prefix}/ { print $#{col_from}, $#{col_to} }' #{tmpf} | grep -v '-'"
+        "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.#{prefix}/ { print $#{col_from}, $#{col_to} }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\" | grep -v '-'"
       end
 
       def link_attribute
@@ -208,7 +208,7 @@ module Accessions
           },
           "update" => {
             "frequency" => "Daily",
-            "method" => "#{method} > pair.tsv",
+            "method" => "#{method}",
           }
         }
         create(pair_id, data)
