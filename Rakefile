@@ -1,5 +1,7 @@
 # TogoID
 
+ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
+
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
 
