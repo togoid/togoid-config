@@ -217,7 +217,7 @@ module Accessions
       def create(pair_id, data)
         config_filepath = File.join(@@config_dir_path, pair_id, "config.yaml")
         FileUtils.mkdir_p(File.dirname(config_filepath))
-        open(config_filepath, "w"){|f| f.puts(YAML.dump(data)) }
+        open(config_filepath, "w"){|f| f.puts(YAML.dump(data).sub(/^---\n/,"")) }
       end
 
       def remove_dirs(pair_id)
