@@ -1,15 +1,4 @@
-source:
-  namespace: hgnc
-  type: Gene
-  label: HGNC
-  prefix: http://identifiers.org/hgnc/
-target:
-  namespace: ensembl.transcript
-  type: Transcript
-  label: Ensembl Transcript
-  prefix: http://identifiers.org/ensembl/
 link:
-  file: pair.tsv
   forward:
     label: transcribed to
     namespace: obo
@@ -20,6 +9,7 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002510
+  file: sample.tsv
 update:
   frequency: Bimonthly
-  method: ./update.sh > pair.tsv
+  method: sparql_csv2tsv.sh query.rq http://sparql.med2rdf.org/sparql
