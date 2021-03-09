@@ -95,19 +95,27 @@ namespace :prepare do
     end
   end
 
+  INPUT_REFSEQ_LOCK = "#{INPUT_REFSEQ_DIR}/download.lock"
+
   desc "Prepare required files for RefSeq"
   task :refseq => INPUT_REFSEQ_DIR do
-    # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
-    # However, NCBI ftp server is currently broken..
-    # (It is reported that large files are contaminated by illegal bytes occationally)
-    input_file = "human.*.rna.gbff.gz"
-    input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
-    sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
+    File.open(INPUT_REFSEQ_LOCK, "w") do |lockfile|
+      $stderr.puts "Checking/waiting download lock file #{INPUT_REFSEQ_LOCK}"
+      if lockfile.flock(File::LOCK_EX)
+        sh "date +%FT%T > #{INPUT_REFSEQ_LOCK}"
+        # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
+        # However, NCBI ftp server is currently broken..
+        # (It is reported that large files are contaminated by illegal bytes occationally)
+        input_file = "human.*.rna.gbff.gz"
+        input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
+        sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
 
-    input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
-    input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
-    if update_input_file(input_file, input_url)
-      sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
+        input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
+        input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+        if update_input_file(input_file, input_url)
+          sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
+        end
+      end
     end
   end
 
