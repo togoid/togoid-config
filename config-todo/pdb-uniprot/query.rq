@@ -5,6 +5,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?pdb_id ?target_id
+ FROM <http://rdf.integbio.jp/dataset/pdbj>
 WHERE {
     ?pdb          pdbo:has_entityCategory ?entity_category .
     ?entity_category pdbo:has_entity         ?entity .
