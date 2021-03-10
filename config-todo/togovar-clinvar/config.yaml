@@ -1,21 +1,15 @@
-source:
-  namespace: togovar
-  type: Variant
-  label: TogoVar variant
-  prefix: http://togovar.biosciencedbc.jp/variation/
-target:
-  namespace: clinvar.vcv
-  type: Variant
-  label: ClinVar variant
-  prefix: http://ncbi.nlm.nih.gov/clinvar/variation/
 link:
-  file: pair.tsv
   forward:
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
 update:
   frequency: Monthly
-  method: update.sh > pair.tsv
-
+  method: sparql_csv2tsv.sh query.rq https://togovar-dev.biosciencedbc.jp/sparql
