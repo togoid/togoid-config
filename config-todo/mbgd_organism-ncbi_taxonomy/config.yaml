@@ -1,24 +1,10 @@
-source:
-  label: MBGD (Organism)
-  type: Ortholog
-  namespace: mbgd
-  prefix: http://mbgd.genome.ad.jp/rdf/resource/organism/
-
-target:
-  label: NCBI Taxonomy
-  type: Taxonomy
-  namespace: taxonomy
-  prefix: http://identifiers.org/taxonomy/
-
 link:
-  file: pair.tsv
-
   forward:
     label: in taxon
-    namespace: intaxon
+    namespace: ro
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002162
-
+  file: pair.tsv
 update:
   frequency: Monthly
-  method: https://is.gd/Lpmycy
+  method: sparql_csv2tsv.sh query.rq "https://integbio.jp/rdf/sparql"

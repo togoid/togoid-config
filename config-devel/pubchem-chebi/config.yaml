@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: closeMatch
+    namespace: skos
+    prefix: http://www.w3.org/2004/02/skos/core#
+    predicate: closeMatch  # closeMatch
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/pubchem/sparql
