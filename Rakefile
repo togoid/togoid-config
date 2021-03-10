@@ -60,7 +60,9 @@ end
 rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" ] do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
   #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
-  sh "togoid-config config/#{pair} convert"
+  if file_older_than_days?(t.name, 1)
+    sh "togoid-config config/#{pair} convert"
+  end
 end
 
 # Preparatioin tasks
