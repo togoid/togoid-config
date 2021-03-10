@@ -1,25 +1,15 @@
-source:
-  namespace: mondo
-  type: Disease
-  label: MONDO
-  prefix: http://purl.obolibrary.org/obo/
-target:
-  namespace: mesh
-  type: Terminology
-  label: MeSH
-  prefix: http://identifiers.org/mesh/
 link:
-  file: link.tsv
   forward:
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
   reverse:
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
-  frequency: 
-  method: update.rb --limit all --endpoint https://integbio.jp/rdf/bioportal/sparql > link.tsv
+  frequency: Irregular
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/bioportal/sparql
