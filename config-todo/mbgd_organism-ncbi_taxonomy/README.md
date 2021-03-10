@@ -1,2 +1,1 @@
-- エンドポイント：https://integbio.jp/rdf/sparql
-- クエリ：https://is.gd/Lpmycy
+
