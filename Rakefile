@@ -18,35 +18,33 @@ task :convert => TTL_FILES
 
 # Some tasks require preparation to extract link data
 def prepare_task(taskname)
-  task = "config/dataset.yaml"
   case taskname
   when /#{OUTPUT_TSV_DIR}drugbank/
-    task = "prepare:drugbank"
+    return "prepare:drugbank"
   when /#{OUTPUT_TSV_DIR}ensembl/
-    task = "prepare:ensembl"
+    return "prepare:ensembl"
   when /#{OUTPUT_TSV_DIR}interpro/
-    task = "prepare:interpro"
+    return "prepare:interpro"
   when /#{OUTPUT_TSV_DIR}ncbigene/
-    task = "prepare:ncbigene"
+    return "prepare:ncbigene"
   when /#{OUTPUT_TSV_DIR}refseq/
-    task = "prepare:refseq"
+    return "prepare:refseq"
   when /#{OUTPUT_TSV_DIR}sra/
-    task = "prepare:sra"
+    return "prepare:sra"
   else
-    task = "config/dataset.yaml"
+    return "config/dataset.yaml"
   end
-  return [ OUTPUT_TSV_DIR, OUTPUT_TTL_DIR, task ]
 end
 
 # Generate dependency for preparation by target names
-rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => method(:prepare_task) do |t|
+rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   sh "togoid-config config/#{pair} update"
 end
 
 # Generate source filenames by pathmap notation
-rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" do |t|
+rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" ] do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
   #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   sh "togoid-config config/#{pair} convert"
