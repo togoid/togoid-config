@@ -12,5 +12,5 @@ link:
     predicate: seeAlso
 update:
   frequency: Daily
-  method: "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.RP/ { print $2, $19 }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\"
+  method: "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.RP/ { print $2, $1 }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\"
     | grep -v '-'"
