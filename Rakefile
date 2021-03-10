@@ -41,14 +41,14 @@ end
 # Generate dependency for preparation by target names
 rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => method(:prepare_task) do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
-  p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
+  #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   sh "togoid-config config/#{pair} update"
 end
 
 # Generate source filenames by pathmap notation
 rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
-  p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
+  #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   sh "togoid-config config/#{pair} convert"
 end
 
