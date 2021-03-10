@@ -2,14 +2,16 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/> 
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX ido: <http://identifiers.org/>
 
 # GRAPH varies e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
-SELECT DISTINCT ?ensp_id ?enst_id
+SELECT DISTINCT ?ensg_id ?refseq_id
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }
   ?ensg obo:RO_0002162 ?taxon .
-  ?enst obo:SO_transcribed_from ?ensg ;
-        obo:SO_translates_to ?ensp ;
-        dc:identifier ?enst_id .
-  ?ensp dc:identifier ?ensp_id .
+  ?ensg dc:identifier ?ensg_id .
+  ?enst obo:SO_transcribed_from ?ensg .
+  ?enst rdfs:seeAlso ?refseq .
+  ?refseq a ido:refseq
+  BIND (strafter(str(?refseq), "refseq/") AS ?refseq_id)
 }

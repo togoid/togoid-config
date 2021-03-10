@@ -1,14 +1,14 @@
 link:
   forward:
-    label: ribosomal translation of 
+    label: transcribed to 
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002512
+    predicate: RO_0002511
   reverse:
-    label: ribosomally translates to
+    label: transcribed from
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002513
+    predicate: RO_0002510
   file: sample.tsv
 update:
   frequency: Quarterly

@@ -1,15 +1,4 @@
-source:
-  namespace: ensembl
-  type: Gene
-  label: Ensembl
-  prefix: http://identifiers.org/ensembl/
-target:
-  namespace: ensembl.protein
-  type: Protein
-  label: Ensembl Protein
-  prefix: http://identifiers.org/omim/
 link:
-  file: link.tsv
   forward:
     label: has gene product
     namespace: obo
@@ -20,6 +9,7 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002204
+  file: sample.tsv
 update:
   frequency: Quarterly
-  method: update.rb --limit all > link.tsv
+  method: sparql_taxon.rb query.rq https://integbio.jp/rdf/ebi/sparql $TOGOID_ROOT/input/ensembl/taxonomy.txt
