@@ -1,25 +1,15 @@
-source:
-  namespace: PDB      
-  type: Protein structure
-  label: PDB
-  prefix: https://rdf.wwpdb.org/pdb/
-target:
-  namespace: uniprot
-  type: Protein
-  label: Uniprot
-  prefix: http://purl.uniprot.org/uniprot/
 link:
-  file: pair.tsv
   forward:
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
   reverse:
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/sparql
