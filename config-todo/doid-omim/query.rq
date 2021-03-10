@@ -1,12 +1,12 @@
 # Endpoint: https://integbio.jp/rdf/bioportal/sparql
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-SELECT DISTINCT ?do_id ?mesh_id
+SELECT DISTINCT ?do_id ?omim_id
 FROM <http://integbio.jp/rdf/mirror/bioportal/doid>
 WHERE {
   ?do_uri 
-    oboInOwl:hasDbXref ?mesh ;
+    oboInOwl:hasDbXref ?omim ;
     oboInOwl:id ?do .
-  FILTER (strstarts(?mesh,'MESH:'))
-  BIND (replace(str(?mesh), 'MESH:', '') AS ?mesh_id)
+  FILTER (strstarts(?omim,'OMIM:'))
+  BIND (replace(str(?omim), 'OMIM:', '') AS ?omim_id)
   BIND (replace(str(?do), 'DOID:', '') AS ?do_id)
 }

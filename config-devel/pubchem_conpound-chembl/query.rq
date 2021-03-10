@@ -1,0 +1,11 @@
+# Note the SPARQL endpoint for PubChem is https://integbio.jp/rdf/pubchem/sparql .
+PREFIX sio: <http://semanticscience.org/resource/>
+
+SELECT ?cid_id (concat("CHEMBL",?chembl_str) AS ?chembl_id) WHERE {
+{SELECT DISTINCT (substr(str(?cid),49) as ?cid_id) (substr(str(?chembl),7) as ?chembl_str)
+WHERE {
+  [ sio:is-attribute-of ?cid ;
+    a sio:CHEMINF_000412 ;
+    sio:has-value ?chembl ].
+  }
+}}
