@@ -36,11 +36,24 @@ def prepare_task(taskname)
   end
 end
 
+# Check if the file is older than 7 (or given) days
+def file_older_than_days?(file, days = 7)
+  if File.exists?(file)
+    age = (Time.now - File.ctime(file)) / (24*60*60)
+    $stderr.puts "File #{file} is created #{age} days ago (only updated when >#{days} days)"
+    age > days
+  else
+    true
+  end
+end
+
 # Generate dependency for preparation by target names
 rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
-  sh "togoid-config config/#{pair} update"
+  if file_older_than_days?(t.name, 1)
+    sh "togoid-config config/#{pair} update"
+  end
 end
 
 # Generate source filenames by pathmap notation
@@ -86,17 +99,6 @@ namespace :prepare do
       compare_file_size(file, url)
     else
       true
-    end
-  end
-
-  # Check if the file is older than 7 (or given) days
-  def file_older_than_days?(file, days = 7)
-    if File.exists?(file)
-      age = (Time.now - File.ctime(file)) / (24*60*60)
-      $stderr.puts "File #{file} is created #{age} days ago (only updated when >#{days} days)"
-      age > days
-    else
-     true
     end
   end
 
