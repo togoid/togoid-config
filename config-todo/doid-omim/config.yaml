@@ -1,27 +1,14 @@
-source:
-  namespace: doid
-  type: Disease
-  label: Human Disease Ontology
-  prefix: http://purl.obolibrary.org/obo/
-target:
-  namespace: omim.phenotype
-  type: Disease
-  label: OMIM
-  prefix: https://identifiers.org/omim/
 link:
-  file: link.tsv
-  forward:
-    label: Related ID of OMIM
-    namespace: rdfs
+   forward:
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
   reverse:
-    label: Related ID of DOID
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
 update:
-  frequency:
-  method: doid-omim.sh > link.tsv
+  frequency: Irregular
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/bioportal/sparql
