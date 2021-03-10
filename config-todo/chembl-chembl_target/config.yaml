@@ -1,25 +1,10 @@
-source:
-  namespace: chembl
-  type: Chemical compound
-  label: ChEMBL compound
-  prefix: http://identifiers.org/chembl.compound/
-target:
-  namespace: chembl.target
-  type: Protein
-  label: ChEMBL target
-  prefix: http://identifiers.org/chembl.target/
 link:
-  file: pair.tsv
   forward:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+    namespace: cco
+    label: has target
+    prefix: http://rdf.ebi.ac.uk/terms/chembl#
+    predicate: hasTarget
+  file: pair.tsv
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: sparql_csv2tsv.sh query.rq "https://integbio.jp/rdf/mirror/ebi/sparql"
