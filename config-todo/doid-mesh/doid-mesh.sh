@@ -6,7 +6,7 @@ WHERE {
   ?do_uri 
     oboInOwl:hasDbXref ?mesh ;
     oboInOwl:id ?do .
-  FILTER(contains(?mesh,'MESH'))
+  FILTER (strstarts(?mesh,'MESH'))
   BIND (replace(str(?mesh), "MESH:", "") AS ?mesh_id)
   BIND (replace(str(?do), 'DOID:', '') AS ?do_id)
 }
