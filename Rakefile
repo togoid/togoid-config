@@ -57,11 +57,19 @@ namespace :prepare do
   directory INPUT_REFSEQ_DIR   = "input/refseq"
   directory INPUT_SRA_DIR      = "input/sra"
 
-  # -q -r -np -nd -P (-P needs to take a directory name as an argument)
-  WGET_OPTS = "--quiet --recursive --no-parent --no-directories --directory-prefix"
+  def download_file(dir, url, glob = nil)
+    # -q -r -np -nd -N
+    opts = "--quiet --recursive --no-parent --no-directories --timestamping"
+    # --directory-prefix (-P) requires a directory name as an argument
+    if glob
+      sh "wget #{opts} --directory-prefix #{dir} --accept '#{glob}' #{url}"
+    else
+      sh "wget #{opts} --directory-prefix #{dir} #{url}"
+    end
+  end
 
-  # The wget --timestamping (-N) option doesn't seem to check the file size.
-  # Thus, if newer broken files exist in the input directory, wget won't work.
+  # The wget --timestamping (-N) option won't check the file size especially when
+  # previous download was interrupted and left broken files with newer dates.
   def compare_file_size(file, url)
     local_file_size  = File.size(file)
     remote_file_size = `curl -sI #{url} | grep 'Content-Length' | awk '{print $2}'`.strip.to_i
@@ -71,7 +79,7 @@ namespace :prepare do
   end
 
   # Check if the file sizes differ or the file doesn't exist
-  def update_input_file(file, url)
+  def update_input_file?(file, url)
     if File.exists?(file)
       compare_file_size(file, url)
     else
@@ -80,10 +88,14 @@ namespace :prepare do
   end
 
   # Check if the file is older than 7 (or given) days
-  def file_older_than_days(file, days = 7)
-    age = (Time.now - File.ctime(file)) / (24*60*60)
-    $stderr.puts "File #{file} is created #{age} days ago (only updated when >#{days} days)"
-    age > days
+  def file_older_than_days?(file, days = 7)
+    if File.exists?(file)
+      age = (Time.now - File.ctime(file)) / (24*60*60)
+      $stderr.puts "File #{file} is created #{age} days ago (only updated when >#{days} days)"
+      age > days
+    else
+     true
+    end
   end
 
   # Create file lock to avoid simultaneous access
@@ -98,6 +110,9 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare all"
+  task :all => [ :drugbank, :ensembl, :interpro, :ncbigene, :refseq ]
+
   desc "Prepare required files for Drugbank"
   task :drugbank => INPUT_DRUGBANK_DIR do
     $stderr.puts "TODO: implement prepare:drugbank"
@@ -110,7 +125,7 @@ namespace :prepare do
   task :ensembl => INPUT_ENSEMBL_DIR do
     download_lock(INPUT_ENSEMBL_DIR) do
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
-      if file_older_than_days(taxonomy_file, 10)
+      if file_older_than_days?(taxonomy_file, 10)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
       end
     end
@@ -121,14 +136,14 @@ namespace :prepare do
     download_lock(INPUT_INTERPRO_DIR) do
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
-      if update_input_file(input_file, input_url)
-        sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_INTERPRO_DIR, input_url)
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
-      if update_input_file(input_file, input_url)
-        sh "wget #{WGET_OPTS} #{INPUT_INTERPRO_DIR} #{input_url}"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
       end
     end
@@ -139,33 +154,33 @@ namespace :prepare do
     download_lock(INPUT_NCBIGENE_DIR) do
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
-      if update_input_file(input_file, input_url)
+      if update_input_file?(input_file, input_url)
         rm_rf input_file
-        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
       end
 
-      input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
+      input_file = "#{INPUT_NCBIGENE_DIR}/gene2ensembl.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz"
-      if update_input_file(input_file, input_url)
+      if update_input_file?(input_file, input_url)
         rm_rf input_file
-        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz"
-      if update_input_file(input_file, input_url)
+      if update_input_file?(input_file, input_url)
         rm_rf input_file
-        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
-      if update_input_file(input_file, input_url)
+      if update_input_file?(input_file, input_url)
         rm_rf input_file
-        sh "wget #{WGET_OPTS} #{INPUT_NCBIGENE_DIR} #{input_url}"
+        download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
       end
     end
@@ -174,18 +189,18 @@ namespace :prepare do
   desc "Prepare required files for RefSeq"
   task :refseq => INPUT_REFSEQ_DIR do
     download_lock(INPUT_REFSEQ_DIR) do
-      sh "date +%FT%T > #{INPUT_REFSEQ_LOCK}"
       # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
       # However, NCBI ftp server is currently broken..
       # (It is reported that large files are contaminated by illegal bytes occationally)
       input_file = "human.*.rna.gbff.gz"
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
-      sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} --timestamping --accept '#{input_file}' #{input_url}"
+      download_file(INPUT_REFSEQ_DIR, input_url, input_file)
 
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
-      if update_input_file(input_file, input_url)
-        sh "wget #{WGET_OPTS} #{INPUT_REFSEQ_DIR} #{input_url}"
+      if update_input_file?(input_file, input_url)
+        rm_rf input_file
+        download_file(INPUT_REFSEQ_DIR, input_url)
       end
     end
   end
@@ -195,13 +210,12 @@ namespace :prepare do
     download_lock(INPUT_SRA_DIR) do
       input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
-      if update_input_file(input_file, input_url)
+      if update_input_file?(input_file, input_url)
         rm_rf input_file
-        sh "wget #{WGET_OPTS} #{INPUT_SRA_DIR} #{input_url}"
+        download_file(INPUT_SRA_DIR, input_url)
       end
     end
   end
-
 end
 
 task :test do
