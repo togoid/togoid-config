@@ -1,3 +1,5 @@
+# Requires python3 (not work with python2)
+
 import xml.etree.ElementTree as ET
 import sys
 
