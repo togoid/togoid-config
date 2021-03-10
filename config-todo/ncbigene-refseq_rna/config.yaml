@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: transcribed to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002511
+  reverse:
+    label: transcribed from
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002510
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: awk -F '\t' -v col=4 '$1==9606 && $3!="NA" && $3!="SUPPRESSED" && $col!="-" && !a[$2 $col]++{print $2 "\t" gensub(/\.[0-9]+$/,"","g",$col);n++}' $TOGOID_ROOT/input/ncbigene/gene2refseq
