@@ -1,27 +1,16 @@
-source:
-  namespace: doid
-  type: Disease
-  label: Human Disease Ontology
-  prefix: http://purl.obolibrary.org/obo/
-target:
-  namespace: mesh
-  type: Terminology
-  label: MeSH
-  prefix: https://identifiers.org/mesh/
 link:
-  file: link.tsv
   forward:
-    label: Related ID of MeSH
-    namespace: rdfs
     label: seeAlso
+    namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
   reverse:
-    label: Related ID of DOID
+    label: seeAlso
     namespace: rdfs
     label: seeAlso
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
-  frequency:
-  method: doid-mesh.sh > link.tsv
+  frequency: Irregular
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/bioportal/sparql
