@@ -12,39 +12,43 @@ TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 desc "Default task"
 task :default => :convert
 desc "Update all TSV files"
-task :update  => [ OUTPUT_TSV_DIR, TSV_FILES ]
+task :update  => TSV_FILES
 desc "Update all TTL files"
-task :convert => [ OUTPUT_TTL_DIR, TTL_FILES ]
+task :convert => TTL_FILES
 
 # Some tasks require preparation to extract link data
 def prepare_task(taskname)
+  task = "config/dataset.yaml"
   case taskname
   when /#{OUTPUT_TSV_DIR}drugbank/
-    return "prepare:drugbank"
+    task = "prepare:drugbank"
   when /#{OUTPUT_TSV_DIR}ensembl/
-    return "prepare:ensembl"
+    task = "prepare:ensembl"
   when /#{OUTPUT_TSV_DIR}interpro/
-    return "prepare:interpro"
+    task = "prepare:interpro"
   when /#{OUTPUT_TSV_DIR}ncbigene/
-    return "prepare:ncbigene"
+    task = "prepare:ncbigene"
   when /#{OUTPUT_TSV_DIR}refseq/
-    return "prepare:refseq"
+    task = "prepare:refseq"
   when /#{OUTPUT_TSV_DIR}sra/
-    return "prepare:sra"
+    task = "prepare:sra"
   else
-    return "config/dataset.yaml"
+    task = "config/dataset.yaml"
   end
+  return [ OUTPUT_TSV_DIR, OUTPUT_TTL_DIR, task ]
 end
 
 # Generate dependency for preparation by target names
-rule /#{OUTPUT_TSV_DIR}.+\.tsv/ => method(:prepare_task) do |t|
+rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => method(:prepare_task) do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
+  p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   sh "togoid-config config/#{pair} update"
 end
 
 # Generate source filenames by pathmap notation
-rule /#{OUTPUT_TTL_DIR}.+\.ttl/ => '%{ttl,tsv}X.tsv' do |t|
+rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
+  p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   sh "togoid-config config/#{pair} convert"
 end
 
