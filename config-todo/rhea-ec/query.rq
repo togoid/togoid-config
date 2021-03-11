@@ -1,11 +1,3 @@
-#!/bin/sh
-
-ENDPOINT='https://integbio.jp/rdf/misc/sparql'
-if ["${LIMIT}" = ""]; then
-  LIMIT=10
-fi
-
-cat - << EOS > sparql.rq
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
@@ -29,8 +21,3 @@ WHERE {
   BIND(STRAFTER(str(?rhea_acc), "RHEA:") AS ?rhea_id)
   BIND(STRAFTER(str(?ec), "enzyme/") AS ?ec_id)
 }
-LIMIT ${LIMIT}
-EOS
-
-echo "curl -s -H 'Accept: text/tab-separated-values' --data-urlencode \'query@sparql.rq\' https://integbio.jp/rdf/misc/sparql | tail -n +2 | tr -d '\"' > ./pair.tsv"
-curl -s -H 'Accept: text/tab-separated-values' --data-urlencode 'query@sparql.rq' ${ENDPOINT} | tail -n +2 | tr -d '"'}
