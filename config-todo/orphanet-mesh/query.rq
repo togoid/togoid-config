@@ -5,7 +5,7 @@ FROM <http://integbio.jp/rdf/mirror/bioportal/ordo>
 WHERE {
   ?ordo_uri
     oboInOwl:hasDbXref ?mesh.
-  FILTER(contains(?mesh,'MeSH:'))
-  BIND (replace(str(?mesh), "MeSH:", "") AS ?mesh_id)
-  BIND (replace(str(?ordo_uri), "http://www.orpha.net/ORDO/Orphanet_", "") AS ?ordo_id)
+  FILTER (strstarts(?mesh,'MeSH:'))
+  BIND (replace(str(?mesh), 'MeSH:', '') AS ?mesh_id)
+  BIND (replace(str(?ordo_uri), 'http://www.orpha.net/ORDO/Orphanet_', '') AS ?ordo_id)
    }
