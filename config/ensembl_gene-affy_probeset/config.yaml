@@ -1,5 +1,5 @@
 link:
-  file: pair.tsv
+  file: sample.tsv
   forward:
     label: seeAlso
     namespace: rdfs
