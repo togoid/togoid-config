@@ -8,4 +8,4 @@ WHERE {
   FILTER (strstarts(?meddra,'MedDRA:'))
   BIND (replace(str(?meddra), 'MedDRA:', "") AS ?meddra_id)
   BIND (replace(str(?ordo_uri), 'http://www.orpha.net/ORDO/Orphanet_', '') AS ?ordo_id) 
-   }
+}
