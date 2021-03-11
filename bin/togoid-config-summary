@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #
-# Usage: togoid-summary config/*/*.yaml
+# Usage: togoid-config-summary config/*/*.yaml
 #
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
