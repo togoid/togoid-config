@@ -1,5 +1,41 @@
-- Ensembl Biomart のRESTを使って、Ensembl GeneID をキーに各社のマイクロアレイIDを取れる
-- とりあえず、affy.hg.u133.plus.2 をやってみた例
-- Biomart 出力に対して　uniqueRows=1 指定
-- Ensembl ID に対して複数のAffyIDがつく
-- Ensembl ID に対して、どのAffyIDも対応しない行は削除した ( | awk -F "\t" '{ if ($2 != "") print }')
+# Ensembl Biomart のRESTを使って、Ensembl GeneID をキーに各社のマイクロアレイIDを取る
+## このエントリはaffy.hg.u133.plus.2 が対象
+  - Biomart 出力に対して　uniqueRows=1 指定
+  - Ensembl ID に対して複数のAffyIDがつく
+    - Ensembl ID に対して、どのAffyIDも対応しない行は削除した ( | awk -F "\t" '{ if ($2 != "") print }')
+# affy.hg.u133.plus.2 以外にBiomartで取れるマイクロアレイID
+  - AFFY HC G110 probe
+  - AFFY HG Focus probe
+  - AFFY HG U133A probe
+  - AFFY HG U133A 2 probe
+  - AFFY HG U133B probe
+  - AFFY HG U133 Plus 2 probe
+  - AFFY HG U95A probe
+  - AFFY HG U95Av2 probe
+  - AFFY HG U95B probe
+  - AFFY HG U95C probe
+  - AFFY HG U95D probe
+  - AFFY HG U95E probe
+  - AFFY HTA 2 0 probe
+  - AFFY HuEx 1 0 st v2 probe
+  - AFFY HuGeneFL probe
+  - AFFY HuGene 1 0 st v1 probe
+  - AFFY HuGene 2 0 st v1 probe
+  - AFFY PrimeView probe
+  - AFFY U133 X3P probe
+  - AGILENT CGH 44b probe
+  - AGILENT GPL26966 probe
+  - AGILENT GPL6848 probe
+  - AGILENT SurePrint G3 GE 8x60k probe
+  - AGILENT SurePrint G3 GE 8x60k v2 probe
+  - AGILENT WholeGenome probe
+  - AGILENT WholeGenome 4x44k v1 probe
+  - AGILENT WholeGenome 4x44k v2 probe
+  - CODELINK CODELINK probe
+  - ILLUMINA HumanHT 12 V3 probe
+  - ILLUMINA HumanHT 12 V4 probe
+  - ILLUMINA HumanRef 8 V3 probe
+  - ILLUMINA HumanWG 6 V1 probe
+  - ILLUMINA HumanWG 6 V2 probe
+  - ILLUMINA HumanWG 6 V3 probe
+  - PHALANX OneArray probe
