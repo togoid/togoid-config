@@ -265,12 +265,12 @@ oma_protein:
   category: Protein
   prefix: 'https://identifiers.org/oma.protein/'
 omim_gene:
-  label: OMIM
+  label: OMIM gene
   catalog: nbdc00154
   category: Gene
   prefix: 'http://identifiers.org/mim/'
 omim_phenotype:
-  label: OMIM
+  label: OMIM phenotype
   catalog: nbdc00154
   category: Disease
   prefix: 'https://identifiers.org/mim/'
