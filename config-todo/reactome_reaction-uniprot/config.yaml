@@ -1,15 +1,4 @@
-source:
-  namespace: reactome.reaction
-  type: Reaction
-  label: Reactome reaction
-  prefix: http://identifiers.org/reactome/
-target:
-  namespace: uniprot
-  type: Protein
-  label: UniProt
-  prefix: http://purl.uniprot.org/uniprot/
 link:
-  file: pair.tsv
   forward:
     namespace: ro
     label: has component
@@ -20,6 +9,7 @@ link:
     label: seeAlso
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
   frequency: Monthly
-  method: update.sh > pair.tsv
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
