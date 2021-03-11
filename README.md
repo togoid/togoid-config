@@ -165,7 +165,7 @@ To generate a RDF/Turtle file (output/ttl/db1-db2.ttl) for the given link data:
 % ruby bin/togoid-config config/db1-db2 convert
 ```
 
-### config-summary
+### togoid-config-summary
 
 To summarize all config settings:
 
@@ -184,5 +184,21 @@ To see the database update method:
 
 ```sh
 % ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,19
+```
+
+### togoid-config-summary-dot
+
+To visualize config relations:
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot > togoid.dot
+% dot -Kdot -Ppng togoid.dot -otogoid.png
+% open togoid.png
+```
+
+The option `--id` indicates to include identifiers of nodes (DBs) and edges (predicates).
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot --id > togoid.dot
 ```
 
