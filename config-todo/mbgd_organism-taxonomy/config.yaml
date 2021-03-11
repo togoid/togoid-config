@@ -1,7 +1,7 @@
 link:
   forward:
     label: in taxon
-    namespace: ro
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002162
   file: sample.tsv
