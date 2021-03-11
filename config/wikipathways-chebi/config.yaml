@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
+  method: sparql_csv2tsv.sh query.rq http://sparql.wikipathways.org/sparql

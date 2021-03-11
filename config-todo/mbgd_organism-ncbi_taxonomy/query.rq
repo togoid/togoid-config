@@ -1,19 +1,11 @@
 # Endpoint: https://integbio.jp/rdf/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX orth: <http://purl.jp/bio/11/orth#>
 PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
-PREFIX mbgdr: <http://mbgd.genome.ad.jp/rdf/resource/>
 
 SELECT DISTINCT ?mbgd_organism_id ?tax_id
-FROM <http://mbgd.genome.ad.jp/rdf/resource/default>
-FROM <http://mbgd.genome.ad.jp/rdf/resource/organism>
-FROM <http://integbio.jp/rdf/ontology/taxonomy>
 WHERE {
-    mbgdr:default orth:organism ?mbgd_organism .
-    ?mbgd_organism orth:taxon ?taxonomy .
-    ?tax rdfs:seeAlso ?taxonomy .
-  
-  BIND(REPLACE(STR(?mbgd_organism), "http://mbgd.genome.ad.jp/rdf/resource/organism/", "") AS ?mbgd_organism_id)
-  BIND(REPLACE(STR(?tax), "http://identifiers.org/taxonomy/", "") AS ?tax_id)
+  ?mbgd_organism a mbgd:CompleteGenome ;
+      mbgd:taxon ?taxon .
+  BIND (replace(str(?mbgd_organism), 'http://mbgd.genome.ad.jp/rdf/resource/organism/', '') AS ?mbgd_organism_id)
+  BIND (replace(str(?taxon), 'http://identifiers.org/taxonomy/', '') AS ?tax_id)
 }
-ORDER BY ?mbgd_organism_id

@@ -1,21 +1,10 @@
-#mbgd.gene-uniprot
-source:
-  namespace: mbgd.gene
-  type: Ortholog
-  label: mbgd.gene
-  prefix: http://mbgd.genome.ad.jp/rdf/resource/gene/
-target:
-  namespace: uniprot
-  type: Protein
-  label: Uniprot
-  prefix: http://identifiers.org/uniprot/
 link:
-  file: link.tsv
   forward:
-    namespace: obo
     label: has gene product
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002205 #has gene product
+    predicate: RO_0002205
+  file: sample.tsv
 update:
-  frequency: Irregular
-  method: update.sh > link.tsv
+  frequency: Yearly
+  method: sparql_csv2tsv.sh query.rq http://sparql.nibb.ac.jp/sparql

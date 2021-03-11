@@ -1,9 +1,9 @@
 link:
   forward:
-    label: has component
-    namespace: ro
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002180
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
   reverse:
     label: seeAlso
     namespace: rdfs
