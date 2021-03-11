@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Yearly or less frequently
-  method: curl -sSf ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data | cut -f 1,3
+  method: cut -f 1,3 $TOGOID_ROOT/input/homologene/homologene.data

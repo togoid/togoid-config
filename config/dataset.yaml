@@ -118,6 +118,11 @@ hmdb:
   catalog: nbdc00909
   category: Metabolite
   prefix: 'https://identifiers.org/hmdb/HMDB'
+homologene:
+  label: HomoloGene
+  catalog: nbdc00101
+  category: Ortholog
+  prefix: 'http://identifiers.org/homologene/'
 hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
