@@ -1,0 +1,25 @@
+# Endpoint: https://integbio.jp/rdf/misc/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX identifiers: <http://identifiers.org/>
+PREFIX rhea: <http://rdf.rhea-db.org/>
+
+SELECT ?rhea_id ?reactome_id
+FROM <http://integbio.jp/rdf/mirror/rhea>
+WHERE {
+  {
+    ?rhea rdfs:subClassOf rhea:Reaction
+  } UNION {
+    ?rhea rdfs:subClassOf rhea:DirectionalReaction
+  } UNION {
+    ?rhea rdfs:subClassOf rhea:BidirectionalReaction
+  }
+  ?rhea rhea:accession ?rhea_acc ;
+        rdfs:seeAlso ?reactome .
+  FILTER(REGEX(?reactome, "reactome"))
+  BIND(STRBEFORE(STRAFTER(str(?reactome), "reactome/"), ".") AS ?reactome_id)
+  BIND(STRAFTER(?rhea_acc, "RHEA:") AS ?rhea_id)
+}
