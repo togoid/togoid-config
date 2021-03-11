@@ -14,4 +14,4 @@ update:
   frequency: twoTimesAYear
   # https://omabrowser.org/oma/archives/
   # https://questfororthologs.org/orthology_databases
-  method: update.sh
+  method: sparql_csv2tsv.sh query.rq https://sparql.omabrowser.org/sparql/
