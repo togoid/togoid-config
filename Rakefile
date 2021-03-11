@@ -49,6 +49,7 @@ def file_older_than_days?(file, days = 7)
   end
 end
 
+# Update config/db_1-db_2/config.yaml => output/tsv/db_1-db_2.tsv
 # Generate dependency for preparation by target names
 rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
@@ -58,6 +59,7 @@ rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do
   end
 end
 
+# Convert output/tsv/db_1-db_2.tsv => output/ttl/db_1-db_2.ttl
 # Generate source filenames by pathmap notation
 rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" ] do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
