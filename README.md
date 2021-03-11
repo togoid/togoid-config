@@ -2,6 +2,8 @@
 
 Description of link data for TogoID.
 
+![Link diagram](https://github.com/dbcls/togoid-config/blob/refactoring/dot/togoid.png?raw=true)
+
 ## Link data
 
 Pair of database IDs in the tab separated value (TSV) format.
