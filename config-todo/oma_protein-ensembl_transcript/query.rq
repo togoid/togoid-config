@@ -1,4 +1,4 @@
-# Endpoint: https://sparql.omabrowser.org/sparql
+# Endpoint: https://sparql.omabrowser.org/sparql/
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX lscr: <http://purl.org/lscr#>
