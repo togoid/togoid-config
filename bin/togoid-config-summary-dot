@@ -1,15 +1,26 @@
 #!/usr/bin/env ruby
 #
-# Usage: togoid-config-summary config/*/*.yaml | togoid-config-summary-dot > togoid.dot
+# Usage:
+#   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot > togoid.dot
+#   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot --id > togoid.dot
+#   dot -Kdot -Ppng togoid.dot -otogoid.png
 #
+
+# Option to include identifiers for nodes/edges
+if ARGV[0] == "--id"
+  opt_id = true
+  ARGV.shift
+end
 
 nodes = {}
 edges = []
 
-ARGF.gets # header
+
+ARGF.gets # skip header
 
 ARGF.each do |line|
   ary = line.split(/\t/)
+  s_id, t_id = ary[0].split('-')
   s_category = ary[2]
   s_label = ary[3]
   t_category = ary[6]
@@ -21,11 +32,23 @@ ARGF.each do |line|
   r_label = ary[14]
   r_pred = ary[16]
 
-  nodes[s_label] = s_category
-  nodes[t_label] = t_category
-  edges << [ s_label, t_label, f_label ]
+  if opt_id
+    s_name = "#{s_label}\n'#{s_id}'"
+    t_name = "#{t_label}\n'#{t_id}'"
+    f_name = "#{f_label}\n'#{f_ns}:#{f_pred}'"
+    r_name = "#{r_label}\n'#{r_ns}:#{r_pred}'"
+  else
+    s_name = s_label
+    t_name = t_label
+    f_name = f_label
+    r_name = r_label
+  end
+
+  nodes[s_name] = s_category
+  nodes[t_name] = t_category
+  edges << [ s_name, t_name, f_name ]
   if r_pred and ! r_pred.empty?
-    edges << [ t_label, s_label, r_label ]
+    edges << [ t_name, s_name, r_name ]
   end
 end
 
