@@ -5,6 +5,9 @@
 #   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot --id > togoid.dot
 #   dot -Kdot -Ppng togoid.dot -otogoid.png
 #
+# See also:
+#   https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d
+#
 
 # Option to include identifiers for nodes/edges
 if ARGV[0] == "--id"
@@ -15,8 +18,7 @@ end
 nodes = {}
 edges = []
 
-
-ARGF.gets # skip header
+ARGF.gets # skip header line
 
 ARGF.each do |line|
   ary = line.split(/\t/)
@@ -82,16 +84,16 @@ colors = {
 puts 'digraph togoid {
   node [
     style = "filled",
-    fontname = "Migu 1M",
-    color = "white"
+    color = "white",
+    fontname = "Migu 1M"
   ];
   edge [
     fontname = "Migu 1M"
   ];
 '
+
 puts
 
-#puts "  #{nodes.keys.map{|x| "\"#{x}\"join(', ')} ;"
 nodes.each do |node, category|
   puts %Q{  "#{node}" [fillcolor = "#{colors[category]}"] ;}
 end
@@ -99,7 +101,11 @@ end
 puts
 
 edges.each do |ary|
-  puts %Q{  "#{ary[0]}" -> "#{ary[1]}" [label = "#{ary[2]}"] ;}
+  source, target, label = *ary
+  if opt_id and label[/rdfs:seeAlso/]
+    opt = ", fontcolor = red"
+  end
+  puts %Q{  "#{source}" -> "#{target}" [ label = "#{label}" #{opt} ] ;}
 end
 
 puts '}'

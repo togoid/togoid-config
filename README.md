@@ -202,3 +202,10 @@ The option `--id` indicates to include identifiers of nodes (DBs) and edges (pre
 % ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot --id > togoid.dot
 ```
 
+Also try some other visualization layouts and options:
+
+```sh
+% dot -Kcirco -Ppng togoid.dot -otogoid.png
+% dot -Kfdp -Ppng togoid.dot -otogoid.png
+% dot -Nshape=box -Nstyle=filled,rounded -Ecolor=gray -Kdot -Tpng togoid.dot -otogoid.png
+```
