@@ -55,11 +55,11 @@ ARGF.each do |line|
 end
 
 colors = {
-  "Compound"	=> "#E60012",
+  "FIXME"	=> "#E60012",
+  "Compound"	=> "#FFF100",
   "Disease"	=> "#EB6100",
   "Domain"	=> "#F39800",
   "Drug"	=> "#FCC800",
-  "FIXME"	=> "#FFF100",
   "Function"	=> "#CFDB00",
   "Gene"	=> "#8FC31F",
   "Genome"	=> "#22AC38",

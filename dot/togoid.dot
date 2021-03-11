@@ -13,17 +13,17 @@ digraph togoid {
   "NCBI gene
 'ncbigene'" [fillcolor = "#8FC31F"] ;
   "ChEMBL compound
-'chembl_compound'" [fillcolor = "#E60012"] ;
+'chembl_compound'" [fillcolor = "#FFF100"] ;
   "ChEBI compound
-'chebi'" [fillcolor = "#E60012"] ;
+'chebi'" [fillcolor = "#FFF100"] ;
   "DrugBank
 'drugbank'" [fillcolor = "#FCC800"] ;
   "HMDB
 'hmdb'" [fillcolor = "#009E96"] ;
   "PubChem compound
-'pubchem_compound'" [fillcolor = "#E60012"] ;
+'pubchem_compound'" [fillcolor = "#FFF100"] ;
   "PubChem substance
-'pubchem_substance'" [fillcolor = "#E60012"] ;
+'pubchem_substance'" [fillcolor = "#FFF100"] ;
   "PubMed
 'pubmed'" [fillcolor = "#009B6B"] ;
   "ChEMBL target
@@ -95,21 +95,21 @@ digraph togoid {
   "RefSeq protein
 'refseq_protein'" [fillcolor = "#00479D"] ;
   "SRA accession
-'sra_accession'" [fillcolor = "#FFF100"] ;
+'sra_accession'" [fillcolor = "#E60012"] ;
   "BioProject
-'bioproject'" [fillcolor = "#FFF100"] ;
+'bioproject'" [fillcolor = "#E60012"] ;
   "BioSample
 'biosample'" [fillcolor = "#1D2088"] ;
   "SRA analysis
-'sra_analysis'" [fillcolor = "#FFF100"] ;
+'sra_analysis'" [fillcolor = "#E60012"] ;
   "SRA experiment
-'sra_experiment'" [fillcolor = "#FFF100"] ;
+'sra_experiment'" [fillcolor = "#E60012"] ;
   "SRA project
-'sra_project'" [fillcolor = "#FFF100"] ;
+'sra_project'" [fillcolor = "#E60012"] ;
   "SRA run
-'sra_run'" [fillcolor = "#FFF100"] ;
+'sra_run'" [fillcolor = "#E60012"] ;
   "SRA sample
-'sra_sample'" [fillcolor = "#FFF100"] ;
+'sra_sample'" [fillcolor = "#E60012"] ;
   "WikiPathways
 'wikipathways'" [fillcolor = "#00A0E9"] ;
   "MBGD gene
