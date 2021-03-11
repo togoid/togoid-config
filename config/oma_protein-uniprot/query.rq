@@ -2,11 +2,12 @@
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX orth: <http://purl.org/net/orth#>
 PREFIX lscr: <http://purl.org/lscr#>
+PREFIX uptax: <http://purl.uniprot.org/taxonomy/>
 
 SELECT DISTINCT ?oma_protein_id ?uniprot_id
 WHERE {
-  ?oma_protein orth:organism/obo:RO_0002162 <http://purl.uniprot.org/taxonomy/9606> .
   # RO_0002162 'in taxon'
+  ?oma_protein orth:organism/obo:RO_0002162 uptax:9606 .
   ?oma_protein lscr:xrefUniprot ?uniprot .
 
   BIND (replace(str(?oma_protein), 'https://omabrowser.org/oma/info/', '') AS ?oma_protein_id)
