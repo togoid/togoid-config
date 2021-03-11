@@ -1,4 +1,4 @@
-## endopoint https://integbio.jp/rdf/bioportal/sparql
+# endopoint https://integbio.jp/rdf/bioportal/sparql
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 SELECT DISTINCT ?ordo_id ?mesh_id
 FROM <http://integbio.jp/rdf/mirror/bioportal/ordo>
