@@ -41,7 +41,7 @@ civic_gene:
   category: Gene
   # FIXME: valid in RDF?
   prefix: 'http://civic.genome.wustl.edu/links/genes/'
-clinvar_vcv:  # FIXME: clinvar?
+clinvar:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
