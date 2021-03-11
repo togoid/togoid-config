@@ -1,7 +1,7 @@
 link:
   forward:
     label: functionally related to
-    namespace: ro
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002328
   reverse:
