@@ -1,15 +1,14 @@
-# Ensembl Biomart のRESTを使って、Ensembl GeneID をキーに各社のマイクロアレイIDを取る
-## このエントリはaffy.hg.u133.plus.2 が対象
+## Ensembl Biomart のRESTを使って、Ensembl GeneID をキーに各社のマイクロアレイIDを取る
+- このエントリは affy.hg.u133.plus.2 が対象
   - Biomart 出力に対して　uniqueRows=1 指定
-  - Ensembl ID に対して複数のAffyIDがつく
-    - Ensembl ID に対して、どのAffyIDも対応しない行は削除した ( | awk -F "\t" '{ if ($2 != "") print }')
-# affy.hg.u133.plus.2 以外にBiomartで取れるマイクロアレイID
+  - Ensembl gene ID に対して複数のAffyIDがつく
+    - Ensembl gene ID に対して、どのAffyIDも対応しない行は削除した ( | awk -F "\t" '{ if ($2 != "") print }')
+- affy.hg.u133.plus.2 以外にBiomartで取れるマイクロアレイID
   - AFFY HC G110 probe
   - AFFY HG Focus probe
   - AFFY HG U133A probe
   - AFFY HG U133A 2 probe
   - AFFY HG U133B probe
-  - AFFY HG U133 Plus 2 probe
   - AFFY HG U95A probe
   - AFFY HG U95Av2 probe
   - AFFY HG U95B probe
