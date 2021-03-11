@@ -15,15 +15,17 @@ ARGF.each do |line|
   t_category = ary[6]
   t_label = ary[7]
   f_ns = ary[9]
+  f_label = ary[10]
   f_pred = ary[12]
   r_ns = ary[13]
+  r_label = ary[14]
   r_pred = ary[16]
 
   nodes[s_label] = s_category
   nodes[t_label] = t_category
-  edges << [ s_label, t_label, "#{f_ns}:#{f_pred}" ]
+  edges << [ s_label, t_label, f_label ]
   if r_pred and ! r_pred.empty?
-    edges << [ t_label, s_label, "#{r_ns}:#{r_pred}" ]
+    edges << [ t_label, s_label, r_label ]
   end
 end
 
