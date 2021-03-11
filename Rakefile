@@ -23,6 +23,8 @@ def prepare_task(taskname)
     return "prepare:drugbank"
   when /#{OUTPUT_TSV_DIR}ensembl/
     return "prepare:ensembl"
+  when /#{OUTPUT_TSV_DIR}homologene/
+    return "prepare:homologene"
   when /#{OUTPUT_TSV_DIR}interpro/
     return "prepare:interpro"
   when /#{OUTPUT_TSV_DIR}ncbigene/
@@ -67,12 +69,13 @@ end
 
 # Preparatioin tasks
 namespace :prepare do
-  directory INPUT_DRUGBANK_DIR = "input/drugbank"
-  directory INPUT_ENSEMBL_DIR  = "input/ensembl"
-  directory INPUT_INTERPRO_DIR = "input/interpro"
-  directory INPUT_NCBIGENE_DIR = "input/ncbigene"
-  directory INPUT_REFSEQ_DIR   = "input/refseq"
-  directory INPUT_SRA_DIR      = "input/sra"
+  directory INPUT_DRUGBANK_DIR    = "input/drugbank"
+  directory INPUT_ENSEMBL_DIR     = "input/ensembl"
+  directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
+  directory INPUT_INTERPRO_DIR    = "input/interpro"
+  directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
+  directory INPUT_REFSEQ_DIR      = "input/refseq"
+  directory INPUT_SRA_DIR         = "input/sra"
 
   def download_file(dir, url, glob = nil)
     # -q -r -np -nd -N
@@ -117,7 +120,7 @@ namespace :prepare do
   end
 
   desc "Prepare all"
-  task :all => [ :drugbank, :ensembl, :interpro, :ncbigene, :refseq ]
+  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :refseq ]
 
   desc "Prepare required files for Drugbank"
   task :drugbank => INPUT_DRUGBANK_DIR do
@@ -133,6 +136,17 @@ namespace :prepare do
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
       if file_older_than_days?(taxonomy_file, 10)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
+      end
+    end
+  end
+
+  desc "Prepare required files for HomoloGene"
+  task :homologene => INPUT_HOMOLOGENE_DIR do
+    download_lock(INPUT_HOMOLOGENE_DIR) do
+      input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HOMOLOGENE_DIR, input_url)
       end
     end
   end
