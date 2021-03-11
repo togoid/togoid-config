@@ -1,0 +1,12 @@
+# Endpoint: http://sparql.wikipathways.org/sparql
+# 20210204 moriya
+# 20210311 ikeda edited
+
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+SELECT DISTINCT ?pathway_id ?doid_id
+WHERE {
+  ?pathway a wp:Pathway ;
+           wp:diseaseOntologyTag ?doid .
+  BIND(REPLACE(STR(?pathway), "https://identifiers.org/wikipathways/", "") AS ?pathway_id)
+  BIND(REPLACE(STR(?doid), "http://purl.obolibrary.org/obo/DOID_", "") AS ?doid_id)
+}
