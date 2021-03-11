@@ -1,0 +1,18 @@
+# Endpoint: http://sparql.wikipathways.org/sparql
+# 20210204 moriya
+# 20210311 ikeda edited
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?pathway_id ?uniprot_id
+WHERE {
+  ?pathway a wp:Pathway .
+  ?uniprot dct:isPartOf* ?pathway ;
+           a wp:Protein ;
+           dc:source 'Uniprot-TrEMBL'^^xsd:string .
+  BIND(REPLACE(STR(?pathway), "https://identifiers.org/wikipathways/", "") AS ?pathway_id)
+  BIND(REPLACE(STR(?uniprot), "https://identifiers.org/uniprot/", "") AS ?uniprot_id)
+}
