@@ -168,19 +168,19 @@ To generate a RDF/Turtle file (output/ttl/db1-db2.ttl) for the given link data:
 To summarize all config settings:
 
 ```sh
-% ruby bin/config-summary config/*/config.yaml > config-summary.tsv
+% ruby bin/togoid-config-summary config/*/config.yaml > config-summary.tsv
 % vd config-summary.tsv
 ```
 
 To see the database update frequency:
 
 ```sh
-% ruby bin/config-summary config/*/config.yaml | cut -f1,18
+% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,18
 ```
 
 To see the database update method:
 
 ```sh
-% ruby bin/config-summary config/*/config.yaml | cut -f1,19
+% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,19
 ```
 
