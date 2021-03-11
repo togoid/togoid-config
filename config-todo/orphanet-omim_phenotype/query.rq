@@ -8,4 +8,4 @@ WHERE {
   FILTER (strstarts(?omim,'OMIM:'))
   BIND (replace(str(?omim), 'OMIM:', '') AS ?omim_id)
   BIND (replace(str(?ordo_uri), 'http://www.orpha.net/ORDO/Orphanet_', '') AS ?ordo_id) 
-   }
+}
