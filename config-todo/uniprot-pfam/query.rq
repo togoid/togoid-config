@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/rdf/mirror/uniprot/sparql
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX db: <http://purl.uniprot.org/database/>
+SELECT DISTINCT ?uniprot_id ?target_id
+WHERE {
+   ?uniprot a up:Protein;
+          rdfs:seeAlso ?target .
+   ?target up:database db:Pfam.
+   BIND(REPLACE(STR(?uniprot), "http://purl.uniprot.org/uniprot/", "") AS ?uniprot_id)
+   BIND(REPLACE(STR(?target), "http://purl.uniprot.org/pfam/", "") AS ?target_id) 
+}
