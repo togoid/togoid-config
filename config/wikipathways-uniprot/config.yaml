@@ -1,7 +1,7 @@
 link:
   forward:
     label: has component
-    namespace: ro
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002180
   reverse:

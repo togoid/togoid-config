@@ -1,9 +1,9 @@
 link:
   forward:
-    label: evidence publication
-    namespace: ro
+    label: has evidence
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002558  # has evidence
+    predicate: RO_0002558
   file: sample.tsv
 update:
   frequency: threeTimesAYear

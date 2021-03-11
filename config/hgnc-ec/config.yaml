@@ -1,12 +1,12 @@
 link:
   forward:
     label: functionally related to
-    namespace: ro
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002328
   reverse:
     label: gene product of
-    namespace: ro
+    namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002204
   file: sample.tsv
