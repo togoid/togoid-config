@@ -6,309 +6,1093 @@ digraph togoid {
     color = 7,
   ];
 
-  "Affymetrix probeset" [fillcolor = "#0068B7"] ;
-  "NCBI gene" [fillcolor = "#8FC31F"] ;
-  "ChEMBL compound" [fillcolor = "#E60012"] ;
-  "ChEBI compound" [fillcolor = "#E60012"] ;
-  "DrugBank" [fillcolor = "#FCC800"] ;
-  "HMDB" [fillcolor = "#009E96"] ;
-  "PubChem compound" [fillcolor = "#E60012"] ;
-  "PubChem substance" [fillcolor = "#E60012"] ;
-  "PubMed" [fillcolor = "#009B6B"] ;
-  "ChEMBL target" [fillcolor = "#00479D"] ;
-  "Ensembl gene" [fillcolor = "#8FC31F"] ;
-  "Gene ontology" [fillcolor = "#CFDB00"] ;
-  "IntAct" [fillcolor = "#009944"] ;
-  "InterPro" [fillcolor = "#F39800"] ;
-  "PDB" [fillcolor = "#601986"] ;
-  "Pfam" [fillcolor = "#F39800"] ;
-  "Reactome pathway" [fillcolor = "#00A0E9"] ;
-  "CIVIC gene" [fillcolor = "#8FC31F"] ;
-  "Ensembl transcript" [fillcolor = "#8FC31F"] ;
-  "Disease ontology" [fillcolor = "#EB6100"] ;
-  "MeSH" [fillcolor = "#BE0081"] ;
-  "OMIM phenotype" [fillcolor = "#EB6100"] ;
-  "Ensembl protein" [fillcolor = "#00479D"] ;
-  "HGNC" [fillcolor = "#8FC31F"] ;
-  "RefSeq RNA" [fillcolor = "#8FC31F"] ;
-  "Consensus CDS" [fillcolor = "#8FC31F"] ;
-  "Enzyme nomenclature" [fillcolor = "#CFDB00"] ;
-  "ENA" [fillcolor = "#8FC31F"] ;
-  "INSDC" [fillcolor = "#8FC31F"] ;
-  "Locus Reference Genomic record" [fillcolor = "#8FC31F"] ;
-  "MGI" [fillcolor = "#8FC31F"] ;
-  "miRBase" [fillcolor = "#E5006A"] ;
-  "OMIM gene" [fillcolor = "#8FC31F"] ;
-  "Orphanet Rare Disease ontology" [fillcolor = "#EB6100"] ;
-  "RGD" [fillcolor = "#8FC31F"] ;
-  "UniProt" [fillcolor = "#00479D"] ;
-  "HomoloGene" [fillcolor = "#00A0C1"] ;
-  "MONDO" [fillcolor = "#EB6100"] ;
-  "Human Phenotype Ontology" [fillcolor = "#0086D1"] ;
-  "MedDRA" [fillcolor = "#EB6100"] ;
-  "NANDO" [fillcolor = "#EB6100"] ;
-  "RefSeq genomic" [fillcolor = "#22AC38"] ;
-  "RefSeq protein" [fillcolor = "#00479D"] ;
-  "SRA accession" [fillcolor = "#FFF100"] ;
-  "BioProject" [fillcolor = "#FFF100"] ;
-  "BioSample" [fillcolor = "#1D2088"] ;
-  "SRA analysis" [fillcolor = "#FFF100"] ;
-  "SRA experiment" [fillcolor = "#FFF100"] ;
-  "SRA project" [fillcolor = "#FFF100"] ;
-  "SRA run" [fillcolor = "#FFF100"] ;
-  "SRA sample" [fillcolor = "#FFF100"] ;
-  "WikiPathways" [fillcolor = "#00A0E9"] ;
-  "MBGD gene" [fillcolor = "#00A0C1"] ;
-  "MBGD organism" [fillcolor = "#00A0C1"] ;
-  "Taxonomy" [fillcolor = "#920783"] ;
-  "MedGen" [fillcolor = "#EB6100"] ;
-  "OMA protein" [fillcolor = "#00479D"] ;
-  "Reactome reaction" [fillcolor = "#009944"] ;
-  "dbSNP" [fillcolor = "#E4007F"] ;
-  "Rhea" [fillcolor = "#009944"] ;
-  "TogoVar variant" [fillcolor = "#E4007F"] ;
-  "ClinVar variant" [fillcolor = "#E4007F"] ;
-  "NCBI protein" [fillcolor = "#00479D"] ;
-  "OMA group" [fillcolor = "#00A0C1"] ;
+  "Affymetrix probeset
+'affy_probeset'" [fillcolor = "#0068B7"] ;
+  "NCBI gene
+'ncbigene'" [fillcolor = "#8FC31F"] ;
+  "ChEMBL compound
+'chembl_compound'" [fillcolor = "#E60012"] ;
+  "ChEBI compound
+'chebi'" [fillcolor = "#E60012"] ;
+  "DrugBank
+'drugbank'" [fillcolor = "#FCC800"] ;
+  "HMDB
+'hmdb'" [fillcolor = "#009E96"] ;
+  "PubChem compound
+'pubchem_compound'" [fillcolor = "#E60012"] ;
+  "PubChem substance
+'pubchem_substance'" [fillcolor = "#E60012"] ;
+  "PubMed
+'pubmed'" [fillcolor = "#009B6B"] ;
+  "ChEMBL target
+'chembl_target'" [fillcolor = "#00479D"] ;
+  "Ensembl gene
+'ensembl_gene'" [fillcolor = "#8FC31F"] ;
+  "Gene ontology
+'go'" [fillcolor = "#CFDB00"] ;
+  "IntAct
+'intact'" [fillcolor = "#009944"] ;
+  "InterPro
+'interpro'" [fillcolor = "#F39800"] ;
+  "PDB
+'pdb'" [fillcolor = "#601986"] ;
+  "Pfam
+'pfam'" [fillcolor = "#F39800"] ;
+  "Reactome pathway
+'reactome_pathway'" [fillcolor = "#00A0E9"] ;
+  "CIVIC gene
+'civic_gene'" [fillcolor = "#8FC31F"] ;
+  "Ensembl transcript
+'ensembl_transcript'" [fillcolor = "#8FC31F"] ;
+  "Disease ontology
+'doid'" [fillcolor = "#EB6100"] ;
+  "MeSH
+'mesh'" [fillcolor = "#BE0081"] ;
+  "OMIM phenotype
+'omim_phenotype'" [fillcolor = "#EB6100"] ;
+  "Ensembl protein
+'ensembl_protein'" [fillcolor = "#00479D"] ;
+  "HGNC
+'hgnc'" [fillcolor = "#8FC31F"] ;
+  "RefSeq RNA
+'refseq_rna'" [fillcolor = "#8FC31F"] ;
+  "Consensus CDS
+'ccds'" [fillcolor = "#8FC31F"] ;
+  "Enzyme nomenclature
+'ec'" [fillcolor = "#CFDB00"] ;
+  "ENA
+'ena'" [fillcolor = "#8FC31F"] ;
+  "INSDC
+'insdc'" [fillcolor = "#8FC31F"] ;
+  "Locus Reference Genomic record
+'lrg'" [fillcolor = "#8FC31F"] ;
+  "MGI
+'mgi'" [fillcolor = "#8FC31F"] ;
+  "miRBase
+'mirbase'" [fillcolor = "#E5006A"] ;
+  "OMIM gene
+'omim_gene'" [fillcolor = "#8FC31F"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" [fillcolor = "#EB6100"] ;
+  "RGD
+'rgd'" [fillcolor = "#8FC31F"] ;
+  "UniProt
+'uniprot'" [fillcolor = "#00479D"] ;
+  "HomoloGene
+'homologene'" [fillcolor = "#00A0C1"] ;
+  "MONDO
+'mondo'" [fillcolor = "#EB6100"] ;
+  "Human Phenotype Ontology
+'hp'" [fillcolor = "#0086D1"] ;
+  "MedDRA
+'meddra'" [fillcolor = "#EB6100"] ;
+  "NANDO
+'nando'" [fillcolor = "#EB6100"] ;
+  "RefSeq genomic
+'refseq_genomic'" [fillcolor = "#22AC38"] ;
+  "RefSeq protein
+'refseq_protein'" [fillcolor = "#00479D"] ;
+  "SRA accession
+'sra_accession'" [fillcolor = "#FFF100"] ;
+  "BioProject
+'bioproject'" [fillcolor = "#FFF100"] ;
+  "BioSample
+'biosample'" [fillcolor = "#1D2088"] ;
+  "SRA analysis
+'sra_analysis'" [fillcolor = "#FFF100"] ;
+  "SRA experiment
+'sra_experiment'" [fillcolor = "#FFF100"] ;
+  "SRA project
+'sra_project'" [fillcolor = "#FFF100"] ;
+  "SRA run
+'sra_run'" [fillcolor = "#FFF100"] ;
+  "SRA sample
+'sra_sample'" [fillcolor = "#FFF100"] ;
+  "WikiPathways
+'wikipathways'" [fillcolor = "#00A0E9"] ;
+  "MBGD gene
+'mbgd_gene'" [fillcolor = "#00A0C1"] ;
+  "MBGD organism
+'mbgd_organism'" [fillcolor = "#00A0C1"] ;
+  "Taxonomy
+'taxonomy'" [fillcolor = "#920783"] ;
+  "MedGen
+'medgen'" [fillcolor = "#EB6100"] ;
+  "OMA protein
+'oma_protein'" [fillcolor = "#00479D"] ;
+  "Reactome reaction
+'reactome_reaction'" [fillcolor = "#009944"] ;
+  "dbSNP
+'dbsnp'" [fillcolor = "#E4007F"] ;
+  "Rhea
+'rhea'" [fillcolor = "#009944"] ;
+  "TogoVar variant
+'togovar'" [fillcolor = "#E4007F"] ;
+  "ClinVar variant
+'clinvar'" [fillcolor = "#E4007F"] ;
+  "NCBI protein
+'ncbiprotein'" [fillcolor = "#00479D"] ;
+  "OMA group
+'oma_group'" [fillcolor = "#00A0C1"] ;
 
-  "Affymetrix probeset" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "Affymetrix probeset" [label = "seeAlso"] ;
-  "ChEMBL compound" -> "ChEBI compound" [label = "closeMatch"] ;
-  "ChEMBL compound" -> "DrugBank" [label = "closeMatch"] ;
-  "ChEMBL compound" -> "HMDB" [label = "closeMatch"] ;
-  "ChEMBL compound" -> "PubChem compound" [label = "closeMatch"] ;
-  "ChEMBL compound" -> "PubChem substance" [label = "closeMatch"] ;
-  "ChEMBL compound" -> "PubMed" [label = "evidence publication"] ;
-  "ChEMBL target" -> "Ensembl gene" [label = "gene product of"] ;
-  "ChEMBL target" -> "Gene ontology" [label = "seeAlso"] ;
-  "ChEMBL target" -> "IntAct" [label = "seeAlso"] ;
-  "ChEMBL target" -> "InterPro" [label = "seeAlso"] ;
-  "ChEMBL target" -> "PDB" [label = "seeAlso"] ;
-  "ChEMBL target" -> "Pfam" [label = "seeAlso"] ;
-  "ChEMBL target" -> "Reactome pathway" [label = "seeAlso"] ;
-  "CIVIC gene" -> "Ensembl transcript" [label = "seeAlso"] ;
-  "Ensembl transcript" -> "CIVIC gene" [label = "seeAlso"] ;
-  "Disease ontology" -> "MeSH" [label = "seeAlso"] ;
-  "MeSH" -> "Disease ontology" [label = "seeAlso"] ;
-  "Disease ontology" -> "OMIM phenotype" [label = "seeAlso"] ;
-  "OMIM phenotype" -> "Disease ontology" [label = "seeAlso"] ;
-  "Ensembl gene" -> "Affymetrix probeset" [label = "seeAlso"] ;
-  "Affymetrix probeset" -> "Ensembl gene" [label = "seeAlso"] ;
-  "Ensembl gene" -> "Ensembl protein" [label = "has gene product"] ;
-  "Ensembl protein" -> "Ensembl gene" [label = "gene product of"] ;
-  "Ensembl gene" -> "Ensembl transcript" [label = "transcribed to"] ;
-  "Ensembl transcript" -> "Ensembl gene" [label = "transcribed from"] ;
-  "Ensembl gene" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "Ensembl gene" [label = "seeAlso"] ;
-  "Ensembl gene" -> "RefSeq RNA" [label = "seeAlso"] ;
-  "RefSeq RNA" -> "Ensembl gene" [label = "seeAlso"] ;
-  "Ensembl protein" -> "Ensembl transcript" [label = "ribosomal translation of"] ;
-  "Ensembl transcript" -> "Ensembl protein" [label = "ribosomally translates to"] ;
-  "Ensembl transcript" -> "Affymetrix probeset" [label = "seeAlso"] ;
-  "Affymetrix probeset" -> "Ensembl transcript" [label = "seeAlso"] ;
-  "Ensembl transcript" -> "HGNC" [label = "transcribed from"] ;
-  "HGNC" -> "Ensembl transcript" [label = "transcribed to"] ;
-  "HGNC" -> "Consensus CDS" [label = "seeAlso"] ;
-  "Consensus CDS" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "Enzyme nomenclature" [label = "functionally related to"] ;
-  "Enzyme nomenclature" -> "HGNC" [label = "gene product of"] ;
-  "HGNC" -> "ENA" [label = "seeAlso"] ;
-  "ENA" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "Ensembl gene" [label = "seeAlso"] ;
-  "Ensembl gene" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "INSDC" [label = "seeAlso"] ;
-  "INSDC" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "Locus Reference Genomic record" [label = "seeAlso"] ;
-  "Locus Reference Genomic record" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "MGI" [label = "seeAlso"] ;
-  "MGI" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "miRBase" [label = "seeAlso"] ;
-  "miRBase" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "OMIM gene" [label = "seeAlso"] ;
-  "OMIM gene" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "Orphanet Rare Disease ontology" [label = "seeAlso"] ;
-  "Orphanet Rare Disease ontology" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "PubMed" [label = "references"] ;
-  "HGNC" -> "RefSeq RNA" [label = "seeAlso"] ;
-  "RefSeq RNA" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "RGD" [label = "seeAlso"] ;
-  "RGD" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "UniProt" [label = "has gene product"] ;
-  "UniProt" -> "HGNC" [label = "gene product of"] ;
-  "HomoloGene" -> "NCBI gene" [label = "has homologous member"] ;
-  "NCBI gene" -> "HomoloGene" [label = "is homologous member"] ;
-  "InterPro" -> "Gene ontology" [label = "functionally related to"] ;
-  "Gene ontology" -> "InterPro" [label = "seeAlso"] ;
-  "InterPro" -> "PDB" [label = "seeAlso"] ;
-  "PDB" -> "InterPro" [label = "seeAlso"] ;
-  "InterPro" -> "Pfam" [label = "seeAlso"] ;
-  "InterPro" -> "PubMed" [label = "references"] ;
-  "InterPro" -> "Reactome pathway" [label = "seeAlso"] ;
-  "MONDO" -> "Disease ontology" [label = "seeAlso"] ;
-  "Disease ontology" -> "MONDO" [label = "seeAlso"] ;
-  "MONDO" -> "Human Phenotype Ontology" [label = "seeAlso"] ;
-  "Human Phenotype Ontology" -> "MONDO" [label = "seeAlso"] ;
-  "MONDO" -> "MedDRA" [label = "seeAlso"] ;
-  "MedDRA" -> "MONDO" [label = "seeAlso"] ;
-  "MONDO" -> "MeSH" [label = "seeAlso"] ;
-  "MeSH" -> "MONDO" [label = "seeAlso"] ;
-  "MONDO" -> "OMIM phenotype" [label = "seeAlso"] ;
-  "OMIM phenotype" -> "MONDO" [label = "seeAlso"] ;
-  "MONDO" -> "Orphanet Rare Disease ontology" [label = "seeAlso"] ;
-  "Orphanet Rare Disease ontology" -> "MONDO" [label = "seeAlso"] ;
-  "NANDO" -> "MONDO" [label = "seeAlso"] ;
-  "MONDO" -> "NANDO" [label = "seeAlso"] ;
-  "NCBI gene" -> "Ensembl gene" [label = "seeAlso"] ;
-  "Ensembl gene" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "Ensembl protein" [label = "has gene product"] ;
-  "Ensembl protein" -> "NCBI gene" [label = "gene product of"] ;
-  "NCBI gene" -> "Ensembl transcript" [label = "transcribed to"] ;
-  "Ensembl transcript" -> "NCBI gene" [label = "transcribed from"] ;
-  "NCBI gene" -> "Gene ontology" [label = "functionally related to"] ;
-  "Gene ontology" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "HGNC" [label = "seeAlso"] ;
-  "HGNC" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "miRBase" [label = "seeAlso"] ;
-  "miRBase" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "OMIM gene" [label = "seeAlso"] ;
-  "OMIM gene" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "RefSeq genomic" [label = "seeAlso"] ;
-  "RefSeq genomic" -> "NCBI gene" [label = "seeAlso"] ;
-  "NCBI gene" -> "RefSeq protein" [label = "has gene product"] ;
-  "RefSeq protein" -> "NCBI gene" [label = "gene product of"] ;
-  "NCBI gene" -> "RefSeq RNA" [label = "transcribed to"] ;
-  "RefSeq RNA" -> "NCBI gene" [label = "transcribed from"] ;
-  "RefSeq protein" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "RefSeq protein" [label = "seeAlso"] ;
-  "SRA accession" -> "BioProject" [label = "seeAlso"] ;
-  "BioProject" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA accession" -> "BioSample" [label = "seeAlso"] ;
-  "BioSample" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA accession" -> "SRA analysis" [label = "seeAlso"] ;
-  "SRA analysis" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA accession" -> "SRA experiment" [label = "seeAlso"] ;
-  "SRA experiment" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA accession" -> "SRA project" [label = "seeAlso"] ;
-  "SRA project" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA accession" -> "SRA run" [label = "seeAlso"] ;
-  "SRA run" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA accession" -> "SRA sample" [label = "seeAlso"] ;
-  "SRA sample" -> "SRA accession" [label = "seeAlso"] ;
-  "SRA experiment" -> "BioProject" [label = "seeAlso"] ;
-  "BioProject" -> "SRA experiment" [label = "seeAlso"] ;
-  "SRA experiment" -> "BioSample" [label = "seeAlso"] ;
-  "BioSample" -> "SRA experiment" [label = "seeAlso"] ;
-  "SRA experiment" -> "SRA project" [label = "seeAlso"] ;
-  "SRA project" -> "SRA experiment" [label = "seeAlso"] ;
-  "SRA experiment" -> "SRA sample" [label = "seeAlso"] ;
-  "SRA sample" -> "SRA experiment" [label = "seeAlso"] ;
-  "SRA project" -> "BioProject" [label = "seeAlso"] ;
-  "BioProject" -> "SRA project" [label = "seeAlso"] ;
-  "SRA run" -> "BioProject" [label = "seeAlso"] ;
-  "BioProject" -> "SRA run" [label = "seeAlso"] ;
-  "SRA run" -> "BioSample" [label = "seeAlso"] ;
-  "BioSample" -> "SRA run" [label = "seeAlso"] ;
-  "SRA run" -> "SRA experiment" [label = "seeAlso"] ;
-  "SRA experiment" -> "SRA run" [label = "seeAlso"] ;
-  "SRA run" -> "SRA project" [label = "seeAlso"] ;
-  "SRA project" -> "SRA run" [label = "seeAlso"] ;
-  "SRA run" -> "SRA sample" [label = "seeAlso"] ;
-  "SRA sample" -> "SRA run" [label = "seeAlso"] ;
-  "SRA sample" -> "BioSample" [label = "seeAlso"] ;
-  "BioSample" -> "SRA sample" [label = "seeAlso"] ;
-  "WikiPathways" -> "ChEBI compound" [label = "has component"] ;
-  "ChEBI compound" -> "WikiPathways" [label = "seeAlso"] ;
-  "WikiPathways" -> "Disease ontology" [label = "seeAlso"] ;
-  "Disease ontology" -> "WikiPathways" [label = "seeAlso"] ;
-  "WikiPathways" -> "UniProt" [label = "has component"] ;
-  "UniProt" -> "WikiPathways" [label = "seeAlso"] ;
-  "MBGD gene" -> "UniProt" [label = "has gene product"] ;
-  "MBGD organism" -> "Taxonomy" [label = "in taxon"] ;
-  "MedGen" -> "NCBI gene" [label = "disease has basis in"] ;
-  "NCBI gene" -> "MedGen" [label = "causes or contributes to condition"] ;
-  "OMA protein" -> "Ensembl gene" [label = "seeAlso"] ;
-  "Ensembl gene" -> "OMA protein" [label = "seeAlso"] ;
-  "OMA protein" -> "Ensembl transcript" [label = "seeAlso"] ;
-  "Ensembl transcript" -> "OMA protein" [label = "seeAlso"] ;
-  "OMA protein" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "OMA protein" [label = "seeAlso"] ;
-  "Orphanet Rare Disease ontology" -> "MeSH" [label = "seeAlso"] ;
-  "MeSH" -> "Orphanet Rare Disease ontology" [label = "seeAlso"] ;
-  "Orphanet Rare Disease ontology" -> "OMIM phenotype" [label = "seeAlso"] ;
-  "OMIM phenotype" -> "Orphanet Rare Disease ontology" [label = "seeAlso"] ;
-  "PDB" -> "Enzyme nomenclature" [label = "seeAlso"] ;
-  "Enzyme nomenclature" -> "PDB" [label = "seeAlso"] ;
-  "PDB" -> "Gene ontology" [label = "functionally related to"] ;
-  "Gene ontology" -> "PDB" [label = "seeAlso"] ;
-  "PDB" -> "InterPro" [label = "is member of"] ;
-  "InterPro" -> "PDB" [label = "has member"] ;
-  "PDB" -> "Pfam" [label = "is member of"] ;
-  "Pfam" -> "PDB" [label = "has member"] ;
-  "PDB" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "PDB" [label = "seeAlso"] ;
-  "Reactome pathway" -> "Gene ontology" [label = "seeAlso"] ;
-  "Gene ontology" -> "Reactome pathway" [label = "seeAlso"] ;
-  "Reactome pathway" -> "Reactome reaction" [label = "has component"] ;
-  "Reactome reaction" -> "Reactome pathway" [label = "seeAlso"] ;
-  "Reactome reaction" -> "ChEBI compound" [label = "has component"] ;
-  "ChEBI compound" -> "Reactome reaction" [label = "seeAlso"] ;
-  "Reactome reaction" -> "UniProt" [label = "has component"] ;
-  "UniProt" -> "Reactome reaction" [label = "seeAlso"] ;
-  "RefSeq RNA" -> "dbSNP" [label = "seeAlso"] ;
-  "RefSeq RNA" -> "HGNC" [label = "transcribed from"] ;
-  "HGNC" -> "RefSeq RNA" [label = "transcribed to"] ;
-  "RefSeq RNA" -> "NCBI gene" [label = "transcribed from"] ;
-  "NCBI gene" -> "RefSeq RNA" [label = "transcribed to"] ;
-  "RefSeq RNA" -> "OMIM gene" [label = "seeAlso"] ;
-  "RefSeq RNA" -> "PubMed" [label = "references"] ;
-  "RefSeq RNA" -> "RefSeq protein" [label = "ribosomally translates to"] ;
-  "RefSeq protein" -> "RefSeq RNA" [label = "ribosomal translation of"] ;
-  "RefSeq RNA" -> "Taxonomy" [label = "in taxon"] ;
-  "Rhea" -> "ChEBI compound" [label = "has component"] ;
-  "ChEBI compound" -> "Rhea" [label = "seeAlso"] ;
-  "Rhea" -> "Enzyme nomenclature" [label = "seeAlso"] ;
-  "Enzyme nomenclature" -> "Rhea" [label = "seeAlso"] ;
-  "TogoVar variant" -> "ClinVar variant" [label = "seeAlso"] ;
-  "ClinVar variant" -> "TogoVar variant" [label = "seeAlso"] ;
-  "TogoVar variant" -> "dbSNP" [label = "which position is similar to"] ;
-  "TogoVar variant" -> "Ensembl gene" [label = "is located in"] ;
-  "TogoVar variant" -> "Ensembl transcript" [label = "is located in"] ;
-  "TogoVar variant" -> "HGNC" [label = "is associated with"] ;
-  "TogoVar variant" -> "MedGen" [label = "seeAlso"] ;
-  "MedGen" -> "TogoVar variant" [label = "seeAlso"] ;
-  "TogoVar variant" -> "NCBI gene" [label = "is located in"] ;
-  "TogoVar variant" -> "PubMed" [label = "Pubmed"] ;
-  "TogoVar variant" -> "RefSeq RNA" [label = "is located in"] ;
-  "UniProt" -> "ChEMBL target" [label = "seeAlso"] ;
-  "ChEMBL target" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "dbSNP" [label = "seeAlso"] ;
-  "dbSNP" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "Enzyme nomenclature" [label = "seeAlso"] ;
-  "Enzyme nomenclature" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "Ensembl protein" [label = "seeAlso"] ;
-  "Ensembl protein" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "Ensembl transcript" [label = "ribosomal translation of"] ;
-  "Ensembl transcript" -> "UniProt" [label = "ribosomally translates to"] ;
-  "UniProt" -> "Gene ontology" [label = "functionally related to"] ;
-  "Gene ontology" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "HGNC" [label = "gene product of"] ;
-  "HGNC" -> "UniProt" [label = "has gene product"] ;
-  "UniProt" -> "IntAct" [label = "seeAlso"] ;
-  "IntAct" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "InterPro" [label = "is member of"] ;
-  "InterPro" -> "UniProt" [label = "has member"] ;
-  "UniProt" -> "NCBI gene" [label = "gene product of"] ;
-  "NCBI gene" -> "UniProt" [label = "has gene product"] ;
-  "UniProt" -> "NCBI protein" [label = "seeAlso"] ;
-  "NCBI protein" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "OMA group" [label = "is homologous member"] ;
-  "OMA group" -> "UniProt" [label = "has homologous member"] ;
-  "UniProt" -> "Orphanet Rare Disease ontology" [label = "has phenotype"] ;
-  "Orphanet Rare Disease ontology" -> "UniProt" [label = "phenotype of"] ;
-  "UniProt" -> "PDB" [label = "seeAlso"] ;
-  "PDB" -> "UniProt" [label = "seeAlso"] ;
-  "UniProt" -> "Pfam" [label = "is member of"] ;
-  "Pfam" -> "UniProt" [label = "has member"] ;
+  "Affymetrix probeset
+'affy_probeset'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "Affymetrix probeset
+'affy_probeset'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL compound
+'chembl_compound'" -> "ChEBI compound
+'chebi'" [label = "closeMatch
+'skos:closeMatch'"] ;
+  "ChEMBL compound
+'chembl_compound'" -> "DrugBank
+'drugbank'" [label = "closeMatch
+'skos:closeMatch'"] ;
+  "ChEMBL compound
+'chembl_compound'" -> "HMDB
+'hmdb'" [label = "closeMatch
+'skos:closeMatch'"] ;
+  "ChEMBL compound
+'chembl_compound'" -> "PubChem compound
+'pubchem_compound'" [label = "closeMatch
+'skos:closeMatch'"] ;
+  "ChEMBL compound
+'chembl_compound'" -> "PubChem substance
+'pubchem_substance'" [label = "closeMatch
+'skos:closeMatch'"] ;
+  "ChEMBL compound
+'chembl_compound'" -> "PubMed
+'pubmed'" [label = "evidence publication
+'ro:RO_0002558'"] ;
+  "ChEMBL target
+'chembl_target'" -> "Ensembl gene
+'ensembl_gene'" [label = "gene product of
+'ro:RO_0002204'"] ;
+  "ChEMBL target
+'chembl_target'" -> "Gene ontology
+'go'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL target
+'chembl_target'" -> "IntAct
+'intact'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL target
+'chembl_target'" -> "InterPro
+'interpro'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL target
+'chembl_target'" -> "PDB
+'pdb'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL target
+'chembl_target'" -> "Pfam
+'pfam'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL target
+'chembl_target'" -> "Reactome pathway
+'reactome_pathway'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "CIVIC gene
+'civic_gene'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "CIVIC gene
+'civic_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Disease ontology
+'doid'" -> "MeSH
+'mesh'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MeSH
+'mesh'" -> "Disease ontology
+'doid'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Disease ontology
+'doid'" -> "OMIM phenotype
+'omim_phenotype'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMIM phenotype
+'omim_phenotype'" -> "Disease ontology
+'doid'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "Affymetrix probeset
+'affy_probeset'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Affymetrix probeset
+'affy_probeset'" -> "Ensembl gene
+'ensembl_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "Ensembl protein
+'ensembl_protein'" [label = "has gene product
+'obo:RO_0002205'"] ;
+  "Ensembl protein
+'ensembl_protein'" -> "Ensembl gene
+'ensembl_gene'" [label = "gene product of
+'obo:RO_0002204'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "transcribed to
+'obo:RO_0002511'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "Ensembl gene
+'ensembl_gene'" [label = "transcribed from
+'obo:RO_0002510'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "Ensembl gene
+'ensembl_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "RefSeq RNA
+'refseq_rna'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "Ensembl gene
+'ensembl_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl protein
+'ensembl_protein'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "ribosomal translation of
+'obo:RO_0002512'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "Ensembl protein
+'ensembl_protein'" [label = "ribosomally translates to
+'obo:RO_0002513'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "Affymetrix probeset
+'affy_probeset'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Affymetrix probeset
+'affy_probeset'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "HGNC
+'hgnc'" [label = "transcribed from
+'obo:RO_0002510'"] ;
+  "HGNC
+'hgnc'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "transcribed to
+'obo:RO_0002511'"] ;
+  "HGNC
+'hgnc'" -> "Consensus CDS
+'ccds'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Consensus CDS
+'ccds'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "Enzyme nomenclature
+'ec'" [label = "functionally related to
+'ro:RO_0002328'"] ;
+  "Enzyme nomenclature
+'ec'" -> "HGNC
+'hgnc'" [label = "gene product of
+'ro:RO_0002204'"] ;
+  "HGNC
+'hgnc'" -> "ENA
+'ena'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ENA
+'ena'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "Ensembl gene
+'ensembl_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "INSDC
+'insdc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "INSDC
+'insdc'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "Locus Reference Genomic record
+'lrg'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Locus Reference Genomic record
+'lrg'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "MGI
+'mgi'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MGI
+'mgi'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "miRBase
+'mirbase'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "miRBase
+'mirbase'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "OMIM gene
+'omim_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMIM gene
+'omim_gene'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "Orphanet Rare Disease ontology
+'orphanet'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "PubMed
+'pubmed'" [label = "references
+'dcterms:references'"] ;
+  "HGNC
+'hgnc'" -> "RefSeq RNA
+'refseq_rna'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "RGD
+'rgd'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RGD
+'rgd'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "UniProt
+'uniprot'" [label = "has gene product
+'obo:RO_0002205'"] ;
+  "UniProt
+'uniprot'" -> "HGNC
+'hgnc'" [label = "gene product of
+'obo:RO_0002204'"] ;
+  "HomoloGene
+'homologene'" -> "NCBI gene
+'ncbigene'" [label = "has homologous member
+'orth:hasHomologousMember'"] ;
+  "NCBI gene
+'ncbigene'" -> "HomoloGene
+'homologene'" [label = "is homologous member
+'orth:isHomologousMember'"] ;
+  "InterPro
+'interpro'" -> "Gene ontology
+'go'" [label = "functionally related to
+'ro:RO_0002328'"] ;
+  "Gene ontology
+'go'" -> "InterPro
+'interpro'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "InterPro
+'interpro'" -> "PDB
+'pdb'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "PDB
+'pdb'" -> "InterPro
+'interpro'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "InterPro
+'interpro'" -> "Pfam
+'pfam'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "InterPro
+'interpro'" -> "PubMed
+'pubmed'" [label = "references
+'dcterms:references'"] ;
+  "InterPro
+'interpro'" -> "Reactome pathway
+'reactome_pathway'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "Disease ontology
+'doid'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Disease ontology
+'doid'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "Human Phenotype Ontology
+'hp'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Human Phenotype Ontology
+'hp'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "MedDRA
+'meddra'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MedDRA
+'meddra'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "MeSH
+'mesh'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MeSH
+'mesh'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "OMIM phenotype
+'omim_phenotype'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMIM phenotype
+'omim_phenotype'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "Orphanet Rare Disease ontology
+'orphanet'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NANDO
+'nando'" -> "MONDO
+'mondo'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MONDO
+'mondo'" -> "NANDO
+'nando'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "Ensembl gene
+'ensembl_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "Ensembl protein
+'ensembl_protein'" [label = "has gene product
+'obo:RO_0002205'"] ;
+  "Ensembl protein
+'ensembl_protein'" -> "NCBI gene
+'ncbigene'" [label = "gene product of
+'obo:RO_0002204'"] ;
+  "NCBI gene
+'ncbigene'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "transcribed to
+'obo:RO_0002511'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "NCBI gene
+'ncbigene'" [label = "transcribed from
+'obo:RO_0002510'"] ;
+  "NCBI gene
+'ncbigene'" -> "Gene ontology
+'go'" [label = "functionally related to
+'ro:RO_0002328'"] ;
+  "Gene ontology
+'go'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "HGNC
+'hgnc'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "HGNC
+'hgnc'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "miRBase
+'mirbase'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "miRBase
+'mirbase'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "OMIM gene
+'omim_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMIM gene
+'omim_gene'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq genomic
+'refseq_genomic'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RefSeq genomic
+'refseq_genomic'" -> "NCBI gene
+'ncbigene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq protein
+'refseq_protein'" [label = "has gene product
+'obo:RO_0002205'"] ;
+  "RefSeq protein
+'refseq_protein'" -> "NCBI gene
+'ncbigene'" [label = "gene product of
+'obo:RO_0002204'"] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq RNA
+'refseq_rna'" [label = "transcribed to
+'obo:RO_0002511'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "NCBI gene
+'ncbigene'" [label = "transcribed from
+'obo:RO_0002510'"] ;
+  "RefSeq protein
+'refseq_protein'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "RefSeq protein
+'refseq_protein'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "BioProject
+'bioproject'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioProject
+'bioproject'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "BioSample
+'biosample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioSample
+'biosample'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "SRA analysis
+'sra_analysis'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA analysis
+'sra_analysis'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "SRA experiment
+'sra_experiment'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "SRA project
+'sra_project'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA project
+'sra_project'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "SRA run
+'sra_run'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA run
+'sra_run'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA accession
+'sra_accession'" -> "SRA sample
+'sra_sample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA sample
+'sra_sample'" -> "SRA accession
+'sra_accession'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA experiment
+'sra_experiment'" -> "BioProject
+'bioproject'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioProject
+'bioproject'" -> "SRA experiment
+'sra_experiment'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA experiment
+'sra_experiment'" -> "BioSample
+'biosample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioSample
+'biosample'" -> "SRA experiment
+'sra_experiment'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA project
+'sra_project'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA project
+'sra_project'" -> "SRA experiment
+'sra_experiment'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA sample
+'sra_sample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA sample
+'sra_sample'" -> "SRA experiment
+'sra_experiment'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA project
+'sra_project'" -> "BioProject
+'bioproject'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioProject
+'bioproject'" -> "SRA project
+'sra_project'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA run
+'sra_run'" -> "BioProject
+'bioproject'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioProject
+'bioproject'" -> "SRA run
+'sra_run'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA run
+'sra_run'" -> "BioSample
+'biosample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioSample
+'biosample'" -> "SRA run
+'sra_run'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA run
+'sra_run'" -> "SRA experiment
+'sra_experiment'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA run
+'sra_run'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA run
+'sra_run'" -> "SRA project
+'sra_project'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA project
+'sra_project'" -> "SRA run
+'sra_run'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA run
+'sra_run'" -> "SRA sample
+'sra_sample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA sample
+'sra_sample'" -> "SRA run
+'sra_run'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "SRA sample
+'sra_sample'" -> "BioSample
+'biosample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "BioSample
+'biosample'" -> "SRA sample
+'sra_sample'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "WikiPathways
+'wikipathways'" -> "ChEBI compound
+'chebi'" [label = "has component
+'ro:RO_0002180'"] ;
+  "ChEBI compound
+'chebi'" -> "WikiPathways
+'wikipathways'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "WikiPathways
+'wikipathways'" -> "Disease ontology
+'doid'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Disease ontology
+'doid'" -> "WikiPathways
+'wikipathways'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "WikiPathways
+'wikipathways'" -> "UniProt
+'uniprot'" [label = "has component
+'ro:RO_0002180'"] ;
+  "UniProt
+'uniprot'" -> "WikiPathways
+'wikipathways'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MBGD gene
+'mbgd_gene'" -> "UniProt
+'uniprot'" [label = "has gene product
+'obo:RO_0002205'"] ;
+  "MBGD organism
+'mbgd_organism'" -> "Taxonomy
+'taxonomy'" [label = "in taxon
+'ro:RO_0002162'"] ;
+  "MedGen
+'medgen'" -> "NCBI gene
+'ncbigene'" [label = "disease has basis in
+'obo:RO_0004019'"] ;
+  "NCBI gene
+'ncbigene'" -> "MedGen
+'medgen'" [label = "causes or contributes to condition
+'obo:RO_0003302'"] ;
+  "OMA protein
+'oma_protein'" -> "Ensembl gene
+'ensembl_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl gene
+'ensembl_gene'" -> "OMA protein
+'oma_protein'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMA protein
+'oma_protein'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "OMA protein
+'oma_protein'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMA protein
+'oma_protein'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "OMA protein
+'oma_protein'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "MeSH
+'mesh'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MeSH
+'mesh'" -> "Orphanet Rare Disease ontology
+'orphanet'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "OMIM phenotype
+'omim_phenotype'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "OMIM phenotype
+'omim_phenotype'" -> "Orphanet Rare Disease ontology
+'orphanet'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "PDB
+'pdb'" -> "Enzyme nomenclature
+'ec'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Enzyme nomenclature
+'ec'" -> "PDB
+'pdb'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "PDB
+'pdb'" -> "Gene ontology
+'go'" [label = "functionally related to
+'sio:RO_0002328'"] ;
+  "Gene ontology
+'go'" -> "PDB
+'pdb'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "PDB
+'pdb'" -> "InterPro
+'interpro'" [label = "is member of
+'sio:SIO_000095'"] ;
+  "InterPro
+'interpro'" -> "PDB
+'pdb'" [label = "has member
+'sio:SIO_000059'"] ;
+  "PDB
+'pdb'" -> "Pfam
+'pfam'" [label = "is member of
+'sio:SIO_000095'"] ;
+  "Pfam
+'pfam'" -> "PDB
+'pdb'" [label = "has member
+'sio:SIO_000059'"] ;
+  "PDB
+'pdb'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "PDB
+'pdb'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Reactome pathway
+'reactome_pathway'" -> "Gene ontology
+'go'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Gene ontology
+'go'" -> "Reactome pathway
+'reactome_pathway'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Reactome pathway
+'reactome_pathway'" -> "Reactome reaction
+'reactome_reaction'" [label = "has component
+'ro:RO_0002180'"] ;
+  "Reactome reaction
+'reactome_reaction'" -> "Reactome pathway
+'reactome_pathway'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Reactome reaction
+'reactome_reaction'" -> "ChEBI compound
+'chebi'" [label = "has component
+'ro:RO_0002180'"] ;
+  "ChEBI compound
+'chebi'" -> "Reactome reaction
+'reactome_reaction'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Reactome reaction
+'reactome_reaction'" -> "UniProt
+'uniprot'" [label = "has component
+'ro:RO_0002180'"] ;
+  "UniProt
+'uniprot'" -> "Reactome reaction
+'reactome_reaction'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "dbSNP
+'dbsnp'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "HGNC
+'hgnc'" [label = "transcribed from
+'obo:RO_0002510'"] ;
+  "HGNC
+'hgnc'" -> "RefSeq RNA
+'refseq_rna'" [label = "transcribed to
+'obo:RO_0002511'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "NCBI gene
+'ncbigene'" [label = "transcribed from
+'obo:RO_0002510'"] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq RNA
+'refseq_rna'" [label = "transcribed to
+'obo:RO_0002511'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "OMIM gene
+'omim_gene'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "PubMed
+'pubmed'" [label = "references
+'dcterms:references'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "RefSeq protein
+'refseq_protein'" [label = "ribosomally translates to
+'obo:RO_0002513'"] ;
+  "RefSeq protein
+'refseq_protein'" -> "RefSeq RNA
+'refseq_rna'" [label = "ribosomal translation of
+'obo:RO_0002512'"] ;
+  "RefSeq RNA
+'refseq_rna'" -> "Taxonomy
+'taxonomy'" [label = "in taxon
+'obo:RO_0002162'"] ;
+  "Rhea
+'rhea'" -> "ChEBI compound
+'chebi'" [label = "has component
+'ro:RO_0002180'"] ;
+  "ChEBI compound
+'chebi'" -> "Rhea
+'rhea'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Rhea
+'rhea'" -> "Enzyme nomenclature
+'ec'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Enzyme nomenclature
+'ec'" -> "Rhea
+'rhea'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "TogoVar variant
+'togovar'" -> "ClinVar variant
+'clinvar'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ClinVar variant
+'clinvar'" -> "TogoVar variant
+'togovar'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "TogoVar variant
+'togovar'" -> "dbSNP
+'dbsnp'" [label = "which position is similar to
+'rdfs:seeAlso'"] ;
+  "TogoVar variant
+'togovar'" -> "Ensembl gene
+'ensembl_gene'" [label = "is located in
+'ro:RO_0001025'"] ;
+  "TogoVar variant
+'togovar'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "is located in
+'ro:RO_0001025'"] ;
+  "TogoVar variant
+'togovar'" -> "HGNC
+'hgnc'" [label = "is associated with
+'ro:http://togovar.biosciencedbc.jp/condition/'"] ;
+  "TogoVar variant
+'togovar'" -> "MedGen
+'medgen'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "MedGen
+'medgen'" -> "TogoVar variant
+'togovar'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "TogoVar variant
+'togovar'" -> "NCBI gene
+'ncbigene'" [label = "is located in
+'ro:RO_0001025'"] ;
+  "TogoVar variant
+'togovar'" -> "PubMed
+'pubmed'" [label = "Pubmed
+'dcterms:references'"] ;
+  "TogoVar variant
+'togovar'" -> "RefSeq RNA
+'refseq_rna'" [label = "is located in
+'ro:RO_0001025'"] ;
+  "UniProt
+'uniprot'" -> "ChEMBL target
+'chembl_target'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "ChEMBL target
+'chembl_target'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "dbSNP
+'dbsnp'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "dbSNP
+'dbsnp'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "Enzyme nomenclature
+'ec'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Enzyme nomenclature
+'ec'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "Ensembl protein
+'ensembl_protein'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "Ensembl protein
+'ensembl_protein'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "Ensembl transcript
+'ensembl_transcript'" [label = "ribosomal translation of
+'ro:RO_0002512'"] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "UniProt
+'uniprot'" [label = "ribosomally translates to
+'ro:RO_0002513'"] ;
+  "UniProt
+'uniprot'" -> "Gene ontology
+'go'" [label = "functionally related to
+'ro:RO_0002328'"] ;
+  "Gene ontology
+'go'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "HGNC
+'hgnc'" [label = "gene product of
+'ro:RO_0002204'"] ;
+  "HGNC
+'hgnc'" -> "UniProt
+'uniprot'" [label = "has gene product
+'ro:RO_0002205'"] ;
+  "UniProt
+'uniprot'" -> "IntAct
+'intact'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "IntAct
+'intact'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "InterPro
+'interpro'" [label = "is member of
+'sio:SIO_000095'"] ;
+  "InterPro
+'interpro'" -> "UniProt
+'uniprot'" [label = "has member
+'sio:SIO_000059'"] ;
+  "UniProt
+'uniprot'" -> "NCBI gene
+'ncbigene'" [label = "gene product of
+'ro:RO_0002204'"] ;
+  "NCBI gene
+'ncbigene'" -> "UniProt
+'uniprot'" [label = "has gene product
+'ro:RO_0002205'"] ;
+  "UniProt
+'uniprot'" -> "NCBI protein
+'ncbiprotein'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "NCBI protein
+'ncbiprotein'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "OMA group
+'oma_group'" [label = "is homologous member
+'orth:isHomologousMember'"] ;
+  "OMA group
+'oma_group'" -> "UniProt
+'uniprot'" [label = "has homologous member
+'orth:hasHomologousMember'"] ;
+  "UniProt
+'uniprot'" -> "Orphanet Rare Disease ontology
+'orphanet'" [label = "has phenotype
+'ro:RO_0002200'"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "UniProt
+'uniprot'" [label = "phenotype of
+'ro:RO_0002201'"] ;
+  "UniProt
+'uniprot'" -> "PDB
+'pdb'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "PDB
+'pdb'" -> "UniProt
+'uniprot'" [label = "seeAlso
+'rdfs:seeAlso'"] ;
+  "UniProt
+'uniprot'" -> "Pfam
+'pfam'" [label = "is member of
+'sio:SIO_00095'"] ;
+  "Pfam
+'pfam'" -> "UniProt
+'uniprot'" [label = "has member
+'sio:SIO_000059'"] ;
 }
