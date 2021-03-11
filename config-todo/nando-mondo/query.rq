@@ -1,4 +1,4 @@
-# https://integbio.jp/rdf/sparql
+# Endpoint: https://integbio.jp/rdf/sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?nando_id ?mondo_id
