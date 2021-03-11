@@ -8,4 +8,4 @@ WHERE {
     dcterms:identifier ?nando_id ;
     skos:closeMatch ?mondo .
   BIND (replace(str(?mondo), 'http://purl.obolibrary.org/obo/MONDO_', '') AS ?mondo_id) 
-  }
+}
