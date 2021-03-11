@@ -1,0 +1,81 @@
+#!/usr/bin/env ruby
+#
+# Usage: togoid-config-summary config/*/*.yaml | togoid-config-summary-dot > togoid.dot
+#
+
+nodes = {}
+edges = []
+
+ARGF.gets # header
+
+ARGF.each do |line|
+  ary = line.split(/\t/)
+  s_category = ary[2]
+  s_label = ary[3]
+  t_category = ary[6]
+  t_label = ary[7]
+  f_ns = ary[9]
+  f_pred = ary[12]
+  r_ns = ary[13]
+  r_pred = ary[16]
+
+  nodes[s_label] = s_category
+  nodes[t_label] = t_category
+  edges << [ s_label, t_label, "#{f_ns}:#{f_pred}" ]
+  if r_pred and ! r_pred.empty?
+    edges << [ t_label, s_label, "#{r_ns}:#{r_pred}" ]
+  end
+end
+
+colors = {
+  "Compound"	=> "#E60012",
+  "Disease"	=> "#EB6100",
+  "Domain"	=> "#F39800",
+  "Drug"	=> "#FCC800",
+  "FIXME"	=> "#FFF100",
+  "Function"	=> "#CFDB00",
+  "Gene"	=> "#8FC31F",
+  "Genome"	=> "#22AC38",
+  "Interaction"	=> "#009944",
+  "Literature"	=> "#009B6B",
+  "Metabolite"	=> "#009E96",
+  "Ortholog"	=> "#00A0C1",
+  "Pathway"	=> "#00A0E9",
+  "Phenotype"	=> "#0086D1",
+  "Probe"	=> "#0068B7",
+  "Protein"	=> "#00479D",
+  "Sample"	=> "#1D2088",
+  "Structure"	=> "#601986",
+  "Taxonomy"	=> "#920783",
+  "Terminology"	=> "#BE0081",
+  "Variant"	=> "#E4007F",
+  "microRNA"	=> "#E5006A",
+}
+#		   "#E5004F"
+#		   "#E60033"
+
+puts 'digraph togoid {
+ node [
+    colorscheme = "rdylgn11"
+    style = "solid,filled",
+    fontname = "Migu 1M",
+    color = 7,
+  ];
+'
+puts
+
+#puts "  #{nodes.keys.map{|x| "\"#{x}\"join(', ')} ;"
+nodes.each do |node, category|
+  puts %Q{  "#{node}" [fillcolor = "#{colors[category]}"] ;}
+end
+
+puts
+
+edges.each do |ary|
+  puts %Q{  "#{ary[0]}" -> "#{ary[1]}" [label = "#{ary[2]}"] ;}
+end
+
+puts '}'
+
+$stderr.puts "Run: dot -Kdot -Tpng togoid.dot -otogoid.png"
+
