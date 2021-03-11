@@ -1,15 +1,4 @@
-source:
-  label: OMA Protein
-  type: Protein
-  namespace: oma
-  prefix: https://identifiers.org/oma.protein/
-target:
-  label: Ensembl
-  type: Gene
-  namespace: ensembl
-  prefix: http://identifiers.org/ensembl/
 link:
-  file: pair.tsv
   forward:
     label: seeAlso
     namespace: rdfs
@@ -20,8 +9,9 @@ link:
     namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
   frequency: twoTimesAYear
   # https://omabrowser.org/oma/archives/
   # https://questfororthologs.org/orthology_databases
-  method: update.sh > pair.tsv
+  method: update.sh
