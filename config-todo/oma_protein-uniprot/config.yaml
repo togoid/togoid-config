@@ -1,13 +1,3 @@
-source:
-  label: OMA Protein
-  type: Protein
-  namespace: oma
-  prefix: https://identifiers.org/oma.protein/
-target:
-  label: UniProt
-  type: Protein
-  namespace: uniprot
-  prefix: http://purl.uniprot.org/uniprot/
 link:
   file: pair.tsv
   forward:
