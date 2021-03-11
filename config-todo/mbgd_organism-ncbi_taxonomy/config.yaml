@@ -4,7 +4,7 @@ link:
     namespace: ro
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002162
-  file: pair.tsv
+  file: sample.tsv
 update:
-  frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq "https://integbio.jp/rdf/sparql"
+  frequency: Yearly
+  method: sparql_csv2tsv.sh query.rq http://sparql.nibb.ac.jp/sparql
