@@ -1,0 +1,11 @@
+# Endpoint: https://togovar-dev.biosciencedbc.jp/sparql
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?medgen_id ?ncbigene_id
+WHERE {
+  # ro: causes or contributes to condition
+  ?ncbigene obo:RO_0003302 ?medgen
+  BIND (strafter(str(?ncbigene), "ncbigene/") AS ?ncbigene_id)
+  BIND (strafter(str(?medgen), "medgen/") AS ?medgen_id)
+}
+
