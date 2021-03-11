@@ -1,5 +1,5 @@
 link:
-   forward:
+  forward:
     label: seeAlso
     namespace: rdfs
     prefix: http://www.w3.org/2000/01/rdf-schema#
@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Irregular
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/bioportal/sparql
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/sparql
