@@ -1,9 +1,11 @@
 digraph togoid {
- node [
-    colorscheme = "rdylgn11"
-    style = "solid,filled",
+  node [
+    style = "filled",
     fontname = "Migu 1M",
-    color = 7,
+    color = "white"
+  ];
+  edge [
+    fontname = "Migu 1M"
   ];
 
   "Affymetrix probeset
