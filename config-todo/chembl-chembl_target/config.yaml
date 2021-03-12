@@ -7,4 +7,4 @@ link:
   file: pair.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq "https://integbio.jp/rdf/mirror/ebi/sparql"
+  method: update.pl > pair.tsv
