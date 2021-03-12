@@ -29,7 +29,7 @@ WHERE {
            rdfs:seeAlso ?target .
   ?target up:database db:MIM ;
           rdfs:comment ?type .
-  VALUES ?type { 'phenotype' 'gene+phenotype'}
+  VALUES ?type { 'gene' 'gene+phenotype'}
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
