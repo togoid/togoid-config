@@ -1,22 +1,10 @@
-source:
-  namespace: togovar
-  type: Variant
-  label: TogoVar variant
-  prefix: http://togovar.biosciencedbc.jp/variation/
-target:
-  namespace: ensembl.transcript
-  type: Transcript
-  label: Ensembl Transcript
-  prefix: http://rdf.ebi.ac.uk/resource/ensembl.transcript/
 link:
-  file: pair.tsv
   forward:
     namespace: ro
-    label: is located in 
+    label: is located in
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0001025
+  file: sample.tsv
 update:
-  frequency: Monthly
-  # NBDC will update the conversion table (tgvid2enst.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2enst.tsv && mv tgvid2enst.tsv pair.tsv
-
+  frequency: Bimonthly
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2ensembltranscript.tsv

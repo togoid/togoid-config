@@ -1,21 +1,10 @@
-source:
-  namespace: togovar
-  type: Variant
-  label: TogoVar variant
-  prefix: http://togovar.biosciencedbc.jp/variation/
-target:
-  namespace: dbsnp
-  type: Variant
-  label: dbSNP
-  prefix: http://identifiers.org/dbsnp/
 link:
-  file: pair.tsv
   forward:
     namespace: rdfs
     label: which position is similar to 
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
-  frequency: Monthly
-  method: update.sh 
-
+  frequency: Bimonthly
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2dbSNP.tsv
