@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F '\t' '$1==9606 && !a[$2 $3]++{print $2 "\t" gensub("GO:","","g",$3)}' $TOGOID_ROOT/input/ncbigene/gene2go
+  method: awk -F '\t' 'FNR!=1 && !a[$2 $3]++{print $2 "\t" gensub("GO:","","g",$3)}' $TOGOID_ROOT/input/ncbigene/gene2go
