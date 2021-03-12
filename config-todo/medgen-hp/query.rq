@@ -1,4 +1,4 @@
-##endpoint https://togovar-dev.biosciencedbc.jp/sparql
+# endpoint https://togovar-dev.biosciencedbc.jp/sparql
 PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX dct: <http://purl.org/dc/terms/>
 SELECT DISTINCT ?medgen_id ?hp_id
