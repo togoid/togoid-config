@@ -120,6 +120,12 @@ Recommended to use Dublin Core's Frequency Vocabulary [DCFreq](https://www.dubli
 
 ### Rakefile
 
+Update and convert all files in parallel.
+
+```
+% rake -m -j 4
+```
+
 To update all TSV files.
 
 ```sh
@@ -139,7 +145,6 @@ To update a 'output/tsv/db1-db2.tsv' file.
 ```
 
 To obtain a 'output/ttl/db1-db2.ttl' file.
-
 
 ```sh
 % rake output/ttl/db1-db2.ttl
