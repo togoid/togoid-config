@@ -49,24 +49,28 @@ def file_older_than_days?(file, days = 7)
   end
 end
 
-# Update config/db_1-db_2/config.yaml => output/tsv/db_1-db_2.tsv
 # Generate dependency for preparation by target names
 rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
+  $stderr.puts "## Update config/#{pair}/config.yaml => output/tsv/#{pair}.tsv"
+  $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
   if file_older_than_days?(t.name, 1)
     sh "togoid-config config/#{pair} update"
   end
+  $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
 end
 
-# Convert output/tsv/db_1-db_2.tsv => output/ttl/db_1-db_2.ttl
 # Generate source filenames by pathmap notation
 rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" ] do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
   #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
+  $stderr.puts "## Convert output/tsv/#{pair}.tsv => output/ttl/#{pair}.ttl"
+  $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
   if file_older_than_days?(t.name, 1)
     sh "togoid-config config/#{pair} convert"
   end
+  $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
 end
 
 # Preparatioin tasks
