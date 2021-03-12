@@ -7,5 +7,5 @@ WHERE {
               mo:mgconso ?mgconso .
   ?mgconso dct:source mo:HPO ;
            rdfs:seeAlso ?hp .
-    BIND (replace(str(?hp), 'http://purl.obolibrary.org/obo/HP_', '') AS ?hp_id)
+  BIND (replace(str(?hp), 'http://purl.obolibrary.org/obo/HP_', '') AS ?hp_id)
 }
