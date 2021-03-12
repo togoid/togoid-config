@@ -7,5 +7,5 @@ WHERE {
               mo:mgconso ?mgconso .
   ?mgconso dct:source mo:MSH ;
            rdfs:seeAlso ?mesh .
-    BIND (replace(str(?mesh), 'http://id.nlm.nih.gov/mesh/', '') AS ?mesh_id)
+  BIND (replace(str(?mesh), 'http://id.nlm.nih.gov/mesh/', '') AS ?mesh_id)
 }
