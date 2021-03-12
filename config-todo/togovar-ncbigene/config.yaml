@@ -1,13 +1,3 @@
-source:
-  namespace: togovar
-  type: Variant
-  label: TogoVar variant
-  prefix: http://togovar.biosciencedbc.jp/variation/
-target:
-  namespace: ncbig
-  type: Gene
-  label: NCBI gene 
-  prefix: http://identifiers.org/ncbigene/
 link:
   file: pair.tsv
   forward:
@@ -17,5 +7,4 @@ link:
     predicate: RO_0001025
 update:
   frequency: Monthly
-  # NBDC will update the conversion table (tgvid2ncbig.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2ncbig.tsv && mv tgvid2ncbig.tsv pair.tsv
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2ncbigene.tsv
