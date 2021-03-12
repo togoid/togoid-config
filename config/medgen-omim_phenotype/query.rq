@@ -3,9 +3,11 @@ PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX dct: <http://purl.org/dc/terms/>
 SELECT DISTINCT ?medgen_id ?omim_id 
 WHERE {
-  ?medgen_uri dct:identifier ?medgen_id ;
-              mo:mgconso ?mgconso .
-  ?mgconso dct:source mo:OMIM ;
-           rdfs:seeAlso ?omim .
+  ?medgen_uri
+    dct:identifier ?medgen_id ;
+    mo:mgconso ?mgconso .
+  ?mgconso
+    dct:source mo:OMIM ;
+    rdfs:seeAlso ?omim .
   ?omim dct:identifier ?omim_id .
 }
