@@ -11,7 +11,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
 SELECT DISTINCT ?target
 WHERE {
-  ?s up:enzyme ?target . 
+  ?s up:component*/up:enzyme ?target . 
 }";
 
 # SPARQL query for get-ID-list
@@ -22,7 +22,7 @@ SELECT DISTINCT ?source ?target
 WHERE {
   VALUES ?target { <__TARGET__> }
   ?source a up:Protein ;
-          up:enzyme ?target .
+          up:component*/up:enzyme ?target .
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
