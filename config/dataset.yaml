@@ -135,7 +135,7 @@ human_protein_atlas:  # FIXME: too long?
   # FIXME: valid in RDF?
   prefix: 'http://www.proteinatlas.org/'
 insdc:
-  label: INSDC
+  label: GenBank/ENA/DDBJ
   catalog: FIXME
   category: Gene
   prefix: 'http://identifiers.org/insdc/'
