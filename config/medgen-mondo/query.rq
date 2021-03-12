@@ -3,9 +3,11 @@ PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX dct: <http://purl.org/dc/terms/>
 SELECT DISTINCT (STR(?medgen) AS ?medgen_id) ?mondo_id
 WHERE {
-  ?medgen_uri dct:identifier ?medgen ;
-              mo:mgconso ?mgconso .
-  ?mgconso dct:source mo:MONDO ;
-           rdfs:seeAlso ?mondo .
+  ?medgen_uri
+    dct:identifier ?medgen ;
+    mo:mgconso ?mgconso .
+  ?mgconso
+    dct:source mo:MONDO ;
+    rdfs:seeAlso ?mondo .
   BIND(STRAFTER(STR(?mondo), "http://purl.obolibrary.org/obo/MONDO_") AS ?mondo_id)
 }
