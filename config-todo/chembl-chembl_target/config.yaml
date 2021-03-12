@@ -7,4 +7,4 @@ link:
   file: pair.tsv
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: update.pl
