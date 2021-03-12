@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
+update:
+  frequency: daily
+  method: sparql_csv2tsv.sh query.rq https://togovar-dev.biosciencedbc.jp/sparql
