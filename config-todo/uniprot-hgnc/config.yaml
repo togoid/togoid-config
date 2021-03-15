@@ -1,13 +1,3 @@
-source:
-  namespace: uniprot
-  type: Protein
-  label: UniProt
-  prefix: http://purl.uniprot.org/uniprot/
-target:
-  namespace: hgnc
-  type: Gene
-  label: HGNC
-  prefix: http://identifiers.org/hgnc/
 link:
   file: pair.tsv
   forward:
@@ -22,5 +12,5 @@ link:
     predicate: RO_0002205
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: update.pl
 
