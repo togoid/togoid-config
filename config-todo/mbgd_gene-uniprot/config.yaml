@@ -7,4 +7,5 @@ link:
   file: sample.tsv
 update:
   frequency: Yearly
-  method: sparql_csv2tsv.sh query.rq http://sparql.nibb.ac.jp/sparql
+  # method: sparql_csv2tsv.sh query_human.rq http://sparql.nibb.ac.jp/sparql
+  method: sparql_csv2tsv.sh mbgd_organism.rq http://sparql.nibb.ac.jp/sparql > mbgd_organism.txt && sparql_taxon.rb query.rq http://sparql.nibb.ac.jp/sparql mbgd_organism.txt
