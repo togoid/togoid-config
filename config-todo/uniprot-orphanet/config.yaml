@@ -1,13 +1,3 @@
-source:
-  namespace: uniprot
-  type: Protein
-  label: UniProt
-  prefix: http://purl.uniprot.org/uniprot/
-target:
-  namespace: orphanet
-  type: Disease
-  label: Orphanet
-  prefix: http://identifiers.org/orphanet/
 link:
   file: pair.tsv
   forward:
@@ -22,4 +12,4 @@ link:
     predicate: RO_0002201
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: update.pl
