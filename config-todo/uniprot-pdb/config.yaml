@@ -1,13 +1,3 @@
-source:
-  namespace: uniprot
-  type: Protein
-  label: UniProt
-  prefix: http://purl.uniprot.org/uniprot/
-target:
-  namespace: pdb
-  type: Protein structure
-  label: PDB
-  prefix: http://identifiers.org/pdb/
 link:
   file: pair.tsv
   forward:
@@ -22,4 +12,4 @@ link:
     predicate: seeAlso
 update:
   frequency: Monthly
-  method: update.pl > pair.tsv
+  method: update.pl
