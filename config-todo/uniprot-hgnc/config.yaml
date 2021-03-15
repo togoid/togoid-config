@@ -12,5 +12,5 @@ link:
     predicate: RO_0002205
 update:
   frequency: Monthly
-  method: sparql_thread.pl
+  method: sparql_thread.pl -t 10
 
