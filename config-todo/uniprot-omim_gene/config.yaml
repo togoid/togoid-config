@@ -12,4 +12,4 @@ link:
     predicate: RO_0002201
 update:
   frequency: Monthly
-  method: update.pl
+  method: Change method update.pl to sparql_thread.pl
