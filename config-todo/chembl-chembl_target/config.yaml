@@ -7,4 +7,4 @@ link:
   file: pair.tsv
 update:
   frequency: Monthly
-  method: update.pl
+  method: sparql_thread.pl -t 10
