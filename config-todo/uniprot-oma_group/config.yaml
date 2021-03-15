@@ -12,4 +12,4 @@ link:
     predicate: hasHomologousMember
 update:
   frequency: Monthly
-  method: update.pl
+  method: sparql_thread.pl
