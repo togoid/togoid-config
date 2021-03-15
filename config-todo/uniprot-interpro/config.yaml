@@ -12,4 +12,4 @@ link:
     predicate: SIO_000059
 update:
   frequency: Monthly
-  method: sparql_thread.pl
+  method: sparql_thread.pl -t 10
