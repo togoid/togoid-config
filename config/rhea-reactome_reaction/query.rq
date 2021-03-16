@@ -7,7 +7,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX identifiers: <http://identifiers.org/>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 
-SELECT ?rhea_id ?reactome_id
+SELECT DISTINCT ?rhea_id ?reactome_id
 FROM <http://integbio.jp/rdf/mirror/rhea>
 WHERE {
   {
