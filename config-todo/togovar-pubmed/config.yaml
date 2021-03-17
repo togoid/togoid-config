@@ -1,22 +1,11 @@
-source:
-  namespace: togovar
-  type: Variant
-  label: TogoVar variant
-  prefix: http://togovar.biosciencedbc.jp/variation/
-target:
-  namespace: pubmed
-  type: Publication
-  label: PubMed ID
-  prefix: http://rdf.ncbi.nlm.nih.gov/pubmed/
 link:
-  file: pair.tsv
   forward:
     namespace: dcterms
     label: Pubmed
     prefix: http://purl.org/dc/terms/
     predicate: references
+  file: sample.tsv
 update:
   frequency: Monthly
-  # NBDC will update the conversion table (tgvid2pubmed.tsv)  
-  method: wget -c https://togovar.biosciencedbc.jp/public/togoid/tgvid2pubmed.tsv && mv tgvid2pubmed.tsv pair.tsv
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2pubmed.tsv
 
