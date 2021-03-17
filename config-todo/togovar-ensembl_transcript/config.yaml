@@ -7,4 +7,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2ensembltranscript.tsv
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2ensembl.transcript.tsv
