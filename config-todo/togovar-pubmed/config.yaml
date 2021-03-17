@@ -1,13 +1,3 @@
-source:
-  namespace: togovar
-  type: Variant
-  label: TogoVar variant
-  prefix: http://togovar.biosciencedbc.jp/variation/
-target:
-  namespace: pubmed
-  type: Publication
-  label: PubMed ID
-  prefix: http://rdf.ncbi.nlm.nih.gov/pubmed/
 link:
   file: pair.tsv
   forward:
