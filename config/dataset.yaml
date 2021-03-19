@@ -29,12 +29,12 @@ chembl_compound:
   catalog: nbdc02559
   category: Compound
   # FIXME: use 'http://rdf.ebi.ac.uk/resource/chembl/molecule/#' ?
-  prefix: 'http://identifiers.org/chembl.compound/CHEMBL'
+  prefix: 'http://identifiers.org/chembl.compound/'
 chembl_target:
   label: ChEMBL target
   catalog: nbdc02555
   category: Protein
-  prefix: 'http://identifiers.org/chembl.target/CHEMBL'
+  prefix: 'http://identifiers.org/chembl.target/'
 civic_gene:
   label: CIVIC gene
   catalog: nbdc02558

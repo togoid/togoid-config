@@ -6,9 +6,8 @@ FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
   ?molecule
     a cco:SmallMolecule ;
-    cco:chemblId ?chembl ;
+    cco:chemblId ?chembl_id ;
     cco:moleculeXref ?pubchem .
   FILTER (contains(str(?pubchem), "pubchem.ncbi.nlm.nih.gov/compound/"))
-  BIND (replace(?chembl, "CHEMBL", "") AS ?chembl_id)
   BIND (replace(str(?pubchem), "http://pubchem.ncbi.nlm.nih.gov/compound/", "") as ?pubchem_id) 
 }

@@ -7,11 +7,9 @@ WHERE {
   ?mechanism a cco:Mechanism ;
     cco:hasTarget ?target ;
     cco:hasMolecule ?molecule .
-  ?molecule cco:chemblId ?molecule_id .
+  ?molecule cco:chemblId ?chembl_id .
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?go_uri .
   ?go_uri a cco:GoComponentRef .
-
   BIND (replace(str(?go_uri), 'http://identifiers.org/obo.go/GO:', '') AS ?go_id)
-  BIND (replace(?molecule_id, 'CHEMBL', '') AS ?chembl_id)
 }
