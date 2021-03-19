@@ -10,7 +10,6 @@ WHERE {
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?ensg_uri .
   ?ensg_uri a cco:EnsemblGeneRef .
-  ?molecule cco:chemblId ?molecule_id .
+  ?molecule cco:chemblId ?chembl_id .
   BIND (replace(str(?ensg_uri), 'http://identifiers.org/ensembl/', '') AS ?ensg_id)
-  BIND (replace(?molecule_id, 'CHEMBL', '') AS ?chembl_id)
 }

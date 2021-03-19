@@ -7,8 +7,7 @@ FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
   ?molecule
     a cco:SmallMolecule ;
-    cco:chemblId ?chembl ;
+    cco:chemblId ?chembl_id ;
     cco:hasDocument/bibo:pmid ?pubmed .
-  BIND (replace(?chembl, "CHEMBL", "") AS ?chembl_id)
   BIND (replace(str(?pubmed), "http://identifiers.org/pubmed/", "") AS ?pubmed_id) 
 }

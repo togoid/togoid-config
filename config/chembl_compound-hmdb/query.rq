@@ -6,9 +6,8 @@ FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE{
   ?molecule
     a cco:SmallMolecule ;
-    cco:chemblId ?chembl ;
+    cco:chemblId ?chembl_id ;
     cco:moleculeXref ?hmdb .
   FILTER (contains(str(?hmdb), "hmdb"))
-  BIND (replace(?chembl, "CHEMBL", "") AS ?chembl_id)
   BIND (replace(str(?hmdb), "http://www.hmdb.ca/metabolites/HMDB", "") as ?hmdb_id) 
 }
