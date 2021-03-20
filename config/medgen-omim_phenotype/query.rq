@@ -4,7 +4,8 @@ PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?medgen_id ?omim_id 
-FROM <http://togovar.biosciencedbc.jp/medgen>
+# Unfortunately these triples are not loaded in any GRAPH
+# FROM <http://togovar.biosciencedbc.jp/medgen>
 WHERE {
   ?medgen_uri
     dct:identifier ?medgen_id ;
