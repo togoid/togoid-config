@@ -1,0 +1,25 @@
+source:
+  label: Ensembl
+  type: Gene
+  namespace: ensembl.gene
+  prefix: http://identifiers.org/ensembl/
+target:
+  label: Affymetrix Probeset
+  namespace: affy.probeset
+  type: Gene
+  prefix: http://identifiers.org/affy.probeset/
+link:
+  file: pair.tsv
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: every 2-3 months (http://asia.ensembl.org/Help/Faq?id=431)
+  method: update.sh > pair.tsv
