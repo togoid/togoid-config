@@ -1,0 +1,5 @@
+- Ensembl Biomart のRESTを使って、Ensembl GeneID をキーに各社のマイクロアレイIDを取れそう
+- とりあえず、affy.hg.u133.plus.2 をやってみた例です
+- Biomart 出力に対して　uniqueRows=1
+- Ensembl ID に対して複数のAffyIDがつく
+- Ensembl ID に対して、どのAffyIDも対応しない行がある(こういうのは削除したほうが良いですか?)
