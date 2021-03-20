@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: ro
     label: ribosomal translation of
@@ -10,6 +9,7 @@ link:
     label: ribosomally translates to
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002513 
+  file: pair.tsv
 update:
   frequency: Monthly
-  method: sparql_thread.pl -t 10
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz Ensembl_TRS

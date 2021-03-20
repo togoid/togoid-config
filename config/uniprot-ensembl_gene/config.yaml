@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: ro
     label: gene product of
@@ -10,6 +9,7 @@ link:
     label: has gene product
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002205
+  file: pair.tsv
 update:
   frequency: Monthly
-  method: sparql_thread.pl -t 10
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz Ensembl
