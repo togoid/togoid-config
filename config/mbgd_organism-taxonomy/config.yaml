@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: in taxon
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002162
+  file: sample.tsv
+update:
+  frequency: Yearly
+  method: sparql_csv2tsv.sh query.rq http://sparql.nibb.ac.jp/sparql

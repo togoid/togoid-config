@@ -1,0 +1,11 @@
+link:
+  forward:
+    namespace: dcterms
+    label: Pubmed
+    prefix: http://purl.org/dc/terms/
+    predicate: references
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2pubmed.tsv
+

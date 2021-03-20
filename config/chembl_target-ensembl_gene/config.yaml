@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: gene product of
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/ebi/sparql

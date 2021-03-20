@@ -1,0 +1,15 @@
+# Endpoint: https://sparql.omabrowser.org/sparql/
+PREFIX orth: <http://purl.org/net/orth#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX uptax: <http://purl.uniprot.org/taxonomy/>
+PREFIX lscr: <http://purl.org/lscr#>
+
+SELECT DISTINCT ?oma_protein_id ?enst_id
+FROM <http://omabrowser.org/graph>
+WHERE {
+  # RO_0002162 'in taxon'
+  ?oma_protein orth:organism/obo:RO_0002162 uptax:9606 .
+  ?oma_protein lscr:xrefEnsemblTranscript ?enst .
+  BIND (strafter(str(?oma_protein), 'https://omabrowser.org/oma/info/') AS ?oma_protein_id)
+  BIND (strafter(str(?enst), 'http://rdf.ebi.ac.uk/resource/ensembl.transcript/') AS ?enst_id)
+}

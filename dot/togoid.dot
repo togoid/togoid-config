@@ -1,0 +1,1100 @@
+digraph togoid {
+  node [
+    style = "filled",
+    color = "white",
+    fontname = "Migu 1M"
+  ];
+  edge [
+    fontname = "Migu 1M"
+  ];
+
+  "Affymetrix probeset
+'affy_probeset'" [fillcolor = "#0068B7"] ;
+  "NCBI gene
+'ncbigene'" [fillcolor = "#8FC31F"] ;
+  "ChEMBL compound
+'chembl_compound'" [fillcolor = "#FFF100"] ;
+  "ChEBI compound
+'chebi'" [fillcolor = "#FFF100"] ;
+  "DrugBank
+'drugbank'" [fillcolor = "#FCC800"] ;
+  "HMDB
+'hmdb'" [fillcolor = "#009E96"] ;
+  "PubChem compound
+'pubchem_compound'" [fillcolor = "#FFF100"] ;
+  "PubChem substance
+'pubchem_substance'" [fillcolor = "#FFF100"] ;
+  "PubMed
+'pubmed'" [fillcolor = "#009B6B"] ;
+  "ChEMBL target
+'chembl_target'" [fillcolor = "#00479D"] ;
+  "Ensembl gene
+'ensembl_gene'" [fillcolor = "#8FC31F"] ;
+  "Gene ontology
+'go'" [fillcolor = "#CFDB00"] ;
+  "IntAct
+'intact'" [fillcolor = "#009944"] ;
+  "InterPro
+'interpro'" [fillcolor = "#F39800"] ;
+  "PDB
+'pdb'" [fillcolor = "#601986"] ;
+  "Pfam
+'pfam'" [fillcolor = "#F39800"] ;
+  "Reactome pathway
+'reactome_pathway'" [fillcolor = "#00A0E9"] ;
+  "CIVIC gene
+'civic_gene'" [fillcolor = "#8FC31F"] ;
+  "Ensembl transcript
+'ensembl_transcript'" [fillcolor = "#8FC31F"] ;
+  "Disease ontology
+'doid'" [fillcolor = "#EB6100"] ;
+  "MeSH
+'mesh'" [fillcolor = "#BE0081"] ;
+  "OMIM phenotype
+'omim_phenotype'" [fillcolor = "#EB6100"] ;
+  "Ensembl protein
+'ensembl_protein'" [fillcolor = "#00479D"] ;
+  "HGNC
+'hgnc'" [fillcolor = "#8FC31F"] ;
+  "RefSeq RNA
+'refseq_rna'" [fillcolor = "#8FC31F"] ;
+  "Consensus CDS
+'ccds'" [fillcolor = "#8FC31F"] ;
+  "Enzyme nomenclature
+'ec'" [fillcolor = "#CFDB00"] ;
+  "ENA
+'ena'" [fillcolor = "#8FC31F"] ;
+  "INSDC
+'insdc'" [fillcolor = "#8FC31F"] ;
+  "Locus Reference Genomic record
+'lrg'" [fillcolor = "#8FC31F"] ;
+  "MGI
+'mgi'" [fillcolor = "#8FC31F"] ;
+  "miRBase
+'mirbase'" [fillcolor = "#E5006A"] ;
+  "OMIM gene
+'omim_gene'" [fillcolor = "#8FC31F"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" [fillcolor = "#EB6100"] ;
+  "RGD
+'rgd'" [fillcolor = "#8FC31F"] ;
+  "UniProt
+'uniprot'" [fillcolor = "#00479D"] ;
+  "HomoloGene
+'homologene'" [fillcolor = "#00A0C1"] ;
+  "MONDO
+'mondo'" [fillcolor = "#EB6100"] ;
+  "Human Phenotype Ontology
+'hp'" [fillcolor = "#0086D1"] ;
+  "MedDRA
+'meddra'" [fillcolor = "#EB6100"] ;
+  "NANDO
+'nando'" [fillcolor = "#EB6100"] ;
+  "RefSeq genomic
+'refseq_genomic'" [fillcolor = "#22AC38"] ;
+  "RefSeq protein
+'refseq_protein'" [fillcolor = "#00479D"] ;
+  "SRA accession
+'sra_accession'" [fillcolor = "#E60012"] ;
+  "BioProject
+'bioproject'" [fillcolor = "#E60012"] ;
+  "BioSample
+'biosample'" [fillcolor = "#1D2088"] ;
+  "SRA analysis
+'sra_analysis'" [fillcolor = "#E60012"] ;
+  "SRA experiment
+'sra_experiment'" [fillcolor = "#E60012"] ;
+  "SRA project
+'sra_project'" [fillcolor = "#E60012"] ;
+  "SRA run
+'sra_run'" [fillcolor = "#E60012"] ;
+  "SRA sample
+'sra_sample'" [fillcolor = "#E60012"] ;
+  "WikiPathways
+'wikipathways'" [fillcolor = "#00A0E9"] ;
+  "MBGD gene
+'mbgd_gene'" [fillcolor = "#00A0C1"] ;
+  "MBGD organism
+'mbgd_organism'" [fillcolor = "#00A0C1"] ;
+  "Taxonomy
+'taxonomy'" [fillcolor = "#920783"] ;
+  "MedGen
+'medgen'" [fillcolor = "#EB6100"] ;
+  "OMA protein
+'oma_protein'" [fillcolor = "#00479D"] ;
+  "Reactome reaction
+'reactome_reaction'" [fillcolor = "#009944"] ;
+  "dbSNP
+'dbsnp'" [fillcolor = "#E4007F"] ;
+  "Rhea
+'rhea'" [fillcolor = "#009944"] ;
+  "TogoVar variant
+'togovar'" [fillcolor = "#E4007F"] ;
+  "ClinVar variant
+'clinvar'" [fillcolor = "#E4007F"] ;
+  "NCBI protein
+'ncbiprotein'" [fillcolor = "#00479D"] ;
+  "OMA group
+'oma_group'" [fillcolor = "#00A0C1"] ;
+
+  "Affymetrix probeset
+'affy_probeset'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "Affymetrix probeset
+'affy_probeset'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "ChEBI compound
+'chebi'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "DrugBank
+'drugbank'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "HMDB
+'hmdb'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "PubChem compound
+'pubchem_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "PubChem substance
+'pubchem_substance'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "PubMed
+'pubmed'" [ label = "evidence publication
+'ro:RO_0002558'"  ] ;
+  "ChEMBL target
+'chembl_target'" -> "Ensembl gene
+'ensembl_gene'" [ label = "gene product of
+'ro:RO_0002204'"  ] ;
+  "ChEMBL target
+'chembl_target'" -> "Gene ontology
+'go'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL target
+'chembl_target'" -> "IntAct
+'intact'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL target
+'chembl_target'" -> "InterPro
+'interpro'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL target
+'chembl_target'" -> "PDB
+'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL target
+'chembl_target'" -> "Pfam
+'pfam'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL target
+'chembl_target'" -> "Reactome pathway
+'reactome_pathway'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "CIVIC gene
+'civic_gene'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "CIVIC gene
+'civic_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Disease ontology
+'doid'" -> "MeSH
+'mesh'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MeSH
+'mesh'" -> "Disease ontology
+'doid'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Disease ontology
+'doid'" -> "OMIM phenotype
+'omim_phenotype'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMIM phenotype
+'omim_phenotype'" -> "Disease ontology
+'doid'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "Affymetrix probeset
+'affy_probeset'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Affymetrix probeset
+'affy_probeset'" -> "Ensembl gene
+'ensembl_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "Ensembl protein
+'ensembl_protein'" [ label = "has gene product
+'obo:RO_0002205'"  ] ;
+  "Ensembl protein
+'ensembl_protein'" -> "Ensembl gene
+'ensembl_gene'" [ label = "gene product of
+'obo:RO_0002204'"  ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "Ensembl gene
+'ensembl_gene'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "Ensembl gene
+'ensembl_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "RefSeq RNA
+'refseq_rna'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "Ensembl gene
+'ensembl_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl protein
+'ensembl_protein'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "ribosomal translation of
+'obo:RO_0002512'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "Ensembl protein
+'ensembl_protein'" [ label = "ribosomally translates to
+'obo:RO_0002513'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "Affymetrix probeset
+'affy_probeset'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Affymetrix probeset
+'affy_probeset'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "HGNC
+'hgnc'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
+  "HGNC
+'hgnc'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "HGNC
+'hgnc'" -> "Consensus CDS
+'ccds'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Consensus CDS
+'ccds'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "Enzyme nomenclature
+'ec'" [ label = "functionally related to
+'ro:RO_0002328'"  ] ;
+  "Enzyme nomenclature
+'ec'" -> "HGNC
+'hgnc'" [ label = "gene product of
+'ro:RO_0002204'"  ] ;
+  "HGNC
+'hgnc'" -> "ENA
+'ena'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ENA
+'ena'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "Ensembl gene
+'ensembl_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "INSDC
+'insdc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "INSDC
+'insdc'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "Locus Reference Genomic record
+'lrg'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Locus Reference Genomic record
+'lrg'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "MGI
+'mgi'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MGI
+'mgi'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "miRBase
+'mirbase'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "miRBase
+'mirbase'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "OMIM gene
+'omim_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMIM gene
+'omim_gene'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "Orphanet Rare Disease ontology
+'orphanet'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "PubMed
+'pubmed'" [ label = "references
+'dcterms:references'"  ] ;
+  "HGNC
+'hgnc'" -> "RefSeq RNA
+'refseq_rna'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "RGD
+'rgd'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RGD
+'rgd'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "UniProt
+'uniprot'" [ label = "has gene product
+'obo:RO_0002205'"  ] ;
+  "UniProt
+'uniprot'" -> "HGNC
+'hgnc'" [ label = "gene product of
+'obo:RO_0002204'"  ] ;
+  "HomoloGene
+'homologene'" -> "NCBI gene
+'ncbigene'" [ label = "has homologous member
+'orth:hasHomologousMember'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "HomoloGene
+'homologene'" [ label = "is homologous member
+'orth:isHomologousMember'"  ] ;
+  "InterPro
+'interpro'" -> "Gene ontology
+'go'" [ label = "functionally related to
+'ro:RO_0002328'"  ] ;
+  "Gene ontology
+'go'" -> "InterPro
+'interpro'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "InterPro
+'interpro'" -> "PDB
+'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "PDB
+'pdb'" -> "InterPro
+'interpro'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "InterPro
+'interpro'" -> "Pfam
+'pfam'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "InterPro
+'interpro'" -> "PubMed
+'pubmed'" [ label = "references
+'dcterms:references'"  ] ;
+  "InterPro
+'interpro'" -> "Reactome pathway
+'reactome_pathway'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "Disease ontology
+'doid'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Disease ontology
+'doid'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "Human Phenotype Ontology
+'hp'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Human Phenotype Ontology
+'hp'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "MedDRA
+'meddra'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MedDRA
+'meddra'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "MeSH
+'mesh'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MeSH
+'mesh'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "OMIM phenotype
+'omim_phenotype'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMIM phenotype
+'omim_phenotype'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "Orphanet Rare Disease ontology
+'orphanet'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NANDO
+'nando'" -> "MONDO
+'mondo'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MONDO
+'mondo'" -> "NANDO
+'nando'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "Ensembl gene
+'ensembl_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "Ensembl protein
+'ensembl_protein'" [ label = "has gene product
+'obo:RO_0002205'"  ] ;
+  "Ensembl protein
+'ensembl_protein'" -> "NCBI gene
+'ncbigene'" [ label = "gene product of
+'obo:RO_0002204'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "NCBI gene
+'ncbigene'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "Gene ontology
+'go'" [ label = "functionally related to
+'ro:RO_0002328'"  ] ;
+  "Gene ontology
+'go'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "HGNC
+'hgnc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "miRBase
+'mirbase'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "miRBase
+'mirbase'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "OMIM gene
+'omim_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMIM gene
+'omim_gene'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq genomic
+'refseq_genomic'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RefSeq genomic
+'refseq_genomic'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq protein
+'refseq_protein'" [ label = "has gene product
+'obo:RO_0002205'"  ] ;
+  "RefSeq protein
+'refseq_protein'" -> "NCBI gene
+'ncbigene'" [ label = "gene product of
+'obo:RO_0002204'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq RNA
+'refseq_rna'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "NCBI gene
+'ncbigene'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
+  "RefSeq protein
+'refseq_protein'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "RefSeq protein
+'refseq_protein'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "BioProject
+'bioproject'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioProject
+'bioproject'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "BioSample
+'biosample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioSample
+'biosample'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "SRA analysis
+'sra_analysis'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA analysis
+'sra_analysis'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "SRA experiment
+'sra_experiment'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "SRA project
+'sra_project'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA project
+'sra_project'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "SRA run
+'sra_run'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA run
+'sra_run'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA accession
+'sra_accession'" -> "SRA sample
+'sra_sample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA sample
+'sra_sample'" -> "SRA accession
+'sra_accession'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA experiment
+'sra_experiment'" -> "BioProject
+'bioproject'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioProject
+'bioproject'" -> "SRA experiment
+'sra_experiment'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA experiment
+'sra_experiment'" -> "BioSample
+'biosample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioSample
+'biosample'" -> "SRA experiment
+'sra_experiment'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA project
+'sra_project'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA project
+'sra_project'" -> "SRA experiment
+'sra_experiment'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA sample
+'sra_sample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA sample
+'sra_sample'" -> "SRA experiment
+'sra_experiment'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA project
+'sra_project'" -> "BioProject
+'bioproject'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioProject
+'bioproject'" -> "SRA project
+'sra_project'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA run
+'sra_run'" -> "BioProject
+'bioproject'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioProject
+'bioproject'" -> "SRA run
+'sra_run'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA run
+'sra_run'" -> "BioSample
+'biosample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioSample
+'biosample'" -> "SRA run
+'sra_run'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA run
+'sra_run'" -> "SRA experiment
+'sra_experiment'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA experiment
+'sra_experiment'" -> "SRA run
+'sra_run'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA run
+'sra_run'" -> "SRA project
+'sra_project'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA project
+'sra_project'" -> "SRA run
+'sra_run'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA run
+'sra_run'" -> "SRA sample
+'sra_sample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA sample
+'sra_sample'" -> "SRA run
+'sra_run'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "SRA sample
+'sra_sample'" -> "BioSample
+'biosample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "BioSample
+'biosample'" -> "SRA sample
+'sra_sample'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "WikiPathways
+'wikipathways'" -> "ChEBI compound
+'chebi'" [ label = "has component
+'ro:RO_0002180'"  ] ;
+  "ChEBI compound
+'chebi'" -> "WikiPathways
+'wikipathways'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "WikiPathways
+'wikipathways'" -> "Disease ontology
+'doid'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Disease ontology
+'doid'" -> "WikiPathways
+'wikipathways'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "WikiPathways
+'wikipathways'" -> "UniProt
+'uniprot'" [ label = "has component
+'ro:RO_0002180'"  ] ;
+  "UniProt
+'uniprot'" -> "WikiPathways
+'wikipathways'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MBGD gene
+'mbgd_gene'" -> "UniProt
+'uniprot'" [ label = "has gene product
+'obo:RO_0002205'"  ] ;
+  "MBGD organism
+'mbgd_organism'" -> "Taxonomy
+'taxonomy'" [ label = "in taxon
+'ro:RO_0002162'"  ] ;
+  "MedGen
+'medgen'" -> "NCBI gene
+'ncbigene'" [ label = "disease has basis in
+'obo:RO_0004019'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "MedGen
+'medgen'" [ label = "causes or contributes to condition
+'obo:RO_0003302'"  ] ;
+  "OMA protein
+'oma_protein'" -> "Ensembl gene
+'ensembl_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "OMA protein
+'oma_protein'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMA protein
+'oma_protein'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "OMA protein
+'oma_protein'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMA protein
+'oma_protein'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "OMA protein
+'oma_protein'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "MeSH
+'mesh'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MeSH
+'mesh'" -> "Orphanet Rare Disease ontology
+'orphanet'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "OMIM phenotype
+'omim_phenotype'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMIM phenotype
+'omim_phenotype'" -> "Orphanet Rare Disease ontology
+'orphanet'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "PDB
+'pdb'" -> "Enzyme nomenclature
+'ec'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Enzyme nomenclature
+'ec'" -> "PDB
+'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "PDB
+'pdb'" -> "Gene ontology
+'go'" [ label = "functionally related to
+'sio:RO_0002328'"  ] ;
+  "Gene ontology
+'go'" -> "PDB
+'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "PDB
+'pdb'" -> "InterPro
+'interpro'" [ label = "is member of
+'sio:SIO_000095'"  ] ;
+  "InterPro
+'interpro'" -> "PDB
+'pdb'" [ label = "has member
+'sio:SIO_000059'"  ] ;
+  "PDB
+'pdb'" -> "Pfam
+'pfam'" [ label = "is member of
+'sio:SIO_000095'"  ] ;
+  "Pfam
+'pfam'" -> "PDB
+'pdb'" [ label = "has member
+'sio:SIO_000059'"  ] ;
+  "PDB
+'pdb'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "PDB
+'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome pathway
+'reactome_pathway'" -> "Gene ontology
+'go'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Gene ontology
+'go'" -> "Reactome pathway
+'reactome_pathway'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome pathway
+'reactome_pathway'" -> "Reactome reaction
+'reactome_reaction'" [ label = "has component
+'ro:RO_0002180'"  ] ;
+  "Reactome reaction
+'reactome_reaction'" -> "Reactome pathway
+'reactome_pathway'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome reaction
+'reactome_reaction'" -> "ChEBI compound
+'chebi'" [ label = "has component
+'ro:RO_0002180'"  ] ;
+  "ChEBI compound
+'chebi'" -> "Reactome reaction
+'reactome_reaction'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome reaction
+'reactome_reaction'" -> "UniProt
+'uniprot'" [ label = "has component
+'ro:RO_0002180'"  ] ;
+  "UniProt
+'uniprot'" -> "Reactome reaction
+'reactome_reaction'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "dbSNP
+'dbsnp'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "HGNC
+'hgnc'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
+  "HGNC
+'hgnc'" -> "RefSeq RNA
+'refseq_rna'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "NCBI gene
+'ncbigene'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "RefSeq RNA
+'refseq_rna'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "OMIM gene
+'omim_gene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "PubMed
+'pubmed'" [ label = "references
+'dcterms:references'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "RefSeq protein
+'refseq_protein'" [ label = "ribosomally translates to
+'obo:RO_0002513'"  ] ;
+  "RefSeq protein
+'refseq_protein'" -> "RefSeq RNA
+'refseq_rna'" [ label = "ribosomal translation of
+'obo:RO_0002512'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "Taxonomy
+'taxonomy'" [ label = "in taxon
+'obo:RO_0002162'"  ] ;
+  "Rhea
+'rhea'" -> "ChEBI compound
+'chebi'" [ label = "has component
+'ro:RO_0002180'"  ] ;
+  "ChEBI compound
+'chebi'" -> "Rhea
+'rhea'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Rhea
+'rhea'" -> "Enzyme nomenclature
+'ec'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Enzyme nomenclature
+'ec'" -> "Rhea
+'rhea'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "TogoVar variant
+'togovar'" -> "ClinVar variant
+'clinvar'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ClinVar variant
+'clinvar'" -> "TogoVar variant
+'togovar'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "TogoVar variant
+'togovar'" -> "dbSNP
+'dbsnp'" [ label = "which position is similar to
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "TogoVar variant
+'togovar'" -> "Ensembl gene
+'ensembl_gene'" [ label = "is located in
+'ro:RO_0001025'"  ] ;
+  "TogoVar variant
+'togovar'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "is located in
+'ro:RO_0001025'"  ] ;
+  "TogoVar variant
+'togovar'" -> "HGNC
+'hgnc'" [ label = "is associated with
+'ro:http://togovar.biosciencedbc.jp/condition/'"  ] ;
+  "TogoVar variant
+'togovar'" -> "MedGen
+'medgen'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MedGen
+'medgen'" -> "TogoVar variant
+'togovar'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "TogoVar variant
+'togovar'" -> "NCBI gene
+'ncbigene'" [ label = "is located in
+'ro:RO_0001025'"  ] ;
+  "TogoVar variant
+'togovar'" -> "PubMed
+'pubmed'" [ label = "Pubmed
+'dcterms:references'"  ] ;
+  "TogoVar variant
+'togovar'" -> "RefSeq RNA
+'refseq_rna'" [ label = "is located in
+'ro:RO_0001025'"  ] ;
+  "UniProt
+'uniprot'" -> "ChEMBL target
+'chembl_target'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "ChEMBL target
+'chembl_target'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "dbSNP
+'dbsnp'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "dbSNP
+'dbsnp'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "Enzyme nomenclature
+'ec'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Enzyme nomenclature
+'ec'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "Ensembl protein
+'ensembl_protein'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl protein
+'ensembl_protein'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "ribosomal translation of
+'ro:RO_0002512'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "UniProt
+'uniprot'" [ label = "ribosomally translates to
+'ro:RO_0002513'"  ] ;
+  "UniProt
+'uniprot'" -> "Gene ontology
+'go'" [ label = "functionally related to
+'ro:RO_0002328'"  ] ;
+  "Gene ontology
+'go'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "HGNC
+'hgnc'" [ label = "gene product of
+'ro:RO_0002204'"  ] ;
+  "HGNC
+'hgnc'" -> "UniProt
+'uniprot'" [ label = "has gene product
+'ro:RO_0002205'"  ] ;
+  "UniProt
+'uniprot'" -> "IntAct
+'intact'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "IntAct
+'intact'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "InterPro
+'interpro'" [ label = "is member of
+'sio:SIO_000095'"  ] ;
+  "InterPro
+'interpro'" -> "UniProt
+'uniprot'" [ label = "has member
+'sio:SIO_000059'"  ] ;
+  "UniProt
+'uniprot'" -> "NCBI gene
+'ncbigene'" [ label = "gene product of
+'ro:RO_0002204'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "UniProt
+'uniprot'" [ label = "has gene product
+'ro:RO_0002205'"  ] ;
+  "UniProt
+'uniprot'" -> "NCBI protein
+'ncbiprotein'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "NCBI protein
+'ncbiprotein'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "OMA group
+'oma_group'" [ label = "is homologous member
+'orth:isHomologousMember'"  ] ;
+  "OMA group
+'oma_group'" -> "UniProt
+'uniprot'" [ label = "has homologous member
+'orth:hasHomologousMember'"  ] ;
+  "UniProt
+'uniprot'" -> "Orphanet Rare Disease ontology
+'orphanet'" [ label = "has phenotype
+'ro:RO_0002200'"  ] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" -> "UniProt
+'uniprot'" [ label = "phenotype of
+'ro:RO_0002201'"  ] ;
+  "UniProt
+'uniprot'" -> "PDB
+'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "PDB
+'pdb'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "Pfam
+'pfam'" [ label = "is member of
+'sio:SIO_00095'"  ] ;
+  "Pfam
+'pfam'" -> "UniProt
+'uniprot'" [ label = "has member
+'sio:SIO_000059'"  ] ;
+}

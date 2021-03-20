@@ -1,0 +1,10 @@
+# Endpoint: https://orth.dbcls.jp/sparql-dev
+PREFIX refexo: <http://purl.jp/bio/01/refexo#>
+
+SELECT DISTINCT ?affy_id ?gene_id
+FROM <https://refex.dbcls.jp/rdf/RefEx_ID_Relation_human>
+WHERE {
+  ?gene refexo:affyProbeset ?affy .
+  BIND (strafter(str(?gene), 'http://identifiers.org/ncbigene/') AS ?gene_id)
+  BIND (strafter(str(?affy), 'http://identifiers.org/affy.probeset/') AS ?affy_id)
+}

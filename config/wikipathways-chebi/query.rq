@@ -1,0 +1,17 @@
+# Endpoint: http://sparql.wikipathways.org/sparql
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?pathway_id ?chebi_id
+FROM <http://rdf.wikipathways.org/>
+WHERE {
+  ?pathway a wp:Pathway .
+  ?chebi
+    dct:isPartOf* ?pathway ;
+    a wp:Metabolite ;
+    dc:source 'ChEBI'^^xsd:string .
+  BIND (strafter(str(?pathway), "https://identifiers.org/wikipathways/") AS ?pathway_id)
+  BIND (strafter(str(?chebi), "https://identifiers.org/chebi/CHEBI:") AS ?chebi_id)
+}

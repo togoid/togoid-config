@@ -1,0 +1,15 @@
+link:
+  forward:
+    namespace: ro
+    label: ribosomal translation of
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002512
+  reverse:
+    namespace: ro
+    label: ribosomally translates to
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002513 
+  file: pair.tsv
+update:
+  frequency: Monthly
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz Ensembl_TRS

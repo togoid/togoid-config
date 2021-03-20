@@ -1,1 +1,0 @@
-../uniprot-refseq/update.pl

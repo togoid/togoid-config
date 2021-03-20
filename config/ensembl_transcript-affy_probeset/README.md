@@ -1,0 +1,5 @@
+- Ensembl Biomart のRESTを使って、Ensembl transcript ID をキーに各社のマイクロアレイIDを取れる
+- このエントリは　affy.hg.u133.plus.2　が対象 
+- Biomart 出力に対して　uniqueRows=1 指定
+- Ensembl transcript ID に対して複数のAffyIDがつく
+- Ensembl transcript ID に対して、どのAffyIDも対応しない行は削除した ( | awk -F "\t" '{ if ($2 != "") print }')

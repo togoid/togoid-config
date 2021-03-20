@@ -1,0 +1,16 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX ido: <http://identifiers.org/>
+
+SELECT DISTINCT ?ensg_id ?hgnc_id
+WHERE {
+  ?ensg obo:RO_0002162 taxon:9606 ;
+        dc:identifier ?ensg_id ;
+        rdfs:seeAlso ?hgnc .
+  ?hgnc a ido:hgnc .
+  ?hgnc dc:identifier ?hgnc_compact_id .
+  BIND (strafter(?hgnc_compact_id, 'HGNC:') AS ?hgnc_id)
+}

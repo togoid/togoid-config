@@ -1,0 +1,15 @@
+link:
+  file: pair.tsv
+  forward:
+    namespace: sio
+    label: is member of 
+    prefix: http://semanticscience.org/resource/ 
+    predicate: SIO_000095
+  reverse:
+    namespace: sio
+    label: has member
+    prefix: http://semanticscience.org/resource/
+    predicate: SIO_000059
+update:
+  frequency: Monthly
+  method: sparql_thread.pl -t 10

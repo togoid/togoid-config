@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/rdf/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
+
+SELECT DISTINCT ?mbgd_organism_id ?tax_id
+WHERE {
+  ?mbgd_organism
+    a mbgd:CompleteGenome ;
+    mbgd:taxon ?taxon .
+  BIND (strafter(str(?mbgd_organism), 'http://mbgd.genome.ad.jp/rdf/resource/organism/') AS ?mbgd_organism_id)
+  BIND (strafter(str(?taxon), 'http://identifiers.org/taxonomy/') AS ?tax_id)
+}

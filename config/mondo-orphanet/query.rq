@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/rdf/bioportal/sparql
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>                                                                          
+SELECT DISTINCT ?mondo_id ?orphanet_id
+FROM <http://integbio.jp/rdf/mirror/bioportal/mondo>
+WHERE {
+  ?mondo_uri
+    oboInOwl:hasDbXref ?orphanet ;
+    oboInOwl:id ?mondo .
+  FILTER (strstarts(?orphanet, 'Orphanet:'))
+  BIND (strafter(str(?orphanet), 'Orphanet:') AS ?orphanet_id)
+  BIND (strafter(str(?mondo), 'MONDO:') AS ?mondo_id)
+}

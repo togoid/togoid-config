@@ -1,0 +1,15 @@
+link:
+  forward:
+    namespace: orth
+    label: is homologous member
+    prefix: http://purl.org/net/orth#
+    predicate: isHomologousMember
+  reverse:
+    namespace: orth
+    label: has homologous member
+    prefix: http://purl.org/net/orth#
+    predicate: hasHomologousMember
+  file: pair.tsv
+update:
+  frequency: Monthly
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz OMA
