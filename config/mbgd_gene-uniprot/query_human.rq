@@ -1,0 +1,14 @@
+# Endpoint: http://sparql.nibb.ac.jp/sparql
+PREFIX orth: <http://purl.org/net/orth#>
+PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
+PREFIX taxid: <http://identifiers.org/taxonomy/>
+
+SELECT DISTINCT ?mbgd_gene_id ?uniprot_id
+WHERE {
+  ?gene
+    a orth:Gene ;
+    mbgd:taxon taxid:9606 ;
+    mbgd:uniprot ?uniprot .
+  BIND (strafter(str(?gene), 'http://mbgd.genome.ad.jp/rdf/resource/gene/') as ?mbgd_gene_id)
+  BIND (strafter(str(?uniprot), 'http://purl.uniprot.org/uniprot/') as ?uniprot_id)
+}

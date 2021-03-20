@@ -2,10 +2,11 @@
 
 Description of link data for TogoID.
 
+![Link diagram](https://github.com/dbcls/togoid-config/blob/refactoring/dot/togoid.png?raw=true)
+
 ## Link data
 
 Pair of database IDs in the tab separated value (TSV) format.
-The name of this file should be listed in the following config file.
 
 ```
 DB1ID1	DB2IDx
@@ -18,34 +19,71 @@ DB1ID3	DB2IDz
 
 Metadata for pair of databases and their relation.
 
+### dataset.yaml
+
+A list of source and target databases (the 1st and 2nd columns of the link data file, respectively).
+
 ```yaml
-# Source database (the 1st column of the link data file)
-source:
-  # Human readable label (intended to be used in a Web UI)
-  label: KEGG Orthology
-  # Category (should be a class defined in the TogoID ontology; TBD)
-  type: Ortholog
-  # Unique short name (intended to be used as a name space in RDF)
-  # Recommended to use the prefix name defined at prefixcommons.org
-  namespace: kegg.orthology
-  # URI prefix (intended to be used as a prefix in RDF)
-  prefix: http://identifiers.org/kegg.orthology/
+# Dataset name (in snake_case) for TogoID which can be a subset of original database divided by the category.
+ec:
+  # Human readable label of the dataset (intended to be used in a Web UI)
+  label: Enzyme nomenclature
+  # Database identifier provided by the Integbio Database Catalog https://integbio.jp/dbcatalog/
+  catalog: nbdc00019
+  # Primary category of the database (should be chosen from the tags defined in the Integbio DB Catalog)
+  category: Function
+  # URI prefix (intended to be used as a URI prefix in RDF)
+  prefix: http://identifiers.org/ec-code/
+hgnc:
+  label: HGNC
+  catalog: nbdc01774
+  category: Gene
+  prefix: http://identifiers.org/hgnc/
+pubchem_compound:
+  label: PubChem compound
+  catalog: nbdc00641
+  category: Compound
+  prefix: 'https://identifiers.org/pubchem.compound/'
+pubchem_substance:
+  label: PubChem substance
+  catalog: nbdc00642
+  category: Compound
+  prefix: 'https://identifiers.org/pubchem.substance/'
+```
 
-# Target database (the 2nd column of the link data file)
-target:
-  label: Gene Ontology
-  type: Function
-  namespace: go
-  prefix: http://purl.obolibrary.org/obo/
+Optional definition of the ID format can be included.
 
-# Relation of the pair of database identifiers
+```yaml
+# Some datasets have ambiguous identifiers
+chebi:
+  label: ChEBI compound
+  catalog: nbdc00027
+  category: Compound
+  # Regular expression can be used for automatic detection of the dataset from identifiers given by users.
+  # If only a part of the user input should be recognized as an identifier, use a named capture to indicate the part.
+  regex: '^(CHEBI:)?(?<id>\d+)$'
+  # Identifier format stored in the TSV files (defined by the Handlebars notation with a named capture).
+  internal_format: '{{id}}'
+  # Identifier format used for export in the TogoID API (defined by the Handlebars notation with a named capture).
+  external_format: 'CHEBI:{{id}}'
+  prefix: 'https://identifiers.org/chebi/CHEBI:'
+go:
+  label: Gene ontology
+  catalog: nbdc00074
+  category: Function
+  regex: '^(GO[:_])?(?<id>\d{7})$'
+  internal_format: '{{id}}'
+  external_format: 'GO:{{id}}'
+  prefix: 'http://purl.obolibrary.org/obo/GO_'
+```
+
+### config.yaml
+
+Update procedure of link data and definitions of forward/reverse predicates for RDF generation.
+
+```yaml
+# Relation of the pair of database identifiers (e.g., hgnc-ec)
 link:
-  # File name(s) of link data
-  file: link.tsv
-#  file:
-#    - link.1.tsv
-#    - link.2.tsv
-
   # Forward link (source to target)
   forward:
     label: functionally related to
@@ -57,61 +95,122 @@ link:
 
   # Reverse link (optional; target to source)
   reverse:
-    label: enabled by
+    label: gene product of
     namespace: ro
     prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002333
+    predicate: RO_0002204
+
+  # Example file name(s) of link data
+  file: sample.tsv
+#  file:
+#    - sample1.tsv
+#    - sample2.tsv
 
 # Metadata for updating link data
 update:
   # How often the source data is updated
-  frequency: Monthly
+  frequency: Bimonthly
   # Update procedure of link data (can be a script name or a command like)
-  method: curl http://rest.genome.jp/link/go/ko | cut -f 1,2 | perl -pe 's/ko://; s/go:/GO_/' > link.tsv
+  method: sparql_csv2tsv.sh query.rq "http://sparql.med2rdf.org/sparql"
 ```
 
-Recommended to use Dublin Core™ Collection Description Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
+Recommended to use Dublin Core's Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
 
 ## Usage
 
-### config-summary
+### Rakefile
 
-To summarize all config settings:
-
-```
-% ruby bin/config-summary link/*/config.yaml > config-summary.tsv
-% vd config-summary.tsv
-```
-
-To see the database update frequency:
+Update and convert all files in parallel.
 
 ```
-% ruby bin/config-summary link/*/config.yaml | cut -f1,18
+% rake -m -j 4
 ```
 
-To see the database update method:
+To update all TSV files.
 
+```sh
+% rake update
 ```
-% ruby bin/config-summary link/*/config.yaml | cut -f1,19
+
+To convert all TSV files into Turtle files.
+
+```sh
+% rake convert
+```
+
+To update a 'output/tsv/db1-db2.tsv' file.
+
+```sh
+% rake output/tsv/db1-db2.tsv
+```
+
+To obtain a 'output/ttl/db1-db2.ttl' file.
+
+```sh
+% rake output/ttl/db1-db2.ttl
 ```
 
 ### togoid-config
 
 To check the syntax of the config YAML file:
 
-```
-% ruby bin/togoid-config link/uniprot-hgnc/config.yaml
-```
-
-To update link data from the data source:
-
-```
-% ruby bin/togoid-config link/uniprot-hgnc/config.yaml update
+```sh
+% ruby bin/togoid-config config/db1-db2 check
 ```
 
-To generate a RDF/Turtle file for the given link data:
+To update link data (output/tsv/db1-db2.tsv) from the data source:
 
-```
-% ruby bin/togoid-config link/uniprot-hgnc/config.yaml convert > uniprot-hgnc.ttl
+```sh
+% ruby bin/togoid-config config/db1-db2 update
 ```
 
+To generate a RDF/Turtle file (output/ttl/db1-db2.ttl) for the given link data:
+
+```sh
+% ruby bin/togoid-config config/db1-db2 convert
+```
+
+### togoid-config-summary
+
+To summarize all config settings:
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml > config-summary.tsv
+% vd config-summary.tsv
+```
+
+To see the database update frequency:
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,18
+```
+
+To see the database update method:
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,19
+```
+
+### togoid-config-summary-dot
+
+To visualize config relations:
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot > togoid.dot
+% dot -Kdot -Ppng togoid.dot -otogoid.png
+% open togoid.png
+```
+
+The option `--id` indicates to include identifiers of nodes (DBs) and edges (predicates).
+
+```sh
+% ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot --id > togoid.dot
+```
+
+Also try some other visualization layouts and options:
+
+```sh
+% dot -Kcirco -Ppng togoid.dot -otogoid.png
+% dot -Kfdp -Ppng togoid.dot -otogoid.png
+% dot -Nshape=box -Nstyle=filled,rounded -Ecolor=gray -Kdot -Tpng togoid.dot -otogoid.png
+```

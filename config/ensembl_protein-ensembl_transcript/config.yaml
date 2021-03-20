@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: ribosomal translation of 
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002512
+  reverse:
+    label: ribosomally translates to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002513
+  file: sample.tsv
+update:
+  frequency: Quarterly
+  method: sparql_taxon.rb query.rq https://integbio.jp/rdf/ebi/sparql $TOGOID_ROOT/input/ensembl/taxonomy.txt

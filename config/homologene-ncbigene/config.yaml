@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: has homologous member
+    namespace: orth
+    prefix: http://purl.org/net/orth#
+    predicate: hasHomologousMember
+  reverse:
+    label: is homologous member
+    namespace: orth
+    prefix: http://purl.org/net/orth#
+    predicate: isHomologousMember
+  file: sample.tsv
+update:
+  frequency: Yearly or less frequently
+  method: cut -f 1,3 $TOGOID_ROOT/input/homologene/homologene.data

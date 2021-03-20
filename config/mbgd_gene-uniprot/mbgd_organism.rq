@@ -1,0 +1,8 @@
+# Endpoint: http://sparql.nibb.ac.jp/sparql
+PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
+
+SELECT DISTINCT ?organism_id
+WHERE {
+  ?organism a mbgd:CompleteGenome .
+  BIND (strafter(str(?organism), "http://mbgd.genome.ad.jp/rdf/resource/organism/") as ?organism_id)
+}

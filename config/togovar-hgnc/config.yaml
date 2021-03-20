@@ -1,0 +1,11 @@
+link:
+  forward:
+    namespace: ro
+    label: is located in
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0001025
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2hgnc.tsv
+

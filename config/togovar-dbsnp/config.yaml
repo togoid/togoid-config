@@ -1,0 +1,10 @@
+link:
+  forward:
+    namespace: rdfs
+    label: which position is similar to 
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2dbsnp.tsv

@@ -1,0 +1,16 @@
+# Endpoint: http://sparql.med2rdf.org/sparql
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX m2r: <http://med2rdf.org/ontology/med2rdf#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX idt: <http://identifiers.org/>
+
+SELECT DISTINCT ?hgnc_id ?target_id
+FROM <http://med2rdf.org/graph/hgnc>
+WHERE {
+  ?HGNC a obo:SO_0000704, m2r:Gene ;
+    dct:identifier ?hgnc_id ;
+    rdfs:seeAlso ?target .
+  ?target a idt:ncbigene ;
+    dct:identifier ?target_id .
+}

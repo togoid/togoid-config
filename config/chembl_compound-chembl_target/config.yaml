@@ -1,0 +1,10 @@
+link:
+  forward:
+    namespace: cco
+    label: has target
+    prefix: http://rdf.ebi.ac.uk/terms/chembl#
+    predicate: hasTarget
+  file: pair.tsv
+update:
+  frequency: Monthly
+  method: sparql_thread.pl -t 10

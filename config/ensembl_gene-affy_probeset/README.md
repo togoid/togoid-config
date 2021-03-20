@@ -1,0 +1,42 @@
+## Ensembl Biomart のRESTを使って、Ensembl GeneID をキーに各社のマイクロアレイIDを取る
+- このエントリは affy.hg.u133.plus.2 が対象
+  - Biomart 出力に対して　uniqueRows=1 指定
+  - Ensembl gene ID に対して複数のAffyIDがつく
+    - Ensembl gene ID に対して、どのAffyIDも対応しない行は削除した ( | awk -F "\t" '{ if ($2 != "") print }')
+- affy.hg.u133.plus.2 以外にBiomartで取れるマイクロアレイID
+  - ()内数字は、GEO PlatformのSeries数 (2021-03-11現在)
+  - AFFY HC G110 probe
+  - AFFY HG Focus probe
+  - AFFY HG U133A probe (1120)
+  - AFFY HG U133A 2 probe (622)
+  - AFFY HG U133 plus 2 probe (5412)
+  - AFFY HG U133B probe
+  - AFFY HG U95A probe
+  - AFFY HG U95Av2 probe
+  - AFFY HG U95B probe
+  - AFFY HG U95C probe
+  - AFFY HG U95D probe
+  - AFFY HG U95E probe
+  - AFFY HTA 2 0 probe (527)
+  - AFFY HuEx 1 0 st v2 probe
+  - AFFY HuGeneFL probe
+  - AFFY HuGene 1 0 st v1 probe (1796)
+  - AFFY HuGene 2 0 st v1 probe (664)
+  - AFFY PrimeView probe
+  - AFFY U133 X3P probe
+  - AGILENT CGH 44b probe
+  - AGILENT GPL26966 probe
+  - AGILENT GPL6848 probe
+  - AGILENT SurePrint G3 GE 8x60k probe (216)
+  - AGILENT SurePrint G3 GE 8x60k v2 probe (492)
+  - AGILENT WholeGenome probe
+  - AGILENT WholeGenome 4x44k v1 probe (899)
+  - AGILENT WholeGenome 4x44k v2 probe (374)
+  - CODELINK CODELINK probe
+  - ILLUMINA HumanHT 12 V3 probe
+  - ILLUMINA HumanHT 12 V4 probe
+  - ILLUMINA HumanRef 8 V3 probe
+  - ILLUMINA HumanWG 6 V1 probe
+  - ILLUMINA HumanWG 6 V2 probe
+  - ILLUMINA HumanWG 6 V3 probe
+  - PHALANX OneArray probe

@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: is genetic basis for condition
+    namespace: obo 
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0004010
+  reverse:
+    label: disease relationship
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0040035
+  file: sample.tsv
+update:
+  frequency: Quarterly
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/ebi/sparql

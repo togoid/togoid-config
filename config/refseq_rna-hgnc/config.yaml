@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: transcribed from
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002510
+  reverse:
+    label: transcribed to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002511
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: gzip -dc $TOGOID_ROOT/input/refseq/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --hgnc |  sed 's/HGNC://' | awk -F "\t" '{ if ($2 != "") print }'

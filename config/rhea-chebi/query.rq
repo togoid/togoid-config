@@ -1,0 +1,20 @@
+# Endpoint: https://integbio.jp/rdf/mirror/misc/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rhea: <http://rdf.rhea-db.org/>
+
+SELECT DISTINCT ?rhea_id ?chebi_id
+FROM <http://integbio.jp/rdf/mirror/rhea>
+WHERE {
+  VALUES ?class { rhea:Reaction rhea:DirectionalReaction }
+  VALUES ?equation_side { rhea:side rhea:substrates rhea:products}
+  ?rhea_uri
+    rdfs:subClassOf ?class ;
+    ?equation_side ?side .
+  ?side rhea:contains ?participant_compound .
+  ?participant_compound rhea:compound ?compound .
+  ?compound rhea:chebi ?chebi_uri .
+  BIND (strafter(str(?rhea_uri), "http://rdf.rhea-db.org/") AS ?rhea_id)
+  BIND (strafter(str(?chebi_uri), "http://purl.obolibrary.org/obo/CHEBI_") AS ?chebi_id)
+}
+
+

@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: has evidence
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002558
+  file: sample.tsv
+update:
+  frequency: threeTimesAYear
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/ebi/sparql

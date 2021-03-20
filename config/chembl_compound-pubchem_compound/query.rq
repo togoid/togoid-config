@@ -1,0 +1,13 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT DISTINCT ?chembl_id ?pubchem_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?molecule
+    a cco:SmallMolecule ;
+    cco:chemblId ?chembl_id ;
+    cco:moleculeXref ?pubchem .
+  FILTER (contains(str(?pubchem), "pubchem.ncbi.nlm.nih.gov/compound/"))
+  BIND (strafter(str(?pubchem), "http://pubchem.ncbi.nlm.nih.gov/compound/") AS ?pubchem_id)
+}

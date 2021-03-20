@@ -1,0 +1,15 @@
+# Endpoint: https://togovar-dev.biosciencedbc.jp/sparql
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX tgvo: <http://togovar.biosciencedbc.jp/vocabulary/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?tgv_id ?vcv
+WHERE {
+  GRAPH <http://togovar.biosciencedbc.jp/variation> {
+    ?variation dct:identifier ?tgv_id .
+  }
+  GRAPH <http://togovar.biosciencedbc.jp/variation/annotation/clinvar> {
+    ?variation tgvo:condition/rdfs:seeAlso ?clinvar .
+  }
+  BIND (strafter(str(?clinvar), "http://ncbi.nlm.nih.gov/clinvar/variation/") AS ?vcv)
+}

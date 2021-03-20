@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: ribosomally translates to
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002513
+  reverse:
+    label: ribosomal translation of 
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002512
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: gzip -dc $TOGOID_ROOT/input/refseq/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --protein | awk -F "\t" '{ if ($2 != "") print }'

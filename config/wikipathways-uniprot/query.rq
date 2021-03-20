@@ -1,0 +1,18 @@
+# Endpoint: http://sparql.wikipathways.org/sparql
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?pathway_id ?uniprot_id
+FROM <http://rdf.wikipathways.org/>
+WHERE {
+  ?pathway a wp:Pathway .
+  ?uniprot
+    dct:isPartOf* ?pathway ;
+    a wp:Protein ;
+    dc:source 'Uniprot-TrEMBL'^^xsd:string .
+  # Wikipathways uses https: for identifiers.org URIs...
+  BIND (strafter(str(?pathway), "https://identifiers.org/wikipathways/") AS ?pathway_id)
+  BIND (strafter(str(?uniprot), "https://identifiers.org/uniprot/") AS ?uniprot_id)
+}

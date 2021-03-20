@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F '\t' -v db=REACTOME '$2 == db {print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
