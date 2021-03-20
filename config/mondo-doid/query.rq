@@ -7,6 +7,6 @@ WHERE {
     oboInOwl:hasDbXref ?do ;
     oboInOwl:id ?mondo .
   FILTER (strstarts(?do, 'DOID:'))
-  BIND (replace(str(?do), 'DOID:', '') AS ?do_id)
-  BIND (replace(str(?mondo), 'MONDO:', '') AS ?mondo_id)
+  BIND (strafter(str(?do), 'DOID:') AS ?do_id)
+  BIND (strafter(str(?mondo), 'MONDO:') AS ?mondo_id)
 }

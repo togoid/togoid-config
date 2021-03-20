@@ -4,8 +4,9 @@ PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
 
 SELECT DISTINCT ?mbgd_organism_id ?tax_id
 WHERE {
-  ?mbgd_organism a mbgd:CompleteGenome ;
-      mbgd:taxon ?taxon .
-  BIND (replace(str(?mbgd_organism), 'http://mbgd.genome.ad.jp/rdf/resource/organism/', '') AS ?mbgd_organism_id)
-  BIND (replace(str(?taxon), 'http://identifiers.org/taxonomy/', '') AS ?tax_id)
+  ?mbgd_organism
+    a mbgd:CompleteGenome ;
+    mbgd:taxon ?taxon .
+  BIND (strafter(str(?mbgd_organism), 'http://mbgd.genome.ad.jp/rdf/resource/organism/') AS ?mbgd_organism_id)
+  BIND (strafter(str(?taxon), 'http://identifiers.org/taxonomy/') AS ?tax_id)
 }

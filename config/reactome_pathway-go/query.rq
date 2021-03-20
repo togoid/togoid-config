@@ -1,9 +1,7 @@
 # Endpoint: https://integbio.jp/rdf/mirror/ebi/sparql
-# 20210204 moriya
-# 20210311 ikeda edited
-
 PREFIX biopax: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 SELECT DISTINCT ?reactome_id ?go_id
 FROM <http://rdf.ebi.ac.uk/dataset/reactome>
 WHERE {
@@ -15,5 +13,5 @@ WHERE {
     biopax:db 'GENE ONTOLOGY'^^xsd:string ;
     biopax:id ?go
   ] .
-  BIND(REPLACE(?go, "GO:", "") AS ?go_id)
+  BIND (strafter(?go, "GO:") AS ?go_id)
 }

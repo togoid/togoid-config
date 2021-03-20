@@ -11,5 +11,5 @@ WHERE {
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?go_uri .
   ?go_uri a cco:GoComponentRef .
-  BIND (replace(str(?go_uri), 'http://identifiers.org/obo.go/GO:', '') AS ?go_id)
+  BIND (strafter(str(?go_uri), 'http://identifiers.org/obo.go/GO:') AS ?go_id)
 }

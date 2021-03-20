@@ -5,11 +5,11 @@ SELECT DISTINCT ?chembl_id ?xref_id
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
   ?mechanism a cco:Mechanism ;
-     cco:hasTarget ?target ;
-     cco:hasMolecule ?molecule .
+    cco:hasTarget ?target ;
+    cco:hasMolecule ?molecule .
   ?molecule cco:chemblId ?chembl_id .
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?xref_uri .
   ?xref_uri a cco:PfamRef .
-  BIND (replace(str(?xref_uri), 'http://identifiers.org/pfam/', '') AS ?xref_id)
+  BIND (strafter(str(?xref_uri), 'http://identifiers.org/pfam/') AS ?xref_id)
 }

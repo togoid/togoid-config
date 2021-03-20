@@ -1,7 +1,10 @@
 # Endpoint: https://togovar-dev.biosciencedbc.jp/sparql
 PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX dct: <http://purl.org/dc/terms/>
-SELECT DISTINCT (STR(?medgen) AS ?medgen_id) ?mondo_id
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?medgen_id ?mondo_id
+FROM <http://togovar.biosciencedbc.jp/medgen>
 WHERE {
   ?medgen_uri
     dct:identifier ?medgen ;
@@ -9,5 +12,6 @@ WHERE {
   ?mgconso
     dct:source mo:MONDO ;
     rdfs:seeAlso ?mondo .
-  BIND(STRAFTER(STR(?mondo), "http://purl.obolibrary.org/obo/MONDO_") AS ?mondo_id)
+  BIND (strafter(str(?mondo), "http://purl.obolibrary.org/obo/MONDO_") AS ?mondo_id)
+  BIND (str(?medgen) AS ?medgen_id)
 }

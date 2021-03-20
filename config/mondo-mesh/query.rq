@@ -7,6 +7,6 @@ WHERE {
     oboInOwl:hasDbXref ?mesh ;
     oboInOwl:id ?mondo .
   FILTER (strstarts(?mesh, 'MESH:'))
-  BIND (replace(str(?mesh), 'MESH:', '') AS ?mesh_id)
-  BIND (replace(str(?mondo), 'MONDO:', '') AS ?mondo_id)
+  BIND (strafter(str(?mesh), 'MESH:') AS ?mesh_id)
+  BIND (strafter(str(?mondo), 'MONDO:') AS ?mondo_id)
 }

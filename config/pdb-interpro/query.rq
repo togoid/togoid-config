@@ -1,14 +1,14 @@
 # Endpoint: https://integbio.jp/rdf/sparql
-PREFIX pdbr: <https://rdf.wwpdb.org/pdb/>
 PREFIX pdbo: <https://rdf.wwpdb.org/schema/pdbx-v50.owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
 SELECT DISTINCT ?pdb_id ?target_id
+FROM <http://rdf.integbio.jp/dataset/pdbj>
 WHERE {
-      ?pdb pdbo:has_entityCategory ?ecats .
-      ?ecats pdbo:has_entity ?entity .
-      ?entity rdfs:seeAlso ?target . 
-      FILTER(REGEX(?target ,'interpro/'))
-      BIND(REPLACE(STR(?pdb), pdbr:, "") AS ?pdb_id)
-      BIND(REPLACE(STR(?target), "http://identifiers.org/interpro/", "") AS ?target_id)
+  ?pdb pdbo:has_entityCategory ?ecats .
+  ?ecats pdbo:has_entity ?entity .
+  ?entity rdfs:seeAlso ?target .
+  FILTER (regex(?target ,'interpro/'))
+  BIND (strafter(str(?pdb), "https://rdf.wwpdb.org/pdb/") AS ?pdb_id)
+  BIND (strafter(str(?target), "http://identifiers.org/interpro/") AS ?target_id)
 }

@@ -1,9 +1,5 @@
+# Endpoint: https://integbio.jp/rdf/mirror/misc/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX taxon: <http://identifiers.org/taxonomy/>
-PREFIX sio: <http://semanticscience.org/resource/>
-PREFIX identifiers: <http://identifiers.org/>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 
 SELECT DISTINCT ?rhea_id ?ec_id
@@ -18,6 +14,6 @@ WHERE {
   }
   ?rhea rhea:accession ?rhea_acc ;
         rhea:ec ?ec .
-  BIND(STRAFTER(str(?rhea_acc), "RHEA:") AS ?rhea_id)
-  BIND(STRAFTER(str(?ec), "enzyme/") AS ?ec_id)
+  BIND (strafter(str(?rhea_acc), "RHEA:") AS ?rhea_id)
+  BIND (strafter(str(?ec), "enzyme/") AS ?ec_id)
 }

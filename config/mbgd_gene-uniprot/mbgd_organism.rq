@@ -4,5 +4,5 @@ PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
 SELECT DISTINCT ?organism_id
 WHERE {
   ?organism a mbgd:CompleteGenome .
-  BIND (replace(str(?organism), "http://mbgd.genome.ad.jp/rdf/resource/organism/", "") as ?organism_id) 
+  BIND (strafter(str(?organism), "http://mbgd.genome.ad.jp/rdf/resource/organism/") as ?organism_id)
 }

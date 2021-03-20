@@ -6,9 +6,10 @@ PREFIX mbgd_organism: <http://mbgd.genome.ad.jp/rdf/resource/organism/>
 SELECT DISTINCT ?mbgd_gene_id ?uniprot_id
 WHERE {
   VALUES ?organism { mbgd_organism:{{taxon}} }
-  ?gene a orth:Gene ;
-      mbgd:organism ?organism ;
-      mbgd:uniprot ?uniprot .
-  BIND (replace(str(?gene), "http://mbgd.genome.ad.jp/rdf/resource/gene/", "") as ?mbgd_gene_id)
-  BIND (replace(str(?uniprot), "http://purl.uniprot.org/uniprot/", "") as ?uniprot_id)
+  ?gene
+    a orth:Gene ;
+    mbgd:organism ?organism ;
+    mbgd:uniprot ?uniprot .
+  BIND (strafter(str(?gene), "http://mbgd.genome.ad.jp/rdf/resource/gene/") as ?mbgd_gene_id)
+  BIND (strafter(str(?uniprot), "http://purl.uniprot.org/uniprot/") as ?uniprot_id)
 }
