@@ -33,6 +33,8 @@ def prepare_task(taskname)
     return "prepare:refseq"
   when /#{OUTPUT_TSV_DIR}sra/
     return "prepare:sra"
+  when /#{OUTPUT_TSV_DIR}uniprot/
+    return "prepare:uniprot"
   else
     return "config/dataset.yaml"
   end
@@ -82,6 +84,7 @@ namespace :prepare do
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_SRA_DIR         = "input/sra"
+  directory INPUT_UNIPROT_DIR     = "input/uniprot"
 
   def download_file(dir, url, glob = nil)
     # -q -r -np -nd -N
@@ -239,6 +242,19 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         rm_rf input_file
         download_file(INPUT_SRA_DIR, input_url)
+      end
+    end
+  end
+
+  desc "Prepare required files for UniProt"
+  task :uniprot => INPUT_UNIPROT_DIR do
+    download_lock(INPUT_UNIPROT_DIR) do
+      input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
+      input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
+      if update_input_file?(input_file, input_url)
+        rm_rf input_file
+        download_file(INPUT_UNIPROT_DIR, input_url)
+        # sh "gzip -dc #{input_file} > #{INPUT_UNIPROT_DIR}/idmapping.dat"
       end
     end
   end

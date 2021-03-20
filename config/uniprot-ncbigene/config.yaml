@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: ro
     label: gene product of
@@ -10,6 +9,14 @@ link:
     label: has gene product
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002205
+  file: pair.tsv
 update:
   frequency: Monthly
-  method: sparql_thread.pl -t 10
+  # This might contaminate genomic and gene IDs ...
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz GeneID
+  # However, the original method might also have contaminated?
+  # % cut -f 1 output/tsv/uniprot-ncbigene.tsv | wc -l
+  # 13113053
+  # % cut -f 1 output/tsv/uniprot-ncbigene.tsv | s -u | wc -l
+  # 12986366
+  #method: sparql_thread.pl -t 10

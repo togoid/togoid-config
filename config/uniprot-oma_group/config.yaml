@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: orth
     label: is homologous member
@@ -10,6 +9,7 @@ link:
     label: has homologous member
     prefix: http://purl.org/net/orth#
     predicate: hasHomologousMember
+  file: pair.tsv
 update:
   frequency: Monthly
-  method: sparql_thread.pl -t 10
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz OMA
