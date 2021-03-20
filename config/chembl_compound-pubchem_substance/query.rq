@@ -9,5 +9,5 @@ WHERE {
     cco:chemblId ?chembl_id ;
     cco:moleculeXref ?pubchem .
   FILTER (contains(str(?pubchem), "pubchem.ncbi.nlm.nih.gov/substance/"))
-  BIND (replace(str(?pubchem), "http://pubchem.ncbi.nlm.nih.gov/substance/", "") AS ?pubchem_id)
+  BIND (strafter(str(?pubchem), "http://pubchem.ncbi.nlm.nih.gov/substance/") AS ?pubchem_id)
 }

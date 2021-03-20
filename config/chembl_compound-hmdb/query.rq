@@ -3,11 +3,11 @@ PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 
 SELECT DISTINCT ?chembl_id ?hmdb_id
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
-WHERE{
+WHERE {
   ?molecule
     a cco:SmallMolecule ;
     cco:chemblId ?chembl_id ;
     cco:moleculeXref ?hmdb .
   FILTER (contains(str(?hmdb), "hmdb"))
-  BIND (replace(str(?hmdb), "http://www.hmdb.ca/metabolites/HMDB", "") as ?hmdb_id) 
+  BIND (strafter(str(?hmdb), "http://www.hmdb.ca/metabolites/HMDB") AS ?hmdb_id)
 }

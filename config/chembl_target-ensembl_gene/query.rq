@@ -11,5 +11,5 @@ WHERE {
   ?component cco:targetCmptXref ?ensg_uri .
   ?ensg_uri a cco:EnsemblGeneRef .
   ?molecule cco:chemblId ?chembl_id .
-  BIND (replace(str(?ensg_uri), 'http://identifiers.org/ensembl/', '') AS ?ensg_id)
+  BIND (strafter(str(?ensg_uri), 'http://identifiers.org/ensembl/') AS ?ensg_id)
 }

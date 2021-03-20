@@ -11,5 +11,5 @@ WHERE {
   ?target cco:hasTargetComponent ?component .
   ?component cco:targetCmptXref ?xref_uri .
   ?xref_uri a cco:IntactRef .
-  BIND (replace(str(?xref_uri), 'http://identifiers.org/intact/', '') AS ?xref_id)
+  BIND (strafter(str(?xref_uri), 'http://identifiers.org/intact/') AS ?xref_id)
 }

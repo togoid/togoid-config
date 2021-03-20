@@ -1,24 +1,20 @@
-PREFIX tgvo: <http://togovar.biosciencedbc.jp/vocabulary/>
+# Endpoint: https://togovar-dev.biosciencedbc.jp/sparql
 PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX tgvo: <http://togovar.biosciencedbc.jp/vocabulary/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX cvo: <http://purl.jp/bio/10/clinvar/>
-PREFIX medgen: <http://med2rdf/ontology/medgen#>
 
 SELECT DISTINCT ?tgv_id ?medgen_id
 WHERE  { 
-  GRAPH <http://togovar.biosciencedbc.jp/variation>{
-    ?variation dct:identifier ?tgv_id.
+  GRAPH <http://togovar.biosciencedbc.jp/variation> {
+    ?variation dct:identifier ?tgv_id .
   }
-
-  GRAPH <http://togovar.biosciencedbc.jp/variation/annotation/clinvar>{
-    ?variation tgvo:condition / rdfs:seeAlso ?clinvar .
+  GRAPH <http://togovar.biosciencedbc.jp/variation/annotation/clinvar> {
+    ?variation tgvo:condition/rdfs:seeAlso ?clinvar .
   }
-  
-  GRAPH <http://togovar.biosciencedbc.jp/clinvar>{
+  GRAPH <http://togovar.biosciencedbc.jp/clinvar> {
     ?clinvar cvo:interpreted_record/cvo:rcv_list/cvo:rcv_accession ?_rcv .
-    ?_rcv cvo:interpreted_condition_list/cvo:interpreted_condition/dct:references ?medgen.
- }
-
- BIND(IRI(REPLACE(STR(?medgen), "http://ncbi.nlm.nih.gov/medgen/", "")) AS ?medgen_id)
+    ?_rcv cvo:interpreted_condition_list/cvo:interpreted_condition/dct:references ?medgen .
+  }
+  BIND (strafter(str(?medgen), "http://ncbi.nlm.nih.gov/medgen/") AS ?medgen_id)
 }
