@@ -77,6 +77,9 @@ end
 
 # Preparatioin tasks
 namespace :prepare do
+  desc "Prepare all"
+  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :refseq, :sra, :uniprot ]
+
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
@@ -127,9 +130,6 @@ namespace :prepare do
       end
     end
   end
-
-  desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :refseq ]
 
   desc "Prepare required files for Drugbank"
   task :drugbank => INPUT_DRUGBANK_DIR do
