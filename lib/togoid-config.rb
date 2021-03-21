@@ -116,11 +116,22 @@ module TogoID
       end
     end
 
+    def set_predicate(edge)
+      if edge
+        "#{edge.ns}:#{edge.predicate}"  # e.g., rdfs:seeAlso
+      else
+        false
+      end
+    end
+
     def tsv2ttl(tsv, ttl)
+      # To reduce method call
+      fwd_predicate = set_predicate(@link.fwd)
+      rev_predicate = set_predicate(@link.rev)
       File.open(tsv).each do |line|
         source_id, target_id, = line.strip.split(/\s+/)
-        ttl.puts triple("#{@source_ns}:#{source_id}", "#{@link.fwd.ns}:#{@link.fwd.predicate}", "#{@target_ns}:#{target_id}") if @link.fwd
-        ttl.puts triple("#{@target_ns}:#{target_id}", "#{@link.rev.ns}:#{@link.rev.predicate}", "#{@source_ns}:#{source_id}") if @link.rev
+        ttl.puts triple("#{@source_ns}:#{source_id}", "#{fwd_predicate}", "#{@target_ns}:#{target_id}") if fwd_predicate
+        ttl.puts triple("#{@target_ns}:#{target_id}", "#{rev_predicate}", "#{@source_ns}:#{source_id}") if rev_predicate
       end
     end
 
