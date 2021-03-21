@@ -55,24 +55,16 @@ Optional definition of the ID format can be included.
 
 ```yaml
 # Some datasets have ambiguous identifiers
-chebi:
-  label: ChEBI compound
-  catalog: nbdc00027
-  category: Compound
-  # Regular expression can be used for automatic detection of the dataset from identifiers given by users.
-  # If only a part of the user input should be recognized as an identifier, use a named capture to indicate the part.
-  regex: '^(CHEBI:)?(?<id>\d+)$'
-  # Identifier format stored in the TSV files (defined by the Handlebars notation with a named capture).
-  internal_format: '{{id}}'
-  # Identifier format used for export in the TogoID API (defined by the Handlebars notation with a named capture).
-  external_format: 'CHEBI:{{id}}'
-  prefix: 'https://identifiers.org/chebi/CHEBI:'
 go:
   label: Gene ontology
   catalog: nbdc00074
   category: Function
+  # Regular expression can be used for automatic detection of the dataset from identifiers given by users.
+  # If only a part of the user input should be recognized as an identifier, use a named capture to indicate the part.
   regex: '^(GO[:_])?(?<id>\d{7})$'
+  # Identifier format stored in the TSV files (defined by the Handlebars notation with a named capture).
   internal_format: '{{id}}'
+  # Identifier format used for export in the TogoID API (defined by the Handlebars notation with a named capture).
   external_format: 'GO:{{id}}'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
 ```
@@ -120,31 +112,37 @@ Recommended to use Dublin Core's Frequency Vocabulary [DCFreq](https://www.dubli
 
 ### Rakefile
 
-Update and convert all files in parallel.
+To update and convert all files:
+
+```
+% rake >& `date +%F`.log
+```
+
+To update and convert all files in parallel:
 
 ```
 % rake -m -j 4
 ```
 
-To update all TSV files.
+To update all TSV files:
 
 ```sh
 % rake update
 ```
 
-To convert all TSV files into Turtle files.
+To convert all TSV files into Turtle files:
 
 ```sh
 % rake convert
 ```
 
-To update a 'output/tsv/db1-db2.tsv' file.
+To update a 'output/tsv/db1-db2.tsv' file:
 
 ```sh
 % rake output/tsv/db1-db2.tsv
 ```
 
-To obtain a 'output/ttl/db1-db2.ttl' file.
+To obtain a 'output/ttl/db1-db2.ttl' file:
 
 ```sh
 % rake output/ttl/db1-db2.ttl
@@ -206,6 +204,9 @@ The option `--id` indicates to include identifiers of nodes (DBs) and edges (pre
 ```sh
 % ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot --id > togoid.dot
 ```
+
+Note that rdfs:seeAlso will be highlighted in red to encourage considering more informative predicates.
+
 
 Also try some other visualization layouts and options:
 
