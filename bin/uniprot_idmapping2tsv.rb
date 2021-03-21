@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 #
+# Warning:
+#   After all, it is not recommended to use this script as the following command line is 3 times faster.
+#     % gzip -dc idmapping.dat.gz | grep '\tdb_name\t' | cut -f 1,3"
+#   Also, SPARQL endpoint can be far more faster when the number of corresponding ID pairs is very small (depending on the db_name).
+#
 # Description:
 #   Extract cross references for a given DB from the UniProt idmapping.dat file.
 #     * ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/README
@@ -224,8 +229,6 @@ o uniprot-reactome_pathway/	P31947  Reactome        R-HSA-111447
 o uniprot-refseq_protein/	O70456  RefSeq  NP_061224.2
 =end
 
-require 'zlib'
-
 DATABASES = {
   "UniProt"       => [ "UniProtKB-ID", "UniParc", "UniRef50", "UniRef90", "UniRef100", "Gene_ORFName", "CRC64" ],
   "Sequence"      => [ "EMBL", "EMBL-CDS", "GeneID", "GI", "PIR", "RefSeq_NT", "RefSeq" ],
@@ -263,6 +266,28 @@ else
   exit 1
 end
 
+=begin
+# 00:24.00 total for ChEMBL with SPARQL
+# ## Update config/uniprot-chembl_target/config.yaml => output/tsv/uniprot-chembl_target.tsv
+# < 2021-03-20T15:59:52 uniprot-chembl_target
+# File output/tsv/uniprot-chembl_target.tsv is created 3.710040506769132 days ago (only updated when >1 days)
+# togoid-config config/uniprot-chembl_target update
+# > 2021-03-20T16:00:16 uniprot-chembl_target
+=end
+
+=begin
+# 11:44.57 total for ChEMBL
+cmd = "gzip -dc #{mapping} | grep '\t#{db_name}\t' | cut -f 1,3"
+IO.popen(cmd) do |io|
+  while buffer = io.gets
+    puts buffer
+  end
+end
+=end
+
+require 'zlib'
+
+# 33:09.00 total for ChEMBL
 File.open(mapping) do |input|
   begin
     file = Zlib::GzipReader.new(input)
@@ -277,4 +302,3 @@ File.open(mapping) do |input|
     end
   end
 end
-
