@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/gene_refseq_uniprotkb_collab.gz | grep -v '^#'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/gene_refseq_uniprotkb_collab.gz | grep -v '^#' | awk -F "\t" '{ if ($1 != "" && $2 != "") print }'

@@ -169,6 +169,13 @@ namespace :prepare do
         download_file(INPUT_INTERPRO_DIR, input_url)
       end
 
+      input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/protein2ipr.dat.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_INTERPRO_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
+      end
+
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
       if update_input_file?(input_file, input_url)

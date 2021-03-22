@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: has member
+    namespace: sio
+    prefix: http://semanticscience.org/resource/
+    predicate: SIO_000059
+  reverse:
+    label: is member of
+    namespace: sio
+    prefix: http://semanticscience.org/resource/
+    predicate: SIO_000095
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F '\t' '!a[$2 $1]++{print $2 "\t" $1}' $TOGOID_ROOT/input/interpro/protein2ipr.dat
