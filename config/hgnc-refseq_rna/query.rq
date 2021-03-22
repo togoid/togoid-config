@@ -12,5 +12,7 @@ WHERE {
     dct:identifier ?hgnc_id ;
     rdfs:seeAlso ?target .
   ?target a idt:refseq ;
-    dct:identifier ?target_id .
+    dct:identifier ?target_id_ver .
+  FILTER REGEX(?target_id_ver, "^[NX][MR]_")
+  BIND(REPLACE(?target_id_ver, "\\.\\d*", "") AS ?target_id)
 }
