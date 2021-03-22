@@ -1,11 +1,12 @@
-# Endopoint: https://integbio.jp/rdf/bioportal/sparql
+# Endpoint: https://integbio.jp/rdf/bioportal/sparql
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?ordo_id ?omim_id
 FROM <http://integbio.jp/rdf/mirror/bioportal/ordo>
 WHERE {
-  ?ordo_uri oboInOwl:hasDbXref ?omim.
+  ?ordo_uri oboInOwl:hasDbXref ?omim;
+            skos:notation ?ordo.
   FILTER (strstarts(?omim,'OMIM:'))
+  BIND (strafter(str(?ordo), 'ORPHA:') AS ?ordo_id)
   BIND (strafter(str(?omim), 'OMIM:') AS ?omim_id)
-  BIND (strafter(str(?ordo_uri), 'http://www.orpha.net/ORDO/Orphanet_') AS ?ordo_id)
 }
