@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq http://sparql.wikipathways.org/sparql
+  method: sparql_csv2tsv.sh query.rq http://sparql.wikipathways.org/sparql | perl -ne 'print $_ if (/^WP\d+_r\d+\t([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?(-\d+)?$/)'
