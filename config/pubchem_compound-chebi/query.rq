@@ -7,6 +7,6 @@ WHERE {
   [] sio:is-attribute-of ?cid ;
      a sio:CHEMINF_000407 ;
      sio:has-value ?chebi .
-  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/") AS ?pubchem_id)
+  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
   BIND (strafter(ucase(str(?chebi)), "CHEBI:") AS ?chebi_id)
 }
