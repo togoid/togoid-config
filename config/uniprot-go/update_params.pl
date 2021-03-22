@@ -11,7 +11,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX db: <http://purl.uniprot.org/database/>
 SELECT DISTINCT ?target
 WHERE {
-  ?target up:database db:go .
+  ?target a <http://www.w3.org/2002/07/owl#Class> .
+  FILTER ( REGEX ( STR (?target), "obo/GO_"))
+
 }";
 
 # SPARQL query for get-ID-list
