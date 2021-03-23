@@ -1,0 +1,20 @@
+# Endpoint: https://integbio.jp/rdf/pubchem/sparql
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+select distinct ?pubchem_id ?uniprot_id
+from <http://rdf.integbio.jp/dataset/pubchem>
+where {
+  ?cid obo:BFO_0000056 ?pw ;
+       obo:has-role pubchemv:FDAApprovedDrugs .
+  ?pw a bp:Pathway .
+  ?prot obo:BFO_0000056 ?pw .
+  ?prot a bp:Protein .
+  ?prot skos:closeMatch ?up .
+   BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
+   BIND (strafter(str(?up), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id)
+}
