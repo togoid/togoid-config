@@ -9,5 +9,5 @@ WHERE {
     cco:chemblId ?chembl_id ;
     cco:moleculeXref ?hmdb .
   FILTER (contains(str(?hmdb), "hmdb"))
-  BIND (strafter(str(?hmdb), "http://www.hmdb.ca/metabolites/HMDB") AS ?hmdb_id)
+  BIND (strafter(str(?hmdb), "http://www.hmdb.ca/metabolites/") AS ?hmdb_id)
 }
