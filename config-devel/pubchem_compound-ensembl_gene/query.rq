@@ -1,0 +1,21 @@
+# Endpoint: https://integbio.jp/rdf/pubchem/sparql
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+select distinct ?pubchem_id ?ensg_id
+FROM <http://rdf.integbio.jp/dataset/pubchem>
+where {
+  ?cid obo:BFO_0000056 ?pw .
+  #?cid obo:has-role pubchemv:FDAApprovedDrugs .
+  ?pw a bp:Pathway .
+  ?gene obo:BFO_0000056 ?pw .
+  ?gene a bp:Gene .
+  ?gene skos:closeMatch ?ensg .
+  filter(regex(str(?cid),"CID","i"))
+  filter(regex(str(?ensg),"ENSG","i"))
+  BIND (strafter(str(?ensg), "http://rdf.ebi.ac.uk/resource/ensembl/") AS ?ensg_id)
+  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
+}
