@@ -54,7 +54,7 @@ dbsnp:
   prefix: 'http://identifiers.org/dbsnp/'
 dgidb:
   label: DGIdb
-  catalog: FIXME
+  catalog: nbdc02562
   category: Interaction
   prefix: FIXME
 doid:
@@ -136,7 +136,7 @@ human_protein_atlas:  # FIXME: too long?
   prefix: 'http://www.proteinatlas.org/'
 insdc:
   label: GenBank/ENA/DDBJ
-  catalog: FIXME
+  catalog: nbdc02567
   category: Gene
   prefix: 'http://identifiers.org/insdc/'
 instruct:
@@ -210,12 +210,12 @@ mbgd_organism:
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
 meddra:
   label: MedDRA
-  catalog: FIXME
+  catalog: nbdc02564
   category: Disease
   prefix: 'http://identifiers.org/meddra/'
 medgen:
   label: MedGen
-  catalog: FIXME
+  catalog: nbdc02560
   category: Disease
   prefix: 'http://identifiers.org/medgen/'
 mesh:
@@ -235,7 +235,7 @@ mirbase:
   prefix: 'http://identifiers.org/mirbase/'
 mondo:
   label: MONDO
-  catalog: FIXME
+  catalog: nbdc02563
   category: Disease
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
 nando:
