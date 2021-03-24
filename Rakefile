@@ -169,13 +169,6 @@ namespace :prepare do
         download_file(INPUT_INTERPRO_DIR, input_url)
       end
 
-      input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/protein2ipr.dat.gz"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_INTERPRO_DIR, input_url)
-        sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
-      end
-
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
       if update_input_file?(input_file, input_url)
@@ -257,12 +250,20 @@ namespace :prepare do
   task :uniprot => INPUT_UNIPROT_DIR do
     download_lock(INPUT_UNIPROT_DIR) do
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
-      input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
+      #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       if update_input_file?(input_file, input_url)
         rm_rf input_file
         download_file(INPUT_UNIPROT_DIR, input_url)
-        # sh "gzip -dc #{input_file} > #{INPUT_UNIPROT_DIR}/idmapping.dat"
       end
+      input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
+      if update_input_file?(input_file, input_url)
+        rm_rf input_file
+        download_file(INPUT_UNIPROT_DIR, input_url)
+        sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
+      end
+      #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
     end
   end
 end
