@@ -1,0 +1,10 @@
+link:
+  forward:
+    label: molecularly interacts with
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002436
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/pubchem/sparql
