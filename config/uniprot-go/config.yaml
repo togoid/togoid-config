@@ -9,7 +9,10 @@ link:
     label: seeAlso
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
-  file: pair.tsv
+  file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_thread.pl -t 10 | perl -pe 's/GO_//'
+  #method: sparql_thread.pl -t 10 | perl -pe 's/GO_//'
+  #method: gzip -dc ${TOGOID_ROOT}/input/uniprot/goa_uniprot_gcrp.gaf.gz | grep -v '^!' | cut -f 2,5 | grep 'GO:' | uniq | sed -e 's/GO://'
+  method: idmapping_selected_go2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping_selected.go
+
