@@ -192,7 +192,7 @@ kegg_reaction:
   category: Interaction
   prefix: 'http://identifiers.org/kegg.reaction/'
 lrg:
-  catalog: FIXME
+  catalog: nbdc02566
   category: Gene
   label: Locus Reference Genomic record
   prefix: 'http://identifiers.org/lrg/'
