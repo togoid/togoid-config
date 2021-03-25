@@ -4,8 +4,7 @@ PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?medgen_id ?omim_id 
-# Unfortunately these triples are not loaded in any GRAPH
-# FROM <http://togovar.biosciencedbc.jp/medgen>
+FROM <http://togovar.biosciencedbc.jp/medgen>
 WHERE {
   ?medgen_uri
     dct:identifier ?medgen_id ;
@@ -13,5 +12,7 @@ WHERE {
   ?mgconso
     dct:source mo:OMIM ;
     rdfs:seeAlso ?omim .
-  ?omim dct:identifier ?omim_id .
+  ?omim mo:mim_type ?type.
+  FILTER(REGEX(?type,'phenotype'))
+  BIND (replace(str(?omim), 'http://identifiers.org/mim/', '') AS ?omim_id)
 }
