@@ -18,11 +18,13 @@ ccds:
   label: Consensus CDS
   catalog: nbdc00023
   category: Gene
+  regex: '^CCDS(?<id>\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ccds/'
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
   category: Compound
+  regex: '^(?:CHEBI:)?(?<id>\d+)$'
   prefix: 'https://identifiers.org/chebi/CHEBI:'
 chembl_compound:
   label: ChEMBL compound
@@ -61,6 +63,7 @@ doid:
   label: Disease ontology
   catalog: nbdc00261
   category: Disease
+  regex: '^DOID:(?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
 drugbank:
   label: DrugBank
@@ -71,11 +74,13 @@ ec:
   label: Enzyme nomenclature
   catalog: nbdc00019
   category: Function
+  regex: '^(?:EC )?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|\d+))))$'
   prefix: 'http://identifiers.org/ec-code/'
 ena:
   catalog: nbdc00432
   category: Gene
   label: ENA
+  regex: '^(?:ena\.embl:)?(?<id>[A-Z]+[0-9]+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ena.embl/'
 ensembl_gene:
   label: Ensembl gene
@@ -127,6 +132,7 @@ hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
   category: Phenotype
+  regex: '^HP:(?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
 human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
@@ -138,6 +144,7 @@ insdc:
   label: GenBank/ENA/DDBJ
   catalog: nbdc02567
   category: Gene
+  regex: '^(?:insdc:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}))(?:\.\d+)?$'
   prefix: 'http://identifiers.org/insdc/'
 instruct:
   label: INstruct
@@ -164,6 +171,7 @@ kegg_disease:
   catalog: nbdc00813
   category: Disease
   label: KEGG Disease
+  regex: ^KEGG:H(?<id>\d+)$
   prefix: 'http://identifiers.org/kegg.disease/'
 kegg_drug:
   label: KEGG Drug
@@ -212,11 +220,13 @@ meddra:
   label: MedDRA
   catalog: nbdc02564
   category: Disease
+  regex: '^(?:MedDRA|meddra):(?<id>\d+)$'
   prefix: 'http://identifiers.org/meddra/'
 medgen:
   label: MedGen
   catalog: nbdc02560
   category: Disease
+  regex: '^(?<id>CN?\d{4,7})$'
   prefix: 'http://identifiers.org/medgen/'
 mesh:
   label: MeSH
@@ -227,11 +237,13 @@ mgi:
   label: MGI
   catalog: nbdc00135
   category: Gene
+  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
   prefix: 'http://identifiers.org/mgi/MGI:'
 mirbase:
   label: miRBase
   catalog: nbdc00136
   category: microRNA
+  regex: '^MONDO:(?<id>\d{7})$'
   prefix: 'http://identifiers.org/mirbase/'
 mondo:
   label: MONDO
@@ -243,6 +255,7 @@ nando:
   catalog: nbdc02557
   category: Disease
   # FIXME: valid? prefix: 'http://purl.obolibrary.org/obo/NANDO_'
+  regex: '^NANDO:(?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/nando#'
 ncbigene:
   label: NCBI gene
@@ -268,16 +281,19 @@ omim_gene:
   label: OMIM gene
   catalog: nbdc00154
   category: Gene
+  regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
 omim_phenotype:
   label: OMIM phenotype
   catalog: nbdc00154
   category: Disease
+  regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'https://identifiers.org/mim/'
 orphanet:
   label: Orphanet Rare Disease ontology
   catalog: nbdc01422
   category: Disease
+  regex: '^(?:ORPHA|ORDO|Orphanet):?(?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/'
 pdb:
   label: PDB
@@ -336,6 +352,7 @@ rgd:
   label: RGD
   catalog: nbdc00188
   category: Gene
+  regex: '^(?:RGD|rgd):(?<id>\d{4,})$'
   prefix: 'http://identifiers.org/rgd/'
 rhea:
   label: Rhea
