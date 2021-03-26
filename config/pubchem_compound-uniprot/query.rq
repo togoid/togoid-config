@@ -13,4 +13,5 @@ where {
          ^obo:BFO_0000056 [
            a bp:Protein ;
            skos:closeMatch ?up ]].
+  filter contains(str(?up),"uniprot")
 }
