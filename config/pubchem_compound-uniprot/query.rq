@@ -7,7 +7,7 @@ PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 select distinct (substr(str(?cid),49) AS ?_cid) (substr(str(?up),33) AS ?_up)
-from <http://rdf.integbio.jp/dataset/pubchem>
+#from <http://rdf.integbio.jp/dataset/pubchem>
 where {
   ?cid obo:has-role pubchemv:FDAApprovedDrugs ;
        obo:BFO_0000056 [
