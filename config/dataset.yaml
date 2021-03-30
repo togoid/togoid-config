@@ -47,7 +47,7 @@ clinvar:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
-  prefix: 'http://indentifiers.org/clinvar/'
+  prefix: 'http://identifiers.org/clinvar/'
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
