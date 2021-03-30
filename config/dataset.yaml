@@ -47,8 +47,7 @@ clinvar:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
-  # FIXME: valid in RDF?
-  prefix: 'http://ncbi.nlm.nih.gov/clinvar/variation/'
+  prefix: 'http://indentifiers.org/clinvar/'
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
