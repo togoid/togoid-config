@@ -6,7 +6,7 @@ affy_probeset:
 bioproject:
   label: BioProject
   catalog: nbdc00476 
-  category: FIXME
+  category: ResearchProject
   prefix: 'http://identifiers.org/bioproject/'
 biosample:
   label: BioSample
@@ -362,32 +362,32 @@ rhea:
 sra_accession:
   label: SRA accession
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_project:
   label: SRA project
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_run:
   label: SRA run
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 taxonomy:
   label: Taxonomy
