@@ -111,12 +111,6 @@ hgnc_symbol:
   catalog: nbdc01774
   category: Gene
   prefix: 'http://identifiers.org/hgnc.symbol/'
-hint:
-  label: HiNT
-  catalog: nbdc02553
-  category: Interaction
-  # FIXME: valid in RDF?
-  prefix: 'http://purl.jp/10/hint/'
 hmdb:
   label: HMDB
   catalog: nbdc00909
@@ -145,12 +139,6 @@ insdc:
   category: Gene
   regex: '^(?:insdc:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}))(?:\.\d+)?$'
   prefix: 'http://identifiers.org/insdc/'
-instruct:
-  label: INstruct
-  catalog: nbdc02554
-  category: Interaction
-  # FIXME: valid in RDF?
-  prefix: 'http://purl.jp/10/instruct/'
 intact:
   label: IntAct
   catalog: nbdc00507
