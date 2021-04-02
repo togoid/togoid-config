@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# 20210223 moriya
+# 20210402 moriya
 # 20210203 moriya
 
 # 1. 生物種リストをSPARQLで取得して、種毎にIDリストをSPARQLで並列に取得
@@ -161,17 +161,17 @@ sub get {
     ## Endpoint result-limit check
     if (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
 	my $limit = $#{$json->{results}->{bindings}} + 1;
-	@{$json->{results}->{bindings}} = ();
+	my @page = ();
 	# get with limit, offset & order
 	my $order = "?source";
 	$order = "?org ?tax ?target" if ($tmp_id eq "First-query:");
 	while (($#{$json->{results}->{bindings}} + 1) == $limit) {
 	    my $offset = $loop * $limit;
-	    my $page =&get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
-	    return 0 if (!$page) ;
-	    push(@{$json->{results}->{bindings}}, @{$page->{results}->{bindings}});
-	    undef $page;
+	    $json = &get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
+	    return 0 if (!$json) ;
+	    push(@page, @{$json->{results}->{bindings}});
 	}
+	@{$json->{results}->{bindings}} = @page;
     }
     
     return $json;
