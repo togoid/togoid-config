@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+#
+# Usage: togoid-prefix config/dataset.yaml
+#
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'yaml'
+require 'togoid-config'
+
+yamlfile = ARGV.shift || "config/dataset.yaml"
+
+datasets = YAML.load(File.read(yamlfile))
+
+datasets.each do |dataset, hash|
+  puts "PREFIX #{dataset}: <#{hash['prefix']}>"
+end
+
