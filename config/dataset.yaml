@@ -6,7 +6,7 @@ affy_probeset:
 bioproject:
   label: BioProject
   catalog: nbdc00476 
-  category: FIXME
+  category: ResearchProject
   prefix: 'http://identifiers.org/bioproject/'
 biosample:
   label: BioSample
@@ -47,8 +47,7 @@ clinvar:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
-  # FIXME: valid in RDF?
-  prefix: 'http://ncbi.nlm.nih.gov/clinvar/variation/'
+  prefix: 'http://identifiers.org/clinvar/'
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
@@ -112,12 +111,6 @@ hgnc_symbol:
   catalog: nbdc01774
   category: Gene
   prefix: 'http://identifiers.org/hgnc.symbol/'
-hint:
-  label: HiNT
-  catalog: nbdc02553
-  category: Interaction
-  # FIXME: valid in RDF?
-  prefix: 'http://purl.jp/10/hint/'
 hmdb:
   label: HMDB
   catalog: nbdc00909
@@ -146,12 +139,6 @@ insdc:
   category: Gene
   regex: '^(?:insdc:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}))(?:\.\d+)?$'
   prefix: 'http://identifiers.org/insdc/'
-instruct:
-  label: INstruct
-  catalog: nbdc02554
-  category: Interaction
-  # FIXME: valid in RDF?
-  prefix: 'http://purl.jp/10/instruct/'
 intact:
   label: IntAct
   catalog: nbdc00507
@@ -362,32 +349,32 @@ rhea:
 sra_accession:
   label: SRA accession
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_project:
   label: SRA project
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_run:
   label: SRA run
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
-  category: FIXME
+  category: NGS
   prefix: 'http://identifiers.org/insdc.sra/'
 taxonomy:
   label: Taxonomy
