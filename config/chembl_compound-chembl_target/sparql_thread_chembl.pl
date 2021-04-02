@@ -74,7 +74,7 @@ foreach my $d (@{$json->{results}->{bindings}}) {
 	$TAXON = 1;
     } elsif ($d->{tax}) {
 	$uri = $d->{tax}->{value};
-	$tTAXON = 1;
+	$TAXON = 1;
     } elsif ($d->{target}) {
 	$uri = $d->{target}->{value};
     } else {
