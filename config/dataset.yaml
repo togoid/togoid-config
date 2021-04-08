@@ -25,7 +25,7 @@ chebi:
   catalog: nbdc00027
   category: Compound
   regex: '^(?:CHEBI:)?(?<id>\d+)$'
-  prefix: 'https://identifiers.org/chebi/CHEBI:'
+  prefix: 'http://identifiers.org/chebi/CHEBI:'
 chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02559
@@ -68,7 +68,7 @@ drugbank:
   label: DrugBank
   category: nbdc01071
   category: Drug
-  prefix: 'https://identifiers.org/drugbank/'
+  prefix: 'http://identifiers.org/drugbank/'
 ec:
   label: Enzyme nomenclature
   catalog: nbdc00019
@@ -115,7 +115,7 @@ hmdb:
   label: HMDB
   catalog: nbdc00909
   category: Metabolite
-  prefix: 'https://identifiers.org/hmdb/HMDB'
+  prefix: 'http://identifiers.org/hmdb/HMDB'
 homologene:
   label: HomoloGene
   catalog: nbdc00101
@@ -180,7 +180,7 @@ kegg_pathway:
   label: KEGG Pathway
   catalog: nbdc00118
   category: Pathway
-  prefix: 'https://identifiers.org/kegg.pathway/'
+  prefix: 'http://identifiers.org/kegg.pathway/'
 kegg_reaction:
   label: KEGG Reaction
   catalog: nbdc00818
@@ -219,7 +219,7 @@ mesh:
   label: MeSH
   catalog: nbdc00132
   category: Terminology
-  prefix: 'https://identifiers.org/mesh/'
+  prefix: 'http://identifiers.org/mesh/'
 mgi:
   label: MGI
   catalog: nbdc00135
@@ -263,7 +263,7 @@ oma_protein:
   label: OMA protein
   catalog: nbdc02221
   category: Protein
-  prefix: 'https://identifiers.org/oma.protein/'
+  prefix: 'http://identifiers.org/oma.protein/'
 omim_gene:
   label: OMIM gene
   catalog: nbdc00154
@@ -275,7 +275,7 @@ omim_phenotype:
   catalog: nbdc00154
   category: Disease
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
-  prefix: 'https://identifiers.org/mim/'
+  prefix: 'http://identifiers.org/mim/'
 orphanet:
   label: Orphanet Rare Disease ontology
   catalog: nbdc01422
@@ -286,7 +286,7 @@ pdb:
   label: PDB
   catalog: nbdc00156
   category: Structure
-  prefix: 'https://rdf.wwpdb.org/pdb/'
+  prefix: 'http://rdf.wwpdb.org/pdb/'
 pfam:
   label: Pfam
   catalog: nbdc00163
@@ -296,12 +296,12 @@ pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
   category: Compound
-  prefix: 'https://identifiers.org/pubchem.compound/'
+  prefix: 'http://identifiers.org/pubchem.compound/'
 pubchem_substance:
   label: PubChem substance
   catalog: nbdc00642
   category: Compound
-  prefix: 'https://identifiers.org/pubchem.substance/'
+  prefix: 'http://identifiers.org/pubchem.substance/'
 pubmed:
   label: PubMed
   catalog: nbdc00179
