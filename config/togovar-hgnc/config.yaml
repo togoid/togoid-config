@@ -4,6 +4,11 @@ link:
     label: is located in
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0001025
+  reverse:
+    namespace: ro
+    label: location of
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0001015
   file: sample.tsv
 update:
   frequency: Monthly

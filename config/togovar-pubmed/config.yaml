@@ -1,9 +1,14 @@
 link:
   forward:
     namespace: dcterms
-    label: Pubmed
+    label: references
     prefix: http://purl.org/dc/terms/
     predicate: references
+  reverse:
+    namespace: dcterms
+    label: is referenced by
+    prefix: http://purl.org/dc/terms/
+    predicate: isReferencedBy
   file: sample.tsv
 update:
   frequency: Monthly

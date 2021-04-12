@@ -1,7 +1,12 @@
 link:
   forward:
     namespace: rdfs
-    label: which position is similar to 
+    label: seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    namespace: rdfs
+    label: seeAlso
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
   file: sample.tsv
