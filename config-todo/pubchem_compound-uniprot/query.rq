@@ -8,9 +8,9 @@ select distinct (substr(str(?cid),49) AS ?_cid) (substr(str(?up),33) AS ?_up)
 #from <http://rdf.integbio.jp/dataset/pubchem>
 where {
   ?cid obo:has-role pubchemv:FDAApprovedDrugs ;
-       obo:BFO_0000056 [
+       ^obo:RO_0000057 [
          a bp:Pathway ;
-         ^obo:BFO_0000056 [
+         obo:RO_0000057 [
            a bp:Protein ;
            skos:closeMatch ?up ]].
   filter contains(str(?up),"uniprot")
