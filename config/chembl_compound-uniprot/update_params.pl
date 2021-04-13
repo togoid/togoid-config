@@ -20,15 +20,15 @@ WHERE {
 
 # SPARQL query for get-ID-list
 our $QUERY = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
-SELECT DISTINCT ?source ?target
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT DISTINCT ?chembl_target as ?source ?uniprot as ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
-  ?source a cco:SmallMolecule ;
-          cco:hasActivity/cco:hasAssay/cco:hasTarget [
-            a cco:SingleProtein ;
-            cco:taxonomy <__TAXON__> ;
-            skos:exactMatch/skos:exactMatch ?target
-          ] .
+  ?chembl_compound a cco:SmallMolecule ;
+          cco:hasActivity/cco:hasAssay/cco:hasTarget ?chembl_target .
+  ?chembl_target a cco:SingleProtein ;
+          cco:taxonomy <__TAXON__> ;
+          skos:exactMatch/skos:exactMatch ?uniprot.
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
