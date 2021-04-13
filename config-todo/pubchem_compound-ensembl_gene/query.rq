@@ -1,21 +1,19 @@
-# Endpoint: https://integbio.jp/rdf/pubchem/sparql
-
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sio: <http://semanticscience.org/resource/>
 
-select distinct ?pubchem_id ?ensg_id
-FROM <http://rdf.integbio.jp/dataset/pubchem>
+select (substr(str(?cid),49) as ?compound_id) (substr(str(?ensg),39) as ?ensg_id){
+select distinct ?cid ?ensg
 where {
-  ?cid obo:BFO_0000056 ?pw .
-  #?cid obo:has-role pubchemv:FDAApprovedDrugs .
-  ?pw a bp:Pathway .
-  ?gene obo:BFO_0000056 ?pw .
-  ?gene a bp:Gene .
-  ?gene skos:closeMatch ?ensg .
-  filter(regex(str(?cid),"CID","i"))
-  filter(regex(str(?ensg),"ENSG","i"))
-  BIND (strafter(str(?ensg), "http://rdf.ebi.ac.uk/resource/ensembl/") AS ?ensg_id)
-  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
+  [ sio:CHEMINF_000477 ?cid ] . # ?cid を PubChem compound IDに絞るための条件
+  ?cid ^obo:RO_0000057 [
+    a bp:Pathway ;
+    obo:RO_0000057 [
+      a bp:Gene ;
+      skos:closeMatch ?ensg
+      ]].
+#  BIND (strafter(str(?ensg), "http://rdf.ebi.ac.uk/resource/ensembl/") AS ?ensg_id)
+#  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
+}
 }
