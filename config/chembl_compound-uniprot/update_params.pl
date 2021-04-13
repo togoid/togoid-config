@@ -20,6 +20,7 @@ WHERE {
 
 # SPARQL query for get-ID-list
 our $QUERY = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?chembl_target as ?source ?uniprot as ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
