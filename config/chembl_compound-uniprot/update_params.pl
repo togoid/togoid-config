@@ -23,12 +23,11 @@ our $QUERY = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 SELECT DISTINCT ?source ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
-  ?source a cco:SmallMolecule ;
-          cco:hasActivity/cco:hasAssay/cco:hasTarget [
-            a cco:SingleProtein ;
-            cco:taxonomy <__TAXON__> ;
-            skos:exactMatch/skos:exactMatch ?target
-          ] .
+  ?chembl_conpound a cco:SmallMolecule ;
+          cco:hasActivity/cco:hasAssay/cco:hasTarget ?chembl_target .
+  ?chembl_target a cco:SingleProtein ;
+          cco:taxonomy <__TAXON__> ;
+          skos:exactMatch/skos:exactMatch ?uniprot.
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
