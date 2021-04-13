@@ -20,7 +20,7 @@ WHERE {
 
 # SPARQL query for get-ID-list
 our $QUERY = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
-SELECT DISTINCT ?source ?target
+SELECT DISTINCT ?chembl_target as ?source ?uniprot as ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
   ?chembl_conpound a cco:SmallMolecule ;
