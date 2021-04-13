@@ -1,7 +1,7 @@
 # Endpoint: https://integbio.jp/rdf/ebi/sparql
 PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 
-SELECT DISTINCT ?chembl_id ?xref_id
+SELECT DISTINCT ?source ?xref_id
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
   ?mechanism a cco:Mechanism ;
@@ -12,4 +12,5 @@ WHERE {
   ?component cco:targetCmptXref ?xref_uri .
   ?xref_uri a cco:IntactRef .
   BIND (strafter(str(?xref_uri), 'http://identifiers.org/intact/') AS ?xref_id)
+  BIND (strafter(str(?target), 'http://rdf.ebi.ac.uk/resource/chembl/target/') AS ?source)
 }
