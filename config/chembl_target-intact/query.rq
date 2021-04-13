@@ -1,7 +1,7 @@
 # Endpoint: https://integbio.jp/rdf/ebi/sparql
 PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 
-SELECT DISTINCT ?chembl_id ?xref_id
+SELECT DISTINCT ?target ?xref_id
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
   ?mechanism a cco:Mechanism ;
