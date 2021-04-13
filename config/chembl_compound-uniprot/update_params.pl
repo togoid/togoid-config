@@ -23,7 +23,7 @@ our $QUERY = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 SELECT DISTINCT ?chembl_target as ?source ?uniprot as ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
-  ?chembl_conpound a cco:SmallMolecule ;
+  ?chembl_compound a cco:SmallMolecule ;
           cco:hasActivity/cco:hasAssay/cco:hasTarget ?chembl_target .
   ?chembl_target a cco:SingleProtein ;
           cco:taxonomy <__TAXON__> ;
