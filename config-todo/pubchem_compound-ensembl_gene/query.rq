@@ -5,15 +5,13 @@ PREFIX sio: <http://semanticscience.org/resource/>
 
 select (substr(str(?cid),49) as ?compound_id) (substr(str(?ensg),39) as ?ensg_id){
 select distinct ?cid ?ensg
-where {
+where { # 化合物 ← パスウェイ → 遺伝子（パスウェイ単位で関わる化合物と遺伝子を結ぶ）
   [ sio:CHEMINF_000477 ?cid ] . # ?cid を PubChem compound IDに絞るための条件
-  ?cid ^obo:RO_0000057 [
+  ?cid ^obo:RO_0000057 [ # has participant
     a bp:Pathway ;
-    obo:RO_0000057 [
+    obo:RO_0000057 [ # has participant
       a bp:Gene ;
       skos:closeMatch ?ensg
       ]].
-#  BIND (strafter(str(?ensg), "http://rdf.ebi.ac.uk/resource/ensembl/") AS ?ensg_id)
-#  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
 }
 }
