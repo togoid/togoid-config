@@ -1,12 +1,12 @@
-# Endpoint: https://integbio.jp/rdf/pubchem/sparql
 PREFIX sio: <http://semanticscience.org/resource/>
 
-SELECT DISTINCT ?pubchem_id ?chebi_id
+SELECT (substr(str(?cid), 49) as ?pubchem_id) ?chebi_id {
+SELECT DISTINCT ?cid ?chebi_id
 FROM <http://rdf.integbio.jp/dataset/pubchem>
 WHERE {
   [] sio:is-attribute-of ?cid ;
-     a sio:CHEMINF_000407 ;
+     a sio:CHEMINF_000407 ; # ChEBI identifier
      sio:has-value ?chebi .
-  BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
-  BIND (strafter(ucase(str(?chebi)), "CHEBI:") AS ?chebi_id)
+  BIND (substr(?chebi, 7) AS ?chebi_id)
+}
 }
