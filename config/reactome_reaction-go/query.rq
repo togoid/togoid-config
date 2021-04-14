@@ -5,6 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT DISTINCT ?reactome_id ?go_id
 FROM <http://rdf.ebi.ac.uk/dataset/reactome>
 WHERE {
+  VALUES ?reaction_type { biopax:BiochemicalReaction biopax:TemplateReaction biopax:Degradation }
   ?path biopax:xref [
     biopax:db 'Reactome'^^xsd:string ;
     biopax:id ?reactome_id
@@ -13,6 +14,6 @@ WHERE {
     biopax:db 'GENE ONTOLOGY'^^xsd:string ;
     biopax:id ?go
   ] ;
-  a biopax:Pathway .
+  a ?reaction_type .
   BIND (strafter(?go, "GO:") AS ?go_id)
 }
