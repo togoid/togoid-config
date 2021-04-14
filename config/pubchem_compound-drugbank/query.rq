@@ -11,7 +11,6 @@ from <http://rdf.integbio.jp/dataset/pubchem>
   [ a cheminf:CHEMINF_000406 ;
     cheminf:has-value ?dbid ;
     sio:is-attribute-of ?cid ] .
-  ?cid obo:has-role pubchemv:FDAApprovedDrugs .
     BIND (ucase(str(?dbid)) as  ?drugbunk_id)
     BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
 } 
