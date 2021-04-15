@@ -230,12 +230,12 @@ mirbase:
   label: miRBase
   catalog: nbdc00136
   category: microRNA
-  regex: '^MONDO:(?<id>\d{7})$'
   prefix: 'http://identifiers.org/mirbase/'
 mondo:
   label: MONDO
   catalog: nbdc02563
   category: Disease
+  regex: '^MONDO:(?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
 nando:
   label: NANDO
