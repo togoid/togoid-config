@@ -13,6 +13,6 @@ WHERE {
     a wp:Protein ;
     dc:source 'Uniprot-TrEMBL'^^xsd:string .
   # Wikipathways uses https: for identifiers.org URIs...
-  BIND (strafter(str(?pathway), "https://identifiers.org/wikipathways/") AS ?pathway_id)
+  BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
   BIND (strafter(str(?uniprot), "https://identifiers.org/uniprot/") AS ?uniprot_id)
 }
