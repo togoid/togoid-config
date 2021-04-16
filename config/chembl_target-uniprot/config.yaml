@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: skos
     label: exact match
