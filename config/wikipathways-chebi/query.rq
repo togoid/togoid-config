@@ -12,6 +12,6 @@ WHERE {
     dct:isPartOf* ?pathway ;
     a wp:Metabolite ;
     dc:source 'ChEBI'^^xsd:string .
-  BIND (strafter(str(?pathway), "https://identifiers.org/wikipathways/") AS ?pathway_id)
+  BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
   BIND (strafter(str(?chebi), "https://identifiers.org/chebi/CHEBI:") AS ?chebi_id)
 }
