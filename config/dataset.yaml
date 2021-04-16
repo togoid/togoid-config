@@ -199,6 +199,7 @@ kegg_orthology:  # FIXME: ko?
   label: KEGG Orthology
   catalog: nbdc00817
   category: Ortholog
+  regex: '^(?<id>K\d+)$'
   prefix: 'http://identifiers.org/kegg.orthology/'
 kegg_pathway:
   label: KEGG Pathway
@@ -230,6 +231,7 @@ mbgd_organism:
   catalog: nbdc00130
   category: Ortholog
   # FIXME: valid in RDF?
+  regex: '^(?<id>[a-z]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
 meddra:
   label: MedDRA
@@ -290,6 +292,7 @@ oma_group:
   label: OMA group
   catalog: nbdc02221
   category: Ortholog
+  regex: '^(?<id>[A-Z]+)$'
   prefix: 'http://identifiers.org/oma.grp/'
 oma_protein:
   label: OMA protein
