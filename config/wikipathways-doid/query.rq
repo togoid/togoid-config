@@ -8,6 +8,6 @@ WHERE {
     a wp:Pathway ;
     wp:diseaseOntologyTag ?doid .
   # Wikipathways uses https: for identifiers.org URIs...
-  BIND (strafter(str(?pathway), "https://identifiers.org/wikipathways/") AS ?pathway_id)
+  BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
   BIND (strafter(str(?doid), "http://purl.obolibrary.org/obo/DOID_") AS ?doid_id)
 }
