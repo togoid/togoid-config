@@ -7,7 +7,6 @@ module Accessions
   class GenerateConfig
     class << self
       @@config_dir_path = File.join(File.dirname($0), "..", "config")
-      @@accession_tab_path = "ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
 
       def nodes
         {
@@ -158,9 +157,12 @@ module Accessions
       end
 
       def parse_accession_tab(prefix, col_from, col_to)
-        fname = File.basename(@@accession_tab_path)
-        tmpf = "/tmp/togoid/#{fname}"
-        "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.#{prefix}/ { print $#{col_from}, $#{col_to} }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\" | grep -v '-'"
+        edit_cmd = if col_from != 2
+          "grep -v '-'"
+        else
+          "grep -v '-' | sort -u"
+        end
+        "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.#{prefix}/ { print $#{col_from}, $#{col_to} }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\" | #{edit_cmd}"
       end
 
       def link_attribute
