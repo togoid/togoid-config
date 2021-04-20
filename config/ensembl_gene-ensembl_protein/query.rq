@@ -7,6 +7,7 @@ PREFIX taxon: <http://identifiers.org/taxonomy/>
 SELECT DISTINCT ?ensg_id ?ensp_id
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }
+  ?ensg obo:RO_0002162 ?taxon .
   ?ensg dc:identifier ?ensg_id .
   ?enst obo:SO_transcribed_from ?ensg ;
         obo:SO_translates_to ?ensp ;
