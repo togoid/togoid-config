@@ -6,5 +6,5 @@ link:
     predicate: seeAlso
   file: sample.tsv
 update:
-  frequency: Weekly
+  frequency: Bimonthly
   method: gzip -dc $TOGOID_ROOT/input/refseq/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --dbsnp | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
