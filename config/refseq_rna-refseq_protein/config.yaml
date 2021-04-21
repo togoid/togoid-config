@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Weekly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --protein | awk -F "\t" '{ if ($1 != "" && $2 != "") print }'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --protein | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
