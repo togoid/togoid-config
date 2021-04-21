@@ -4,6 +4,11 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002162
+  reverse:
+    label: in taxon
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002162
   file: sample.tsv
 update:
   frequency: Yearly
