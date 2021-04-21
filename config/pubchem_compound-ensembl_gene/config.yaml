@@ -4,6 +4,11 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002566
+  reverse:
+    label: causally influenced by
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002559
   file: sample.tsv
 update:
   frequency: Weekly
