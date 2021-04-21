@@ -4,6 +4,11 @@ link:
     label: references
     prefix: http://purl.org/dc/terms/
     predicate: references
+  reverse:
+    namespace: dcterms
+    label: references
+    prefix: http://purl.org/dc/terms/
+    predicate: references
   file: sample.tsv
 update:
   frequency: Bimonthly
