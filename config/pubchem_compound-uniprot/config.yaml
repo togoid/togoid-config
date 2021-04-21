@@ -4,6 +4,11 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002436
+  reverse:
+    label: molecularly interacts with
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002436
   file: sample.tsv
 update:
   frequency: Weekly
