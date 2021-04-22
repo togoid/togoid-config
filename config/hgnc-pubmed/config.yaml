@@ -5,10 +5,10 @@ link:
     prefix: http://purl.org/dc/terms/
     predicate: references
   reverse:
-    namespace: dcterms
-    label: references
-    prefix: http://purl.org/dc/terms/
-    predicate: references
+    namespace: rdfs
+    label:  seeAlso
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
   file: sample.tsv
 update:
   frequency: Bimonthly
