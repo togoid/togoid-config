@@ -7,6 +7,6 @@ SELECT DISTINCT ?oma_protein_id ?uniprot_id
 FROM <http://omabrowser.org/graph>
 WHERE {
   ?oma_protein lscr:xrefUniprot ?uniprot .
-  BIND (strafter(str(?oma_protein), 'https://omabrowser.org/oma/info/') AS ?oma_protein_id)
-  BIND (strafter(str(?uniprot), 'http://purl.uniprot.org/uniprot/') AS ?uniprot_id)
+  BIND (strafter(str(?oma_protein), "https://omabrowser.org/oma/info/") AS ?oma_protein_id)
+  BIND (strafter(str(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id)
 }
