@@ -1,8 +1,7 @@
-# Endpoint: https://togovar-dev.biosciencedbc.jp/sparql
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 SELECT DISTINCT ?medgen_id ?ncbigene_id
-FROM <http://togovar.biosciencedbc.jp/medgen>
+FROM <http://rdf.integbio.jp/dataset/togosite/medgen>
 WHERE {
   # ro: causes or contributes to condition
   ?ncbigene obo:RO_0003302 ?medgen
