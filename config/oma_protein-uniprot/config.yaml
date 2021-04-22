@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear 
-  method: retrieve.sh 14000000	#Å‘åæ“¾Œ”‚ğˆø”‚Åw’èA2021/4/15“_‚Å13,051,844Œ
+  method: retrieve.sh 14000000	#set max entries as arg1. Entries:13,051,844 (2021/4/15)
