@@ -5,10 +5,10 @@ link:
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002162
   reverse:
-    label: in taxon
+    label: has part
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002162
+    predicate: BFO_0000051
   file: sample.tsv
 update:
   frequency: Yearly
