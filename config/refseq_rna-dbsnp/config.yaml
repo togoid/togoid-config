@@ -1,9 +1,14 @@
 link:
   forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+    label: location of
+    namespace: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0001015
+  reverse:
+    label: is located in
+    namespace: ro
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0001025
   file: sample.tsv
 update:
   frequency: Bimonthly
