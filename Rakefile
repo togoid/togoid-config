@@ -228,8 +228,8 @@ namespace :prepare do
       # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
       # However, NCBI ftp server is currently broken..
       # (It is reported that large files are contaminated by illegal bytes occationally)
-      input_file = "human.*.rna.gbff.gz"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/H_sapiens/mRNA_Prot/"
+      input_file = "complete.*.rna.gbff.gz"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
       download_file(INPUT_REFSEQ_DIR, input_url, input_file)
 
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"

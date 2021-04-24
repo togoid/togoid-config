@@ -50,7 +50,8 @@ XR_     RNA         non-protein-coding transcripts,     Prefix followed by 6 or 
 
 **リリースファイル**  
 ftp://ftp.ncbi.nlm.nih.gov/refseq/release/  
-2ヶ月に1回リリースされる。2021年1月現在、release 204が最新。
+2ヶ月に1回リリースされる。2021年3月現在、release 205が最新。
+(2021.4.23)全生物種を対象とすることにしたのでこのファイルを使う。
 
 **日々更新ファイル**  
 ftp://ftp.ncbi.nlm.nih.gov/refseq/daily/  
@@ -59,7 +60,7 @@ ftp://ftp.ncbi.nlm.nih.gov/refseq/daily/
 **生物種ごとのファイル**  
 ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/  
 ヒトやマウスなど代表的な生物種については専用の置き場がある。  
-更新は Weekly。今回はヒトのみを対象とするためここから取得する。
+更新は Weekly。~~今回はヒトのみを対象とするためここから取得する。~~
 
 ### ID 対応表の作成
 
