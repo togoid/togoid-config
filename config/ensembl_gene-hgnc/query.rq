@@ -6,6 +6,7 @@ PREFIX taxon: <http://identifiers.org/taxonomy/>
 PREFIX ido: <http://identifiers.org/>
 
 SELECT DISTINCT ?ensg_id ?hgnc_id
+FROM <http://rdf.integbio.jp/dataset/ensembl>
 WHERE {
   ?ensg obo:RO_0002162 taxon:9606 ;
         dc:identifier ?ensg_id ;
