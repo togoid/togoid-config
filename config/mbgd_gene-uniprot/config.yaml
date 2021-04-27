@@ -4,6 +4,11 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002205
+  reverse:
+    label: gene product of
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002204
   file: sample.tsv
 update:
   frequency: Yearly

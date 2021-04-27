@@ -1,6 +1,10 @@
 link:
-  file: pair.tsv
   forward:
+    namespace: skos
+    label: exact match
+    prefix: http://www.w3.org/2004/02/skos/core#
+    predicate: exactMatch
+  reverse:
     namespace: skos
     label: exact match
     prefix: http://www.w3.org/2004/02/skos/core#

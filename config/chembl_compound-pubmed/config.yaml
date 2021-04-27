@@ -4,6 +4,11 @@ link:
     namespace: obo
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002558
+  reverse:
+    label: is evidence for
+    namespace: obo
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002472
   file: sample.tsv
 update:
   frequency: threeTimesAYear

@@ -4,7 +4,12 @@ link:
     namespace: dcterms
     prefix: http://purl.org/dc/terms/
     predicate: references
+  reverse:
+    label: is referenced by
+    namespace: dcterms
+    prefix: http://purl.org/dc/terms/
+    predicate: isReferencedBy
   file: sample.tsv
 update:
-  frequency: Weekly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/human.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --pmid | awk -F "\t" '{ if ($1 != "" && $2 != "") print }'
+  frequency: Bimonthly
+  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --pmid | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'

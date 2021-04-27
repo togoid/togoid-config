@@ -2,17 +2,20 @@ affy_probeset:
   label: Affymetrix probeset
   catalog: FIXME
   category: Probe
+  regex: '\d{4,}(?:(?:_[asx])?_at)?'
   prefix: 'http://identifiers.org/affy.probeset/'
 bioproject:
   label: BioProject
-  catalog: nbdc00476 
+  catalog: nbdc00476
   category: ResearchProject
+  regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
   prefix: 'http://identifiers.org/bioproject/'
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
   catalog: nbdc01983
   category: Sample
+  regex: '^(?<id>SAM[NED]\w?\d+)$'
   prefix: 'http://identifiers.org/biosample/'
 ccds:
   label: Consensus CDS
@@ -31,32 +34,38 @@ chembl_compound:
   catalog: nbdc02559
   category: Compound
   # FIXME: use 'http://rdf.ebi.ac.uk/resource/chembl/molecule/#' ?
+  regex: '^(?<id>CHEMBL\d+)$'
   prefix: 'http://identifiers.org/chembl.compound/'
 chembl_target:
   label: ChEMBL target
   catalog: nbdc02555
   category: Protein
+  regex: '^(?<id>CHEMBL\d+)$'
   prefix: 'http://identifiers.org/chembl.target/'
 civic_gene:
   label: CIVIC gene
   catalog: nbdc02558
   category: Gene
   # FIXME: valid in RDF?
+  regex: '^(?<id>\d+)$'
   prefix: 'http://civic.genome.wustl.edu/links/genes/'
 clinvar:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
+  regex: '^(VCV0*)?(?<id>(\d{1,9}))$'
   prefix: 'http://identifiers.org/clinvar/'
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
   category: Variant
+  regex: '^(?<id>rs\d+)$'
   prefix: 'http://identifiers.org/dbsnp/'
 dgidb:
   label: DGIdb
   catalog: nbdc02562
   category: Interaction
+  regex: '^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
   prefix: FIXME
 doid:
   label: Disease ontology
@@ -66,8 +75,9 @@ doid:
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
 drugbank:
   label: DrugBank
-  category: nbdc01071
+  catalog: nbdc01071
   category: Drug
+  regex: '^(?<id>DB\d{5})$'
   prefix: 'http://identifiers.org/drugbank/'
 ec:
   label: Enzyme nomenclature
@@ -85,41 +95,49 @@ ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
+  regex: '^(?<id>ENSG\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
 ensembl_protein:
   label: Ensembl protein
   catalog: nbdc00054
   category: Protein
+  regex: '^(?<id>ENSP\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
 ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
   category: Gene
+  regex: '^(?<id>ENST\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
 go:
   label: Gene ontology
   catalog: nbdc00074
   category: Function
+  regex: '^(?:GO[:_])?(?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
 hgnc:
   label: HGNC
   catalog: nbdc01774
   category: Gene
+  regex: '^(?:(?:HGNC|hgnc):)?(?<id>\d{1,5})$'
   prefix: 'http://identifiers.org/hgnc/'
 hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
   category: Gene
+  regex: '^(?<id>[A-Za-z-0-9_]+)\@?$'
   prefix: 'http://identifiers.org/hgnc.symbol/'
 hmdb:
   label: HMDB
   catalog: nbdc00909
   category: Metabolite
+  regex: '^(?:hmdb:)?(?<id>HMDB\d+)$'
   prefix: 'http://identifiers.org/hmdb/HMDB'
 homologene:
   label: HomoloGene
   catalog: nbdc00101
   category: Ortholog
+  regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/homologene/'
 hp:
   label: Human Phenotype Ontology
@@ -132,6 +150,7 @@ human_protein_atlas:  # FIXME: too long?
   catalog: nbdc00905
   category: Protein
   # FIXME: valid in RDF?
+  regex: '^(?<id>ENSG\d{11})$'
   prefix: 'http://www.proteinatlas.org/'
 insdc:
   label: GenBank/ENA/DDBJ
@@ -143,65 +162,76 @@ intact:
   label: IntAct
   catalog: nbdc00507
   category: Interaction
+  regex: '^(?<id>EBI\-[0-9]+)$'
   prefix: 'http://identifiers.org/intact/'
 interpro:
   label: InterPro
   catalog: nbdc00108
   category: Domain
+  regex: '^(?<id>IPR\d{6})$'
   prefix: 'http://identifiers.org/interpro/'
 kegg_compound:
   label: KEGG Compound
   catalog: nbdc00814
   category: Compound
+  regex: '^(?<id>C\d+)$'
   prefix: 'http://identifiers.org/kegg.compound/'
 kegg_disease:
   catalog: nbdc00813
   category: Disease
   label: KEGG Disease
-  regex: ^KEGG:H(?<id>\d+)$
+  regex: '^KEGG:H(?<id>\d+)$'
   prefix: 'http://identifiers.org/kegg.disease/'
 kegg_drug:
   label: KEGG Drug
   catalog: nbdc00812
   category: Drug
+  regex: '^(?<id>D\d+)$'
   prefix: 'http://identifiers.org/kegg.drug/'
 kegg_genes:
   label: KEGG Genes
   catalog: nbdc00532
   # FIXME: leave two categories as is?
   category: Gene, Protein
+  regex: '^\w+:[\w\d\.-]*$'
   prefix: 'http://identifiers.org/kegg.genes/'
 kegg_orthology:  # FIXME: ko?
   label: KEGG Orthology
   catalog: nbdc00817
   category: Ortholog
+  regex: '^(?<id>K\d+)$'
   prefix: 'http://identifiers.org/kegg.orthology/'
 kegg_pathway:
   label: KEGG Pathway
   catalog: nbdc00118
   category: Pathway
+  regex: '^(?<id>\w{2,4}\d{5})$'
   prefix: 'http://identifiers.org/kegg.pathway/'
 kegg_reaction:
   label: KEGG Reaction
   catalog: nbdc00818
   category: Interaction
+  regex: '^(?<id>R\d+)$'
   prefix: 'http://identifiers.org/kegg.reaction/'
 lrg:
   catalog: nbdc02566
   category: Gene
   label: Locus Reference Genomic record
+  regex: '^(?<id>LRG_\d+)$'
   prefix: 'http://identifiers.org/lrg/'
 mbgd_gene:
   label: MBGD gene
   catalog: nbdc00130
   category: Ortholog
   # FIXME: valid in RDF?
+  regex: '^(?<id>[a-z]+:[A-Z]+_[A-Z, 0-9]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
 mbgd_organism:
   label: MBGD organism
   catalog: nbdc00130
   category: Ortholog
   # FIXME: valid in RDF?
+  regex: '^(?<id>[a-z]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
 meddra:
   label: MedDRA
@@ -219,6 +249,7 @@ mesh:
   label: MeSH
   catalog: nbdc00132
   category: Terminology
+  regex: '^(?<id>[CD]\d{6,9})$'
   prefix: 'http://identifiers.org/mesh/'
 mgi:
   label: MGI
@@ -236,6 +267,7 @@ mondo:
   label: MONDO
   catalog: nbdc02563
   category: Disease
+  regex: '^MONDO:(?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
 nando:
   label: NANDO
@@ -248,21 +280,25 @@ ncbigene:
   label: NCBI gene
   catalog: nbdc00073
   category: Gene
+  regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/ncbigene/'
 ncbiprotein:
   label: NCBI protein
   catalog: nbdc00584
   category: Protein
+  regex: '^(?:(?:\w+\d+(?:\.\d+)?)|(?:NP_\d+))$'
   prefix: 'http://identifiers.org/ncbiprotein/'
 oma_group:
   label: OMA group
   catalog: nbdc02221
   category: Ortholog
+  regex: '^(?<id>[A-Z]+)$'
   prefix: 'http://identifiers.org/oma.grp/'
 oma_protein:
   label: OMA protein
   catalog: nbdc02221
   category: Protein
+  regex: '^(?<id>[A-Z]{5}[0-9]{5})$'
   prefix: 'http://identifiers.org/oma.protein/'
 omim_gene:
   label: OMIM gene
@@ -286,54 +322,64 @@ pdb:
   label: PDB
   catalog: nbdc00156
   category: Structure
+  regex: '^(?<id>[0-9][A-Za-z0-9]{3})$'
   prefix: 'http://rdf.wwpdb.org/pdb/'
 pfam:
   label: Pfam
   catalog: nbdc00163
   category: Domain
+  regex: '^(?<id>PF\d{5})$'
   prefix: 'http://identifiers.org/pfam/'
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
   category: Compound
+  regex: '^(?:CID)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubchem.compound/'
 pubchem_substance:
   label: PubChem substance
   catalog: nbdc00642
   category: Compound
+  regex: '^(?:SID)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubchem.substance/'
 pubmed:
   label: PubMed
   catalog: nbdc00179
   category: Literature
+  regex: '^(?:pmid|PMID:)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubmed/'
 reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
   category: Pathway
+  regex: '(?:^R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?$)|(?:^REACT_\d+(?:\.\d+)?$)'
   prefix: 'http://identifiers.org/reactome/'
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
   category: Interaction
+  regex: '^(?:(?:R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?:REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
 refseq_genomic:
   label: RefSeq genomic
   catalog: nbdc00187
   category: Genome
   # NC_; AC_; NG_; NT_; NW_; NZ_
+  regex: 'NC_; AC_; NG_; NT_; NW_; NZ_'
   prefix: 'http://identifiers.org/refseq/'
 refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
   category: Protein
   # NP_; XP_; AP_; YP_; WP_
+  regex: '^(?<id>((AC|AP|NC|NG|NM|NP|NR|NT|NW|XM|XP|XR|YP|ZP)_\d+)|(NZ\_[A-Z]{2,4}\d+))(\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
 refseq_rna:
   label: RefSeq RNA
   catalog: nbdc00187
   category: Gene
   # NM_; NR_; XM_; XR_
+  regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
 rgd:
   label: RGD
@@ -345,55 +391,66 @@ rhea:
   label: Rhea
   catalog: nbdc02083
   category: Interaction
+  regex: '^(?<id>\d{5})$'
   prefix: 'http://identifiers.org/rhea/'
 sra_accession:
   label: SRA accession
   catalog: nbdc00687
   category: NGS
+  regex: '^(?<id>[SED]RA\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
   category: NGS
+  regex: '^(?<id>[SED]RZ\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
   category: NGS
+  regex: '^(?<id>[SED]RX\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_project:
   label: SRA project
   catalog: nbdc00687
   category: NGS
+  regex: '^(?<id>[SED]RP\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_run:
   label: SRA run
   catalog: nbdc00687
   category: NGS
+  regex: '^(?<id>[SED]RR\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
   category: NGS
+  regex: '^(?<id>[SED]RS\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
   category: Taxonomy
+  regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/taxonomy/'
 togovar:
   label: TogoVar variant
   catalog: nbdc02359
   category: Variant
   # FIXME: valid in RDF?
+  regex: '^(?<id>tgv\d+)$'
   prefix: 'http://togovar.biosciencedbc.jp/variation/'
 uniprot:
   label: UniProt
   catalog: nbdc00221
   category: Protein
+  regex: '^(?:(?<id>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2})|(?<id>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9])(?:\.\d+)?)$'
   prefix: 'http://purl.uniprot.org/uniprot/'
 wikipathways:
   label: WikiPathways
   catalog: nbdc02116
   category: Pathway
+  regex: '^(?<id>WP\d{1,5})(?:\_r\d+)?$'
   prefix: 'http://identifiers.org/wikipathways/'
