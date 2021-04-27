@@ -11,5 +11,5 @@ link:
     predicate: seeAlso
   file: sample.tsv
 update:
-  frequency: Quarterly
-  method: sparql_taxon.rb query.rq https://integbio.jp/rdf/ebi/sparql $TOGOID_ROOT/input/ensembl/taxonomy.txt
+  frequency: Monthly
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql

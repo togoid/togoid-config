@@ -11,5 +11,5 @@ link:
     predicate: RO_0002510
   file: sample.tsv
 update:
-  frequency: Weekly
-  method: awk -F '\t' -v col=5 'FNR!=1&&$col!="-"&&!a[$2 gensub(/\.[0-9]+$/,"","g",$col)]++{print $2 "\t" gensub(/\.[0-9]+$/,"","g",$col)}' $TOGOID_ROOT/input/ncbigene/gene2ensembl
+  frequency: Quarterly
+  method: sparql_taxon.rb query.rq https://integbio.jp/rdf/ebi/sparql $TOGOID_ROOT/input/ensembl/taxonomy.txt

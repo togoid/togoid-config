@@ -1,9 +1,14 @@
 link:
   forward:
-    namespace: cco
-    label: has target
-    prefix: http://rdf.ebi.ac.uk/terms/chembl#
-    predicate: hasTarget
+    namespace: obo
+    label: molecularly interacts with
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002436
+  reverse:
+    namespace: obo
+    label: molecularly interacts with
+    prefix: http://purl.obolibrary.org/obo/
+    predicate: RO_0002436
   file: pair.tsv
 update:
   frequency: Monthly
