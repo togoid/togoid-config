@@ -1,14 +1,11 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 select distinct (substr(str(?cid),49) AS ?_cid) (substr(str(?up),33) AS ?_up)
-#from <http://rdf.integbio.jp/dataset/pubchem>
-where {
-  ?cid obo:has-role pubchemv:FDAApprovedDrugs ;
-       ^obo:RO_0000057 [
+where { # パスウェイ単位で、関わる化合物とタンパク質を結ぶ
+  ?cid ^obo:RO_0000057 [ # has participant
          a bp:Pathway ;
          obo:RO_0000057 [
            a bp:Protein ;
