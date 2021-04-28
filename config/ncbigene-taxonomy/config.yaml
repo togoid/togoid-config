@@ -1,0 +1,15 @@
+link:
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: awk -F '\t' 'FNR!=1{print $2 "\t" $1}' $TOGOID_ROOT/input/ncbigene/gene_info
