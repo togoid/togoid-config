@@ -219,6 +219,14 @@ namespace :prepare do
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
       end
+
+      input_file = "#{INPUT_NCBIGENE_DIR}/gene_info.gz"
+      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz"
+      if update_input_file?(input_file, input_url)
+        rm_rf input_file
+        download_file(INPUT_NCBIGENE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
+      end
     end
   end
 
