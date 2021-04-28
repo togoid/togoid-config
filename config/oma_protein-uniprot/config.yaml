@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear 
-  method: retrieve.sh 14000000	#set max entries as arg1. Entries:13,051,844 (2021/4/15)
+  method: sparql_csv2tsv.sh taxonomy.rq https://sparql.omabrowser.org/sparql/ > taxonomy.txt && sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ taxonomy.txt

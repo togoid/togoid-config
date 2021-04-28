@@ -1,0 +1,11 @@
+# Endpoint: https://sparql.omabrowser.org/sparql/
+PREFIX orth: <http://purl.org/net/orth#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?tax_id
+FROM <http://omabrowser.org/graph>
+WHERE {
+  ?protein a orth:Protein ;
+      orth:organism/obo:RO_0002162 ?taxon .
+  BIND (strafter(str(?taxon), 'http://purl.uniprot.org/taxonomy/') AS ?tax_id)
+}
