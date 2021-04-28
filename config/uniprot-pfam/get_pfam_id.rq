@@ -1,0 +1,7 @@
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX db: <http://purl.uniprot.org/database/>
+select ?target
+from <http://sparql.uniprot.org/uniprot>
+where {
+  ?target up:database db:Pfam .
+}

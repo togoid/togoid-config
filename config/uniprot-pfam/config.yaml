@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sh retrieve.sh
+  method: sh retrieve_uniprot_pfam.sh

@@ -1,0 +1,8 @@
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://purl.uniprot.org/pfam/>
+SELECT (count(?uniprot) as ?total)
+FROM <http://sparql.uniprot.org/uniprot>
+WHERE {
+  ?uniprot rdfs:seeAlso :__PFAM_ID__ .
+}
