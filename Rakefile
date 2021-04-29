@@ -57,7 +57,7 @@ rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   $stderr.puts "## Update config/#{pair}/config.yaml => output/tsv/#{pair}.tsv"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if file_older_than_days?(t.name, 1)
+  if file_older_than_days?(t.name, 3)
     sh "togoid-config config/#{pair} update"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
@@ -69,7 +69,7 @@ rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUT
   #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   $stderr.puts "## Convert output/tsv/#{pair}.tsv => output/ttl/#{pair}.ttl"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if file_older_than_days?(t.name, 1)
+  if file_older_than_days?(t.name, 3)
     sh "togoid-config config/#{pair} convert"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"

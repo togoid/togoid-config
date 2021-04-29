@@ -128,6 +128,7 @@ module TogoID
       # To reduce method call
       fwd_predicate = set_predicate(@link.fwd)
       rev_predicate = set_predicate(@link.rev)
+      # Should check whether source_id or target_id contains chars that need to be escaped in Turtle
       File.open(tsv).each do |line|
         source_id, target_id, = line.strip.split(/\s+/)
         ttl.puts triple("#{@source_ns}:#{source_id}", "#{fwd_predicate}", "#{@target_ns}:#{target_id}") if fwd_predicate
