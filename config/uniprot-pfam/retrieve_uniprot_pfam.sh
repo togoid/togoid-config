@@ -22,10 +22,12 @@ cat pfam_id_list.txt | xargs -P20 -i sh -c "QUERY=\$(sed -e 's/__PFAM_ID__/{}/' 
 
 # エラー終了しているファイルを検索し、改めて検索、をエラーがなくなるまで行う。
 # ファイル冒頭に "uniprot_id" が書かれていない場合に、エラーと判断する。
-while true; do 
-  ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c 'grep -q "^\"uniprot_id\"" {} || basename {} .txt' \;)
+ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\"uniprot_id\"") || basename {} .txt' \;)
+while true; do
   if [ -n "$ERROR_FILES" ]; then
      echo -n $ERROR_FILES | xargs -P20 -i -d ' ' sh -c "QUERY=\$(sed -e 's/__PFAM_ID__/{}/' $QUERY_FILE); $CURL -o ${WORKDIR}/{}.txt -sSH 'Accept: text/tab-separated-values' --data-urlencode query=\"\${QUERY}\" $ENDPOINT"
+     ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.txt; done | xargs -i sh -c '(head -1 {} | grep -m 1 -q "^\"uniprot_id\"") || basename {} .txt')
+     sleep 5
   else
      break
   fi
