@@ -24,9 +24,11 @@ if [ ! -e $COUNT_UNIPROT_PFAM_QUERY_FILE ]; then echo "必要なファイルが�
 if [ ! -e $CHECK_SCRIPT ]; then echo "必要なファイルが不足しています。:$CHECK_SCRIPT"; exit; fi
 if [ ! -e $FORMAT_SCRIPT ]; then echo "必要なファイルが不足しています。:$FORMAT_SCRIPT"; exit; fi
 
-if [ ! -e $WORKDIR ]; then mkdir $WORKDIR ; fi
-ls ${WORKDIR}/*.txt &> /dev/null
-if [ $? = 0 ]; then rm ${WORKDIR}/*; fi
+if [ ! -e $WORKDIR ]; then
+  mkdir $WORKDIR
+fi
+touch ${WORKDIR}/t # 続くrmで何もファイルがないとエラー終了してしまうため
+rm ${WORKDIR}/*
 
 # Pfam IDのリストを取得。
 $CURL -sSH 'Accept: text/tab-separated-values' --data-urlencode query@get_pfam_id.rq $ENDPOINT | grep -o 'PF[0-9]*' > pfam_id_list.txt
