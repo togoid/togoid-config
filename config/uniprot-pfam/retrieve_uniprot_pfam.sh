@@ -26,9 +26,9 @@ if [ ! -e $FORMAT_SCRIPT ]; then echo "必要なファイルが不足してい�
 
 if [ ! -e $WORKDIR ]; then
   mkdir $WORKDIR
+else
+  rm -f ${WORKDIR}/*
 fi
-touch ${WORKDIR}/t # 続くrmで何もファイルがないとエラー終了してしまうため
-rm ${WORKDIR}/*
 
 # Pfam IDのリストを取得。
 $CURL -sSH 'Accept: text/tab-separated-values' --data-urlencode query@get_pfam_id.rq $ENDPOINT | grep -o 'PF[0-9]*' > pfam_id_list.txt
