@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
 
+# 20210507 moriya # Endpointエラーの場合300秒待って再施行（10回まで）
 # 20210402 moriya
 # 20210203 moriya
 
@@ -36,6 +37,9 @@ my %OPT;
 getopts('t:d', \%OPT);
 $THREAD_LIMIT = $OPT{t} if ($OPT{t});
 our $DEBUG = 1 if ($OPT{d});
+
+our $SLEEP_TIME = 300; # sec.
+our $TRIAL_NUM = 10;
 
 # for resume
 our %LOG;
@@ -181,26 +185,35 @@ sub get_req {
     my ($params, $e) = @_;
     
     my $ua = LWP::UserAgent->new;
-    
-    my $res = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json');
-    my $err = "";
-    eval {
-	decode_json($res -> content);
-	1
-    } or do {
-	$err .= "Endpoint ".$EP." : ".$res -> status_line."; ";
-	$res = $ua -> get($EP_MIRROR.$params, 'Accept' => 'application/sparql-results+json') if ($EP_MIRROR);
-    };
 
-    eval {
-	decode_json($res -> content);
-	1
-    } or do {
-	$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
-	&log($e."\tFetch error: ".$err."\n");
-	print STDERR $e, "\tFetch error: ", $err, "\n";
-	return 0;
-    };
+    my $trials = 0;
+    my $res;
+    my $err = "";
+    while ($trials < $TRIAL_NUM) {
+	$res = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json');
+	eval {
+	    decode_json($res -> content);
+	    $trials = $TRIAL_NUM;
+	    1
+	} or do {
+	    $err .= "Endpoint ".$EP." : ".$res -> status_line."; ";
+	    $res = $ua -> get($EP_MIRROR.$params, 'Accept' => 'application/sparql-results+json') if ($EP_MIRROR);
+	};
+
+	eval {
+	    decode_json($res -> content);
+	    1
+	} or do {
+	    sleep($SLEEP_TIME);
+	    $trials++;
+	    if ($trials == $TRIAL_NUM - 1) {
+		$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
+		&log($e."\tFetch error: ".$err."\n");
+		print STDERR $e, "\tFetch error: ", $err, "\n";
+		return 0;
+	    }
+	};
+    }
 
     return decode_json($res -> content);
 }
