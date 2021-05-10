@@ -317,7 +317,7 @@ orphanet:
   catalog: nbdc01422
   category: Disease
   regex: '^(?:ORPHA|ORDO|Orphanet):?(?<id>[A-Z0-9]+)$'
-  prefix: 'http://identifiers.org/orphanet.ordo/'
+  prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
 pdb:
   label: PDB
   catalog: nbdc00156
