@@ -25,6 +25,19 @@ WHERE {
           up:component*/up:enzyme ?target .
 }";
 
+# SPARQL query for get-ID-list split by number at the end of taxonomy number
+our $QUERY_SPLIT = "PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX db: <http://purl.uniprot.org/database/>
+SELECT DISTINCT ?source ?target
+WHERE {
+  VALUES ?target { <__TARGET__> }
+  ?source a up:Protein ;
+          up:organism ?tax ;
+          up:component*/up:enzyme ?target .
+  FILTER(REGEX(STR(?tax), '__NUMBER__\$'))
+}";
+
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
 our $SOURCE_REGEX = "http://purl.uniprot.org/uniprot/(.+)";
 our $TARGET_REGEX = "http://purl.uniprot.org/enzyme/(.+)";
