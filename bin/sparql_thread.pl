@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
 
+# 20210510 moriya # result limit 超えた場合に IDやtaxonomy番号の末尾 0-9 で分割できるように $QUERY_SPLIT クエリ追加（参考：uniprot-ec/update_params.pl)
 # 20210507 moriya # Endpointエラーの場合300秒待って再施行（10回まで）
 # 20210402 moriya
 # 20210203 moriya
@@ -133,7 +134,7 @@ sub run {
     my $tmp_id = $uri;
     my $query_main = $QUERY;
     $tmp_id =~ s/^.+\/([^\/]+)$/$1/;
-    if ($TAXON){
+    if ($TAXON) {
 	$tmp_id = "tax:".$tmp_id;
 	$query_main =~ s/__TAXON__/${uri}/;
     } else {
@@ -143,7 +144,7 @@ sub run {
     
     # get ID list
     my $json = 0;
-    $json = &get($query_main, $tmp_id) if (!$LOG{$tmp_id});  # for resume
+    $json = &get($query_main, $tmp_id, $uri) if (!$LOG{$tmp_id});  # for resume
     
     if ($json->{results} && !$LOG{$tmp_id}) {  # for resume
 	foreach my $el (@{$json->{results}->{bindings}}) {
@@ -157,23 +158,38 @@ sub run {
 }
 
 sub get {
-    my ($query, $tmp_id) = @_;
+    my ($query, $tmp_id, $uri) = @_;
 
     my $json = &get_req("?query=".uri_escape($query), $tmp_id);
     return 0 if (!$json) ;
 
     ## Endpoint result-limit check
     if (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
-	my $limit = $#{$json->{results}->{bindings}} + 1;
 	my @page = ();
-	# get with limit, offset & order
-	my $order = "?source";
-	$order = "?org ?tax ?target" if ($tmp_id eq "First-query:");
-	while (($#{$json->{results}->{bindings}} + 1) == $limit) {
-	    my $offset = $loop * $limit;
-	    $json = &get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
-	    return 0 if (!$json) ;
-	    push(@page, @{$json->{results}->{bindings}});
+	if ($QUERY_SPLIT) { # if split-query (using 0-9 number) in the update_params.pl (ref. uniprot-ec)
+	    for (my $i = 0; $i < 10; $i++) {
+		my $query_sp = $QUERY_SPLIT;
+		$query_sp =~ s/__NUMBER__/${i}/;
+		if ($TAXON) {
+		    $query_sp =~ s/__TAXON__/${uri}/;
+		} else {
+		    $query_sp =~ s/__TARGET__/${uri}/;
+		}
+		$json = &get_req("?query=".uri_escape($query_sp), $tmp_id);
+		return 0 if (!$json) ;
+		push(@page, @{$json->{results}->{bindings}});
+	    }
+	} else {
+	    my $limit = $#{$json->{results}->{bindings}} + 1;
+	    # get with limit, offset & order
+	    my $order = "?source";
+	    $order = "?org ?tax ?target" if ($tmp_id eq "First-query:");
+	    while (($#{$json->{results}->{bindings}} + 1) == $limit) {
+		my $offset = $loop * $limit;
+		$json = &get_req("?query=".uri_escape($query." ORDER BY ".$order." LIMIT ".$limit." OFFSET ".$offset), $tmp_id);
+		return 0 if (!$json) ;
+		push(@page, @{$json->{results}->{bindings}});
+	    }
 	}
 	@{$json->{results}->{bindings}} = @page;
     }
