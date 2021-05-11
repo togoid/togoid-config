@@ -261,7 +261,7 @@ mirbase:
   label: miRBase
   catalog: nbdc00136
   category: microRNA
-  regex: '^MONDO:(?<id>\d{7})$'
+  regex: '^(?<id>MI\d{7})$'
   prefix: 'http://identifiers.org/mirbase/'
 mondo:
   label: MONDO
