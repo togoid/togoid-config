@@ -1,0 +1,23 @@
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX cheminf: <http://semanticscience.org/resource/>
+PREFIX source: <http://rdf.ncbi.nlm.nih.gov/pubchem/source/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT (count(*) as ?total) {
+SELECT DISTINCT ?cid ?chembl_id
+FROM <http://rdf.integbio.jp/dataset/pubchem>
+WHERE {
+  {
+    [] sio:is-attribute-of ?cid ;
+        a sio:CHEMINF_000412 ; # ChEMBL identifier
+        sio:has-value ?chembl_a .
+        BIND (substr(str(?chembl_a), 7) AS ?chembl_id)
+   } UNION {
+    [] cheminf:CHEMINF_000477 ?cid ;
+        dcterms:source source:ChEMBL ; # has PubChem normalized counterpart
+        skos:exactMatch ?chembl_b .
+        BIND (strafter(str(?chembl_b), "CHEMBL") AS ?chembl_id)
+   }
+}
+}

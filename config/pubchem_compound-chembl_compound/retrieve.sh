@@ -1,8 +1,50 @@
-#!/bin/sh
+#!/usr/bin/sh
 set -euo pipefail
 
-# 2021/04/13時点で1946977件あるので、200万件を超えた場合は最後の行のコメントアウトを取る必要あり。
+# PubChem IDとChEMBL IDのペアを取得する。
 
-curl -sSH "Accept: text/tab-separated-values" --data-urlencode query="PREFIX sio: <http://semanticscience.org/resource/> SELECT (substr(str(?cid), 49) AS ?pubchem_id) ?chembl_id { SELECT DISTINCT ?cid (ucase(str(?chembl)) AS ?chembl_id) FROM <http://rdf.integbio.jp/dataset/pubchem> {[ sio:is-attribute-of ?cid ; a sio:CHEMINF_000412 ; sio:has-value ?chembl ] . } offset 0 limit 1000000 }" https://integbio.jp/rdf/pubchem/sparql | tail -n +2 | sed -e 's/"//g'
-curl -sSH "Accept: text/tab-separated-values" --data-urlencode query="PREFIX sio: <http://semanticscience.org/resource/> SELECT (substr(str(?cid), 49) AS ?pubchem_id) ?chembl_id { SELECT DISTINCT ?cid (ucase(str(?chembl)) AS ?chembl_id) FROM <http://rdf.integbio.jp/dataset/pubchem> {[ sio:is-attribute-of ?cid ; a sio:CHEMINF_000412 ; sio:has-value ?chembl ] . } offset 1000000 limit 1000000 }" https://integbio.jp/rdf/pubchem/sparql | tail -n +2 | sed -e 's/"//g'
-#curl -sSH "Accept: text/tab-separated-values" --data-urlencode query="PREFIX sio: <http://semanticscience.org/resource/> SELECT (substr(str(?cid), 49) AS ?pubchem_id) ?chembl_id { SELECT DISTINCT ?cid (ucase(str(?chembl)) AS ?chembl_id) FROM <http://rdf.integbio.jp/dataset/pubchem> {[ sio:is-attribute-of ?cid ; a sio:CHEMINF_000412 ; sio:has-value ?chembl ] . } offset 2000000 limit 1000000 }" https://integbio.jp/rdf/pubchem/sparql | tail -n +2 | sed -e 's/"//g'
+ENDPOINT=https://integbio.jp/rdf/pubchem/sparql
+WORKDIR=pubchem2chembl # 一時的にPfamID毎のUniProtIDリストファイルを保存するディレクトリ
+LIMIT=1000000 # SPARQLエンドポイントにおける取得可能データ件数の最大値
+CURL=/usr/bin/curl
+
+# PubChem IDとChEMBL IDのペアを取得するクエリのテンプレート。
+# 100万件以上あるので、本スクリプト中で、OFFSET/LIMIT を sed で追加して用いる。
+PUBCHEM_CHEMBL_QUERY_FILE=query_01.rq
+# 上記クエリで得られる結果の全件数を取得するクエリのテンプレート。
+COUNT_PUBCHEM_CHEMBL_QUERY_FILE=query_01_count.rq
+
+if [ ! -e $PUBCHEM_CHEMBL_QUERY_FILE ]; then echo "必要なファイルが不足しています。:$PUBCHEM_CHEMBL_QUERY_FILE"; exit; fi
+if [ ! -e $COUNT_PUBCHEM_CHEMBL_QUERY_FILE ]; then echo "必要なファイルが不足しています。:$COUNT_PUBCHEM_CHEMBL_QUERY_FILE"; exit; fi
+
+if [ ! -e $WORKDIR ]; then
+  mkdir $WORKDIR
+else
+  rm -f ${WORKDIR}/*
+fi
+
+CID_TOTAL=$($CURL -sSH "Accept: text/csv" --data-urlencode query@query_01_count.rq $ENDPOINT | tail -1)
+#echo 取得対象CID数: $CID_TOTAL
+COUNT=$(expr $CID_TOTAL / $LIMIT)
+for i in $(seq 0 ${COUNT}); do
+  QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" query_01.rq)
+  $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
+done
+
+# エラー終了しているファイルを検索し、改めて検索、をエラーがなくなるまで行う。
+# ファイル冒頭に "pubchem_id" が書かれていない場合に、エラーと判断する。
+ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\"pubchem_id\"") || basename {} .txt' \;)
+while true; do
+  if [ -n "$ERROR_FILES" ]; then
+     for i in $ERROR_FILES; do
+       QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" query_01.rq)
+       $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
+     done
+     ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.txt; done | xargs -i sh -c '(head -1 {} | grep -m 1 -q "^\"pubchem_id\"") || basename {} .txt')
+     sleep 5
+  else
+     break
+  fi
+done
+
+tail -qn +2 ${WORKDIR}/*.txt | sed -e 's/"//g'
