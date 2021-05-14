@@ -7,16 +7,16 @@ SELECT (substr(str(?cid), 49) as ?pubchem_id) ?chebi_id {
 SELECT DISTINCT ?cid ?chebi_id
 FROM <http://rdf.integbio.jp/dataset/pubchem>
 WHERE {
-  {
-    [] sio:is-attribute-of ?cid ;
-       a sio:CHEMINF_000407 ; # ChEBI identifier
-       sio:has-value ?chebi_a .
-       BIND (substr(str(?chebi_a), 7) AS ?chebi_id)
-   } UNION {
+#  {
+#    [] sio:is-attribute-of ?cid ;
+#       a sio:CHEMINF_000407 ; # ChEBI identifier
+#       sio:has-value ?chebi_a .
+#       BIND (substr(str(?chebi_a), 7) AS ?chebi_id)
+#   } UNION {
     [] cheminf:CHEMINF_000477 ?cid ; # has PubChem normalized counterpart
        dcterms:source source:ChEBI ;
        a ?chebi_b .
        BIND (substr(str(?chebi_b), 38) AS ?chebi_id)
-   }
-}
+#   }
+#}
 }
