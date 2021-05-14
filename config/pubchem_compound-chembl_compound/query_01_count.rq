@@ -19,5 +19,5 @@ WHERE {
         skos:exactMatch ?chembl_b .
         BIND (strafter(str(?chembl_b), "CHEMBL") AS ?chembl_id)
 #   }
-#}
+}
 }
