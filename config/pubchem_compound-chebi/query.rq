@@ -18,5 +18,5 @@ WHERE {
        a ?chebi_b .
        BIND (substr(str(?chebi_b), 38) AS ?chebi_id)
 #   }
-#}
+}
 }
