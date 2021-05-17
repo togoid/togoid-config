@@ -23,11 +23,12 @@ else
   rm -f ${WORKDIR}/*
 fi
 
-CID_TOTAL=$($CURL -sSH "Accept: text/csv" --data-urlencode query@query_01_count.rq $ENDPOINT | tail -1)
+CID_TOTAL=$($CURL -sSH "Accept: text/csv" --data-urlencode query@$COUNT_PUBCHEM_CHEMBL_QUERY_FILE $ENDPOINT | tail -1)
 #echo 取得対象CID数: $CID_TOTAL
 COUNT=$(expr $CID_TOTAL / $LIMIT)
+
 for i in $(seq 0 ${COUNT}); do
-  QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" query_01.rq)
+  QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $PUBCHEM_CHEMBL_QUERY_FILE)
   $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
 done
 
@@ -37,7 +38,7 @@ ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^
 while true; do
   if [ -n "$ERROR_FILES" ]; then
      for i in $ERROR_FILES; do
-       QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" query_01.rq)
+       QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $PUBCHEM_CHEMBL_QUERY_FILE)
        $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
      done
      ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.txt; done | xargs -i sh -c '(head -1 {} | grep -m 1 -q "^\"pubchem_id\"") || basename {} .txt')
