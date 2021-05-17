@@ -32,5 +32,5 @@ WHERE {
 }";
 
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
-our $SOURCE_REGEX = "http://rdf.ebi.ac.uk/resource/chembl/molecule/(.+)";
+our $SOURCE_REGEX = "http://rdf.ebi.ac.uk/resource/chembl/target/(.+)";
 our $TARGET_REGEX = "http://purl.uniprot.org/uniprot/(.+)";
