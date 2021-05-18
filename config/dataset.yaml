@@ -448,6 +448,12 @@ uniprot:
   category: Protein
   regex: '^(?:(?<id>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2})|(?<id>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9])(?:\.\d+)?)$'
   prefix: 'http://purl.uniprot.org/uniprot/'
+uniprot_mnemonic:
+  label: UniProt mnemonic
+  catalog: nbdc00221
+  category: Protein
+  regex: '^[A-Z0-9]+_[A-Z0-9]{5}$'
+  prefix: 'http://purl.uniprot.org/uniprot/'
 wikipathways:
   label: WikiPathways
   catalog: nbdc02116
