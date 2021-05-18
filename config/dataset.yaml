@@ -452,7 +452,7 @@ uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221
   category: Protein
-  regex: '^[A-Z0-9]+_[A-Z0-9]{5}$'
+  regex: '^[A-Z0-9]{,5}+_[A-Z0-9]{,5}$'
   prefix: 'http://purl.uniprot.org/uniprot/'
 wikipathways:
   label: WikiPathways
