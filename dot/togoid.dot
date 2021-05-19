@@ -128,6 +128,8 @@ digraph togoid {
 'intact'" [fillcolor = "#009944"] ;
   "OMA group
 'oma_group'" [fillcolor = "#00A0C1"] ;
+  "UniProt mnemonic
+'uniprot_mnemonic'" [fillcolor = "#00479D"] ;
   "WikiPathways
 'wikipathways'" [fillcolor = "#00A0E9"] ;
 
@@ -1313,6 +1315,14 @@ digraph togoid {
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "RefSeq protein
 'refseq_protein'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "UniProt mnemonic
+'uniprot_mnemonic'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt mnemonic
+'uniprot_mnemonic'" -> "UniProt
 'uniprot'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "WikiPathways
