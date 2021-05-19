@@ -9,7 +9,7 @@ link:
     label: has gene product
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002205
-  file: pair.tsv
+  file: sample.tsv
 update:
   frequency: Monthly
   method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz Ensembl

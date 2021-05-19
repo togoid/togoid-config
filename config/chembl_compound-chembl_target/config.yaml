@@ -9,7 +9,7 @@ link:
     label: molecularly interacts with
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0002436
-  file: pair.tsv
+  file: sample.tsv
 update:
   frequency: Monthly
   method: ./sparql_thread_chembl.pl -t 10

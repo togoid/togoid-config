@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: rdfs
     label: seeAlso
@@ -10,6 +9,7 @@ link:
     label: seeAlso
     prefix: http://www.w3.org/2000/01/rdf-schema#
     predicate: seeAlso
+  file: sample.tsv
 update:
   frequency: Monthly
   method: sparql_thread.pl -t 10

@@ -9,7 +9,7 @@ link:
     label: exact match
     prefix: http://www.w3.org/2004/02/skos/core#
     predicate: exactMatch
-  file: pair.tsv
+  file: sample.tsv
 update:
   frequency: Monthly
   method: sparql_thread.pl -t 10
