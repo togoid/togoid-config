@@ -32,8 +32,6 @@ digraph togoid {
 'ensembl_gene'" [fillcolor = "#8FC31F"] ;
   "Gene ontology
 'go'" [fillcolor = "#CFDB00"] ;
-  "IntAct
-'intact'" [fillcolor = "#009944"] ;
   "InterPro
 'interpro'" [fillcolor = "#F39800"] ;
   "PDB
@@ -44,10 +42,6 @@ digraph togoid {
 'reactome_pathway'" [fillcolor = "#00A0E9"] ;
   "UniProt
 'uniprot'" [fillcolor = "#00479D"] ;
-  "CIVIC gene
-'civic_gene'" [fillcolor = "#8FC31F"] ;
-  "Ensembl transcript
-'ensembl_transcript'" [fillcolor = "#8FC31F"] ;
   "Disease ontology
 'doid'" [fillcolor = "#EB6100"] ;
   "MeSH
@@ -56,6 +50,8 @@ digraph togoid {
 'omim_phenotype'" [fillcolor = "#EB6100"] ;
   "Ensembl protein
 'ensembl_protein'" [fillcolor = "#00479D"] ;
+  "Ensembl transcript
+'ensembl_transcript'" [fillcolor = "#8FC31F"] ;
   "HGNC
 'hgnc'" [fillcolor = "#8FC31F"] ;
   "RefSeq RNA
@@ -74,8 +70,6 @@ digraph togoid {
 'mirbase'" [fillcolor = "#E5006A"] ;
   "OMIM gene
 'omim_gene'" [fillcolor = "#8FC31F"] ;
-  "Orphanet Rare Disease ontology
-'orphanet'" [fillcolor = "#EB6100"] ;
   "RGD
 'rgd'" [fillcolor = "#8FC31F"] ;
   "HomoloGene
@@ -92,6 +86,8 @@ digraph togoid {
 'hp'" [fillcolor = "#0086D1"] ;
   "MONDO
 'mondo'" [fillcolor = "#EB6100"] ;
+  "Orphanet Rare Disease ontology
+'orphanet'" [fillcolor = "#EB6100"] ;
   "MedDRA
 'meddra'" [fillcolor = "#EB6100"] ;
   "NANDO
@@ -109,25 +105,27 @@ digraph togoid {
   "Rhea
 'rhea'" [fillcolor = "#009944"] ;
   "SRA accession
-'sra_accession'" [fillcolor = "#E60012"] ;
+'sra_accession'" [fillcolor = "#E5004F"] ;
   "BioProject
-'bioproject'" [fillcolor = "#E60012"] ;
+'bioproject'" [fillcolor = "#1D2088"] ;
   "BioSample
 'biosample'" [fillcolor = "#1D2088"] ;
   "SRA analysis
-'sra_analysis'" [fillcolor = "#E60012"] ;
+'sra_analysis'" [fillcolor = "#E5004F"] ;
   "SRA experiment
-'sra_experiment'" [fillcolor = "#E60012"] ;
+'sra_experiment'" [fillcolor = "#E5004F"] ;
   "SRA project
-'sra_project'" [fillcolor = "#E60012"] ;
+'sra_project'" [fillcolor = "#E5004F"] ;
   "SRA run
-'sra_run'" [fillcolor = "#E60012"] ;
+'sra_run'" [fillcolor = "#E5004F"] ;
   "SRA sample
-'sra_sample'" [fillcolor = "#E60012"] ;
+'sra_sample'" [fillcolor = "#E5004F"] ;
   "TogoVar variant
 'togovar'" [fillcolor = "#E4007F"] ;
   "ClinVar variant
 'clinvar'" [fillcolor = "#E4007F"] ;
+  "IntAct
+'intact'" [fillcolor = "#009944"] ;
   "OMA group
 'oma_group'" [fillcolor = "#00A0C1"] ;
   "WikiPathways
@@ -145,70 +143,114 @@ digraph togoid {
 'chembl_compound'" -> "ChEBI compound
 'chebi'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
+  "ChEBI compound
+'chebi'" -> "ChEMBL compound
+'chembl_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "ChEMBL target
-'chembl_target'" [ label = "has target
-'cco:hasTarget'"  ] ;
+'chembl_target'" [ label = "molecularly interacts with
+'obo:RO_0002436'"  ] ;
+  "ChEMBL target
+'chembl_target'" -> "ChEMBL compound
+'chembl_compound'" [ label = "molecularly interacts with
+'obo:RO_0002436'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "DrugBank
 'drugbank'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "DrugBank
+'drugbank'" -> "ChEMBL compound
+'chembl_compound'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "HMDB
 'hmdb'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
+  "HMDB
+'hmdb'" -> "ChEMBL compound
+'chembl_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "PubChem compound
 'pubchem_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "PubChem compound
+'pubchem_compound'" -> "ChEMBL compound
+'chembl_compound'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "PubChem substance
 'pubchem_substance'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
+  "PubChem substance
+'pubchem_substance'" -> "ChEMBL compound
+'chembl_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "PubMed
 'pubmed'" [ label = "has evidence
 'obo:RO_0002558'"  ] ;
+  "PubMed
+'pubmed'" -> "ChEMBL compound
+'chembl_compound'" [ label = "is evidence for
+'obo:RO_0002472'"  ] ;
   "ChEMBL target
 'chembl_target'" -> "Ensembl gene
 'ensembl_gene'" [ label = "gene product of
 'obo:RO_0002204'"  ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "ChEMBL target
+'chembl_target'" [ label = "has gene product
+'obo:RO_0002205'"  ] ;
   "ChEMBL target
 'chembl_target'" -> "Gene ontology
 'go'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "ChEMBL target
-'chembl_target'" -> "IntAct
-'intact'" [ label = "seeAlso
+  "Gene ontology
+'go'" -> "ChEMBL target
+'chembl_target'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "ChEMBL target
 'chembl_target'" -> "InterPro
 'interpro'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "InterPro
+'interpro'" -> "ChEMBL target
+'chembl_target'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
   "ChEMBL target
 'chembl_target'" -> "PDB
 'pdb'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "PDB
+'pdb'" -> "ChEMBL target
+'chembl_target'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "ChEMBL target
 'chembl_target'" -> "Pfam
 'pfam'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Pfam
+'pfam'" -> "ChEMBL target
+'chembl_target'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
   "ChEMBL target
 'chembl_target'" -> "Reactome pathway
 'reactome_pathway'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome pathway
+'reactome_pathway'" -> "ChEMBL target
+'chembl_target'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "ChEMBL target
 'chembl_target'" -> "UniProt
 'uniprot'" [ label = "exact match
 'skos:exactMatch'"  ] ;
-  "CIVIC gene
-'civic_gene'" -> "Ensembl transcript
-'ensembl_transcript'" [ label = "seeAlso
-'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Ensembl transcript
-'ensembl_transcript'" -> "CIVIC gene
-'civic_gene'" [ label = "seeAlso
-'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
+'uniprot'" -> "ChEMBL target
+'chembl_target'" [ label = "exact match
+'skos:exactMatch'"  ] ;
   "Disease ontology
 'doid'" -> "MeSH
 'mesh'" [ label = "seeAlso
@@ -258,13 +300,21 @@ digraph togoid {
 'ensembl_gene'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "Ensembl gene
-'ensembl_gene'" -> "RefSeq RNA
-'refseq_rna'" [ label = "seeAlso
+'ensembl_gene'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "RefSeq RNA
-'refseq_rna'" -> "Ensembl gene
+  "NCBI gene
+'ncbigene'" -> "Ensembl gene
 'ensembl_gene'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "UniProt
+'uniprot'" [ label = "has gene product
+'ro:RO_0002205'"  ] ;
+  "UniProt
+'uniprot'" -> "Ensembl gene
+'ensembl_gene'" [ label = "gene product of
+'ro:RO_0002204'"  ] ;
   "Ensembl protein
 'ensembl_protein'" -> "Ensembl transcript
 'ensembl_transcript'" [ label = "ribosomal translation of
@@ -282,6 +332,14 @@ digraph togoid {
 'ensembl_transcript'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "Ensembl transcript
+'ensembl_transcript'" -> "Gene ontology
+'go'" [ label = "functionally related to
+'obo:RO_0002328'"  ] ;
+  "Gene ontology
+'go'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Ensembl transcript
 'ensembl_transcript'" -> "HGNC
 'hgnc'" [ label = "transcribed from
 'obo:RO_0002510'"  ] ;
@@ -289,6 +347,14 @@ digraph togoid {
 'hgnc'" -> "Ensembl transcript
 'ensembl_transcript'" [ label = "transcribed to
 'obo:RO_0002511'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "RefSeq RNA
+'refseq_rna'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "Ensembl transcript
+'ensembl_transcript'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
   "HGNC
 'hgnc'" -> "Consensus CDS
 'ccds'" [ label = "seeAlso
@@ -362,25 +428,21 @@ digraph togoid {
 'hgnc'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "HGNC
-'hgnc'" -> "Orphanet Rare Disease ontology
-'orphanet'" [ label = "seeAlso
-'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Orphanet Rare Disease ontology
-'orphanet'" -> "HGNC
-'hgnc'" [ label = "seeAlso
-'rdfs:seeAlso'" , fontcolor = red ] ;
-  "HGNC
 'hgnc'" -> "PubMed
 'pubmed'" [ label = "references
 'dcterms:references'"  ] ;
-  "HGNC
-'hgnc'" -> "RefSeq RNA
-'refseq_rna'" [ label = "seeAlso
-'rdfs:seeAlso'" , fontcolor = red ] ;
-  "RefSeq RNA
-'refseq_rna'" -> "HGNC
+  "PubMed
+'pubmed'" -> "HGNC
 'hgnc'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "HGNC
+'hgnc'" -> "RefSeq RNA
+'refseq_rna'" [ label = "transcribed to
+'obo:RO_0002511'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "HGNC
+'hgnc'" [ label = "transcribed from
+'obo:RO_0002510'"  ] ;
   "HGNC
 'hgnc'" -> "RGD
 'rgd'" [ label = "seeAlso
@@ -425,6 +487,10 @@ digraph togoid {
 'interpro'" -> "Pfam
 'pfam'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Pfam
+'pfam'" -> "InterPro
+'interpro'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
   "InterPro
 'interpro'" -> "PubMed
 'pubmed'" [ label = "references
@@ -433,14 +499,34 @@ digraph togoid {
 'interpro'" -> "Reactome pathway
 'reactome_pathway'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome pathway
+'reactome_pathway'" -> "InterPro
+'interpro'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "InterPro
+'interpro'" -> "UniProt
+'uniprot'" [ label = "has member
+'sio:SIO_000059'"  ] ;
+  "UniProt
+'uniprot'" -> "InterPro
+'interpro'" [ label = "is member of
+'sio:SIO_000095'"  ] ;
   "MBGD gene
 'mbgd_gene'" -> "UniProt
 'uniprot'" [ label = "has gene product
 'obo:RO_0002205'"  ] ;
+  "UniProt
+'uniprot'" -> "MBGD gene
+'mbgd_gene'" [ label = "gene product of
+'obo:RO_0002204'"  ] ;
   "MBGD organism
 'mbgd_organism'" -> "Taxonomy
 'taxonomy'" [ label = "in taxon
 'obo:RO_0002162'"  ] ;
+  "Taxonomy
+'taxonomy'" -> "MBGD organism
+'mbgd_organism'" [ label = "has part
+'obo:BFO_0000051'"  ] ;
   "MedGen
 'medgen'" -> "Human Phenotype Ontology
 'hp'" [ label = "seeAlso
@@ -625,6 +711,14 @@ digraph togoid {
 'refseq_rna'" -> "NCBI gene
 'ncbigene'" [ label = "transcribed from
 'obo:RO_0002510'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "Taxonomy
+'taxonomy'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Taxonomy
+'taxonomy'" -> "NCBI gene
+'ncbigene'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
   "OMA protein
 'oma_protein'" -> "Ensembl gene
 'ensembl_gene'" [ label = "seeAlso
@@ -709,12 +803,24 @@ digraph togoid {
 'pubchem_compound'" -> "ChEBI compound
 'chebi'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
+  "ChEBI compound
+'chebi'" -> "PubChem compound
+'pubchem_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
   "PubChem compound
 'pubchem_compound'" -> "ChEMBL compound
 'chembl_compound'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
   "ChEMBL compound
 'chembl_compound'" -> "PubChem compound
+'pubchem_compound'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "PubChem compound
+'pubchem_compound'" -> "DrugBank
+'drugbank'" [ label = "closeMatch
+'skos:closeMatch'"  ] ;
+  "DrugBank
+'drugbank'" -> "PubChem compound
 'pubchem_compound'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
   "Reactome pathway
@@ -742,6 +848,14 @@ digraph togoid {
 'reactome_reaction'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "Reactome reaction
+'reactome_reaction'" -> "Gene ontology
+'go'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Gene ontology
+'go'" -> "Reactome reaction
+'reactome_reaction'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "Reactome reaction
 'reactome_reaction'" -> "UniProt
 'uniprot'" [ label = "has component
 'obo:RO_0002180'"  ] ;
@@ -759,8 +873,12 @@ digraph togoid {
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "RefSeq RNA
 'refseq_rna'" -> "dbSNP
-'dbsnp'" [ label = "seeAlso
-'rdfs:seeAlso'" , fontcolor = red ] ;
+'dbsnp'" [ label = "location of
+'ro:RO_0001015'"  ] ;
+  "dbSNP
+'dbsnp'" -> "RefSeq RNA
+'refseq_rna'" [ label = "is located in
+'ro:RO_0001025'"  ] ;
   "RefSeq RNA
 'refseq_rna'" -> "HGNC
 'hgnc'" [ label = "transcribed from
@@ -781,10 +899,18 @@ digraph togoid {
 'refseq_rna'" -> "OMIM gene
 'omim_gene'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
+  "OMIM gene
+'omim_gene'" -> "RefSeq RNA
+'refseq_rna'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
   "RefSeq RNA
 'refseq_rna'" -> "PubMed
 'pubmed'" [ label = "references
 'dcterms:references'"  ] ;
+  "PubMed
+'pubmed'" -> "RefSeq RNA
+'refseq_rna'" [ label = "is referenced by
+'dcterms:isReferencedBy'"  ] ;
   "RefSeq RNA
 'refseq_rna'" -> "RefSeq protein
 'refseq_protein'" [ label = "ribosomally translates to
@@ -975,20 +1101,36 @@ digraph togoid {
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "TogoVar variant
 'togovar'" -> "dbSNP
-'dbsnp'" [ label = "which position is similar to
+'dbsnp'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "dbSNP
+'dbsnp'" -> "TogoVar variant
+'togovar'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "TogoVar variant
 'togovar'" -> "Ensembl gene
 'ensembl_gene'" [ label = "is located in
 'ro:RO_0001025'"  ] ;
+  "Ensembl gene
+'ensembl_gene'" -> "TogoVar variant
+'togovar'" [ label = "location of
+'ro:RO_0001015'"  ] ;
   "TogoVar variant
 'togovar'" -> "Ensembl transcript
 'ensembl_transcript'" [ label = "is located in
 'ro:RO_0001025'"  ] ;
+  "Ensembl transcript
+'ensembl_transcript'" -> "TogoVar variant
+'togovar'" [ label = "location of
+'ro:RO_0001015'"  ] ;
   "TogoVar variant
 'togovar'" -> "HGNC
 'hgnc'" [ label = "is located in
 'ro:RO_0001025'"  ] ;
+  "HGNC
+'hgnc'" -> "TogoVar variant
+'togovar'" [ label = "location of
+'ro:RO_0001015'"  ] ;
   "TogoVar variant
 'togovar'" -> "MedGen
 'medgen'" [ label = "seeAlso
@@ -1001,14 +1143,26 @@ digraph togoid {
 'togovar'" -> "NCBI gene
 'ncbigene'" [ label = "is located in
 'ro:RO_0001025'"  ] ;
+  "NCBI gene
+'ncbigene'" -> "TogoVar variant
+'togovar'" [ label = "location of
+'ro:RO_0001015'"  ] ;
   "TogoVar variant
 'togovar'" -> "PubMed
-'pubmed'" [ label = "Pubmed
+'pubmed'" [ label = "references
 'dcterms:references'"  ] ;
+  "PubMed
+'pubmed'" -> "TogoVar variant
+'togovar'" [ label = "is referenced by
+'dcterms:isReferencedBy'"  ] ;
   "TogoVar variant
 'togovar'" -> "RefSeq RNA
 'refseq_rna'" [ label = "is located in
 'ro:RO_0001025'"  ] ;
+  "RefSeq RNA
+'refseq_rna'" -> "TogoVar variant
+'togovar'" [ label = "location of
+'ro:RO_0001015'"  ] ;
   "UniProt
 'uniprot'" -> "ChEMBL target
 'chembl_target'" [ label = "seeAlso
@@ -1074,6 +1228,14 @@ digraph togoid {
 'uniprot'" [ label = "has gene product
 'ro:RO_0002205'"  ] ;
   "UniProt
+'uniprot'" -> "GenBank/ENA/DDBJ
+'insdc'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "GenBank/ENA/DDBJ
+'insdc'" -> "UniProt
+'uniprot'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "UniProt
 'uniprot'" -> "IntAct
 'intact'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
@@ -1081,14 +1243,6 @@ digraph togoid {
 'intact'" -> "UniProt
 'uniprot'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "UniProt
-'uniprot'" -> "InterPro
-'interpro'" [ label = "is member of
-'sio:SIO_000095'"  ] ;
-  "InterPro
-'interpro'" -> "UniProt
-'uniprot'" [ label = "has member
-'sio:SIO_000059'"  ] ;
   "UniProt
 'uniprot'" -> "NCBI gene
 'ncbigene'" [ label = "gene product of

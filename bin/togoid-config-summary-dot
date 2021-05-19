@@ -72,14 +72,16 @@ colors = {
   "Probe"	=> "#0068B7",
   "Protein"	=> "#00479D",
   "Sample"	=> "#1D2088",
+  "Project"	=> "#1D2088",
   "Structure"	=> "#601986",
   "Taxonomy"	=> "#920783",
   "Terminology"	=> "#BE0081",
   "Variant"	=> "#E4007F",
   "microRNA"	=> "#E5006A",
+  "NGS"		=> "#E5004F",
 }
-#		   "#E5004F"
-#		   "#E60033"
+#		"#E60033"
+
 
 puts 'digraph togoid {
   node [
