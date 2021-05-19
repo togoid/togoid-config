@@ -7,7 +7,7 @@ affy_probeset:
 bioproject:
   label: BioProject
   catalog: nbdc00476
-  category: ResearchProject
+  category: Project
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
   prefix: 'http://identifiers.org/bioproject/'
 biosample:
