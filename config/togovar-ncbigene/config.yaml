@@ -1,5 +1,4 @@
 link:
-  file: pair.tsv
   forward:
     namespace: ro
     label: is located in
@@ -10,6 +9,7 @@ link:
     label: location of
     prefix: http://purl.obolibrary.org/obo/
     predicate: RO_0001015
+  file: sample.tsv
 update:
   frequency: Monthly
   method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2ncbigene.tsv
