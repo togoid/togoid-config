@@ -48,4 +48,4 @@ while true; do
   fi
 done
 
-tail -qn +2 ${WORKDIR}/*.txt | sed -e 's/"//g'
+tail -qn +2 ${WORKDIR}/*.txt | sed -e 's/"//g; s/\t/\tCHEMBL/'
