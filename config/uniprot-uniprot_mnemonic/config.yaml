@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_thread.pl -t 10
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz UniProtKB-ID
