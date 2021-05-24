@@ -11,5 +11,5 @@ link:
     predicate: seeAlso
   file: sample.tsv
 update:
-  frequency: daily
+  frequency: Daily
   method: sparql_csv2tsv.sh query.rq https://integbio.jp/togosite/sparql
