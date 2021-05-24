@@ -274,7 +274,7 @@ nando:
   catalog: nbdc02557
   category: Disease
   # FIXME: valid? prefix: 'http://purl.obolibrary.org/obo/NANDO_'
-  regex: '^NANDO:(?<id>\d{7})$'
+  regex: '^(?:NANDO:)?(?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/nando#'
 ncbigene:
   label: NCBI gene
@@ -365,7 +365,7 @@ refseq_genomic:
   catalog: nbdc00187
   category: Genome
   # NC_; AC_; NG_; NT_; NW_; NZ_
-  regex: 'NC_; AC_; NG_; NT_; NW_; NZ_'
+  regex: '^(?<id>AC|N[CGTWZ])_\d+)$'
   prefix: 'http://identifiers.org/refseq/'
 refseq_protein:
   label: RefSeq protein
@@ -446,7 +446,7 @@ uniprot:
   label: UniProt
   catalog: nbdc00221
   category: Protein
-  regex: '^(?:(?<id>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2})|(?<id>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9])(?:\.\d+)?)$'
+  regex: '^(?:(?<id>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|(?<id>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$'
   prefix: 'http://purl.uniprot.org/uniprot/'
 uniprot_mnemonic:
   label: UniProt mnemonic
