@@ -365,7 +365,7 @@ refseq_genomic:
   catalog: nbdc00187
   category: Genome
   # NC_; AC_; NG_; NT_; NW_; NZ_
-  regex: '^(?<id>AC|N[CGTWZ])_\d+)$'
+  regex: '^(?<id>(?:AC|N[CGTWZ])_\d+)$'
   prefix: 'http://identifiers.org/refseq/'
 refseq_protein:
   label: RefSeq protein
