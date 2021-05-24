@@ -2,7 +2,7 @@ affy_probeset:
   label: Affymetrix probeset
   catalog: FIXME
   category: Probe
-  regex: '\d{4,}(?:(?:_[asx])?_at)?'
+  regex: '\d{4,}(?:(?:_[asxf])?_at)?'
   prefix: 'http://identifiers.org/affy.probeset/'
 bioproject:
   label: BioProject
@@ -71,7 +71,7 @@ doid:
   label: Disease ontology
   catalog: nbdc00261
   category: Disease
-  regex: '^DOID:(?<id>\d+)$'
+  regex: '^(?:DOID:)?(?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
 drugbank:
   label: DrugBank
@@ -143,7 +143,7 @@ hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
   category: Phenotype
-  regex: '^HP:(?<id>\d{7})$'
+  regex: '^(?:HP:)?(?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
 human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
@@ -237,7 +237,7 @@ meddra:
   label: MedDRA
   catalog: nbdc02564
   category: Disease
-  regex: '^(?:MedDRA|meddra):(?<id>\d+)$'
+  regex: '^(?:(?:MedDRA|meddra):)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/meddra/'
 medgen:
   label: MedGen
@@ -255,7 +255,7 @@ mgi:
   label: MGI
   catalog: nbdc00135
   category: Gene
-  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
+  regex: '^(?:(?:MGI|mgi):)?(?<id>\d{5,})$'
   prefix: 'http://identifiers.org/mgi/MGI:'
 mirbase:
   label: miRBase
@@ -267,7 +267,7 @@ mondo:
   label: MONDO
   catalog: nbdc02563
   category: Disease
-  regex: '^MONDO:(?<id>\d{7})$'
+  regex: '^(?:MONDO:)?(?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
 nando:
   label: NANDO
@@ -316,7 +316,7 @@ orphanet:
   label: Orphanet Rare Disease ontology
   catalog: nbdc01422
   category: Disease
-  regex: '^(?:ORPHA|ORDO|Orphanet):?(?<id>[A-Z0-9]+)$'
+  regex: '^(?:(?:ORPHA|ORDO|Orphanet):?)?(?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
 pdb:
   label: PDB
@@ -385,7 +385,7 @@ rgd:
   label: RGD
   catalog: nbdc00188
   category: Gene
-  regex: '^(?:RGD|rgd):(?<id>\d{4,})$'
+  regex: '^(?:(?:RGD|rgd):)?(?<id>\d{4,})$'
   prefix: 'http://identifiers.org/rgd/'
 rhea:
   label: Rhea
