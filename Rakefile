@@ -19,8 +19,8 @@ task :convert => TTL_FILES
 # Some tasks require preparation to extract link data
 def prepare_task(taskname)
   case taskname
-  when /#{OUTPUT_TSV_DIR}drugbank/
-    return "prepare:drugbank"
+#  when /#{OUTPUT_TSV_DIR}drugbank/
+#    return "prepare:drugbank"
   when /#{OUTPUT_TSV_DIR}ensembl/
     return "prepare:ensembl"
   when /#{OUTPUT_TSV_DIR}homologene/
@@ -51,13 +51,38 @@ def file_older_than_days?(file, days = 7)
   end
 end
 
+# Check if the file is older than a given timestamp file
+def file_older_than_stamp?(file, stamp)
+  if File.exists?(file) && File.exists?(stamp) && File.ctime(file) > File.ctime(stamp)
+    false
+  else
+    true
+  end
+end
+
+# Find a timestamp file and compare with the TSV output
+def check_tsv_timestamp(pair)
+  source = pair.split('-').first
+  input  = "input/#{source}/download.lock"
+  output = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
+  # If there is no timpestamp file (input), update the pair anyway
+  file_older_than_stamp?(output, input)
+end
+
+# Compare timestamp of the TSV and TTL outputs
+def check_ttl_timestamp(pair)
+  input  = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
+  output = "#{OUTPUT_TTL_DIR}#{pair}.ttl"
+  file_older_than_stamp?(output, input)
+end
+
 # Generate dependency for preparation by target names
 rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do |t|
   pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
-  $stderr.puts "## Update config/#{pair}/config.yaml => output/tsv/#{pair}.tsv"
+  $stderr.puts "## Update config/#{pair}/config.yaml => #{OUTPUT_TSV_DIR}#{pair}.tsv"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if file_older_than_days?(t.name, 3)
+  if check_tsv_timestamp(pair)
     sh "togoid-config config/#{pair} update"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
@@ -67,9 +92,9 @@ end
 rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" ] do |t|
   pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
   #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
-  $stderr.puts "## Convert output/tsv/#{pair}.tsv => output/ttl/#{pair}.ttl"
+  $stderr.puts "## Convert output/tsv/#{pair}.tsv => #{OUTPUT_TTL_DIR}#{pair}.ttl"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if file_older_than_days?(t.name, 3)
+  if check_ttl_timestamp(pair)
     sh "togoid-config config/#{pair} convert"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
@@ -131,6 +156,7 @@ namespace :prepare do
     end
   end
 
+=begin
   desc "Prepare required files for Drugbank"
   task :drugbank => INPUT_DRUGBANK_DIR do
     $stderr.puts "TODO: implement prepare:drugbank"
@@ -138,6 +164,7 @@ namespace :prepare do
       # https://go.drugbank.com/releases/5-1-8/downloads/all-full-database
     end
   end
+=end
 
   desc "Prepare taxonomy ID list for Ensembl"
   task :ensembl => INPUT_ENSEMBL_DIR do
