@@ -83,7 +83,7 @@ ec:
   label: Enzyme nomenclature
   catalog: nbdc00019
   category: Function
-  regex: '^(?:EC )?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|\d+))))$'
+  regex: '^(?:EC )?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
   prefix: 'http://identifiers.org/ec-code/'
 ena:
   catalog: nbdc00432
