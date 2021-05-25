@@ -54,8 +54,10 @@ end
 # Check if the file is older than a given timestamp file
 def file_older_than_stamp?(file, stamp)
   if File.exists?(file) && File.exists?(stamp) && File.ctime(file) > File.ctime(stamp)
+    $stderr.puts "# File #{file} is newer than #{stamp} and update will be skipped"
     false
   else
+    $stderr.puts "# File #{file} needs to be created or updated"
     true
   end
 end
