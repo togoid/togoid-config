@@ -44,7 +44,7 @@ end
 def file_older_than_days?(file, days = 7)
   if File.exists?(file)
     age = (Time.now - File.ctime(file)) / (24*60*60)
-    $stderr.puts "File #{file} is created #{age} days ago (only updated when >#{days} days)"
+    $stderr.puts "# File #{file} is created #{age} days ago (only updated when >#{days} days)"
     age > days
   else
     true
@@ -57,8 +57,13 @@ def file_older_than_stamp?(file, stamp)
     $stderr.puts "# File #{file} is newer than #{stamp} and update will be skipped"
     false
   else
-    $stderr.puts "# File #{file} needs to be created or updated"
-    true
+    if File.exists?(stamp)
+      $stderr.puts "# File #{file} needs to be created or updated"
+      true
+    else
+      $stderr.puts "# File #{file} has no timestamp file (e.g., depending on SPARQL)"
+      file_older_than_days?(file)
+    end
   end
 end
 
@@ -132,8 +137,8 @@ namespace :prepare do
   def compare_file_size(file, url)
     local_file_size  = File.size(file)
     remote_file_size = `curl -sI #{url} | grep 'Content-Length' | awk '{print $2}'`.strip.to_i
-    $stderr.puts "Local file size:  #{local_file_size} (#{file})"
-    $stderr.puts "Remote file size: #{remote_file_size} (#{url})"
+    $stderr.puts "# Local file size:  #{local_file_size} (#{file})"
+    $stderr.puts "# Remote file size: #{remote_file_size} (#{url})"
     return local_file_size != remote_file_size
   end
 
@@ -148,7 +153,7 @@ namespace :prepare do
 
   # Create file lock to avoid simultaneous access
   def download_lock(dir, &block)
-    $stderr.puts "Checking lock file #{dir}/download.lock for download"
+    $stderr.puts "# Checking lock file #{dir}/download.lock for download"
     File.open("#{dir}/download.lock", "w") do |lockfile|
       if lockfile.flock(File::LOCK_EX)
         lockfile.puts `date +%FT%T`
