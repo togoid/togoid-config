@@ -175,6 +175,7 @@ namespace :prepare do
 
   desc "Prepare taxonomy ID list for Ensembl"
   task :ensembl => INPUT_ENSEMBL_DIR do
+    $stderr.puts "## Prepare input files for Ensembl"
     download_lock(INPUT_ENSEMBL_DIR) do
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
       if file_older_than_days?(taxonomy_file, 10)
@@ -185,6 +186,7 @@ namespace :prepare do
 
   desc "Prepare required files for HomoloGene"
   task :homologene => INPUT_HOMOLOGENE_DIR do
+    $stderr.puts "## Prepare input files for Homologene"
     download_lock(INPUT_HOMOLOGENE_DIR) do
       input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
@@ -196,6 +198,7 @@ namespace :prepare do
 
   desc "Prepare required files for InterPro"
   task :interpro => INPUT_INTERPRO_DIR do
+    $stderr.puts "## Prepare input files for InterPro"
     download_lock(INPUT_INTERPRO_DIR) do
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
@@ -221,6 +224,7 @@ namespace :prepare do
 
   desc "Prepare required files for NCBI Gene"
   task :ncbigene=> INPUT_NCBIGENE_DIR do
+    $stderr.puts "## Prepare input files for NCBI Gene"
     download_lock(INPUT_NCBIGENE_DIR) do
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
@@ -266,6 +270,7 @@ namespace :prepare do
 
   desc "Prepare required files for RefSeq"
   task :refseq => INPUT_REFSEQ_DIR do
+    $stderr.puts "## Prepare input files for RefSeq"
     download_lock(INPUT_REFSEQ_DIR) do
       # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
       # However, NCBI ftp server is currently broken..
@@ -285,6 +290,7 @@ namespace :prepare do
 
   desc "Prepare required files for SRA"
   task :sra => INPUT_SRA_DIR do
+    $stderr.puts "## Prepare input files for SRA"
     download_lock(INPUT_SRA_DIR) do
       input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
@@ -297,6 +303,7 @@ namespace :prepare do
 
   desc "Prepare required files for UniProt"
   task :uniprot => INPUT_UNIPROT_DIR do
+    $stderr.puts "## Prepare input files for UniProt"
     download_lock(INPUT_UNIPROT_DIR) do
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
