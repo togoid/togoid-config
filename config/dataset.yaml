@@ -368,14 +368,14 @@ refseq_genomic:
   catalog: nbdc00187
   category: Genome
   # NC_; AC_; NG_; NT_; NW_; NZ_
-  regex: '^(?<id>(?:AC|N[CGTWZ])_\d+)$'
+  regex: '^(?<id>(?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
 refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
   category: Protein
-  # NP_; XP_; AP_; YP_; WP_
-  regex: '^(?<id>((AC|AP|NC|NG|NM|NP|NR|NT|NW|XM|XP|XR|YP|ZP)_\d+)|(NZ\_[A-Z]{2,4}\d+))(\.\d+)?$'
+  # NP_; XP_; AP_; YP_; WP_; ZP_
+  regex: '^(?<id>[ANXYWZ]P_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
 refseq_rna:
   label: RefSeq RNA
