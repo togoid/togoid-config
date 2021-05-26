@@ -156,9 +156,10 @@ namespace :prepare do
     $stderr.puts "# Checking lock file #{dir}/download.lock for download"
     File.open("#{dir}/download.lock", "w") do |lockfile|
       if lockfile.flock(File::LOCK_EX)
-        lockfile.puts `date +%FT%T`
-        lockfile.flush
-        yield block
+        if yield block
+          lockfile.puts `date +%FT%T`
+          lockfile.flush
+        end
       end
     end
   end
@@ -166,9 +167,12 @@ namespace :prepare do
 =begin
   desc "Prepare required files for Drugbank"
   task :drugbank => INPUT_DRUGBANK_DIR do
-    $stderr.puts "TODO: implement prepare:drugbank"
+    $stderr.puts "*** TODO ***: implement prepare:drugbank"
+    $stderr.puts "## Prepare input files for Drugbank"
     download_lock(INPUT_DRUGBANK_DIR) do
+      updated = false
       # https://go.drugbank.com/releases/5-1-8/downloads/all-full-database
+      return updated
     end
   end
 =end
@@ -177,10 +181,13 @@ namespace :prepare do
   task :ensembl => INPUT_ENSEMBL_DIR do
     $stderr.puts "## Prepare input files for Ensembl"
     download_lock(INPUT_ENSEMBL_DIR) do
+      updated = false
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
       if file_older_than_days?(taxonomy_file, 10)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
+        updated = true
       end
+      return updated
     end
   end
 
@@ -188,11 +195,14 @@ namespace :prepare do
   task :homologene => INPUT_HOMOLOGENE_DIR do
     $stderr.puts "## Prepare input files for Homologene"
     download_lock(INPUT_HOMOLOGENE_DIR) do
+      updated = false
       input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
+        updated = true
       end
+      return updated
     end
   end
 
@@ -200,10 +210,12 @@ namespace :prepare do
   task :interpro => INPUT_INTERPRO_DIR do
     $stderr.puts "## Prepare input files for InterPro"
     download_lock(INPUT_INTERPRO_DIR) do
+      updated = false
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
+        updated = true
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
@@ -211,6 +223,7 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
+        updated = true
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
@@ -218,7 +231,9 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
+        updated = true
       end
+      return updated
     end
   end
 
@@ -226,12 +241,14 @@ namespace :prepare do
   task :ncbigene=> INPUT_NCBIGENE_DIR do
     $stderr.puts "## Prepare input files for NCBI Gene"
     download_lock(INPUT_NCBIGENE_DIR) do
+      updated = false
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
       if update_input_file?(input_file, input_url)
         rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
+        updated = true
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2ensembl.gz"
@@ -240,6 +257,7 @@ namespace :prepare do
         rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
+        updated = true
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
@@ -248,6 +266,7 @@ namespace :prepare do
         rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
+        updated = true
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
@@ -256,6 +275,7 @@ namespace :prepare do
         rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
+        updated = true
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene_info.gz"
@@ -264,7 +284,9 @@ namespace :prepare do
         rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
+        updated = true
       end
+      return updated
     end
   end
 
@@ -272,19 +294,30 @@ namespace :prepare do
   task :refseq => INPUT_REFSEQ_DIR do
     $stderr.puts "## Prepare input files for RefSeq"
     download_lock(INPUT_REFSEQ_DIR) do
-      # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
-      # However, NCBI ftp server is currently broken..
-      # (It is reported that large files are contaminated by illegal bytes occationally)
-      input_file = "complete.*.rna.gbff.gz"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
-      download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+      updated = false
+      input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
+      input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
+      if update_input_file?(input_file, input_url)
+        # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
+        rm_rf input_file
+        download_file(INPUT_REFSEQ_DIR, input_url)
+        # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
+        # However, NCBI ftp server is currently broken.. You've Been Warned.
+        # (It is reported that large files are contaminated by illegal bytes occationally)
+        input_file = "complete.*.rna.gbff.gz"
+        input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
+        download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+        updated = true
+      end
 
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
         rm_rf input_file
         download_file(INPUT_REFSEQ_DIR, input_url)
+        updated = true
       end
+      return updated
     end
   end
 
@@ -305,12 +338,14 @@ namespace :prepare do
   task :uniprot => INPUT_UNIPROT_DIR do
     $stderr.puts "## Prepare input files for UniProt"
     download_lock(INPUT_UNIPROT_DIR) do
+      updated = false
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       if update_input_file?(input_file, input_url)
         rm_rf input_file
         download_file(INPUT_UNIPROT_DIR, input_url)
+        updated = true
       end
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
@@ -318,8 +353,11 @@ namespace :prepare do
         rm_rf input_file
         download_file(INPUT_UNIPROT_DIR, input_url)
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
+        updated = true
       end
+      # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
+      return updated
     end
   end
 end
