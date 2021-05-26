@@ -154,9 +154,11 @@ namespace :prepare do
   # Create file lock to avoid simultaneous access
   def download_lock(dir, &block)
     $stderr.puts "# Checking lock file #{dir}/download.lock for download"
+    # File.open with "w" option immediately update the file's timestamp but "a" is fine.
     File.open("#{dir}/download.lock", "w") do |lockfile|
       if lockfile.flock(File::LOCK_EX)
         if yield block
+          lockfile.truncate
           lockfile.puts `date +%FT%T`
           lockfile.flush
         end
