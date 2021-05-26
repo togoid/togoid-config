@@ -1,5 +1,7 @@
 # TogoID
 
+require 'time'
+
 ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
@@ -136,10 +138,18 @@ namespace :prepare do
   # previous download was interrupted and left broken files with newer dates.
   def compare_file_size(file, url)
     local_file_size  = File.size(file)
-    remote_file_size = `curl -sI #{url} | grep 'Content-Length' | awk '{print $2}'`.strip.to_i
+    remote_file_size = `curl -sI #{url} | grep '^Content-Length:' | awk '{print $2}'`.strip.to_i
     $stderr.puts "# Local file size:  #{local_file_size} (#{file})"
     $stderr.puts "# Remote file size: #{remote_file_size} (#{url})"
     return local_file_size != remote_file_size
+  end
+
+  def compare_file_time(file, url)
+    local_file_time  = File.ctime(file)  # Time object
+    remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
+    $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
+    $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
+    return local_file_time < remote_file_time
   end
 
   # Check if the file sizes differ or the file doesn't exist
@@ -300,7 +310,7 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
-      if update_input_file?(input_file, input_url)
+      if compare_file_time(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
         rm_rf input_file
         download_file(INPUT_REFSEQ_DIR, input_url)
