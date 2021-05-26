@@ -155,8 +155,9 @@ namespace :prepare do
   def download_lock(dir, &block)
     $stderr.puts "# Checking lock file #{dir}/download.lock for download"
     # File.open with "w" option immediately update the file's timestamp but "a" is fine.
-    File.open("#{dir}/download.lock", "w") do |lockfile|
+    File.open("#{dir}/download.lock", "a") do |lockfile|
       if lockfile.flock(File::LOCK_EX)
+        # Implement block to return true when update procedure is executed (othewise false)
         if yield block
           lockfile.truncate
           lockfile.puts `date +%FT%T`
