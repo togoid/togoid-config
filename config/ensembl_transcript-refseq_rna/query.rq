@@ -14,5 +14,5 @@ WHERE {
   ?enst dc:identifier ?enst_id .
   ?enst rdfs:seeAlso ?refseq .
   ?refseq a ido:refseq .
-  BIND (strafter(str(?refseq), "refseq/") AS ?refseq_id)
+  BIND (strbefore(strafter(str(?refseq), "refseq/"), ".") AS ?refseq_id)
 }
