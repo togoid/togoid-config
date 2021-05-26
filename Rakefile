@@ -169,10 +169,12 @@ namespace :prepare do
       if lockfile.flock(File::LOCK_EX)
         # Implement block to return true when update procedure is executed (othewise false)
         if yield block
-          $stderr.puts "# Updating timestamp of the #{dir}/download.lock"
+          $stderr.puts "# Overwriting timestamp for the #{dir}/download.lock"
           lockfile.truncate(0)
           lockfile.puts `date +%FT%T`
           lockfile.flush
+        else
+          $stderr.puts "# Preserving timestamp of the #{dir}/download.lock"
         end
       end
     end
