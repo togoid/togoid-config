@@ -169,7 +169,7 @@ namespace :prepare do
       if lockfile.flock(File::LOCK_EX)
         # Implement block to return true when update procedure is executed (othewise false)
         if yield block
-          lockfile.truncate
+          lockfile.truncate(0)
           lockfile.puts `date +%FT%T`
           lockfile.flush
         end
