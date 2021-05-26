@@ -172,7 +172,7 @@ namespace :prepare do
     download_lock(INPUT_DRUGBANK_DIR) do
       updated = false
       # https://go.drugbank.com/releases/5-1-8/downloads/all-full-database
-      return updated
+      updated
     end
   end
 =end
@@ -187,7 +187,7 @@ namespace :prepare do
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
         updated = true
       end
-      return updated
+      updated
     end
   end
 
@@ -202,7 +202,7 @@ namespace :prepare do
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
         updated = true
       end
-      return updated
+      updated
     end
   end
 
@@ -233,7 +233,7 @@ namespace :prepare do
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
         updated = true
       end
-      return updated
+      updated
     end
   end
 
@@ -286,7 +286,7 @@ namespace :prepare do
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
         updated = true
       end
-      return updated
+      updated
     end
   end
 
@@ -317,7 +317,7 @@ namespace :prepare do
         download_file(INPUT_REFSEQ_DIR, input_url)
         updated = true
       end
-      return updated
+      updated
     end
   end
 
@@ -357,7 +357,7 @@ namespace :prepare do
       end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
-      return updated
+      updated
     end
   end
 end
