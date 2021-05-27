@@ -355,13 +355,13 @@ reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
   category: Pathway
-  regex: '^(?:R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?:^REACT_\d+(?:\.\d+)?)$'
+  regex: '^(?:(?<id>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id>REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
   category: Interaction
-  regex: '^(?:(?:R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?:REACT_\d+(?:\.\d+)?))$'
+  regex: '^(?:(?<id>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id>REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
 refseq_genomic:
   label: RefSeq genomic
