@@ -227,7 +227,7 @@ mbgd_gene:
   catalog: nbdc00130
   category: Ortholog
   # FIXME: valid in RDF?
-  regex: '^(?<id>[a-z]+:[A-Z]+_[A-Z, 0-9]+)$'
+  regex: '^(?<id>[a-z0-9]+:[A-Z0-9_\.-]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
 mbgd_organism:
   label: MBGD organism
