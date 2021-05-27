@@ -234,7 +234,7 @@ mbgd_organism:
   catalog: nbdc00130
   category: Ortholog
   # FIXME: valid in RDF?
-  regex: '^(?<id>[a-z]+)$'
+  regex: '^(?<id>[a-z0-9]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
 meddra:
   label: MedDRA
