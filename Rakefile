@@ -60,10 +60,10 @@ def file_older_than_stamp?(file, stamp)
     false
   else
     if File.exists?(stamp)
-      $stderr.puts "# File #{file} needs to be created or updated"
+      $stderr.puts "# File #{file} is older than #{stamp} (will be created or updated)"
       true
     else
-      $stderr.puts "# File #{file} has no timestamp file (e.g., depending on SPARQL)"
+      $stderr.puts "# File #{file} has no timestamp file (e.g., data source depends on SPARQL)"
       file_older_than_days?(file)
     end
   end
@@ -124,6 +124,8 @@ namespace :prepare do
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
 
   def download_file(dir, url, glob = nil)
+    # When running Wget without -N, -nc, -r, or -p, downloading the same file in the same directory
+    # will result in the original copy of file being preserved and the second copy being named file.1.
     # -q -r -np -nd -N
     opts = "--quiet --recursive --no-parent --no-directories --timestamping"
     # --directory-prefix (-P) requires a directory name as an argument
@@ -171,9 +173,9 @@ namespace :prepare do
     # File.open with "w" option immediately update the file's timestamp but "a" is fine.
     File.open("#{dir}/download.lock", "a") do |lockfile|
       if lockfile.flock(File::LOCK_EX)
-        # Implement block to return true when update procedure is executed (othewise false)
+        # In each downloader, implement a block returning true when update procedure is executed (othewise false)
         if yield block
-          $stderr.puts "# Overwriting timestamp for the #{dir}/download.lock"
+          $stderr.puts "# Overwriting timestamp of the #{dir}/download.lock"
           lockfile.truncate(0)
           lockfile.puts `date +%FT%T`
           lockfile.flush
@@ -265,7 +267,6 @@ namespace :prepare do
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
         updated = true
@@ -274,7 +275,6 @@ namespace :prepare do
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2ensembl.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
         updated = true
@@ -283,7 +283,6 @@ namespace :prepare do
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
         updated = true
@@ -292,7 +291,6 @@ namespace :prepare do
       input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
         updated = true
@@ -301,7 +299,6 @@ namespace :prepare do
       input_file = "#{INPUT_NCBIGENE_DIR}/gene_info.gz"
       input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
         updated = true
@@ -319,7 +316,6 @@ namespace :prepare do
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
       if compare_file_time(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
-        rm_rf input_file
         download_file(INPUT_REFSEQ_DIR, input_url)
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
@@ -333,7 +329,6 @@ namespace :prepare do
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_REFSEQ_DIR, input_url)
         updated = true
       end
@@ -348,7 +343,6 @@ namespace :prepare do
       input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_SRA_DIR, input_url)
       end
     end
@@ -363,14 +357,12 @@ namespace :prepare do
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_UNIPROT_DIR, input_url)
         updated = true
       end
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
       input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
       if update_input_file?(input_file, input_url)
-        rm_rf input_file
         download_file(INPUT_UNIPROT_DIR, input_url)
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
         updated = true
