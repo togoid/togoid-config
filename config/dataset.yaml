@@ -159,7 +159,7 @@ insdc:
   label: GenBank/ENA/DDBJ
   catalog: nbdc02567
   category: Gene
-  regex: '^(?:insdc:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}))(?:\.\d+)?$'
+  regex: '^(?:insdc:)?(?<id>[A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/insdc/'
 intact:
   label: IntAct
