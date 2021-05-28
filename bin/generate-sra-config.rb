@@ -157,10 +157,12 @@ module Accessions
       end
 
       def parse_accession_tab(prefix, col_from, col_to)
+        regex = "/^(SR|ER|DR|SAM|PRJ)[A-Z]{1,}[0-9]{1,}/" # capture SRA, BioSample, BioProject identifiers
+        edit_cmd = "awk -F'\t' '$1 ~ #{regex} && $2 ~ #{regex}'"
         edit_cmd = if col_from == 2
-          "awk -F'\t' '$1 ~ /^(S|E|D)R/ && $2 ~ /^(S|E|D)R/' | sort -u"
+          "#{edit_cmd} | sort -u"
         else
-          "awk -F'\t' '$1 ~ /^(S|E|D)R/ && $2 ~ /^(S|E|D)R/'"
+          edit_cmd
         end
         "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.#{prefix}/ { print $#{col_from}, $#{col_to} }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\" | #{edit_cmd}"
       end
