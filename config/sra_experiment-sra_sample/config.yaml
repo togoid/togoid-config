@@ -13,4 +13,4 @@ link:
 update:
   frequency: Daily
   method: "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.RX/ { print $1, $12 }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\"
-    | grep -v '-'"
+    | awk -F'\t' '$1 ~ /^(S|E|D)R/ && $2 ~ /^(S|E|D)R/'"
