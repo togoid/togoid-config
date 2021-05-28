@@ -157,10 +157,10 @@ module Accessions
       end
 
       def parse_accession_tab(prefix, col_from, col_to)
-        edit_cmd = if col_from != 2
-          "grep -v '-'"
+        edit_cmd = if col_from == 2
+          "awk -F'\t' '$1 ~ /^(S|E|D)R/ && $2 ~ /^(S|E|D)R/' | sort -u"
         else
-          "grep -v '-' | sort -u"
+          "awk -F'\t' '$1 ~ /^(S|E|D)R/ && $2 ~ /^(S|E|D)R/'"
         end
         "awk 'BEGIN{ FS=OFS=\"\t\" } $1 ~ /^.#{prefix}/ { print $#{col_from}, $#{col_to} }' \"${TOGOID_ROOT}/input/sra/SRA_Accessions.tab\" | #{edit_cmd}"
       end
