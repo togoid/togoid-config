@@ -145,11 +145,15 @@ namespace :prepare do
   end
 
   def compare_file_time(file, url)
-    local_file_time  = File.ctime(file)  # Time object
-    remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
-    $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
-    $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
-    return local_file_time < remote_file_time
+    if File.exists?(file)
+      local_file_time  = File.ctime(file)  # Time object
+      remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
+      $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
+      $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
+      return local_file_time < remote_file_time
+    else
+      return true
+    end
   end
 
   # Check if the file sizes differ or the file doesn't exist
