@@ -95,21 +95,21 @@ ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
-  regex: '^(?:(?:(?<id>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
+  regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
 #  regex: '^(?<id>ENSG\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
 ensembl_protein:
   label: Ensembl protein
   catalog: nbdc00054
   category: Protein
-  regex: '^(?:(?:(?<id>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
+  regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
 #  regex: '^(?<id>ENSP\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
 ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
   category: Gene
-  regex: '^(?:(?:(?<id>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
+  regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
 #  regex: '^(?<id>ENST\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
 go:
@@ -355,13 +355,13 @@ reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
   category: Pathway
-  regex: '^(?:(?<id>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id>REACT_\d+(?:\.\d+)?))$'
+  regex: '^(?:(?<id1>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id2>REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
   category: Interaction
-  regex: '^(?:(?<id>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id>REACT_\d+(?:\.\d+)?))$'
+  regex: '^(?:(?<id1>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id2>REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
 refseq_genomic:
   label: RefSeq genomic
@@ -449,7 +449,7 @@ uniprot:
   label: UniProt
   catalog: nbdc00221
   category: Protein
-  regex: '^(?:(?<id>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|(?<id>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$'
+  regex: '^(?:(?<id1>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|(?<id2>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$'
   prefix: 'http://purl.uniprot.org/uniprot/'
 uniprot_mnemonic:
   label: UniProt mnemonic
