@@ -12,6 +12,6 @@ WHERE {
     dct:identifier ?hgnc_id ;
     rdfs:seeAlso ?target .
     ?target a idt:ccds ;
-    dct:identifier ?target_id .
+    dct:identifier ?ccds_id .
+  BIND(STRAFTER(STR(?ccds_id), "CCDS") AS ?target_id)
 }
-
