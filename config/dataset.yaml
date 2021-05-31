@@ -21,8 +21,8 @@ ccds:
   label: Consensus CDS
   catalog: nbdc00023
   category: Gene
-  regex: '^(?:CCDS)?(?<id>\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/ccds/CCDS'
+  regex: '^(?<id>CCDS\d+)(?:\.\d+)?$'
+  prefix: 'http://identifiers.org/ccds/'
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
