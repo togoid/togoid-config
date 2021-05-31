@@ -1,6 +1,6 @@
 # TogoID config
 
-Description of link data for TogoID.
+Update procedure and description of link data for TogoID.
 
 ![Link diagram](https://github.com/dbcls/togoid-config/blob/main/dot/togoid.png?raw=true)
 
@@ -17,11 +17,19 @@ DB1ID3	DB2IDz
 
 ## Config
 
-Metadata for pair of databases and their relation.
+### Rakefile
+
+Dependencies of update procedure and preparation of common input files for each source DB.
+
+* Prepare: For each config/source-target configuration, prepare common input files for the source database to extract information (if any).
+* Prepare: Compare the timestamp of previous donwload and/or file sizes of local and remote files.
+* Update: If the timestamp is newer than previously generated link data (TSV), execute the update procedure.
+* Update: For the databases which don't have timestamp (e.g., the data source is a SPARQL endpoint), execute the update procedure only when the TSV file is older than given age (e.g., >7 days).
+* Convert: If the timestamp of RDF data (TTL) is older than previously generated link data (TSV), execute the convert procedure.
 
 ### dataset.yaml
 
-A list of source and target databases (the 1st and 2nd columns of the link data file, respectively).
+A list of databases (source and target databases kept in the 1st and 2nd columns of the link data file, respectively).
 
 ```yaml
 # Dataset name (in snake_case) for TogoID which can be a subset of original database divided by the category.
@@ -67,11 +75,12 @@ go:
   # Identifier format used for export in the TogoID API (defined by the Handlebars notation with a named capture).
   external_format: 'GO:{{id}}'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
+  examples: 0046782, 0033644, 0016021, 0033644, 0016021
 ```
 
 ### config.yaml
 
-Update procedure of link data and definitions of forward/reverse predicates for RDF generation.
+Update procedure of link data and metadata for pair of databases with their relation including definitions of forward/reverse predicates for RDF generation.
 
 ```yaml
 # Relation of the pair of database identifiers (e.g., hgnc-ec)
