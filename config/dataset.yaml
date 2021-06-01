@@ -219,7 +219,7 @@ kegg_reaction:
 lrg:
   catalog: nbdc02566
   category: Gene
-  label: Locus Reference Genomic record
+  label: LRG
   regex: '^(?<id>LRG_\d+)$'
   prefix: 'http://identifiers.org/lrg/'
 mbgd_gene:
@@ -316,7 +316,7 @@ omim_phenotype:
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
 orphanet:
-  label: Orphanet Rare Disease ontology
+  label: Orphanet
   catalog: nbdc01422
   category: Disease
   regex: '^(?:(?:ORPHA|ORDO|Orphanet):?)?(?<id>[A-Z0-9]+)$'
