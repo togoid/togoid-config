@@ -72,7 +72,7 @@ end
 # Compare timestamp of the config file and the TSV output
 def check_config_timestamp(pair)
   input = "config/#{pair}/config.yaml"
-  output = "{OUTPUT_TSV_DIR}#{pair}.tsv"
+  output = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
   file_older_than_stamp?(output, input)
 end
 
