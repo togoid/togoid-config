@@ -27,7 +27,7 @@ chebi:
   label: ChEBI compound
   catalog: nbdc00027
   category: Compound
-  regex: '^(?:CHEBI:)?(?<id>\d+)$'
+  regex: '^(?:CHEBI[:_])?(?<id>\d+)$'
   prefix: 'http://identifiers.org/chebi/CHEBI:'
 chembl_compound:
   label: ChEMBL compound
@@ -116,7 +116,7 @@ go:
   label: Gene ontology
   catalog: nbdc00074
   category: Function
-  regex: '^(?:GO[:_])?(?<id>\d{7})$'
+  regex: '^GO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
 hgnc:
   label: HGNC
@@ -146,7 +146,7 @@ hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
   category: Phenotype
-  regex: '^(?:HP:)?(?<id>\d{7})$'
+  regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
 human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
@@ -258,7 +258,7 @@ mgi:
   label: MGI
   catalog: nbdc00135
   category: Gene
-  regex: '^(?:(?:MGI|mgi):)?(?<id>\d{5,})$'
+  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
   prefix: 'http://identifiers.org/mgi/MGI:'
 mirbase:
   label: miRBase
@@ -270,14 +270,14 @@ mondo:
   label: MONDO
   catalog: nbdc02563
   category: Disease
-  regex: '^(?:MONDO:)?(?<id>\d{7})$'
+  regex: '^MONDO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
 nando:
   label: NANDO
   catalog: nbdc02557
   category: Disease
   # FIXME: valid? prefix: 'http://purl.obolibrary.org/obo/NANDO_'
-  regex: '^(?:NANDO:)?(?<id>\d{7})$'
+  regex: '^NANDO[:_](?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/nando#'
 ncbigene:
   label: NCBI gene
@@ -319,7 +319,7 @@ orphanet:
   label: Orphanet
   catalog: nbdc01422
   category: Disease
-  regex: '^(?:(?:ORPHA|ORDO|Orphanet):?)?(?<id>[A-Z0-9]+)$'
+  regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
 pdb:
   label: PDB
