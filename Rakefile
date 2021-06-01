@@ -69,6 +69,13 @@ def file_older_than_stamp?(file, stamp)
   end
 end
 
+# Compare timestamp of the config file and the TSV output
+def check_config_timestamp(pair)
+  input = "config/#{pair}/config.yaml"
+  output = "{OUTPUT_TSV_DIR}#{pair}.tsv"
+  file_older_than_stamp?(output, input)
+end
+
 # Find a timestamp file and compare with the TSV output
 def check_tsv_timestamp(pair)
   source = pair.split('-').first
@@ -91,7 +98,7 @@ rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   $stderr.puts "## Update config/#{pair}/config.yaml => #{OUTPUT_TSV_DIR}#{pair}.tsv"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if check_tsv_timestamp(pair)
+  if check_config_timestamp(pair) or check_tsv_timestamp(pair)
     sh "togoid-config config/#{pair} update"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
