@@ -71,7 +71,7 @@ doid:
   label: Disease ontology
   catalog: nbdc00261
   category: Disease
-  regex: '^(?:DOID:)?(?<id>\d+)$'
+  regex: '^DO(?:ID)?[:_](?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
 drugbank:
   label: DrugBank
