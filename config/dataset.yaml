@@ -4,12 +4,14 @@ affy_probeset:
   category: Probe
   regex: '^(?<id>\d{3,}(?:(?:_[a-z])?_at)?)$'
   prefix: 'http://identifiers.org/affy.probeset/'
+  examples: '1553582_a_at,211531_x_at,202573_at,201640_x_at,205117_at,201017_at,205099_s_at,200614_at,201895_at,202666_s_at'
 bioproject:
   label: BioProject
   catalog: nbdc00476
   category: Project
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
   prefix: 'http://identifiers.org/bioproject/'
+  examples: 'PRJDB575,PRJDB1880,PRJDB478,PRJDA45949,PRJDB2031,PRJDB2738,PRJDB2416,PRJDB2807,PRJDA62255,PRJDB639'
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
@@ -17,18 +19,21 @@ biosample:
   category: Sample
   regex: '^(?<id>SAM[NED]\w?\d+)$'
   prefix: 'http://identifiers.org/biosample/'
+  examples: 'SAMD00003683,SAMD00006315,SAMD00003741,SAMD00011226,SAMD00013645,SAMD00015693,SAMD00009338,SAMD00012319,SAMD00015765,SAMD00015894'
 ccds:
   label: Consensus CDS
   catalog: nbdc00023
   category: Gene
   regex: '^(?<id>CCDS\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ccds/'
+  examples: 'CCDS1471,CCDS10913,CCDS14790,CCDS35175,CCDS2395,CCDS58412,CCDS55555,CCDS34401,CCDS41889,CCDS9052'
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
   category: Compound
   regex: '^(?:CHEBI[:_])?(?<id>\d+)$'
   prefix: 'http://identifiers.org/chebi/CHEBI:'
+  examples: '84824,40167,32807,87666,57524,64860,94440,18005,4806,50158'
 chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02559
@@ -36,12 +41,14 @@ chembl_compound:
   # FIXME: use 'http://rdf.ebi.ac.uk/resource/chembl/molecule/#' ?
   regex: '^(?<id>CHEMBL\d+)$'
   prefix: 'http://identifiers.org/chembl.compound/'
+  examples: 'CHEMBL121649,CHEMBL190334,CHEMBL3103282,CHEMBL69329,CHEMBL2105131,CHEMBL2177390,CHEMBL3091820,CHEMBL1200335,CHEMBL3094412,CHEMBL67367'
 chembl_target:
   label: ChEMBL target
   catalog: nbdc02555
   category: Protein
   regex: '^(?<id>CHEMBL\d+)$'
   prefix: 'http://identifiers.org/chembl.target/'
+  examples: 'CHEMBL2788,CHEMBL3091264,CHEMBL3831324,CHEMBL5524,CHEMBL5597,CHEMBL3983,CHEMBL4187,CHEMBL3391681,CHEMBL5135,CHEMBL1255130'
 civic_gene:
   label: CIVIC gene
   catalog: nbdc02558
@@ -55,12 +62,14 @@ clinvar:
   category: Variant
   regex: '^(VCV0*)?(?<id>(\d{1,9}))$'
   prefix: 'http://identifiers.org/clinvar/'
+  examples: '658761,619209,745342,11955,731668,724289,725734,743127,789913,5302'
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
   category: Variant
   regex: '^(?<id>rs\d+)$'
   prefix: 'http://identifiers.org/dbsnp/'
+  examples: 'rs746303788,rs1407020249,rs374003162,rs4647297,rs549539526,rs1387864740,rs1177577242,rs769848663,rs16961655,rs79135400'
 dgidb:
   label: DGIdb
   catalog: nbdc02562
@@ -73,18 +82,21 @@ doid:
   category: Disease
   regex: '^DO(?:ID)?[:_](?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
+  examples: '9036,3159,10964,12698,0060459,11840,11339,914,9945,1407'
 drugbank:
   label: DrugBank
   catalog: nbdc01071
   category: Drug
   regex: '^(?<id>DB\d{5})$'
   prefix: 'http://identifiers.org/drugbank/'
+  examples: 'DB15589,DB13471,DB05830,DB07423,DB07074,DB08912,DB02908,DB05088,DB05229,DB08910'
 ec:
   label: Enzyme nomenclature
   catalog: nbdc00019
   category: Function
   regex: '^(?:EC )?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
   prefix: 'http://identifiers.org/ec-code/'
+  examples: '1.6.3.1,2.4.1.353,1.1.1.288,1.5.1.2,3.1.1.71,1.3.1.31,3.5.1.29,1.16.1.1,3.1.3.48,2.3.1.138'
 ena:
   catalog: nbdc00432
   category: Gene
@@ -98,6 +110,7 @@ ensembl_gene:
   regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
 #  regex: '^(?<id>ENSG\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
+  examples: 'ENSG00000186283,ENSAMEG00000018238,ENSG00000167916,ENSG00000213417,ENSG00000133328,ENSG00000274404,ENSG00000184363,FBgn0021742,FBgn0030057,FBgn0265139'
 ensembl_protein:
   label: Ensembl protein
   catalog: nbdc00054
@@ -105,6 +118,7 @@ ensembl_protein:
   regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
 #  regex: '^(?<id>ENSP\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
+  examples: 'ENSP00000365411,ENSP00000420674,ENSAZOP00000020796,FBpp0070277,FBpp0070535,ENSAZOP00000019433,ENSP00000372042,ENSAZOP00000017910,ENSP00000370977,ENSP00000481894'
 ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
@@ -112,18 +126,21 @@ ensembl_transcript:
   regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
 #  regex: '^(?<id>ENST\d{11})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/ensembl/'
+  examples: 'ENST00000638000,ENST00000307864,ENSTRUT00000006732,ENSAMET00000021072,ENSAZOT00000021040,ENST00000622541,ENST00000462612,ENSBTAT00000072441,ENSAZOT00000005048,ENST00000475822'
 go:
   label: Gene ontology
   catalog: nbdc00074
   category: Function
   regex: '^GO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
+  examples: '0005643,0097110,0097225,0052855,2000012,0042921,0019774,0085018,0009508,0046470'
 hgnc:
   label: HGNC
   catalog: nbdc01774
   category: Gene
   regex: '^(?:(?:HGNC|hgnc):)?(?<id>\d{1,5})$'
   prefix: 'http://identifiers.org/hgnc/'
+  examples: '26199,38937,14027,21498,18185,1314,25960,2206,22224,19741'
 hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
@@ -136,18 +153,21 @@ hmdb:
   category: Metabolite
   regex: '^(?:hmdb:)?(?<id>HMDB\d+)$'
   prefix: 'http://identifiers.org/hmdb/HMDB'
+  examples: 'HMDB0029433,HMDB0015609,HMDB0000042,HMDB0002360,HMDB0003345,HMDB0003550,HMDB0036769,HMDB0000935,HMDB0002755,HMDB0004369'
 homologene:
   label: HomoloGene
   catalog: nbdc00101
   category: Ortholog
   regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/homologene/'
+  examples: '117,17,6,142,55,132,61,109,137,134'
 hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
   category: Phenotype
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
+  examples: '0001947,0031592,0012085,0000956,0025238,0002861,0001680,0004417,0001701,0025084'
 human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
   catalog: nbdc00905
@@ -161,18 +181,21 @@ insdc:
   category: Gene
   regex: '^(?:insdc:)?(?<id>[A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$'
   prefix: 'http://identifiers.org/insdc/'
+  examples: 'U10991,AF116914,AK056978,DQ440258,U91725,AY301270,U32907,AY261360,AK001332,U13261'
 intact:
   label: IntAct
   catalog: nbdc00507
   category: Interaction
   regex: '^(?<id>EBI\-[0-9]+)$'
   prefix: 'http://identifiers.org/intact/'
+  examples: 'EBI-7947422,EBI-15714708,EBI-16225271,EBI-4406290,EBI-9026465,EBI-6403471,EBI-1113651,EBI-562824,EBI-9014072,EBI-1784742'
 interpro:
   label: InterPro
   catalog: nbdc00108
   category: Domain
   regex: '^(?<id>IPR\d{6})$'
   prefix: 'http://identifiers.org/interpro/'
+  examples: 'IPR038152,IPR040448,IPR036748,IPR034266,IPR005479,IPR036365,IPR000174,IPR001334,IPR000731,IPR001767'
 kegg_compound:
   label: KEGG Compound
   catalog: nbdc00814
@@ -222,6 +245,7 @@ lrg:
   label: LRG
   regex: '^(?<id>LRG_\d+)$'
   prefix: 'http://identifiers.org/lrg/'
+  examples: 'LRG_41,LRG_356,LRG_147,LRG_660,LRG_498,LRG_364,LRG_203,LRG_162,LRG_1271,LRG_884'
 mbgd_gene:
   label: MBGD gene
   catalog: nbdc00130
@@ -229,6 +253,7 @@ mbgd_gene:
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+:[A-Z0-9_\.-]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
+  examples: 'ash:AL1_RS04670,ash:AL1_RS08245,ash:AL1_RS02870,ash:AL1_RS06610,ash:AL1_RS06290,ash:AL1_RS07260,ash:AL1_RS08410,ash:AL1_RS01705,ash:AL1_RS02510,ash:AL1_RS07245'
 mbgd_organism:
   label: MBGD organism
   catalog: nbdc00130
@@ -236,42 +261,49 @@ mbgd_organism:
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
+  examples: 'lac,pfl,cou,bvn,btd,ctjt,sha,lmoj,dpi,arp'
 meddra:
   label: MedDRA
   catalog: nbdc02564
   category: Disease
   regex: '^(?:(?:MedDRA|meddra):)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/meddra/'
+  examples: '10008033,10027710,10062506,10040493,10013611,10065857,10063143,10022599,10042342,10047883'
 medgen:
   label: MedGen
   catalog: nbdc02560
   category: Disease
   regex: '^(?<id>CN?\d{4,7})$'
   prefix: 'http://identifiers.org/medgen/'
+  examples: 'C0264897,C0028860,C0018818,C1848392,C0006389,C0020517,C0000364,C0003123,C0009460,C0001648'
 mesh:
   label: MeSH
   catalog: nbdc00132
   category: Terminology
   regex: '^(?<id>[CD]\d{6,9})$'
   prefix: 'http://identifiers.org/mesh/'
+  examples: 'D002065,C562829,C566582,D010623,D003327,D001715,D000453,D010260,C537322,C563418'
 mgi:
   label: MGI
   catalog: nbdc00135
   category: Gene
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
   prefix: 'http://identifiers.org/mgi/MGI:'
+  examples: '2387184,1920977,2442415,1098644,1196250,1914934,1914238,1919300,1914807,2145261'
 mirbase:
   label: miRBase
   catalog: nbdc00136
   category: microRNA
   regex: '^(?<id>MI\d{7})$'
   prefix: 'http://identifiers.org/mirbase/'
+  examples: 'MI0003587,MI0000252,MI0000811,MI0014201,MI0003578,MI0000293,MI0006384,MI0006361,MI0000480,MI0006419'
 mondo:
   label: MONDO
   catalog: nbdc02563
   category: Disease
   regex: '^MONDO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
+  examples: '0000115,0002345,0011571,0020035,0020920,0004627,0005480,0010852,0002053,0015758'
 nando:
   label: NANDO
   catalog: nbdc02557
@@ -279,12 +311,14 @@ nando:
   # FIXME: valid? prefix: 'http://purl.obolibrary.org/obo/NANDO_'
   regex: '^NANDO[:_](?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/nando#'
+  examples: '1200461,1200466,1200851,1200061,1200315,1200365,1200922,1200705,2200074,1200030'
 ncbigene:
   label: NCBI gene
   catalog: nbdc00073
   category: Gene
   regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/ncbigene/'
+  examples: '63962027,1046,63961921,102606930,100472895,407025,84148,88,31157,100463227'
 ncbiprotein:
   label: NCBI protein
   catalog: nbdc00584
@@ -297,72 +331,84 @@ oma_group:
   category: Ortholog
   regex: '^(?<id>[A-Z]+)$'
   prefix: 'http://identifiers.org/oma.grp/'
+  examples: 'RVAAYKY,LFVHAIL,EMSPITC,NQSHFFA,AYTHYSY,PRPKYDP,WSRIHIV,DFGGWKI,FHVAHGE,PYVYVTH'
 oma_protein:
   label: OMA protein
   catalog: nbdc02221
   category: Protein
   regex: '^(?<id>[A-Z]{3}[A-Z0-9]{2}[0-9]{5,6})$'
   prefix: 'http://identifiers.org/oma.protein/'
+  examples: 'ACIB400217,ACIB400465,HUMAN00333,HUMAN01170,HUMAN00470,HUMAN03367,ACIB400486,HUMAN01061,HUMAN02190,HUMAN02112'
 omim_gene:
   label: OMIM gene
   catalog: nbdc00154
   category: Gene
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
+  examples: '604810,115460,608706,300181,102575,601280,602832,601604,177075,608977'
 omim_phenotype:
   label: OMIM phenotype
   catalog: nbdc00154
   category: Disease
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
+  examples: '207780,236100,237500,300716,125310,165199,617175,137600,600089,601317'
 orphanet:
   label: Orphanet
   catalog: nbdc01422
   category: Disease
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+  examples: '101078,596,1934,1047,60025,166090,275745,1171,93277,247598'
 pdb:
   label: PDB
   catalog: nbdc00156
   category: Structure
   regex: '^(?<id>[0-9][A-Za-z0-9]{3})$'
   prefix: 'http://rdf.wwpdb.org/pdb/'
+  examples: '3PFQ,2OUY,6EBX,5GHP,6ETH,1Y28,6FB2,5JO3,2JQZ,5L5P'
 pfam:
   label: Pfam
   catalog: nbdc00163
   category: Domain
   regex: '^(?<id>PF\d{5})$'
   prefix: 'http://identifiers.org/pfam/'
+  examples: 'PF03719,PF03726,PF02809,PF00105,PF00250,PF00412,PF01412,PF00459,PF02532,PF01226'
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
   category: Compound
   regex: '^(?:CID)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubchem.compound/'
+  examples: '9548669,160419,9869929,76333303,9868491,27854,76329169,3448,296,10371227'
 pubchem_substance:
   label: PubChem substance
   catalog: nbdc00642
   category: Compound
   regex: '^(?:SID)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubchem.substance/'
+  examples: '15229855,15277848,15782795,16076657,16035895,12012900,15378994,14850434,14847540,15271473'
 pubmed:
   label: PubMed
   catalog: nbdc00179
   category: Literature
   regex: '^(?:pmid|PMID:)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubmed/'
+  examples: '19281226,19879151,20858243,10773016,16527252,28499733,10397770,15149666,23861362,10577920'
 reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
   category: Pathway
   regex: '^(?:(?<id1>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id2>REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
+  examples: 'R-HSA-165159,R-DRE-1630316,R-SCE-9634635,R-DRE-140834,R-HSA-2142753,R-BTA-383280,R-MMU-5218900,R-RNO-5654219,R-MMU-8875791,R-MMU-9648025'
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
   category: Interaction
   regex: '^(?:(?<id1>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id2>REACT_\d+(?:\.\d+)?))$'
   prefix: 'http://identifiers.org/reactome/'
+  examples: 'R-DRE-1482961,R-DRE-6814409,R-HSA-2395869,R-HSA-1222722,R-HSA-893583,R-MMU-158484,R-HSA-8875071,R-HSA-372519,R-HSA-6797627,R-DRE-975814'
 refseq_genomic:
   label: RefSeq genomic
   catalog: nbdc00187
@@ -370,6 +416,7 @@ refseq_genomic:
   # NC_; AC_; NG_; NT_; NW_; NZ_
   regex: '^(?<id>(?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
+  examples: 'NG_031030,NG_031166,NG_031424,NG_016634,NG_030933,NG_073714,NG_031092,NG_023144,NG_065813,NG_064363'
 refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
@@ -377,6 +424,7 @@ refseq_protein:
   # NP_; XP_; AP_; YP_; WP_; ZP_
   regex: '^(?<id>[ANXYWZ]P_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
+  examples: 'WP_010809318,WP_012670041,WP_047102230,WP_012670510,WP_047101562,XP_005703001,NP_199982,XP_005703194,WP_012670302,AP_004898'
 refseq_rna:
   label: RefSeq RNA
   catalog: nbdc00187
@@ -384,60 +432,70 @@ refseq_rna:
   # NM_; NR_; XM_; XR_
   regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
+  examples: 'XM_005702730,XM_006466408,XM_005709902,XM_005702513,NR_103750,XM_005703053,NM_014672,XM_005702591,XM_025096767,XM_002919304'
 rgd:
   label: RGD
   catalog: nbdc00188
   category: Gene
   regex: '^(?:(?:RGD|rgd):)?(?<id>\d{4,})$'
   prefix: 'http://identifiers.org/rgd/'
+  examples: '1308312,1311120,1309724,1565514,7683241,1307957,71036,1307876,1308965,1305482'
 rhea:
   label: Rhea
   catalog: nbdc02083
   category: Interaction
   regex: '^(?<id>\d{5})$'
   prefix: 'http://identifiers.org/rhea/'
+  examples: '10253,10818,13517,11136,13729,10240,11728,16870,10732,11278'
 sra_accession:
   label: SRA accession
   catalog: nbdc00687
   category: NGS
   regex: '^(?<id>[SED]RA\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
+  examples: 'DRA000741,DRA000768,DRA001014,DRA000833,DRA001001,DRA001047,DRA000684,DRA000824,DRA000194,DRA000401'
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
   category: NGS
   regex: '^(?<id>[SED]RZ\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
+  examples: 'DRZ000249,DRZ000087,DRZ003045,DRZ000829,DRZ000005,DRZ000291,DRZ000465,DRZ000591,DRZ000148,DRZ000854'
 sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
   category: NGS
   regex: '^(?<id>[SED]RX\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
+  examples: 'DRX000585,DRX000114,DRX000613,DRX000681,DRX000838,DRX000085,DRX000123,DRX000787,DRX000887,DRX000345'
 sra_project:
   label: SRA project
   catalog: nbdc00687
   category: NGS
   regex: '^(?<id>[SED]RP\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
+  examples: 'DRP000994,DRP000877,DRP000649,DRP000147,DRP000137,DRP000739,DRP000735,DRP000407,DRP000567,DRP000467'
 sra_run:
   label: SRA run
   catalog: nbdc00687
   category: NGS
   regex: '^(?<id>[SED]RR\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
+  examples: 'DRR000834,DRR000683,DRR000264,DRR000453,DRR001043,DRR000854,DRR000702,DRR000980,DRR000165,DRR000978'
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
   category: NGS
   regex: '^(?<id>[SED]RS\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
+  examples: 'DRS001431,DRS001371,DRS000894,DRS000386,DRS000488,DRS000215,DRS000427,DRS001029,DRS000677,DRS000930'
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
   category: Taxonomy
   regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/taxonomy/'
+  examples: '1171376,484906,1214242,1124991,1037911,1266844,243277,696747,263820,713604'
 togovar:
   label: TogoVar variant
   catalog: nbdc02359
@@ -445,21 +503,25 @@ togovar:
   # FIXME: valid in RDF?
   regex: '^(?<id>tgv\d+)$'
   prefix: 'http://togovar.biosciencedbc.jp/variation/'
+  examples: 'tgv100005930,tgv100000890,tgv16331,tgv10000341,tgv21330879,tgv15847,tgv1354996,tgv100002132,tgv16568524,tgv62035164'
 uniprot:
   label: UniProt
   catalog: nbdc00221
   category: Protein
   regex: '^(?:(?<id1>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|(?<id2>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$'
   prefix: 'http://purl.uniprot.org/uniprot/'
+  examples: 'A0A174V9D2,A0A1V4U2Y9,Q7NXD4,P0AAM3,O43423,D4IJI4,Q66SS1,B5IDU9,D3TBR4,D4ILS5'
 uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221
   category: Protein
   regex: '^(?<id>[A-Z0-9]+_[A-Z0-9]{0,5})$'
   prefix: 'http://purl.uniprot.org/uniprot/'
+  examples: '2ABA_ORYSJ,33K_ADES1,1003L_ASFK5,1A1D_VARPS,1B02_GORGO,1003L_ASFP4,1433B_MACFA,1107L_ASFWA,3BHS1_MOUSE,14331_SCHMA'
 wikipathways:
   label: WikiPathways
   catalog: nbdc02116
   category: Pathway
   regex: '^(?<id>WP\d{1,5})(?:\_r\d+)?$'
   prefix: 'http://identifiers.org/wikipathways/'
+  examples: 'WP3882,WP2249,WP1925,WP4989,WP2708,WP3578,WP3811,WP376,WP4523,WP269'
