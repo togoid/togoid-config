@@ -1,0 +1,14 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX chembl: <http://rdf.ebi.ac.uk/resource/chembl/molecule/>
+PREFIX mesh: <http://identifiers.org/mesh/>
+SELECT DISTINCT ?chembl_compound ?mesh
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?chembl_uri cco:hasDrugIndication [
+    a cco:DrugIndication ;
+    cco:hasMesh ?mesh_uri
+  ] .
+  BIND (REPLACE (STR (?chembl_uri), chembl:, "") AS ?chembl_compound)
+  BIND (REPLACE (STR (?mesh_uri), mesh:, "") AS ?mesh)
+}
