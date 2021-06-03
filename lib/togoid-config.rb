@@ -33,7 +33,7 @@ module TogoID
       @rev = Edge.new(hash["reverse"]) if hash["reverse"]
     end
   end
-  
+
   class Update
     attr_reader :frequency, :method
     def initialize(hash)
@@ -130,7 +130,7 @@ module TogoID
       rev_predicate = set_predicate(@link.rev)
       # Should check whether source_id or target_id contains chars that need to be escaped in Turtle
       File.open(tsv).each do |line|
-        source_id, target_id, = line.strip.split(/\s+/)
+        source_id, target_id, = line.strip.gsub('(','\(').gsub(')','\)').split(/\s+/)
         ttl.puts triple("#{@source_ns}:#{source_id}", "#{fwd_predicate}", "#{@target_ns}:#{target_id}") if fwd_predicate
         ttl.puts triple("#{@target_ns}:#{target_id}", "#{rev_predicate}", "#{@source_ns}:#{source_id}") if rev_predicate
       end
