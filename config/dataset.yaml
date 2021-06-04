@@ -399,14 +399,14 @@ reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
   category: Pathway
-  regex: '^(?:(?<id1>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id2>REACT_\d+(?:\.\d+)?))$'
+  regex: '^(?<id>R-[A-Z]{3}-\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/reactome/'
   examples: 'R-HSA-165159,R-DRE-1630316,R-SCE-9634635,R-DRE-140834,R-HSA-2142753,R-BTA-383280,R-MMU-5218900,R-RNO-5654219,R-MMU-8875791,R-MMU-9648025'
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
   category: Interaction
-  regex: '^(?:(?<id1>R-[A-Z]{3}-\d+(?:-\d+)?(?:\.\d+)?)|(?<id2>REACT_\d+(?:\.\d+)?))$'
+  regex: '^(?<id>R-[A-Z]{3}-\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/reactome/'
   examples: 'R-DRE-1482961,R-DRE-6814409,R-HSA-2395869,R-HSA-1222722,R-HSA-893583,R-MMU-158484,R-HSA-8875071,R-HSA-372519,R-HSA-6797627,R-DRE-975814'
 refseq_genomic:
