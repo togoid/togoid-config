@@ -19,7 +19,7 @@ DB1ID3	DB2IDz
 
 ### Rakefile
 
-Dependencies of update procedure and preparation of common input files for each source DB.
+Resolve dependencies of update procedure and preparation of common input files for each source DB.
 
 * Prepare: For each config/source-target configuration, prepare common input files for the source database to extract information (if any).
 * Prepare: Compare the timestamp of previous donwload and/or file sizes of local and remote files.
@@ -75,7 +75,10 @@ go:
   # Identifier format used for export in the TogoID API (defined by the Handlebars notation with a named capture).
   external_format: 'GO:{{id}}'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
-  examples: 0046782, 0033644, 0016021, 0033644, 0016021
+  # Example IDs which will be accepted by the TogoID service (thus different types of IDs can be included)
+  examples:
+    - [ "0046782", "0033644", "0016021", "0033644", "0016021" ]
+    - [ "GO:0046782", "GO:0033644", "GO:0016021", "GO:0033644", "GO:0016021" ]
 ```
 
 ### config.yaml
