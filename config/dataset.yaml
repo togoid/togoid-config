@@ -13,7 +13,7 @@ bioproject:
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
   prefix: 'http://identifiers.org/bioproject/'
   examples:
-    - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJDB2031","PRJDB2738","PRJDB2416","PRJDB2807","PRJDA62255","PRJDB639"]
+    - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
@@ -22,7 +22,7 @@ biosample:
   regex: '^(?<id>SAM[NED]\w?\d+)$'
   prefix: 'http://identifiers.org/biosample/'
   examples:
-    - ["SAMD00003683","SAMD00006315","SAMD00003741","SAMD00011226","SAMD00013645","SAMD00015693","SAMD00009338","SAMD00012319","SAMD00015765","SAMD00015894"]
+    - ["SAMD00003683","SAMD00006315","SAMD00003741","SAMD00011226","SAMN13091859","SAMN05877962","SAMN05877838","SAMEA104232303","SAMEA4760552","SAMEA1572228"]
 ccds:
   label: Consensus CDS
   catalog: nbdc00023
@@ -31,6 +31,7 @@ ccds:
   prefix: 'http://identifiers.org/ccds/'
   examples:
     - ["CCDS1471","CCDS10913","CCDS14790","CCDS35175","CCDS2395","CCDS58412","CCDS55555","CCDS34401","CCDS41889","CCDS9052"]
+    - ["CCDS1471.1","CCDS10913.1","CCDS14790.1","CCDS35175.2","CCDS2395.1","CCDS58412.1","CCDS55555.1","CCDS34401.2","CCDS41889.1","CCDS9052.1"]
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
@@ -39,9 +40,11 @@ chebi:
   prefix: 'http://identifiers.org/chebi/CHEBI:'
   examples:
     - ["84824","40167","32807","87666","57524","64860","94440","18005","4806","50158"]
+    - ["CHEBI:84824","CHEBI:40167","CHEBI:32807","CHEBI:87666","CHEBI:57524","CHEBI:64860","CHEBI:94440","CHEBI:18005","CHEBI:4806","CHEBI:50158"]
+    - ["CHEBI_84824","CHEBI_40167","CHEBI_32807","CHEBI_87666","CHEBI_57524","CHEBI_64860","CHEBI_94440","CHEBI_18005","CHEBI_4806","CHEBI_50158"]
 chembl_compound:
   label: ChEMBL compound
-  catalog: nbdc02559
+  catalog: nbdc02555
   category: Compound
   # FIXME: use 'http://rdf.ebi.ac.uk/resource/chembl/molecule/#' ?
   regex: '^(?<id>CHEMBL\d+)$'
@@ -71,6 +74,7 @@ clinvar:
   prefix: 'http://identifiers.org/clinvar/'
   examples:
     - ["658761","619209","745342","11955","731668","724289","725734","743127","789913","5302"]
+    - ["VCV000658761","VCV000619209","VCV000745342","VCV000011955","VCV000731668","VCV000724289","VCV000725734","VCV000743127","VCV000789913","VCV000005302"]
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
@@ -92,7 +96,9 @@ doid:
   regex: '^DO(?:ID)?[:_](?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
   examples:
-    - ["9036","3159","10964","12698","0060459","11840","11339","914","9945","1407"]
+    - ["DO:9036","DO:3159","DO:10964","DO:12698","DO:0060459","DO:11840","DO:11339","DO:914","DO:9945","DO:1407"]
+    - ["DOID:9036","DOID:3159","DOID:10964","DOID:12698","DOID:0060459","DOID:11840","DOID:11339","DOID:914","DOID:9945","DOID:1407"]
+    - ["DOID_9036","DOID_3159","DOID_10964","DOID_12698","DOID_0060459","DOID_11840","DOID_11339","DOID_914","DOID_9945","DOID_1407"]
 drugbank:
   label: DrugBank
   catalog: nbdc01071
@@ -109,6 +115,7 @@ ec:
   prefix: 'http://identifiers.org/ec-code/'
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
+    - ["EC 1.6.3.1","EC 2.4.1.353","EC 1.1.1.288","EC 1.5.1.2","EC 3.1.1.71","EC 1.3.1.31","EC 3.5.1.29","EC 1.16.1.1","EC 3.1.3.48","EC 2.3.1.138"]
 ena:
   catalog: nbdc00432
   category: Gene
@@ -149,7 +156,8 @@ go:
   regex: '^GO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
   examples:
-    - ["0005643","0097110","0097225","0052855","2000012","0042921","0019774","0085018","0009508","0046470"]
+    - ["GO:0005643","GO:0097110","GO:0097225","GO:0052855","GO:2000012","GO:0042921","GO:0019774","GO:0085018","GO:0009508","GO:0046470"]
+    - ["GO_0005643","GO_0097110","GO_0097225","GO_0052855","GO_2000012","GO_0042921","GO_0019774","GO_0085018","GO_0009508","GO_0046470"]
 hgnc:
   label: HGNC
   catalog: nbdc01774
@@ -158,6 +166,8 @@ hgnc:
   prefix: 'http://identifiers.org/hgnc/'
   examples:
     - ["26199","38937","14027","21498","18185","1314","25960","2206","22224","19741"]
+    - ["HGNC:26199","HGNC:38937","HGNC:14027","HGNC:21498","HGNC:18185","HGNC:1314","HGNC:25960","HGNC:2206","HGNC:22224","HGNC:19741"]
+    - ["hgnc:26199","hgnc:38937","hgnc:14027","hgnc:21498","hgnc:18185","hgnc:1314","hgnc:25960","hgnc:2206","hgnc:22224","hgnc:19741"]
 hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
@@ -172,6 +182,7 @@ hmdb:
   prefix: 'http://identifiers.org/hmdb/HMDB'
   examples:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
+    - ["hmdb:HMDB0029433","hmdb:HMDB0015609","hmdb:HMDB0000042","hmdb:HMDB0002360","hmdb:HMDB0003345","hmdb:HMDB0003550","hmdb:HMDB0036769","hmdb:HMDB0000935","hmdb:HMDB0002755","hmdb:HMDB0004369"]
 homologene:
   label: HomoloGene
   catalog: nbdc00101
@@ -187,7 +198,8 @@ hp:
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
   examples:
-    - ["0001947","0031592","0012085","0000956","0025238","0002861","0001680","0004417","0001701","0025084"]
+    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
+    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
   catalog: nbdc00905
@@ -296,6 +308,8 @@ meddra:
   prefix: 'http://identifiers.org/meddra/'
   examples:
     - ["10008033","10027710","10062506","10040493","10013611","10065857","10063143","10022599","10042342","10047883"]
+    - ["MedDRA:10008033","MedDRA:10027710","MedDRA:10062506","MedDRA:10040493","MedDRA:10013611","MedDRA:10065857","MedDRA:10063143","MedDRA:10022599","MedDRA:10042342","MedDRA:10047883"]
+    - ["meddra:10008033","meddra:10027710","meddra:10062506","meddra:10040493","meddra:10013611","meddra:10065857","meddra:10063143","meddra:10022599","meddra:10042342","meddra:10047883"]
 medgen:
   label: MedGen
   catalog: nbdc02560
@@ -303,7 +317,7 @@ medgen:
   regex: '^(?<id>CN?\d{4,7})$'
   prefix: 'http://identifiers.org/medgen/'
   examples:
-    - ["C0264897","C0028860","C0018818","C1848392","C0006389","C0020517","C0000364","C0003123","C0009460","C0001648"]
+    - ["C0264897","C0028860","C0018818","C1848392","C0006389","C0020517","C0000364","CN227118","CN203043","CN292950"]
 mesh:
   label: MeSH
   catalog: nbdc00132
@@ -319,7 +333,8 @@ mgi:
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
   prefix: 'http://identifiers.org/mgi/MGI:'
   examples:
-    - ["2387184","1920977","2442415","1098644","1196250","1914934","1914238","1919300","1914807","2145261"]
+    - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
+    - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
 mirbase:
   label: miRBase
   catalog: nbdc00136
@@ -335,7 +350,8 @@ mondo:
   regex: '^MONDO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
   examples:
-    - ["0000115","0002345","0011571","0020035","0020920","0004627","0005480","0010852","0002053","0015758"]
+    - ["MONDO:0000115","MONDO:0002345","MONDO:0011571","MONDO:0020035","MONDO:0020920","MONDO:0004627","MONDO:0005480","MONDO:0010852","MONDO:0002053","MONDO:0015758"]
+    - ["MONDO_0000115","MONDO_0002345","MONDO_0011571","MONDO_0020035","MONDO_0020920","MONDO_0004627","MONDO_0005480","MONDO_0010852","MONDO_0002053","MONDO_0015758"]
 nando:
   label: NANDO
   catalog: nbdc02557
@@ -344,7 +360,8 @@ nando:
   regex: '^NANDO[:_](?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/nando#'
   examples:
-    - ["1200461","1200466","1200851","1200061","1200315","1200365","1200922","1200705","2200074","1200030"]
+    - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
+    - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
 ncbigene:
   label: NCBI gene
   catalog: nbdc00073
@@ -383,6 +400,8 @@ omim_gene:
   prefix: 'http://identifiers.org/mim/'
   examples:
     - ["604810","115460","608706","300181","102575","601280","602832","601604","177075","608977"]
+    - ["OMIM:604810","OMIM:115460","OMIM:608706","OMIM:300181","OMIM:102575","OMIM:601280","OMIM:602832","OMIM:601604","OMIM:177075","OMIM:608977"]
+    - ["MIM:604810","MIM:115460","MIM:608706","MIM:300181","MIM:102575","MIM:601280","MIM:602832","MIM:601604","MIM:177075","MIM:608977"]
 omim_phenotype:
   label: OMIM phenotype
   catalog: nbdc00154
@@ -391,6 +410,8 @@ omim_phenotype:
   prefix: 'http://identifiers.org/mim/'
   examples:
     - ["207780","236100","237500","300716","125310","165199","617175","137600","600089","601317"]
+    - ["OMIM:207780","OMIM:236100","OMIM:237500","OMIM:300716","OMIM:125310","OMIM:165199","OMIM:617175","OMIM:137600","OMIM:600089","OMIM:601317"]
+    - ["MIM:207780","MIM:236100","MIM:237500","MIM:300716","MIM:125310","MIM:165199","MIM:617175","MIM:137600","MIM:600089","MIM:601317"]
 orphanet:
   label: Orphanet
   catalog: nbdc01422
@@ -398,7 +419,10 @@ orphanet:
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
   examples:
-    - ["101078","596","1934","1047","60025","166090","275745","1171","93277","247598"]
+    - ["ORPHA:101078","ORPHA:596","ORPHA:1934","ORPHA:1047","ORPHA:60025","ORPHA:166090","ORPHA:275745","ORPHA:1171","ORPHA:93277","ORPHA:247598"]
+    - ["ORDO:101078","ORDO:596","ORDO:1934","ORDO:1047","ORDO:60025","ORDO:166090","ORDO:275745","ORDO:1171","ORDO:93277","ORDO:247598"]
+    - ["Orphanet:101078","Orphanet:596","Orphanet:1934","Orphanet:1047","Orphanet:60025","Orphanet:166090","Orphanet:275745","Orphanet:1171","Orphanet:93277","Orphanet:247598"]
+    - ["Orphanet_101078","Orphanet_596","Orphanet_1934","Orphanet_1047","Orphanet_60025","Orphanet_166090","Orphanet_275745","Orphanet_1171","Orphanet_93277","Orphanet_247598"]
 pdb:
   label: PDB
   catalog: nbdc00156
@@ -407,6 +431,7 @@ pdb:
   prefix: 'http://rdf.wwpdb.org/pdb/'
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
+    - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
 pfam:
   label: Pfam
   catalog: nbdc00163
@@ -423,6 +448,7 @@ pubchem_compound:
   prefix: 'http://identifiers.org/pubchem.compound/'
   examples:
     - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
+    - ["CID9548669","CID160419","CID9869929","CID76333303","CID9868491","CID27854","CID76329169","CID3448","CID296","CID10371227"]
 pubchem_substance:
   label: PubChem substance
   catalog: nbdc00642
@@ -431,14 +457,17 @@ pubchem_substance:
   prefix: 'http://identifiers.org/pubchem.substance/'
   examples:
     - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
+    - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
 pubmed:
   label: PubMed
   catalog: nbdc00179
   category: Literature
-  regex: '^(?:pmid|PMID:)?(?<id>\d+)$'
+  regex: '^(?:pmid:|PMID:)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubmed/'
   examples:
     - ["19281226","19879151","20858243","10773016","16527252","28499733","10397770","15149666","23861362","10577920"]
+    - ["pmid:19281226","pmid:19879151","pmid:20858243","pmid:10773016","pmid:16527252","pmid:28499733","pmid:10397770","pmid:15149666","pmid:23861362","pmid:10577920"]
+    - ["PMID:19281226","PMID:19879151","PMID:20858243","PMID:10773016","PMID:16527252","PMID:28499733","PMID:10397770","PMID:15149666","PMID:23861362","PMID:10577920"]
 reactome_pathway:
   label: Reactome pathway
   catalog: nbdc00185
@@ -463,7 +492,9 @@ refseq_genomic:
   regex: '^(?<id>(?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
   examples:
-    - ["NG_031030","NG_031166","NG_031424","NG_016634","NG_030933","NG_073714","NG_031092","NG_023144","NG_065813","NG_064363"]
+    - ["NG_004671","NG_011844","NG_008481","NG_007973","NG_001091","NG_008005","NG_023230","NG_046394","NG_009617","NG_016421","NG_021472"]
+    - ["NG_004671.3","NG_011844.2","NG_008481.4","NG_007973.1","NG_001091.7","NG_008005.1","NG_023230.1","NG_046394.1","NG_009617.1","NG_016421.2","NG_021472.2"]
+
 refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
@@ -472,7 +503,8 @@ refseq_protein:
   regex: '^(?<id>[ANXYWZ]P_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
   examples:
-    - ["WP_010809318","WP_012670041","WP_047102230","WP_012670510","WP_047101562","XP_005703001","NP_199982","XP_005703194","WP_012670302","AP_004898"]
+    - ["NP_001171968","NP_001365494","NP_000015","XP_011522750","XP_011516190","XP_005265876","WP_016919164","WP_080513319","YP_001687722","YP_001966380"]
+    - ["NP_001171968.1","NP_001365494.1","NP_000015.2","XP_011522750.1","XP_011516190.1","XP_005265876.1","WP_016919164.1","WP_080513319.1","YP_001687722.1","YP_001966380.1"]
 refseq_rna:
   label: RefSeq RNA
   catalog: nbdc00187
@@ -481,7 +513,9 @@ refseq_rna:
   regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
   examples:
-    - ["XM_005702730","XM_006466408","XM_005709902","XM_005702513","NR_103750","XM_005703053","NM_014672","XM_005702591","XM_025096767","XM_002919304"]
+    - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
+    - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
+
 rgd:
   label: RGD
   catalog: nbdc00188
@@ -490,6 +524,8 @@ rgd:
   prefix: 'http://identifiers.org/rgd/'
   examples:
     - ["1308312","1311120","1309724","1565514","7683241","1307957","71036","1307876","1308965","1305482"]
+    - ["RGD:1308312","RGD:1311120","RGD:1309724","RGD:1565514","RGD:7683241","RGD:1307957","RGD:71036","RGD:1307876","RGD:1308965","RGD:1305482"]
+    - ["rgd:1308312","rgd:1311120","rgd:1309724","rgd:1565514","rgd:7683241","rgd:1307957","rgd:71036","rgd:1307876","rgd:1308965","rgd:1305482"]
 rhea:
   label: Rhea
   catalog: nbdc02083
@@ -505,7 +541,7 @@ sra_accession:
   regex: '^(?<id>[SED]RA\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
-    - ["DRA000741","DRA000768","DRA001014","DRA000833","DRA001001","DRA001047","DRA000684","DRA000824","DRA000194","DRA000401"]
+    - ["DRA000741","DRA000768","DRA001014","DRA000833","SRA000144","SRA000605","SRA008879","ERA007227","ERA011638","ERA013580"]
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
@@ -513,7 +549,7 @@ sra_analysis:
   regex: '^(?<id>[SED]RZ\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
-    - ["DRZ000249","DRZ000087","DRZ003045","DRZ000829","DRZ000005","DRZ000291","DRZ000465","DRZ000591","DRZ000148","DRZ000854"]
+    - ["DRZ000249","DRZ000087","DRZ003045","DRZ000829","SRZ168127","SRZ008405","SRZ010259","SRZ011419","SRZ006662","SRZ010567"]
 sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
@@ -521,7 +557,7 @@ sra_experiment:
   regex: '^(?<id>[SED]RX\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
-    - ["DRX000585","DRX000114","DRX000613","DRX000681","DRX000838","DRX000085","DRX000123","DRX000787","DRX000887","DRX000345"]
+    - ["DRX000585","DRX000114","DRX000613","DRX000681","SRX000921","SRX000254","SRX000626","ERX149204","ERX001260","ERX000427"]
 sra_project:
   label: SRA project
   catalog: nbdc00687
@@ -529,7 +565,7 @@ sra_project:
   regex: '^(?<id>[SED]RP\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
-    - ["DRP000994","DRP000877","DRP000649","DRP000147","DRP000137","DRP000739","DRP000735","DRP000407","DRP000567","DRP000467"]
+    - ["DRP000994","DRP000877","DRP000649","DRP000147","SRP266466","SRP297268","SRP000065","ERP001266","ERP007720","ERP104141"]
 sra_run:
   label: SRA run
   catalog: nbdc00687
@@ -537,7 +573,7 @@ sra_run:
   regex: '^(?<id>[SED]RR\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
-    - ["DRR000834","DRR000683","DRR000264","DRR000453","DRR001043","DRR000854","DRR000702","DRR000980","DRR000165","DRR000978"]
+    - ["DRR000834","DRR000683","DRR000264","DRR000453","SRR029947","SRR000290","SRR004854","ERR499402","ERR004130","ERR000715"]
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
@@ -545,7 +581,7 @@ sra_sample:
   regex: '^(?<id>[SED]RS\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
-    - ["DRS001431","DRS001371","DRS000894","DRS000386","DRS000488","DRS000215","DRS000427","DRS001029","DRS000677","DRS000930"]
+    - ["DRS001431","DRS001371","DRS000894","DRS000386","SRS2618009","SRS7846025","SRS000159","ERS452503","ERS000126","ERS010423"]
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
@@ -586,4 +622,5 @@ wikipathways:
   regex: '^(?<id>WP\d{1,5})(?:\_r\d+)?$'
   prefix: 'http://identifiers.org/wikipathways/'
   examples:
-    - ["WP3882","WP2249","WP1925","WP4989","WP2708","WP3578","WP3811","WP376","WP4523","WP269"]
+    - ["WP1531","WP4312","WP4877","WP5020","WP4400","WP4474","WP4183","WP3650","WP4545","WP4462"]
+    - ["WP1531_r107120","WP4312_r104287","WP4877_r116595","WP5020_r114721","WP4400_r108112","WP4474_r102094","WP4183_r106890","WP3650_r110699","WP4545_r116235","WP4462_r102079"]
