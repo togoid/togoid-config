@@ -126,8 +126,7 @@ ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
-  regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
-#  regex: '^(?<id>ENSG\d{11})(?:\.\d+)?$'
+  regex: '^(?:(?:(?<id1>ENS[A-Z]*G\d{11})(?:\.\d+)?)|(?<id2>FBgn\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+)|(?<id5>WBGene\d{8})|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4})|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?)|(?<id9>snR\d+-?[A-Za-z]?)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$'
   prefix: 'http://identifiers.org/ensembl/'
   examples:
     - ["ENSG00000186283","ENSAMEG00000018238","ENSG00000167916","ENSG00000213417","ENSG00000133328","ENSG00000274404","ENSG00000184363","FBgn0021742","FBgn0030057","FBgn0265139"]
@@ -135,8 +134,7 @@ ensembl_protein:
   label: Ensembl protein
   catalog: nbdc00054
   category: Protein
-  regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
-#  regex: '^(?<id>ENSP\d{11})(?:\.\d+)?$'
+  regex: '^(?:(?:(?<id1>ENS[A-Z]*P\d{11})(?:\.\d+)?)|(?<id2>FBpp\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+p\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4}))$'
   prefix: 'http://identifiers.org/ensembl/'
   examples:
     - ["ENSP00000365411","ENSP00000420674","ENSAZOP00000020796","FBpp0070277","FBpp0070535","ENSAZOP00000019433","ENSP00000372042","ENSAZOP00000017910","ENSP00000370977","ENSP00000481894"]
@@ -144,8 +142,7 @@ ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
   category: Gene
-  regex: '^(?:(?:(?<id1>Y[A-Z]{2}\d{3}[a-zA-Z](?:\-[A-Z])?)(?:\.\d+)?)|(?:(?<id2>[A-Z_a-z0-9-]+\.?t?\d*[a-z]?)(?:\.\d+)?)|(?<id3>[a-zA-Z0-9_]+\.\d+[a-z]*\.\d+))$'
-#  regex: '^(?<id>ENST\d{11})(?:\.\d+)?$'
+  regex: '^(?:(?:(?<id1>ENS[A-Z]*T\d{11})(?:\.\d+)?)|(?<id2>FBtr\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+t\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(?<id7>Q\d{4}_[a-z]{1,3}RNA)|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(?<id9>snR\d+-?[A-Za-z]?_sno?RNA)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$'
   prefix: 'http://identifiers.org/ensembl/'
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
