@@ -176,7 +176,7 @@ hmdb:
   catalog: nbdc00909
   category: Metabolite
   regex: '^(?:hmdb:)?(?<id>HMDB\d+)$'
-  prefix: 'http://identifiers.org/hmdb/HMDB'
+  prefix: 'http://identifiers.org/hmdb/'
   examples:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
     - ["hmdb:HMDB0029433","hmdb:HMDB0015609","hmdb:HMDB0000042","hmdb:HMDB0002360","hmdb:HMDB0003345","hmdb:HMDB0003550","hmdb:HMDB0036769","hmdb:HMDB0000935","hmdb:HMDB0002755","hmdb:HMDB0004369"]
