@@ -109,7 +109,7 @@ drugbank:
     - ["DB15589","DB13471","DB05830","DB07423","DB07074","DB08912","DB02908","DB05088","DB05229","DB08910"]
 ec:
   label: Enzyme nomenclature
-  catalog: nbdc00019
+  catalog: nbdc01883
   category: Function
   regex: '^(?:EC )?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
   prefix: 'http://identifiers.org/ec-code/'
