@@ -27,7 +27,7 @@ TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
 # For update procedure on AWS
 UPDATE_TXT     = File.join(OUTPUT_TSV_DIR, "update.txt")
-S3_BUCKET_NAME = "togoid-tsv-testing"
+S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
 
 desc "Default task (update & convert)"
 #task :default => [ :pre, :update, :convert, :post ]
