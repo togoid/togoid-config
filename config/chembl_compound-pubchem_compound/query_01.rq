@@ -1,0 +1,10 @@
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT DISTINCT ?chembl_id (substr(str(?pubchem),42) as ?pubchem_id)
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  [ a cco:SmallMolecule ;
+    cco:chemblId ?chembl_id ;
+    cco:moleculeXref ?pubchem ] .
+  ?pubchem a cco:PubchemRef .
+}
