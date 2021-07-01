@@ -1,5 +1,16 @@
 #!/usr/bin/env perl
 
+=head
+
+TogoID APIの動作確認をするためのスクリプト
+
+tsvファイルを引数として取得する。
+第一列のIDをランダムに100件抽出し、API引数のidsに与える。
+routeとして、tsvファイルの第一列と第二列のDBを指定する。
+tsvファイルの第二列のIDが、APIの返却するIDとして得られるか確認する。
+
+=cut
+
 use warnings;
 use strict;
 use Fatal qw/open/;
