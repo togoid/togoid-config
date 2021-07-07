@@ -27,11 +27,15 @@
 
 ## Web user interface
 
-* Copy target IDs
+### ID conversion from top page
 
-* Download target IDs
+![Fig-1](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-1_20210707.png)
 
-* Download target URLs
+### Results of ID conversion
 
-* Download table as CSV
+![Fig-2](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-2_20210707.png)
+
+### Metadata about the IDs of the listed DBs
+
+![Fig-3](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-3_20210707.png)
 
