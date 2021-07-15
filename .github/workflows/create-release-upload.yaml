@@ -28,3 +28,4 @@ jobs:
           FROM_PATH: "./config"
           DEST_PATH: "s3://togo-id-production/config/"
           OPTIONS: "--delete"
+          CF_RESET: false
