@@ -27,4 +27,4 @@ jobs:
           AWS_REGION: "ap-northeast-1"
           FROM_PATH: "./config"
           DEST_PATH: "s3://togo-id-production/config/"
-          OPTIONS: "--delete --acl public-read --exclude 'README.md'"
+          OPTIONS: "--delete"
