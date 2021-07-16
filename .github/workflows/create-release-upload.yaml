@@ -1,0 +1,31 @@
+name: "create production release and upload to s3"
+on:
+  push:
+    branches:
+      - production
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - id: date
+        run: echo "::set-output name=date::$(TZ=Asia/Tokyo date +'%Y%m%d-%H%M%S')"
+
+      - uses: avakar/tag-and-release@v1
+        with:
+          tag_name: release-${{ steps.date.outputs.date }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: opspresso/action-s3-sync@master
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "ap-northeast-1"
+          FROM_PATH: "./config"
+          DEST_PATH: "s3://togo-id-production/config/"
+          OPTIONS: "--delete"
+          CF_RESET: false
