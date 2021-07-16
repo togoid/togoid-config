@@ -2,7 +2,7 @@
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?ordo_id ?meddra_id
-FROM <http://integbio.jp/rdf/mirror/bioportal/ordo>
+FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
 WHERE {
   ?ordo_uri oboInOwl:hasDbXref ?meddra.
   FILTER (strstarts(?meddra,'MedDRA:'))
