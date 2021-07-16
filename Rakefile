@@ -108,7 +108,7 @@ rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do
   #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   $stderr.puts "## Update config/#{pair}/config.yaml => #{OUTPUT_TSV_DIR}#{pair}.tsv"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if check_config_timestamp(pair) or check_tsv_timestamp(pair) or check_tsv_filesize(pair)
+  if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
     sh "togoid-config config/#{pair} update"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
@@ -120,7 +120,7 @@ rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUT
   #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
   $stderr.puts "## Convert output/tsv/#{pair}.tsv => #{OUTPUT_TTL_DIR}#{pair}.ttl"
   $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if check_ttl_timestamp(pair) or check_ttl_filesize(pair)
+  if check_ttl_filesize(pair) or check_ttl_timestamp(pair)
     sh "togoid-config config/#{pair} convert"
   end
   $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
