@@ -2,7 +2,7 @@
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?ordo_id ?omim_id
-FROM <http://integbio.jp/rdf/mirror/bioportal/ordo>
+FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
 WHERE {
   ?ordo_uri oboInOwl:hasDbXref ?omim;
             skos:notation ?ordo.
