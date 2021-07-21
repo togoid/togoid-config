@@ -29,3 +29,15 @@ jobs:
           DEST_PATH: "s3://togo-id-production/config/"
           OPTIONS: "--delete"
           CF_RESET: false
+
+      - id: touchUpdateTxt
+        run: touch update.txt
+
+      - uses: opspresso/action-s3-sync@master
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "ap-northeast-1"
+          FROM_PATH: "./update.txt"
+          DEST_PATH: "s3://togo-id-production/config/"
+          CF_RESET: false
