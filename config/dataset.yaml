@@ -355,7 +355,7 @@ nando:
   category: Disease
   # FIXME: valid? prefix: 'http://purl.obolibrary.org/obo/NANDO_'
   regex: '^NANDO[:_](?<id>\d{7})$'
-  prefix: 'http://nanbyodata.jp/ontology/nando#'
+  prefix: 'http://nanbyodata.jp/ontology/NANDO_'
   examples:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
     - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
