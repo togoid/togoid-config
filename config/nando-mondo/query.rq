@@ -1,12 +1,13 @@
-# Endpoint: https://integbio.jp/rdf/sparql
+# Endpoint: https://integbio.jp/togosite/sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?nando_id ?mondo_id
-FROM <http://nanbyodata.jp/ontology/nando>
+FROM <http://rdf.integbio.jp/dataset/togosite/nando>
 WHERE {
   ?nando 
-    dcterms:identifier ?nando_id ;
+    dcterms:identifier ?nandoid ;
     skos:closeMatch ?mondo .
+  BIND (strafter(str(?nandoid), 'NANDO:') AS ?nando_id)
   BIND (strafter(str(?mondo), 'http://purl.obolibrary.org/obo/MONDO_') AS ?mondo_id)
 }
