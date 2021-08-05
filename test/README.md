@@ -3,7 +3,7 @@
 ## TSVファイルを確認する
 
 ```
-# mkdir tsv_check-$(date -I); \
+$ mkdir tsv_check-$(date -I); \
 find /data/togoid/link/current/output/tsv -type f | xargs -i -P20 sh -c "FN=\$(basename {}); echo \$FN; ./verify_tsv.pl {} | gzip -c > tsv_check-$(date -I)/\${FN}.gz"
 ```
 
