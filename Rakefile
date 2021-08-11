@@ -12,11 +12,21 @@ TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
 desc "Default task"
-task :default => :convert
+task :default => [ :update, :convert ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
 task :convert => TTL_FILES
+
+desc "Test task"
+task :test do
+  p CFG_FILES
+  p TSV_FILES
+  p TTL_FILES
+end
+
+# Flag to control output details
+$verbose = true
 
 # Some tasks require preparation to extract link data
 def prepare_task(taskname)
@@ -46,7 +56,7 @@ end
 def file_older_than_days?(file, days = 7)
   if File.exists?(file)
     age = (Time.now - File.ctime(file)) / (24*60*60)
-    $stderr.puts "# File #{file} is created #{age} days ago (only updated when >#{days} days)"
+    $stderr.puts "# File #{file} is created #{age} days ago (only updated when >#{days} days)" if $verbose
     age > days
   else
     true
@@ -56,14 +66,17 @@ end
 # Check if the file is older than a given timestamp file
 def file_older_than_stamp?(file, stamp)
   if File.exists?(file) && File.exists?(stamp) && File.ctime(file) > File.ctime(stamp)
-    $stderr.puts "# File #{file} is newer than #{stamp} (update will be skipped)"
+#    $stderr.puts "# File #{file} is newer than #{stamp} (update will be skipped)"
+    $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
     false
   else
     if File.exists?(stamp)
-      $stderr.puts "# File #{file} is older than #{stamp} (will be created or updated)"
+#      $stderr.puts "# File #{file} is older than #{stamp} (will be created or updated)"
+      $stderr.puts "# File #{file} is older than #{stamp}" if $verbose
       true
     else
-      $stderr.puts "# File #{file} has no timestamp file (e.g., data source depends on SPARQL)"
+#      $stderr.puts "# File #{file} has no timestamp file (e.g., data source depends on SPARQL)"
+      $stderr.puts "# File #{file} has no timestamp file" if $verbose
       file_older_than_days?(file)
     end
   end
@@ -102,28 +115,52 @@ def check_ttl_filesize(pair)
   return ! (File.exists?(output) and File.size(output) > 0)
 end
 
-# Generate dependency for preparation by target names
-rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task) ] do |t|
-  pair = t.name.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
-  #p "Rule1: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
-  $stderr.puts "## Update config/#{pair}/config.yaml => #{OUTPUT_TSV_DIR}#{pair}.tsv"
-  $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
-    sh "togoid-config config/#{pair} update"
+def check_update_tsv(taskname)
+  if taskname[/#{OUTPUT_TSV_DIR}/]
+    pair = taskname.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
+    if $verbose
+      $verbose = false
+      $stderr.puts "### Update TSV for #{pair} if check_tsv_filesize #{check_tsv_filesize(pair)} or check_config_timestamp #{check_config_timestamp(pair)} or check_tsv_timestamp #{check_tsv_timestamp(pair)}"
+      $verbose = true
+    end
+    if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
+      $stderr.puts "## Update config/#{pair}/config.yaml => #{OUTPUT_TSV_DIR}#{pair}.tsv"
+      $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
+      sh "togoid-config config/#{pair} update"
+      $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+    end
   end
-  $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+  return "config/dataset.yaml"
+end
+
+def check_update_ttl(taskname)
+  if taskname[/#{OUTPUT_TTL_DIR}/]
+    pair = taskname.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
+    if $verbose
+      $verbose = false
+      $stderr.puts "### Update TTL for #{pair} if check_ttl_filesize #{check_ttl_filesize(pair)} or check_ttl_timestamp #{check_ttl_timestamp(pair)}"
+      $verbose = true
+    end
+    if check_ttl_filesize(pair) or check_ttl_timestamp(pair)
+      $stderr.puts "## Convert output/tsv/#{pair}.tsv => #{OUTPUT_TTL_DIR}#{pair}.ttl"
+      $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
+      sh "togoid-config config/#{pair} convert"
+      $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+    end
+  end
+  return "config/dataset.yaml"
+end
+
+# Generate dependency for preparation by target names
+rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task), method(:check_update_tsv) ] do |t|
+  $stderr.puts "Rule for TSV (#{t.name})"
+  $stderr.puts t.investigation if $verbose
 end
 
 # Generate source filenames by pathmap notation
-rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv" ] do |t|
-  pair = t.name.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
-  #p "Rule2: name = #{t.name} ; source = #{t.source} ; pair = #{pair}"
-  $stderr.puts "## Convert output/tsv/#{pair}.tsv => #{OUTPUT_TTL_DIR}#{pair}.ttl"
-  $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-  if check_ttl_filesize(pair) or check_ttl_timestamp(pair)
-    sh "togoid-config config/#{pair} convert"
-  end
-  $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv", method(:check_update_ttl) ] do |t|
+  $stderr.puts "Rule for TTL (#{t.name})"
+  $stderr.puts t.investigation if $verbose
 end
 
 # Preparatioin tasks
@@ -389,11 +426,5 @@ namespace :prepare do
       updated
     end
   end
-end
-
-task :test do
-  p CFG_FILES
-  p TSV_FILES
-  p TTL_FILES
 end
 
