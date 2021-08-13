@@ -619,7 +619,13 @@ namespace :aws do
   task :create_list => [UPDATE_TXT]
 
   file UPDATE_TXT do
-    sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME} --include \"*tsv\"`
+    begin
+      raise NameError if !S3_BUCKET_NAME
+      sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"`
+    rescue
+      STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
+      exit 1
+    end
     update_files = sync_dryrun_stdout.split("\n").map{|line| File.basename(l.split("\s+").last) }
     open(UPDATE_TXT, 'w'){|f| f.puts(update_files) }
   end
@@ -628,7 +634,7 @@ namespace :aws do
   task :upload_s3 => UPDATE_TXT do
     begin
       raise NameError if !S3_BUCKET_NAME
-      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME} --include \"*tsv\" --include \"update.txt\"")
+      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\" --include \"update.txt\"")
     rescue NameError
       STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
       exit 1
