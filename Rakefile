@@ -626,7 +626,7 @@ namespace :aws do
       STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
       exit 1
     end
-    update_files = sync_dryrun_stdout.split("\n").map{|line| File.basename(l.split("\s+").last) }
+    update_files = sync_dryrun_stdout.split("\n").map{|line| File.basename(line.split("\s+").last) }
     open(UPDATE_TXT, 'w'){|f| f.puts(update_files) }
   end
 
