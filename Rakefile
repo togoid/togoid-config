@@ -613,7 +613,10 @@ end
 # Upload task
 namespace :aws do
   desc "Create update.txt and upload TSV files to AWS S3"
-  task :update => [UPDATE_TXT, :upload_s3]
+  task :update => [:create_list, :upload_s3]
+
+  desc "Create update.txt"
+  task :create_list => [UPDATE_TXT]
 
   file UPDATE_TXT do
     sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME} --include \"*tsv\"`
