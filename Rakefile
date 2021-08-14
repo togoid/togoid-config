@@ -4,6 +4,11 @@ require 'time'
 
 ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 
+### Options
+
+$verbose = true  # Flag to enable verbose output for STDERR
+$duration = 7    # Default number of days to force update
+
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
 
@@ -11,163 +16,285 @@ CFG_FILES = FileList["config/*/config.yaml"]
 TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
-desc "Default task"
-task :default => :convert
+desc "Default task (update & convert)"
+task :default => [ :update, :convert ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
 task :convert => TTL_FILES
 
-desc "Test task"
+desc "Show targets"
 task :test do
   p CFG_FILES
   p TSV_FILES
   p TTL_FILES
 end
 
-# Flag to control output details
-$verbose = true
-
-# Some tasks require preparation to extract link data
-def prepare_task(taskname)
-  case taskname
-#  when /#{OUTPUT_TSV_DIR}drugbank/
-#    return "prepare:drugbank"
-  when /#{OUTPUT_TSV_DIR}ensembl/
-    return "prepare:ensembl"
-  when /#{OUTPUT_TSV_DIR}homologene/
-    return "prepare:homologene"
-  when /#{OUTPUT_TSV_DIR}interpro/
-    return "prepare:interpro"
-  when /#{OUTPUT_TSV_DIR}ncbigene/
-    return "prepare:ncbigene"
-  when /#{OUTPUT_TSV_DIR}refseq/
-    return "prepare:refseq"
-  when /#{OUTPUT_TSV_DIR}sra/
-    return "prepare:sra"
-  when /#{OUTPUT_TSV_DIR}uniprot/
-    return "prepare:uniprot"
-  else
-    return "config/dataset.yaml"
-  end
+desc "Draw a diagram with graphviz"
+task :draw do
+  sh "togoid-config-summary config/*/config.yaml > dot/togoid.sum"
+  sh "togoid-config-summary-dot --id dot/togoid.sum > dot/togoid.dot"
+  sh "dot -Nshape=box -Nstyle=filled,rounded -Ecolor=gray -Kdot -Tpng dot/togoid.dot -odot/togoid.png"
 end
 
-# Check if the file is older than 7 (or given) days
-def file_older_than_days?(file, days = 7)
-  if File.exists?(file)
-    age = (Time.now - File.ctime(file)) / (24*60*60)
-    $stderr.puts "# File #{file} is created #{age} days ago (only updated when >#{days} days)" if $verbose
-    age > days
-  else
-    true
-  end
-end
+### Methods
 
-# Check if the file is older than a given timestamp file
-def file_older_than_stamp?(file, stamp)
-  if File.exists?(file) && File.exists?(stamp) && File.ctime(file) > File.ctime(stamp)
-#    $stderr.puts "# File #{file} is newer than #{stamp} (update will be skipped)"
-    $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
-    false
-  else
-    if File.exists?(stamp)
-#      $stderr.puts "# File #{file} is older than #{stamp} (will be created or updated)"
-      $stderr.puts "# File #{file} is older than #{stamp}" if $verbose
-      true
-    else
-#      $stderr.puts "# File #{file} has no timestamp file (e.g., data source depends on SPARQL)"
-      $stderr.puts "# File #{file} has no timestamp file" if $verbose
-      file_older_than_days?(file)
+module TogoID
+  # Methods for update/convert
+  module Main
+    # Entry point for TSV update
+    def update_tsv(taskname)
+      if taskname[/#{OUTPUT_TSV_DIR}/]
+        pair = taskname.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
+        if $verbose
+          $verbose = false
+          $stderr.puts "### Update TSV for #{pair} if check_tsv_filesize #{check_tsv_filesize(pair)} or check_config_timestamp #{check_config_timestamp(pair)} or check_tsv_timestamp #{check_tsv_timestamp(pair)}"
+          $verbose = true
+        end
+        if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
+          $stderr.puts "## Update #{config_file_name(pair)} => #{tsv_file_name(pair)}"
+          $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
+          sh "togoid-config #{config_dir_name(pair)} update"
+          $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+        else
+          $stderr.puts "# => Preserving #{tsv_file_name(pair)}"
+        end
+      end
+      return "config/dataset.yaml"
+    end
+
+    # Entry point for TTL convert
+    def update_ttl(taskname)
+      if taskname[/#{OUTPUT_TTL_DIR}/]
+        pair = taskname.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
+        if $verbose
+          $verbose = false
+          $stderr.puts "### Update TTL for #{pair} if check_ttl_filesize #{check_ttl_filesize(pair)} or check_ttl_timestamp #{check_ttl_timestamp(pair)}"
+          $verbose = true
+        end
+        if check_ttl_filesize(pair) or check_ttl_timestamp(pair)
+          $stderr.puts "## Convert #{tsv_file_name(pair)} => #{ttl_file_name(pair)}"
+          $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
+          sh "togoid-config #{config_dir_name(pair)} convert"
+          $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+        else
+          $stderr.puts "# => Preserving #{ttl_file_name(pair)}"
+        end
+      end
+      return "config/dataset.yaml"
+    end
+
+    def config_dir_name(pair)
+      "config/#{pair}"
+    end
+
+    def config_file_name(pair)
+      "config/#{pair}/config.yaml"
+    end
+
+    def tsv_file_name(pair)
+      "#{OUTPUT_TSV_DIR}#{pair}.tsv"
+    end
+
+    def ttl_file_name(pair)
+      "#{OUTPUT_TTL_DIR}#{pair}.ttl"
+    end
+
+    # Return true (needs update) when the TSV file does not exist or the size is zero
+    def check_tsv_filesize(pair)
+      output = tsv_file_name(pair)
+      return ! (File.exists?(output) and File.size(output) > 0)
+    end
+
+    # Return true (needs update) when the TTL file does not exist or the size is zero
+    def check_ttl_filesize(pair)
+      output = ttl_file_name(pair)
+      return ! (File.exists?(output) and File.size(output) > 0)
+    end
+
+    # Return true (needs udpate) when the TSV file is older than the config file
+    def check_config_timestamp(pair)
+      input = config_file_name(pair)
+      output = tsv_file_name(pair)
+      file_older_than_stamp?(output, input)
+    end
+
+    # Return true (needs update) when the TSV file is older than the timestamp file
+    def check_tsv_timestamp(pair)
+      source = pair.split('-').first
+      input  = "input/#{source}/download.lock"
+      output = tsv_file_name(pair)
+      # If there is no timpestamp file (input), update the pair anyway
+      file_older_than_stamp?(output, input)
+    end
+
+    # Return true (needs update) when the TTL file is older than the TSV file
+    def check_ttl_timestamp(pair)
+      input  = tsv_file_name(pair)
+      output = ttl_file_name(pair)
+      file_older_than_stamp?(output, input)
+    end
+
+    # Return true (needs update) unless the output file exists and newer than the given timestamp file (if available)
+    def file_older_than_stamp?(file, stamp)
+      if File.exists?(file) && File.exists?(stamp) && File.ctime(file) > File.ctime(stamp)
+        $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
+        false
+      else
+        if File.exists?(stamp)
+          $stderr.puts "# File #{file} is older than #{stamp}" if $verbose
+          true
+        else
+          $stderr.puts "# File #{file} has no timestamp file" if $verbose
+          file_older_than_days?(file)
+        end
+      end
+    end
+
+    # Return true (needs update) when the file is older than $duration (or given) days
+    def file_older_than_days?(file, days = $duration)
+      if File.exists?(file)
+        age = (Time.now - File.ctime(file)) / (24*60*60)
+        $stderr.puts "# File #{file} is created #{age} days ago (only updated when >#{days} days)" if $verbose
+        age > days
+      else
+        true
+      end
+    end
+  end
+  
+  # Methods for preparation
+  module Prepare
+    # Entry point for preparation
+    def prepare_task(taskname)
+      case taskname
+#      when /#{OUTPUT_TSV_DIR}drugbank/
+#        return "prepare:drugbank"
+      when /#{OUTPUT_TSV_DIR}ensembl/
+        return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}homologene/
+        return "prepare:homologene"
+      when /#{OUTPUT_TSV_DIR}interpro/
+        return "prepare:interpro"
+      when /#{OUTPUT_TSV_DIR}ncbigene/
+        return "prepare:ncbigene"
+      when /#{OUTPUT_TSV_DIR}refseq/
+        return "prepare:refseq"
+      when /#{OUTPUT_TSV_DIR}sra/
+        return "prepare:sra"
+      when /#{OUTPUT_TSV_DIR}uniprot/
+        return "prepare:uniprot"
+      else
+        return "config/dataset.yaml"
+      end
+    end
+
+    # Check if the file is updated or the sizes differ or the file doesn't exist
+    def update_input_file?(file, url)
+      if File.exists?(file)
+        # Both checks should be made as the local file can be newer than remote when the previous download fails
+        check_remote_file_time(file, url)
+        # and the local file can be smaller or size 0 even when it exists
+        check_remote_file_size(file, url)
+      else
+        true
+      end
+    end
+
+    # Create file lock to avoid simultaneous access
+    def download_lock(dir, &block)
+      $stderr.puts "# Checking lock file #{dir}/download.lock for download"
+      # File.open with "w" option immediately update the file's timestamp but "a" preserve the timestamp when not modified
+      File.open("#{dir}/download.lock", "a") do |lockfile|
+        if lockfile.flock(File::LOCK_EX)
+          # Each downloader needs to implement a block returning true when update procedure is executed (othewise false)
+          if yield block
+            $stderr.puts "# Overwriting timestamp of the #{dir}/download.lock"
+            lockfile.truncate(0)
+            lockfile.puts `date +%FT%T`
+            lockfile.flush
+          else
+            $stderr.puts "# Preserving timestamp of the #{dir}/download.lock"
+          end
+        end
+      end
+    end
+
+    # Download files with wget
+    def download_file(dir, url, glob = nil)
+      # When running Wget without -N, -nc, -r, or -p, downloading the same file in the same directory
+      # will result in the original copy of file being preserved and the second copy being named file.1
+      # The following opts are equivalent to "-q -r -np -nd -N"
+      opts = "--quiet --recursive --no-parent --no-directories --timestamping"
+      # Also specify output directory by --directory-prefix (-P)
+      if glob
+        sh "wget #{opts} --directory-prefix #{dir} --accept '#{glob}' #{url}"
+      else
+        sh "wget #{opts} --directory-prefix #{dir} #{url}"
+      end
+    end
+
+    # Return true (needs update) when the remote file size is different from the local one
+    def check_remote_file_size(file, url)
+      if File.exists?(file)
+        # The wget --timestamping (-N) option won't check the file size especially when
+        # previous download was interrupted and left broken files with newer dates.
+        local_file_size  = File.size(file)
+        remote_file_size = `curl -sI #{url} | grep '^Content-Length:' | awk '{print $2}'`.strip.to_i
+        $stderr.puts "# Local file size:  #{local_file_size} (#{file})"
+        $stderr.puts "# Remote file size: #{remote_file_size} (#{url})"
+        return local_file_size != remote_file_size
+      else
+        return true
+      end
+    end
+
+    # Return true (needs update) when the remote file is newer than the local file
+    def check_remote_file_time(file, url)
+      if File.exists?(file)
+        local_file_time  = File.ctime(file)  # Time object
+        remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
+        $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
+        $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
+        return local_file_time < remote_file_time
+      else
+        return true
+      end
     end
   end
 end
 
-# Compare timestamp of the config file and the TSV output
-def check_config_timestamp(pair)
-  input = "config/#{pair}/config.yaml"
-  output = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
-  file_older_than_stamp?(output, input)
-end
+# Import defined methods to be used in the following rules/tasks (Rake's namespace doesn't separate methods from Object, unfortunatelly)
+include TogoID::Main
+include TogoID::Prepare
 
-# Find a timestamp file and compare with the TSV output
-def check_tsv_timestamp(pair)
-  source = pair.split('-').first
-  input  = "input/#{source}/download.lock"
-  output = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
-  # If there is no timpestamp file (input), update the pair anyway
-  file_older_than_stamp?(output, input)
-end
+### Update/convert rules
 
-# Compare timestamp of the TSV and TTL outputs
-def check_ttl_timestamp(pair)
-  input  = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
-  output = "#{OUTPUT_TTL_DIR}#{pair}.ttl"
-  file_older_than_stamp?(output, input)
-end
+# Note: Because of a quirk in Ruby syntax, parenthesis are required on rule when the first argument is a regular expression
+# See https://ruby.github.io/rake/doc/rakefile_rdoc.html
 
-def check_tsv_filesize(pair)
-  output = "#{OUTPUT_TSV_DIR}#{pair}.tsv"
-  return ! (File.exists?(output) and File.size(output) > 0)
-end
-
-def check_ttl_filesize(pair)
-  output = "#{OUTPUT_TTL_DIR}#{pair}.ttl"
-  return ! (File.exists?(output) and File.size(output) > 0)
-end
-
-def check_update_tsv(taskname)
-  if taskname[/#{OUTPUT_TSV_DIR}/]
-    pair = taskname.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
-    if $verbose
-      $verbose = false
-      $stderr.puts "### Update TSV for #{pair} if check_tsv_filesize #{check_tsv_filesize(pair)} or check_config_timestamp #{check_config_timestamp(pair)} or check_tsv_timestamp #{check_tsv_timestamp(pair)}"
-      $verbose = true
-    end
-    if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
-      $stderr.puts "## Update config/#{pair}/config.yaml => #{OUTPUT_TSV_DIR}#{pair}.tsv"
-      $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-      sh "togoid-config config/#{pair} update"
-      $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
-    else
-      $stderr.puts "# => Preserving #{OUTPUT_TSV_DIR}#{pair}.tsv"
-    end
-  end
-  return "config/dataset.yaml"
-end
-
-def check_update_ttl(taskname)
-  if taskname[/#{OUTPUT_TTL_DIR}/]
-    pair = taskname.sub(/#{OUTPUT_TTL_DIR}/, '').sub(/\.ttl$/, '')
-    if $verbose
-      $verbose = false
-      $stderr.puts "### Update TTL for #{pair} if check_ttl_filesize #{check_ttl_filesize(pair)} or check_ttl_timestamp #{check_ttl_timestamp(pair)}"
-      $verbose = true
-    end
-    if check_ttl_filesize(pair) or check_ttl_timestamp(pair)
-      $stderr.puts "## Convert output/tsv/#{pair}.tsv => #{OUTPUT_TTL_DIR}#{pair}.ttl"
-      $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-      sh "togoid-config config/#{pair} convert"
-      $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
-    else
-      $stderr.puts "# => Preserving #{OUTPUT_TTL_DIR}#{pair}.ttl"
-    end
-  end
-  return "config/dataset.yaml"
-end
-
-# Generate dependency for preparation by target names
-rule /#{OUTPUT_TSV_DIR}\S+\.tsv/ => [ OUTPUT_TSV_DIR, method(:prepare_task), method(:check_update_tsv) ] do |t|
+# Dependency for TSV files (check dependency for preparation by target names)
+rule(/#{OUTPUT_TSV_DIR}\S+\.tsv/ => [
+  OUTPUT_TSV_DIR,
+  method(:prepare_task),
+  method(:update_tsv)
+]) do |t|
   $stderr.puts "Rule for TSV (#{t.name})"
   $stderr.puts t.investigation if $verbose
 end
 
-# Generate source filenames by pathmap notation
-rule /#{OUTPUT_TTL_DIR}\S+\.ttl/ => [ OUTPUT_TTL_DIR, "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv", method(:check_update_ttl) ] do |t|
+# Dependency for TTL files (generate dependent filenames by pathmap notation)
+rule(/#{OUTPUT_TTL_DIR}\S+\.ttl/ => [
+  OUTPUT_TTL_DIR,
+  "%{#{OUTPUT_TTL_DIR},#{OUTPUT_TSV_DIR}}X.tsv",
+  method(:update_ttl)
+]) do |t|
   $stderr.puts "Rule for TTL (#{t.name})"
   $stderr.puts t.investigation if $verbose
 end
 
-# Preparatioin tasks
+### Preparatioin tasks
+
 namespace :prepare do
   desc "Prepare all"
   task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :refseq, :sra, :uniprot ]
@@ -180,69 +307,6 @@ namespace :prepare do
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
-
-  def download_file(dir, url, glob = nil)
-    # When running Wget without -N, -nc, -r, or -p, downloading the same file in the same directory
-    # will result in the original copy of file being preserved and the second copy being named file.1.
-    # -q -r -np -nd -N
-    opts = "--quiet --recursive --no-parent --no-directories --timestamping"
-    # --directory-prefix (-P) requires a directory name as an argument
-    if glob
-      sh "wget #{opts} --directory-prefix #{dir} --accept '#{glob}' #{url}"
-    else
-      sh "wget #{opts} --directory-prefix #{dir} #{url}"
-    end
-  end
-
-  # The wget --timestamping (-N) option won't check the file size especially when
-  # previous download was interrupted and left broken files with newer dates.
-  def compare_file_size(file, url)
-    local_file_size  = File.size(file)
-    remote_file_size = `curl -sI #{url} | grep '^Content-Length:' | awk '{print $2}'`.strip.to_i
-    $stderr.puts "# Local file size:  #{local_file_size} (#{file})"
-    $stderr.puts "# Remote file size: #{remote_file_size} (#{url})"
-    return local_file_size != remote_file_size
-  end
-
-  def compare_file_time(file, url)
-    if File.exists?(file)
-      local_file_time  = File.ctime(file)  # Time object
-      remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
-      $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
-      $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
-      return local_file_time < remote_file_time
-    else
-      return true
-    end
-  end
-
-  # Check if the file sizes differ or the file doesn't exist
-  def update_input_file?(file, url)
-    if File.exists?(file)
-      compare_file_size(file, url)
-    else
-      true
-    end
-  end
-
-  # Create file lock to avoid simultaneous access
-  def download_lock(dir, &block)
-    $stderr.puts "# Checking lock file #{dir}/download.lock for download"
-    # File.open with "w" option immediately update the file's timestamp but "a" is fine.
-    File.open("#{dir}/download.lock", "a") do |lockfile|
-      if lockfile.flock(File::LOCK_EX)
-        # In each downloader, implement a block returning true when update procedure is executed (othewise false)
-        if yield block
-          $stderr.puts "# Overwriting timestamp of the #{dir}/download.lock"
-          lockfile.truncate(0)
-          lockfile.puts `date +%FT%T`
-          lockfile.flush
-        else
-          $stderr.puts "# Preserving timestamp of the #{dir}/download.lock"
-        end
-      end
-    end
-  end
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -263,7 +327,7 @@ namespace :prepare do
     download_lock(INPUT_ENSEMBL_DIR) do
       updated = false
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
-      if file_older_than_days?(taxonomy_file, 10)
+      if file_older_than_days?(taxonomy_file)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
         updated = true
       end
@@ -372,7 +436,7 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
-      if compare_file_time(input_file, input_url)
+      if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
         download_file(INPUT_REFSEQ_DIR, input_url)
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
@@ -431,4 +495,5 @@ namespace :prepare do
     end
   end
 end
+
 
