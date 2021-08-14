@@ -22,6 +22,8 @@ digraph togoid {
 'drugbank'" [fillcolor = "#FCC800"] ;
   "HMDB
 'hmdb'" [fillcolor = "#009E96"] ;
+  "MeSH
+'mesh'" [fillcolor = "#BE0081"] ;
   "PubChem compound
 'pubchem_compound'" [fillcolor = "#FFF100"] ;
   "PubChem substance
@@ -44,8 +46,6 @@ digraph togoid {
 'uniprot'" [fillcolor = "#00479D"] ;
   "Disease ontology
 'doid'" [fillcolor = "#EB6100"] ;
-  "MeSH
-'mesh'" [fillcolor = "#BE0081"] ;
   "OMIM phenotype
 'omim_phenotype'" [fillcolor = "#EB6100"] ;
   "Ensembl protein
@@ -62,7 +62,7 @@ digraph togoid {
 'ec'" [fillcolor = "#CFDB00"] ;
   "GenBank/ENA/DDBJ
 'insdc'" [fillcolor = "#8FC31F"] ;
-  "Locus Reference Genomic record
+  "LRG
 'lrg'" [fillcolor = "#8FC31F"] ;
   "MGI
 'mgi'" [fillcolor = "#8FC31F"] ;
@@ -86,7 +86,7 @@ digraph togoid {
 'hp'" [fillcolor = "#0086D1"] ;
   "MONDO
 'mondo'" [fillcolor = "#EB6100"] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" [fillcolor = "#EB6100"] ;
   "MedDRA
 'meddra'" [fillcolor = "#EB6100"] ;
@@ -173,6 +173,14 @@ digraph togoid {
 'hmdb'" -> "ChEMBL compound
 'chembl_compound'" [ label = "closeMatch
 'skos:closeMatch'"  ] ;
+  "ChEMBL compound
+'chembl_compound'" -> "MeSH
+'mesh'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
+  "MeSH
+'mesh'" -> "ChEMBL compound
+'chembl_compound'" [ label = "seeAlso
+'rdfs:seeAlso'" , fontcolor = red ] ;
   "ChEMBL compound
 'chembl_compound'" -> "PubChem compound
 'pubchem_compound'" [ label = "closeMatch
@@ -390,10 +398,10 @@ digraph togoid {
 'hgnc'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "HGNC
-'hgnc'" -> "Locus Reference Genomic record
+'hgnc'" -> "LRG
 'lrg'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Locus Reference Genomic record
+  "LRG
 'lrg'" -> "HGNC
 'hgnc'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
@@ -570,10 +578,10 @@ digraph togoid {
 'medgen'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "MedGen
-'medgen'" -> "Orphanet Rare Disease ontology
+'medgen'" -> "Orphanet
 'orphanet'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" -> "MedGen
 'medgen'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
@@ -618,10 +626,10 @@ digraph togoid {
 'mondo'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "MONDO
-'mondo'" -> "Orphanet Rare Disease ontology
+'mondo'" -> "Orphanet
 'orphanet'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" -> "MONDO
 'mondo'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
@@ -745,28 +753,28 @@ digraph togoid {
 'uniprot'" -> "OMA protein
 'oma_protein'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" -> "MedDRA
 'meddra'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "MedDRA
-'meddra'" -> "Orphanet Rare Disease ontology
+'meddra'" -> "Orphanet
 'orphanet'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" -> "MeSH
 'mesh'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "MeSH
-'mesh'" -> "Orphanet Rare Disease ontology
+'mesh'" -> "Orphanet
 'orphanet'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" -> "OMIM phenotype
 'omim_phenotype'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "OMIM phenotype
-'omim_phenotype'" -> "Orphanet Rare Disease ontology
+'omim_phenotype'" -> "Orphanet
 'orphanet'" [ label = "seeAlso
 'rdfs:seeAlso'" , fontcolor = red ] ;
   "PDB
@@ -1278,10 +1286,10 @@ digraph togoid {
 'uniprot'" [ label = "phenotype of
 'ro:RO_0002201'"  ] ;
   "UniProt
-'uniprot'" -> "Orphanet Rare Disease ontology
+'uniprot'" -> "Orphanet
 'orphanet'" [ label = "has phenotype
 'ro:RO_0002200'"  ] ;
-  "Orphanet Rare Disease ontology
+  "Orphanet
 'orphanet'" -> "UniProt
 'uniprot'" [ label = "phenotype of
 'ro:RO_0002201'"  ] ;
