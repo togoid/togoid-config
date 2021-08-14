@@ -128,6 +128,8 @@ def check_update_tsv(taskname)
       $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
       sh "togoid-config config/#{pair} update"
       $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+    else
+      $stderr.puts "# => Preserving #{OUTPUT_TSV_DIR}#{pair}.tsv"
     end
   end
   return "config/dataset.yaml"
@@ -146,6 +148,8 @@ def check_update_ttl(taskname)
       $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
       sh "togoid-config config/#{pair} convert"
       $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
+    else
+      $stderr.puts "# => Preserving #{OUTPUT_TTL_DIR}#{pair}.ttl"
     end
   end
   return "config/dataset.yaml"
