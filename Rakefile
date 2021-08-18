@@ -7,9 +7,12 @@ ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 ### Options
 
 $verbose = true  # Flag to enable verbose output for STDERR
+# TogoID#file_older_than_days?()
 $duration = 7    # Default number of days to force update
+# TogoID#validate_tsv_output()
+$chklines = 10   # Number of head and tail lines to be validated
+$maxblank = 2    # Maximum number of acceptable empty lines in TSV files
 $minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
-$maxblank = 2    # Maximum number of lines of acceptable empty lines in TSV files
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
@@ -200,8 +203,8 @@ module TogoID
       end
       # Check if new TSV is valid (regardless of the previous TSV output exists or not)
       if File.exists?(tsv) and File.size(tsv) > 0
-        head = `head -#{$maxlines} #{tsv}`
-        tail = `tail -#{$maxlines} #{tsv}`
+        head = `head -#{$chklines} #{tsv}`
+        tail = `tail -#{$chklines} #{tsv}`
         [head, tail].each do |lines|
           lines.split(/\n/).each do |line|
             line.strip!
