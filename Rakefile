@@ -206,7 +206,7 @@ module TogoID
         head = `head -#{$chklines} #{tsv}`
         tail = `tail -#{$chklines} #{tsv}`
         [head, tail].each do |lines|
-          lines.split(/\n/).each do |line|
+          lines.each_line do |line|
             line.strip!
             if line[/^\S+\t\S+$/]	# check ID tab ID
               #$stderr.puts "# Pass: #{tsv} seems to be OK #{line}" if $verbose
