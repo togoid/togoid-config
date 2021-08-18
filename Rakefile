@@ -8,6 +8,8 @@ ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 
 $verbose = true  # Flag to enable verbose output for STDERR
 $duration = 7    # Default number of days to force update
+$minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
+$maxblank = 2    # Maximum number of lines of acceptable empty lines in TSV files
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
@@ -54,7 +56,24 @@ module TogoID
         if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
           $stderr.puts "## Update #{config_file_name(pair)} => #{tsv_file_name(pair)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
+          if File.exists?(tsv_file_name(pair))
+            # Backup previous TSV output
+            sh "mv #{tsv_file_name(pair)} #{tsv_file_name_old(pair)}", verbose: false
+          end
           sh "togoid-config #{config_dir_name(pair)} update"
+          if validate_tsv_output(pair)
+            $stderr.puts "# Success: #{tsv_file_name(pair)} is updated"
+            if File.exists?(tsv_file_name_old(pair))
+              # Remove prevous TSV output
+              sh "rm #{tsv_file_name_old(pair)}", verbose: false
+            end
+          else
+            $stderr.puts "# Failure: #{tsv_file_name(pair)} is not updated"
+            if File.exists?(tsv_flie_name_old(pair))
+              # Revert previous TSV output"
+              sh "mv #{tsv_file_name_old(pair)} #{tsv_file_name(pair)}", verbose: false
+            end
+          end
           $stderr.puts "> #{`date +%FT%T`.strip} #{pair}"
         else
           $stderr.puts "# => Preserving #{tsv_file_name(pair)}"
@@ -94,6 +113,10 @@ module TogoID
 
     def tsv_file_name(pair)
       "#{OUTPUT_TSV_DIR}#{pair}.tsv"
+    end
+
+    def tsv_file_name_old(pair)
+      "#{OUTPUT_TSV_DIR}#{pair}.tsv.old"
     end
 
     def ttl_file_name(pair)
@@ -160,6 +183,48 @@ module TogoID
       else
         true
       end
+    end
+
+    def validate_tsv_output(pair)
+      tsv = tsv_file_name(pair)
+      old = tsv_file_name_old(pair)
+      check = true
+      count = 0
+      if File.exists?(tsv) and File.exists?(old)
+        ratio = 1.0 * File.size(tsv) / File.size(old)
+        # New file is not smaller than a half of old file size
+        if ratio < $minratio
+          $stderr.puts "# Error: #{tsv} new file size per old #{File.size(tsv)} / #{File.size(old)} = #{ratio} < #{$minratio}" if $verbose
+          check = false
+        end
+      end
+      # Check if new TSV is valid (regardless of the previous TSV output exists or not)
+      if File.exists?(tsv) and File.size(tsv) > 0
+        head = `head -#{$maxlines} #{tsv}`
+        tail = `tail -#{$maxlines} #{tsv}`
+        [head, tail].each do |lines|
+          lines.split(/\n/).each do |line|
+            line.strip!
+            if line[/^\S+\t\S+$/]	# check ID tab ID
+              #$stderr.puts "# Pass: #{tsv} seems to be OK #{line}" if $verbose
+              # Do nothing
+            elsif line[/</]		# check HTML tag
+              $stderr.puts "# Error: #{tsv} seems to contain HTML #{line}" if $verbose
+              check = false
+            elsif line.size == 0	# check empty line
+              count += 1
+              if count >= $maxblank
+                $stderr.puts "# Error: #{tsv} seems to contain >#{count} empty lines" if $verbose
+                check = false
+              end
+            else
+              $stderr.puts "# Error: #{tsv} seems to be malformed #{line}" if $verbose
+              check = false
+            end
+          end
+        end
+      end
+      return check
     end
   end
   
