@@ -1,0 +1,8 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sbsmpt: <http://www.glycoinfo.org/glyco/owl/relation#>
+
+select (sha1(?s) as ?wx) (substr(str(?ogid),42) as ?y) {
+  ?s sbsmpt:subsumes* / rdfs:seeAlso ?ogid ;
+     a sbsmpt:Base_composition_with_linkage .
+}
+order by ?wx 
