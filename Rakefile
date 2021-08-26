@@ -72,7 +72,7 @@ module TogoID
             end
           else
             $stderr.puts "# Failure: #{tsv_file_name(pair)} is not updated"
-            if File.exists?(tsv_flie_name_old(pair))
+            if File.exists?(tsv_file_name_old(pair))
               # Revert previous TSV output"
               sh "mv #{tsv_file_name_old(pair)} #{tsv_file_name(pair)}", verbose: false
             end
