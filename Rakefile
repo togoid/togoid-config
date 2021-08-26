@@ -7,12 +7,16 @@ ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 ### Options
 
 $verbose = true  # Flag to enable verbose output for STDERR
+
 # TogoID#file_older_than_days?()
 $duration = 7    # Default number of days to force update
+
 # TogoID#validate_tsv_output()
 $chklines = 10   # Number of head and tail lines to be validated
 $maxblank = 2    # Maximum number of acceptable empty lines in TSV files
 $minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
+
+### Tasks
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
@@ -501,7 +505,7 @@ namespace :prepare do
   end
 
   desc "Prepare required files for Reactome"
-  task :reactome=> INPUT_REACTOME_DIR do
+  task :reactome => INPUT_REACTOME_DIR do
     $stderr.puts "## Prepare input files for Reactome"
     download_lock(INPUT_REACTOME_DIR) do
       updated = false
@@ -518,7 +522,6 @@ namespace :prepare do
         download_file(INPUT_REACTOME_DIR, input_url)
         updated = true
       end
-
       updated
     end
   end
