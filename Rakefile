@@ -181,7 +181,7 @@ module TogoID
     def file_older_than_days?(file, days = $duration)
       if File.exists?(file)
         age = (Time.now - File.ctime(file)) / (24*60*60)
-        $stderr.puts "# File #{file} is created #{age} days ago (only updated when >#{days} days)" if $verbose
+        $stderr.puts "# File #{file} is created #{age} days ago (will be updated when >#{days} days)" if $verbose
         age > days
       else
         true
