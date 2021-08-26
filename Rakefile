@@ -246,6 +246,8 @@ module TogoID
         return "prepare:interpro"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
+      when /#{OUTPUT_TSV_DIR}reactome/
+        return "prepare:reactome"
       when /#{OUTPUT_TSV_DIR}refseq/
         return "prepare:refseq"
       when /#{OUTPUT_TSV_DIR}sra/
@@ -365,13 +367,14 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :refseq, :sra, :uniprot ]
+  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
+  directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
@@ -493,6 +496,29 @@ namespace :prepare do
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
         updated = true
       end
+      updated
+    end
+  end
+
+  desc "Prepare required files for Reactome"
+  task :reactome=> INPUT_REACTOME_DIR do
+    $stderr.puts "## Prepare input files for Reactome"
+    download_lock(INPUT_REACTOME_DIR) do
+      updated = false
+      input_file = "#{INPUT_REACTOME_DIR}/UniProt2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/UniProt2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/ChEBI2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
       updated
     end
   end
