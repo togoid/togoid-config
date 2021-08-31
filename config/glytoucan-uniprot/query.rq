@@ -1,0 +1,28 @@
+PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>
+prefix gco:<http://purl.jp/bio/12/glyco/conjugate#>
+prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX faldo: <http://biohackathon.org/resource/faldo#>
+PREFIX up: <http://purl.uniprot.org/core/>
+
+#SELECT ?uniprot_id (count(?uniprot_id) as ?count){
+#SELECT ?gtc_id (count(?gtc_id) as ?count){
+SELECT DISTINCT (substr(str(?protein),33) as ?uniprot_id) ?gtc_id
+#SELECT distinct ?organism ?g2
+WHERE {
+#  VALUES ?source { <http://rdf.glycoinfo.org/source/9606> }
+  VALUES ?organism { <http://purl.uniprot.org/taxonomy/9606> }
+#  VALUES ?protein { <http://purl.uniprot.org/uniprot/P0DTC2>}
+ GRAPH <http://rdf.glycosmos.org/glycan_glycoprotein> {
+    ?protein gco:glycosylated_at [
+      glycan:is_from_source ?db ;
+      gco:has_saccharide ?gtc  ] .
+  }
+#  GRAPH <http://rdf.glycosmos.org/uniprot_glycoprotein> {
+#    ?protein up:organism ?organism .
+#  }
+#  FILTER(strstarts(str(?protein),"http://purl.uniprot"))
+  BIND(strafter(str(?gtc),"can/") as ?gtc_id)
+  BIND(URI(concat("http://rdf.glycoinfo.org/glycan/",?gtc_id)) as ?gtc_uri)
+#  ?gtc_uri glycan:is_from_source ?source .
+}
+#} GROUP BY ?gtc_id ORDER BY DESC(?count)
