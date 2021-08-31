@@ -621,3 +621,11 @@ wikipathways:
   examples:
     - ["WP1531","WP4312","WP4877","WP5020","WP4400","WP4474","WP4183","WP3650","WP4545","WP4462"]
     - ["WP1531_r107120","WP4312_r104287","WP4877_r116595","WP5020_r114721","WP4400_r108112","WP4474_r102094","WP4183_r106890","WP3650_r110699","WP4545_r116235","WP4462_r102079"]
+glytoucan:
+  label: GlyTouCan
+  catalog: nbdc01535
+  category: Carbohydrate
+  regex: '^G[0-9]{5}[A-Z]{2}$'
+  prefix: 'http://identifiers.org/glytoucan/'
+  examples:
+    - ["G88006IV","G53085MI","G17896UT","G50341PG"]
