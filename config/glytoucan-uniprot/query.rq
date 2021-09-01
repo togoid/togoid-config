@@ -5,8 +5,8 @@ PREFIX faldo: <http://biohackathon.org/resource/faldo#>
 PREFIX up: <http://purl.uniprot.org/core/>
 
 #SELECT ?uniprot_id (count(?uniprot_id) as ?count){
-#SELECT ?gtc_id (count(?gtc_id) as ?count){
-SELECT DISTINCT (substr(str(?protein),33) as ?uniprot_id) ?gtc_id
+#SELECT gtc_id (count(?gtc_id) as ?count){
+SELECT DISTINCT ?gtc_id (substr(str(?protein),33) as ?uniprot_id)
 #SELECT distinct ?organism ?g2
 WHERE {
 #  VALUES ?source { <http://rdf.glycoinfo.org/source/9606> }
