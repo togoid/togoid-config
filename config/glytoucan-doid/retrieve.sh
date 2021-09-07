@@ -45,4 +45,4 @@ while true; do
   fi
 done
 
-./gen_pairs.pl ${WORKDIR}/query*.txt
+./gen_pairs.pl ${WORKDIR}/query*.txt | sort -u
