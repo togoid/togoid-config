@@ -1,0 +1,28 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>
+PREFIX dcterms:<http://purl.org/dc/terms/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX ggdb: <http://purl.jp/bio/12/ggdb/2015/6/owl#>
+
+SELECT DISTINCT ?do ?ag ?pg
+WHERE{
+  GRAPH <http://rdf.glycosmos.org/genomealliance> {
+   ?gene glycan:genome_alliance_id / glycan:gl_doid ?do .
+   BIND (xsd:int(substr(str(?gene), 33)) as ?gene_id)
+  }
+  GRAPH <http://rdf.glycoinfo.org/ggdb> {
+    [] a ggdb:Glycogene ;
+       ggdb:has_acceptor_substrates / ggdb:has_reaction [
+         a <http://purl.jp/bio/12/ggdb/2015/6/owl#General_reaction> ;
+#         ggdb:has_donor / rdfs:label ?doner ;
+         ggdb:has_acceptor / dcterms:identifier ?aid ;
+         ggdb:has_product / dcterms:identifier ?pid ] ;
+       ggdb:has_gene / sio:SIO_000008 [
+         a <http://edamontology.org/data_2295> ;
+         dcterms:identifier ?gene_id ] .
+  }
+  GRAPH <http://rdf.glytoucan.org/partner/jcggdb_aist> {
+    ?ag glycan:has_resource_entry / dcterms:identifier ?aid .
+    OPTIONAL {?pg glycan:has_resource_entry / dcterms:identifier ?pid }.
+  }
+}
