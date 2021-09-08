@@ -10,13 +10,7 @@ WORKDIR=glytoucan_doid
 #LIMIT=1000000 # SPARQLエンドポイントにおける取得可能データ件数の最大値
 CURL=/usr/bin/curl
 
-# 以下の変数は、参考のため。実際に以下のスクリプトでは利用していない。
-#QUERY1_FILE=query1.rq
-#QUERY2_FILE=query2.rq
-#QUERY1RESULT_FILE=query1.txt
-#QUERY2RESULT_FILE=query2.txt
-
-for i in $(seq 1 2); do
+for i in $(seq 1 3); do
   if [ ! -e query${i}.rq ]; then echo "必要なファイルが不足しています。:query${i}.rq"; exit; fi
 done
 
@@ -26,7 +20,7 @@ else
   rm -f ${WORKDIR}/*
 fi
 
-for i in $(seq 1 2); do
+for i in $(seq 1 3); do
   $CURL -o ${WORKDIR}/query${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query@query${i}.rq $ENDPOINT
 done
 
