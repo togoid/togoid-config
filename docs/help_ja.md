@@ -13,6 +13,10 @@
 
 - ID間の対応関係は、各DBのRDFデータ、API、フラットファイルからの抽出によって整備しており、それらはGitHubの[togoid-config](https://github.com/dbcls/togoid-config/) レポジトリで管理･公開しています。対象DBのIDに関するメタデータや、IDペアの更新方法、更新頻度などを管理することで、常に最新のID間の対応関係を得られるようにしています。
 
+## 動画マニュアル
+- [TogoIDを使って生命科学分野のデータベースのID間の対応関係を検索し変換する](https://youtu.be/xxkVEtJMW2k)
+
+
 ## API
 - ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。
     1. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json)
