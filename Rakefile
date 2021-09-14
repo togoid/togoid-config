@@ -26,11 +26,23 @@ TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
 desc "Default task (update & convert)"
-task :default => [ :update, :convert ]
+task :default => [ :pre, :update, :convert, :post ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
 task :convert => TTL_FILES
+
+desc "Pre task"
+task :pre do
+  $stderr.puts "*** Started: #{`date +%FT%T`.strip} ***"
+  $stderr.puts
+end
+
+desc "Pre task"
+task :post do
+  $stderr.puts
+  $stderr.puts "*** Finished: #{`date +%FT%T`.strip} ***"
+end
 
 desc "Show targets"
 task :test do
