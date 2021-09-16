@@ -5,7 +5,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT (substr(str(?cid), 49) as ?pubchem_id) ?chembl_id
-FROM <http://rdf.integbio.jp/dataset/pubchem>
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/substance>
 WHERE {
     [] cheminf:CHEMINF_000477 ?cid ;
         dcterms:source source:ChEMBL ;
