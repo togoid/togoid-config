@@ -6,7 +6,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT (count(*) as ?total) {
 SELECT DISTINCT ?cid ?chembl_id
-FROM <http://rdf.integbio.jp/dataset/pubchem>
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/substance>
 WHERE {
     [] cheminf:CHEMINF_000477 ?cid ;
         dcterms:source source:ChEMBL ; # has PubChem normalized counterpart
