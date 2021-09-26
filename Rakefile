@@ -38,7 +38,7 @@ task :pre do
   $stderr.puts
 end
 
-desc "Pre task"
+desc "Post task"
 task :post do
   $stderr.puts
   $stderr.puts "*** Finished: #{`date +%FT%T`.strip} ***"
