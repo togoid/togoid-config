@@ -26,7 +26,8 @@ TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
 desc "Default task (update & convert)"
-task :default => [ :pre, :update, :convert, :post ]
+#task :default => [ :pre, :update, :convert, :post ]
+task :default => [ :pre, 'prepare:all', :update, :convert, :post ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
