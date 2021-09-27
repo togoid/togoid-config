@@ -180,7 +180,7 @@ module TogoID
 
     # Return true (needs update) unless the output file exists and newer than the given timestamp file (if available)
     def file_older_than_stamp?(file, stamp)
-      if File.exists?(file) && File.exists?(stamp) && File.ctime(file) > File.ctime(stamp)
+      if File.exists?(file) && File.exists?(stamp) && File.mtime(file) > File.mtime(stamp)
         $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
         false
       else
@@ -197,7 +197,7 @@ module TogoID
     # Return true (needs update) when the file is older than $duration (or given) days
     def file_older_than_days?(file, days = $duration)
       if File.exists?(file)
-        age = (Time.now - File.ctime(file)) / (24*60*60)
+        age = (Time.now - File.mtime(file)) / (24*60*60)
         $stderr.puts "# File #{file} is created #{age} days ago (will be updated when >#{days} days)" if $verbose
         age > days
       else
@@ -339,7 +339,7 @@ module TogoID
     # Return true (needs update) when the remote file is newer than the local file
     def check_remote_file_time(file, url)
       if File.exists?(file)
-        local_file_time  = File.ctime(file)  # Time object
+        local_file_time  = File.mtime(file)  # Time object
         remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
         $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
