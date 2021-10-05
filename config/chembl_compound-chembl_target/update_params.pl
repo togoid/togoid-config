@@ -2,7 +2,7 @@
 our $THREAD_LIMIT = 10;
 
 # Endpoint
-our $EP = "https://integbio.jp/rdf/mirror/ebi/sparql";
+our $EP = "https://integbio.jp/rdf/ebi/sparql";
 our $EP_MIRROR = undef;
 
 # SPARQL query for get-taxonomy-list
@@ -23,15 +23,29 @@ our $QUERY = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 SELECT DISTINCT ?source ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
 WHERE {
-values ?conf {9}
 ?source a cco:SmallMolecule ;
-          cco:hasActivity/cco:hasAssay ?assay .
-?assay a cco:Assay ;
-        cco:targetConfScore ?conf ;
-        cco:hasTarget ?target  ;
-        cco:taxonomy <__TAXON__> .
-  }";
+          cco:hasActivity/cco:hasAssay [
+            a cco:Assay ;
+            cco:targetConfScore 9 ;
+            cco:hasTarget ?target  ;
+            cco:taxonomy <__TAXON__> 
+          ] .
+}";
 
+# SPARQL query for split
+our $QUERY_SPLIT = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+SELECT DISTINCT ?source ?target
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?source a cco:SmallMolecule ;
+     cco:hasActivity/cco:hasAssay [
+     a cco:Assay ;
+     cco:targetConfScore 9 ;
+     cco:hasTarget ?target  ;
+     cco:taxonomy <__TAXON__>
+  ] .
+  FILTER (REGEX (STR (?source), '__NUMBER__\$'))
+}";
 # regex : req. double escape backslash (e.g. '\d' -> '\\d')
 our $SOURCE_REGEX = "http://rdf.ebi.ac.uk/resource/chembl/molecule/(.+)";
 our $TARGET_REGEX = "http://rdf.ebi.ac.uk/resource/chembl/target/(.+)";
