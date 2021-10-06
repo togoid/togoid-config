@@ -634,7 +634,8 @@ namespace :aws do
   task :upload_s3 => UPDATE_TXT do
     begin
       raise NameError if !S3_BUCKET_NAME
-      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\" --include \"update.txt\"")
+      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"")
+      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"update.txt\"")
     rescue NameError
       STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
       exit 1
