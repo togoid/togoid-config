@@ -16,6 +16,9 @@
 ## 動画マニュアル
 - [TogoIDを使って生命科学分野のデータベースのID間の対応関係を検索し変換する](https://youtu.be/xxkVEtJMW2k)
 
+## 紹介スライドPDF
+- [TogoID: データベース統合の基盤となるID変換サービス](https://biosciencedbc.jp/event/symposium/togo2021/files/poster03_togo2021.pdf)
+    - 2021年10月トーゴーの日シンポジウムにて[発表](https://biosciencedbc.jp/event/symposium/togo2021/poster/003.html)   
 
 ## API
 - ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。
