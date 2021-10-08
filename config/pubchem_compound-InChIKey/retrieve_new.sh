@@ -31,29 +31,28 @@ COUNT=$(expr $C2P_TOTAL / $LIMIT)
 
 declare -a query_list=()
 for i in $(seq 0 ${COUNT}); do
-  QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $PUBCHEM_INCHIKEY_QUERY_FILE)
-#  $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
-#  echo $QUERY
+  QUERY=$(sed -e "1 i #${i}" -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $PUBCHEM_INCHIKEY_QUERY_FILE)
   query_list+=( "${QUERY}" )
 done
 
 IFS=$'\t'
-echo -n "${query_list[*]}" | $XARGS -P 10 -i -d '\t' ./issue_query.sh ${WORKDIR} "{}" tsv $ENDPOINT 
+echo -n "${query_list[*]}" | $XARGS -P 7 -i -d '\t' ./issue_query.sh ${WORKDIR} "{}" tsv $ENDPOINT 
+#echo -n "${query_list[*]}"
 
 # エラー終了しているファイルを検索し、改めて検索、をエラーがなくなるまで行う。
-# ファイル冒頭に "chembl_id" が書かれていない場合に、エラーと判断する。
-ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\"cid_str\"") || basename {} .txt' \;)
+# ファイル冒頭に "cid_str" が書かれていない場合に、エラーと判断する。
+ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\"cid_str\"") || basename {} .tsv' \;)
 while true; do
   if [ -n "$ERROR_FILES" ]; then
      for i in $ERROR_FILES; do
        QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $PUBCHEM_INCHIKEY_QUERY_FILE)
-       $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
+       $CURL -o ${WORKDIR}/${i}.tsv -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT
      done
-     ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.txt; done | xargs -i sh -c '(head -1 {} | grep -m 1 -q "^\"cid_str\"") || basename {} .txt')
+     ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.tsv; done | $XARGS -i sh -c '(head -1 {} | grep -m 1 -q "^\"cid_str\"") || basename {} .tsv')
      sleep 5
   else
      break
   fi
 done
 
-tail -qn +2 ${WORKDIR}/*.txt | sed -e 's/"//g'
+tail -qn +2 ${WORKDIR}/*.tsv | sed -e 's/"//g'
