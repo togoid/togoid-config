@@ -1,0 +1,12 @@
+PREFIX compound: <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/>
+PREFIX inchikey: <http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX cheminf: <http://semanticscience.org/resource/>
+
+SELECT (count(*) as ?total)
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey>
+WHERE {
+SELECT ?cid ?inchikey WHERE {
+  ?inchikey sio:is-attribute-of ?cid ;
+            a cheminf:CHEMINF_000399 .
+}}
