@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/togosite/sparql
+# Graph: http://rdf.integbio.jp/dataset/togosite/chebi
+
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX chebi: <http://purl.obolibrary.org/obo/chebi/>
+
+select DISTINCT   ?chebi_id ?chebi_inchikey
+from <http://rdf.integbio.jp/dataset/togosite/chebi>
+where {
+  ?chebi chebi:inchikey ?chebi_inchikey.
+  BIND (strafter(str(?chebi), "CHEBI_") AS ?chebi_id)
+} 
