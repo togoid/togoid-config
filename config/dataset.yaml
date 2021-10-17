@@ -631,9 +631,9 @@ glytoucan:
     - ["G88006IV","G53085MI","G17896UT","G50341PG"]
 inchi_key:
   label: InChIKey
-  catalog: 
-  category: Chemical Compound
+  catalog: FIXME
+  category: Compound
   regex: '^[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?'
-  prefix: 'https://registry.identifiers.org/registry/inchikey'
+  prefix: 'https://identifiers.org/inchikey/'
   examples:
     - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N"]
