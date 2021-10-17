@@ -629,3 +629,11 @@ glytoucan:
   prefix: 'http://identifiers.org/glytoucan/'
   examples:
     - ["G88006IV","G53085MI","G17896UT","G50341PG"]
+inchi_key:
+  label: InChIKey
+  catalog: 
+  category: Chemical Compound
+  regex: '^[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?'
+  prefix: 'https://registry.identifiers.org/registry/inchikey'
+  examples:
+    - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N"]
