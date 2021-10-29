@@ -40,7 +40,7 @@ echo -n "${query_list[*]}" | $XARGS -P 5 -i -d '\t' ./issue_query.sh ${WORKDIR} 
 
 # エラー終了しているファイルを検索し、改めて検索、をエラーがなくなるまで行う。
 # ファイル冒頭に "cid_str" が書かれていない場合に、エラーと判断する。
-ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\"cid_str\"") || basename {} .tsv' \;)
+IFS=$'\n' ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\"cid_str\"") || basename {} .tsv' \;)
 while true; do
   if [ -n "$ERROR_FILES" ]; then
      for i in $ERROR_FILES; do
