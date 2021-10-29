@@ -29,4 +29,3 @@ fn=${OF_NAME}.${ext}
 if [ -z $fn ]; then fn=$(uuidgen).${ext} ; fi
 #echo $fn
 $CURL -sSH "Accept: ${content_type}" --data-urlencode query="$2" -o ${directory}/${fn} ${endpoint}
-#(test -e ${directory}/${fn} && (head -1 ${directory}/${fn} | grep -q "cid_str")) || echo "$2" > ${directory}/${fn}.err
