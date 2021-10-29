@@ -1,0 +1,10 @@
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+
+SELECT DISTINCT ?chembl_id (substr(str(?pubmed),31) as ?pubmed_id)
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  [ a cco:SmallMolecule ;
+      cco:chemblId ?chembl_id ;
+      cco:hasDocument / bibo:pmid ?pubmed ] .
+}
