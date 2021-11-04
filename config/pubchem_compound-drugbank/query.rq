@@ -6,7 +6,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 
 select distinct ?pubchem_id ?drugbunk_id
-from <http://rdf.integbio.jp/dataset/pubchem>
+from <http://rdf.ncbi.nlm.nih.gov/pubchem/synonym>
 {
   [ a cheminf:CHEMINF_000406 ;
     cheminf:has-value ?dbid ;

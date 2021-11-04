@@ -1,8 +1,26 @@
-#!/bin/sh
+#!/usr/bin/sh
 set -euo pipefail
 
-# 2021/04/13時点で1412640件あるので、200万件を超えた場合は最後の行のコメントアウトを取る必要あり。
+# PubChem IDとPubMed IDのペアを取得する。
 
-curl -sSH "Accept: text/tab-separated-values" --data-urlencode query="PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#> PREFIX bibo: <http://purl.org/ontology/bibo/> SELECT ?chembl_id (substr(str(?pubmed),31) as ?pubmed_id) { SELECT DISTINCT ?chembl_id ?pubmed FROM <http://rdf.ebi.ac.uk/dataset/chembl> { [ a cco:SmallMolecule ; cco:chemblId ?chembl_id ; cco:hasDocument / bibo:pmid ?pubmed ] . } offset 0 limit 1000000 }" https://integbio.jp/rdf/mirror/ebi/sparql | tail -n +2 | sed -e 's/"//g'
-curl -sSH "Accept: text/tab-separated-values" --data-urlencode query="PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#> PREFIX bibo: <http://purl.org/ontology/bibo/> SELECT ?chembl_id (substr(str(?pubmed),31) as ?pubmed_id) { SELECT DISTINCT ?chembl_id ?pubmed FROM <http://rdf.ebi.ac.uk/dataset/chembl> { [ a cco:SmallMolecule ; cco:chemblId ?chembl_id ; cco:hasDocument / bibo:pmid ?pubmed ] . } offset 1000000 limit 1000000 }" https://integbio.jp/rdf/mirror/ebi/sparql | tail -n +2 | sed -e 's/"//g'
-#curl -sSH "Accept: text/tab-separated-values" --data-urlencode query="PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#> PREFIX bibo: <http://purl.org/ontology/bibo/> SELECT ?chembl_id (substr(str(?pubmed),31) as ?pubmed_id) { SELECT DISTINCT ?chembl_id ?pubmed FROM <http://rdf.ebi.ac.uk/dataset/chembl> { [ a cco:SmallMolecule ; cco:chemblId ?chembl_id ; cco:hasDocument / bibo:pmid ?pubmed ] . } offset 2000000 limit 1000000 }" https://integbio.jp/rdf/mirror/ebi/sparql | tail -n +2 | sed -e 's/"//g'
+ENDPOINT=https://integbio.jp/rdf/ebi/sparql
+LIMIT=1000000 # SPARQLエンドポイントにおける取得可能データ件数の最大値
+CURL=/usr/bin/curl
+
+# ChEMBL IDとPubMed IDのペアを取得するクエリのテンプレート。
+# 100万件以上あるので、本スクリプト中で、OFFSET/LIMIT を sed で追加して用いる。
+CHEMBL_PUBMED_QUERY_FILE=query.rq
+# 上記クエリで得られる結果の全件数を取得するクエリのテンプレート。
+COUNT_CHEMBL_PUBMED_QUERY_FILE=query_count.rq
+
+if [ ! -e $CHEMBL_PUBMED_QUERY_FILE ]; then echo "必要なファイルが不足しています。:$CHEMBL_PUBMED_QUERY_FILE"; exit; fi
+if [ ! -e $COUNT_CHEMBL_PUBMED_QUERY_FILE ]; then echo "必要なファイルが不足しています。:$COUNT_CHEMBL_PUBMED_QUERY_FILE"; exit; fi
+
+C2P_TOTAL=$($CURL -sSH "Accept: text/csv" --data-urlencode query@$COUNT_CHEMBL_PUBMED_QUERY_FILE $ENDPOINT | tail -1)
+#echo 取得対象C2P数: $C2P_TOTAL
+COUNT=$(expr $C2P_TOTAL / $LIMIT)
+
+for i in $(seq 0 ${COUNT}); do
+  QUERY=$(sed -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $CHEMBL_PUBMED_QUERY_FILE)
+  $CURL -sSH "Accept: text/tab-separated-values" --data-urlencode query="$QUERY" $ENDPOINT | tail -qn +2 | sed -e 's/"//g'
+done

@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/mirror/ebi/sparql
+  method: awk -F '\t' '{print $2 "\t" $1}' $TOGOID_ROOT/input/reactome/ChEBI2ReactomeReactions.txt
