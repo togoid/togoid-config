@@ -37,7 +37,7 @@ chebi:
   catalog: nbdc00027
   category: Compound
   regex: '^(?:CHEBI[:_])?(?<id>\d+)$'
-  prefix: 'http://identifiers.org/chebi/CHEBI:'
+  prefix: 'http://purl.obolibrary.org/obo/CHEBI_'
   examples:
     - ["84824","40167","32807","87666","57524","64860","94440","18005","4806","50158"]
     - ["CHEBI:84824","CHEBI:40167","CHEBI:32807","CHEBI:87666","CHEBI:57524","CHEBI:64860","CHEBI:94440","CHEBI:18005","CHEBI:4806","CHEBI:50158"]
