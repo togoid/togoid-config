@@ -4,8 +4,9 @@ services:
     image: togoid-update
     container_name: togoid-update
     build:
-      context: ./docker
+      context: .
     volumes:
-      - ${PWD}:/work
-    working_dir: /work
+      - ${PWD}/input:/togoid/input
+      - ${PWD}/output:/togoid/output
+    working_dir: /togoid
     command: ["rake", "-T"]
