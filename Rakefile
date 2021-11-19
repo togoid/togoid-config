@@ -247,11 +247,11 @@ module TogoID
             end
           end
         end
+        return check
       end
-      return check
     end
   end
-  
+
   # Methods for preparation
   module Prepare
     # Entry point for preparation
