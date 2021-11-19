@@ -247,11 +247,14 @@ module TogoID
             end
           end
         end
+      else
+        $stderr.puts "# Error: Failed to create #{tsv} or created file is empty" if $verbose
+        check = false
       end
       return check
     end
   end
-  
+
   # Methods for preparation
   module Prepare
     # Entry point for preparation
