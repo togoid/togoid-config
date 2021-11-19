@@ -9,4 +9,4 @@ services:
       - ${PWD}/input:/togoid/input
       - ${PWD}/output:/togoid/output
     working_dir: /togoid
-    command: ["rake", "-T"]
+    command: ["rake", "update"]
