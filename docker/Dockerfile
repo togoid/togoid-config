@@ -3,6 +3,7 @@ RUN export TZ=Asia/Tokyo && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone && \
     apt-get update -y && apt-get install -y \
+      libjson-perl=4.02000-2 \
       curl=7.68.0-1ubuntu2.7 \
       wget=1.20.3-1ubuntu1 \
       gawk=1:5.0.1+dfsg-1 \
