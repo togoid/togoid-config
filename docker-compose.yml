@@ -4,7 +4,7 @@ services:
     image: togoid-update
     container_name: togoid-update
     build:
-      context: .
+      context: ./docker
     volumes:
       - ${PWD}:/work
     working_dir: /work
