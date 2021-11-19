@@ -14,3 +14,7 @@ RUN apt-get update -y && apt-get install -y \
       ln -s /usr/bin/python3.8 /usr/bin/python && \
       ln -s bash /bin/sh.bash && \
       mv /bin/sh.bash /bin/sh
+
+ADD . /togoid
+WORKDIR /togoid
+CMD ["rake", "-T"]
