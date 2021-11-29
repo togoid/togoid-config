@@ -169,7 +169,7 @@ hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
   category: Gene
-  regex: '^(?<id>[A-Za-z-0-9_]+)\@?$'
+  regex: '^(?<id>[A-Za-z0-9_\-]+\@?)$'
   prefix: 'http://identifiers.org/hgnc.symbol/'
 hmdb:
   label: HMDB
