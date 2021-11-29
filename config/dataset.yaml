@@ -604,6 +604,14 @@ uniprot:
   prefix: 'http://purl.uniprot.org/uniprot/'
   examples:
     - ["A0A174V9D2","A0A1V4U2Y9","Q7NXD4","P0AAM3","O43423","D4IJI4","Q66SS1","B5IDU9","D3TBR4","D4ILS5"]
+uniprot_isoform:
+  label: UniProt isoform
+  catalog: nbdc00221
+  category: Protein
+  regex: '^(?<id>[OPQ][0-9][A-Z0-9]{3}[0-9]-\d+)$'
+  prefix: 'http://purl.uniprot.org/uniprot/'
+  examples:
+    - ["P11188-1","P03679-1","C1IWT2-1","C5IY46-1","C5IY43-1","P22114-1","O71155-1","P03247-1","P03244-1","P0DJX1-1"]
 uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221
