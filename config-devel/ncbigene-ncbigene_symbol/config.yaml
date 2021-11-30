@@ -12,4 +12,5 @@ link:
   file: sample.tsv
 update:
   frequency: Daily
-  method: DL='../../input/ncbigene' && mkdir -p $DL && setlock.rb $DL/download.lock "wget -Nq --directory-prefix=$DL ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/All_Data.gene_info.gz" && gzip -dc $DL/All_Data.gene_info.gz | grep -v '^#' | cut -f 2,3
+  method: gzip -dc $TOGOID_ROOT/input/ncbigene/All_Data.gene_info.gz | grep -v '^#' | cut -f 2,3
+  # Download required in Rakefile: ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/All_Data.gene_info.gz
