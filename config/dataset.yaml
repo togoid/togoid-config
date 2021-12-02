@@ -625,7 +625,7 @@ glytoucan:
   label: GlyTouCan
   catalog: nbdc01535
   category: Carbohydrate
-  regex: '^G[0-9]{5}[A-Z]{2}$'
+  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
   prefix: 'http://identifiers.org/glytoucan/'
   examples:
     - ["G88006IV","G53085MI","G17896UT","G50341PG"]
@@ -633,7 +633,7 @@ inchi_key:
   label: InChIKey
   catalog: FIXME
   category: Compound
-  regex: '^[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?'
+  regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$'
   prefix: 'https://identifiers.org/inchikey/'
   examples:
     - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N"]
