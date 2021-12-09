@@ -1,0 +1,15 @@
+link:
+  file: sample.tsv
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+update:
+  frequency: Daily
+  method: "gunzip -c \"${TOGOID_ROOT}/input/biosample/biosample_set.xml.gz\" | grep -e '<BioSample ' -e 'taxonomy_id' | awk '/BioSample/ { print $NF } /<Organism/ { print $2 }'"

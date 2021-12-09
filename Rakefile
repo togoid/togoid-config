@@ -260,6 +260,8 @@ module TogoID
     # Entry point for preparation
     def prepare_task(taskname)
       case taskname
+      when /#{OUTPUT_TSV_DIR}biosample/
+        return "prepare:biosample"
 #      when /#{OUTPUT_TSV_DIR}drugbank/
 #        return "prepare:drugbank"
       when /#{OUTPUT_TSV_DIR}ensembl/
@@ -393,8 +395,9 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot ]
+  task :all => [ :biosample, :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot ]
 
+  directory INPUT_BIOSAMPLE_DIR   = "input/biosample"
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
@@ -404,6 +407,21 @@ namespace :prepare do
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
+
+  desc "Prepare required file for BioSample"
+  task :biosample => INPUT_BIOSAMPLE_DIR do
+    $stderr.puts "## Prepare input file for BioSample"
+    download_lock(INPUT_BIOSAMPLE_DIR) do
+      updated = false
+      input_file = "#{INPUT_BIOSAMPLE_DIR}/biosample_set.xml.gz"
+      input_url  = 'ftp://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz'
+      if file_older_than_days?(input_file)
+        download_file(INPUT_BIOSAMPLE_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
 
 =begin
   desc "Prepare required files for Drugbank"
