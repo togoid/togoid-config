@@ -1,0 +1,12 @@
+version: '3'
+services:
+  togoid-update:
+    image: togoid-update
+    container_name: togoid-update
+    build:
+      context: .
+    volumes:
+      - ${PWD}/input:/togoid/input
+      - ${PWD}/output:/togoid/output
+    working_dir: /togoid
+    command: ["rake", "update"]
