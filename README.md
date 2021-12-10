@@ -166,6 +166,7 @@ Build locally:
 
 ```
 $ git clone https://github.com/dbcls/togoid-config
+$ cd togoid-config
 $ docker build -t togoid:test .
 $ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v $(pwd)/output:/togoid/output -w /togoid togoid:test rake -m -j 16 update
 ```
@@ -173,7 +174,9 @@ $ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v 
 Or by using a container hosted on [GitHub container registry](https://github.com/dbcls/togoid-config/pkgs/container/togoid)
 
 ```
-$ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v $(pwd)/output:/togoid/output -w /togoid ghcr.io/dbcls/togoid:latest rake -m -j 16 update
+$ git clone https://github.com/dbcls/togoid-config
+$ cd togoid-config
+$ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v $(pwd)/output:/togoid/output -w /togoid ghcr.io/dbcls/togoid:3455a5a rake -m -j 16 update
 ```
 
 ### togoid-config
