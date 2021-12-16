@@ -12,4 +12,4 @@ link:
     predicate: seeAlso
 update:
   frequency: Daily
-  method: "gunzip -c \"${TOGOID_ROOT}/input/biosample/biosample_set.xml.gz\" | grep -e '<BioSample ' -e 'taxonomy_id' | awk '/BioSample/ { print $NF } /<Organism/ { print $2 }'"
+  method: gunzip -c "${TOGOID_ROOT}/input/biosample/biosample_set.xml.gz" | awk '/<BioSample / { for(i=2;i<=NF;i++){ if($i ~ /accession/){ match($i, /="([A-Z0-9]+)"/,arr); printf arr[1] "\t" } } } /<Organism/ { for(i=2;i<=NF;i++){ if($i ~ /taxonomy_id/){ match($i, /="([0-9]+)"/, arr); print arr[1] } } }'
