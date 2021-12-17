@@ -22,9 +22,9 @@
 - [API Documentation　(Swagger)](https://togoid.dbcls.jp/apidoc/)
 
 ## Statistics (as of July 2021)
-- Number of target DBs 
-    - 62
-- Number of ID pairs
+- Number of target datasets 
+    - 64
+- Number of dataset pairs
     - 154
 - For details on the target DBs and ID examples, please refer to the DATABASES tab. 
 
