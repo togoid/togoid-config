@@ -11,7 +11,7 @@
     3. オリジナルDBへのリンクURLを含む形式で変換されたIDの一覧を取得する
     4. 変換経路をすべて含む変換されたIDの一覧をCSV形式で取得する
 
-- ID間の対応関係は、各DBのRDFデータ、API、フラットファイルからの抽出によって整備しており、それらはGitHubの[togoid-config](https://github.com/dbcls/togoid-config/) レポジトリで管理･公開しています。対象DBのIDに関するメタデータや、IDペアの更新方法、更新頻度などを管理することで、常に最新のID間の対応関係を得られるようにしています。
+- ID間の対応関係は、各DBのRDFデータ、API、フラットファイルからの抽出によって整備しており、それらはGitHubの[togoid-config](https://github.com/dbcls/togoid-config/) レポジトリで管理･公開しています。対象DBのIDに関するメタデータや、データセットペアの更新方法、更新頻度などを管理することで、常に最新のID間の対応関係を得られるようにしています。
 
 ## 動画マニュアル
 - [TogoIDを使って生命科学分野のデータベースのID間の対応関係を検索し変換する](https://youtu.be/xxkVEtJMW2k)
@@ -29,9 +29,9 @@
 - [API Documentation　(Swagger)](https://togoid.dbcls.jp/apidoc/)
 
 ## 統計 (2021年7月現在)
-- 対象DB数 
-    - 62
-- IDペア数
+- 対象データセット数 
+    - 64
+- データセットペア数
     - 154
 - 対象DBの詳細やID例については、DATABASES タブ からご覧いただけます。 
 
