@@ -28,11 +28,11 @@
 
 - [API Documentation　(Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## 統計 (2021年7月現在)
+## 統計 (2021年12月現在)
 - 対象データセット数 
     - 64
 - データセットペア数
-    - 154
+    - 162
 - 対象DBの詳細やID例については、DATABASES タブ からご覧いただけます。 
 
 ## Web user interface
