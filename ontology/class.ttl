@@ -1,0 +1,331 @@
+@prefix : <http://togoid.dbcls.jp/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Category a owl:Class ;
+  rdfs:label "Category" .
+
+:Compound a owl:Class ;
+  rdfs:label "Compound" ;
+  rdfs:subClassOf :Category .
+
+:Glytoucan a owl:Class ;
+  rdfs:label "glytoucan" ;
+  rdfs:subClassOf :Compound .
+
+:Chebi a owl:Class ;
+  rdfs:label "chebi" ;
+  rdfs:subClassOf :Compound .
+
+:ChemblCompound a owl:Class ;
+  rdfs:label "chembl_compound" ;
+  rdfs:subClassOf :Compound .
+
+:InchiKey a owl:Class ;
+  rdfs:label "inchi_key" ;
+  rdfs:subClassOf :Compound .
+
+:PubchemCompound a owl:Class ;
+  rdfs:label "pubchem_compound" ;
+  rdfs:subClassOf :Compound .
+
+:PubchemSubstance a owl:Class ;
+  rdfs:label "pubchem_substance" ;
+  rdfs:subClassOf :Compound .
+
+:Drugbank a owl:Class ;
+  rdfs:label "drugbank" ;
+  rdfs:subClassOf :Compound .
+
+:Hmdb a owl:Class ;
+  rdfs:label "hmdb" ;
+  rdfs:subClassOf :Compound .
+
+:Disease a owl:Class ;
+  rdfs:label "Disease" ;
+  rdfs:subClassOf :Category .
+
+:Doid a owl:Class ;
+  rdfs:label "doid" ;
+  rdfs:subClassOf :Disease .
+
+:Meddra a owl:Class ;
+  rdfs:label "meddra" ;
+  rdfs:subClassOf :Disease .
+
+:Medgen a owl:Class ;
+  rdfs:label "medgen" ;
+  rdfs:subClassOf :Disease .
+
+:Mondo a owl:Class ;
+  rdfs:label "mondo" ;
+  rdfs:subClassOf :Disease .
+
+:Nando a owl:Class ;
+  rdfs:label "nando" ;
+  rdfs:subClassOf :Disease .
+
+:OmimPhenotype a owl:Class ;
+  rdfs:label "omim_phenotype" ;
+  rdfs:subClassOf :Disease .
+
+:Orphanet a owl:Class ;
+  rdfs:label "orphanet" ;
+  rdfs:subClassOf :Disease .
+
+:Hp a owl:Class ;
+  rdfs:label "hp" ;
+  rdfs:subClassOf :Disease .
+
+:Mesh a owl:Class ;
+  rdfs:label "mesh" ;
+  rdfs:subClassOf :Disease .
+
+:Domain a owl:Class ;
+  rdfs:label "Domain" ;
+  rdfs:subClassOf :Category .
+
+:Interpro a owl:Class ;
+  rdfs:label "interpro" ;
+  rdfs:subClassOf :Domain .
+
+:Pfam a owl:Class ;
+  rdfs:label "pfam" ;
+  rdfs:subClassOf :Domain .
+
+:Function a owl:Class ;
+  rdfs:label "Function" ;
+  rdfs:subClassOf :Category .
+
+:Ec a owl:Class ;
+  rdfs:label "ec" ;
+  rdfs:subClassOf :Function .
+
+:Go a owl:Class ;
+  rdfs:label "go" ;
+  rdfs:subClassOf :Function .
+
+:Gene a owl:Class ;
+  rdfs:label "Gene" ;
+  rdfs:subClassOf :Category .
+
+:Mirbase a owl:Class ;
+  rdfs:label "mirbase" ;
+  rdfs:subClassOf :Gene .
+
+:Ccds a owl:Class ;
+  rdfs:label "ccds" ;
+  rdfs:subClassOf :Gene .
+
+:EnsemblGene a owl:Class ;
+  rdfs:label "ensembl_gene" ;
+  rdfs:subClassOf :Gene .
+
+:EnsemblTranscript a owl:Class ;
+  rdfs:label "ensembl_transcript" ;
+  rdfs:subClassOf :Gene .
+
+:Hgnc a owl:Class ;
+  rdfs:label "hgnc" ;
+  rdfs:subClassOf :Gene .
+
+:Insdc a owl:Class ;
+  rdfs:label "insdc" ;
+  rdfs:subClassOf :Gene .
+
+:Lrg a owl:Class ;
+  rdfs:label "lrg" ;
+  rdfs:subClassOf :Gene .
+
+:MbgdGene a owl:Class ;
+  rdfs:label "mbgd_gene" ;
+  rdfs:subClassOf :Gene .
+
+:Mgi a owl:Class ;
+  rdfs:label "mgi" ;
+  rdfs:subClassOf :Gene .
+
+:Ncbigene a owl:Class ;
+  rdfs:label "ncbigene" ;
+  rdfs:subClassOf :Gene .
+
+:OmimGene a owl:Class ;
+  rdfs:label "omim_gene" ;
+  rdfs:subClassOf :Gene .
+
+:RefseqRna a owl:Class ;
+  rdfs:label "refseq_rna" ;
+  rdfs:subClassOf :Gene .
+
+:Rgd a owl:Class ;
+  rdfs:label "rgd" ;
+  rdfs:subClassOf :Gene .
+
+:RefseqGenomic a owl:Class ;
+  rdfs:label "refseq_genomic" ;
+  rdfs:subClassOf :Gene .
+
+:Interaction a owl:Class ;
+  rdfs:label "Interaction" ;
+  rdfs:subClassOf :Category .
+
+:Intact a owl:Class ;
+  rdfs:label "intact" ;
+  rdfs:subClassOf :Interaction .
+
+:ReactomeReaction a owl:Class ;
+  rdfs:label "reactome_reaction" ;
+  rdfs:subClassOf :Interaction .
+
+:Rhea a owl:Class ;
+  rdfs:label "rhea" ;
+  rdfs:subClassOf :Interaction .
+
+:Literature a owl:Class ;
+  rdfs:label "Literature" ;
+  rdfs:subClassOf :Category .
+
+:Pubmed a owl:Class ;
+  rdfs:label "pubmed" ;
+  rdfs:subClassOf :Literature .
+
+:NGS a owl:Class ;
+  rdfs:label "NGS" ;
+  rdfs:subClassOf :Category .
+
+:SraAccession a owl:Class ;
+  rdfs:label "sra_accession" ;
+  rdfs:subClassOf :NGS .
+
+:SraAnalysis a owl:Class ;
+  rdfs:label "sra_analysis" ;
+  rdfs:subClassOf :NGS .
+
+:SraExperiment a owl:Class ;
+  rdfs:label "sra_experiment" ;
+  rdfs:subClassOf :NGS .
+
+:SraRun a owl:Class ;
+  rdfs:label "sra_run" ;
+  rdfs:subClassOf :NGS .
+
+:Ortholog a owl:Class ;
+  rdfs:label "Ortholog" ;
+  rdfs:subClassOf :Category .
+
+:Homologene a owl:Class ;
+  rdfs:label "homologene" ;
+  rdfs:subClassOf :Ortholog .
+
+:OmaGroup a owl:Class ;
+  rdfs:label "oma_group" ;
+  rdfs:subClassOf :Ortholog .
+
+:Pathway a owl:Class ;
+  rdfs:label "Pathway" ;
+  rdfs:subClassOf :Category .
+
+:ReactomePathway a owl:Class ;
+  rdfs:label "reactome_pathway" ;
+  rdfs:subClassOf :Pathway .
+
+:Wikipathways a owl:Class ;
+  rdfs:label "wikipathways" ;
+  rdfs:subClassOf :Pathway .
+
+:Probe a owl:Class ;
+  rdfs:label "Probe" ;
+  rdfs:subClassOf :Category .
+
+:AffyProbeset a owl:Class ;
+  rdfs:label "affy_probeset" ;
+  rdfs:subClassOf :Probe .
+
+:Project a owl:Class ;
+  rdfs:label "Project" ;
+  rdfs:subClassOf :Category .
+
+:SraProject a owl:Class ;
+  rdfs:label "sra_project" ;
+  rdfs:subClassOf :Project .
+
+:Bioproject a owl:Class ;
+  rdfs:label "bioproject" ;
+  rdfs:subClassOf :Project .
+
+:Protein a owl:Class ;
+  rdfs:label "Protein" ;
+  rdfs:subClassOf :Category .
+
+:ChemblTarget a owl:Class ;
+  rdfs:label "chembl_target" ;
+  rdfs:subClassOf :Protein .
+
+:EnsemblProtein a owl:Class ;
+  rdfs:label "ensembl_protein" ;
+  rdfs:subClassOf :Protein .
+
+:OmaProtein a owl:Class ;
+  rdfs:label "oma_protein" ;
+  rdfs:subClassOf :Protein .
+
+:RefseqProtein a owl:Class ;
+  rdfs:label "refseq_protein" ;
+  rdfs:subClassOf :Protein .
+
+:Uniprot a owl:Class ;
+  rdfs:label "uniprot" ;
+  rdfs:subClassOf :Protein .
+
+:UniprotMnemonic a owl:Class ;
+  rdfs:label "uniprot_mnemonic" ;
+  rdfs:subClassOf :Protein .
+
+:Sample a owl:Class ;
+  rdfs:label "Sample" ;
+  rdfs:subClassOf :Category .
+
+:SraSample a owl:Class ;
+  rdfs:label "sra_sample" ;
+  rdfs:subClassOf :Sample .
+
+:Biosample a owl:Class ;
+  rdfs:label "biosample" ;
+  rdfs:subClassOf :Sample .
+
+:Structure a owl:Class ;
+  rdfs:label "Structure" ;
+  rdfs:subClassOf :Category .
+
+:Pdb a owl:Class ;
+  rdfs:label "pdb" ;
+  rdfs:subClassOf :Structure .
+
+:Taxonomy a owl:Class ;
+  rdfs:label "Taxonomy" ;
+  rdfs:subClassOf :Category .
+
+:MbgdOrganism a owl:Class ;
+  rdfs:label "mbgd_organism" ;
+  rdfs:subClassOf :Taxonomy .
+
+:Taxonomy a owl:Class ;
+  rdfs:label "taxonomy" ;
+  rdfs:subClassOf :Taxonomy .
+
+:Variant a owl:Class ;
+  rdfs:label "Variant" ;
+  rdfs:subClassOf :Category .
+
+:Clinvar a owl:Class ;
+  rdfs:label "clinvar" ;
+  rdfs:subClassOf :Variant .
+
+:Dbsnp a owl:Class ;
+  rdfs:label "dbsnp" ;
+  rdfs:subClassOf :Variant .
+
+:Togovar a owl:Class ;
+  rdfs:label "togovar" ;
+  rdfs:subClassOf :Variant .
+

@@ -1,0 +1,49 @@
+close match	1.1		Interaction, Disease, Compound, Domain, Gene	-	TRUE	Function, Disease, Compound, Domain, Gene, Interaction	-	TRUE	close match	FALSE
+exact match	1.2		Compound, Project, Sample, Taxonomy, Protein	-	TRUE	Compound, Project, Sample, Taxonomy, Protein	-	TRUE	exact match	FALSE
+has corresponding variant	1.3		Variant	Variant	FALSE	Variant	Variant	FALSE		
+has GO annotation	2.1		Domain, Gene, Protein, Structure	-	TRUE	Function	Go	TRUE	annotates	FALSE
+has biological process	2.2	has GO annotation of biological process	Interaction, Pathway	-	TRUE	Function	Go	TRUE	annotates	FALSE
+has cellular component	2.3	has GO annotation of cellular component	Protein	-	TRUE	Function	Go	TRUE	annotates	FALSE
+has compound in pathway	3.1		Pathway	Pathway	FALSE	Compound	Compound	FALSE	is in a pathway	FALSE
+has compound in reaction	3.2		Interaction	Interaction	FALSE	Compound	Compound	FALSE	participates in reaction	FALSE
+has protein in pathway	3.3		Pathway	Pathway	FALSE	Protein	Protein	FALSE	is in a pathway	FALSE
+has protein in reaction	3.4		Interaction	Interaction	FALSE	Protein	Protein	FALSE	participates in reaction	FALSE
+has reaction in pathway	3.5		Pathway	Pathway	FALSE	Interaction	Interaction	FALSE	participates in pathway	FALSE
+participates in interaction	3.6		Protein	Protein, Compound	TRUE	Interaction	Interaction	FALSE	has participants	FALSE
+participates in pathway	3.7		Protein	Protein, Compound, Domain, Interaction	TRUE	Pathway	Pathway	FALSE	has protein in pathway	FALSE
+is in a pathway	3.8		Domain	Domain	FALSE	Pathway	Pathway	FALSE		
+has related disease	4.1		Compound, Pathway, Protein, Variant	Compound, Pathway, Protein, Variant, Gene	TRUE	Disease	Disease	FALSE	has related ....	FALSE
+has related gene	4.2		Disease	Disease	FALSE	Gene	Gene	FALSE	has related disease	FALSE
+interacts with	5.1		Compound	Compound	FALSE	Protein	Protein	FALSE	interacts with	FALSE
+has protein domain	6.1		Protein, Structure	Protein, Structure	FALSE	Domain	Domain	FALSE	is in protein	FALSE
+is in protein	6.2		Domain	Domain	FALSE	Protein	Protein	FALSE	has protein domain	FALSE
+is in structure	6.3		Domain	Domain	FALSE	Structure	Structure	FALSE	has protein domain	FALSE
+is orthologous to	7.1		Gene	Gene	FALSE	Gene	Gene	FALSE	is orthologous to	FALSE
+has orthologous group member	7.2		Ortholog	Ortholog	FALSE	Gene	Gene	FALSE	is orthologous group member of	TRUE
+is orthologous group member of	7.3		Protein	Protein	FALSE	Ortholog	Ortholog	FALSE	has orthologous group member	TRUE
+InChI key	8.1	is represented by InChI key	Compound	Compound	FALSE	Compound	InchiKey	TRUE	is InChI key of	TRUE
+synonym	8.2	has representation	Protein	-	TRUE	Protein	-	TRUE	represents	
+gene product of	9.1		Protein	Protein	FALSE	Gene	Gene	FALSE	has gene product	TRUE
+has gene product	9.2		Gene	Gene	FALSE	Protein	Protein	FALSE	gene product of	TRUE
+has 3D structure	10.1		Protein	Protein	FALSE	Structure	Structure	FALSE	structure of	TRUE
+structure of	10.2	3D structure of	Structure	Structure	FALSE	Protein	Protein	FALSE	has 3D structure	TRUE
+has EC number	11.1		Gene, Protein	Gene, Protein	FALSE	Function	Ec	TRUE	is EC number of	TRUE
+has sequence	12.1		Gene	Gene	FALSE	Gene	Gene	FALSE	is sequence of	TRUE
+is sequence of	12.2		Protein	Protein	FALSE	Protein	Protein	FALSE	has sequence	TRUE
+is probed by	13.1		Gene	Gene	FALSE	Probe	Probe	FALSE	is targeted to	TRUE
+is targeted to	13.2		Probe	Probe	FALSE	Gene	Gene	FALSE	is probed by	TRUE
+references	14.1		Compound, Domain, Gene, Variant	Compound, Domain, Gene, Variant	FALSE	Literature	Literature	FALSE	is reference of	TRUE
+transcribed from	15.1		Gene	Gene	FALSE	Gene	Gene	FALSE	transcribed to	TRUE
+transcribed to	15.2		Gene	Gene	FALSE	Gene	Gene	FALSE	transcribed from	TRUE
+translates to	16.1		Gene	Gene	FALSE	Protein	Protein	FALSE	translation of	TRUE
+translation of	16.2		Protein	Protein	FALSE	Gene	Gene	FALSE	translates to	TRUE
+has analysis	17.1		NGS	NGS	FALSE	NGS	NGS	FALSE		
+has experiment	17.2		NGS	NGS	FALSE	NGS	NGS	FALSE		
+has project	17.3		NGS	NGS	FALSE	Project	Project	FALSE		
+has sample	17.4		NGS	NGS	FALSE	Sample	Sample	FALSE		
+has sequence run	17.5		NGS	NGS	FALSE	NGS	NGS	FALSE		
+has clinical significance	18.1		Variant	Variant	FALSE	Variant	Variant	FALSE		
+is attached to	18.1		Compound	Compound	FALSE	Protein	Protein	FALSE		
+is located in	19.1		Variant	Variant	FALSE	Gene	Gene	FALSE		
+location of	19.2		Protein	Protein	FALSE	Variant	Variant	FALSE		
+source organism	20.1		Gene	Gene	FALSE	Taxonomy	Taxonomy	FALSE		

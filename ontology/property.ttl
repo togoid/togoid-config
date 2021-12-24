@@ -1,0 +1,306 @@
+@prefix : <http://togoid.dbcls.jp/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:close_match
+    a owl:ObjectProperty ;
+    rdfs:label "close match" .
+
+:exact_match
+    a owl:ObjectProperty ;
+    rdfs:label "exact match" .
+
+:has_corresponding_variant
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Variant ;
+    rdfs:label "has corresponding variant" .
+
+:has_go_annotation
+    a owl:ObjectProperty ;
+    rdfs:range :Go ;
+    rdfs:label "has GO annotation" .
+
+:has_biological_process
+    a owl:ObjectProperty ;
+    rdfs:range :Go ;
+    rdfs:label "has biological process" .
+
+:has_cellular_component
+    a owl:ObjectProperty ;
+    rdfs:range :Go ;
+    rdfs:label "has cellular component" .
+
+:has_compound_in_pathway
+    a owl:ObjectProperty ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Compound ;
+    rdfs:label "has compound in pathway" .
+
+:has_compound_in_reaction
+    a owl:ObjectProperty ;
+    rdfs:domain :Interaction ;
+    rdfs:range :Compound ;
+    rdfs:label "has compound in reaction" .
+
+:has_protein_in_pathway
+    a owl:ObjectProperty ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Protein ;
+    rdfs:label "has protein in pathway" .
+
+:has_protein_in_reaction
+    a owl:ObjectProperty ;
+    rdfs:domain :Interaction ;
+    rdfs:range :Protein ;
+    rdfs:label "has protein in reaction" .
+
+:has_reaction_in_pathway
+    a owl:ObjectProperty ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Interaction ;
+    rdfs:label "has reaction in pathway" .
+
+:participates_in_interaction
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein, :Compound ;
+    rdfs:range :Interaction ;
+    rdfs:label "participates in interaction" .
+
+:participates_in_pathway
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein, :Compound, :Domain, :Interaction ;
+    rdfs:range :Pathway ;
+    rdfs:label "participates in pathway" .
+
+:is_in_a_pathway
+    a owl:ObjectProperty ;
+    rdfs:domain :Domain ;
+    rdfs:range :Pathway ;
+    rdfs:label "is in a pathway" .
+
+:has_related_disease
+    a owl:ObjectProperty ;
+    rdfs:domain :Compound, :Pathway, :Protein, :Variant, :Gene ;
+    rdfs:range :Disease ;
+    rdfs:label "has related disease" .
+
+:has_related_gene
+    a owl:ObjectProperty ;
+    rdfs:domain :Disease ;
+    rdfs:range :Gene ;
+    rdfs:label "has related gene" .
+
+:interacts_with
+    a owl:ObjectProperty ;
+    rdfs:domain :Compound ;
+    rdfs:range :Protein ;
+    rdfs:label "interacts with" .
+
+:has_protein_domain
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein, :Structure ;
+    rdfs:range :Domain ;
+    rdfs:label "has protein domain" .
+
+:is_in_protein
+    a owl:ObjectProperty ;
+    rdfs:domain :Domain ;
+    rdfs:range :Protein ;
+    rdfs:label "is in protein" .
+
+:is_in_structure
+    a owl:ObjectProperty ;
+    rdfs:domain :Domain ;
+    rdfs:range :Structure ;
+    rdfs:label "is in structure" .
+
+:is_orthologous_to
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Gene ;
+    rdfs:label "is orthologous to" .
+
+:has_orthologous_group_member
+    a owl:ObjectProperty ;
+    rdfs:domain :Ortholog ;
+    rdfs:range :Gene ;
+    owl:inverseOf :is_orthologous_group_member_of ;
+    rdfs:label "has orthologous group member" .
+
+:is_orthologous_group_member_of
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Ortholog ;
+    owl:inverseOf :has_orthologous_group_member ;
+    rdfs:label "is orthologous group member of" .
+
+:inchi_key
+    a owl:ObjectProperty ;
+    rdfs:domain :Compound ;
+    rdfs:range :InchiKey ;
+    owl:inverseOf :is_inchi_key_of ;
+    rdfs:label "InChI key" .
+
+:synonym
+    a owl:ObjectProperty ;
+    rdfs:label "synonym" .
+
+:gene_product_of
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Gene ;
+    owl:inverseOf :has_gene_product ;
+    rdfs:label "gene product of" .
+
+:has_gene_product
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Protein ;
+    owl:inverseOf :gene_product_of ;
+    rdfs:label "has gene product" .
+
+:has_3d_structure
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Structure ;
+    owl:inverseOf :structure_of ;
+    rdfs:label "has 3D structure" .
+
+:structure_of
+    a owl:ObjectProperty ;
+    rdfs:domain :Structure ;
+    rdfs:range :Protein ;
+    owl:inverseOf :has_3d_structure ;
+    rdfs:label "structure of" .
+
+:has_ec_number
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene, :Protein ;
+    rdfs:range :Ec ;
+    owl:inverseOf :is_ec_number_of ;
+    rdfs:label "has EC number" .
+
+:has_sequence
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Gene ;
+    owl:inverseOf :is_sequence_of ;
+    rdfs:label "has sequence" .
+
+:is_sequence_of
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :has_sequence ;
+    rdfs:label "is sequence of" .
+
+:is_probed_by
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Probe ;
+    owl:inverseOf :is_targeted_to ;
+    rdfs:label "is probed by" .
+
+:is_targeted_to
+    a owl:ObjectProperty ;
+    rdfs:domain :Probe ;
+    rdfs:range :Gene ;
+    owl:inverseOf :is_probed_by ;
+    rdfs:label "is targeted to" .
+
+:references
+    a owl:ObjectProperty ;
+    rdfs:domain :Compound, :Domain, :Gene, :Variant ;
+    rdfs:range :Literature ;
+    owl:inverseOf :is_reference_of ;
+    rdfs:label "references" .
+
+:transcribed_from
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Gene ;
+    owl:inverseOf :transcribed_to ;
+    rdfs:label "transcribed from" .
+
+:transcribed_to
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Gene ;
+    owl:inverseOf :transcribed_from ;
+    rdfs:label "transcribed to" .
+
+:translates_to
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Protein ;
+    owl:inverseOf :translation_of ;
+    rdfs:label "translates to" .
+
+:translation_of
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Gene ;
+    owl:inverseOf :translates_to ;
+    rdfs:label "translation of" .
+
+:has_analysis
+    a owl:ObjectProperty ;
+    rdfs:domain :NGS ;
+    rdfs:range :NGS ;
+    rdfs:label "has analysis" .
+
+:has_experiment
+    a owl:ObjectProperty ;
+    rdfs:domain :NGS ;
+    rdfs:range :NGS ;
+    rdfs:label "has experiment" .
+
+:has_project
+    a owl:ObjectProperty ;
+    rdfs:domain :NGS ;
+    rdfs:range :Project ;
+    rdfs:label "has project" .
+
+:has_sample
+    a owl:ObjectProperty ;
+    rdfs:domain :NGS ;
+    rdfs:range :Sample ;
+    rdfs:label "has sample" .
+
+:has_sequence_run
+    a owl:ObjectProperty ;
+    rdfs:domain :NGS ;
+    rdfs:range :NGS ;
+    rdfs:label "has sequence run" .
+
+:has_clinical_significance
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Variant ;
+    rdfs:label "has clinical significance" .
+
+:is_attached_to
+    a owl:ObjectProperty ;
+    rdfs:domain :Compound ;
+    rdfs:range :Protein ;
+    rdfs:label "is attached to" .
+
+:is_located_in
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Gene ;
+    rdfs:label "is located in" .
+
+:location_of
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Variant ;
+    rdfs:label "location of" .
+
+:source_organism
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Taxonomy ;
+    rdfs:label "source organism" .
+
