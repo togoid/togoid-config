@@ -5,10 +5,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?pdb_id ?target_id
 FROM <http://rdf.integbio.jp/dataset/pdbj>
 WHERE {
-  ?pdb pdbo:has_entityCategory ?ecats .
-  ?ecats pdbo:has_entity ?entity .
-  ?entity pdbo:referenced_by_struct_asym/pdbo:referenced_by_pdbx_sifts_xref_db_segments/rdfs:seeAlso ?target .
-  FILTER (regex(?target ,'pfam/'))
+  ?pdb pdbo:has_entityCategory/pdbo:has_entity/pdbo:referenced_by_struct_asym/pdbo:referenced_by_pdbx_sifts_xref_db_segments [
+    pdbo:pdbx_sifts_xref_db_segments.xref_db "Pfam" ;
+    pdbo:pdbx_sifts_xref_db_segments.xref_db_acc ?target_id
+  ] .
   BIND (strafter(str(?pdb), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
-  BIND (strafter(str(?target), "http://identifiers.org/pfam/") AS ?target_id)
 }
