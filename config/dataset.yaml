@@ -171,6 +171,8 @@ hgnc_symbol:
   category: Gene
   regex: '^(?<id>[A-Za-z0-9_\-]+\@?)$'
   prefix: 'http://identifiers.org/hgnc.symbol/'
+  examples:
+    - ["MBNL2","RGS20","LINC02011","IGHV1-14","SH3RF2","SPATA13","HNRNPCP10","LINC00334","TMEM241","RN7SL753P"]
 hmdb:
   label: HMDB
   catalog: nbdc00909
