@@ -247,11 +247,14 @@ module TogoID
             end
           end
         end
+      else
+        $stderr.puts "# Error: Failed to create #{tsv} or created file is empty" if $verbose
+        check = false
       end
       return check
     end
   end
-  
+
   # Methods for preparation
   module Prepare
     # Entry point for preparation
@@ -316,7 +319,9 @@ module TogoID
       # When running Wget without -N, -nc, -r, or -p, downloading the same file in the same directory
       # will result in the original copy of file being preserved and the second copy being named file.1
       # The following opts are equivalent to "-q -r -np -nd -N"
-      opts = "--quiet --recursive --no-parent --no-directories --timestamping"
+      #opts = "--quiet --recursive --no-parent --no-directories --timestamping"
+      # Certificate for reactome.org seems to be expired between 20211004 and 20211015
+      opts = "--quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate"
       # Also specify output directory by --directory-prefix (-P)
       if glob
         sh "wget #{opts} --directory-prefix #{dir} --accept '#{glob}' #{url}"
