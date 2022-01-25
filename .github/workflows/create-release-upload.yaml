@@ -1,10 +1,10 @@
-name: "create production release and upload to s3"
+name: "create production release"
 on:
   push:
     branches:
       - production
 jobs:
-  deploy-production:
+  release-production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,26 +19,3 @@ jobs:
           tag_name: release-${{ steps.date.outputs.date }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: opspresso/action-s3-sync@master
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "ap-northeast-1"
-          FROM_PATH: "./config"
-          DEST_PATH: "s3://togo-id-production/config/"
-          OPTIONS: "--delete"
-          CF_RESET: false
-
-      - id: touchUpdateTxt
-        run: touch update.txt
-
-      - uses: opspresso/action-s3-sync@master
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "ap-northeast-1"
-          FROM_PATH: "."
-          DEST_PATH: "s3://togo-id-production/config/"
-          OPTIONS: "--incude 'update.txt'"
-          CF_RESET: false
