@@ -1,49 +1,77 @@
-close match	1.1		Interaction, Disease, Compound, Domain, Gene	-	TRUE	Function, Disease, Compound, Domain, Gene, Interaction	-	TRUE	close match	FALSE
-exact match	1.2		Compound, Project, Sample, Taxonomy, Protein	-	TRUE	Compound, Project, Sample, Taxonomy, Protein	-	TRUE	exact match	FALSE
-has corresponding variant	1.3		Variant	Variant	FALSE	Variant	Variant	FALSE		
-has GO annotation	2.1		Domain, Gene, Protein, Structure	-	TRUE	Function	Go	TRUE	annotates	FALSE
-has biological process	2.2	has GO annotation of biological process	Interaction, Pathway	-	TRUE	Function	Go	TRUE	annotates	FALSE
-has cellular component	2.3	has GO annotation of cellular component	Protein	-	TRUE	Function	Go	TRUE	annotates	FALSE
-has compound in pathway	3.1		Pathway	Pathway	FALSE	Compound	Compound	FALSE	is in a pathway	FALSE
-has compound in reaction	3.2		Interaction	Interaction	FALSE	Compound	Compound	FALSE	participates in reaction	FALSE
-has protein in pathway	3.3		Pathway	Pathway	FALSE	Protein	Protein	FALSE	is in a pathway	FALSE
-has protein in reaction	3.4		Interaction	Interaction	FALSE	Protein	Protein	FALSE	participates in reaction	FALSE
-has reaction in pathway	3.5		Pathway	Pathway	FALSE	Interaction	Interaction	FALSE	participates in pathway	FALSE
-participates in interaction	3.6		Protein	Protein, Compound	TRUE	Interaction	Interaction	FALSE	has participants	FALSE
-participates in pathway	3.7		Protein	Protein, Compound, Domain, Interaction	TRUE	Pathway	Pathway	FALSE	has protein in pathway	FALSE
-is in a pathway	3.8		Domain	Domain	FALSE	Pathway	Pathway	FALSE		
-has related disease	4.1		Compound, Pathway, Protein, Variant	Compound, Pathway, Protein, Variant, Gene	TRUE	Disease	Disease	FALSE	has related ....	FALSE
-has related gene	4.2		Disease	Disease	FALSE	Gene	Gene	FALSE	has related disease	FALSE
-interacts with	5.1		Compound	Compound	FALSE	Protein	Protein	FALSE	interacts with	FALSE
-has protein domain	6.1		Protein, Structure	Protein, Structure	FALSE	Domain	Domain	FALSE	is in protein	FALSE
-is in protein	6.2		Domain	Domain	FALSE	Protein	Protein	FALSE	has protein domain	FALSE
-is in structure	6.3		Domain	Domain	FALSE	Structure	Structure	FALSE	has protein domain	FALSE
-is orthologous to	7.1		Gene	Gene	FALSE	Gene	Gene	FALSE	is orthologous to	FALSE
-has orthologous group member	7.2		Ortholog	Ortholog	FALSE	Gene	Gene	FALSE	is orthologous group member of	TRUE
-is orthologous group member of	7.3		Protein	Protein	FALSE	Ortholog	Ortholog	FALSE	has orthologous group member	TRUE
-InChI key	8.1	is represented by InChI key	Compound	Compound	FALSE	Compound	InchiKey	TRUE	is InChI key of	TRUE
-synonym	8.2	has representation	Protein	-	TRUE	Protein	-	TRUE	represents	
-gene product of	9.1		Protein	Protein	FALSE	Gene	Gene	FALSE	has gene product	TRUE
-has gene product	9.2		Gene	Gene	FALSE	Protein	Protein	FALSE	gene product of	TRUE
-has 3D structure	10.1		Protein	Protein	FALSE	Structure	Structure	FALSE	structure of	TRUE
-structure of	10.2	3D structure of	Structure	Structure	FALSE	Protein	Protein	FALSE	has 3D structure	TRUE
-has EC number	11.1		Gene, Protein	Gene, Protein	FALSE	Function	Ec	TRUE	is EC number of	TRUE
-has sequence	12.1		Gene	Gene	FALSE	Gene	Gene	FALSE	is sequence of	TRUE
-is sequence of	12.2		Protein	Protein	FALSE	Protein	Protein	FALSE	has sequence	TRUE
-is probed by	13.1		Gene	Gene	FALSE	Probe	Probe	FALSE	is targeted to	TRUE
-is targeted to	13.2		Probe	Probe	FALSE	Gene	Gene	FALSE	is probed by	TRUE
-references	14.1		Compound, Domain, Gene, Variant	Compound, Domain, Gene, Variant	FALSE	Literature	Literature	FALSE	is reference of	TRUE
-transcribed from	15.1		Gene	Gene	FALSE	Gene	Gene	FALSE	transcribed to	TRUE
-transcribed to	15.2		Gene	Gene	FALSE	Gene	Gene	FALSE	transcribed from	TRUE
-translates to	16.1		Gene	Gene	FALSE	Protein	Protein	FALSE	translation of	TRUE
-translation of	16.2		Protein	Protein	FALSE	Gene	Gene	FALSE	translates to	TRUE
-has analysis	17.1		NGS	NGS	FALSE	NGS	NGS	FALSE		
-has experiment	17.2		NGS	NGS	FALSE	NGS	NGS	FALSE		
-has project	17.3		NGS	NGS	FALSE	Project	Project	FALSE		
-has sample	17.4		NGS	NGS	FALSE	Sample	Sample	FALSE		
-has sequence run	17.5		NGS	NGS	FALSE	NGS	NGS	FALSE		
-has clinical significance	18.1		Variant	Variant	FALSE	Variant	Variant	FALSE		
-is attached to	18.1		Compound	Compound	FALSE	Protein	Protein	FALSE		
-is located in	19.1		Variant	Variant	FALSE	Gene	Gene	FALSE		
-location of	19.2		Protein	Protein	FALSE	Variant	Variant	FALSE		
-source organism	20.1		Gene	Gene	FALSE	Taxonomy	Taxonomy	FALSE		
+1	is nearly equivalent to	is nearly equivalent to	1	-	-
+2	is equivalent to	is equivalent to	2	-	-
+3	variant has corresponding variant	has corresponding variant	3	Variant	Variant
+4	has GO annotation	has GO annotation	7	-	Go
+5	has GO biological process	has GO biological process	8	-	Go
+6	has GO cellular component	has GO cellular component	9	-	Go
+7	is GO annotation of	is GO annotation of	4	Go	-
+8	is GO biological process of	is GO biological process of	5	Go	-
+9	is GO cellular component of	is GO cellular component of	6	Go	-
+10	has related disease	has related disease	11	-	Disease
+11	disease is related with	is related with	10	Disease	-
+12	molecule interacts with molecule	interacts with	12	Molecule	Molecule
+13	protein has protein domain	has protein domain	15	Protein	Domain
+14	structure has protein domain	has protein domain	16	Structure	Domain
+15	protein domain is in protein	is in protein	13	Domain	Protein
+16	protein domain is in structure	is in structure	14	Domain	Structure
+17	sequence is orthologous to sequence	is orthologous to	17	Sequence	Sequence
+18	orthologous group has member sequence	has orthologous group member	19	Ortholog	Sequence
+19	sequence is member of orthologous group	is member of orthologous group	18	Sequence	Ortholog
+20	compound is represented as InChIKey	is represented as	21	Compound	InchiKey
+21	InChIKey represents compound	represents	20	InchiKey	Compound
+22	has synonym	has synonym	23	-	Synonym
+23	is synonym of	is synonym of	22	Synonym	-
+24	protein is product of gene	is product of gene	25	Protein	Gene
+25	gene has protein as product	has gene product	24	Gene	Protein
+26	protein has 3D structure	has 3D structure	27	Protein	Structure
+27	is 3D structure of protein	is 3D structure of	26	Structure	Protein
+28	sequence has EC number	has EC number	29	Sequence	Ec
+29	is EC number of sequence	is EC number of	28	Ec	Sequence
+30	gene or transcript is target of probe	is target of	31	Gene, Transcript	Probe
+31	probe detects gene or transcript	detects	30	Probe	Gene, Transcript
+32	has reference	has reference	33	-	Literature
+33	is reference of	is reference of	32	Literature	-
+34	transcript is transcribed from gene	is transcribed from	35	Transcript	Gene
+35	gene is transcribed to transcript	is transcribed to	34	Gene	Transcript
+36	transcript is translated to protein	is translated to	37	Transcript	Protein
+37	protein is translated from transcript	is tranlated from	36	Protein	Transcript
+38	submission includes analysis	includes analysis	48	Submission	Analysis
+39	submission includes experiment	includes experiment	49	Submission	Experiment
+40	project performs experiment	performs experiment	50	Project	Experiment
+41	submission includes project	includes project	51	Submission	Project
+42	submission includes sample	includes sample	52	Submission	Sample
+43	experiment captures sample	captures sample	53	Experiment	Sample
+44	sequence run is produced from sample	is produced from sample	54	SequenceRun	Sample
+45	submission includes sequence run	includes sequence run	55	Submission	SequenceRun
+46	project produces sequence run	produces sequence run	56	Project	SequenceRun
+47	experiment produces sequence run	produces sequence run	57	Experiment	SequenceRun
+48	analysis belongs to submission	belongs to submission	38	Analysis	Submission
+49	experiment belongs to submission	belongs to submission	39	Experiment	Submission
+50	experiment belongs to project	belongs to project	40	Experiment	Project
+51	project belongs to submission	belongs to submission	41	Project	Submission
+52	sample belongs to submission	belongs to submission	42	Sample	Submission
+53	sample is captured to perform experiment	is captured to perform experiment	43	Sample	Experiment
+54	sample is captured to produce sequence run	is captured to produce sequence run	44	Sample	SequenceRun
+55	sequence run belongs to submission	belongs to submission	45	SequenceRun	Submission
+56	sequence run belongs to project	belongs to project	46	SequenceRun	Project
+57	sequence run is produced in experiment	is produced in experiment	47	SequenceRun	Experiment
+58	variant has clinical significance	has clinical significance	59	Variant	Variant
+59	is clinical significance of	is clinical significance of	58	Variant	Variant
+60	glycan is attached to protein	is attached to	61	Glycan	Protein
+61	protein is modified with glycan	is modified with	60	Protein	Compound
+62	variant is located in sequence	is located in	63	Variant	Sequence
+63	sequence has variant	has variant	62	Sequence	Variant
+64	is gene of organism	is gene of organism	65	Gene	Taxonomy
+65	organism has gene	has gene	64	-	-
+66	compound targets to disease	targets to	67	-	-
+67	disease is targeted by compound	is targeted by	66	Disease	Compound
+68	pathway has participant molecule	has participant molecule	69	Pathway	Molecule
+69	molecule participates in pathway	participates in pathway	68	Molecule	Pathway
+70	pathway has participant reaction	has participant reaction	71	Pathway	Reaction
+71	reaction participates in pathway	participates in pathway	70	Reaction	Pathway
+72	pathway has protein domain	has protein domain in pathway	73	Pathway	Domain
+73	protein domain participates in pathway	participates in pathway	72	Domain	Pathway
+74	molecule participates in interaction	participates in pathway	75	Molecule	Interaction
+75	interaction has participant molecule	has participant molecule	74	Interaction	Molecule
+76	molecule participates in reaction	participates in pathway	77	Molecule	Reaction
+77	reaction has participant molecule	has participant molecule	76	Reaction	Molecule
