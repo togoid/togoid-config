@@ -102,7 +102,7 @@ doid:
 drugbank:
   label: DrugBank
   catalog: nbdc01071
-  category: Drug
+  category: Compound
   regex: '^(?<id>DB\d{5})$'
   prefix: 'http://identifiers.org/drugbank/'
   examples:
@@ -141,7 +141,7 @@ ensembl_protein:
 ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
-  category: Gene
+  category: Transcript
   regex: '^(?:(?:(?<id1>ENS[A-Z]*T\d{11})(?:\.\d+)?)|(?<id2>FBtr\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+t\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(?<id7>Q\d{4}_[a-z]{1,3}RNA)|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(?<id9>snR\d+-?[A-Za-z]?_sno?RNA)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$'
   prefix: 'http://identifiers.org/ensembl/'
   examples:
@@ -176,7 +176,7 @@ hgnc_symbol:
 hmdb:
   label: HMDB
   catalog: nbdc00909
-  category: Metabolite
+  category: Compound
   regex: '^(?:hmdb:)?(?<id>HMDB\d+)$'
   prefix: 'http://identifiers.org/hmdb/'
   examples:
@@ -193,7 +193,7 @@ homologene:
 hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
-  category: Phenotype
+  category: Disease
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
   examples:
@@ -284,7 +284,7 @@ lrg:
 mbgd_gene:
   label: MBGD gene
   catalog: nbdc00130
-  category: Ortholog
+  category: Gene
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+:[A-Z0-9_\.-]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
@@ -293,7 +293,7 @@ mbgd_gene:
 mbgd_organism:
   label: MBGD organism
   catalog: nbdc00130
-  category: Ortholog
+  category: Taxonomy
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
@@ -320,7 +320,7 @@ medgen:
 mesh:
   label: MeSH
   catalog: nbdc00132
-  category: Terminology
+  category: Disease
   regex: '^(?<id>[CD]\d{6,9})$'
   prefix: 'http://identifiers.org/mesh/'
   examples:
@@ -337,7 +337,7 @@ mgi:
 mirbase:
   label: miRBase
   catalog: nbdc00136
-  category: microRNA
+  category: Transcript
   regex: '^(?<id>MI\d{7})$'
   prefix: 'http://identifiers.org/mirbase/'
   examples:
@@ -478,7 +478,7 @@ reactome_pathway:
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
-  category: Interaction
+  category: Reaction
   regex: '^(?<id>R-[A-Z]{3}-\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/reactome/'
   examples:
@@ -486,7 +486,7 @@ reactome_reaction:
 refseq_genomic:
   label: RefSeq genomic
   catalog: nbdc00187
-  category: Genome
+  category: Gene
   # NC_; AC_; NG_; NT_; NW_; NZ_
   regex: '^(?<id>(?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
@@ -507,7 +507,7 @@ refseq_protein:
 refseq_rna:
   label: RefSeq RNA
   catalog: nbdc00187
-  category: Gene
+  category: Transcript
   # NM_; NR_; XM_; XR_
   regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
@@ -528,7 +528,7 @@ rgd:
 rhea:
   label: Rhea
   catalog: nbdc02083
-  category: Interaction
+  category: Reaction
   regex: '^(?<id>\d{5})$'
   prefix: 'http://identifiers.org/rhea/'
   examples:
@@ -536,7 +536,7 @@ rhea:
 sra_accession:
   label: SRA accession
   catalog: nbdc00687
-  category: NGS
+  category: Submission
   regex: '^(?<id>[SED]RA\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
@@ -544,7 +544,7 @@ sra_accession:
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
-  category: NGS
+  category: Analysis
   regex: '^(?<id>[SED]RZ\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
@@ -552,7 +552,7 @@ sra_analysis:
 sra_experiment:
   label: SRA experiment
   catalog: nbdc00687
-  category: NGS
+  category: Experiment
   regex: '^(?<id>[SED]RX\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
@@ -560,7 +560,7 @@ sra_experiment:
 sra_project:
   label: SRA project
   catalog: nbdc00687
-  category: NGS
+  category: Project
   regex: '^(?<id>[SED]RP\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
@@ -568,7 +568,7 @@ sra_project:
 sra_run:
   label: SRA run
   catalog: nbdc00687
-  category: NGS
+  category: SequenceRun
   regex: '^(?<id>[SED]RR\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
@@ -576,7 +576,7 @@ sra_run:
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
-  category: NGS
+  category: Sample
   regex: '^(?<id>[SED]RS\d+)$'
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
@@ -626,7 +626,7 @@ wikipathways:
 glytoucan:
   label: GlyTouCan
   catalog: nbdc01535
-  category: Carbohydrate
+  category: Glycan
   regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
   prefix: 'http://identifiers.org/glytoucan/'
   examples:
