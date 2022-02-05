@@ -538,14 +538,6 @@
     rdfs:label "WikiPathways" ;
     rdfs:subClassOf :Pathway .
 
-:ID
-    a owl:ObjectProperty ;
-    rdfs:domain :domain ;
-    rdfs:range :range ;
-    owl:inverseOf :inverse_ID ;
-    rdfs:label "revise" ;
-    :display_label "display_label" .
-
 :TIO_000001
     a owl:ObjectProperty ;
     rdfs:label "is nearly equivalent to" ;
