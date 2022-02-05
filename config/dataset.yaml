@@ -38,6 +38,7 @@ chebi:
   category: Compound
   regex: '^(?:CHEBI[:_])?(?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/CHEBI_'
+  format: ["%s","CHEBI:%s","CHEBI_%"]
   examples:
     - ["84824","40167","32807","87666","57524","64860","94440","18005","4806","50158"]
     - ["CHEBI:84824","CHEBI:40167","CHEBI:32807","CHEBI:87666","CHEBI:57524","CHEBI:64860","CHEBI:94440","CHEBI:18005","CHEBI:4806","CHEBI:50158"]
@@ -72,6 +73,7 @@ clinvar:
   category: Variant
   regex: '^(VCV0*)?(?<id>(\d{1,9}))$'
   prefix: 'http://identifiers.org/clinvar/'
+  format: ["%s","VCV%09d"]
   examples:
     - ["658761","619209","745342","11955","731668","724289","725734","743127","789913","5302"]
     - ["VCV000658761","VCV000619209","VCV000745342","VCV000011955","VCV000731668","VCV000724289","VCV000725734","VCV000743127","VCV000789913","VCV000005302"]
@@ -95,6 +97,7 @@ doid:
   category: Disease
   regex: '^DO(?:ID)?[:_](?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
+  format: ["DO:%s","DOID:%s","DOID_%s"]
   examples:
     - ["DO:9036","DO:3159","DO:10964","DO:12698","DO:0060459","DO:11840","DO:11339","DO:914","DO:9945","DO:1407"]
     - ["DOID:9036","DOID:3159","DOID:10964","DOID:12698","DOID:0060459","DOID:11840","DOID:11339","DOID:914","DOID:9945","DOID:1407"]
@@ -113,6 +116,7 @@ ec:
   category: Function
   regex: '^(?:EC:)?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
   prefix: 'http://identifiers.org/ec-code/'
+  format: ["%s","EC:%s"]
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
@@ -152,6 +156,7 @@ go:
   category: Function
   regex: '^GO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/GO_'
+  format: ["GO:%s","GO_%s"]
   examples:
     - ["GO:0005643","GO:0097110","GO:0097225","GO:0052855","GO:2000012","GO:0042921","GO:0019774","GO:0085018","GO:0009508","GO:0046470"]
     - ["GO_0005643","GO_0097110","GO_0097225","GO_0052855","GO_2000012","GO_0042921","GO_0019774","GO_0085018","GO_0009508","GO_0046470"]
@@ -161,6 +166,7 @@ hgnc:
   category: Gene
   regex: '^(?:(?:HGNC|hgnc):)?(?<id>\d{1,5})$'
   prefix: 'http://identifiers.org/hgnc/'
+  format: ["%s","HGNC:%s","hgnc:%s"]
   examples:
     - ["26199","38937","14027","21498","18185","1314","25960","2206","22224","19741"]
     - ["HGNC:26199","HGNC:38937","HGNC:14027","HGNC:21498","HGNC:18185","HGNC:1314","HGNC:25960","HGNC:2206","HGNC:22224","HGNC:19741"]
@@ -179,6 +185,7 @@ hmdb:
   category: Compound
   regex: '^(?:hmdb:)?(?<id>HMDB\d+)$'
   prefix: 'http://identifiers.org/hmdb/'
+  format: ["%s","hmdb:%s"]
   examples:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
     - ["hmdb:HMDB0029433","hmdb:HMDB0015609","hmdb:HMDB0000042","hmdb:HMDB0002360","hmdb:HMDB0003345","hmdb:HMDB0003550","hmdb:HMDB0036769","hmdb:HMDB0000935","hmdb:HMDB0002755","hmdb:HMDB0004369"]
@@ -196,6 +203,7 @@ hp:
   category: Disease
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
+  format: ["HP:%s","HP_%s"]
   examples:
     - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
     - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
@@ -305,6 +313,7 @@ meddra:
   category: Disease
   regex: '^(?:(?:MedDRA|meddra):)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/meddra/'
+  format: ["%s","MedDRA:%s","meddra:%s"]
   examples:
     - ["10008033","10027710","10062506","10040493","10013611","10065857","10063143","10022599","10042342","10047883"]
     - ["MedDRA:10008033","MedDRA:10027710","MedDRA:10062506","MedDRA:10040493","MedDRA:10013611","MedDRA:10065857","MedDRA:10063143","MedDRA:10022599","MedDRA:10042342","MedDRA:10047883"]
@@ -331,6 +340,7 @@ mgi:
   category: Gene
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
   prefix: 'http://identifiers.org/mgi/MGI:'
+  format: ["MGI:%s","mgi:%s"]
   examples:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
     - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
@@ -348,6 +358,7 @@ mondo:
   category: Disease
   regex: '^MONDO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
+  format: ["MONDO:%s","MONDO_%s"]
   examples:
     - ["MONDO:0000115","MONDO:0002345","MONDO:0011571","MONDO:0020035","MONDO:0020920","MONDO:0004627","MONDO:0005480","MONDO:0010852","MONDO:0002053","MONDO:0015758"]
     - ["MONDO_0000115","MONDO_0002345","MONDO_0011571","MONDO_0020035","MONDO_0020920","MONDO_0004627","MONDO_0005480","MONDO_0010852","MONDO_0002053","MONDO_0015758"]
@@ -358,6 +369,7 @@ nando:
   # FIXME: valid? prefix: 'http://purl.obolibrary.org/obo/NANDO_'
   regex: '^NANDO[:_](?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/NANDO_'
+  format: ["NANDO:%s","NANDO_%s"]
   examples:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
     - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
@@ -397,6 +409,7 @@ omim_gene:
   category: Gene
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
+  format: ["%s","OMIM:%s","MIM:%s"]
   examples:
     - ["604810","115460","608706","300181","102575","601280","602832","601604","177075","608977"]
     - ["OMIM:604810","OMIM:115460","OMIM:608706","OMIM:300181","OMIM:102575","OMIM:601280","OMIM:602832","OMIM:601604","OMIM:177075","OMIM:608977"]
@@ -407,6 +420,7 @@ omim_phenotype:
   category: Disease
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
+  format: ["%s","OMIM:%s","MIM:%s"]
   examples:
     - ["207780","236100","237500","300716","125310","165199","617175","137600","600089","601317"]
     - ["OMIM:207780","OMIM:236100","OMIM:237500","OMIM:300716","OMIM:125310","OMIM:165199","OMIM:617175","OMIM:137600","OMIM:600089","OMIM:601317"]
@@ -417,6 +431,7 @@ orphanet:
   category: Disease
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+  format: ["ORPHA:%s","ORDO:%s","Orphanet:%s","Orphanet_%s"]
   examples:
     - ["ORPHA:101078","ORPHA:596","ORPHA:1934","ORPHA:1047","ORPHA:60025","ORPHA:166090","ORPHA:275745","ORPHA:1171","ORPHA:93277","ORPHA:247598"]
     - ["ORDO:101078","ORDO:596","ORDO:1934","ORDO:1047","ORDO:60025","ORDO:166090","ORDO:275745","ORDO:1171","ORDO:93277","ORDO:247598"]
@@ -445,6 +460,7 @@ pubchem_compound:
   category: Compound
   regex: '^(?:CID)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubchem.compound/'
+  format: ["%s","CID%s"]
   examples:
     - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
     - ["CID9548669","CID160419","CID9869929","CID76333303","CID9868491","CID27854","CID76329169","CID3448","CID296","CID10371227"]
@@ -454,6 +470,7 @@ pubchem_substance:
   category: Compound
   regex: '^(?:SID)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubchem.substance/'
+  format: ["%s","SID%s"]
   examples:
     - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
     - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
@@ -463,6 +480,7 @@ pubmed:
   category: Literature
   regex: '^(?:pmid:|PMID:)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/pubmed/'
+  format: ["%s","pmid:%s","PMID:%s"]
   examples:
     - ["19281226","19879151","20858243","10773016","16527252","28499733","10397770","15149666","23861362","10577920"]
     - ["pmid:19281226","pmid:19879151","pmid:20858243","pmid:10773016","pmid:16527252","pmid:28499733","pmid:10397770","pmid:15149666","pmid:23861362","pmid:10577920"]
@@ -521,6 +539,7 @@ rgd:
   category: Gene
   regex: '^(?:(?:RGD|rgd):)?(?<id>\d{4,})$'
   prefix: 'http://identifiers.org/rgd/'
+  format: ["%s","RGD:%s","rgd:%s"]
   examples:
     - ["1308312","1311120","1309724","1565514","7683241","1307957","71036","1307876","1308965","1305482"]
     - ["RGD:1308312","RGD:1311120","RGD:1309724","RGD:1565514","RGD:7683241","RGD:1307957","RGD:71036","RGD:1307876","RGD:1308965","RGD:1305482"]
