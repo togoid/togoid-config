@@ -31,7 +31,7 @@ BEGIN {
     print "    a owl:Class ;"
     print "    rdfs:label \"Dataset\" ."
     print ""
-    print ":togoid_label"
+    print ":display_label"
     print "    a owl:DatatypeProperty ;"
     print "    rdfs:comment \"A label to be displayed on the TogoID web UI.\" ."
     print ""
@@ -56,14 +56,13 @@ fn==1 {
 fn==2 {
     print ":" snake2camel($1)
     print "    a owl:Class, :Dataset ;"
-    print "    dcterms:identifier \"" snake2camel($1) "\" ;"
-    print "    skos:altLabel \"" $1 "\" ;"
+    print "    dcterms:identifier \"" $1 "\" ;"
     print "    rdfs:label \"" $2 "\" ;"
     print "    rdfs:subClassOf :" gensub(", ", " , :", "g", $3) " .\n"
 }
 
 fn==3 {
-    printf(":TIO_%06d\n", $1)
+    print ":" $1
     print "    a owl:ObjectProperty ;"
     if ($5 != "-") {
         print "    rdfs:domain :" gensub(", ", ", :", "g", $5) " ;"
@@ -71,8 +70,8 @@ fn==3 {
     if ($6 != "-")
         print "    rdfs:range :" gensub(", ", ", :", "g", $6) " ;"
     if ($4 != $1)
-        printf("    owl:inverseOf :TIO_%06d ;\n", $4)
+        print "    owl:inverseOf :" $4 " ;"
     print "    rdfs:label \"" $2 "\" ;"
-    print "    :togoid_label \"" $3 "\" .\n"
+    print "    :display_label \"" $3 "\" .\n"
 }
 
