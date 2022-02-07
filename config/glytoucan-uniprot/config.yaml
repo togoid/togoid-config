@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: exactMatch
-    namespace: skos
-    prefix: http://www.w3.org/2004/02/skos/core#
-    predicate: exactMatch
-  reverse:
-    label: exactMatch
-    namespace: skos
-    prefix: http://www.w3.org/2004/02/skos/core#
-    predicate: exactMatch
+  forward: TIO_000060
+  reverse: TIO_000061
   file: sample.tsv
 update:
   frequency: threeTimesAYear

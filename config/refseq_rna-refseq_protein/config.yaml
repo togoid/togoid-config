@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: ribosomally translates to
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002513
-  reverse:
-    label: ribosomal translation of 
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002512
+  forward: TIO_000036
+  reverse: TIO_000037
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --protein | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
+    --protein | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'

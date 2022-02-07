@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000001
+  reverse: TIO_000001
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F '\t' -v col=8 'FNR!=1 && $col!="-" && !a[$2 $col]++ && $col~/^NG_/{print $2 "\t" gensub(/\.[0-9]+$/,"","g",$col);n++}' $TOGOID_ROOT/input/ncbigene/gene2refseq
+  method: awk -F '\t' -v col=8 'FNR!=1 && $col!="-" && !a[$2 $col]++ && $col~/^NG_/{print
+    $2 "\t" gensub(/\.[0-9]+$/,"","g",$col);n++}' $TOGOID_ROOT/input/ncbigene/gene2refseq

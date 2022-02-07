@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: functionally related to
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002328
-  reverse:
-    label: gene product of
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002204
+  forward: TIO_000028
+  reverse: TIO_000029
   file: sample.tsv
 update:
   frequency: Bimonthly

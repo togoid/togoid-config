@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: location of
-    namespace: ro
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0001015
-  reverse:
-    label: is located in
-    namespace: ro
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0001025
+  forward: TIO_000063
+  reverse: TIO_000062
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --dbsnp | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
+    --dbsnp | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'

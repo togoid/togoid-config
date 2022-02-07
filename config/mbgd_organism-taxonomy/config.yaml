@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: in taxon
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002162
-  reverse:
-    label: has part
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: BFO_0000051
+  forward: TIO_000002
+  reverse: TIO_000002
   file: sample.tsv
 update:
   frequency: Yearly
