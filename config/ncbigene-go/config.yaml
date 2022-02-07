@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: functionally related to
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002328
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000004
+  reverse: TIO_000007
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F '\t' 'FNR!=1 && !a[$2 $3]++{print $2 "\t" gensub("GO:","","g",$3)}' $TOGOID_ROOT/input/ncbigene/gene2go
+  method: awk -F '\t' 'FNR!=1 && !a[$2 $3]++{print $2 "\t" gensub("GO:","","g",$3)}'
+    $TOGOID_ROOT/input/ncbigene/gene2go

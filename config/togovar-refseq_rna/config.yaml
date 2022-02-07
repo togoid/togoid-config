@@ -1,14 +1,6 @@
 link:
-  forward:
-    namespace: ro
-    label: is located in
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0001025
-  reverse:
-    namespace: ro
-    label: location of
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0001015
+  forward: TIO_000062
+  reverse: TIO_000063
   file: sample.tsv
 update:
   frequency: Monthly

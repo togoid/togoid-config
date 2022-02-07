@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000001
+  reverse: TIO_000001
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^MIM:/)print $2 "\t" gensub(/^.*:/,"","g",a[i])}}' $TOGOID_ROOT/input/ncbigene/Homo_sapiens.gene_info
+  method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^MIM:/)print $2
+    "\t" gensub(/^.*:/,"","g",a[i])}}' $TOGOID_ROOT/input/ncbigene/Homo_sapiens.gene_info

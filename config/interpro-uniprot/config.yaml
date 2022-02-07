@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: has member
-    namespace: sio
-    prefix: http://semanticscience.org/resource/
-    predicate: SIO_000059
-  reverse:
-    label: is member of
-    namespace: sio
-    prefix: http://semanticscience.org/resource/
-    predicate: SIO_000095
+  forward: TIO_000015
+  reverse: TIO_000013
   file: sample.tsv
 update:
   frequency: Bimonthly

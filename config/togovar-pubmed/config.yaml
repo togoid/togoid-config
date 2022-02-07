@@ -1,16 +1,7 @@
 link:
-  forward:
-    namespace: dcterms
-    label: references
-    prefix: http://purl.org/dc/terms/
-    predicate: references
-  reverse:
-    namespace: dcterms
-    label: is referenced by
-    prefix: http://purl.org/dc/terms/
-    predicate: isReferencedBy
+  forward: TIO_000032
+  reverse: TIO_000033
   file: sample.tsv
 update:
   frequency: Monthly
   method: curl -s https://togovar.biosciencedbc.jp/public/togoid/tgvid2pubmed.tsv
-

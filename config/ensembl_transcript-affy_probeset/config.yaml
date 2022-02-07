@@ -1,16 +1,12 @@
 link:
   file: sample.tsv
-  forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000030
+  reverse: TIO_000031
 update:
-  frequency: Bimonthly 
-  # http://asia.ensembl.org/Help/Faq?id=431)
-  method: wget -q -O - 'http://www.ensembl.org/biomart/martservice?query=<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE Query><Query  virtualSchemaName = "default" formatter = "TSV" header = "0" uniqueRows = "1" count = "" datasetConfigVersion = "0.6" ><Dataset name = "hsapiens_gene_ensembl" interface = "default" ><Attribute name = "ensembl_transcript_id" /><Attribute name = "affy_hg_u133_plus_2" /></Dataset></Query>' | awk -F "\t" '{ if ($2 != "") print }'
+  frequency: Bimonthly
+  method: wget -q -O - 'http://www.ensembl.org/biomart/martservice?query=<?xml version="1.0"
+    encoding="UTF-8"?><!DOCTYPE Query><Query  virtualSchemaName = "default" formatter
+    = "TSV" header = "0" uniqueRows = "1" count = "" datasetConfigVersion = "0.6"
+    ><Dataset name = "hsapiens_gene_ensembl" interface = "default" ><Attribute name
+    = "ensembl_transcript_id" /><Attribute name = "affy_hg_u133_plus_2" /></Dataset></Query>'
+    | awk -F "\t" '{ if ($2 != "") print }'

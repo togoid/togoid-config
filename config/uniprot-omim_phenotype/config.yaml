@@ -1,14 +1,6 @@
 link:
-  forward:
-    namespace: ro
-    label: has phenotype
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002200
-  reverse:
-    namespace: ro
-    label: phenotype of
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002201
+  forward: TIO_000010
+  reverse: TIO_000011
   file: sample.tsv
 update:
   frequency: Monthly

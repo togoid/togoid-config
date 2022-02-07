@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: transcribed to
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002511
-  reverse:
-    label: transcribed from
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002510
+  forward: TIO_000035
+  reverse: TIO_000034
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F '\t' -v col=5 'FNR!=1&&$col!="-"&&!a[$2 gensub(/\.[0-9]+$/,"","g",$col)]++{print $2 "\t" gensub(/\.[0-9]+$/,"","g",$col)}' $TOGOID_ROOT/input/ncbigene/gene2ensembl
+  method: awk -F '\t' -v col=5 'FNR!=1&&$col!="-"&&!a[$2 gensub(/\.[0-9]+$/,"","g",$col)]++{print
+    $2 "\t" gensub(/\.[0-9]+$/,"","g",$col)}' $TOGOID_ROOT/input/ncbigene/gene2ensembl

@@ -1,15 +1,7 @@
 link:
-  forward:
-    label: disease has basis in
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0004019
-  reverse:
-    label: causes or contributes to condition
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0003302
+  forward: TIO_000011
+  reverse: TIO_000010
   file: sample.tsv
 update:
-  frequency: 
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/togosite/sparql 
+  frequency:
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/togosite/sparql
