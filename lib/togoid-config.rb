@@ -29,8 +29,12 @@ module TogoID
     attr_reader :files, :fwd, :rev
     def initialize(hash)
       @files = ([] << hash["file"]).flatten
+=begin
       @fwd = Edge.new(hash["forward"]) if hash["forward"]
       @rev = Edge.new(hash["reverse"]) if hash["reverse"]
+=end
+      @fwd = hash["forward"] if hash["forward"]
+      @rev = hash["reverse"] if hash["reverse"]
     end
   end
   
@@ -93,12 +97,15 @@ module TogoID
 
     def prefix
       prefixes = []
+=begin
       if @link.fwd
         prefixes << triple("@prefix", "#{@link.fwd.ns}:", "<#{@link.fwd.prefix}>")
       end
       if @link.rev and (! @link.fwd or (@link.fwd.ns != @link.rev.ns))
         prefixes << triple("@prefix", "#{@link.rev.ns}:", "<#{@link.rev.prefix}>")
       end
+=end
+      prefixes << triple("@prefix", "tio:", "<https://togoid.dbcls.jp/ontology/tio#>")
       prefixes << triple("@prefix", "#{@source_ns}:", "<#{@source.prefix}>")
       prefixes << triple("@prefix", "#{@target_ns}:", "<#{@target.prefix}>")
       return prefixes
@@ -118,7 +125,10 @@ module TogoID
 
     def set_predicate(edge)
       if edge
+=begin
         "#{edge.ns}:#{edge.predicate}"  # e.g., rdfs:seeAlso
+=end
+        "tio:#{edge}"
       else
         false
       end
