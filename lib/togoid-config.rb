@@ -105,7 +105,7 @@ module TogoID
         prefixes << triple("@prefix", "#{@link.rev.ns}:", "<#{@link.rev.prefix}>")
       end
 =end
-      prefixes << triple("@prefix", "tio:", "<https://togoid.dbcls.jp/ontology/tio#>")
+      prefixes << triple("@prefix", "tio:", "<http://togoid.dbcls.jp/ontology/>")
       prefixes << triple("@prefix", "#{@source_ns}:", "<#{@source.prefix}>")
       prefixes << triple("@prefix", "#{@target_ns}:", "<#{@target.prefix}>")
       return prefixes
