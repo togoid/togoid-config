@@ -2,6 +2,82 @@ require 'fileutils'
 
 module TogoID
 
+  class Ontology
+    def initialize(tio_nt)
+      @category_color = CategoryColor.new
+      @pred_rdfs_label = {}
+      @pred_disp_label = {}
+      tio_nt.each_line do |line|
+        s, p, o = line.split(/\s+/, 3)
+        pred = s.scan(/TIO_\d+/).first
+        label = o.scan(/"(.*)"/).first
+
+        # <http://togoid.dbcls.jp/ontology/TIO_000014> <http://www.w3.org/2000/01/rdf-schema#label> "structure has protein domain" .
+        if line[/ontology\/TIO_/] and line[/rdf-schema#label/] and label
+          @pred_rdfs_label[pred] = label.first
+        end
+
+        # <http://togoid.dbcls.jp/ontology/TIO_000014> <http://togoid.dbcls.jp/ontology/display_label> "has protein domain" .
+        if line[/ontology\/TIO_/] and line[/ontology\/display_label/] and label
+          @pred_disp_label[pred] = label.first
+        end
+      end
+    end
+
+    def predicate(pred)
+      "tio:#{pred}"
+    end
+
+    def rdfs_label(pred)
+      @pred_rdfs_label[pred] || predicate(pred)
+    end
+
+    def disp_label(pred)
+      @pred_disp_label[pred] || predicate(pred)
+    end
+
+    def color(category)
+      @category_color[category]
+    end
+
+    class CategoryColor
+      PALETTE = {
+        "Analysis"	=> "#696969",
+        "Compound"	=> "#A853C6",
+        "Disease"	=> "#5361C6",
+        "Domain"	=> "#A2C653",
+        "Experiment"	=> "#696969",
+        "Function"	=> "#696969",
+        "Gene"		=> "#53C666",
+        "Glycan"	=> "#673AA6",
+        "Interaction"	=> "#C65381",
+        "Literature"	=> "#696969",
+        "Ortholog"	=> "#53C666",
+        "Pathway"	=> "#C65381",
+        "Probe"		=> "#53C666",
+        "Project"	=> "#696969",
+        "Protein"	=> "#A2C653",
+        "Reaction"	=> "#C65381",
+        "Sample"	=> "#696969",
+        "SequenceRun"	=> "#696969",
+        "Structure"	=> "#C68753",
+        "Submission"	=> "#696969",
+        "Taxonomy"	=> "#006400",
+        "Transcript"	=> "#53C666",
+        "Variant"	=> "#53C3C6",
+      }
+
+      def initialize
+        PALETTE.default = "#333333"
+      end
+
+      def [](category)
+        PALETTE[category]
+      end
+    end
+  end
+
+  # Dataset
   class Node
     attr_reader :catalog, :category, :label, :prefix, :regex, :internal_format, :external_format
     def initialize(hash)
@@ -15,6 +91,7 @@ module TogoID
     end
   end
 
+  # Predicate (depricated as the TIO ID is introduced since 2022-02-08)
   class Edge
     attr_reader :label, :ns, :prefix, :predicate
     def initialize(hash)
@@ -25,11 +102,12 @@ module TogoID
     end
   end
 
+  # Relation
   class Link
     attr_reader :files, :fwd, :rev
     def initialize(hash)
       @files = ([] << hash["file"]).flatten
-=begin
+=begin 2022-02-08
       @fwd = Edge.new(hash["forward"]) if hash["forward"]
       @rev = Edge.new(hash["reverse"]) if hash["reverse"]
 =end
@@ -97,7 +175,7 @@ module TogoID
 
     def prefix
       prefixes = []
-=begin
+=begin 2022-02-08
       if @link.fwd
         prefixes << triple("@prefix", "#{@link.fwd.ns}:", "<#{@link.fwd.prefix}>")
       end
@@ -125,7 +203,7 @@ module TogoID
 
     def set_predicate(edge)
       if edge
-=begin
+=begin 2022-02-08
         "#{edge.ns}:#{edge.predicate}"  # e.g., rdfs:seeAlso
 =end
         "tio:#{edge}"
