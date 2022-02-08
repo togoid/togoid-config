@@ -1,0 +1,65 @@
+affy_probeset	Affymetrix probeset	Probe
+bioproject	BioProject	Project
+biosample	BioSample	Sample
+ccds	Consensus CDS	Gene
+chebi	ChEBI compound	Compound
+chembl_compound	ChEMBL compound	Compound
+chembl_target	ChEMBL target	Protein
+clinvar	ClinVar variant	Variant
+dbsnp	dbSNP	Variant
+doid	Disease ontology	Disease
+drugbank	DrugBank	Compound
+ec	Enzyme nomenclature	Function
+ensembl_gene	Ensembl gene	Gene
+ensembl_protein	Ensembl protein	Protein
+ensembl_transcript	Ensembl transcript	Transcript
+glytoucan	GlyTouCan	Glycan
+go	Gene ontology	Function
+hgnc	HGNC	Gene
+hgnc_symbol	HGNC gene symbol	Gene, Synonym
+hmdb	HMDB	Compound
+homologene	HomoloGene	Ortholog
+hp	Human Phenotype Ontology	Disease
+inchi_key	InChIKey	Compound
+insdc	GenBank/ENA/DDBJ	Gene
+intact	IntAct	Interaction
+interpro	InterPro	Domain
+lrg	LRG	Gene
+mbgd_gene	MBGD gene	Gene
+mbgd_organism	MBGD organism	Taxonomy
+meddra	MedDRA	Disease
+medgen	MedGen	Disease
+mesh	MeSH	Disease
+mgi	MGI	Gene
+mirbase	miRBase	Transcript
+mondo	MONDO	Disease
+nando	NANDO	Disease
+ncbigene	NCBI gene	Gene
+oma_group	OMA group	Ortholog
+oma_protein	OMA protein	Protein
+omim_gene	OMIM gene	Gene
+omim_phenotype	OMIM phenotype	Disease
+orphanet	Orphanet	Disease
+pdb	PDB	Structure
+pfam	Pfam	Domain
+pubchem_compound	PubChem compound	Compound
+pubchem_substance	PubChem substance	Compound
+pubmed	PubMed	Literature
+reactome_pathway	Reactome pathway	Pathway
+reactome_reaction	Reactome reaction	Reaction
+refseq_genomic	RefSeq genomic	Gene
+refseq_protein	RefSeq protein	Protein
+refseq_rna	RefSeq RNA	Transcript
+rgd	RGD	Gene
+rhea	Rhea	Reaction
+sra_accession	SRA accession	Submission
+sra_analysis	SRA analysis	Analysis
+sra_experiment	SRA experiment	Experiment
+sra_project	SRA project	Project
+sra_run	SRA run	SequenceRun
+sra_sample	SRA sample	Sample
+taxonomy	Taxonomy	Taxonomy
+togovar	TogoVar variant	Variant
+uniprot	UniProt	Protein
+uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
+wikipathways	WikiPathways	Pathway
