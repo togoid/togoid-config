@@ -1,0 +1,77 @@
+TIO_000001	is nearly equivalent to	is nearly equivalent to	TIO_000001	-	-
+TIO_000002	is equivalent to	is equivalent to	TIO_000002	-	-
+TIO_000003	variant has corresponding variant	has corresponding variant	TIO_000003	Variant	Variant
+TIO_000004	has GO annotation	has GO annotation	TIO_000007	-	Go
+TIO_000005	has GO biological process	has GO biological process	TIO_000008	-	Go
+TIO_000006	has GO cellular component	has GO cellular component	TIO_000009	-	Go
+TIO_000007	is GO annotation of	is GO annotation of	TIO_000004	Go	-
+TIO_000008	is GO biological process of	is GO biological process of	TIO_000005	Go	-
+TIO_000009	is GO cellular component of	is GO cellular component of	TIO_000006	Go	-
+TIO_000010	has related disease	has related disease	TIO_000011	-	Disease
+TIO_000011	disease is related with	is related with	TIO_000010	Disease	-
+TIO_000012	molecule interacts with molecule	interacts with	TIO_000012	Molecule	Molecule
+TIO_000013	protein has protein domain	has protein domain	TIO_000015	Protein	Domain
+TIO_000014	structure has protein domain	has protein domain	TIO_000016	Structure	Domain
+TIO_000015	protein domain is in protein	is in protein	TIO_000013	Domain	Protein
+TIO_000016	protein domain is in structure	is in structure	TIO_000014	Domain	Structure
+TIO_000017	sequence is orthologous to sequence	is orthologous to	TIO_000017	Sequence	Sequence
+TIO_000018	orthologous group has member sequence	has orthologous group member	TIO_000019	Ortholog	Sequence
+TIO_000019	sequence is member of orthologous group	is member of orthologous group	TIO_000018	Sequence	Ortholog
+TIO_000020	compound is represented as InChIKey	is represented as	TIO_000021	Compound	InchiKey
+TIO_000021	InChIKey represents compound	represents	TIO_000020	InchiKey	Compound
+TIO_000022	has synonym	has synonym	TIO_000023	-	Synonym
+TIO_000023	is synonym of	is synonym of	TIO_000022	Synonym	-
+TIO_000024	protein is product of gene	is product of gene	TIO_000025	Protein	Gene
+TIO_000025	gene has protein as product	has gene product	TIO_000024	Gene	Protein
+TIO_000026	protein has 3D structure	has 3D structure	TIO_000027	Protein	Structure
+TIO_000027	is 3D structure of protein	is 3D structure of	TIO_000026	Structure	Protein
+TIO_000028	sequence has EC number	has EC number	TIO_000029	Sequence	Ec
+TIO_000029	is EC number of sequence	is EC number of	TIO_000028	Ec	Sequence
+TIO_000030	gene or transcript is target of probe	is target of	TIO_000031	Gene, Transcript	Probe
+TIO_000031	probe detects gene or transcript	detects	TIO_000030	Probe	Gene, Transcript
+TIO_000032	has reference	has reference	TIO_000033	-	Literature
+TIO_000033	is reference of	is reference of	TIO_000032	Literature	-
+TIO_000034	transcript is transcribed from gene	is transcribed from	TIO_000035	Transcript	Gene
+TIO_000035	gene is transcribed to transcript	is transcribed to	TIO_000034	Gene	Transcript
+TIO_000036	transcript is translated to protein	is translated to	TIO_000037	Transcript	Protein
+TIO_000037	protein is translated from transcript	is tranlated from	TIO_000036	Protein	Transcript
+TIO_000038	submission includes analysis	includes analysis	TIO_000048	Submission	Analysis
+TIO_000039	submission includes experiment	includes experiment	TIO_000049	Submission	Experiment
+TIO_000040	project performs experiment	performs experiment	TIO_000050	Project	Experiment
+TIO_000041	submission includes project	includes project	TIO_000051	Submission	Project
+TIO_000042	submission includes sample	includes sample	TIO_000052	Submission	Sample
+TIO_000043	experiment captures sample	captures sample	TIO_000053	Experiment	Sample
+TIO_000044	sequence run is produced from sample	is produced from sample	TIO_000054	SequenceRun	Sample
+TIO_000045	submission includes sequence run	includes sequence run	TIO_000055	Submission	SequenceRun
+TIO_000046	project produces sequence run	produces sequence run	TIO_000056	Project	SequenceRun
+TIO_000047	experiment produces sequence run	produces sequence run	TIO_000057	Experiment	SequenceRun
+TIO_000048	analysis belongs to submission	belongs to submission	TIO_000038	Analysis	Submission
+TIO_000049	experiment belongs to submission	belongs to submission	TIO_000039	Experiment	Submission
+TIO_000050	experiment belongs to project	belongs to project	TIO_000040	Experiment	Project
+TIO_000051	project belongs to submission	belongs to submission	TIO_000041	Project	Submission
+TIO_000052	sample belongs to submission	belongs to submission	TIO_000042	Sample	Submission
+TIO_000053	sample is captured to perform experiment	is captured to perform experiment	TIO_000043	Sample	Experiment
+TIO_000054	sample is captured to produce sequence run	is captured to produce sequence run	TIO_000044	Sample	SequenceRun
+TIO_000055	sequence run belongs to submission	belongs to submission	TIO_000045	SequenceRun	Submission
+TIO_000056	sequence run belongs to project	belongs to project	TIO_000046	SequenceRun	Project
+TIO_000057	sequence run is produced in experiment	is produced in experiment	TIO_000047	SequenceRun	Experiment
+TIO_000058	variant has clinical significance	has clinical significance	TIO_000059	Variant	Variant
+TIO_000059	is clinical significance of	is clinical significance of	TIO_000058	Variant	Variant
+TIO_000060	glycan is attached to protein	is attached to	TIO_000061	Glycan	Protein
+TIO_000061	protein is modified with glycan	is modified with	TIO_000060	Protein	Compound
+TIO_000062	variant is located in sequence	is located in	TIO_000063	Variant	Sequence
+TIO_000063	sequence has variant	has variant	TIO_000062	Sequence	Variant
+TIO_000064	is gene of organism	is gene of organism	TIO_000065	Gene	Taxonomy
+TIO_000065	organism has gene	has gene	TIO_000064	-	-
+TIO_000066	compound targets to disease	targets to	TIO_000067	-	-
+TIO_000067	disease is targeted by compound	is targeted by	TIO_000066	Disease	Compound
+TIO_000068	pathway has participant molecule	has participant molecule	TIO_000069	Pathway	Molecule
+TIO_000069	molecule participates in pathway	participates in pathway	TIO_000068	Molecule	Pathway
+TIO_000070	pathway has participant reaction	has participant reaction	TIO_000071	Pathway	Reaction
+TIO_000071	reaction participates in pathway	participates in pathway	TIO_000070	Reaction	Pathway
+TIO_000072	pathway has protein domain	has protein domain in pathway	TIO_000073	Pathway	Domain
+TIO_000073	protein domain participates in pathway	participates in pathway	TIO_000072	Domain	Pathway
+TIO_000074	molecule participates in interaction	participates in pathway	TIO_000075	Molecule	Interaction
+TIO_000075	interaction has participant molecule	has participant molecule	TIO_000074	Interaction	Molecule
+TIO_000076	molecule participates in reaction	participates in pathway	TIO_000077	Molecule	Reaction
+TIO_000077	reaction has participant molecule	has participant molecule	TIO_000076	Reaction	Molecule
