@@ -1,0 +1,26 @@
+Glycan	Glycan	Molecule
+Compound	Compound	Molecule
+Disease	Disease	
+Domain	Domain	
+Function	Function	
+Transcript	Transcript	Sequence
+Gene	Gene	Sequence
+Interaction	Interaction	
+Reaction	Reaction	
+Literature	Literature	
+Submission	Submission	
+Analysis	Analysis	
+Experiment	Experiment	
+SequenceRun	Sequence run	
+Ortholog	Ortholog	
+Pathway	Pathway	
+Probe	Probe	
+Project	Project	
+Protein	Protein	Sequence, Molecule
+Sample	Sample	
+Structure	Structure	
+Taxonomy	Taxonomy	
+Variant	Variant	
+Synonym	Synonym	
+Sequence	Sequence	
+Molecule	Molecule	
