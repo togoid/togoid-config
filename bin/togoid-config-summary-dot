@@ -9,6 +9,14 @@
 #   https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d
 #
 
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'togoid-config'
+
+# For extracting TogoID categories and colors
+tio_nt = File.read(File.join(File.dirname(__FILE__), '..', 'ontology', 'togoid-ontology.nt'))
+tio = TogoID::Ontology.new(tio_nt)
+
 # Option to include identifiers for nodes/edges
 if ARGV[0] == "--id"
   opt_id = true
@@ -27,18 +35,16 @@ ARGF.each do |line|
   s_label = ary[3]
   t_category = ary[6]
   t_label = ary[7]
-  f_ns = ary[9]
+  f_pred = ary[9]
   f_label = ary[10]
-  f_pred = ary[12]
-  r_ns = ary[13]
-  r_label = ary[14]
-  r_pred = ary[16]
+  r_pred = ary[12]
+  r_label = ary[13]
 
   if opt_id
     s_name = "#{s_label}\n'#{s_id}'"
     t_name = "#{t_label}\n'#{t_id}'"
-    f_name = "#{f_label}\n'#{f_ns}:#{f_pred}'"
-    r_name = "#{r_label}\n'#{r_ns}:#{r_pred}'"
+    f_name = "#{f_label}\n'#{f_pred}'"
+    r_name = "#{r_label}\n'#{r_pred}'"
   else
     s_name = s_label
     t_name = t_label
@@ -80,8 +86,7 @@ colors = {
   "microRNA"	=> "#E5006A",
   "NGS"		=> "#E5004F",
 }
-#		"#E60033"
-
+colors.default = "#333333"
 
 puts 'digraph togoid {
   node [
@@ -97,7 +102,8 @@ puts 'digraph togoid {
 puts
 
 nodes.each do |node, category|
-  puts %Q{  "#{node}" [fillcolor = "#{colors[category]}"] ;}
+  #puts %Q{  "#{node}" [fillcolor = "#{colors[category]}"] ;}
+  puts %Q{  "#{node}" [fillcolor = "#{tio.color(category)}"] ;}
 end
 
 puts
@@ -112,5 +118,5 @@ end
 
 puts '}'
 
-$stderr.puts "Run: dot -Kdot -Tpng togoid.dot -otogoid.png"
+$stderr.puts "Run: dot -Kdot -Tpng togoid.dot -otogoid.png (see README.md for details)"
 

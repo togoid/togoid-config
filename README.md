@@ -38,7 +38,7 @@ ec:
   label: Enzyme nomenclature
   # Database identifier provided by the Integbio Database Catalog https://integbio.jp/dbcatalog/
   catalog: nbdc00019
-  # Primary category of the database (should be chosen from the tags defined in the Integbio DB Catalog)
+  # Primary category of the database (category must be defined in the TogoID ontology)
   category: Function
   # URI prefix (intended to be used as a URI prefix in RDF)
   prefix: http://identifiers.org/ec-code/
@@ -88,7 +88,7 @@ Update procedure of link data and metadata for pair of datasets with their relat
 ```yaml
 # Relation of the pair of database identifiers (e.g., hgnc-ec)
 link:
-  # Forward link (source to target), predicate must be defined in the TogoID ontology.
+  # Forward link (source to target), predicate must be defined in the TogoID ontology
   forward: TIO_000028
   # Reverse link (optional; target to source)
   reverse: TIO_000029
@@ -99,15 +99,27 @@ link:
 update:
   # How often the source data is updated
   frequency: Bimonthly
-  # Update procedure of link data (can be a script name or a command like)
+  # Update procedure of link data (can be a script name or a command line)
   method: sparql_csv2tsv.sh query.rq "http://sparql.med2rdf.org/sparql"
 ```
 
 Recommended to use Dublin Core's Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
 
+## Ontology
+
+Dependencies:
+* rapper command in [raptor](https://librdf.org/raptor/)
+* xsltproc command in [libxml](http://www.xmlsoft.org/)
+
+TogoID ontology ([TIO](http://togoid.dbcls.jp/ontology/)) is introduced to semantically describe the datasets and the relations between datasets in TogoID.
+
 ## Usage
 
 ### Rakefile
+
+Dependencies:
+* [ruby](https://www.ruby-lang.org/) and rake (default bundle in ruby)
+* [docker](https://www.docker.com/) described below or install all dependent UNIX commands used in the config.yaml files
 
 To update and convert all files:
 
@@ -196,16 +208,19 @@ To summarize all config settings:
 To see the database update frequency:
 
 ```sh
-% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,18
+% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,16
 ```
 
 To see the database update method:
 
 ```sh
-% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,19
+% ruby bin/togoid-config-summary config/*/config.yaml | cut -f1,17
 ```
 
 ### togoid-config-summary-dot
+
+Dependencies:
+* dot command in [graphviz](https://graphviz.org/)
 
 To visualize config relations:
 
