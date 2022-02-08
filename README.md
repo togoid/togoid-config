@@ -21,15 +21,15 @@ DB1ID3	DB2IDz
 
 Resolve dependencies of update procedure and preparation of common input files for each source DB.
 
-* Prepare: For each config/source-target configuration, prepare common input files for the source database to extract information (if any).
-* Prepare: Compare the timestamp of previous donwload and/or file sizes of local and remote files.
+* Prepare: For each config/source-target configuration, prepare common input files of the source database to extract information (if any).
+* Prepare: Compare the timestamp and/or file sizes of remote files with local files previously downloaded.
 * Update: If the timestamp is newer than previously generated link data (TSV), execute the update procedure.
 * Update: For the databases which don't have timestamp (e.g., the data source is a SPARQL endpoint), execute the update procedure only when the TSV file is older than given age (e.g., >7 days).
 * Convert: If the timestamp of RDF data (TTL) is older than previously generated link data (TSV), execute the convert procedure.
 
 ### dataset.yaml
 
-A list of databases (source and target databases kept in the 1st and 2nd columns of the link data file, respectively).
+A list of datasets (source and target datasets used in the 1st and 2nd columns of the TSV link data, respectively).
 
 ```yaml
 # Dataset name (in snake_case) for TogoID which can be a subset of original database divided by the category.
@@ -83,32 +83,17 @@ go:
 
 ### config.yaml
 
-Update procedure of link data and metadata for pair of databases with their relation including definitions of forward/reverse predicates for RDF generation.
+Update procedure of link data and metadata for pair of datasets with their relation including definitions of forward/reverse predicates for RDF generation.
 
 ```yaml
 # Relation of the pair of database identifiers (e.g., hgnc-ec)
 link:
-  # Forward link (source to target)
-  forward:
-    label: functionally related to
-    namespace: ro
-    # Ontology URI which defines predicates
-    prefix: http://purl.obolibrary.org/obo/
-    # Selected predicate defined in the above ontology
-    predicate: RO_0002328
-
+  # Forward link (source to target), predicate must be defined in the TogoID ontology.
+  forward: TIO_000028
   # Reverse link (optional; target to source)
-  reverse:
-    label: gene product of
-    namespace: ro
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002204
-
-  # Example file name(s) of link data
+  reverse: TIO_000029
+  # Example file name(s) of link data (only for testing)
   file: sample.tsv
-#  file:
-#    - sample1.tsv
-#    - sample2.tsv
 
 # Metadata for updating link data
 update:
@@ -181,10 +166,10 @@ $ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v 
 
 ### togoid-config
 
-To check the syntax of the config YAML file:
+To test the syntax of the config YAML file:
 
 ```sh
-% ruby bin/togoid-config config/db1-db2 check
+% ruby bin/togoid-config config/db1-db2 test
 ```
 
 To update link data (output/tsv/db1-db2.tsv) from the data source:
@@ -230,14 +215,11 @@ To visualize config relations:
 % open togoid.png
 ```
 
-The option `--id` indicates to include identifiers of nodes (database IDs) and predicates of edges.
+The option `--id` indicates to include identifiers of nodes (dataset IDs) and predicates of edges.
 
 ```sh
 % ruby bin/togoid-config-summary config/*/config.yaml | ruby bin/togoid-config-summary-dot --id > togoid.dot
 ```
-
-Note that rdfs:seeAlso will be highlighted in red to encourage considering more informative predicates.
-
 
 Also try some other visualization layouts and options:
 
