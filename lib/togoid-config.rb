@@ -12,13 +12,13 @@ module TogoID
         pred = s.scan(/TIO_\d+/).first
         label = o.scan(/"(.*)"/).first
 
-        # <http://togoid.dbcls.jp/ontology/TIO_000014> <http://www.w3.org/2000/01/rdf-schema#label> "structure has protein domain" .
-        if line[/ontology\/TIO_/] and line[/rdf-schema#label/] and label
+        # <http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/2000/01/rdf-schema#label> "structure has protein domain" .
+        if line[/ontology#TIO_/] and line[/rdf-schema#label/] and label
           @pred_rdfs_label[pred] = label.first
         end
 
-        # <http://togoid.dbcls.jp/ontology/TIO_000014> <http://togoid.dbcls.jp/ontology/display_label> "has protein domain" .
-        if line[/ontology\/TIO_/] and line[/ontology\/display_label/] and label
+        # <http://togoid.dbcls.jp/ontology#TIO_000014> <http://togoid.dbcls.jp/ontology#display_label> "has protein domain" .
+        if line[/ontology#TIO_/] and line[/ontology#display_label/] and label
           @pred_disp_label[pred] = label.first
         end
       end
@@ -183,7 +183,7 @@ module TogoID
         prefixes << triple("@prefix", "#{@link.rev.ns}:", "<#{@link.rev.prefix}>")
       end
 =end
-      prefixes << triple("@prefix", "tio:", "<http://togoid.dbcls.jp/ontology/>")
+      prefixes << triple("@prefix", "tio:", "<http://togoid.dbcls.jp/ontology#>")
       prefixes << triple("@prefix", "#{@source_ns}:", "<#{@source.prefix}>")
       prefixes << triple("@prefix", "#{@target_ns}:", "<#{@target.prefix}>")
       return prefixes
