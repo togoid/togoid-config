@@ -15,7 +15,7 @@ BEGIN {
         exit 0
     }
     FS = "\t"
-    print "@prefix : <http://togoid.dbcls.jp/ontology/> ."
+    print "@prefix : <http://togoid.dbcls.jp/ontology#> ."
     print "@prefix owl: <http://www.w3.org/2002/07/owl#> ."
     print "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> ."
     print "@prefix dcterms: <http://purl.org/dc/terms/> ."

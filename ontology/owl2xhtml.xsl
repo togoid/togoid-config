@@ -41,7 +41,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
   <!ENTITY owl		"http://www.w3.org/2002/07/owl#">
   <!ENTITY core		"http://purl.uniprot.org/core/">
   <!ENTITY spin         "http://spinrdf.org/spin#">
-  <!ENTITY tio		"http://togoid.dbcls.jp/ontology/">
+  <!ENTITY tio		"http://togoid.dbcls.jp/ontology#">
 ]>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
