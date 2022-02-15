@@ -12,4 +12,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: select_offset_limit.sh query.rq https://integbio.jp/togosite/sparql | sed 's@http://ncbi.nlm.nih.gov/clinvar/variation/@@' | sed 's@http://ncbi.nlm.nih.gov/medgen/@@'
+  method: curl -s https://togovar.biosciencedbc.jp/public/togoid/clinvar-medgen.tsv
