@@ -1,0 +1,11 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX tgvo: <http://togovar.biosciencedbc.jp/vocabulary/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cvo: <http://purl.jp/bio/10/clinvar/>
+
+SELECT ?clinvar ?medgen
+WHERE {
+  GRAPH <http://rdf.integbio.jp/dataset/togosite/clinvar> {
+    ?clinvar cvo:interpreted_record/cvo:rcv_list/cvo:rcv_accession/cvo:interpreted_condition_list/cvo:interpreted_condition/dct:references ?medgen.
+  }
+}
