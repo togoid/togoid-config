@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Toshiaki Katayama"]
   spec.email         = ["k@bioruby.org"]
 
-  spec.summary       = "TogoID-config: configuration of ."
+  spec.summary       = "TogoID-config: configuration of TogoID."
   spec.description   = "TogoID update procedures and meadata for relations of ID pairs."
   spec.homepage      = "https://togoid.dbcls.jp/"
   spec.required_ruby_version = ">= 2.4.0"
