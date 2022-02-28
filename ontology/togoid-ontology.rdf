@@ -8,8 +8,8 @@
   <owl:Ontology rdf:about="http://togoid.dbcls.jp/ontology/"/>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/AffyProbeset">
     <dcterms:identifier>affy_probeset</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Affymetrix probeset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Probe"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Analysis">
@@ -18,14 +18,14 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Bioproject">
     <dcterms:identifier>bioproject</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>BioProject</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Project"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Biosample">
     <dcterms:identifier>biosample</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>BioSample</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Sample"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Category">
@@ -33,32 +33,32 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Ccds">
     <dcterms:identifier>ccds</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Consensus CDS</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Chebi">
     <dcterms:identifier>chebi</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>ChEBI compound</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/ChemblCompound">
     <dcterms:identifier>chembl_compound</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>ChEMBL compound</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/ChemblTarget">
     <dcterms:identifier>chembl_target</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>ChEMBL target</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Protein"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Clinvar">
     <dcterms:identifier>clinvar</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>ClinVar variant</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Variant"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Compound">
@@ -71,8 +71,8 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Dbsnp">
     <dcterms:identifier>dbsnp</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>dbSNP</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Variant"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Disease">
@@ -81,8 +81,8 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Doid">
     <dcterms:identifier>doid</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Disease ontology</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Domain">
@@ -91,32 +91,32 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Drugbank">
     <dcterms:identifier>drugbank</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>DrugBank</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Ec">
     <dcterms:identifier>ec</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Enzyme nomenclature</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Function"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/EnsemblGene">
     <dcterms:identifier>ensembl_gene</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Ensembl gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/EnsemblProtein">
     <dcterms:identifier>ensembl_protein</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Ensembl protein</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Protein"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/EnsemblTranscript">
     <dcterms:identifier>ensembl_transcript</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Ensembl transcript</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Transcript"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Experiment">
@@ -139,63 +139,63 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Glytoucan">
     <dcterms:identifier>glytoucan</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>GlyTouCan</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Glycan"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Go">
     <dcterms:identifier>go</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Gene ontology</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Function"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Hgnc">
     <dcterms:identifier>hgnc</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>HGNC</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/HgncSymbol">
     <dcterms:identifier>hgnc_symbol</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>HGNC gene symbol</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Synonym"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Hmdb">
     <dcterms:identifier>hmdb</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>HMDB</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Homologene">
     <dcterms:identifier>homologene</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>HomoloGene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Ortholog"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Hp">
     <dcterms:identifier>hp</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Human Phenotype Ontology</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/InchiKey">
     <dcterms:identifier>inchi_key</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>InChIKey</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Insdc">
     <dcterms:identifier>insdc</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>GenBank/ENA/DDBJ</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Intact">
     <dcterms:identifier>intact</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>IntAct</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Interaction"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Interaction">
@@ -204,8 +204,8 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Interpro">
     <dcterms:identifier>interpro</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>InterPro</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Domain"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Literature">
@@ -214,50 +214,50 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Lrg">
     <dcterms:identifier>lrg</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>LRG</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/MbgdGene">
     <dcterms:identifier>mbgd_gene</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MBGD gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/MbgdOrganism">
     <dcterms:identifier>mbgd_organism</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MBGD organism</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Taxonomy"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Meddra">
     <dcterms:identifier>meddra</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MedDRA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Medgen">
     <dcterms:identifier>medgen</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MedGen</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Mesh">
     <dcterms:identifier>mesh</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MeSH</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Mgi">
     <dcterms:identifier>mgi</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MGI</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Mirbase">
     <dcterms:identifier>mirbase</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>miRBase</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Transcript"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Molecule">
@@ -266,50 +266,50 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Mondo">
     <dcterms:identifier>mondo</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>MONDO</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Nando">
     <dcterms:identifier>nando</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>NANDO</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Ncbigene">
     <dcterms:identifier>ncbigene</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>NCBI gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/OmaGroup">
     <dcterms:identifier>oma_group</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>OMA group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Ortholog"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/OmaProtein">
     <dcterms:identifier>oma_protein</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>OMA protein</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Protein"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/OmimGene">
     <dcterms:identifier>omim_gene</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>OMIM gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/OmimPhenotype">
     <dcterms:identifier>omim_phenotype</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>OMIM phenotype</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Orphanet">
     <dcterms:identifier>orphanet</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Orphanet</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Ortholog">
@@ -322,14 +322,14 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Pdb">
     <dcterms:identifier>pdb</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>PDB</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Structure"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Pfam">
     <dcterms:identifier>pfam</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Pfam</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Domain"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Probe">
@@ -348,20 +348,20 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/PubchemCompound">
     <dcterms:identifier>pubchem_compound</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>PubChem compound</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/PubchemSubstance">
     <dcterms:identifier>pubchem_substance</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>PubChem substance</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Pubmed">
     <dcterms:identifier>pubmed</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>PubMed</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Literature"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Reaction">
@@ -370,44 +370,44 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/ReactomePathway">
     <dcterms:identifier>reactome_pathway</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Reactome pathway</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Pathway"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/ReactomeReaction">
     <dcterms:identifier>reactome_reaction</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Reactome reaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Reaction"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/RefseqGenomic">
     <dcterms:identifier>refseq_genomic</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>RefSeq genomic</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/RefseqProtein">
     <dcterms:identifier>refseq_protein</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>RefSeq protein</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Protein"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/RefseqRna">
     <dcterms:identifier>refseq_rna</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>RefSeq RNA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Transcript"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Rgd">
     <dcterms:identifier>rgd</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>RGD</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Rhea">
     <dcterms:identifier>rhea</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>Rhea</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Reaction"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Sample">
@@ -424,38 +424,38 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/SraAccession">
     <dcterms:identifier>sra_accession</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>SRA accession</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Submission"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/SraAnalysis">
     <dcterms:identifier>sra_analysis</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>SRA analysis</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Analysis"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/SraExperiment">
     <dcterms:identifier>sra_experiment</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>SRA experiment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Experiment"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/SraProject">
     <dcterms:identifier>sra_project</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>SRA project</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Project"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/SraRun">
     <dcterms:identifier>sra_run</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>SRA run</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/SequenceRun"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/SraSample">
     <dcterms:identifier>sra_sample</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>SRA sample</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Sample"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Structure">
@@ -988,16 +988,16 @@
   </owl:ObjectProperty>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Taxonomy">
     <dcterms:identifier>taxonomy</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label>Taxonomy</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Taxonomy"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Togovar">
     <dcterms:identifier>togovar</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>TogoVar variant</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Variant"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Transcript">
@@ -1007,14 +1007,14 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Uniprot">
     <dcterms:identifier>uniprot</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>UniProt</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Protein"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/UniprotMnemonic">
     <dcterms:identifier>uniprot_mnemonic</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>UniProt mnemonic</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Protein"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Synonym"/>
   </owl:Class>
@@ -1024,8 +1024,8 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Wikipathways">
     <dcterms:identifier>wikipathways</dcterms:identifier>
-    <rdf:type rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:label>WikiPathways</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Pathway"/>
   </owl:Class>
   <owl:DatatypeProperty rdf:about="http://togoid.dbcls.jp/ontology/display_label">
