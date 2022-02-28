@@ -149,394 +149,394 @@
     rdfs:subClassOf :Category .
 
 :AffyProbeset
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "affy_probeset" ;
     rdfs:label "Affymetrix probeset" ;
-    rdfs:subClassOf :Probe .
+    rdfs:subClassOf :Probe, :Dataset .
 
 :Bioproject
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "bioproject" ;
     rdfs:label "BioProject" ;
-    rdfs:subClassOf :Project .
+    rdfs:subClassOf :Project, :Dataset .
 
 :Biosample
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "biosample" ;
     rdfs:label "BioSample" ;
-    rdfs:subClassOf :Sample .
+    rdfs:subClassOf :Sample, :Dataset .
 
 :Ccds
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "ccds" ;
     rdfs:label "Consensus CDS" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :Chebi
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "chebi" ;
     rdfs:label "ChEBI compound" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :ChemblCompound
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "chembl_compound" ;
     rdfs:label "ChEMBL compound" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :ChemblTarget
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "chembl_target" ;
     rdfs:label "ChEMBL target" ;
-    rdfs:subClassOf :Protein .
+    rdfs:subClassOf :Protein, :Dataset .
 
 :Clinvar
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "clinvar" ;
     rdfs:label "ClinVar variant" ;
-    rdfs:subClassOf :Variant .
+    rdfs:subClassOf :Variant, :Dataset .
 
 :Dbsnp
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "dbsnp" ;
     rdfs:label "dbSNP" ;
-    rdfs:subClassOf :Variant .
+    rdfs:subClassOf :Variant, :Dataset .
 
 :Doid
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "doid" ;
     rdfs:label "Disease ontology" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Drugbank
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "drugbank" ;
     rdfs:label "DrugBank" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :Ec
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "ec" ;
     rdfs:label "Enzyme nomenclature" ;
-    rdfs:subClassOf :Function .
+    rdfs:subClassOf :Function, :Dataset .
 
 :EnsemblGene
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "ensembl_gene" ;
     rdfs:label "Ensembl gene" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :EnsemblProtein
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "ensembl_protein" ;
     rdfs:label "Ensembl protein" ;
-    rdfs:subClassOf :Protein .
+    rdfs:subClassOf :Protein, :Dataset .
 
 :EnsemblTranscript
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "ensembl_transcript" ;
     rdfs:label "Ensembl transcript" ;
-    rdfs:subClassOf :Transcript .
+    rdfs:subClassOf :Transcript, :Dataset .
 
 :Glytoucan
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "glytoucan" ;
     rdfs:label "GlyTouCan" ;
-    rdfs:subClassOf :Glycan .
+    rdfs:subClassOf :Glycan, :Dataset .
 
 :Go
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "go" ;
     rdfs:label "Gene ontology" ;
-    rdfs:subClassOf :Function .
+    rdfs:subClassOf :Function, :Dataset .
 
 :Hgnc
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "hgnc" ;
     rdfs:label "HGNC" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :HgncSymbol
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "hgnc_symbol" ;
     rdfs:label "HGNC gene symbol" ;
-    rdfs:subClassOf :Gene , :Synonym .
+    rdfs:subClassOf :Gene , :Synonym, :Dataset .
 
 :Hmdb
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "hmdb" ;
     rdfs:label "HMDB" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :Homologene
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "homologene" ;
     rdfs:label "HomoloGene" ;
-    rdfs:subClassOf :Ortholog .
+    rdfs:subClassOf :Ortholog, :Dataset .
 
 :Hp
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "hp" ;
     rdfs:label "Human Phenotype Ontology" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :InchiKey
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "inchi_key" ;
     rdfs:label "InChIKey" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :Insdc
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "insdc" ;
     rdfs:label "GenBank/ENA/DDBJ" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :Intact
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "intact" ;
     rdfs:label "IntAct" ;
-    rdfs:subClassOf :Interaction .
+    rdfs:subClassOf :Interaction, :Dataset .
 
 :Interpro
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "interpro" ;
     rdfs:label "InterPro" ;
-    rdfs:subClassOf :Domain .
+    rdfs:subClassOf :Domain, :Dataset .
 
 :Lrg
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "lrg" ;
     rdfs:label "LRG" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :MbgdGene
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "mbgd_gene" ;
     rdfs:label "MBGD gene" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :MbgdOrganism
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "mbgd_organism" ;
     rdfs:label "MBGD organism" ;
-    rdfs:subClassOf :Taxonomy .
+    rdfs:subClassOf :Taxonomy, :Dataset .
 
 :Meddra
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "meddra" ;
     rdfs:label "MedDRA" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Medgen
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "medgen" ;
     rdfs:label "MedGen" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Mesh
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "mesh" ;
     rdfs:label "MeSH" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Mgi
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "mgi" ;
     rdfs:label "MGI" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :Mirbase
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "mirbase" ;
     rdfs:label "miRBase" ;
-    rdfs:subClassOf :Transcript .
+    rdfs:subClassOf :Transcript, :Dataset .
 
 :Mondo
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "mondo" ;
     rdfs:label "MONDO" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Nando
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "nando" ;
     rdfs:label "NANDO" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Ncbigene
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "ncbigene" ;
     rdfs:label "NCBI gene" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :OmaGroup
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "oma_group" ;
     rdfs:label "OMA group" ;
-    rdfs:subClassOf :Ortholog .
+    rdfs:subClassOf :Ortholog, :Dataset .
 
 :OmaProtein
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "oma_protein" ;
     rdfs:label "OMA protein" ;
-    rdfs:subClassOf :Protein .
+    rdfs:subClassOf :Protein, :Dataset .
 
 :OmimGene
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "omim_gene" ;
     rdfs:label "OMIM gene" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :OmimPhenotype
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "omim_phenotype" ;
     rdfs:label "OMIM phenotype" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Orphanet
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "orphanet" ;
     rdfs:label "Orphanet" ;
-    rdfs:subClassOf :Disease .
+    rdfs:subClassOf :Disease, :Dataset .
 
 :Pdb
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "pdb" ;
     rdfs:label "PDB" ;
-    rdfs:subClassOf :Structure .
+    rdfs:subClassOf :Structure, :Dataset .
 
 :Pfam
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "pfam" ;
     rdfs:label "Pfam" ;
-    rdfs:subClassOf :Domain .
+    rdfs:subClassOf :Domain, :Dataset .
 
 :PubchemCompound
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "pubchem_compound" ;
     rdfs:label "PubChem compound" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :PubchemSubstance
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "pubchem_substance" ;
     rdfs:label "PubChem substance" ;
-    rdfs:subClassOf :Compound .
+    rdfs:subClassOf :Compound, :Dataset .
 
 :Pubmed
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "pubmed" ;
     rdfs:label "PubMed" ;
-    rdfs:subClassOf :Literature .
+    rdfs:subClassOf :Literature, :Dataset .
 
 :ReactomePathway
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "reactome_pathway" ;
     rdfs:label "Reactome pathway" ;
-    rdfs:subClassOf :Pathway .
+    rdfs:subClassOf :Pathway, :Dataset .
 
 :ReactomeReaction
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "reactome_reaction" ;
     rdfs:label "Reactome reaction" ;
-    rdfs:subClassOf :Reaction .
+    rdfs:subClassOf :Reaction, :Dataset .
 
 :RefseqGenomic
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "refseq_genomic" ;
     rdfs:label "RefSeq genomic" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :RefseqProtein
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "refseq_protein" ;
     rdfs:label "RefSeq protein" ;
-    rdfs:subClassOf :Protein .
+    rdfs:subClassOf :Protein, :Dataset .
 
 :RefseqRna
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "refseq_rna" ;
     rdfs:label "RefSeq RNA" ;
-    rdfs:subClassOf :Transcript .
+    rdfs:subClassOf :Transcript, :Dataset .
 
 :Rgd
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "rgd" ;
     rdfs:label "RGD" ;
-    rdfs:subClassOf :Gene .
+    rdfs:subClassOf :Gene, :Dataset .
 
 :Rhea
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "rhea" ;
     rdfs:label "Rhea" ;
-    rdfs:subClassOf :Reaction .
+    rdfs:subClassOf :Reaction, :Dataset .
 
 :SraAccession
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "sra_accession" ;
     rdfs:label "SRA accession" ;
-    rdfs:subClassOf :Submission .
+    rdfs:subClassOf :Submission, :Dataset .
 
 :SraAnalysis
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "sra_analysis" ;
     rdfs:label "SRA analysis" ;
-    rdfs:subClassOf :Analysis .
+    rdfs:subClassOf :Analysis, :Dataset .
 
 :SraExperiment
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "sra_experiment" ;
     rdfs:label "SRA experiment" ;
-    rdfs:subClassOf :Experiment .
+    rdfs:subClassOf :Experiment, :Dataset .
 
 :SraProject
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "sra_project" ;
     rdfs:label "SRA project" ;
-    rdfs:subClassOf :Project .
+    rdfs:subClassOf :Project, :Dataset .
 
 :SraRun
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "sra_run" ;
     rdfs:label "SRA run" ;
-    rdfs:subClassOf :SequenceRun .
+    rdfs:subClassOf :SequenceRun, :Dataset .
 
 :SraSample
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "sra_sample" ;
     rdfs:label "SRA sample" ;
-    rdfs:subClassOf :Sample .
+    rdfs:subClassOf :Sample, :Dataset .
 
 :Taxonomy
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "taxonomy" ;
     rdfs:label "Taxonomy" ;
-    rdfs:subClassOf :Taxonomy .
+    rdfs:subClassOf :Taxonomy, :Dataset .
 
 :Togovar
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "togovar" ;
     rdfs:label "TogoVar variant" ;
-    rdfs:subClassOf :Variant .
+    rdfs:subClassOf :Variant, :Dataset .
 
 :Uniprot
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "uniprot" ;
     rdfs:label "UniProt" ;
-    rdfs:subClassOf :Protein .
+    rdfs:subClassOf :Protein, :Dataset .
 
 :UniprotMnemonic
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "uniprot_mnemonic" ;
     rdfs:label "UniProt mnemonic" ;
-    rdfs:subClassOf :Protein , :Synonym .
+    rdfs:subClassOf :Protein , :Synonym, :Dataset .
 
 :Wikipathways
-    a owl:Class, :Dataset ;
+    a owl:Class ;
     dcterms:identifier "wikipathways" ;
     rdfs:label "WikiPathways" ;
-    rdfs:subClassOf :Pathway .
+    rdfs:subClassOf :Pathway, :Dataset .
 
 :TIO_000001
     a owl:ObjectProperty ;
