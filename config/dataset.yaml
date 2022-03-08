@@ -301,7 +301,7 @@ mbgd_gene:
 mbgd_organism:
   label: MBGD organism
   catalog: nbdc00130
-  category: Taxonomy
+  category: Organism
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+)$'
   prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
@@ -603,7 +603,7 @@ sra_sample:
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
-  category: Taxonomy
+  category: Organism
   regex: '^(?<id>\d+)$'
   prefix: 'http://identifiers.org/taxonomy/'
   examples:
