@@ -116,7 +116,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    92
+                                    93
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="">
@@ -227,6 +227,8 @@
 				tio:OmimGene</option>
 <option value="">
 				tio:OmimPhenotype</option>
+<option value="">
+				tio:Organism</option>
 <option value="">
 				tio:Orphanet</option>
 <option value="">
@@ -1777,8 +1779,8 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
 					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology/Taxonomy">
-				tio:Taxonomy</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Organism">
+				tio:Organism</a></td>
 </tr>
 </tbody>
 </table>
@@ -2210,6 +2212,29 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology/Disease">
 				tio:Disease</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology/Organism"></a><tbody>
+<tr><th id="">
+				tio:Organism<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Organism</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 </tbody>
 </table>
@@ -3163,21 +3188,9 @@
 <td>taxonomy</td>
 </tr>
 <tr>
-<td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
-					rdf:type</a></td>
-<td><a href="http://www.w3.org/2002/07/owl#Class">
-				owl:Class</a></td>
-</tr>
-<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>Taxonomy</td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology/Category">
-				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -3188,8 +3201,8 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
 					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology/Taxonomy">
-				tio:Taxonomy</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Organism">
+				tio:Organism</a></td>
 </tr>
 </tbody>
 </table>
@@ -3411,9 +3424,21 @@
 <td>is nearly equivalent to</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>is nearly equivalent to</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 </tbody>
 </table>
@@ -3433,9 +3458,21 @@
 <td>is equivalent to</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>is equivalent to</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 </tbody>
 </table>
@@ -3489,6 +3526,12 @@
 <td>has GO annotation</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>has GO annotation</td>
@@ -3523,6 +3566,12 @@
 <td>has GO biological process</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>has GO biological process</td>
@@ -3555,6 +3604,12 @@
 <td><a href="http://togoid.dbcls.jp/ontology/display_label">
 					tio:display_label</a></td>
 <td>has GO cellular component</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
@@ -3602,6 +3657,12 @@
 <td>is GO annotation of</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology/TIO_000004">
@@ -3634,6 +3695,12 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>is GO biological process of</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
@@ -3670,6 +3737,12 @@
 <td>is GO cellular component of</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology/TIO_000006">
@@ -3691,6 +3764,12 @@
 <td><a href="http://togoid.dbcls.jp/ontology/display_label">
 					tio:display_label</a></td>
 <td>has related disease</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
@@ -3736,6 +3815,12 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>disease is related with</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
@@ -4149,6 +4234,12 @@
 <td>has synonym</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>has synonym</td>
@@ -4192,6 +4283,12 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>is synonym of</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
@@ -4549,6 +4646,12 @@
 <td>has reference</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>has reference</td>
@@ -4592,6 +4695,12 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>is reference of</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
@@ -5857,9 +5966,21 @@
 <td>has gene</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>organism has gene</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
@@ -5885,9 +6006,21 @@
 <td>targets to</td>
 </tr>
 <tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
+</tr>
+<tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>compound targets to disease</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology/Category">
+				tio:Category</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2002/07/owl#inverseOf">
