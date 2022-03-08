@@ -61,7 +61,7 @@ TIO_000060	glycan is attached to protein	is attached to	TIO_000061	Glycan	Protei
 TIO_000061	protein is modified with glycan	is modified with	TIO_000060	Protein	Compound
 TIO_000062	variant is located in sequence	is located in	TIO_000063	Variant	Sequence
 TIO_000063	sequence has variant	has variant	TIO_000062	Sequence	Variant
-TIO_000064	is gene of organism	is gene of organism	TIO_000065	Gene	Taxonomy
+TIO_000064	is gene of organism	is gene of organism	TIO_000065	Gene	Organism
 TIO_000065	organism has gene	has gene	TIO_000064	-	-
 TIO_000066	compound targets to disease	targets to	TIO_000067	-	-
 TIO_000067	disease is targeted by compound	is targeted by	TIO_000066	Disease	Compound
