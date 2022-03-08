@@ -228,7 +228,7 @@
     <dcterms:identifier>mbgd_organism</dcterms:identifier>
     <rdfs:label>MBGD organism</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Taxonomy"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Organism"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Meddra">
     <dcterms:identifier>meddra</dcterms:identifier>
@@ -305,6 +305,10 @@
     <rdfs:label>OMIM phenotype</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Organism">
+    <rdfs:label>Organism</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Orphanet">
     <dcterms:identifier>orphanet</dcterms:identifier>
@@ -472,11 +476,15 @@
   </owl:Class>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000001">
     <display_label>is nearly equivalent to</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>is nearly equivalent to</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000002">
     <display_label>is equivalent to</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>is equivalent to</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000003">
     <display_label>has corresponding variant</display_label>
@@ -486,18 +494,21 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000004">
     <display_label>has GO annotation</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>has GO annotation</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Go"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000007"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000005">
     <display_label>has GO biological process</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>has GO biological process</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Go"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000008"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000006">
     <display_label>has GO cellular component</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>has GO cellular component</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Go"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000009"/>
@@ -506,22 +517,26 @@
     <display_label>is GO annotation of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Go"/>
     <rdfs:label>is GO annotation of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000004"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000008">
     <display_label>is GO biological process of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Go"/>
     <rdfs:label>is GO biological process of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000005"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000009">
     <display_label>is GO cellular component of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Go"/>
     <rdfs:label>is GO cellular component of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000006"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000010">
     <display_label>has related disease</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>has related disease</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000011"/>
@@ -530,6 +545,7 @@
     <display_label>is related with</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Disease"/>
     <rdfs:label>disease is related with</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000010"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000012">
@@ -602,6 +618,7 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000022">
     <display_label>has synonym</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>has synonym</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Synonym"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000023"/>
@@ -610,6 +627,7 @@
     <display_label>is synonym of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Synonym"/>
     <rdfs:label>is synonym of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000022"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000024">
@@ -672,6 +690,7 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000032">
     <display_label>has reference</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>has reference</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Literature"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000033"/>
@@ -680,6 +699,7 @@
     <display_label>is reference of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Literature"/>
     <rdfs:label>is reference of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000032"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000034">
@@ -901,12 +921,16 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000065">
     <display_label>has gene</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>organism has gene</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000064"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000066">
     <display_label>targets to</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:label>compound targets to disease</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology/TIO_000067"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/TIO_000067">
@@ -988,11 +1012,9 @@
   </owl:ObjectProperty>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Taxonomy">
     <dcterms:identifier>taxonomy</dcterms:identifier>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label>Taxonomy</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Category"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Taxonomy"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology/Organism"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology/Togovar">
     <dcterms:identifier>togovar</dcterms:identifier>
