@@ -76,19 +76,19 @@ for (my $i = 0; $i <= $#files; $i++) {
   # エスケープがややこしいので、場合分けで書き下し
   if ($db_name) {
     if ($rm_target_version) {
-      # grep DB name & remove version number
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
+      # check DB name & remove version number
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col} && \$${db_col} ~ "${db_name}") { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }' | sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
     } else {
-      # grep DB name
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | uniq`;
+      # check DB name
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col} && \$${db_col} ~ "${db_name}") { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'| sort | uniq`;
     }
   } else {
     if ($rm_target_version) {
       # remove version number
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\\n", \$${source_col}, \$${target_col}}'| sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col}) { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'| sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
     } else {
       # normal
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\\n", \$${source_col}, \$${target_col}}'| sort | uniq`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col}) { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'| sort | uniq`;
     }
   }
 }
