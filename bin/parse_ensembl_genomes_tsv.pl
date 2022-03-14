@@ -22,7 +22,7 @@ my $db_name;
 my $source_col;
 my $target_col;
 my $db_col;
-my $target_varsion_cut = 0;
+my $rm_target_version = 0;
 
 # check dataset
 if ($dataset eq "ensembl_transcript") {
@@ -39,12 +39,12 @@ if ($dataset eq "ensembl_transcript") {
   $file_postfix = "refseq";
   $target = "xref";
   $db_name = "RefSeq_dna";
-  $target_varsion_cut = 1;
+  $rm_target_version = 1;
 } elsif ($dataset eq "refseq_protein") {
   $file_postfix = "refseq";
   $target = "xref";
   $db_name = "RefSeq_peptide";
-  $target_varsion_cut = 1;
+  $rm_target_version = 1;
 } elsif ($dataset eq "uniprot") {
   $file_postfix = "uniprot";
   $target = "xref";
@@ -75,7 +75,7 @@ for (my $i = 0; $i <= $#files; $i++) {
   
   # エスケープがややこしいので、場合分けで書き下し
   if ($db_name) {
-    if ($target_varsion_cut) {
+    if ($rm_target_version) {
       # grep DB name & remove version number
       print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
     } else {
@@ -83,7 +83,7 @@ for (my $i = 0; $i <= $#files; $i++) {
       print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | uniq`;
     }
   } else {
-    if ($target_varsion_cut) {
+    if ($rm_target_version) {
       # remove version number
       print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\\n", \$${source_col}, \$${target_col}}'| sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
     } else {
