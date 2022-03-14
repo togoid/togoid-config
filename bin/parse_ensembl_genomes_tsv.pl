@@ -77,10 +77,10 @@ for (my $i = 0; $i <= $#files; $i++) {
   if ($db_name) {
     if ($target_varsion_cut) {
       # grep DB name & remove version number
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | sed -r 's/\.[0-9]+\$//g'`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
     } else {
       # grep DB name
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\tDB:\%s\\n", \$${source_col}, \$${target_col}, \$${db_col}}'| grep DB:${db_name} | cut -f 1,2 | sort | uniq`;
     }
   } else {
     if ($target_varsion_cut) {
@@ -88,7 +88,7 @@ for (my $i = 0; $i <= $#files; $i++) {
       print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\\n", \$${source_col}, \$${target_col}}'| sort | uniq | sed -r 's/\.[0-9]+\$//g'`;
     } else {
       # normal
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\\n", \$${source_col}, \$${target_col}}'| sort`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{printf "\%s\t\%s\\n", \$${source_col}, \$${target_col}}'| sort | uniq`;
     }
   }
 }
