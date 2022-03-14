@@ -278,6 +278,8 @@ module TogoID
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}uniprot/
         return "prepare:uniprot"
+      when /#{OUTPUT_TSV_DIR}ensembl_genomes/
+        return "prepare:ensembl_genomes"
       else
         return "config/dataset.yaml"
       end
@@ -393,17 +395,23 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot ]
+  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :ensembl_genomes ]
 
-  directory INPUT_DRUGBANK_DIR    = "input/drugbank"
-  directory INPUT_ENSEMBL_DIR     = "input/ensembl"
-  directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
-  directory INPUT_INTERPRO_DIR    = "input/interpro"
-  directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
-  directory INPUT_REACTOME_DIR    = "input/reactome"
-  directory INPUT_REFSEQ_DIR      = "input/refseq"
-  directory INPUT_SRA_DIR         = "input/sra"
-  directory INPUT_UNIPROT_DIR     = "input/uniprot"
+  directory INPUT_DRUGBANK_DIR          = "input/drugbank"
+  directory INPUT_ENSEMBL_DIR           = "input/ensembl"
+  directory INPUT_HOMOLOGENE_DIR        = "input/homologene"
+  directory INPUT_INTERPRO_DIR          = "input/interpro"
+  directory INPUT_NCBIGENE_DIR          = "input/ncbigene"
+  directory INPUT_REACTOME_DIR          = "input/reactome"
+  directory INPUT_REFSEQ_DIR            = "input/refseq"
+  directory INPUT_SRA_DIR               = "input/sra"
+  directory INPUT_UNIPROT_DIR           = "input/uniprot"
+  directory INPUT_ENSEMBL_GENOMES_DIR   ="input/ensembl_genomes"
+  directory INPUT_ENSEMBL_PLANTS_DIR    ="input/ensembl_genomes/plants"
+  directory INPUT_ENSEMBL_METAZOA_DIR   ="input/ensembl_genomes/metazoa"
+  directory INPUT_ENSEMBL_PROTISTS_DIR  ="input/ensembl_genomes/protists"
+  directory INPUT_ENSEMBL_FUNGI_DIR     ="input/ensembl_genomes/fungi"
+  directory INPUT_ENSEMBL_BACTERIA_DIR  ="input/ensembl_genomes/bacteria"
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -610,6 +618,42 @@ namespace :prepare do
       end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
+      updated
+    end
+  end
+
+  desc "Prepare required files for Ensembl Genomes"
+  task :ensembl_genomes => INPUT_ENSEMBL_GENOMES_DIR do
+    $stderr.puts "## Prepare input files for Ensembl Genomes"
+    download_lock(INPUT_ENSEMBL_GENOMES_DIR) do
+      updated = false
+      input_file = "#{INPUT_ENSEMBL_GENOMES_DIR}/current_README"
+      input_url  = "http://ftp.ebi.ac.uk/ensemblgenomes/pub/current_README"
+      if update_input_file?(input_file, input_url)
+        # If the current_README file is updated, fetch it and then download required data.
+        download_file(INPUT_ENSEMBL_GENOMES_DIR, input_url)
+        # Plants
+        input_file = "*.tsv.gz"
+        input_url  = "ftp://ftp.ebi.ac.uk/ensemblgenomes/pub/current/plants/tsv/"
+        download_file(INPUT_ENSEMBL_PLANTS_DIR, input_url, input_file)
+        # Metazoa
+        input_file = "*.tsv.gz"
+        input_url  = "ftp://ftp.ebi.ac.uk/ensemblgenomes/pub/current/metazoa/tsv/"
+        download_file(INPUT_ENSEMBL_METAZOA_DIR, input_url, input_file)
+        # Protists
+        input_file = "*.tsv.gz"
+        input_url  = "ftp://ftp.ebi.ac.uk/ensemblgenomes/pub/current/protists/tsv/"
+        download_file(INPUT_ENSEMBL_PROTISTS_DIR, input_url, input_file)
+        # Fungi
+        input_file = "*.tsv.gz"
+        input_url  = "ftp://ftp.ebi.ac.uk/ensemblgenomes/pub/current/fungi/tsv/"
+        download_file(INPUT_ENSEMBL_FUNGI_DIR, input_url, input_file)
+        # Bacteria
+        input_file = "*.tsv.gz"
+        input_url  = "ftp://ftp.ebi.ac.uk/ensemblgenomes/pub/current/bacteria/tsv/"
+        download_file(INPUT_ENSEMBL_BACTERIA_DIR, input_url, input_file)
+        updated = true
+      end
       updated
     end
   end
