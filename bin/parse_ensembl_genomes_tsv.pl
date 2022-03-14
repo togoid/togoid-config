@@ -80,15 +80,15 @@ for (my $i = 0; $i <= $#files; $i++) {
       print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col} && \$${db_col} ~ "${db_name}") { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }' | sed -r 's/\\.[0-9]+\$//g' | sort | uniq`;
     } else {
       # check DB name
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col} && \$${db_col} ~ "${db_name}") { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'| sort | uniq`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col} && \$${db_col} ~ "${db_name}") { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'                             | sort | uniq`;
     }
   } else {
     if ($rm_target_version) {
       # remove version number
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col}) { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'| sort | uniq | sed -r 's/\\.[0-9]+\$//g' sort | uniq`;
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col})                               { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }' | sed -r 's/\\.[0-9]+\$//g' | sort | uniq`;
     } else {
       # normal
-      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col}) { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'| sort | uniq`;
-    }
+      print `gzip -dc ${files[$i]} | sed 1d | awk '{ if (\$${target_col})                               { printf "\%s\t\%s\\n", \$${source_col}, \$${target_col} } }'                             | sort | uniq`;
+    }  
   }
 }
