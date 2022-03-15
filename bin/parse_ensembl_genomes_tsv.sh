@@ -18,7 +18,7 @@ SRC="gene_stable_id"  # source colomn label
 DB="db_name"          # database colomn label
 DB_NAME=""            # database name for filtering
 RM_TRG_VER=0          # remove flag of target-ID-version-number
-CHK=""
+CHK=""                # transcript-ID colomn label for comparison to protein-ID
 
 # check target dataset
 if [ $DATASET = "ensembl_transcript" ] ; then
@@ -73,7 +73,7 @@ done
     
 # output
 for FILE in ${FILES[@]}
-  do
+do
   if [ $DB_NAME ] && [ $RM_TRG_VER -eq 1 ] ; then
     # check DB name & remove version number (refseq_rna, refseq_protein)
     gzip -dc ${FILE} | sed 1d | awk -v src=$(echo ${SRC_COL}) -v trg=$(echo ${TRG_COL}) -v db=$(echo ${DB_COL}) -v name=${DB_NAME} '{ if ($trg && $db ~ name) { printf "%s\t%s\n", $src, $trg } }' | sed -r 's/\.[0-9]+$//g' | sort | uniq
