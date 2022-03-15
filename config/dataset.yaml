@@ -150,6 +150,118 @@ ensembl_transcript:
   prefix: 'http://identifiers.org/ensembl/'
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
+ensembl_plants_gene:
+  label: EnsemblPlants gene
+  catalog: nbdc00436
+  category: Gene
+  regex: '^(?<id>\w+(\.\d+)?(\.\d+)?)$'
+  prefix: 'http://identifiers.org/ensembl.plant/'
+  examples:
+    - ["AT1G30814","AT1G78930","AT1G71695","AT1G58983","AT1G12980","AT1G45223","AT1G56250","AT1G66852","AT1G69810","AT1G72450"]
+ensembl_plants_transcript:
+  label: EnsemblPlants transcript
+  catalog: nbdc00436
+  category: Transcript
+  regex: '^(?<id>\w+(\.\d+)?(\.\d+)?)$'
+  prefix: 'http://identifiers.org/ensembl.plant/'
+  examples:
+    - ["AT1G30814.1","AT1G30814.4","AT1G30814.2","AT1G30814.3","AT1G78930.1","AT1G71695.1","AT1G58983.1","AT1G12980.1","AT1G45223.1","AT1G56250.1"]
+ensembl_plants_protein:
+  label: EnsemblPlants protein
+  catalog: nbdc00436
+  category: Protein
+  regex: '^(?<id>\w+(\.\d+)?(\.\d+)?)$'
+  prefix: 'http://identifiers.org/ensembl.plant/'
+  examples:
+    - []
+ensembl_metazoa_gene:
+  label: EnsemblMetazoa gene
+  catalog: nbdc00435
+  category: Gene
+  regex: '^(?<id>\w+(\.)?\d+)$'
+  prefix: 'http://identifiers.org/ensembl.metazoa/'
+  examples:
+    - ["TriadG51950","TriadG52425","TriadG52723","TriadG52506","TriadG7674","TriadG7563","TriadG52351","TriadG6126","TriadG49689","TriadG18188"]
+ensembl_metazoa_transcript:
+  label: EnsemblMetazoa transcript
+  catalog: nbdc00435
+  category: Transcript
+  regex: '^(?<id>\w+(\.)?\d+)$'
+  prefix: 'http://identifiers.org/ensembl.metazoa/'
+  examples:
+    - ["TriadT51950","TriadT52425","TriadT52723","TriadT52506","TriadT7674","TriadT7563","TriadT52351","TriadT6126","TriadT49689","TriadT18188"]
+ensembl_metazoa_protein:
+  label: EnsemblMetazoa protein
+  catalog: nbdc00435
+  category: Protein
+  regex: '^(?<id>\w+(\.)?\d+)$'
+  prefix: 'http://identifiers.org/ensembl.metazoa/'
+  examples:
+    - ["TriadP51950","TriadP52425","TriadP52723","TriadP52506","TriadP7674","TriadP7563","TriadP52351","TriadP6126","TriadP49689","TriadP18188"]
+ensembl_protists_gene:
+  label: EnsemblProtists gene
+  catalog: nbdc00437
+  category: Gene
+  regex: '^(?<id>\w+)$'
+  prefix: 'http://identifiers.org/ensembl.protist/'
+  examples:
+    - ["GSPATT00000561001","GSPATT00000196001","GSPATT00000027001","GSPATT00000015001","GSPATT00000085001","GSPATT00000365001","GSPATT00000040001","GSPATT00000357001","GSPATT00000003001","GSPATT00000148001"]
+ensembl_protists_transcript:
+  label: EnsemblProtists transcript
+  catalog: nbdc00437
+  category: Transcript
+  regex: '^(?<id>\w+)$'
+  prefix: 'http://identifiers.org/ensembl.protist/'
+  examples:
+    - ["CAK56125","CAK55761","CAK55592","CAK55580","CAK55650","CAK55930","CAK55605","CAK55922","CAK55568","CAK55713"]
+ensembl_protists_protein:
+  label: EnsemblProtists protein
+  catalog: nbdc00437
+  category: Protein
+  regex: '^(?<id>\w+)$'
+  prefix: 'http://identifiers.org/ensembl.protist/'
+  examples:
+    - []
+ensembl_fungi_gene:
+  label: EnsemblFungi gene
+  catalog: nbdc00434
+  category: Gene
+  regex: '^(?<id>[A-Z-a-z0-9]+)$'
+  prefix: 'http://identifiers.org/ensembl.fungi/'
+  examples:
+    - ["YAL001C","YAL002W","YAL003W","YAL004W","YAL005C","YAL007C","YAL008W","YAL009W","YAL010C","YAL011W"]
+ensembl_fungi_transcript:
+  label: EnsemblFungi transcript
+  catalog: nbdc00434
+  category: Transcript
+  regex: '^(?<id>[A-Z-a-z0-9]+)$'
+  prefix: 'http://identifiers.org/ensembl.fungi/'
+  examples:
+    - ["YAL001C_mRNA","YAL002W_mRNA","YAL003W_mRNA","YAL004W_mRNA","YAL005C_mRNA","YAL007C_mRNA","YAL008W_mRNA","YAL009W_mRNA","YAL010C_mRNA",YAL011W_mRNA"]
+ensembl_fungi_protein:
+  label: EnsemblFungi protein
+  catalog: nbdc00434
+  category: Protein
+  regex: '^(?<id>[A-Z-a-z0-9]+)$'
+  prefix: 'http://identifiers.org/ensembl.fungi/'
+  examples:
+    - []
+ensembl_bacteria_gene:
+  label: EnsemblBacteria gene
+  catalog: nbdc00433
+  category: Gene
+  regex: '^((?<id1>EB\w+)|(?<id2>[A-Z0-9]+\_[A-Z0-9]+))$'
+  prefix: 'http://identifiers.org/ensembl.bacteria/'
+  examples:
+    - ["b0001","b0002","b0003","b0004","b0005","b0006","b0007","b0008","b0009","b0010"]
+ensembl_bacteria_transcript:
+  label: EnsemblBacteria transcript
+  catalog: nbdc00433
+  category: Transcript
+  regex: '^((?<id1>EB\w+)|(?<id2>[A-Z0-9]+\_[A-Z0-9]+))$'
+  prefix: 'http://identifiers.org/ensembl.bacteria/'
+  examples:
+    - ["AAC73112","AAC73113","AAC73114","AAC73115","AAC73116","AAC73117","AAC73118","AAC73119","AAC73120","AAC73121"]
 go:
   label: Gene ontology
   catalog: nbdc00074
