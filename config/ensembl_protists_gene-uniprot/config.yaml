@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Quarterly
-  method: parse_ensembl_genomes_tsv.pl ${TOGOID_ROOT}/ensembl_genomes/protists uniprot
+  method: parse_ensembl_genomes_tsv.sh ${TOGOID_ROOT}/ensembl_genomes/protists uniprot
