@@ -14,80 +14,43 @@ DATASET=$2    # dataset list:
               #     refseq_protein
               #     uniprot
 
-SRC="gene_stable_id"  # source colomn label
-DB="db_name"          # database colomn label
-DB_NAME=""            # database name for filtering
-RM_TRG_VER=0          # remove flag of target-ID-version-number
-CHK=""                # transcript-ID colomn label for comparison to protein-ID
+# get species
+ORGS=($(cd ${DIR}; ls | cut -f1 -d.| uniq))
 
-# check target dataset
 if [ $DATASET = "ensembl_transcript" ] ; then
-  POSTFIX="ena"
-  TRG="transcript_stable_id"
+  for ORG in ${ORGS[@]}
+  do
+     ( gzip -dc ${DIR}/${ORG}.*.ena.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($4) { printf "%s\t%s\n", $3, $4 } }'; \
+       gzip -dc ${DIR}/${ORG}.*.entrez.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($2) { printf "%s\t%s\n", $1, $2 } }'; \
+       gzip -dc ${DIR}/${ORG}.*.refseq.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($2) { printf "%s\t%s\n", $1, $2 } }'; \
+       gzip -dc ${DIR}/${ORG}.*.uniprot.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($2) { printf "%s\t%s\n", $1, $2 } }'; ) | sort | uniq
+  done
 elif [ $DATASET = "ensembl_protein" ] ; then
-  POSTFIX="ena"
-  TRG="protein_stable_id"
-  CHK="transcript_stable_id"
+  for ORG in ${ORGS[@]}
+  do
+     ( gzip -dc ${DIR}/${ORG}.*.ena.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($5) { printf "%s\t%s\n", $3, $5 } }'; \
+       gzip -dc ${DIR}/${ORG}.*.entrez.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($3) { printf "%s\t%s\n", $1, $3 } }'; \	 
+       gzip -dc ${DIR}/${ORG}.*.refseq.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($3) { printf "%s\t%s\n", $1, $3 } }'; \
+       gzip -dc ${DIR}/${ORG}.*.uniprot.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($3) { printf "%s\t%s\n", $1, $3 } }'; ) | sort | uniq
+  done
 elif [ $DATASET = "ncbigene" ] ; then
-  POSTFIX="entrez"
-  TRG="xref"
-  DB_NAME="EntrezGene"
+  for ORG in ${ORGS[@]}
+  do
+    gzip -dc ${DIR}/${ORG}.*.entrez.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($4 && $5 ~ "EntrezGene") { printf "%s\t%s\n", $1, $4 } }' | sort | uniq
+  done
 elif [ $DATASET = "refseq_rna" ] ; then
-  POSTFIX="refseq"
-  TRG="xref"
-  DB_NAME="RefSeq_dna"
-  RM_TRG_VER=1
+  for ORG in ${ORGS[@]}
+  do
+    gzip -dc ${DIR}/${ORG}.*.refseq.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($4 && $5 ~ "RefSeq_dna") { printf "%s\t%s\n", $1, $4 } }' | sed  -r 's/\.[0-9]+$//g' | sort | uniq
+  done
 elif [ $DATASET = "refseq_protein" ] ; then
-  POSTFIX="refseq"
-  TRG="xref"
-  DB_NAME="RefSeq_peptide"
-  RM_TRG_VER=1
+  for ORG in ${ORGS[@]}
+  do
+    gzip -dc ${DIR}/${ORG}.*.refseq.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($4 && $5 ~ "RefSeq_peptide") { printf "%s\t%s\n", $1, $4 } }' | sed  -r 's/\.[0-9]+$//g' | sort | uniq
+  done
 elif [ $DATASET = "uniprot" ] ; then
-  POSTFIX="uniprot"
-  TRG="xref"
-  DB_NAME="Uniprot"
+  for ORG in ${ORGS[@]}
+  do
+    gzip -dc ${DIR}/${ORG}.*.uniprot.tsv.gz 2>/dev/null | sed 1d | awk '{ if ($4 && $5 ~ "Uniprot") { printf "%s\t%s\n", $1, $4 } }' | sort | uniq
+  done
 fi
-    
-# get file list
-FILES=($(ls ${DIR}/*.${POSTFIX}.tsv.gz))
-
-# get source/target column from 1st file
-I=0
-HEADER=($(gzip -dc ${FILES[0]} | head -n 1 | tr "\t" "\n"))
-for COL in ${HEADER[@]}
-do
-  I=$(expr $I + 1)
-  if [ $COL = $SRC ] ; then
-    SRC_COL=$I
-  fi
-  if [ $COL = $TRG ] ; then
-    TRG_COL=$I
-  fi
-  if [ $COL = $DB ] ; then
-    DB_COL=$I
-  fi
-  if [ $COL = $CHK ] ; then
-    CHK_COL=$I
-  fi
-done
-    
-# output
-for FILE in ${FILES[@]}
-do
-  if [ $DB_NAME ] && [ $RM_TRG_VER -eq 1 ] ; then
-    # check DB name & remove version number (refseq_rna, refseq_protein)
-    gzip -dc ${FILE} | sed 1d | awk -v src=$(echo ${SRC_COL}) -v trg=$(echo ${TRG_COL}) -v db=$(echo ${DB_COL}) -v name=${DB_NAME} '{ if ($trg && $db ~ name) { printf "%s\t%s\n", $src, $trg } }' | sed -r 's/\.[0-9]+$//g' | sort | uniq
-  elif [ $DB_NAME ] ; then
-    # check DB name (ncbigene, uniprot)
-    gzip -dc ${FILE} | sed 1d | awk -v src=$(echo ${SRC_COL}) -v trg=$(echo ${TRG_COL}) -v db=$(echo ${DB_COL}) -v name=${DB_NAME} '{ if ($trg && $db ~ name) { printf "%s\t%s\n", $src, $trg } }' | sort | uniq
-  elif [ $RM_TRG_VER -eq 1 ] ; then
-    # remove version number (-)
-    gzip -dc ${FILE} | sed 1d | awk -v src=$(echo ${SRC_COL}) -v trg=$(echo ${TRG_COL}) '{ if ($trg) { printf "%s\t%s\n", $src, $trg } }' | sed -r 's/\.[0-9]+$//g' | sort | uniq
-  elif [ $CHK ] ; then
-    # compare to transcript_id  (ensembl_protein)
-    gzip -dc ${FILE} | sed 1d | awk -v src=$(echo ${SRC_COL}) -v trg=$(echo ${TRG_COL}) -v chk=$(echo ${CHK_COL}) '{ if ($trg && $src != $trg && $trg != $chk) { printf "%s\t%s\n", $src, $trg } }' | sort | uniq
-  else
-    # normal (ensembl_transcript)
-    gzip -dc ${FILE} | sed 1d | awk -v src=$(echo ${SRC_COL}) -v trg=$(echo ${TRG_COL}) '{ if ($trg && $src != $trg) { printf "%s\t%s\n", $src, $trg } }' | sort | uniq
-  fi
-done
