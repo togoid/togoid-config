@@ -5,18 +5,19 @@
 # ensembl_xxx_gene (source) to other dataset (target)
 
 
-DIR=$1        # file dir. e.g. ${TOGOID_ROOT}/input/ensembl_genomes
+DIR=$1    # file dir. e.g. ${TOGOID_ROOT}/input/ensembl_genomes
 SRC=$2    # dataset list:
-              #     ensembl_gene
-              #     ensembl_transcript
-              #     ensembl_protein
+          #     ensembl_gene
+          #     ensembl_transcript
+          #     ensembl_protein
 TRG=$3    # dataset list:
-              #     ensembl_transcript
-              #     ensembl_protein
-              #     ncbigene
-              #     renfeq_rna
-              #     refseq_protein
-              #     uniprot
+          #     (ensembl_gene)
+          #     ensembl_transcript
+          #     ensembl_protein
+          #     ncbigene
+          #     renfeq_rna
+          #     refseq_protein
+          #     uniprot
 
 if [ -z "$TRG" ] || [ $SRC = $TRG ] ; then
     echo argv error: script.sh [ensembl_genomes dir] [source] [target]

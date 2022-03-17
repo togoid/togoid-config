@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000037
+  reverse: TIO_000036
+  file: sample.tsv
+update:
+  frequency: Quarterly
+  method: parse_ensembl_genomes_tsv.sh ${TOGOID_ROOT}/input/ensembl_genomes ensembl_protein ensembl_transcript

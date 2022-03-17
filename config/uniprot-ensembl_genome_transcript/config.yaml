@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000037
+  reverse: TIO_000036
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz EnsemblGenome_TRS
