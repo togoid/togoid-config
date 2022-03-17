@@ -150,7 +150,7 @@ ensembl_transcript:
   prefix: 'http://rdf.ebi.ac.uk/resource/ensembl.transcript/'
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
-ensembl_genomess_gene:
+ensembl_genomes_gene:
   label: Ensembl Genomes gene
   catalog: nbdc02215
   category: Gene
