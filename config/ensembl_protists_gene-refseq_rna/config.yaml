@@ -1,7 +1,0 @@
-link:
-  forward: TIO_000035
-  reverse: TIO_000034
-  file: sample.tsv
-update:
-  frequency: Quarterly
-  method: parse_ensembl_genomes_tsv.sh ${TOGOID_ROOT}/ensembl_genomes/protists refseq_rna

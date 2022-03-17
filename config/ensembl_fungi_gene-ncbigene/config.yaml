@@ -1,7 +1,0 @@
-link:
-  forward: TIO_000001
-  reverse: TIO_000001
-  file: sample.tsv
-update:
-  frequency: Quarterly
-  method: parse_ensembl_genomes_tsv.sh ${TOGOID_ROOT}/ensembl_genomes/fungi ncbigene 
