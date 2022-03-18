@@ -1,14 +1,6 @@
 link:
-  forward:
-    namespace: dcterms
-    label: references
-    prefix: http://purl.org/dc/terms/
-    predicate: references
-  reverse:
-    namespace: rdfs
-    label:  seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000032
+  reverse: TIO_000033
   file: sample.tsv
 update:
   frequency: Bimonthly

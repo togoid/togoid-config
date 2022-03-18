@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000002
+  reverse: TIO_000002
   file: sample.tsv
 update:
-  frequency: twoTimesAYear 
-  method: sparql_csv2tsv.sh taxonomy.rq https://sparql.omabrowser.org/sparql/ > taxonomy.txt && sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ taxonomy.txt
+  frequency: twoTimesAYear
+  method: sparql_csv2tsv.sh taxonomy.rq https://sparql.omabrowser.org/sparql/ > taxonomy.txt
+    && sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ taxonomy.txt

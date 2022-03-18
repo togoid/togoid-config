@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: references
-    namespace: dcterms
-    prefix: http://purl.org/dc/terms/
-    predicate: references
-  reverse:
-    label: is referenced by
-    namespace: dcterms
-    prefix: http://purl.org/dc/terms/
-    predicate: isReferencedBy
+  forward: TIO_000032
+  reverse: TIO_000033
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --pmid | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
+    --pmid | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'

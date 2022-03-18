@@ -1,14 +1,6 @@
 link:
-  forward:
-    namespace: obo
-    label: molecularly interacts with
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002436
-  reverse:
-    namespace: obo
-    label: molecularly interacts with
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002436
+  forward: TIO_000012
+  reverse: TIO_000012
   file: sample.tsv
 update:
   frequency: Monthly

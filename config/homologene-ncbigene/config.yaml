@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: has homologous member
-    namespace: orth
-    prefix: http://purl.org/net/orth#
-    predicate: hasHomologousMember
-  reverse:
-    label: is homologous member
-    namespace: orth
-    prefix: http://purl.org/net/orth#
-    predicate: isHomologousMember
+  forward: TIO_000018
+  reverse: TIO_000019
   file: sample.tsv
 update:
   frequency: Yearly or less frequently
