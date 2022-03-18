@@ -200,7 +200,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 			<tr>
 				<td id="logo">
 					<a href="/" accesskey="1">
-						<img src="http://www.biohackathon.org/bh-favicon.png" alt="" width="37px" />
+						<img src="https://togoid.dbcls.jp/images/logo.png" alt="TogoID logo" style="margin: 4px;" height="38px" />
 					</a>
 				</td>
 				<td id="trail">
@@ -365,7 +365,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 		
 			<xsl:choose>
 				<xsl:when test="@rdf:about">
-					<option value="{substring-after(@rdf:about, '#')}">
+					<option value="{substring-after(@rdf:about, 'ontology/')}">
 						<xsl:call-template name="prettyUrl">
 							<xsl:with-param name="name" select="@rdf:about"/>
 						</xsl:call-template>
@@ -439,7 +439,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 			<tbody>
 				<xsl:if test="string-length($ref)>0">
 					<tr>
-						<th id="{substring-after(@rdf:about, '#')}">
+						<th id="{substring-after(@rdf:about, 'ontology/')}">
 							<xsl:choose>
 								<xsl:when test="@rdf:ID">
 									<a><xsl:value-of select="@rdf:ID" /></a>
