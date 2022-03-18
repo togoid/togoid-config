@@ -26,7 +26,7 @@ intact	IntAct	Interaction
 interpro	InterPro	Domain
 lrg	LRG	Gene
 mbgd_gene	MBGD gene	Gene
-mbgd_organism	MBGD organism	Taxonomy
+mbgd_organism	MBGD organism	Organism
 meddra	MedDRA	Disease
 medgen	MedGen	Disease
 mesh	MeSH	Disease
@@ -58,7 +58,7 @@ sra_experiment	SRA experiment	Experiment
 sra_project	SRA project	Project
 sra_run	SRA run	SequenceRun
 sra_sample	SRA sample	Sample
-taxonomy	Taxonomy	Taxonomy
+taxonomy	Taxonomy	Organism
 togovar	TogoVar variant	Variant
 uniprot	UniProt	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym

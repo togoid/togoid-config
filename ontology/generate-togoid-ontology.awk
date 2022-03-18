@@ -15,7 +15,7 @@ BEGIN {
         exit 0
     }
     FS = "\t"
-    print "@prefix : <http://togoid.dbcls.jp/ontology#> ."
+    print "@prefix : <http://togoid.dbcls.jp/ontology/> ."
     print "@prefix owl: <http://www.w3.org/2002/07/owl#> ."
     print "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> ."
     print "@prefix dcterms: <http://purl.org/dc/terms/> ."
@@ -55,10 +55,10 @@ fn==1 {
 
 fn==2 {
     print ":" snake2camel($1)
-    print "    a owl:Class, :Dataset ;"
+    print "    a owl:Class ;"
     print "    dcterms:identifier \"" $1 "\" ;"
     print "    rdfs:label \"" $2 "\" ;"
-    print "    rdfs:subClassOf :" gensub(", ", " , :", "g", $3) " .\n"
+    print "    rdfs:subClassOf :" gensub(", ", " , :", "g", $3) ", :Dataset .\n"
 }
 
 fn==3 {
