@@ -1,15 +1,8 @@
 link:
-  forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso  
+  forward: TIO_000034
+  reverse: TIO_000035
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --mim | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
+    --mim | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'

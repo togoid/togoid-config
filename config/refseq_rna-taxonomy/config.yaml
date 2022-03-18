@@ -1,10 +1,8 @@
 link:
-  forward:
-    label: in taxon
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002162
+  forward: TIO_000064
   file: sample.tsv
+  reverse: TIO_000065
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --taxon | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
+    --taxon | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'

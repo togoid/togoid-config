@@ -1,14 +1,6 @@
 link:
-  forward:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000024
+  reverse: TIO_000025
   file: sample.tsv
 update:
   frequency: Monthly

@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: has evidence
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002558
-  reverse:
-    label: is evidence for
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002472
+  forward: TIO_000032
+  reverse: TIO_000033
   file: sample.tsv
 update:
   frequency: threeTimesAYear

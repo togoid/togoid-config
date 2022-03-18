@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: has component
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002180
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000070
+  reverse: TIO_000071
   file: sample.tsv
 update:
   frequency: Monthly

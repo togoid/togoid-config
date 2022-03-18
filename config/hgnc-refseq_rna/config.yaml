@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: transcribed to
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002511
-  reverse:
-    label: transcribed from
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002510
+  forward: TIO_000035
+  reverse: TIO_000034
   file: sample.tsv
 update:
   frequency: Bimonthly

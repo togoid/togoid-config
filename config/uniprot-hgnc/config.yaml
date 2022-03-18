@@ -1,15 +1,8 @@
 link:
-  forward:
-    namespace: ro
-    label: gene product of
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002204
-  reverse:
-    namespace: ro
-    label: has gene product
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002205
+  forward: TIO_000024
+  reverse: TIO_000025
   file: sample.tsv
 update:
   frequency: Monthly
-  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz HGNC | perl -pe 's/HGNC://'
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz HGNC
+    | perl -pe 's/HGNC://'

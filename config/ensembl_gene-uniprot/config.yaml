@@ -1,14 +1,6 @@
 link:
-  forward:
-    label: has gene product
-    namespace: ro
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002205
-  reverse:
-    label: gene product of
-    namespace: ro
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002204
+  forward: TIO_000025
+  reverse: TIO_000024
   file: sample.tsv
 update:
   frequency: Quarterly

@@ -1,15 +1,8 @@
 link:
-  forward:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    namespace: rdfs
-    label: seeAlso
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000002
+  reverse: TIO_000002
   file: sample.tsv
 update:
   frequency: Monthly
-  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz RefSeq | perl -pe 's/\.\d+$//'
+  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz RefSeq
+    | perl -pe 's/\.\d+$//'
