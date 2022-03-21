@@ -1,15 +1,9 @@
 link:
-  forward:
-    label: has component
-    namespace: obo
-    prefix: http://purl.obolibrary.org/obo/
-    predicate: RO_0002180
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000068
+  reverse: TIO_000069
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq https://sparql.wikipathways.org/sparql | perl -ne 'print $_ if (/^WP\d+_r\d+\t([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?(-\d+)?$/)'
+  method: sparql_csv2tsv.sh query.rq https://sparql.wikipathways.org/sparql | perl
+    -ne 'print $_ if (/^WP\d+_r\d+\t([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z,
+    0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?(-\d+)?$/)'

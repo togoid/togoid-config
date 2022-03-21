@@ -1,0 +1,1151 @@
+@prefix : <http://togoid.dbcls.jp/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+: a owl:Ontology .
+
+:Category
+    a owl:Class ;
+    rdfs:label "Category" .
+
+:Dataset
+    a owl:Class ;
+    rdfs:label "Dataset" .
+
+:display_label
+    a owl:DatatypeProperty ;
+    rdfs:comment "A label to be displayed on the TogoID web UI." .
+
+:Glycan
+    a owl:Class ;
+    rdfs:label "Glycan" ;
+    rdfs:subClassOf :Category , :Molecule .
+
+:Compound
+    a owl:Class ;
+    rdfs:label "Compound" ;
+    rdfs:subClassOf :Category , :Molecule .
+
+:Disease
+    a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:subClassOf :Category .
+
+:Domain
+    a owl:Class ;
+    rdfs:label "Domain" ;
+    rdfs:subClassOf :Category .
+
+:Function
+    a owl:Class ;
+    rdfs:label "Function" ;
+    rdfs:subClassOf :Category .
+
+:Transcript
+    a owl:Class ;
+    rdfs:label "Transcript" ;
+    rdfs:subClassOf :Category , :Sequence .
+
+:Gene
+    a owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:subClassOf :Category , :Sequence .
+
+:Interaction
+    a owl:Class ;
+    rdfs:label "Interaction" ;
+    rdfs:subClassOf :Category .
+
+:Reaction
+    a owl:Class ;
+    rdfs:label "Reaction" ;
+    rdfs:subClassOf :Category .
+
+:Literature
+    a owl:Class ;
+    rdfs:label "Literature" ;
+    rdfs:subClassOf :Category .
+
+:Submission
+    a owl:Class ;
+    rdfs:label "Submission" ;
+    rdfs:subClassOf :Category .
+
+:Analysis
+    a owl:Class ;
+    rdfs:label "Analysis" ;
+    rdfs:subClassOf :Category .
+
+:Experiment
+    a owl:Class ;
+    rdfs:label "Experiment" ;
+    rdfs:subClassOf :Category .
+
+:SequenceRun
+    a owl:Class ;
+    rdfs:label "Sequence run" ;
+    rdfs:subClassOf :Category .
+
+:Ortholog
+    a owl:Class ;
+    rdfs:label "Ortholog" ;
+    rdfs:subClassOf :Category .
+
+:Pathway
+    a owl:Class ;
+    rdfs:label "Pathway" ;
+    rdfs:subClassOf :Category .
+
+:Probe
+    a owl:Class ;
+    rdfs:label "Probe" ;
+    rdfs:subClassOf :Category .
+
+:Project
+    a owl:Class ;
+    rdfs:label "Project" ;
+    rdfs:subClassOf :Category .
+
+:Protein
+    a owl:Class ;
+    rdfs:label "Protein" ;
+    rdfs:subClassOf :Category , :Sequence , :Molecule .
+
+:Sample
+    a owl:Class ;
+    rdfs:label "Sample" ;
+    rdfs:subClassOf :Category .
+
+:Structure
+    a owl:Class ;
+    rdfs:label "Structure" ;
+    rdfs:subClassOf :Category .
+
+:Organism
+    a owl:Class ;
+    rdfs:label "Organism" ;
+    rdfs:subClassOf :Category .
+
+:Variant
+    a owl:Class ;
+    rdfs:label "Variant" ;
+    rdfs:subClassOf :Category .
+
+:Synonym
+    a owl:Class ;
+    rdfs:label "Synonym" ;
+    rdfs:subClassOf :Category .
+
+:Sequence
+    a owl:Class ;
+    rdfs:label "Sequence" ;
+    rdfs:subClassOf :Category .
+
+:Molecule
+    a owl:Class ;
+    rdfs:label "Molecule" ;
+    rdfs:subClassOf :Category .
+
+:AffyProbeset
+    a owl:Class ;
+    dcterms:identifier "affy_probeset" ;
+    rdfs:label "Affymetrix probeset" ;
+    rdfs:subClassOf :Probe, :Dataset .
+
+:Bioproject
+    a owl:Class ;
+    dcterms:identifier "bioproject" ;
+    rdfs:label "BioProject" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:Biosample
+    a owl:Class ;
+    dcterms:identifier "biosample" ;
+    rdfs:label "BioSample" ;
+    rdfs:subClassOf :Sample, :Dataset .
+
+:Ccds
+    a owl:Class ;
+    dcterms:identifier "ccds" ;
+    rdfs:label "Consensus CDS" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Chebi
+    a owl:Class ;
+    dcterms:identifier "chebi" ;
+    rdfs:label "ChEBI compound" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:ChemblCompound
+    a owl:Class ;
+    dcterms:identifier "chembl_compound" ;
+    rdfs:label "ChEMBL compound" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:ChemblTarget
+    a owl:Class ;
+    dcterms:identifier "chembl_target" ;
+    rdfs:label "ChEMBL target" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:Clinvar
+    a owl:Class ;
+    dcterms:identifier "clinvar" ;
+    rdfs:label "ClinVar variant" ;
+    rdfs:subClassOf :Variant, :Dataset .
+
+:Dbsnp
+    a owl:Class ;
+    dcterms:identifier "dbsnp" ;
+    rdfs:label "dbSNP" ;
+    rdfs:subClassOf :Variant, :Dataset .
+
+:Doid
+    a owl:Class ;
+    dcterms:identifier "doid" ;
+    rdfs:label "Disease ontology" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Drugbank
+    a owl:Class ;
+    dcterms:identifier "drugbank" ;
+    rdfs:label "DrugBank" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:Ec
+    a owl:Class ;
+    dcterms:identifier "ec" ;
+    rdfs:label "Enzyme nomenclature" ;
+    rdfs:subClassOf :Function, :Dataset .
+
+:EnsemblGene
+    a owl:Class ;
+    dcterms:identifier "ensembl_gene" ;
+    rdfs:label "Ensembl gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:EnsemblProtein
+    a owl:Class ;
+    dcterms:identifier "ensembl_protein" ;
+    rdfs:label "Ensembl protein" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:EnsemblTranscript
+    a owl:Class ;
+    dcterms:identifier "ensembl_transcript" ;
+    rdfs:label "Ensembl transcript" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
+:Glytoucan
+    a owl:Class ;
+    dcterms:identifier "glytoucan" ;
+    rdfs:label "GlyTouCan" ;
+    rdfs:subClassOf :Glycan, :Dataset .
+
+:Go
+    a owl:Class ;
+    dcterms:identifier "go" ;
+    rdfs:label "Gene ontology" ;
+    rdfs:subClassOf :Function, :Dataset .
+
+:Hgnc
+    a owl:Class ;
+    dcterms:identifier "hgnc" ;
+    rdfs:label "HGNC" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:HgncSymbol
+    a owl:Class ;
+    dcterms:identifier "hgnc_symbol" ;
+    rdfs:label "HGNC gene symbol" ;
+    rdfs:subClassOf :Gene , :Synonym, :Dataset .
+
+:Hmdb
+    a owl:Class ;
+    dcterms:identifier "hmdb" ;
+    rdfs:label "HMDB" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:Homologene
+    a owl:Class ;
+    dcterms:identifier "homologene" ;
+    rdfs:label "HomoloGene" ;
+    rdfs:subClassOf :Ortholog, :Dataset .
+
+:Hp
+    a owl:Class ;
+    dcterms:identifier "hp" ;
+    rdfs:label "Human Phenotype Ontology" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:InchiKey
+    a owl:Class ;
+    dcterms:identifier "inchi_key" ;
+    rdfs:label "InChIKey" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:Insdc
+    a owl:Class ;
+    dcterms:identifier "insdc" ;
+    rdfs:label "GenBank/ENA/DDBJ" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Intact
+    a owl:Class ;
+    dcterms:identifier "intact" ;
+    rdfs:label "IntAct" ;
+    rdfs:subClassOf :Interaction, :Dataset .
+
+:Interpro
+    a owl:Class ;
+    dcterms:identifier "interpro" ;
+    rdfs:label "InterPro" ;
+    rdfs:subClassOf :Domain, :Dataset .
+
+:Lrg
+    a owl:Class ;
+    dcterms:identifier "lrg" ;
+    rdfs:label "LRG" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:MbgdGene
+    a owl:Class ;
+    dcterms:identifier "mbgd_gene" ;
+    rdfs:label "MBGD gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:MbgdOrganism
+    a owl:Class ;
+    dcterms:identifier "mbgd_organism" ;
+    rdfs:label "MBGD organism" ;
+    rdfs:subClassOf :Organism, :Dataset .
+
+:Meddra
+    a owl:Class ;
+    dcterms:identifier "meddra" ;
+    rdfs:label "MedDRA" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Medgen
+    a owl:Class ;
+    dcterms:identifier "medgen" ;
+    rdfs:label "MedGen" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Mesh
+    a owl:Class ;
+    dcterms:identifier "mesh" ;
+    rdfs:label "MeSH" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Mgi
+    a owl:Class ;
+    dcterms:identifier "mgi" ;
+    rdfs:label "MGI" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Mirbase
+    a owl:Class ;
+    dcterms:identifier "mirbase" ;
+    rdfs:label "miRBase" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
+:Mondo
+    a owl:Class ;
+    dcterms:identifier "mondo" ;
+    rdfs:label "MONDO" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Nando
+    a owl:Class ;
+    dcterms:identifier "nando" ;
+    rdfs:label "NANDO" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Ncbigene
+    a owl:Class ;
+    dcterms:identifier "ncbigene" ;
+    rdfs:label "NCBI gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:OmaGroup
+    a owl:Class ;
+    dcterms:identifier "oma_group" ;
+    rdfs:label "OMA group" ;
+    rdfs:subClassOf :Ortholog, :Dataset .
+
+:OmaProtein
+    a owl:Class ;
+    dcterms:identifier "oma_protein" ;
+    rdfs:label "OMA protein" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:OmimGene
+    a owl:Class ;
+    dcterms:identifier "omim_gene" ;
+    rdfs:label "OMIM gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:OmimPhenotype
+    a owl:Class ;
+    dcterms:identifier "omim_phenotype" ;
+    rdfs:label "OMIM phenotype" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Orphanet
+    a owl:Class ;
+    dcterms:identifier "orphanet" ;
+    rdfs:label "Orphanet" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Pdb
+    a owl:Class ;
+    dcterms:identifier "pdb" ;
+    rdfs:label "PDB" ;
+    rdfs:subClassOf :Structure, :Dataset .
+
+:Pfam
+    a owl:Class ;
+    dcterms:identifier "pfam" ;
+    rdfs:label "Pfam" ;
+    rdfs:subClassOf :Domain, :Dataset .
+
+:PubchemCompound
+    a owl:Class ;
+    dcterms:identifier "pubchem_compound" ;
+    rdfs:label "PubChem compound" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:PubchemSubstance
+    a owl:Class ;
+    dcterms:identifier "pubchem_substance" ;
+    rdfs:label "PubChem substance" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
+:Pubmed
+    a owl:Class ;
+    dcterms:identifier "pubmed" ;
+    rdfs:label "PubMed" ;
+    rdfs:subClassOf :Literature, :Dataset .
+
+:ReactomePathway
+    a owl:Class ;
+    dcterms:identifier "reactome_pathway" ;
+    rdfs:label "Reactome pathway" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
+:ReactomeReaction
+    a owl:Class ;
+    dcterms:identifier "reactome_reaction" ;
+    rdfs:label "Reactome reaction" ;
+    rdfs:subClassOf :Reaction, :Dataset .
+
+:RefseqGenomic
+    a owl:Class ;
+    dcterms:identifier "refseq_genomic" ;
+    rdfs:label "RefSeq genomic" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:RefseqProtein
+    a owl:Class ;
+    dcterms:identifier "refseq_protein" ;
+    rdfs:label "RefSeq protein" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:RefseqRna
+    a owl:Class ;
+    dcterms:identifier "refseq_rna" ;
+    rdfs:label "RefSeq RNA" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
+:Rgd
+    a owl:Class ;
+    dcterms:identifier "rgd" ;
+    rdfs:label "RGD" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Rhea
+    a owl:Class ;
+    dcterms:identifier "rhea" ;
+    rdfs:label "Rhea" ;
+    rdfs:subClassOf :Reaction, :Dataset .
+
+:SraAccession
+    a owl:Class ;
+    dcterms:identifier "sra_accession" ;
+    rdfs:label "SRA accession" ;
+    rdfs:subClassOf :Submission, :Dataset .
+
+:SraAnalysis
+    a owl:Class ;
+    dcterms:identifier "sra_analysis" ;
+    rdfs:label "SRA analysis" ;
+    rdfs:subClassOf :Analysis, :Dataset .
+
+:SraExperiment
+    a owl:Class ;
+    dcterms:identifier "sra_experiment" ;
+    rdfs:label "SRA experiment" ;
+    rdfs:subClassOf :Experiment, :Dataset .
+
+:SraProject
+    a owl:Class ;
+    dcterms:identifier "sra_project" ;
+    rdfs:label "SRA project" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:SraRun
+    a owl:Class ;
+    dcterms:identifier "sra_run" ;
+    rdfs:label "SRA run" ;
+    rdfs:subClassOf :SequenceRun, :Dataset .
+
+:SraSample
+    a owl:Class ;
+    dcterms:identifier "sra_sample" ;
+    rdfs:label "SRA sample" ;
+    rdfs:subClassOf :Sample, :Dataset .
+
+:Taxonomy
+    a owl:Class ;
+    dcterms:identifier "taxonomy" ;
+    rdfs:label "Taxonomy" ;
+    rdfs:subClassOf :Organism, :Dataset .
+
+:Togovar
+    a owl:Class ;
+    dcterms:identifier "togovar" ;
+    rdfs:label "TogoVar variant" ;
+    rdfs:subClassOf :Variant, :Dataset .
+
+:Uniprot
+    a owl:Class ;
+    dcterms:identifier "uniprot" ;
+    rdfs:label "UniProt" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:UniprotMnemonic
+    a owl:Class ;
+    dcterms:identifier "uniprot_mnemonic" ;
+    rdfs:label "UniProt mnemonic" ;
+    rdfs:subClassOf :Protein , :Synonym, :Dataset .
+
+:Wikipathways
+    a owl:Class ;
+    dcterms:identifier "wikipathways" ;
+    rdfs:label "WikiPathways" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
+:TIO_000001
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Category ;
+    rdfs:label "is nearly equivalent to" ;
+    :display_label "is nearly equivalent to" .
+
+:TIO_000002
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Category ;
+    rdfs:label "is equivalent to" ;
+    :display_label "is equivalent to" .
+
+:TIO_000003
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Variant ;
+    rdfs:label "variant has corresponding variant" ;
+    :display_label "has corresponding variant" .
+
+:TIO_000004
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Go ;
+    owl:inverseOf :TIO_000007 ;
+    rdfs:label "has GO annotation" ;
+    :display_label "has GO annotation" .
+
+:TIO_000005
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Go ;
+    owl:inverseOf :TIO_000008 ;
+    rdfs:label "has GO biological process" ;
+    :display_label "has GO biological process" .
+
+:TIO_000006
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Go ;
+    owl:inverseOf :TIO_000009 ;
+    rdfs:label "has GO cellular component" ;
+    :display_label "has GO cellular component" .
+
+:TIO_000007
+    a owl:ObjectProperty ;
+    rdfs:domain :Go ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000004 ;
+    rdfs:label "is GO annotation of" ;
+    :display_label "is GO annotation of" .
+
+:TIO_000008
+    a owl:ObjectProperty ;
+    rdfs:domain :Go ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000005 ;
+    rdfs:label "is GO biological process of" ;
+    :display_label "is GO biological process of" .
+
+:TIO_000009
+    a owl:ObjectProperty ;
+    rdfs:domain :Go ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000006 ;
+    rdfs:label "is GO cellular component of" ;
+    :display_label "is GO cellular component of" .
+
+:TIO_000010
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Disease ;
+    owl:inverseOf :TIO_000011 ;
+    rdfs:label "has related disease" ;
+    :display_label "has related disease" .
+
+:TIO_000011
+    a owl:ObjectProperty ;
+    rdfs:domain :Disease ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000010 ;
+    rdfs:label "disease is related with" ;
+    :display_label "is related with" .
+
+:TIO_000012
+    a owl:ObjectProperty ;
+    rdfs:domain :Molecule ;
+    rdfs:range :Molecule ;
+    rdfs:label "molecule interacts with molecule" ;
+    :display_label "interacts with" .
+
+:TIO_000013
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Domain ;
+    owl:inverseOf :TIO_000015 ;
+    rdfs:label "protein has protein domain" ;
+    :display_label "has protein domain" .
+
+:TIO_000014
+    a owl:ObjectProperty ;
+    rdfs:domain :Structure ;
+    rdfs:range :Domain ;
+    owl:inverseOf :TIO_000016 ;
+    rdfs:label "structure has protein domain" ;
+    :display_label "has protein domain" .
+
+:TIO_000015
+    a owl:ObjectProperty ;
+    rdfs:domain :Domain ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000013 ;
+    rdfs:label "protein domain is in protein" ;
+    :display_label "is in protein" .
+
+:TIO_000016
+    a owl:ObjectProperty ;
+    rdfs:domain :Domain ;
+    rdfs:range :Structure ;
+    owl:inverseOf :TIO_000014 ;
+    rdfs:label "protein domain is in structure" ;
+    :display_label "is in structure" .
+
+:TIO_000017
+    a owl:ObjectProperty ;
+    rdfs:domain :Sequence ;
+    rdfs:range :Sequence ;
+    rdfs:label "sequence is orthologous to sequence" ;
+    :display_label "is orthologous to" .
+
+:TIO_000018
+    a owl:ObjectProperty ;
+    rdfs:domain :Ortholog ;
+    rdfs:range :Sequence ;
+    owl:inverseOf :TIO_000019 ;
+    rdfs:label "orthologous group has member sequence" ;
+    :display_label "has orthologous group member" .
+
+:TIO_000019
+    a owl:ObjectProperty ;
+    rdfs:domain :Sequence ;
+    rdfs:range :Ortholog ;
+    owl:inverseOf :TIO_000018 ;
+    rdfs:label "sequence is member of orthologous group" ;
+    :display_label "is member of orthologous group" .
+
+:TIO_000020
+    a owl:ObjectProperty ;
+    rdfs:domain :Compound ;
+    rdfs:range :InchiKey ;
+    owl:inverseOf :TIO_000021 ;
+    rdfs:label "compound is represented as InChIKey" ;
+    :display_label "is represented as" .
+
+:TIO_000021
+    a owl:ObjectProperty ;
+    rdfs:domain :InchiKey ;
+    rdfs:range :Compound ;
+    owl:inverseOf :TIO_000020 ;
+    rdfs:label "InChIKey represents compound" ;
+    :display_label "represents" .
+
+:TIO_000022
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Synonym ;
+    owl:inverseOf :TIO_000023 ;
+    rdfs:label "has synonym" ;
+    :display_label "has synonym" .
+
+:TIO_000023
+    a owl:ObjectProperty ;
+    rdfs:domain :Synonym ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000022 ;
+    rdfs:label "is synonym of" ;
+    :display_label "is synonym of" .
+
+:TIO_000024
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Gene ;
+    owl:inverseOf :TIO_000025 ;
+    rdfs:label "protein is product of gene" ;
+    :display_label "is product of gene" .
+
+:TIO_000025
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000024 ;
+    rdfs:label "gene has protein as product" ;
+    :display_label "has gene product" .
+
+:TIO_000026
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Structure ;
+    owl:inverseOf :TIO_000027 ;
+    rdfs:label "protein has 3D structure" ;
+    :display_label "has 3D structure" .
+
+:TIO_000027
+    a owl:ObjectProperty ;
+    rdfs:domain :Structure ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000026 ;
+    rdfs:label "is 3D structure of protein" ;
+    :display_label "is 3D structure of" .
+
+:TIO_000028
+    a owl:ObjectProperty ;
+    rdfs:domain :Sequence ;
+    rdfs:range :Ec ;
+    owl:inverseOf :TIO_000029 ;
+    rdfs:label "sequence has EC number" ;
+    :display_label "has EC number" .
+
+:TIO_000029
+    a owl:ObjectProperty ;
+    rdfs:domain :Ec ;
+    rdfs:range :Sequence ;
+    owl:inverseOf :TIO_000028 ;
+    rdfs:label "is EC number of sequence" ;
+    :display_label "is EC number of" .
+
+:TIO_000030
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene, :Transcript ;
+    rdfs:range :Probe ;
+    owl:inverseOf :TIO_000031 ;
+    rdfs:label "gene or transcript is target of probe" ;
+    :display_label "is target of" .
+
+:TIO_000031
+    a owl:ObjectProperty ;
+    rdfs:domain :Probe ;
+    rdfs:range :Gene, :Transcript ;
+    owl:inverseOf :TIO_000030 ;
+    rdfs:label "probe detects gene or transcript" ;
+    :display_label "detects" .
+
+:TIO_000032
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Literature ;
+    owl:inverseOf :TIO_000033 ;
+    rdfs:label "has reference" ;
+    :display_label "has reference" .
+
+:TIO_000033
+    a owl:ObjectProperty ;
+    rdfs:domain :Literature ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000032 ;
+    rdfs:label "is reference of" ;
+    :display_label "is reference of" .
+
+:TIO_000034
+    a owl:ObjectProperty ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Gene ;
+    owl:inverseOf :TIO_000035 ;
+    rdfs:label "transcript is transcribed from gene" ;
+    :display_label "is transcribed from" .
+
+:TIO_000035
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000034 ;
+    rdfs:label "gene is transcribed to transcript" ;
+    :display_label "is transcribed to" .
+
+:TIO_000036
+    a owl:ObjectProperty ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000037 ;
+    rdfs:label "transcript is translated to protein" ;
+    :display_label "is translated to" .
+
+:TIO_000037
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000036 ;
+    rdfs:label "protein is translated from transcript" ;
+    :display_label "is tranlated from" .
+
+:TIO_000038
+    a owl:ObjectProperty ;
+    rdfs:domain :Submission ;
+    rdfs:range :Analysis ;
+    owl:inverseOf :TIO_000048 ;
+    rdfs:label "submission includes analysis" ;
+    :display_label "includes analysis" .
+
+:TIO_000039
+    a owl:ObjectProperty ;
+    rdfs:domain :Submission ;
+    rdfs:range :Experiment ;
+    owl:inverseOf :TIO_000049 ;
+    rdfs:label "submission includes experiment" ;
+    :display_label "includes experiment" .
+
+:TIO_000040
+    a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :Experiment ;
+    owl:inverseOf :TIO_000050 ;
+    rdfs:label "project performs experiment" ;
+    :display_label "performs experiment" .
+
+:TIO_000041
+    a owl:ObjectProperty ;
+    rdfs:domain :Submission ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000051 ;
+    rdfs:label "submission includes project" ;
+    :display_label "includes project" .
+
+:TIO_000042
+    a owl:ObjectProperty ;
+    rdfs:domain :Submission ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000052 ;
+    rdfs:label "submission includes sample" ;
+    :display_label "includes sample" .
+
+:TIO_000043
+    a owl:ObjectProperty ;
+    rdfs:domain :Experiment ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000053 ;
+    rdfs:label "experiment captures sample" ;
+    :display_label "captures sample" .
+
+:TIO_000044
+    a owl:ObjectProperty ;
+    rdfs:domain :SequenceRun ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000054 ;
+    rdfs:label "sequence run is produced from sample" ;
+    :display_label "is produced from sample" .
+
+:TIO_000045
+    a owl:ObjectProperty ;
+    rdfs:domain :Submission ;
+    rdfs:range :SequenceRun ;
+    owl:inverseOf :TIO_000055 ;
+    rdfs:label "submission includes sequence run" ;
+    :display_label "includes sequence run" .
+
+:TIO_000046
+    a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :SequenceRun ;
+    owl:inverseOf :TIO_000056 ;
+    rdfs:label "project produces sequence run" ;
+    :display_label "produces sequence run" .
+
+:TIO_000047
+    a owl:ObjectProperty ;
+    rdfs:domain :Experiment ;
+    rdfs:range :SequenceRun ;
+    owl:inverseOf :TIO_000057 ;
+    rdfs:label "experiment produces sequence run" ;
+    :display_label "produces sequence run" .
+
+:TIO_000048
+    a owl:ObjectProperty ;
+    rdfs:domain :Analysis ;
+    rdfs:range :Submission ;
+    owl:inverseOf :TIO_000038 ;
+    rdfs:label "analysis belongs to submission" ;
+    :display_label "belongs to submission" .
+
+:TIO_000049
+    a owl:ObjectProperty ;
+    rdfs:domain :Experiment ;
+    rdfs:range :Submission ;
+    owl:inverseOf :TIO_000039 ;
+    rdfs:label "experiment belongs to submission" ;
+    :display_label "belongs to submission" .
+
+:TIO_000050
+    a owl:ObjectProperty ;
+    rdfs:domain :Experiment ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000040 ;
+    rdfs:label "experiment belongs to project" ;
+    :display_label "belongs to project" .
+
+:TIO_000051
+    a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :Submission ;
+    owl:inverseOf :TIO_000041 ;
+    rdfs:label "project belongs to submission" ;
+    :display_label "belongs to submission" .
+
+:TIO_000052
+    a owl:ObjectProperty ;
+    rdfs:domain :Sample ;
+    rdfs:range :Submission ;
+    owl:inverseOf :TIO_000042 ;
+    rdfs:label "sample belongs to submission" ;
+    :display_label "belongs to submission" .
+
+:TIO_000053
+    a owl:ObjectProperty ;
+    rdfs:domain :Sample ;
+    rdfs:range :Experiment ;
+    owl:inverseOf :TIO_000043 ;
+    rdfs:label "sample is captured to perform experiment" ;
+    :display_label "is captured to perform experiment" .
+
+:TIO_000054
+    a owl:ObjectProperty ;
+    rdfs:domain :Sample ;
+    rdfs:range :SequenceRun ;
+    owl:inverseOf :TIO_000044 ;
+    rdfs:label "sample is captured to produce sequence run" ;
+    :display_label "is captured to produce sequence run" .
+
+:TIO_000055
+    a owl:ObjectProperty ;
+    rdfs:domain :SequenceRun ;
+    rdfs:range :Submission ;
+    owl:inverseOf :TIO_000045 ;
+    rdfs:label "sequence run belongs to submission" ;
+    :display_label "belongs to submission" .
+
+:TIO_000056
+    a owl:ObjectProperty ;
+    rdfs:domain :SequenceRun ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000046 ;
+    rdfs:label "sequence run belongs to project" ;
+    :display_label "belongs to project" .
+
+:TIO_000057
+    a owl:ObjectProperty ;
+    rdfs:domain :SequenceRun ;
+    rdfs:range :Experiment ;
+    owl:inverseOf :TIO_000047 ;
+    rdfs:label "sequence run is produced in experiment" ;
+    :display_label "is produced in experiment" .
+
+:TIO_000058
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Variant ;
+    owl:inverseOf :TIO_000059 ;
+    rdfs:label "variant has clinical significance" ;
+    :display_label "has clinical significance" .
+
+:TIO_000059
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Variant ;
+    owl:inverseOf :TIO_000058 ;
+    rdfs:label "is clinical significance of" ;
+    :display_label "is clinical significance of" .
+
+:TIO_000060
+    a owl:ObjectProperty ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000061 ;
+    rdfs:label "glycan is attached to protein" ;
+    :display_label "is attached to" .
+
+:TIO_000061
+    a owl:ObjectProperty ;
+    rdfs:domain :Protein ;
+    rdfs:range :Compound ;
+    owl:inverseOf :TIO_000060 ;
+    rdfs:label "protein is modified with glycan" ;
+    :display_label "is modified with" .
+
+:TIO_000062
+    a owl:ObjectProperty ;
+    rdfs:domain :Variant ;
+    rdfs:range :Sequence ;
+    owl:inverseOf :TIO_000063 ;
+    rdfs:label "variant is located in sequence" ;
+    :display_label "is located in" .
+
+:TIO_000063
+    a owl:ObjectProperty ;
+    rdfs:domain :Sequence ;
+    rdfs:range :Variant ;
+    owl:inverseOf :TIO_000062 ;
+    rdfs:label "sequence has variant" ;
+    :display_label "has variant" .
+
+:TIO_000064
+    a owl:ObjectProperty ;
+    rdfs:domain :Gene ;
+    rdfs:range :Taxonomy ;
+    owl:inverseOf :TIO_000065 ;
+    rdfs:label "is gene of organism" ;
+    :display_label "is gene of organism" .
+
+:TIO_000065
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000064 ;
+    rdfs:label "organism has gene" ;
+    :display_label "has gene" .
+
+:TIO_000066
+    a owl:ObjectProperty ;
+    rdfs:domain :Category ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000067 ;
+    rdfs:label "compound targets to disease" ;
+    :display_label "targets to" .
+
+:TIO_000067
+    a owl:ObjectProperty ;
+    rdfs:domain :Disease ;
+    rdfs:range :Compound ;
+    owl:inverseOf :TIO_000066 ;
+    rdfs:label "disease is targeted by compound" ;
+    :display_label "is targeted by" .
+
+:TIO_000068
+    a owl:ObjectProperty ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Molecule ;
+    owl:inverseOf :TIO_000069 ;
+    rdfs:label "pathway has participant molecule" ;
+    :display_label "has participant molecule" .
+
+:TIO_000069
+    a owl:ObjectProperty ;
+    rdfs:domain :Molecule ;
+    rdfs:range :Pathway ;
+    owl:inverseOf :TIO_000068 ;
+    rdfs:label "molecule participates in pathway" ;
+    :display_label "participates in pathway" .
+
+:TIO_000070
+    a owl:ObjectProperty ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Reaction ;
+    owl:inverseOf :TIO_000071 ;
+    rdfs:label "pathway has participant reaction" ;
+    :display_label "has participant reaction" .
+
+:TIO_000071
+    a owl:ObjectProperty ;
+    rdfs:domain :Reaction ;
+    rdfs:range :Pathway ;
+    owl:inverseOf :TIO_000070 ;
+    rdfs:label "reaction participates in pathway" ;
+    :display_label "participates in pathway" .
+
+:TIO_000072
+    a owl:ObjectProperty ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Domain ;
+    owl:inverseOf :TIO_000073 ;
+    rdfs:label "pathway has protein domain" ;
+    :display_label "has protein domain in pathway" .
+
+:TIO_000073
+    a owl:ObjectProperty ;
+    rdfs:domain :Domain ;
+    rdfs:range :Pathway ;
+    owl:inverseOf :TIO_000072 ;
+    rdfs:label "protein domain participates in pathway" ;
+    :display_label "participates in pathway" .
+
+:TIO_000074
+    a owl:ObjectProperty ;
+    rdfs:domain :Molecule ;
+    rdfs:range :Interaction ;
+    owl:inverseOf :TIO_000075 ;
+    rdfs:label "molecule participates in interaction" ;
+    :display_label "participates in pathway" .
+
+:TIO_000075
+    a owl:ObjectProperty ;
+    rdfs:domain :Interaction ;
+    rdfs:range :Molecule ;
+    owl:inverseOf :TIO_000074 ;
+    rdfs:label "interaction has participant molecule" ;
+    :display_label "has participant molecule" .
+
+:TIO_000076
+    a owl:ObjectProperty ;
+    rdfs:domain :Molecule ;
+    rdfs:range :Reaction ;
+    owl:inverseOf :TIO_000077 ;
+    rdfs:label "molecule participates in reaction" ;
+    :display_label "participates in pathway" .
+
+:TIO_000077
+    a owl:ObjectProperty ;
+    rdfs:domain :Reaction ;
+    rdfs:range :Molecule ;
+    owl:inverseOf :TIO_000076 ;
+    rdfs:label "reaction has participant molecule" ;
+    :display_label "has participant molecule" .
+

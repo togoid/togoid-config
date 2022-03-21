@@ -18,8 +18,13 @@ require 'togoid-config'
 yaml = ARGV.shift             # can be path/to/config.yaml or path/to
 mode = ARGV.shift || "check"  # can be check, convert, or update
 
-if File.directory?(yaml)
-  yaml += "/config.yaml"
+if yaml
+  if File.directory?(yaml)
+    yaml += "/config.yaml"
+  end
+else
+  $stderr.puts "Usage: togoid-config config/db1-db2 [update|convert]"
+  exit 1
 end
 
 config = TogoID::Config.new(yaml)

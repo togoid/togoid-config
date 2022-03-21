@@ -1,16 +1,7 @@
 link:
-  forward:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
-  reverse:
-    label: seeAlso
-    namespace: rdfs
-    prefix: http://www.w3.org/2000/01/rdf-schema#
-    predicate: seeAlso
+  forward: TIO_000016
+  reverse: TIO_000014
   file: sample.tsv
 update:
   frequency: Bimonthly
   method: awk -F '\t' -v db=PDB '$2 == db {print $1 "\t" toupper($3)}' $TOGOID_ROOT/input/interpro/interpro.tsv
-

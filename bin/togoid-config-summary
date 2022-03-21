@@ -8,7 +8,11 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'yaml'
 require 'togoid-config'
 
-puts %w(db_pair s_catalog s_category s_label s_prefix t_catalog t_category t_label t_prefix f_ns f_label f_prefix f_pred r_ns r_label r_prefix r_pred u_freq u_method).join("\t")
+# For extracting TogoID ontology predicate labels
+tio_nt = File.read(File.join(File.dirname(__FILE__), '..', 'ontology', 'togoid-ontology.nt'))
+tio = TogoID::Ontology.new(tio_nt)
+
+puts %w(db_pair s_catalog s_category s_label s_prefix t_catalog t_category t_label t_prefix f_predicate f_label f_display r_predicate r_label r_display u_freq u_method).join("\t")
 ARGV.each do |yaml|
   begin
     pair = File.basename(File.dirname(yaml))
@@ -27,16 +31,14 @@ ARGV.each do |yaml|
           t.category,
           t.label,
           t.prefix,
-          f.ns,
-          f.label,
-          f.prefix,
-          f.predicate,
-          (r ? r.ns : ''),
-          (r ? r.label : ''),
-          (r ? r.prefix : ''),
-          (r ? r.predicate : ''),
+          tio.predicate(f),
+          tio.rdfs_label(f),
+          tio.disp_label(f),
+          (r ? tio.predicate(r) : ''),
+          (r ? tio.rdfs_label(r) : ''),
+          (r ? tio.disp_label(r) : ''),
           u.frequency,
-          u.method
+          u.method.inspect
          ].join("\t")
   rescue => error
     puts [yaml, error].join("\t")
