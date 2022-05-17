@@ -31,6 +31,10 @@ BEGIN {
     print "    a owl:Class ;"
     print "    rdfs:label \"Dataset\" ."
     print ""
+    print ":link"
+    print "    a owl:ObjectProperty ;"
+    print "    rdfs:comment \"Identifiers of the domain dataset is linked to that of the range dataset\" ."
+    print ""
     print ":display_label"
     print "    a owl:DatatypeProperty ;"
     print "    rdfs:comment \"A label to be displayed on the TogoID web UI.\" ."
@@ -63,7 +67,7 @@ fn==2 {
 
 fn==3 {
     print ":" $1
-    print "    a owl:ObjectProperty ;"
+    print "    rdfs:subPropertyOf :link ;"
     if ($5 != "-") {
         print "    rdfs:domain :" gensub(", ", ", :", "g", $5) " ;"
     }
