@@ -1,6 +1,9 @@
-# TogoID
+# TogoID ver. 1.1
 
 [TogoID](https://togoid.dbcls.jp/) is a service to search and convert links between database identifiers.
+
+Datasets last updated: 2022/05/16
+
 
 ## About
 
