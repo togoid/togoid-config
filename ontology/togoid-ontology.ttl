@@ -1044,7 +1044,7 @@
 :TIO_000064
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Gene ;
-    rdfs:range :Taxonomy ;
+    rdfs:range :Organism ;
     owl:inverseOf :TIO_000065 ;
     rdfs:label "is gene of organism" ;
     :display_label "is gene of organism" .
