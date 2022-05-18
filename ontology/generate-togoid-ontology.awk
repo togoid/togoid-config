@@ -15,7 +15,7 @@ BEGIN {
         exit 0
     }
     FS = "\t"
-    print "@prefix : <http://togoid.dbcls.jp/ontology/> ."
+    print "@prefix : <http://togoid.dbcls.jp/ontology#> ."
     print "@prefix owl: <http://www.w3.org/2002/07/owl#> ."
     print "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> ."
     print "@prefix dcterms: <http://purl.org/dc/terms/> ."
@@ -31,9 +31,9 @@ BEGIN {
     print "    a owl:Class ;"
     print "    rdfs:label \"Dataset\" ."
     print ""
-    print ":link"
+    print ":relation"
     print "    a owl:ObjectProperty ;"
-    print "    rdfs:comment \"Identifiers of the domain dataset is linked to that of the range dataset.\" ."
+    print "    rdfs:comment \"Identifiers of the domain dataset have a biological relation with that of the range dataset.\" ."
     print ""
     print ":display_label"
     print "    a owl:DatatypeProperty ;"
@@ -67,7 +67,7 @@ fn==2 {
 
 fn==3 {
     print ":" $1
-    print "    rdfs:subPropertyOf :link ;"
+    print "    rdfs:subPropertyOf :relation ;"
     if ($5 != "-") {
         print "    rdfs:domain :" gensub(", ", ", :", "g", $5) " ;"
     }
