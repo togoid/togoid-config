@@ -76,6 +76,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 	<xsl:variable name="nodeset-property-datatype" select=".//*[  
 		((local-name()='DatatypeProperty' and namespace-uri()='&owl;') or (rdf:type/@rdf:resource='&owl;DatatypeProperty'))
   ]" />
+	<xsl:variable name="nodeset-property-sub" select="//rdfs:subPropertyOf/.." />
 	<xsl:variable name="nodeset-individual"
 		select="(.//*[
 			 (//rdf:type[@rdf:resource='&owl;NamedIndividual'] or (//rdf:type[@rdf:resource='&owl;Thing'] and (namespace-uri()='&core;')))
@@ -286,6 +287,24 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
             </tr>
             <tr>
                     <td>
+                            <a style="subPropertySearch" href="#SubProperties">
+                                    Sub properties (
+                                    <xsl:value-of select="count($nodeset-property-sub)" />
+                                    )
+                            </a>
+                    </td>
+                    <td>
+                            <select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value"
+                                            id="navi5"
+                                    >
+                                            <xsl:apply-templates select="$nodeset-property-sub" mode="menu">
+                                                    <xsl:sort select="@rdf:ID" />
+                                            </xsl:apply-templates>
+                            </select>
+                    </td>
+            </tr>
+            <tr>
+                    <td>
                             <a href="#InstanceData">
                                     Instance data (
                                     <xsl:value-of select="count($nodeset-individual)" />
@@ -342,6 +361,12 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 						<h3 id="DatatypeProperties">Datatype properties</h3>
 						<xsl:if test="count($nodeset-property-datatype)>0">
 							<xsl:apply-templates select="$nodeset-property-datatype" mode="details">
+								<xsl:sort select="@rdf:ID" />
+							</xsl:apply-templates>
+						</xsl:if>
+						<h3 id="SubProperties">Sub properties</h3>
+						<xsl:if test="count($nodeset-property-sub)>0">
+							<xsl:apply-templates select="$nodeset-property-sub" mode="details">
 								<xsl:sort select="@rdf:ID" />
 							</xsl:apply-templates>
 						</xsl:if>
