@@ -16,7 +16,7 @@
 
 :link
     a owl:ObjectProperty ;
-    rdfs:comment "Identifiers of the domain dataset is linked to that of the range dataset" .
+    rdfs:comment "Identifiers of the domain dataset is linked to that of the range dataset." .
 
 :display_label
     a owl:DatatypeProperty ;
