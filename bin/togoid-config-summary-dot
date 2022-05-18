@@ -60,34 +60,6 @@ ARGF.each do |line|
   end
 end
 
-colors = {
-  "FIXME"	=> "#E60012",
-  "Compound"	=> "#FFF100",
-  "Disease"	=> "#EB6100",
-  "Domain"	=> "#F39800",
-  "Drug"	=> "#FCC800",
-  "Function"	=> "#CFDB00",
-  "Gene"	=> "#8FC31F",
-  "Genome"	=> "#22AC38",
-  "Interaction"	=> "#009944",
-  "Literature"	=> "#009B6B",
-  "Metabolite"	=> "#009E96",
-  "Ortholog"	=> "#00A0C1",
-  "Pathway"	=> "#00A0E9",
-  "Phenotype"	=> "#0086D1",
-  "Probe"	=> "#0068B7",
-  "Protein"	=> "#00479D",
-  "Sample"	=> "#1D2088",
-  "Project"	=> "#1D2088",
-  "Structure"	=> "#601986",
-  "Taxonomy"	=> "#920783",
-  "Terminology"	=> "#BE0081",
-  "Variant"	=> "#E4007F",
-  "microRNA"	=> "#E5006A",
-  "NGS"		=> "#E5004F",
-}
-colors.default = "#333333"
-
 puts 'digraph togoid {
   node [
     style = "filled",
@@ -102,7 +74,6 @@ puts 'digraph togoid {
 puts
 
 nodes.each do |node, category|
-  #puts %Q{  "#{node}" [fillcolor = "#{colors[category]}"] ;}
   puts %Q{  "#{node}" [fillcolor = "#{tio.color(category)}"] ;}
 end
 
