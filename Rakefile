@@ -58,9 +58,9 @@ end
 
 desc "Draw a diagram with graphviz"
 task :draw do
-  sh "togoid-config-summary config/*/config.yaml > dot/togoid.sum"
-  sh "togoid-config-summary-dot --id dot/togoid.sum > dot/togoid.dot"
-  sh "dot -Nshape=box -Nstyle=filled,rounded -Ecolor=gray -Kdot -Tpng dot/togoid.dot -odot/togoid.png"
+  sh "togoid-config-summary config/*/config.yaml > docs/dot/togoid.sum"
+  sh "togoid-config-summary-dot --id dot/togoid.sum > docs/dot/togoid.dot"
+  sh "dot -Nshape=box -Nstyle=filled,rounded -Ecolor=gray -Kdot -Tpng docs/dot/togoid.dot -odocs/dot/togoid.png"
 end
 
 ### Methods
