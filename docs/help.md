@@ -1,17 +1,11 @@
 # TogoID ver. 1.1
-
-[TogoID](https://togoid.dbcls.jp/) is a service to search and convert links between database identifiers.
-
 Datasets last updated: 2022/05/16
 
 
 ## About
-
-- By entering a list of IDs (up to thousands), candiate links to other databases will be shown. Links can be chained to the target database.
-
-- Users can copy or download the result of conversion as a list of converted IDs, the URLs corresponding to the IDs, and all IDs in the conversion route.
-
-- Links between databases is maintained by the [togoid-config](https://github.com/dbcls/togoid-config) which extracts a pair of identifiers from a SPARQL query for RDF data, database specific APIs, and the flat files of original data sources. See the "DATABASE" tab on the [TogoID](https://togoid.dbcls.jp/) website for a list of supported databases.
+- [TogoID](https://togoid.dbcls.jp/) is an ID conversion service implementing unique features with an intuitive web interface and an API for programmatic access. TogoID currently supports 65 datasets covering various biological categories. TogoID users can perform exploratory multistep conversions to find a path among IDs.To guide the interpretation of biological meanings in the conversions, we crafted an [ontology](https://togoid.dbcls.jp/ontology) that defines the semantics of the dataset relations.
+- The TogoID service is freely available on the [TogoID](https://togoid.dbcls.jp/) website, and the [API](https://togoid.dbcls.jp/apidoc/) is also provided to allow programmatic access. To encourage developers to add new dataset pairs, the source code for extracting ID relations is publicly available at [GitHub](https://github.com/dbcls/togoid-config).
+- See the "DATASETS" tab for a list of supported datasets.
 
 ## Video tutorial
 - [How to use TogoID: Search and convert links between IDs in databases in the life sciences](https://www.youtube.com/watch?v=xxkVEtJMW2k)
@@ -24,24 +18,26 @@ Datasets last updated: 2022/05/16
 
 - [API Documentation　(Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## Statistics (as of December 2021)
+## Statistics (as of May 2022)
 - Number of target datasets 
-    - 64
-- Number of dataset pairs
-    - 162
-- For details on the target DBs and ID examples, please refer to the DATABASES tab. 
+    - 65 (from 48 databases)
+- For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 
 
 ## Web user interface
 
-### ID conversion from top page
+### ID conversion in the "EXPLORE" mode.
 
-![Fig-1](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-1_20210707.png)
+![Fig-1A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1A.jpg)
 
-### Results of ID conversion
+### ID conversion in the "NAVIGATE" mode.
 
-![Fig-2](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-2_20210707.png)
+![Fig-1B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1B.jpg)
 
-### Metadata about the IDs of the listed DBs
+### Browsing available datasets.
 
-![Fig-3](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-3_20210707.png)
+![Fig-2A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2A.jpg)
+
+### Conversion results.
+
+![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2B.jpg)
 
