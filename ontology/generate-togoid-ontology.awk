@@ -33,7 +33,7 @@ BEGIN {
     print ""
     print ":link"
     print "    a owl:ObjectProperty ;"
-    print "    rdfs:comment \"Identifiers of the domain dataset is linked to that of the range dataset\" ."
+    print "    rdfs:comment \"Identifiers of the domain dataset is linked to that of the range dataset.\" ."
     print ""
     print ":display_label"
     print "    a owl:DatatypeProperty ;"

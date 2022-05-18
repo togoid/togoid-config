@@ -1131,6 +1131,6 @@
     <rdfs:comment>A label to be displayed on the TogoID web UI.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology/link">
-    <rdfs:comment>Identifiers of the domain dataset is linked to that of the range dataset</rdfs:comment>
+    <rdfs:comment>Identifiers of the domain dataset is linked to that of the range dataset.</rdfs:comment>
   </owl:ObjectProperty>
 </rdf:RDF>
