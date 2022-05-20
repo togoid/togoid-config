@@ -62,7 +62,7 @@ module TogoID
         "SequenceRun"	=> "#696969",
         "Structure"	=> "#C68753",
         "Submission"	=> "#696969",
-        "Taxonomy"	=> "#006400",
+        "Organism"	=> "#006400",
         "Transcript"	=> "#53C666",
         "Variant"	=> "#53C3C6",
       }

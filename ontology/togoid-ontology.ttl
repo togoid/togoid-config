@@ -1,4 +1,4 @@
-@prefix : <http://togoid.dbcls.jp/ontology/> .
+@prefix : <http://togoid.dbcls.jp/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -14,9 +14,9 @@
     a owl:Class ;
     rdfs:label "Dataset" .
 
-:link
+:relation
     a owl:ObjectProperty ;
-    rdfs:comment "Identifiers of the domain dataset is linked to that of the range dataset" .
+    rdfs:comment "Identifiers of the domain dataset have a biological relation with that of the range dataset." .
 
 :display_label
     a owl:DatatypeProperty ;
@@ -543,28 +543,28 @@
     rdfs:subClassOf :Pathway, :Dataset .
 
 :TIO_000001
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Category ;
     rdfs:label "is nearly equivalent to" ;
     :display_label "is nearly equivalent to" .
 
 :TIO_000002
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Category ;
     rdfs:label "is equivalent to" ;
     :display_label "is equivalent to" .
 
 :TIO_000003
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Variant ;
     rdfs:range :Variant ;
     rdfs:label "variant has corresponding variant" ;
     :display_label "has corresponding variant" .
 
 :TIO_000004
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Go ;
     owl:inverseOf :TIO_000007 ;
@@ -572,7 +572,7 @@
     :display_label "has GO annotation" .
 
 :TIO_000005
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Go ;
     owl:inverseOf :TIO_000008 ;
@@ -580,7 +580,7 @@
     :display_label "has GO biological process" .
 
 :TIO_000006
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Go ;
     owl:inverseOf :TIO_000009 ;
@@ -588,7 +588,7 @@
     :display_label "has GO cellular component" .
 
 :TIO_000007
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Go ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000004 ;
@@ -596,7 +596,7 @@
     :display_label "is GO annotation of" .
 
 :TIO_000008
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Go ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000005 ;
@@ -604,7 +604,7 @@
     :display_label "is GO biological process of" .
 
 :TIO_000009
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Go ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000006 ;
@@ -612,7 +612,7 @@
     :display_label "is GO cellular component of" .
 
 :TIO_000010
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Disease ;
     owl:inverseOf :TIO_000011 ;
@@ -620,7 +620,7 @@
     :display_label "has related disease" .
 
 :TIO_000011
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Disease ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000010 ;
@@ -628,14 +628,14 @@
     :display_label "is related with" .
 
 :TIO_000012
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Molecule ;
     rdfs:range :Molecule ;
     rdfs:label "molecule interacts with molecule" ;
     :display_label "interacts with" .
 
 :TIO_000013
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Protein ;
     rdfs:range :Domain ;
     owl:inverseOf :TIO_000015 ;
@@ -643,7 +643,7 @@
     :display_label "has protein domain" .
 
 :TIO_000014
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Structure ;
     rdfs:range :Domain ;
     owl:inverseOf :TIO_000016 ;
@@ -651,7 +651,7 @@
     :display_label "has protein domain" .
 
 :TIO_000015
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Domain ;
     rdfs:range :Protein ;
     owl:inverseOf :TIO_000013 ;
@@ -659,7 +659,7 @@
     :display_label "is in protein" .
 
 :TIO_000016
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Domain ;
     rdfs:range :Structure ;
     owl:inverseOf :TIO_000014 ;
@@ -667,14 +667,14 @@
     :display_label "is in structure" .
 
 :TIO_000017
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sequence ;
     rdfs:range :Sequence ;
     rdfs:label "sequence is orthologous to sequence" ;
     :display_label "is orthologous to" .
 
 :TIO_000018
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Ortholog ;
     rdfs:range :Sequence ;
     owl:inverseOf :TIO_000019 ;
@@ -682,7 +682,7 @@
     :display_label "has orthologous group member" .
 
 :TIO_000019
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sequence ;
     rdfs:range :Ortholog ;
     owl:inverseOf :TIO_000018 ;
@@ -690,7 +690,7 @@
     :display_label "is member of orthologous group" .
 
 :TIO_000020
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Compound ;
     rdfs:range :InchiKey ;
     owl:inverseOf :TIO_000021 ;
@@ -698,7 +698,7 @@
     :display_label "is represented as" .
 
 :TIO_000021
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :InchiKey ;
     rdfs:range :Compound ;
     owl:inverseOf :TIO_000020 ;
@@ -706,7 +706,7 @@
     :display_label "represents" .
 
 :TIO_000022
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Synonym ;
     owl:inverseOf :TIO_000023 ;
@@ -714,7 +714,7 @@
     :display_label "has synonym" .
 
 :TIO_000023
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Synonym ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000022 ;
@@ -722,7 +722,7 @@
     :display_label "is synonym of" .
 
 :TIO_000024
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Protein ;
     rdfs:range :Gene ;
     owl:inverseOf :TIO_000025 ;
@@ -730,7 +730,7 @@
     :display_label "is product of gene" .
 
 :TIO_000025
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Gene ;
     rdfs:range :Protein ;
     owl:inverseOf :TIO_000024 ;
@@ -738,7 +738,7 @@
     :display_label "has gene product" .
 
 :TIO_000026
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Protein ;
     rdfs:range :Structure ;
     owl:inverseOf :TIO_000027 ;
@@ -746,7 +746,7 @@
     :display_label "has 3D structure" .
 
 :TIO_000027
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Structure ;
     rdfs:range :Protein ;
     owl:inverseOf :TIO_000026 ;
@@ -754,7 +754,7 @@
     :display_label "is 3D structure of" .
 
 :TIO_000028
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sequence ;
     rdfs:range :Ec ;
     owl:inverseOf :TIO_000029 ;
@@ -762,7 +762,7 @@
     :display_label "has EC number" .
 
 :TIO_000029
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Ec ;
     rdfs:range :Sequence ;
     owl:inverseOf :TIO_000028 ;
@@ -770,7 +770,7 @@
     :display_label "is EC number of" .
 
 :TIO_000030
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Gene, :Transcript ;
     rdfs:range :Probe ;
     owl:inverseOf :TIO_000031 ;
@@ -778,7 +778,7 @@
     :display_label "is target of" .
 
 :TIO_000031
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Probe ;
     rdfs:range :Gene, :Transcript ;
     owl:inverseOf :TIO_000030 ;
@@ -786,7 +786,7 @@
     :display_label "detects" .
 
 :TIO_000032
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Literature ;
     owl:inverseOf :TIO_000033 ;
@@ -794,7 +794,7 @@
     :display_label "has reference" .
 
 :TIO_000033
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Literature ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000032 ;
@@ -802,7 +802,7 @@
     :display_label "is reference of" .
 
 :TIO_000034
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Transcript ;
     rdfs:range :Gene ;
     owl:inverseOf :TIO_000035 ;
@@ -810,7 +810,7 @@
     :display_label "is transcribed from" .
 
 :TIO_000035
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Gene ;
     rdfs:range :Transcript ;
     owl:inverseOf :TIO_000034 ;
@@ -818,7 +818,7 @@
     :display_label "is transcribed to" .
 
 :TIO_000036
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Transcript ;
     rdfs:range :Protein ;
     owl:inverseOf :TIO_000037 ;
@@ -826,7 +826,7 @@
     :display_label "is translated to" .
 
 :TIO_000037
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Protein ;
     rdfs:range :Transcript ;
     owl:inverseOf :TIO_000036 ;
@@ -834,7 +834,7 @@
     :display_label "is tranlated from" .
 
 :TIO_000038
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Submission ;
     rdfs:range :Analysis ;
     owl:inverseOf :TIO_000048 ;
@@ -842,7 +842,7 @@
     :display_label "includes analysis" .
 
 :TIO_000039
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Submission ;
     rdfs:range :Experiment ;
     owl:inverseOf :TIO_000049 ;
@@ -850,7 +850,7 @@
     :display_label "includes experiment" .
 
 :TIO_000040
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Project ;
     rdfs:range :Experiment ;
     owl:inverseOf :TIO_000050 ;
@@ -858,7 +858,7 @@
     :display_label "performs experiment" .
 
 :TIO_000041
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Submission ;
     rdfs:range :Project ;
     owl:inverseOf :TIO_000051 ;
@@ -866,7 +866,7 @@
     :display_label "includes project" .
 
 :TIO_000042
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Submission ;
     rdfs:range :Sample ;
     owl:inverseOf :TIO_000052 ;
@@ -874,7 +874,7 @@
     :display_label "includes sample" .
 
 :TIO_000043
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Experiment ;
     rdfs:range :Sample ;
     owl:inverseOf :TIO_000053 ;
@@ -882,7 +882,7 @@
     :display_label "captures sample" .
 
 :TIO_000044
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :SequenceRun ;
     rdfs:range :Sample ;
     owl:inverseOf :TIO_000054 ;
@@ -890,7 +890,7 @@
     :display_label "is produced from sample" .
 
 :TIO_000045
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Submission ;
     rdfs:range :SequenceRun ;
     owl:inverseOf :TIO_000055 ;
@@ -898,7 +898,7 @@
     :display_label "includes sequence run" .
 
 :TIO_000046
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Project ;
     rdfs:range :SequenceRun ;
     owl:inverseOf :TIO_000056 ;
@@ -906,7 +906,7 @@
     :display_label "produces sequence run" .
 
 :TIO_000047
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Experiment ;
     rdfs:range :SequenceRun ;
     owl:inverseOf :TIO_000057 ;
@@ -914,7 +914,7 @@
     :display_label "produces sequence run" .
 
 :TIO_000048
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Analysis ;
     rdfs:range :Submission ;
     owl:inverseOf :TIO_000038 ;
@@ -922,7 +922,7 @@
     :display_label "belongs to submission" .
 
 :TIO_000049
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Experiment ;
     rdfs:range :Submission ;
     owl:inverseOf :TIO_000039 ;
@@ -930,7 +930,7 @@
     :display_label "belongs to submission" .
 
 :TIO_000050
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Experiment ;
     rdfs:range :Project ;
     owl:inverseOf :TIO_000040 ;
@@ -938,7 +938,7 @@
     :display_label "belongs to project" .
 
 :TIO_000051
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Project ;
     rdfs:range :Submission ;
     owl:inverseOf :TIO_000041 ;
@@ -946,7 +946,7 @@
     :display_label "belongs to submission" .
 
 :TIO_000052
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sample ;
     rdfs:range :Submission ;
     owl:inverseOf :TIO_000042 ;
@@ -954,7 +954,7 @@
     :display_label "belongs to submission" .
 
 :TIO_000053
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sample ;
     rdfs:range :Experiment ;
     owl:inverseOf :TIO_000043 ;
@@ -962,7 +962,7 @@
     :display_label "is captured to perform experiment" .
 
 :TIO_000054
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sample ;
     rdfs:range :SequenceRun ;
     owl:inverseOf :TIO_000044 ;
@@ -970,7 +970,7 @@
     :display_label "is captured to produce sequence run" .
 
 :TIO_000055
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :SequenceRun ;
     rdfs:range :Submission ;
     owl:inverseOf :TIO_000045 ;
@@ -978,7 +978,7 @@
     :display_label "belongs to submission" .
 
 :TIO_000056
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :SequenceRun ;
     rdfs:range :Project ;
     owl:inverseOf :TIO_000046 ;
@@ -986,7 +986,7 @@
     :display_label "belongs to project" .
 
 :TIO_000057
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :SequenceRun ;
     rdfs:range :Experiment ;
     owl:inverseOf :TIO_000047 ;
@@ -994,7 +994,7 @@
     :display_label "is produced in experiment" .
 
 :TIO_000058
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Variant ;
     rdfs:range :Variant ;
     owl:inverseOf :TIO_000059 ;
@@ -1002,7 +1002,7 @@
     :display_label "has clinical significance" .
 
 :TIO_000059
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Variant ;
     rdfs:range :Variant ;
     owl:inverseOf :TIO_000058 ;
@@ -1010,7 +1010,7 @@
     :display_label "is clinical significance of" .
 
 :TIO_000060
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Glycan ;
     rdfs:range :Protein ;
     owl:inverseOf :TIO_000061 ;
@@ -1018,7 +1018,7 @@
     :display_label "is attached to" .
 
 :TIO_000061
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Protein ;
     rdfs:range :Compound ;
     owl:inverseOf :TIO_000060 ;
@@ -1026,7 +1026,7 @@
     :display_label "is modified with" .
 
 :TIO_000062
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Variant ;
     rdfs:range :Sequence ;
     owl:inverseOf :TIO_000063 ;
@@ -1034,7 +1034,7 @@
     :display_label "is located in" .
 
 :TIO_000063
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Sequence ;
     rdfs:range :Variant ;
     owl:inverseOf :TIO_000062 ;
@@ -1042,15 +1042,15 @@
     :display_label "has variant" .
 
 :TIO_000064
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Gene ;
-    rdfs:range :Taxonomy ;
+    rdfs:range :Organism ;
     owl:inverseOf :TIO_000065 ;
     rdfs:label "is gene of organism" ;
     :display_label "is gene of organism" .
 
 :TIO_000065
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000064 ;
@@ -1058,7 +1058,7 @@
     :display_label "has gene" .
 
 :TIO_000066
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000067 ;
@@ -1066,7 +1066,7 @@
     :display_label "targets to" .
 
 :TIO_000067
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Disease ;
     rdfs:range :Compound ;
     owl:inverseOf :TIO_000066 ;
@@ -1074,7 +1074,7 @@
     :display_label "is targeted by" .
 
 :TIO_000068
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Pathway ;
     rdfs:range :Molecule ;
     owl:inverseOf :TIO_000069 ;
@@ -1082,7 +1082,7 @@
     :display_label "has participant molecule" .
 
 :TIO_000069
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Molecule ;
     rdfs:range :Pathway ;
     owl:inverseOf :TIO_000068 ;
@@ -1090,7 +1090,7 @@
     :display_label "participates in pathway" .
 
 :TIO_000070
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Pathway ;
     rdfs:range :Reaction ;
     owl:inverseOf :TIO_000071 ;
@@ -1098,7 +1098,7 @@
     :display_label "has participant reaction" .
 
 :TIO_000071
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Reaction ;
     rdfs:range :Pathway ;
     owl:inverseOf :TIO_000070 ;
@@ -1106,7 +1106,7 @@
     :display_label "participates in pathway" .
 
 :TIO_000072
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Pathway ;
     rdfs:range :Domain ;
     owl:inverseOf :TIO_000073 ;
@@ -1114,7 +1114,7 @@
     :display_label "has protein domain in pathway" .
 
 :TIO_000073
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Domain ;
     rdfs:range :Pathway ;
     owl:inverseOf :TIO_000072 ;
@@ -1122,7 +1122,7 @@
     :display_label "participates in pathway" .
 
 :TIO_000074
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Molecule ;
     rdfs:range :Interaction ;
     owl:inverseOf :TIO_000075 ;
@@ -1130,7 +1130,7 @@
     :display_label "participates in pathway" .
 
 :TIO_000075
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Interaction ;
     rdfs:range :Molecule ;
     owl:inverseOf :TIO_000074 ;
@@ -1138,7 +1138,7 @@
     :display_label "has participant molecule" .
 
 :TIO_000076
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Molecule ;
     rdfs:range :Reaction ;
     owl:inverseOf :TIO_000077 ;
@@ -1146,7 +1146,7 @@
     :display_label "participates in pathway" .
 
 :TIO_000077
-    rdfs:subPropertyOf :link ;
+    rdfs:subPropertyOf :relation ;
     rdfs:domain :Reaction ;
     rdfs:range :Molecule ;
     owl:inverseOf :TIO_000076 ;

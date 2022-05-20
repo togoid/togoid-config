@@ -41,7 +41,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
   <!ENTITY owl		"http://www.w3.org/2002/07/owl#">
   <!ENTITY core		"http://purl.uniprot.org/core/">
   <!ENTITY spin         "http://spinrdf.org/spin#">
-  <!ENTITY tio		"http://togoid.dbcls.jp/ontology/">
+  <!ENTITY tio		"http://togoid.dbcls.jp/ontology#">
 ]>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -76,6 +76,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 	<xsl:variable name="nodeset-property-datatype" select=".//*[  
 		((local-name()='DatatypeProperty' and namespace-uri()='&owl;') or (rdf:type/@rdf:resource='&owl;DatatypeProperty'))
   ]" />
+	<xsl:variable name="nodeset-property-sub" select="//rdfs:subPropertyOf/.." />
 	<xsl:variable name="nodeset-individual"
 		select="(.//*[
 			 (//rdf:type[@rdf:resource='&owl;NamedIndividual'] or (//rdf:type[@rdf:resource='&owl;Thing'] and (namespace-uri()='&core;')))
@@ -286,6 +287,24 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
             </tr>
             <tr>
                     <td>
+                            <a style="subPropertySearch" href="#SubProperties">
+                                    Sub properties (
+                                    <xsl:value-of select="count($nodeset-property-sub)" />
+                                    )
+                            </a>
+                    </td>
+                    <td>
+                            <select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value"
+                                            id="navi5"
+                                    >
+                                            <xsl:apply-templates select="$nodeset-property-sub" mode="menu">
+                                                    <xsl:sort select="@rdf:ID" />
+                                            </xsl:apply-templates>
+                            </select>
+                    </td>
+            </tr>
+            <tr>
+                    <td>
                             <a href="#InstanceData">
                                     Instance data (
                                     <xsl:value-of select="count($nodeset-individual)" />
@@ -345,6 +364,12 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 								<xsl:sort select="@rdf:ID" />
 							</xsl:apply-templates>
 						</xsl:if>
+						<h3 id="SubProperties">Sub properties</h3>
+						<xsl:if test="count($nodeset-property-sub)>0">
+							<xsl:apply-templates select="$nodeset-property-sub" mode="details">
+								<xsl:sort select="@rdf:ID" />
+							</xsl:apply-templates>
+						</xsl:if>
 					</div>
 				</div>
 				<div class="nice" id="section_InstanceData" style="position: relative;">			
@@ -365,7 +390,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 		
 			<xsl:choose>
 				<xsl:when test="@rdf:about">
-					<option value="{substring-after(@rdf:about, 'ontology/')}">
+					<option value="{substring-after(@rdf:about, 'ontology#')}">
 						<xsl:call-template name="prettyUrl">
 							<xsl:with-param name="name" select="@rdf:about"/>
 						</xsl:call-template>
@@ -439,7 +464,7 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 			<tbody>
 				<xsl:if test="string-length($ref)>0">
 					<tr>
-						<th id="{substring-after(@rdf:about, 'ontology/')}">
+						<th id="{substring-after(@rdf:about, 'ontology#')}">
 							<xsl:choose>
 								<xsl:when test="@rdf:ID">
 									<a><xsl:value-of select="@rdf:ID" /></a>
