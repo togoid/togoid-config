@@ -1,25 +1,22 @@
-# TogoID
-
-[TogoID](https://togoid.dbcls.jp/) は、生命科学分野のデータベース(DB)のID間の対応関係を検索、変換することができるWebアプリケーションです。
+# TogoID ver. 1.1
+Datasets last updated: 2022/05/16
 
 ## About
-- IDのリスト（数千件まで）を入力すると、変換候補のDBがリストアップされ、対応するIDに変換することができます。1対1のID変換だけでなく、変換先のDBに至る経路を含めて変換することも可能です。
-
-- TogoIDでは、変換されたIDをさまざまな形式で取得する機能を提供しています。
-    1. クリップボードにコピーして他のサービスですぐに使えるようにする
-    2. 変換されたIDの一覧をテキスト形式で取得する
-    3. オリジナルDBへのリンクURLを含む形式で変換されたIDの一覧を取得する
-    4. 変換経路をすべて含む変換されたIDの一覧をCSV形式で取得する
-
-- ID間の対応関係は、各DBのRDFデータ、API、フラットファイルからの抽出によって整備しており、それらはGitHubの[togoid-config](https://github.com/dbcls/togoid-config/) レポジトリで管理･公開しています。対象DBのIDに関するメタデータや、データセットペアの更新方法、更新頻度などを管理することで、常に最新のID間の対応関係を得られるようにしています。
+- [TogoID](https://togoid.dbcls.jp/) は、直感的なインターフェースにより生命科学系データベース(DB)間のつながりを探索的に確認しながらID変換を行うことができるウェブアプリケーションです。同一の実体を指すID間の変換だけでなく、関連する別のカテゴリーのIDへの変換も可能です。また、直接リンクされていないDBのID間でも、他のDBを経由した変換を探索することができます。
+- 収載する各オリジナルDBから IDの対応関係を抽出するプログラムをデータセットのペアごとに作成し、定期的な更新体制を構築しています。これらは全て[GitHub レポジトリ](https://github.com/dbcls/togoid-config/)で公開しており、誰でも自由に参照できるとともに、IDペアの追加等の提案をすることもできます。
+- ID間の対応関係が持つ生物学的意味についての語彙集([オントロジー](https://togoid.dbcls.jp/ontology))を整備し、それらをウェブインターフェース上で参照できるようにすることで探索的なID変換を実現しています。
+- TogoIDに収載されているデータセットの詳細については、"DATASETS"タブからご覧いただけます。
 
 ## 動画マニュアル
 - [TogoIDを使って生命科学分野のデータベースのID間の対応関係を検索し変換する](https://youtu.be/xxkVEtJMW2k)
 
-## 紹介スライドPDF
+## 紹介PDF･記事
 - [TogoID: データベース統合の基盤となるID変換サービス](https://biosciencedbc.jp/event/symposium/togo2021/files/poster03_togo2021.pdf)
     - 2021年10月トーゴーの日シンポジウムにて[発表](https://biosciencedbc.jp/event/symposium/togo2021/poster/003.html)   
-
+- [TogoID：生命科学系データベースのさまざまなIDを探索的に変換できるウェブアプリケーション](https://doi.org/10.18958/7013-00005-0000134-00)
+    - 実験医学2022年5月号　クローズアップ実験法 
+    - DOI [10.18958/7013-00005-0000134-00](https://doi.org/10.18958/7013-00005-0000134-00)
+    - 
 ## API
 - ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。
     1. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json)
@@ -28,23 +25,25 @@
 
 - [API Documentation　(Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## 統計 (2021年12月現在)
+## 統計 (2022年5月現在)
 - 対象データセット数 
-    - 64
-- データセットペア数
-    - 162
-- 対象DBの詳細やID例については、DATABASES タブ からご覧いただけます。 
+    - 65　(48のデータベースに由来)
+- 対象DBの詳細やID例については、"DATASETS" タブ からご覧いただけます。 
 
 ## Web user interface
 
-### ID conversion from top page
+### ID conversion in the "EXPLORE" mode.
 
-![Fig-1](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-1_20210707.png)
+![Fig-1A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1A.jpg)
 
-### Results of ID conversion
+### ID conversion in the "NAVIGATE" mode.
 
-![Fig-2](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-2_20210707.png)
+![Fig-1B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1B.jpg)
 
-### Metadata about the IDs of the listed DBs
+### Browsing available datasets.
 
-![Fig-3](https://raw.githubusercontent.com/dbcls/website/master/services/images/TogoID_fig-3_20210707.png)
+![Fig-2A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2A.jpg)
+
+### Conversion results.
+
+![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2B.jpg)
