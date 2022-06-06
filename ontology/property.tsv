@@ -71,7 +71,7 @@ TIO_000070	pathway has participant reaction	has participant reaction	TIO_000071	
 TIO_000071	reaction participates in pathway	participates in pathway	TIO_000070	Reaction	Pathway
 TIO_000072	pathway has protein domain	has protein domain in pathway	TIO_000073	Pathway	Domain
 TIO_000073	protein domain participates in pathway	participates in pathway	TIO_000072	Domain	Pathway
-TIO_000074	molecule participates in interaction	participates in pathway	TIO_000075	Molecule	Interaction
+TIO_000074	molecule participates in interaction	participates in interaction	TIO_000075	Molecule	Interaction
 TIO_000075	interaction has participant molecule	has participant molecule	TIO_000074	Interaction	Molecule
 TIO_000076	molecule participates in reaction	participates in reaction	TIO_000077	Molecule	Reaction
 TIO_000077	reaction has participant molecule	has participant molecule	TIO_000076	Reaction	Molecule
