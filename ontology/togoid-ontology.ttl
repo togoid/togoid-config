@@ -1127,7 +1127,7 @@
     rdfs:range :Interaction ;
     owl:inverseOf :TIO_000075 ;
     rdfs:label "molecule participates in interaction" ;
-    :display_label "participates in pathway" .
+    :display_label "participates in interaction" .
 
 :TIO_000075
     rdfs:subPropertyOf :relation ;

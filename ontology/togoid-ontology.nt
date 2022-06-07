@@ -858,7 +858,7 @@
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Interaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000075> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2000/01/rdf-schema#label> "molecule participates in interaction" .
-<http://togoid.dbcls.jp/ontology#TIO_000074> <http://togoid.dbcls.jp/ontology#display_label> "participates in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000074> <http://togoid.dbcls.jp/ontology#display_label> "participates in interaction" .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Interaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
