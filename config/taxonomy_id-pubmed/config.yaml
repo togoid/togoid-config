@@ -3,5 +3,5 @@ link:
   reverse:
   file: sample.tsv
 update:
-  frequency:
+  frequency: Daily
   method:  cat ${TOGOID_ROOT}/input/taxonomydump/citations.dmp | awk -F'[|]' -v 'OFS=|' '{gsub(/\t| /,"", $4); print $4,$7}' | awk -F'[|]' -v 'OFS=,' '{gsub(/\t/,"",$2); print $1,$2}' | awk -F'[,]'  '{n=split($2,s," "); for (i=1;i<=n;i++) {$2=s[i];print $2,$1}}'
