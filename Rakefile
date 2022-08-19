@@ -278,6 +278,8 @@ module TogoID
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}uniprot/
         return "prepare:uniprot"
+      when /#{OUTPUT_TSV_DIR}taxonomy/
+        return "prepare:taxonomy"  
       else
         return "config/dataset.yaml"
       end
@@ -393,7 +395,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot ]
+  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
@@ -404,6 +406,7 @@ namespace :prepare do
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
+  directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -613,8 +616,23 @@ namespace :prepare do
       updated
     end
   end
-end
 
+  desc "Prepare required files for taxonomy"
+  task :taxonomy => INPUT_TAXONOMY_DIR do
+    $stderr.puts "## Prepare input files for UniProt"
+    download_lock(INPUT_TAXONOMY_DIR) do
+      updated = false
+      input_file = "#{INPUT_TAXONOMY_DIR}/taxdump.tar.gz"
+      input_url = "https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_TAXONOMY_DIR, input_url)
+        sh "gzip -dc #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz" > #{INPUT_TAXONOMY_DIR}/taxdump/
+        updated = true
+      end
+      updated
+    end
+  end
+end
 # Upload task
 namespace :aws do
   desc "Create update.txt and upload TSV files to AWS S3"
