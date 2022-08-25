@@ -626,7 +626,7 @@ namespace :prepare do
       input_url = "https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_TAXONOMY_DIR, input_url)
-        sh "gzip -dc #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz > #{INPUT_TAXONOMY_DIR}/taxdump/"
+        sh "tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
         updated = true
       end
       updated
