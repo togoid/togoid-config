@@ -619,7 +619,7 @@ namespace :prepare do
 
   desc "Prepare required files for taxonomy"
   task :taxonomy => INPUT_TAXONOMY_DIR do
-    $stderr.puts "## Prepare input files for UniProt"
+    $stderr.puts "## Prepare input files for Taxonomy"
     download_lock(INPUT_TAXONOMY_DIR) do
       updated = false
       input_file = "#{INPUT_TAXONOMY_DIR}/taxdump.tar.gz"
