@@ -1,7 +1,0 @@
-link:
-  forward: TIO_000032
-  reverse: TIO_000033
-  file: sample.tsv
-update:
-  frequency: Daily
-  method:  awk 'BEGIN{FS="\t\\|\t";RS="\t\\|\n"}$4!=0{split($7,a," ");for(k in a){print a[k] "\t" $4}}' ${TOGOID_ROOT}/input/taxonomy/taxdump/citations.dmp 
