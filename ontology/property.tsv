@@ -58,12 +58,12 @@ TIO_000057	sequence run is produced in experiment	is produced in experiment	TIO_
 TIO_000058	variant has clinical significance	has clinical significance	TIO_000059	Variant	Variant
 TIO_000059	is clinical significance of	is clinical significance of	TIO_000058	Variant	Variant
 TIO_000060	glycan is attached to protein	is attached to	TIO_000061	Glycan	Protein
-TIO_000061	protein is modified with glycan	is modified with	TIO_000060	Protein	Compound
+TIO_000061	protein is modified with glycan	is modified with	TIO_000060	Protein	Glycan
 TIO_000062	variant is located in sequence	is located in	TIO_000063	Variant	Sequence
 TIO_000063	sequence has variant	has variant	TIO_000062	Sequence	Variant
 TIO_000064	is gene of organism	is gene of organism	TIO_000065	Gene	Organism
-TIO_000065	organism has gene	has gene	TIO_000064	Category	Category
-TIO_000066	compound targets to disease	targets to	TIO_000067	Category	Category
+TIO_000065	organism has gene	has gene	TIO_000064	Organism	Gene
+TIO_000066	compound targets to disease	targets to	TIO_000067	Compound	Disease
 TIO_000067	disease is targeted by compound	is targeted by	TIO_000066	Disease	Compound
 TIO_000068	pathway has participant molecule	has participant molecule	TIO_000069	Pathway	Molecule
 TIO_000069	molecule participates in pathway	participates in pathway	TIO_000068	Molecule	Pathway

@@ -777,7 +777,7 @@
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://togoid.dbcls.jp/ontology#display_label> "is attached to" .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
-<http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000060> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#label> "protein is modified with glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://togoid.dbcls.jp/ontology#display_label> "is modified with" .
@@ -800,14 +800,14 @@
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/2000/01/rdf-schema#label> "is gene of organism" .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://togoid.dbcls.jp/ontology#display_label> "is gene of organism" .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
-<http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
-<http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000064> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#label> "organism has gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://togoid.dbcls.jp/ontology#display_label> "has gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
-<http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
-<http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Disease> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000067> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#label> "compound targets to disease" .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://togoid.dbcls.jp/ontology#display_label> "targets to" .
