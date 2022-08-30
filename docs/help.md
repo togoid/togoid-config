@@ -10,6 +10,10 @@ Datasets last updated: 2022/06/02
 ## Video tutorial
 - [How to use TogoID: Search and convert links between IDs in databases in the life sciences](https://www.youtube.com/watch?v=xxkVEtJMW2k)
 
+## Publication
+
+Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
+
 ## API
 - TogoID is also available as an API, which allows other applications to use it for ID conversion.
     1. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json)
@@ -40,7 +44,3 @@ Datasets last updated: 2022/06/02
 ### Conversion results.
 
 ![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2B.jpg)
-
-## Publication
-
-Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, https://doi.org/10.1093/bioinformatics/btac491
