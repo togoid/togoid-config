@@ -41,3 +41,6 @@ Datasets last updated: 2022/06/02
 
 ![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2B.jpg)
 
+## Publication
+
+Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, https://doi.org/10.1093/bioinformatics/btac491
