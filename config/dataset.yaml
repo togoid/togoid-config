@@ -672,15 +672,17 @@ wormbase_gene:
   regex: '^(?<id>WBgene\d{8})$'
   prefix: 'http://identifiers.org/wb/'
   examples:
-    - ["WBGene00022277"]
+    - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
 vgnc:
   label: VGNC
-  catalog:
+  catalog: FIXME
   category: Gene
   regex: '^((VGNC|vgnc):)(?<id>?\d{1,9})$'
   prefix: 'http://identifiers.org/vgnc/'
   examples:
-    - ["VGNC:43937"]
+    - ["39230","49608","85188","76040","72808","73601","9436","78821","74596","5304"]
+    - ["VGNC:39230","VGNC:49608","VGNC:85188","VGNC:76040","VGNC:72808","VGNC:73601","VGNC:9436","VGNC:78821","VGNC:74596","VGNC:5304"]
+    - ["vgnc:39230","vgnc:49608","vgnc:85188","vgnc:76040","vgnc:72808","vgnc:73601","vgnc:9436","vgnc:78821","vgnc:74596","vgnc:5304"]
 zfin_gene:
   label: ZFIN
   catalog: nbdc00746
@@ -688,7 +690,7 @@ zfin_gene:
   regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
   prefix: 'http://identifiers.org/zfin/'
   examples:
-    - ["ZDB-GENE-980526-104"]
+    - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
 xenbase_gene:
   label: Xenbase
   catalog: nbdc01892
@@ -696,7 +698,7 @@ xenbase_gene:
   regex: '^(?<id>XB\-[A-Z]+\-\d+)$'
   prefix: 'http://identifiers.org/xenbase/'
   examples:
-    - ["XB-GENE-1010722"]
+    - ["XB-GENE-877040","XB-GENE-22060981","XB-GENE-17344257","XB-GENE-487684","XB-GENE-1014349","XB-GENE-17335133","XB-GENE-1012537","XB-GENE-494019","XB-GENE-5952945","XB-GENE-957742"]
 tair:
   label: TAIR
   catalog: nbdc00697
@@ -704,7 +706,7 @@ tair:
   regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
   prefix: 'https://www.arabidopsis.org/servlets/TairObject?type=locus&name='
   examples:
-    - ["AT1G01010"]
+    - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
 sgd:
   label: SGD
   catalog: nbdc00202
@@ -712,4 +714,4 @@ sgd:
   regex: '^(?<id>S\d{9})$'
   prefix: 'http://identifiers.org/sgd/'
   examples:
-    - ["S000000580"]
+    - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
