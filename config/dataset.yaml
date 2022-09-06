@@ -685,7 +685,7 @@ zfin_gene:
   label: ZFIN
   catalog: nbdc00746
   category: Gene
-  regex: '^(?<id>ZDB\-GENE\-\d{6}\-\d+)$'
+  regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
   prefix: 'http://identifiers.org/zfin/'
   examples:
     - ["ZDB-GENE-980526-104"]
@@ -693,7 +693,7 @@ xenbase_gene:
   label: Xenbase
   catalog: nbdc01892
   category: Gene
-  regex: '^(?<id>XB\-GENE\-\d+)$'
+  regex: '^(?<id>XB\-[A-Z]+\-\d+)$'
   prefix: 'http://identifiers.org/xenbase/'
   examples:
     - ["XB-GENE-1010722"]
@@ -709,7 +709,7 @@ sgd:
   label: SGD
   catalog: nbdc00202
   category: Gene
-  regex: '^(?<id>S\d+)$'
+  regex: '^(?<id>S\d{9})$'
   prefix: 'http://identifiers.org/sgd/'
   examples:
     - ["S000000580"]
