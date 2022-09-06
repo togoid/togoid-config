@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F '\t' -v 'db=VGNC' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print $2 "\t" substr(a[k],length(db)+2)}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  method: awk -F '\t' -v 'db=VGNC:VGNC' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print $2 "\t" substr(a[k],length(db)+2)}}' $TOGOID_ROOT/input/ncbigene/gene_info
