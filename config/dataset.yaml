@@ -677,7 +677,8 @@ vgnc:
   label: VGNC
   catalog: FIXME
   category: Gene
-  regex: '^((VGNC|vgnc):)(?<id>?\d{1,9})$'
+  regex: '^((VGNC|vgnc):)?(?<id>\d{1,9})$'
+  format: ["%s","VGNC:%s","vgnc:%s"]
   prefix: 'http://identifiers.org/vgnc/'
   examples:
     - ["39230","49608","85188","76040","72808","73601","9436","78821","74596","5304"]
