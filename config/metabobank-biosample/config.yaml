@@ -1,0 +1,7 @@
+link:
+  file: mtb_id_biosample.tsv
+  forward: TIO_000042
+  reverse: TIO_000052
+update:
+  frequency: Monthly
+  method: "wget https://ddbj.nig.ac.jp/public/rdf/dblink/mtb2bs/mtb_id_biosample.tsv"
