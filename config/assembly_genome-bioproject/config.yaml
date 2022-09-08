@@ -1,5 +1,5 @@
 link:
-  file: assembly_genome2bp.tsv
+  file: sample.tsv
   forward: TIO_000041
   reverse: TIO_000051
 update:
