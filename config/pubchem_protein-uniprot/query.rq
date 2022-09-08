@@ -1,0 +1,15 @@
+# https://integbio.jp/rdf/pubchem/sparql
+# pubchem_protein-uniprot
+
+PREFIX bp:	<http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT  distinct ?pubchem_protein ?uniprot_id
+WHERE {
+ ?pathway a bp:Pathway ;
+     obo:RO_0000057 ?participant.
+ ?participant skos:closeMatch ?uniprot .
+FILTER contains (str(?uniprot), "uniprot") 
+BIND (substr(str(?participant), 49) AS ?pubchem_protein) 
+BIND (strafter(str(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id)
+}
