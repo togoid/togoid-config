@@ -4,4 +4,4 @@ link:
   reverse: TIO_000052
 update:
   frequency: Monthly
-  method: "wget https://ddbj.nig.ac.jp/public/rdf/dblink/mtb2bs/mtb_id_biosample.tsv"
+  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/mtb2bs/mtb_id_biosample.tsv
