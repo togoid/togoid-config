@@ -1,5 +1,5 @@
 link:
-  file: mtb_id_biosample.tsv
+  file: sample.tsv
   forward: TIO_000042
   reverse: TIO_000052
 update:
