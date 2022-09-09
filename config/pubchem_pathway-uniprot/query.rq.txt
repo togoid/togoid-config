@@ -1,3 +1,6 @@
+# https://integbio.jp/rdf/pubchem/sparql
+# pubchem_pathway-uniprot
+
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
