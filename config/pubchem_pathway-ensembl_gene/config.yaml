@@ -1,6 +1,6 @@
 link:
-  forward: TIO_000068
-  reverse: TIO_000069
+  forward: TIO_000084
+  reverse: TIO_000085
   file: sample.tsv
 update:
   frequency: Weekly

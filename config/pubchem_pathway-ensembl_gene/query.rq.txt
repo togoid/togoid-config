@@ -1,15 +1,15 @@
 # https://integbio.jp/rdf/pubchem/sparql
-# pubchem_pathway-pubchem_compound
+# pubchem_pathway-ensembl_gene
 
 PREFIX bp:	<http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT  distinct ?path_id  ?cid
+SELECT  distinct ?path_id ?ensg
 WHERE {
  ?pathway a bp:Pathway ;
-     obo:RO_0000057 ?participant .
-
-FILTER contains (str(?participant), "CID") 
+     obo:RO_0000057/skos:closeMatch ?gene .
+FILTER contains (str(?gene), "ENSG") 
 BIND (strafter(str(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
-BIND (strafter(str(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?cid)
+BIND (strafter(str(?gene), "http://rdf.ebi.ac.uk/resource/ensembl/") AS ?ensg)
 }
