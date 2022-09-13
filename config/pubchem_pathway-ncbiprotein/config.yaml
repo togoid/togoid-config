@@ -1,7 +1,0 @@
-link:
-  forward: TIO_000068
-  reverse: TIO_000069
-  file: sample.tsv
-update:
-  frequency: Weekly
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/pubchem/sparql
