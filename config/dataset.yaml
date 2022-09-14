@@ -489,6 +489,16 @@ pubchem_substance:
   examples:
     - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
     - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
+pubchem_pathway:
+  label: PubChem pathway
+  catalog: nbdc02626
+  category: Pathway
+  regex: '^(?:PWID)?(?<id>\d+)$'
+  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID'
+  format: ["%s","PWID%s"]
+  examples:
+    - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
+    - ["PWID10572","PWID1","PWID10576","PWID10577","PWID10579","PWID10573","PWID10582","PWID10574","PWID10575","PWID10581"]
 pubmed:
   label: PubMed
   catalog: nbdc00179
