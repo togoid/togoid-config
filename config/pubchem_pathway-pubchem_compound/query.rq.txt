@@ -1,0 +1,15 @@
+# https://integbio.jp/rdf/pubchem/sparql
+# pubchem_pathway-pubchem_compound
+
+PREFIX bp:	<http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT  distinct ?path_id  ?cid
+WHERE {
+ ?pathway a bp:Pathway ;
+     obo:RO_0000057 ?participant .
+
+FILTER contains (str(?participant), "CID") 
+BIND (strafter(str(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
+BIND (strafter(str(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?cid)
+}
