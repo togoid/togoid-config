@@ -266,6 +266,8 @@ module TogoID
         return "prepare:ensembl"
       when /#{OUTPUT_TSV_DIR}homologene/
         return "prepare:homologene"
+      when /#{OUTPUT_TSV_DIR}cog/
+        return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
       when /#{OUTPUT_TSV_DIR}ncbigene/
@@ -278,6 +280,8 @@ module TogoID
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}uniprot/
         return "prepare:uniprot"
+      when /#{OUTPUT_TSV_DIR}taxonomy/
+        return "prepare:taxonomy"  
       else
         return "config/dataset.yaml"
       end
@@ -393,17 +397,19 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot ]
+  task :all => [ :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
+  directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
+  directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -441,6 +447,21 @@ namespace :prepare do
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for COG"
+  task :cog => INPUT_COG_DIR do
+    $stderr.puts "## Prepare input files for COG"
+    download_lock(INPUT_COG_DIR) do
+      updated = false
+      input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_COG_DIR, input_url)
         updated = true
       end
       updated
@@ -613,8 +634,23 @@ namespace :prepare do
       updated
     end
   end
-end
 
+  desc "Prepare required files for taxonomy"
+  task :taxonomy => INPUT_TAXONOMY_DIR do
+    $stderr.puts "## Prepare input files for Taxonomy"
+    download_lock(INPUT_TAXONOMY_DIR) do
+      updated = false
+      input_file = "#{INPUT_TAXONOMY_DIR}/taxdump.tar.gz"
+      input_url = "https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_TAXONOMY_DIR, input_url)
+        sh "mkdir #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
+        updated = true
+      end
+      updated
+    end
+  end
+end
 # Upload task
 namespace :aws do
   desc "Create update.txt and upload TSV files to AWS S3"
