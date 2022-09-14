@@ -675,7 +675,7 @@ wormbase_gene:
     - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
 vgnc:
   label: VGNC
-  catalog: FIXME
+  catalog: nbdc02624
   category: Gene
   regex: '^((VGNC|vgnc):)?(?<id>\d{1,9})$'
   format: ["%s","VGNC:%s","vgnc:%s"]
