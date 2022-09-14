@@ -81,3 +81,5 @@ TIO_000080	assembly is generated from sample	is generated from	TIO_000081	Assemb
 TIO_000081	sample is used to generate assembly	is used to generate	TIO_000080	Sample	Assembly
 TIO_000082	cell line has disease	has disease	TIO_000083	CellLine	Disease
 TIO_000083	disease is seen in cell line	is seen in	TIO_000082	Disease	CellLine
+TIO_000084	pathway has participant gene	has participant gene	TIO_000085	Pathway	Gene
+TIO_000085	gene participates in pathway	participates in pathway	TIO_000084	Gene	Pathway
