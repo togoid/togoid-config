@@ -1,0 +1,14 @@
+# pubchem_pathway-uniprot
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT (COUNT(*) AS ?total) WHERE {
+  SELECT DISTINCT ?path_id ?uniprot WHERE {
+    ?pathway a bp:Pathway;
+      (obo:RO_0000057/skos:closeMatch) ?participant.
+    FILTER(CONTAINS(STR(?participant), "uniprot"))
+    BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
+    BIND(STRAFTER(STR(?participant), "http://purl.uniprot.org/uniprot/") AS ?uniprot)
+  }
+}
