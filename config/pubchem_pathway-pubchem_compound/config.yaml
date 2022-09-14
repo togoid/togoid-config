@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000068
+  reverse: TIO_000069
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: bash retrieve.sh
