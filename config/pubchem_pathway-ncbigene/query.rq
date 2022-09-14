@@ -1,13 +1,11 @@
-# https://integbio.jp/rdf/pubchem/sparql
 # pubchem_pathway-ncbigene
-
 PREFIX bp:	<http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-SELECT  distinct ?path_id ?gene_id
-WHERE {
- ?pathway a bp:Pathway ;
-     obo:RO_0000057 ?participant .
-FILTER contains (str(?participant), "gene") 
-BIND (strafter(str(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
-BIND (strafter(str(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID") AS ?gene_id)
+
+SELECT DISTINCT ?path_id ?gene_id WHERE {
+  ?pathway a bp:Pathway;
+    obo:RO_0000057 ?participant.
+  FILTER(CONTAINS(STR(?participant), "gene"))
+  BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
+  BIND(STRAFTER(STR(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID") AS ?gene_id)
 }
