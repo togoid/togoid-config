@@ -1,0 +1,8 @@
+link:
+  forward: TIO_000018
+  reverse: TIO_000019
+  file: sample.tsv
+update:
+  frequency: Yearly or less frequently
+  method: awk -F ',' '$3~/^[A-V][A-Z]{2}[0-9]{5}\.[0-9]+$/ {sub(/\.[0-9]+$/,"",$3); print $7 "\t" $3}'
+    $TOGOID_ROOT/input/cog/cog-20.cog.csv
