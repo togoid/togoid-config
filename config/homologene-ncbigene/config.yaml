@@ -3,5 +3,5 @@ link:
   reverse: TIO_000019
   file: sample.tsv
 update:
-  frequency: Yearly or less frequently
+  frequency: Irregular
   method: cut -f 1,3 $TOGOID_ROOT/input/homologene/homologene.data

@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000001
+  reverse: TIO_000001
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: awk -F '\t' '$6~/RGD:/{split($6,a,"|");for(k in a){if(a[k]~/^RGD:/)print $2 "\t" substr(a[k],5)}}' $TOGOID_ROOT/input/ncbigene/gene_info

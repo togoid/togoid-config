@@ -74,3 +74,5 @@ tair	TAIR	Gene
 sgd	SGD	Gene
 cellosaurus	Cellosaurus	CellLine
 ncit_disease	NCIt disease	Disease
+cog	COG	Ortholog
+pubchem_pathway	PubChem pathway	Pathway
