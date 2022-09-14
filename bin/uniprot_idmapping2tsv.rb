@@ -207,27 +207,7 @@
 #   </optgroup>
 #
 
-=begin
-o uniprot-chembl_target/	P31946  ChEMBL  CHEMBL3710403
-x uniprot-dbsnp/
-x uniprot-ec/
-o uniprot-ensembl_gene/		P31947  Ensembl ENSG00000175793
-o uniprot-ensembl_protein/	P31947-1        Ensembl_PRO     ENSP00000340989
-o uniprot-ensembl_transcript/	P31947-1        Ensembl_TRS     ENST00000339276
-x uniprot-go/                   (use idmapping.tab)
-o uniprot-hgnc/			P31947  HGNC    HGNC:10773
-x uniprot-intact/
-x uniprot-interpro/
-o uniprot-ncbigene/		P31947  GeneID  2810
-o uniprot-oma_group/		P31947  OMA     GEAECRV
-? uniprot-omim_gene/            P31947  MIM     601290
-? uniprot-omim_phenotype/           
-o uniprot-orphanet/		P61981  Orphanet        442835
-o uniprot-pdb/			P31947  PDB     1YWT
-x uniprot-pfam/
-o uniprot-reactome_pathway/	P31947  Reactome        R-HSA-111447
-o uniprot-refseq_protein/	O70456  RefSeq  NP_061224.2
-=end
+require 'zlib'
 
 DATABASES = {
   "UniProt"       => [ "UniProtKB-ID", "UniParc", "UniRef50", "UniRef90", "UniRef100", "Gene_ORFName", "CRC64" ],
@@ -266,27 +246,6 @@ else
   exit 1
 end
 
-=begin
-# 00:24.00 total for ChEMBL with SPARQL
-# ## Update config/uniprot-chembl_target/config.yaml => output/tsv/uniprot-chembl_target.tsv
-# < 2021-03-20T15:59:52 uniprot-chembl_target
-# File output/tsv/uniprot-chembl_target.tsv is created 3.710040506769132 days ago (only updated when >1 days)
-# togoid-config config/uniprot-chembl_target update
-# > 2021-03-20T16:00:16 uniprot-chembl_target
-=end
-
-=begin
-# 11:44.57 total for ChEMBL
-cmd = "gzip -dc #{mapping} | grep '\t#{db_name}\t' | cut -f 1,3"
-IO.popen(cmd) do |io|
-  while buffer = io.gets
-    puts buffer
-  end
-end
-=end
-
-require 'zlib'
-
 # 33:09.00 total for ChEMBL
 File.open(mapping) do |input|
   begin
@@ -298,7 +257,52 @@ File.open(mapping) do |input|
   file.each do |line|
     if line.index(query)
       up, db, id = line.strip.split
+      case db
+      when /Ensembl/
+        id.sub!(/\.\d+$/, '')
+      end
       puts "#{up}\t#{id}"
     end
   end
 end
+
+
+=begin
+Memo:
+
+# 11:44.57 total for ChEMBL
+cmd = "gzip -dc #{mapping} | grep '\t#{db_name}\t' | cut -f 1,3"
+IO.popen(cmd) do |io|
+  while buffer = io.gets
+    puts buffer
+  end
+end
+
+# 00:24.00 total for ChEMBL with SPARQL
+# ## Update config/uniprot-chembl_target/config.yaml => output/tsv/uniprot-chembl_target.tsv
+# < 2021-03-20T15:59:52 uniprot-chembl_target
+# File output/tsv/uniprot-chembl_target.tsv is created 3.710040506769132 days ago (only updated when >1 days)
+# togoid-config config/uniprot-chembl_target update
+# > 2021-03-20T16:00:16 uniprot-chembl_target
+
+o uniprot-chembl_target/	P31946  ChEMBL  CHEMBL3710403
+x uniprot-dbsnp/
+x uniprot-ec/
+o uniprot-ensembl_gene/		P31947  Ensembl ENSG00000175793
+o uniprot-ensembl_protein/	P31947-1        Ensembl_PRO     ENSP00000340989
+o uniprot-ensembl_transcript/	P31947-1        Ensembl_TRS     ENST00000339276
+x uniprot-go/                   (use idmapping.tab)
+o uniprot-hgnc/			P31947  HGNC    HGNC:10773
+x uniprot-intact/
+x uniprot-interpro/
+o uniprot-ncbigene/		P31947  GeneID  2810
+o uniprot-oma_group/		P31947  OMA     GEAECRV
+? uniprot-omim_gene/            P31947  MIM     601290
+? uniprot-omim_phenotype/
+o uniprot-orphanet/		P61981  Orphanet        442835
+o uniprot-pdb/			P31947  PDB     1YWT
+x uniprot-pfam/
+o uniprot-reactome_pathway/	P31947  Reactome        R-HSA-111447
+o uniprot-refseq_protein/	O70456  RefSeq  NP_061224.2
+=end
+

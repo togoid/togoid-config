@@ -1020,7 +1020,7 @@
 :TIO_000061
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Protein ;
-    rdfs:range :Compound ;
+    rdfs:range :Glycan ;
     owl:inverseOf :TIO_000060 ;
     rdfs:label "protein is modified with glycan" ;
     :display_label "is modified with" .
@@ -1051,16 +1051,16 @@
 
 :TIO_000065
     rdfs:subPropertyOf :relation ;
-    rdfs:domain :Category ;
-    rdfs:range :Category ;
+    rdfs:domain :Organism ;
+    rdfs:range :Gene ;
     owl:inverseOf :TIO_000064 ;
     rdfs:label "organism has gene" ;
     :display_label "has gene" .
 
 :TIO_000066
     rdfs:subPropertyOf :relation ;
-    rdfs:domain :Category ;
-    rdfs:range :Category ;
+    rdfs:domain :Compound ;
+    rdfs:range :Disease ;
     owl:inverseOf :TIO_000067 ;
     rdfs:label "compound targets to disease" ;
     :display_label "targets to" .
