@@ -150,6 +150,14 @@ ensembl_transcript:
   prefix: 'http://identifiers.org/ensembl/'
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
+flybase_gene:
+  label: FlyBase Gene
+  catalog: nbdc00064
+  category: Gene
+  regex: '^(?<id>FBgn\d{7})$'
+  prefix: 'http://identifiers.org/fb/'
+  examples:
+    - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
 go:
   label: Gene ontology
   catalog: nbdc00074
@@ -665,3 +673,54 @@ inchi_key:
   prefix: 'http://identifiers.org/inchikey/'
   examples:
     - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N","RZWGTXHSYZGXKF-UHFFFAOYSA-N","RQQIIXFYTHWFKW-ZETCQYMHSA-N","RALAARQREFCZJO-UHFFFAOYSA-N","HVFRJJDZWVSUIB-UHFFFAOYSA-N","KVNZVXVZQFTXNA-UHFFFAOYSA-N","KVQUJTYBWCGJRS-UHFFFAOYSA-N","AFGLQVAJWVTAJT-UHFFFAOYSA-N","LHISABQPMWXWCC-UHFFFAOYSA-N","ZSXCHLJCWRSMMS-UHFFFAOYSA-N"]
+wormbase_gene:
+  label: WormBase gene
+  catalog: nbdc00740
+  category: Gene
+  regex: '^(?<id>WBgene\d{8})$'
+  prefix: 'http://identifiers.org/wb/'
+  examples:
+    - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
+vgnc:
+  label: VGNC
+  catalog: nbdc02624
+  category: Gene
+  regex: '^((VGNC|vgnc):)?(?<id>\d{1,9})$'
+  format: ["%s","VGNC:%s","vgnc:%s"]
+  prefix: 'http://identifiers.org/vgnc/'
+  examples:
+    - ["39230","49608","85188","76040","72808","73601","9436","78821","74596","5304"]
+    - ["VGNC:39230","VGNC:49608","VGNC:85188","VGNC:76040","VGNC:72808","VGNC:73601","VGNC:9436","VGNC:78821","VGNC:74596","VGNC:5304"]
+    - ["vgnc:39230","vgnc:49608","vgnc:85188","vgnc:76040","vgnc:72808","vgnc:73601","vgnc:9436","vgnc:78821","vgnc:74596","vgnc:5304"]
+zfin_gene:
+  label: ZFIN gene
+  catalog: nbdc00746
+  category: Gene
+  regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
+  prefix: 'http://identifiers.org/zfin/'
+  examples:
+    - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
+xenbase_gene:
+  label: Xenbase gene
+  catalog: nbdc01892
+  category: Gene
+  regex: '^(?<id>XB\-[A-Z]+\-\d+)$'
+  prefix: 'http://identifiers.org/xenbase/'
+  examples:
+    - ["XB-GENE-877040","XB-GENE-22060981","XB-GENE-17344257","XB-GENE-487684","XB-GENE-1014349","XB-GENE-17335133","XB-GENE-1012537","XB-GENE-494019","XB-GENE-5952945","XB-GENE-957742"]
+tair:
+  label: TAIR
+  catalog: nbdc00697
+  category: Gene
+  regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
+  prefix: 'https://www.arabidopsis.org/servlets/TairObject?type=locus&name='
+  examples:
+    - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
+sgd:
+  label: SGD
+  catalog: nbdc00202
+  category: Gene
+  regex: '^(?<id>S\d{9})$'
+  prefix: 'http://identifiers.org/sgd/'
+  examples:
+    - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
