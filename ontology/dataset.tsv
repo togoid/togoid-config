@@ -63,3 +63,14 @@ togovar	TogoVar variant	Variant
 uniprot	UniProt	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
 wikipathways	WikiPathways	Pathway
+metabobank	MetaboBank	Submission
+assembly_insdc	Assembly INSDC	Assembly
+flybase_gene	FlyBase gene	Gene
+wormbase_gene	WormBase gene	Gene
+vgnc	VGNC	Gene
+zfin_gene	ZFIN gene	Gene
+xenbase_gene	Xenbase gene	Gene
+tair	TAIR	Gene
+sgd	SGD	Gene
+cellosaurus	Cellosaurus	CellLine
+ncit_disease	NCIt disease	Disease
