@@ -266,6 +266,8 @@ module TogoID
         return "prepare:ensembl"
       when /#{OUTPUT_TSV_DIR}homologene/
         return "prepare:homologene"
+      when /#{OUTPUT_TSV_DIR}cog/
+        return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
       when /#{OUTPUT_TSV_DIR}ncbigene/
@@ -395,11 +397,12 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
+  task :all => [ :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
+  directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
@@ -444,6 +447,21 @@ namespace :prepare do
       input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for COG"
+  task :cog => INPUT_COG_DIR do
+    $stderr.puts "## Prepare input files for COG"
+    download_lock(INPUT_COG_DIR) do
+      updated = false
+      input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_COG_DIR, input_url)
         updated = true
       end
       updated

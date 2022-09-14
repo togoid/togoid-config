@@ -197,6 +197,14 @@ homologene:
   prefix: 'http://identifiers.org/homologene/'
   examples:
     - ["117","17","6","142","55","132","61","109","137","134"]
+cog:
+  label: COG
+  catalog: nbdc00397
+  category: Ortholog
+  regex: '^(?<id>COG\d{4})$'
+  prefix: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
+  examples:
+    - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
 hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
