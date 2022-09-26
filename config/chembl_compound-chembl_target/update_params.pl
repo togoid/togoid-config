@@ -33,6 +33,7 @@ WHERE {
 }";
 
 # SPARQL query for split
+our %FORCE_SPLIT = ("tax:9606" => 1);
 our $QUERY_SPLIT = "PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 SELECT DISTINCT ?source ?target
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
