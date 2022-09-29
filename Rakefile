@@ -629,6 +629,12 @@ namespace :prepare do
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
         updated = true
       end
+     input_file = "#{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz"
+      input_url  = "-O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly&format=tsv&query=%28%2A%29'"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_UNIPROT_DIR, input_url)
+        updated = true
+      end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
       updated
