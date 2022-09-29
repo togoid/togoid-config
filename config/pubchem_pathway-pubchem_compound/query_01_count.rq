@@ -1,0 +1,14 @@
+# pubchem_pathway-pubchem_compound
+PREFIX bp:  <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT (COUNT(*) AS ?total)
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway> WHERE {
+  SELECT DISTINCT ?path_id ?cid WHERE {
+    ?pathway a bp:Pathway;
+      obo:RO_0000057 ?participant.
+    FILTER(CONTAINS(STR(?participant), "CID"))
+    BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
+    BIND(STRAFTER(STR(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?cid)
+  }
+}
