@@ -1,0 +1,7 @@
+link:
+  forward: TIO_0000XX
+  reverse: TIO_0000XX
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: gzip -dc #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz | sed -e '1d' | cut -f 1,2
