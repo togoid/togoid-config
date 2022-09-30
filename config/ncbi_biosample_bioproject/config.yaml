@@ -1,7 +1,0 @@
-link:
-  file: sample.tsv
-  forward: TIO_000042
-  reverse: TIO_000052
-update:
-  frequency: Monthly
-  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/ncbi_biosample_bioproject/ncbi_biosample_bioproject.tsv
