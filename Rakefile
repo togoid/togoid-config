@@ -266,6 +266,8 @@ module TogoID
         return "prepare:ensembl"
       when /#{OUTPUT_TSV_DIR}homologene/
         return "prepare:homologene"
+      when /#{OUTPUT_TSV_DIR}cog/
+        return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
       when /#{OUTPUT_TSV_DIR}ncbigene/
@@ -395,11 +397,12 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
+  task :all => [ :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
+  directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
@@ -450,20 +453,35 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for COG"
+  task :cog => INPUT_COG_DIR do
+    $stderr.puts "## Prepare input files for COG"
+    download_lock(INPUT_COG_DIR) do
+      updated = false
+      input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
+      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_COG_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
   desc "Prepare required files for InterPro"
   task :interpro => INPUT_INTERPRO_DIR do
     $stderr.puts "## Prepare input files for InterPro"
     download_lock(INPUT_INTERPRO_DIR) do
       updated = false
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro2go"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         updated = true
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/protein2ipr.dat.gz"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
@@ -471,7 +489,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current/interpro.xml.gz"
+      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
@@ -626,7 +644,7 @@ namespace :prepare do
       input_url = "https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_TAXONOMY_DIR, input_url)
-        sh "mkdir #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
+        sh "mkdir -p #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
         updated = true
       end
       updated

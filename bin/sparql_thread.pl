@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
 
+# 20220926 moriya # human のようにタイムアウトする場合に、強制 0-9 で分割する機能（参考：chembl_compound-chembl_target/update_params.pl の FORCE_SPLIT)
 # 20210510 moriya # result limit 超えた場合に IDやtaxonomy番号の末尾 0-9 で分割できるように $QUERY_SPLIT クエリ追加（参考：uniprot-ec/update_params.pl)
 # 20210507 moriya # Endpointエラーの場合300秒待って再施行（10回まで）
 # 20210402 moriya
@@ -90,7 +91,6 @@ foreach my $d (@{$json->{results}->{bindings}}) {
     push(@LIST, $uri);
 }
 
-
 # make threads
 for (1..$THREAD_LIMIT) {
     my $thr = threads->new(\&worker);
@@ -160,11 +160,17 @@ sub run {
 sub get {
     my ($query, $tmp_id, $uri) = @_;
 
-    my $json = &get_req("?query=".uri_escape($query), $tmp_id);
-    return 0 if (!$json) ;
+    my $json;
+    my $force_split = 0;
+    if ($FORCE_SPLIT{$tmp_id}) {
+      $force_split = 1;
+    } else {
+      $json = &get_req("?query=".uri_escape($query), $tmp_id);
+      return 0 if (!$json) ;
+    }
 
     ## Endpoint result-limit check
-    if (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0) {
+    if ($force_split || (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0)) {
 	my @page = ();
 	if ($QUERY_SPLIT) { # if split-query (using 0-9 number) in the update_params.pl (ref. uniprot-ec)
 	    for (my $i = 0; $i < 10; $i++) {
@@ -175,7 +181,7 @@ sub get {
 		} else {
 		    $query_sp =~ s/__TARGET__/${uri}/;
 		}
-		$json = &get_req("?query=".uri_escape($query_sp), $tmp_id);
+		$json = &get_req("?query=".uri_escape($query_sp), $tmp_id." split:".$i);
 		return 0 if (!$json) ;
 		push(@page, @{$json->{results}->{bindings}});
 	    }
