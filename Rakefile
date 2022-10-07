@@ -262,6 +262,8 @@ module TogoID
       case taskname
 #      when /#{OUTPUT_TSV_DIR}drugbank/
 #        return "prepare:drugbank"
+      when /#{OUTPUT_TSV_DIR}cellosaurus/
+        return "prepare:cellosaurus"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
       when /#{OUTPUT_TSV_DIR}homologene/
@@ -281,7 +283,7 @@ module TogoID
       when /#{OUTPUT_TSV_DIR}uniprot/
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
-        return "prepare:taxonomy"  
+        return "prepare:taxonomy"
       else
         return "config/dataset.yaml"
       end
@@ -397,9 +399,10 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
+  directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_COG_DIR         = "input/cog"
@@ -423,6 +426,18 @@ namespace :prepare do
     end
   end
 =end
+
+  desc "Prepare required files for Cellosaurus"
+  task :cellosaurus => INPUT_CELLOSAURUS_DIR do
+    $stderr.puts "## Prepare input files for Cellosaurus"
+    download_lock(INPUT_CELLOSAURUS_DIR) do
+      input_file = "#{INPUT_CELLOSAURUS_DIR}/cellosaurus.txt"
+      input_url  = "https://ftp.expasy.org/databases/cellosaurus/cellosaurus.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_CELLOSAURUS_DIR, input_url)
+      end
+    end
+  end
 
   desc "Prepare taxonomy ID list for Ensembl"
   task :ensembl => INPUT_ENSEMBL_DIR do
