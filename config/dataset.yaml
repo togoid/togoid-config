@@ -734,3 +734,47 @@ sgd:
   prefix: 'http://identifiers.org/sgd/'
   examples:
     - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
+uberon:
+  label: UBERON
+  catalog: FIXME
+  category: Tissue
+  regex: '^UBERON[:_](?<id>\d{7})$'
+  prefix: 'http://purl.obolibrary.org/obo/UBERON_'
+  format: ["UBERON:%s","UBERON_%s"]
+  examples:
+    - ["UBERON:0002115","UBERON:0001004","UBERON:0000007","UBERON:0001044","UBERON:0001825","UBERON:0001361","UBERON:0002186","UBERON:0000945","UBERON:0036068","UBERON:0001017"]
+    - ["UBERON_0002115","UBERON_0001004","UBERON_0000007","UBERON_0001044","UBERON_0001825","UBERON_0001361","UBERON_0002186","UBERON_0000945","UBERON_0036068","UBERON_0001017"]
+cellosaurus:
+  label: Cellosaurus
+  catalog: nbdc02180
+  category: CellLine
+  regex: '^CVCL[:_](?<id>[A-Z0-9]{4})$'
+  prefix: 'http://www.cellosaurus.org/CVCL_'
+  format: ["CVCL:%s","CVCL_%s"]
+  examples:
+    - ["CVCL:7T24","CVCL:SE45","CVCL:XG73","CVCL:B6HT","CVCL:WM34","CVCL:7891","CVCL:FV52","CVCL:0367","CVCL:9Z18","CVCL:CG19"]
+    - ["CVCL_7T24","CVCL_SE45","CVCL_XG73","CVCL_B6HT","CVCL_WM34","CVCL_7891","CVCL_FV52","CVCL_0367","CVCL_9Z18","CVCL_CG19"]
+ncit_tissue:
+  label: NCIT tissue
+  catalog: FIXME
+  category: Tissue
+  regex: '^NCIT?[:_](?<id>C\d+)$'
+  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
+  format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
+  examples:
+    - ["NCIT:C12279","NCIT:C94820","NCIT:C77674","NCIT:C32082","NCIT:C12971","NCIT:C34285","NCIT:C97112","NCIT:C105446","NCIT:C12846","NCIT:C12845"]
+    - ["NCIT_C12279","NCIT_C94820","NCIT_C77674","NCIT_C32082","NCIT_C12971","NCIT_C34285","NCIT_C97112","NCIT_C105446","NCIT_C12846","NCIT_C12845"]
+    - ["NCI:C12279","NCI:C94820","NCI:C77674","NCI:C32082","NCI:C12971","NCI:C34285","NCI:C97112","NCI:C105446","NCI:C12846","NCI:C12845"]
+    - ["NCI_C12279","NCI_C94820","NCI_C77674","NCI_C32082","NCI_C12971","NCI_C34285","NCI_C97112","NCI_C105446","NCI_C12846","NCI_C12845"]
+ncit_disease:
+  label: NCIT disease
+  catalog: FIXME
+  category: Disease
+  regex: '^NCIT?[:_](?<id>C\d+)$'
+  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
+  format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
+  examples:
+    - ["NCIT:C48829","NCIT:C136825","NCIT:C48613","NCIT:C122795","NCIT:C67107","NCIT:C8417","NCIT:C8936","NCIT:C8644","NCIT:C80331","NCIT:C80342"]
+    - ["NCIT_C48829","NCIT_C136825","NCIT_C48613","NCIT_C122795","NCIT_C67107","NCIT_C8417","NCIT_C8936","NCIT_C8644","NCIT_C80331","NCIT_C80342"]
+    - ["NCI:C48829","NCI:C136825","NCI:C48613","NCI:C122795","NCI:C67107","NCI:C8417","NCI:C8936","NCI:C8644","NCI:C80331","NCI:C80342"]
+    - ["NCI_C48829","NCI_C136825","NCI_C48613","NCI_C122795","NCI_C67107","NCI_C8417","NCI_C8936","NCI_C8644","NCI_C80331","NCI_C80342"]

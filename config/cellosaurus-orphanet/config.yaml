@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000082
+  reverse: TIO_000083
+  file: sample.tsv
+update:
+  frequency: Quarterly
+  method: awk 'BEGIN{RS="\n//\n";FS="\n"}{ordo="";for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^DI   ORDO;/){split($i,b,"; ");ordo=substr(b[2],10)}}if(ordo)print ac "\t" ordo}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
