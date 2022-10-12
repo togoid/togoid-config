@@ -8,7 +8,7 @@ Datasets last updated: 2022/06/02
 - See the "DATASETS" tab for a list of supported datasets.
 
 ## Video tutorial
-- [How to use TogoID: Search and convert links between IDs in databases in the life sciences](https://www.youtube.com/watch?v=xxkVEtJMW2k)
+- [How to use TogoID: an exploratory ID converter to bridge biological datasets](https://youtu.be/gXnvm6Fn4R8)
 
 ## Publication
 
