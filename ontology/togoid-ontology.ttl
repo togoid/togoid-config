@@ -152,6 +152,16 @@
     rdfs:label "Molecule" ;
     rdfs:subClassOf :Category .
 
+:Assembly
+    a owl:Class ;
+    rdfs:label "Assembly" ;
+    rdfs:subClassOf :Category .
+
+:CellLine
+    a owl:Class ;
+    rdfs:label "Cell line" ;
+    rdfs:subClassOf :Category .
+
 :AffyProbeset
     a owl:Class ;
     dcterms:identifier "affy_probeset" ;
@@ -540,6 +550,84 @@
     a owl:Class ;
     dcterms:identifier "wikipathways" ;
     rdfs:label "WikiPathways" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
+:Metabobank
+    a owl:Class ;
+    dcterms:identifier "metabobank" ;
+    rdfs:label "MetaboBank" ;
+    rdfs:subClassOf :Submission, :Dataset .
+
+:AssemblyInsdc
+    a owl:Class ;
+    dcterms:identifier "assembly_insdc" ;
+    rdfs:label "Assembly INSDC" ;
+    rdfs:subClassOf :Assembly, :Dataset .
+
+:FlybaseGene
+    a owl:Class ;
+    dcterms:identifier "flybase_gene" ;
+    rdfs:label "FlyBase gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:WormbaseGene
+    a owl:Class ;
+    dcterms:identifier "wormbase_gene" ;
+    rdfs:label "WormBase gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Vgnc
+    a owl:Class ;
+    dcterms:identifier "vgnc" ;
+    rdfs:label "VGNC" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:ZfinGene
+    a owl:Class ;
+    dcterms:identifier "zfin_gene" ;
+    rdfs:label "ZFIN gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:XenbaseGene
+    a owl:Class ;
+    dcterms:identifier "xenbase_gene" ;
+    rdfs:label "Xenbase gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Tair
+    a owl:Class ;
+    dcterms:identifier "tair" ;
+    rdfs:label "TAIR" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Sgd
+    a owl:Class ;
+    dcterms:identifier "sgd" ;
+    rdfs:label "SGD" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Cellosaurus
+    a owl:Class ;
+    dcterms:identifier "cellosaurus" ;
+    rdfs:label "Cellosaurus" ;
+    rdfs:subClassOf :CellLine, :Dataset .
+
+:NcitDisease
+    a owl:Class ;
+    dcterms:identifier "ncit_disease" ;
+    rdfs:label "NCIt disease" ;
+    rdfs:subClassOf :Disease, :Dataset .
+
+:Cog
+    a owl:Class ;
+    dcterms:identifier "cog" ;
+    rdfs:label "COG" ;
+    rdfs:subClassOf :Ortholog, :Dataset .
+
+:PubchemPathway
+    a owl:Class ;
+    dcterms:identifier "pubchem_pathway" ;
+    rdfs:label "PubChem pathway" ;
     rdfs:subClassOf :Pathway, :Dataset .
 
 :TIO_000001
@@ -1152,4 +1240,68 @@
     owl:inverseOf :TIO_000076 ;
     rdfs:label "reaction has participant molecule" ;
     :display_label "has participant molecule" .
+
+:TIO_000078
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Assembly ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000079 ;
+    rdfs:label "assembly is generated in project" ;
+    :display_label "is generated in" .
+
+:TIO_000079
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Project ;
+    rdfs:range :Assembly ;
+    owl:inverseOf :TIO_000078 ;
+    rdfs:label "project generates assembly" ;
+    :display_label "generates" .
+
+:TIO_000080
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Assembly ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000081 ;
+    rdfs:label "assembly is generated from sample" ;
+    :display_label "is generated from" .
+
+:TIO_000081
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Sample ;
+    rdfs:range :Assembly ;
+    owl:inverseOf :TIO_000080 ;
+    rdfs:label "sample is used to generate assembly" ;
+    :display_label "is used to generate" .
+
+:TIO_000082
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :CellLine ;
+    rdfs:range :Disease ;
+    owl:inverseOf :TIO_000083 ;
+    rdfs:label "cell line has disease" ;
+    :display_label "has disease" .
+
+:TIO_000083
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Disease ;
+    rdfs:range :CellLine ;
+    owl:inverseOf :TIO_000082 ;
+    rdfs:label "disease is seen in cell line" ;
+    :display_label "is seen in" .
+
+:TIO_000084
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Gene ;
+    owl:inverseOf :TIO_000085 ;
+    rdfs:label "pathway has participant gene" ;
+    :display_label "has participant gene" .
+
+:TIO_000085
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Gene ;
+    rdfs:range :Pathway ;
+    owl:inverseOf :TIO_000084 ;
+    rdfs:label "gene participates in pathway" ;
+    :display_label "participates in pathway" .
 

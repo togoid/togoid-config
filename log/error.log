@@ -1,0 +1,142 @@
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv new file size per old 1877 / 463827497 = 4.046763100808575e-06 < 0.5
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?ensp_id
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?ensp_id
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?ensg dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed obo:SO_translates_to ?ensp ;
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?ensp dc:identifier ?ensp_id .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv new file size per old 1667 / 550120958 = 3.0302426689222774e-06 < 0.5
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?enst_id
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain >3 empty lines
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?enst_id
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed ?ensg dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-ncbigene.tsv new file size per old 2099 / 177486478 = 1.182625303996398e-05 < 0.5
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?ncbigene_id
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon ;
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed rdfs:seeAlso ?ncbigene ;
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed ?ncbigene a ido:ncbigene .
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed BIND (strafter(str(?ncbigene)	 ncbigene/) AS ?ncbigene_id)
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-uniprot.tsv new file size per old 2690 / 140878446 = 1.9094475247121906e-05 < 0.5
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX ensembl: <http://rdf.ebi.ac.uk/terms/ensembl/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon ;
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed obo:SO_translates_to / rdfs:seeAlso ?uniprot .
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed ?uniprot a ido:uniprot .
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed BIND(STRAFTER(STR(?uniprot)	 uniprot/) AS ?uniprot_id)
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed }
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv new file size per old 1778 / 463730916 = 3.834120043874754e-06 < 0.5
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensp_id ?enst_id
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensp_id ?enst_id
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed obo:SO_translates_to ?ensp ;
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed ?ensp dc:identifier ?ensp_id .
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed }
+# Error: output/tsv/ensembl_transcript-go.tsv new file size per old 2231 / 1330172588 = 1.6772259631018649e-06 < 0.5
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML FROM <http://rdf.integbio.jp/dataset/ensembl>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed rdfs:seeAlso ?go ;
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed ?go a ido:go .
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed BIND (strafter(str(?go)	 GO:) AS ?go_id)
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed }
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv new file size per old 2240 / 324577779 = 6.901273423280156e-06 < 0.5
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed SELECT DISTINCT ?enst_id ?refseq_id
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?enst dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?enst rdfs:seeAlso ?refseq .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?refseq a ido:refseq .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed BIND(REPLACE(STRAFTER(STR(?refseq)	 refseq/)	 \\.[0-9]+	 ) AS ?refseq_id)
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed }
+# Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 4287149138 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-pfam.tsv or created file is empty
