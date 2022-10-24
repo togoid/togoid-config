@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 set -euo pipefail
 # 不必要な変数名および重引用符を除去するとともに、UniProt IDとPfam IDのペアを作って出力する。
 # また、重複も除去する。
