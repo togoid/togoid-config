@@ -140,3 +140,113 @@
 # Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed }
 # Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 4287149138 = 0.0 < 0.5
 # Error: Failed to create output/tsv/uniprot-pfam.tsv or created file is empty
+# Error: output/tsv/rhea-reactome_reaction.tsv new file size per old 0 / 23160 = 0.0 < 0.5
+# Error: Failed to create output/tsv/rhea-reactome_reaction.tsv or created file is empty
+# Error: output/tsv/togovar-dbsnp.tsv new file size per old 257 / 1609286229 = 1.5969812912628856e-07 < 0.5
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2dbsnp.tsv">here</a>.</p>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2dbsnp.tsv">here</a>.</p>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 259 / 2035776572 = 1.2722417752629488e-07 < 0.5
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_transcript.tsv new file size per old 270 / 8069270901 = 3.3460272100486765e-08 < 0.5
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.transcript.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.transcript.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-hgnc.tsv new file size per old 256 / 1076582745 = 2.377894325252259e-07 < 0.5
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2hgnc.tsv">here</a>.</p>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2hgnc.tsv">here</a>.</p>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ncbigene.tsv new file size per old 260 / 1097267175 = 2.3695231746999084e-07 < 0.5
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ncbigene.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ncbigene.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-pubmed.tsv new file size per old 258 / 14408635 = 1.7905929326407396e-05 < 0.5
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2pubmed.tsv">here</a>.</p>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2pubmed.tsv">here</a>.</p>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-refseq_rna.tsv new file size per old 262 / 4180808277 = 6.266730800389678e-08 < 0.5
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2refseqmRNA.tsv">here</a>.</p>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2refseqmRNA.tsv">here</a>.</p>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/uniprot-pfam.tsv new file size per old 121 / 4287149138 = 2.8223884008954205e-08 < 0.5
+# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/mirror/uniprot/sparql {}
+# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/mirror/uniprot/sparql {}
