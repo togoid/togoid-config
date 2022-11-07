@@ -1,0 +1,18 @@
+# Endpoint: http://sparql.hegroup.org/sparql/
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?disease_id ?tissue_id
+FROM <http://purl.obolibrary.org/obo/merged/NCIT>
+WHERE {
+  ?parent owl:equivalentClass / owl:intersectionOf / (rdf:rest)* / (rdf:first)? ?b .
+  ?b a owl:Restriction ;
+     owl:onProperty obo:NCIT_R101 ; # Disease_Has_Primary_Anatomic_Site
+     owl:someValuesFrom ?tissue .
+  ?child rdfs:subClassOf* ?parent .
+  BIND(STRAFTER(STR(?child), "http://purl.obolibrary.org/obo/NCIT_") AS ?disease_id)
+  BIND(STRAFTER(STR(?tissue), "http://purl.obolibrary.org/obo/NCIT_") AS ?tissue_id)
+}
