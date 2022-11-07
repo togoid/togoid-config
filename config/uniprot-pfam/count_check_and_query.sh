@@ -24,6 +24,14 @@ if [ ${PAIR[0]} -gt $LIMIT ] ; then
   do
     IQUERY=$(sed -e "s/__PFAM_ID__/${MTM}/" -e "$ a OFFSET ${i}000000 LIMIT ${LIMIT}" $UNIPROT_PFAM_QUERY_FILE)
 #    echo $IQUERY
-    $CURL -sSH "Accept: text/tab-separated-values" --data-urlencode query="$IQUERY" $ENDPOINT | tail -n +2 >> $TARGET
+    while true; do
+      $CURL -sSH "Accept: text/tab-separated-values" --data-urlencode query="$IQUERY" $ENDPOINT | tail -n +2 >> $TARGET
+      if [ $? -ne 0 ]; then
+        echo "curlが適切に終了しませんでした。処理を繰り返します。" >&2
+        sleep 5
+      else
+        break
+      fi
+    done
   done
 fi

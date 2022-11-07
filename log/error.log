@@ -1,0 +1,252 @@
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv new file size per old 1877 / 463827497 = 4.046763100808575e-06 < 0.5
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?ensp_id
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?ensp_id
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?ensg dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed obo:SO_translates_to ?ensp ;
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed ?ensp dc:identifier ?ensp_id .
+# Error: output/tsv/ensembl_gene-ensembl_protein.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv new file size per old 1667 / 550120958 = 3.0302426689222774e-06 < 0.5
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?enst_id
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to contain >3 empty lines
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?enst_id
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed ?ensg dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_gene-ensembl_transcript.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-ncbigene.tsv new file size per old 2099 / 177486478 = 1.182625303996398e-05 < 0.5
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed SELECT DISTINCT ?ensg_id ?ncbigene_id
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon ;
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed rdfs:seeAlso ?ncbigene ;
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed ?ncbigene a ido:ncbigene .
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed BIND (strafter(str(?ncbigene)	 ncbigene/) AS ?ncbigene_id)
+# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-uniprot.tsv new file size per old 2690 / 140878446 = 1.9094475247121906e-05 < 0.5
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain HTML PREFIX ensembl: <http://rdf.ebi.ac.uk/terms/ensembl/>
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon ;
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed dc:identifier ?ensg_id .
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed obo:SO_translates_to / rdfs:seeAlso ?uniprot .
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed ?uniprot a ido:uniprot .
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed }
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed BIND(STRAFTER(STR(?uniprot)	 uniprot/) AS ?uniprot_id)
+# Error: output/tsv/ensembl_gene-uniprot.tsv seems to be malformed }
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv new file size per old 1778 / 463730916 = 3.834120043874754e-06 < 0.5
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensp_id ?enst_id
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed SELECT DISTINCT ?ensp_id ?enst_id
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed obo:SO_translates_to ?ensp ;
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed ?ensp dc:identifier ?ensp_id .
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed }
+# Error: output/tsv/ensembl_transcript-go.tsv new file size per old 2231 / 1330172588 = 1.6772259631018649e-06 < 0.5
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML FROM <http://rdf.integbio.jp/dataset/ensembl>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg ;
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed rdfs:seeAlso ?go ;
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed ?go a ido:go .
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed BIND (strafter(str(?go)	 GO:) AS ?go_id)
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed }
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv new file size per old 2240 / 324577779 = 6.901273423280156e-06 < 0.5
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed SPARQL query:
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed # Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX dc: <http://purl.org/dc/elements/1.1/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX taxon: <http://identifiers.org/taxonomy/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX ido: <http://identifiers.org/>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain >2 empty lines
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed # GRAPH varies e.g.	 http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed SELECT DISTINCT ?enst_id ?refseq_id
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed WHERE {
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed VALUES ?taxon { taxon:The requested URL was not found    URI  = /sparql }
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?ensg obo:RO_0002162 ?taxon .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?enst obo:SO_transcribed_from ?ensg .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?enst dc:identifier ?enst_id .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?enst rdfs:seeAlso ?refseq .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed ?refseq a ido:refseq .
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed BIND(REPLACE(STRAFTER(STR(?refseq)	 refseq/)	 \\.[0-9]+	 ) AS ?refseq_id)
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed }
+# Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 4287149138 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-pfam.tsv or created file is empty
+# Error: output/tsv/rhea-reactome_reaction.tsv new file size per old 0 / 23160 = 0.0 < 0.5
+# Error: Failed to create output/tsv/rhea-reactome_reaction.tsv or created file is empty
+# Error: output/tsv/togovar-dbsnp.tsv new file size per old 257 / 1609286229 = 1.5969812912628856e-07 < 0.5
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2dbsnp.tsv">here</a>.</p>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2dbsnp.tsv">here</a>.</p>
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 259 / 2035776572 = 1.2722417752629488e-07 < 0.5
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_transcript.tsv new file size per old 270 / 8069270901 = 3.3460272100486765e-08 < 0.5
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.transcript.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ensembl.transcript.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-hgnc.tsv new file size per old 256 / 1076582745 = 2.377894325252259e-07 < 0.5
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2hgnc.tsv">here</a>.</p>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2hgnc.tsv">here</a>.</p>
+# Error: output/tsv/togovar-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ncbigene.tsv new file size per old 260 / 1097267175 = 2.3695231746999084e-07 < 0.5
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ncbigene.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2ncbigene.tsv">here</a>.</p>
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-pubmed.tsv new file size per old 258 / 14408635 = 1.7905929326407396e-05 < 0.5
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2pubmed.tsv">here</a>.</p>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2pubmed.tsv">here</a>.</p>
+# Error: output/tsv/togovar-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-refseq_rna.tsv new file size per old 262 / 4180808277 = 6.266730800389678e-08 < 0.5
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2refseqmRNA.tsv">here</a>.</p>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML <p>The document has moved <a href="https://togovar.org/public/togoid/tgvid2refseqmRNA.tsv">here</a>.</p>
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/uniprot-pfam.tsv new file size per old 121 / 4287149138 = 2.8223884008954205e-08 < 0.5
+# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/mirror/uniprot/sparql {}
+# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/mirror/uniprot/sparql {}
