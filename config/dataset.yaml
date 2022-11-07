@@ -687,7 +687,7 @@ wormbase_gene:
   label: WormBase gene
   catalog: nbdc00740
   category: Gene
-  regex: '^(?<id>WBgene\d{8})$'
+  regex: '^(?<id>WBGene\d{8})$'
   prefix: 'http://identifiers.org/wb/'
   examples:
     - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
