@@ -658,6 +658,14 @@ uniprot_mnemonic:
   prefix: 'http://purl.uniprot.org/uniprot/'
   examples:
     - ["2ABA_ORYSJ","33K_ADES1","1003L_ASFK5","1A1D_VARPS","1B02_GORGO","1003L_ASFP4","1433B_MACFA","1107L_ASFWA","3BHS1_MOUSE","14331_SCHMA"]
+uniprot_reference_proteome:
+  label: UniProt reference proteome
+  catalog: nbdc00221
+  category: Organism
+  regex: '^(?<id>UP\d{0,9})$'
+  prefix: 'http://purl.uniprot.org/uniprot/'
+  examples:
+    - ["UP000005640","UP000002311","UP000005640","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
 wikipathways:
   label: WikiPathways
   catalog: nbdc02116
