@@ -6,6 +6,14 @@ affy_probeset:
   prefix: 'http://identifiers.org/affy.probeset/'
   examples:
     - ["1553582_a_at","211531_x_at","202573_at","201640_x_at","205117_at","201017_at","205099_s_at","200614_at","201895_at","202666_s_at"]
+atc:
+  label: ATC classification
+  catalog: FIXME
+  category: FIXME 
+  regex: '^(?<id>[A-Z]\d{2}[A-Z]{2}\d{2})$'
+  prefix: 'http://identifiers.org/atc/'
+  example:
+    - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
 bioproject:
   label: BioProject
   catalog: nbdc00476
