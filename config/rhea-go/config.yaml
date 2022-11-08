@@ -1,0 +1,8 @@
+link:
+  forward: TIO_000004
+  reverse: TIO_000007
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F '\t' 'FNR!=1 && !a[$2 $3]++{print $1 "\t" gensub("GO:","","g",$4)}'
+    $TOGOID_ROOT/input/rhea/rhea2go.tsv
