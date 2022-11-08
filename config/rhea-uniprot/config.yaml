@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000077
+  reverse: TIO_000076
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F "\t" 'FNR>=2{print $1 "\t" $4}' $TOGOID_ROOT/input/rhea/rhea2uniprot_trembl.tsv $TOGOID_ROOT/input/rhea/rhea2uniprot_sprot.tsv
