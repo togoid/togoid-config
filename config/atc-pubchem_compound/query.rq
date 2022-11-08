@@ -1,5 +1,4 @@
 # Endpoint: https://integbio.jp/rdf/pubchem/sparql
-# @debug true 3
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX dct: <http://purl.org/dc/terms/>
