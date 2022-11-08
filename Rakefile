@@ -652,11 +652,14 @@ namespace :prepare do
   task :sra => INPUT_SRA_DIR do
     $stderr.puts "## Prepare input files for SRA"
     download_lock(INPUT_SRA_DIR) do
+      updated = false
       input_file = "#{INPUT_SRA_DIR}/SRA_Accessions.tab"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_SRA_DIR, input_url)
+        updated = true
       end
+      updated
     end
   end
 
