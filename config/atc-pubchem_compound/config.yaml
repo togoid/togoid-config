@@ -3,5 +3,5 @@ link:
   reverse: TIO_000XXX
   file: sample.tsv
 update:
-  frequency: Bimonthly
+  frequency: Monthly
   method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/pubchem/sparql
