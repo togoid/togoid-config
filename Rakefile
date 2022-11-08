@@ -278,6 +278,8 @@ module TogoID
         return "prepare:reactome"
       when /#{OUTPUT_TSV_DIR}refseq/
         return "prepare:refseq"
+      when /#{OUTPUT_TSV_DIR}rhea/
+        return "prepare:rhea"
       when /#{OUTPUT_TSV_DIR}sra/
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}uniprot/
@@ -399,7 +401,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :sra, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
@@ -410,6 +412,7 @@ namespace :prepare do
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_DIR      = "input/refseq"
+  directory INPUT_RHEA_DIR        = "input/rhea"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
@@ -609,6 +612,38 @@ namespace :prepare do
         download_file(INPUT_REFSEQ_DIR, input_url)
         updated = true
       end
+      updated
+    end
+  end
+
+  desc "Prepare required files for Rhea"
+  task :rhea => INPUT_RHEA_DIR do
+    $stderr.puts "## Prepare input files for Rhea"
+    download_lock(INPUT_RHEA_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_RHEA_DIR}/rhea2uniprot_sprot.tsv"
+      input_url  = "https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RHEA_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_RHEA_DIR}/rhea2uniprot_trembl.tsv.gz"
+      input_url  = "https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_trembl.tsv.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RHEA_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_RHEA_DIR}/rhea2uniprot_trembl.tsv"
+        updated = true
+      end
+
+      input_file = "#{INPUT_RHEA_DIR}/rhea2go.tsv"
+      input_url  = "https://ftp.expasy.org/databases/rhea/tsv/rhea2go.tsv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RHEA_DIR, input_url)
+        updated = true
+      end
+
       updated
     end
   end
