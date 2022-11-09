@@ -16,6 +16,10 @@
     <rdfs:label>Analysis</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Anatomy">
+    <rdfs:label>Anatomy</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Assembly">
     <rdfs:label>Assembly</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
@@ -25,6 +29,18 @@
     <rdfs:label>Assembly INSDC</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Assembly"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#AssemblyRefseq">
+    <dcterms:identifier>assembly_refseq</dcterms:identifier>
+    <rdfs:label>Assembly RefSeq</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Atc">
+    <dcterms:identifier>atc</dcterms:identifier>
+    <rdfs:label>ATC classification</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Drug"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Bioproject">
     <dcterms:identifier>bioproject</dcterms:identifier>
@@ -115,11 +131,15 @@
     <rdfs:label>Domain</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Drug">
+    <rdfs:label>Drug</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Drugbank">
     <dcterms:identifier>drugbank</dcterms:identifier>
     <rdfs:label>DrugBank</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Drug"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Ec">
     <dcterms:identifier>ec</dcterms:identifier>
@@ -240,6 +260,11 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Lipid">
+    <rdfs:label>Lipid</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Molecule"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Literature">
     <rdfs:label>Literature</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
@@ -325,6 +350,12 @@
     <rdfs:label>NCIt disease</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NcitTissue">
+    <dcterms:identifier>ncit_tissue</dcterms:identifier>
+    <rdfs:label>NCIt tissue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#OmaGroup">
     <dcterms:identifier>oma_group</dcterms:identifier>
@@ -525,6 +556,12 @@
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Submission">
     <rdfs:label>Submission</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Swisslipids">
+    <dcterms:identifier>swisslipids</dcterms:identifier>
+    <rdfs:label>SwissLipids</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Lipid"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Synonym">
     <rdfs:label>Synonym</rdfs:label>
@@ -1144,41 +1181,41 @@
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000076"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000078">
-    <display_label>is generated in</display_label>
-    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Assembly"/>
-    <rdfs:label>assembly is generated in project</rdfs:label>
+    <display_label>is sequenced in</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
+    <rdfs:label>genome is sequenced in project</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000079"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000079">
-    <display_label>generates</display_label>
+    <display_label>sequences</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
-    <rdfs:label>project generates assembly</rdfs:label>
-    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Assembly"/>
+    <rdfs:label>project sequences genome</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000078"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000080">
-    <display_label>is generated from</display_label>
-    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Assembly"/>
-    <rdfs:label>assembly is generated from sample</rdfs:label>
+    <display_label>is sequenced with</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
+    <rdfs:label>genome is sequenced with sample</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000081"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000081">
-    <display_label>is used to generate</display_label>
+    <display_label>is used to sequence</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
-    <rdfs:label>sample is used to generate assembly</rdfs:label>
-    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Assembly"/>
+    <rdfs:label>sample is used to sequence genome</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000080"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000082">
-    <display_label>has disease</display_label>
+    <display_label>is model of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
-    <rdfs:label>cell line has disease</rdfs:label>
+    <rdfs:label>cell line is model of disease</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000083"/>
@@ -1206,6 +1243,38 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Pathway"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000084"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000086">
+    <display_label>occurs in anatomic site</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:label>disease occurs in anatomic site</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000087"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000087">
+    <display_label>can have disease</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>anatomic site can have disease</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000086"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000088">
+    <display_label>classifies</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Drug"/>
+    <rdfs:label>drug classification classifies compound</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000089"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000089">
+    <display_label>is classified as</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
+    <rdfs:label>compound is classified as drug classification</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Drug"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000088"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
@@ -1242,6 +1311,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Synonym"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#UniprotReferenceProteome">
+    <dcterms:identifier>uniprot_reference_proteome</dcterms:identifier>
+    <rdfs:label>UniProt reference proteome</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Proteome"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Variant">
     <rdfs:label>Variant</rdfs:label>

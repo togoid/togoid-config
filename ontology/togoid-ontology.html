@@ -116,17 +116,23 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    108
+                                    116
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
 				tio:AffyProbeset</option>
 <option value="Analysis">
 				tio:Analysis</option>
+<option value="Anatomy">
+				tio:Anatomy</option>
 <option value="Assembly">
 				tio:Assembly</option>
 <option value="AssemblyInsdc">
 				tio:AssemblyInsdc</option>
+<option value="AssemblyRefseq">
+				tio:AssemblyRefseq</option>
+<option value="Atc">
+				tio:Atc</option>
 <option value="Bioproject">
 				tio:Bioproject</option>
 <option value="Biosample">
@@ -161,6 +167,8 @@
 				tio:Doid</option>
 <option value="Domain">
 				tio:Domain</option>
+<option value="Drug">
+				tio:Drug</option>
 <option value="Drugbank">
 				tio:Drugbank</option>
 <option value="Ec">
@@ -205,6 +213,8 @@
 				tio:Interaction</option>
 <option value="Interpro">
 				tio:Interpro</option>
+<option value="Lipid">
+				tio:Lipid</option>
 <option value="Literature">
 				tio:Literature</option>
 <option value="Lrg">
@@ -235,6 +245,8 @@
 				tio:Ncbigene</option>
 <option value="NcitDisease">
 				tio:NcitDisease</option>
+<option value="NcitTissue">
+				tio:NcitTissue</option>
 <option value="OmaGroup">
 				tio:OmaGroup</option>
 <option value="OmaProtein">
@@ -309,6 +321,8 @@
 				tio:Structure</option>
 <option value="Submission">
 				tio:Submission</option>
+<option value="Swisslipids">
+				tio:Swisslipids</option>
 <option value="Synonym">
 				tio:Synonym</option>
 <option value="Tair">
@@ -323,6 +337,8 @@
 				tio:Uniprot</option>
 <option value="UniprotMnemonic">
 				tio:UniprotMnemonic</option>
+<option value="UniprotReferenceProteome">
+				tio:UniprotReferenceProteome</option>
 <option value="Variant">
 				tio:Variant</option>
 <option value="Vgnc">
@@ -362,7 +378,7 @@
 <tr>
 <td><a style="subPropertySearch" href="#SubProperties">
                                     Sub properties (
-                                    85
+                                    89
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value" id="navi5"><option value="TIO_000001">
@@ -534,7 +550,15 @@
 <option value="TIO_000084">
 				tio:TIO_000084</option>
 <option value="TIO_000085">
-				tio:TIO_000085</option></select></td>
+				tio:TIO_000085</option>
+<option value="TIO_000086">
+				tio:TIO_000086</option>
+<option value="TIO_000087">
+				tio:TIO_000087</option>
+<option value="TIO_000088">
+				tio:TIO_000088</option>
+<option value="TIO_000089">
+				tio:TIO_000089</option></select></td>
 </tr>
 <tr>
 <td><a href="#InstanceData">
@@ -623,6 +647,29 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Anatomy"></a><tbody>
+<tr><th id="Anatomy">
+				tio:Anatomy<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Anatomy</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Category">
+				tio:Category</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#Assembly"></a><tbody>
 <tr><th id="Assembly">
 				tio:Assembly<span class="cp-type">
@@ -676,6 +723,74 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Dataset">
 				tio:Dataset</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#AssemblyRefseq"></a><tbody>
+<tr><th id="AssemblyRefseq">
+				tio:AssemblyRefseq<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>assembly_refseq</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Assembly RefSeq</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Atc"></a><tbody>
+<tr><th id="Atc">
+				tio:Atc<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>atc</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>ATC classification</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Drug">
+				tio:Drug</a></td>
 </tr>
 </tbody>
 </table>
@@ -1186,6 +1301,29 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Drug"></a><tbody>
+<tr><th id="Drug">
+				tio:Drug<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Drug</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Category">
+				tio:Category</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#Drugbank"></a><tbody>
 <tr><th id="Drugbank">
 				tio:Drugbank<span class="cp-type">
@@ -1208,14 +1346,14 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
 					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Compound">
-				tio:Compound</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
 					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
-				tio:Dataset</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Drug">
+				tio:Drug</a></td>
 </tr>
 </tbody>
 </table>
@@ -1897,6 +2035,35 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Lipid"></a><tbody>
+<tr><th id="Lipid">
+				tio:Lipid<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Lipid</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Category">
+				tio:Category</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Molecule">
+				tio:Molecule</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#Literature"></a><tbody>
 <tr><th id="Literature">
 				tio:Literature<span class="cp-type">
@@ -2381,6 +2548,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Disease">
 				tio:Disease</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#NcitTissue"></a><tbody>
+<tr><th id="NcitTissue">
+				tio:NcitTissue<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>ncit_tissue</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>NCIt tissue</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Anatomy">
+				tio:Anatomy</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
 </tr>
 </tbody>
 </table>
@@ -3523,6 +3724,40 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Swisslipids"></a><tbody>
+<tr><th id="Swisslipids">
+				tio:Swisslipids<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>swisslipids</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>SwissLipids</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Lipid">
+				tio:Lipid</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#Synonym"></a><tbody>
 <tr><th id="Synonym">
 				tio:Synonym<span class="cp-type">
@@ -3747,6 +3982,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Synonym">
 				tio:Synonym</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#UniprotReferenceProteome"></a><tbody>
+<tr><th id="UniprotReferenceProteome">
+				tio:UniprotReferenceProteome<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>uniprot_reference_proteome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>UniProt reference proteome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Proteome">
+				tio:Proteome</a></td>
 </tr>
 </tbody>
 </table>
@@ -7524,18 +7793,18 @@
 <tr>
 <td><a href="http://togoid.dbcls.jp/ontology#display_label">
 					tio:display_label</a></td>
-<td>is generated in</td>
+<td>is sequenced in</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
 					rdfs:domain</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Assembly">
-				tio:Assembly</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>assembly is generated in project</td>
+<td>genome is sequenced in project</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#range">
@@ -7570,7 +7839,7 @@
 <tr>
 <td><a href="http://togoid.dbcls.jp/ontology#display_label">
 					tio:display_label</a></td>
-<td>generates</td>
+<td>sequences</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
@@ -7581,13 +7850,13 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>project generates assembly</td>
+<td>project sequences genome</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#range">
 					rdfs:range</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Assembly">
-				tio:Assembly</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
@@ -7616,18 +7885,18 @@
 <tr>
 <td><a href="http://togoid.dbcls.jp/ontology#display_label">
 					tio:display_label</a></td>
-<td>is generated from</td>
+<td>is sequenced with</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
 					rdfs:domain</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Assembly">
-				tio:Assembly</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>assembly is generated from sample</td>
+<td>genome is sequenced with sample</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#range">
@@ -7662,7 +7931,7 @@
 <tr>
 <td><a href="http://togoid.dbcls.jp/ontology#display_label">
 					tio:display_label</a></td>
-<td>is used to generate</td>
+<td>is used to sequence</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
@@ -7673,13 +7942,13 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>sample is used to generate assembly</td>
+<td>sample is used to sequence genome</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#range">
 					rdfs:range</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Assembly">
-				tio:Assembly</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
@@ -7708,7 +7977,7 @@
 <tr>
 <td><a href="http://togoid.dbcls.jp/ontology#display_label">
 					tio:display_label</a></td>
-<td>has disease</td>
+<td>is model of</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
@@ -7719,7 +7988,7 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>cell line has disease</td>
+<td>cell line is model of disease</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#range">
@@ -7876,6 +8145,190 @@
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#TIO_000084">
 				tio:TIO_000084</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000086"></a><tbody>
+<tr><th id="TIO_000086">
+				tio:TIO_000086<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>occurs in anatomic site</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Disease">
+				tio:Disease</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>disease occurs in anatomic site</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Anatomy">
+				tio:Anatomy</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000087">
+				tio:TIO_000087</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000087"></a><tbody>
+<tr><th id="TIO_000087">
+				tio:TIO_000087<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>can have disease</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Anatomy">
+				tio:Anatomy</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>anatomic site can have disease</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Disease">
+				tio:Disease</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000086">
+				tio:TIO_000086</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000088"></a><tbody>
+<tr><th id="TIO_000088">
+				tio:TIO_000088<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>classifies</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Drug">
+				tio:Drug</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>drug classification classifies compound</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Compound">
+				tio:Compound</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000089">
+				tio:TIO_000089</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000089"></a><tbody>
+<tr><th id="TIO_000089">
+				tio:TIO_000089<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is classified as</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Compound">
+				tio:Compound</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>compound is classified as drug classification</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Drug">
+				tio:Drug</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000088">
+				tio:TIO_000088</a></td>
 </tr>
 </tbody>
 </table>

@@ -97,6 +97,16 @@
 <http://togoid.dbcls.jp/ontology#CellLine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#CellLine> <http://www.w3.org/2000/01/rdf-schema#label> "Cell line" .
 <http://togoid.dbcls.jp/ontology#CellLine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#Anatomy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Anatomy> <http://www.w3.org/2000/01/rdf-schema#label> "Anatomy" .
+<http://togoid.dbcls.jp/ontology#Anatomy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#Lipid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Lipid> <http://www.w3.org/2000/01/rdf-schema#label> "Lipid" .
+<http://togoid.dbcls.jp/ontology#Lipid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#Lipid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Molecule> .
+<http://togoid.dbcls.jp/ontology#Drug> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Drug> <http://www.w3.org/2000/01/rdf-schema#label> "Drug" .
+<http://togoid.dbcls.jp/ontology#Drug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://purl.org/dc/terms/identifier> "affy_probeset" .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/2000/01/rdf-schema#label> "Affymetrix probeset" .
@@ -150,7 +160,7 @@
 <http://togoid.dbcls.jp/ontology#Drugbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Drugbank> <http://purl.org/dc/terms/identifier> "drugbank" .
 <http://togoid.dbcls.jp/ontology#Drugbank> <http://www.w3.org/2000/01/rdf-schema#label> "DrugBank" .
-<http://togoid.dbcls.jp/ontology#Drugbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#Drugbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Drug> .
 <http://togoid.dbcls.jp/ontology#Drugbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Ec> <http://purl.org/dc/terms/identifier> "ec" .
@@ -489,6 +499,31 @@
 <http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#label> "PubChem pathway" .
 <http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://purl.org/dc/terms/identifier> "ncit_tissue" .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#label> "NCIt tissue" .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Anatomy> .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Atc> <http://purl.org/dc/terms/identifier> "atc" .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#label> "ATC classification" .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Drug> .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://purl.org/dc/terms/identifier> "swisslipids" .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#label> "SwissLipids" .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Lipid> .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://purl.org/dc/terms/identifier> "uniprot_reference_proteome" .
+<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt reference proteome" .
+<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Proteome> .
+<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://purl.org/dc/terms/identifier> "assembly_refseq" .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly RefSeq" .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
@@ -949,35 +984,35 @@
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/2000/01/rdf-schema#label> "reaction has participant molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://togoid.dbcls.jp/ontology#display_label> "has participant molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
-<http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Assembly> .
+<http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000079> .
-<http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#label> "assembly is generated in project" .
-<http://togoid.dbcls.jp/ontology#TIO_000078> <http://togoid.dbcls.jp/ontology#display_label> "is generated in" .
+<http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#label> "genome is sequenced in project" .
+<http://togoid.dbcls.jp/ontology#TIO_000078> <http://togoid.dbcls.jp/ontology#display_label> "is sequenced in" .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
-<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Assembly> .
+<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000078> .
-<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#label> "project generates assembly" .
-<http://togoid.dbcls.jp/ontology#TIO_000079> <http://togoid.dbcls.jp/ontology#display_label> "generates" .
+<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#label> "project sequences genome" .
+<http://togoid.dbcls.jp/ontology#TIO_000079> <http://togoid.dbcls.jp/ontology#display_label> "sequences" .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
-<http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Assembly> .
+<http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000081> .
-<http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#label> "assembly is generated from sample" .
-<http://togoid.dbcls.jp/ontology#TIO_000080> <http://togoid.dbcls.jp/ontology#display_label> "is generated from" .
+<http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#label> "genome is sequenced with sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000080> <http://togoid.dbcls.jp/ontology#display_label> "is sequenced with" .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
-<http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Assembly> .
+<http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000080> .
-<http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#label> "sample is used to generate assembly" .
-<http://togoid.dbcls.jp/ontology#TIO_000081> <http://togoid.dbcls.jp/ontology#display_label> "is used to generate" .
+<http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#label> "sample is used to sequence genome" .
+<http://togoid.dbcls.jp/ontology#TIO_000081> <http://togoid.dbcls.jp/ontology#display_label> "is used to sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#CellLine> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Disease> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000083> .
-<http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#label> "cell line has disease" .
-<http://togoid.dbcls.jp/ontology#TIO_000082> <http://togoid.dbcls.jp/ontology#display_label> "has disease" .
+<http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#label> "cell line is model of disease" .
+<http://togoid.dbcls.jp/ontology#TIO_000082> <http://togoid.dbcls.jp/ontology#display_label> "is model of" .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Disease> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#CellLine> .
@@ -996,3 +1031,27 @@
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000084> .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2000/01/rdf-schema#label> "gene participates in pathway" .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://togoid.dbcls.jp/ontology#display_label> "participates in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Disease> .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Anatomy> .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000087> .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#label> "disease occurs in anatomic site" .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://togoid.dbcls.jp/ontology#display_label> "occurs in anatomic site" .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Anatomy> .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Disease> .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000086> .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#label> "anatomic site can have disease" .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://togoid.dbcls.jp/ontology#display_label> "can have disease" .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Drug> .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000089> .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#label> "drug classification classifies compound" .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://togoid.dbcls.jp/ontology#display_label> "classifies" .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Drug> .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000088> .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#label> "compound is classified as drug classification" .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://togoid.dbcls.jp/ontology#display_label> "is classified as" .
