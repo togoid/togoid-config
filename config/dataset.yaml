@@ -6,6 +6,24 @@ affy_probeset:
   prefix: 'http://identifiers.org/affy.probeset/'
   examples:
     - ["1553582_a_at","211531_x_at","202573_at","201640_x_at","205117_at","201017_at","205099_s_at","200614_at","201895_at","202666_s_at"]
+assembly_insdc:
+  label: Assembly INSDC
+  catalog: FIXME
+  category: Genome
+  regex: '^(?<id>GCA_\d{9})(\.\d+)?$'
+  prefix: 'http://identifiers.org/assembly/'
+  examples:
+    - ["GCA_000001215","GCA_000001405","GCA_000001545","GCA_000001635","GCA_000001735","GCA_000001765","GCA_000001895","GCA_000001905","GCA_000001985","GCA_000002035"]
+    - ["GCA_000001215.4","GCA_000001405.29","GCA_000001545.3","GCA_000001635.9","GCA_000001735.2","GCA_000001765.3","GCA_000001895.4","GCA_000001905.1","GCA_000001985.1","GCA_000002035.4"]
+assembly_refseq:
+  label: Assembly RefSeq
+  catalog: FIXME
+  category: Genome
+  regex: '^(?<id>GCF_\d{9})(\.\d+)?$'
+  prefix: 'http://identifiers.org/assembly/'
+  examples:
+    - ["GCF_000002035","GCF_009870125","GCF_000840205","GCF_000004195","GCF_000475195","GCF_000296755","GCF_000151885","GCF_000715135","GCF_001039355","GCF_000331145"]
+    - ["GCF_000002035.6","GCF_009870125.1","GCF_000840205.1","GCF_000004195.4","GCF_000475195.1","GCF_000296755.1","GCF_000151885.1","GCF_000715135.1","GCF_001039355.2","GCF_000331145.1"]
 atc:
   label: ATC classification
   catalog: FIXME
