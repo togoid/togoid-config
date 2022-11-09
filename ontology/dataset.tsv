@@ -64,7 +64,7 @@ uniprot	UniProt	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
 wikipathways	WikiPathways	Pathway
 metabobank	MetaboBank	Submission
-assembly_insdc	Assembly INSDC	Assembly
+assembly_insdc	Assembly INSDC	Genome
 flybase_gene	FlyBase gene	Gene
 wormbase_gene	WormBase gene	Gene
 vgnc	VGNC	Gene
