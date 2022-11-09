@@ -625,6 +625,15 @@ sra_sample:
   prefix: 'http://identifiers.org/insdc.sra/'
   examples:
     - ["DRS001431","DRS001371","DRS000894","DRS000386","SRS2618009","SRS7846025","SRS000159","ERS452503","ERS000126","ERS010423"]
+swisslipids:
+  label: SwissLipids
+  catalog: nbdc02026
+  category: Lipids
+  regex: '^SLM:(?<id>\d+)$'
+  prefix: 'http://identifiers.org/slm/SLM:'
+  examples:
+    - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
+
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
