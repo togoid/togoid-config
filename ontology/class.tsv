@@ -24,5 +24,8 @@ Variant	Variant
 Synonym	Synonym	
 Sequence	Sequence	
 Molecule	Molecule	
-Assembly	Assembly
-CellLine	Cell line
+Assembly	Assembly	
+CellLine	Cell line	
+Anatomy	Anatomy	
+Lipid	Lipid	Molecule
+Drug	Drug	

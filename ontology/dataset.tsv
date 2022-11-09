@@ -8,7 +8,7 @@ chembl_target	ChEMBL target	Protein
 clinvar	ClinVar variant	Variant
 dbsnp	dbSNP	Variant
 doid	Disease ontology	Disease
-drugbank	DrugBank	Compound
+drugbank	DrugBank	Drug
 ec	Enzyme nomenclature	Function
 ensembl_gene	Ensembl gene	Gene
 ensembl_protein	Ensembl protein	Protein
@@ -76,3 +76,8 @@ cellosaurus	Cellosaurus	CellLine
 ncit_disease	NCIt disease	Disease
 cog	COG	Ortholog
 pubchem_pathway	PubChem pathway	Pathway
+ncit_tissue	NCIt tissue	Anatomy
+atc	ATC classification	Drug
+swisslipids	SwissLipids	Lipid
+uniprot_reference_proteome	UniProt reference proteome	Proteome
+assembly_refseq	Assembly RefSeq	Genome
