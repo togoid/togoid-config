@@ -20,10 +20,6 @@
     <rdfs:label>Anatomy</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Assembly">
-    <rdfs:label>Assembly</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
-  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#AssemblyInsdc">
     <dcterms:identifier>assembly_insdc</dcterms:identifier>
     <rdfs:label>Assembly INSDC</rdfs:label>
@@ -183,6 +179,10 @@
     <rdfs:label>Gene</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Genome">
+    <rdfs:label>Genome</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Glycan">
     <rdfs:label>Glycan</rdfs:label>
@@ -424,6 +424,10 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Molecule"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Proteome">
+    <rdfs:label>Proteome</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#PubchemCompound">
     <dcterms:identifier>pubchem_compound</dcterms:identifier>
@@ -1275,6 +1279,38 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Drug"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000088"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000090">
+    <display_label>is proteome of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Proteome"/>
+    <rdfs:label>is proteome of organism</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Organism"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000091"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000091">
+    <display_label>has proteome</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Organism"/>
+    <rdfs:label>organism has proteome</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Proteome"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000090"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000092">
+    <display_label>is coded by</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Proteome"/>
+    <rdfs:label>proteome is coded by genome</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000093"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000093">
+    <display_label>codes</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Genome"/>
+    <rdfs:label>genome codes proteome</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Proteome"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000092"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>

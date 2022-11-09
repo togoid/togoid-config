@@ -87,3 +87,7 @@ TIO_000086	disease occurs in anatomic site	occurs in anatomic site	TIO_000087	Di
 TIO_000087	anatomic site can have disease	can have disease	TIO_000086	Anatomy	Disease
 TIO_000088	drug classification classifies compound	classifies	TIO_000089	Drug	Compound
 TIO_000089	compound is classified as drug classification	is classified as	TIO_000088	Compound	Drug
+TIO_000090	is proteome of organism	is proteome of	TIO_000091	Proteome	Organism
+TIO_000091	organism has proteome	has proteome	TIO_000090	Organism	Proteome
+TIO_000092	proteome is coded by genome	is coded by	TIO_000093	Proteome	Genome
+TIO_000093	genome codes proteome	codes	TIO_000092	Genome	Proteome

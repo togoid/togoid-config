@@ -152,9 +152,9 @@
     rdfs:label "Molecule" ;
     rdfs:subClassOf :Category .
 
-:Assembly
+:Genome
     a owl:Class ;
-    rdfs:label "Assembly" ;
+    rdfs:label "Genome" ;
     rdfs:subClassOf :Category .
 
 :CellLine
@@ -175,6 +175,11 @@
 :Drug
     a owl:Class ;
     rdfs:label "Drug" ;
+    rdfs:subClassOf :Category .
+
+:Proteome
+    a owl:Class ;
+    rdfs:label "Proteome" ;
     rdfs:subClassOf :Category .
 
 :AffyProbeset
@@ -1381,4 +1386,36 @@
     owl:inverseOf :TIO_000088 ;
     rdfs:label "compound is classified as drug classification" ;
     :display_label "is classified as" .
+
+:TIO_000090
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Proteome ;
+    rdfs:range :Organism ;
+    owl:inverseOf :TIO_000091 ;
+    rdfs:label "is proteome of organism" ;
+    :display_label "is proteome of" .
+
+:TIO_000091
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Organism ;
+    rdfs:range :Proteome ;
+    owl:inverseOf :TIO_000090 ;
+    rdfs:label "organism has proteome" ;
+    :display_label "has proteome" .
+
+:TIO_000092
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Proteome ;
+    rdfs:range :Genome ;
+    owl:inverseOf :TIO_000093 ;
+    rdfs:label "proteome is coded by genome" ;
+    :display_label "is coded by" .
+
+:TIO_000093
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Genome ;
+    rdfs:range :Proteome ;
+    owl:inverseOf :TIO_000092 ;
+    rdfs:label "genome codes proteome" ;
+    :display_label "codes" .
 

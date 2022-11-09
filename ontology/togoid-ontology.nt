@@ -91,9 +91,9 @@
 <http://togoid.dbcls.jp/ontology#Molecule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Molecule> <http://www.w3.org/2000/01/rdf-schema#label> "Molecule" .
 <http://togoid.dbcls.jp/ontology#Molecule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
-<http://togoid.dbcls.jp/ontology#Assembly> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Assembly> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly" .
-<http://togoid.dbcls.jp/ontology#Assembly> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#Genome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Genome> <http://www.w3.org/2000/01/rdf-schema#label> "Genome" .
+<http://togoid.dbcls.jp/ontology#Genome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#CellLine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#CellLine> <http://www.w3.org/2000/01/rdf-schema#label> "Cell line" .
 <http://togoid.dbcls.jp/ontology#CellLine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
@@ -107,6 +107,9 @@
 <http://togoid.dbcls.jp/ontology#Drug> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Drug> <http://www.w3.org/2000/01/rdf-schema#label> "Drug" .
 <http://togoid.dbcls.jp/ontology#Drug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#Proteome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Proteome> <http://www.w3.org/2000/01/rdf-schema#label> "Proteome" .
+<http://togoid.dbcls.jp/ontology#Proteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://purl.org/dc/terms/identifier> "affy_probeset" .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/2000/01/rdf-schema#label> "Affymetrix probeset" .
@@ -1055,3 +1058,27 @@
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000088> .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#label> "compound is classified as drug classification" .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://togoid.dbcls.jp/ontology#display_label> "is classified as" .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Proteome> .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000091> .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#label> "is proteome of organism" .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://togoid.dbcls.jp/ontology#display_label> "is proteome of" .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Proteome> .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000090> .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#label> "organism has proteome" .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://togoid.dbcls.jp/ontology#display_label> "has proteome" .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Proteome> .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000093> .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#label> "proteome is coded by genome" .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://togoid.dbcls.jp/ontology#display_label> "is coded by" .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Proteome> .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000092> .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#label> "genome codes proteome" .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://togoid.dbcls.jp/ontology#display_label> "codes" .

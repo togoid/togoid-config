@@ -116,7 +116,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    116
+                                    117
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -125,8 +125,6 @@
 				tio:Analysis</option>
 <option value="Anatomy">
 				tio:Anatomy</option>
-<option value="Assembly">
-				tio:Assembly</option>
 <option value="AssemblyInsdc">
 				tio:AssemblyInsdc</option>
 <option value="AssemblyRefseq">
@@ -187,6 +185,8 @@
 				tio:Function</option>
 <option value="Gene">
 				tio:Gene</option>
+<option value="Genome">
+				tio:Genome</option>
 <option value="Glycan">
 				tio:Glycan</option>
 <option value="Glytoucan">
@@ -273,6 +273,8 @@
 				tio:Project</option>
 <option value="Protein">
 				tio:Protein</option>
+<option value="Proteome">
+				tio:Proteome</option>
 <option value="PubchemCompound">
 				tio:PubchemCompound</option>
 <option value="PubchemPathway">
@@ -378,7 +380,7 @@
 <tr>
 <td><a style="subPropertySearch" href="#SubProperties">
                                     Sub properties (
-                                    89
+                                    93
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value" id="navi5"><option value="TIO_000001">
@@ -558,7 +560,15 @@
 <option value="TIO_000088">
 				tio:TIO_000088</option>
 <option value="TIO_000089">
-				tio:TIO_000089</option></select></td>
+				tio:TIO_000089</option>
+<option value="TIO_000090">
+				tio:TIO_000090</option>
+<option value="TIO_000091">
+				tio:TIO_000091</option>
+<option value="TIO_000092">
+				tio:TIO_000092</option>
+<option value="TIO_000093">
+				tio:TIO_000093</option></select></td>
 </tr>
 <tr>
 <td><a href="#InstanceData">
@@ -660,29 +670,6 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>Anatomy</td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Category">
-				tio:Category</a></td>
-</tr>
-</tbody>
-</table>
-<table class="subsection">
-<a name="http://togoid.dbcls.jp/ontology#Assembly"></a><tbody>
-<tr><th id="Assembly">
-				tio:Assembly<span class="cp-type">
-								(rdf:type
-								<a href="http://www.w3.org/2002/07/owl#Class">
-					owl:Class</a>
-								)
-							</span>
-</th></tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
-					rdfs:label</a></td>
-<td>Assembly</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -1599,6 +1586,29 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Sequence">
 				tio:Sequence</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Genome"></a><tbody>
+<tr><th id="Genome">
+				tio:Genome<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Genome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Category">
+				tio:Category</a></td>
 </tr>
 </tbody>
 </table>
@@ -2970,6 +2980,29 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Sequence">
 				tio:Sequence</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Proteome"></a><tbody>
+<tr><th id="Proteome">
+				tio:Proteome<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Proteome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Category">
+				tio:Category</a></td>
 </tr>
 </tbody>
 </table>
@@ -8329,6 +8362,190 @@
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#TIO_000088">
 				tio:TIO_000088</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000090"></a><tbody>
+<tr><th id="TIO_000090">
+				tio:TIO_000090<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is proteome of</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Proteome">
+				tio:Proteome</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>is proteome of organism</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Organism">
+				tio:Organism</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000091">
+				tio:TIO_000091</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000091"></a><tbody>
+<tr><th id="TIO_000091">
+				tio:TIO_000091<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>has proteome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Organism">
+				tio:Organism</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>organism has proteome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Proteome">
+				tio:Proteome</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000090">
+				tio:TIO_000090</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000092"></a><tbody>
+<tr><th id="TIO_000092">
+				tio:TIO_000092<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is coded by</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Proteome">
+				tio:Proteome</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>proteome is coded by genome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000093">
+				tio:TIO_000093</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000093"></a><tbody>
+<tr><th id="TIO_000093">
+				tio:TIO_000093<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>codes</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>genome codes proteome</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Proteome">
+				tio:Proteome</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000092">
+				tio:TIO_000092</a></td>
 </tr>
 </tbody>
 </table>
