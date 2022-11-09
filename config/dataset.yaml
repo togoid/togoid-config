@@ -661,7 +661,7 @@ uniprot_mnemonic:
 uniprot_reference_proteome:
   label: UniProt reference proteome
   catalog: nbdc00221
-  category: Organism
+  category: Proteome
   regex: '^(?<id>UP\d{0,9})$'
   prefix: 'http://purl.uniprot.org/uniprot/'
   examples:
