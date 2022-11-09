@@ -9,7 +9,7 @@ affy_probeset:
 atc:
   label: ATC classification
   catalog: FIXME
-  category: FIXME 
+  category: Drug
   regex: '^(?<id>[A-Z]\d{2}[A-Z]{2}\d{2})$'
   prefix: 'http://identifiers.org/atc/'
   example:
