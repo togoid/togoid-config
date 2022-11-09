@@ -282,6 +282,8 @@ module TogoID
         return "prepare:rhea"
       when /#{OUTPUT_TSV_DIR}sra/
         return "prepare:sra"
+      when /#{OUTPUT_TSV_DIR}swisslipids/
+        return "prepare:swisslipids"
       when /#{OUTPUT_TSV_DIR}uniprot/
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
@@ -401,7 +403,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
@@ -414,6 +416,7 @@ namespace :prepare do
   directory INPUT_REFSEQ_DIR      = "input/refseq"
   directory INPUT_RHEA_DIR        = "input/rhea"
   directory INPUT_SRA_DIR         = "input/sra"
+  directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
 
@@ -657,6 +660,23 @@ namespace :prepare do
       input_url  = "https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_SRA_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for SwissLipids"
+  task :swisslipids => INPUT_SWISSLIPIDS_DIR do
+    $stderr.puts "## Prepare input files for SwissLipids"
+    download_lock(INPUT_SWISSLIPIDS_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids.tsv.gz"
+      input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids.tsv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_SWISSLIPIDS_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
         updated = true
       end
       updated
