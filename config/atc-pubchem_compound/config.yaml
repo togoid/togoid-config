@@ -1,6 +1,6 @@
 link:
-  forward: TIO_000XXX
-  reverse: TIO_000XXX
+  forward: TIO_000088
+  reverse: TIO_000089
   file: sample.tsv
 update:
   frequency: Monthly
