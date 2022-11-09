@@ -1,0 +1,15 @@
+# Endpoint: https://integbio.jp/rdf/pubchem/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+SELECT DISTINCT ?atc_id ?pubchem_id
+WHERE {
+  ?attr a sio:CHEMINF_000562 ;
+        sio:is-attribute-of ?cid ;
+        dct:subject ?atc .
+  ?atc skos:inScheme <http://rdf.ncbi.nlm.nih.gov/pubchem/concept/ATC> .
+  BIND (STRAFTER(STR(?cid), "/CID") AS ?pubchem_id)
+  BIND (STRAFTER(STR(?atc), "/ATC_") AS ?atc_id)
+}
