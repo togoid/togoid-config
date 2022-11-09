@@ -663,7 +663,7 @@ uniprot_reference_proteome:
   catalog: nbdc00221
   category: Proteome
   regex: '^(?<id>UP\d{0,9})$'
-  prefix: 'http://purl.uniprot.org/uniprot/'
+  prefix: 'http://purl.uniprot.org/proteomes/'
   examples:
     - ["UP000005640","UP000002311","UP000005640","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
 wikipathways:
