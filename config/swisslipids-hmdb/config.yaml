@@ -1,0 +1,8 @@
+link:
+  forward: TIO_000002
+  reverse: TIO_000002
+  file: sample.tsv
+update:
+  frequency: Irregular
+  method: awk -F '\t' 'FNR!=1 && !a[$1 $27]++ && $27 {print gensub("SLM:","","g",$1) "\t" $27}'
+    $TOGOID_ROOT/input/swisslipids/lipids.tsv
