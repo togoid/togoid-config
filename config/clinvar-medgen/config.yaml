@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: curl -s https://grch38.togovar.org/public/togoid/clinvar-medgen.tsv
+  method: curl -sL https://grch38.togovar.org/public/togoid/clinvar-medgen.tsv
