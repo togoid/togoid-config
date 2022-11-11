@@ -150,7 +150,7 @@ ega_study:
   label: European Genome-phenome Archive Study
   catalog: FIXME
   category: Study
-  regex: '^(?<id>EGAS\d{11}})$'
+  regex: '^(?<id>EGAS\d{11})$'
   prefix: 'http://identifiers.org/ega.study/'
   examples:
     - ["EGAS00000000002","EGAS00000000003","EGAS00000000004","EGAS00000000005","EGAS00000000011","EGAS00000000017","EGAS00000000021","EGAS00000000024","EGAS00000000025","EGAS00000000026"]
