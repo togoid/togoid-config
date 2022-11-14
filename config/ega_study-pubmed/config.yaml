@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: perl ega-pubmed.pl
+  method: ega-pubmed.sh 
