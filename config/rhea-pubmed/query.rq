@@ -2,7 +2,7 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 SELECT DISTINCT ?rhea_id ?pubmed_id
-FROM <http://rdf.integbio.jp/dataset/rhea>
+#FROM <http://rdf.integbio.jp/dataset/rhea>
 WHERE {
   {
     ?rhea rdfs:subClassOf rhea:Reaction
