@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000042
+  reverse: TIO_000052
+update:
+  frequency: Monthly
+  method: "wget https://ddbj.nig.ac.jp/public/rdf/dblink/insdc-biosample/insdc2biosample.tsv"
