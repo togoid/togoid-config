@@ -1,9 +1,10 @@
-# https://integbio.jp/rdf/ebi/sparql
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
 PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 PREFIX cheminf: <http://semanticscience.org/resource/>
-SELECT DISTINCT ?chembl_id  ?inchikey
+
+SELECT COUNT(DISTINCT ?chembl_id)
 FROM <http://rdf.ebi.ac.uk/dataset/chembl>
-WHERE {
+where {
   ?chembl_molecule a cco:SmallMolecule ;
                    cco:chemblId ?chembl_id ;
                    cheminf:SIO_000008 ?inchi_inchikey .
