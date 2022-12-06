@@ -1,18 +1,13 @@
 # Endpoint: https://integbio.jp/rdf/sib/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rhea: <http://rdf.rhea-db.org/>
+PREFIX pubmed: <http://rdf.ncbi.nlm.nih.gov/pubmed/>
 SELECT DISTINCT ?rhea_id ?pubmed_id
 FROM <http://rdf.integbio.jp/dataset/rhea>
 WHERE {
-  {
-    ?rhea rdfs:subClassOf rhea:Reaction
-  } UNION {
-    ?rhea rdfs:subClassOf rhea:DirectionalReaction
-  } UNION {
-    ?rhea rdfs:subClassOf rhea:BidirectionalReaction
-  }
-  ?rhea rhea:accession ?rhea_acc ;
+  VALUES ?reaction {rhea:Reaction rhea:DirectionalReaction rhea:BidirectionalReaction }
+  ?rhea rdfs:subClassOf ?reaction ;
         rhea:citation ?pubmed .
+  BIND (STRAFTER(STR(?rhea), "rhea-db.org/") AS ?rhea_id)
   BIND (STRAFTER(STR(?pubmed), "pubmed/") AS ?pubmed_id)
-  BIND (STRAFTER(?rhea_acc, "RHEA:") AS ?rhea_id)
 }

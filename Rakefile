@@ -248,7 +248,7 @@ module TogoID
           end
         end
       else
-        $stderr.puts "# Error: Failed to create #{tsv} or created file is empty" if $verbose
+        $stderr.puts "# Error: Failed to create #{tsv} or created file was empty" if $verbose
         check = false
       end
       return check
