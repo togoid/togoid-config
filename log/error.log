@@ -1,0 +1,37 @@
+# Error: output/tsv/glytoucan-doid.tsv new file size per old 1583 / 3746 = 0.4225840896956754 < 0.5
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 153 / 505146 = 0.00030288273093323514 < 0.5
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <body>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </body>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </html>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <body>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </body>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </html>
+# Error: output/tsv/hgnc-pubmed.tsv new file size per old 153 / 467695 = 0.00032713627470894494 < 0.5
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <body>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </body>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </html>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <body>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </body>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </html>
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3FWF7
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3FJW5
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3FYX6
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GK62
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GM11
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GPK7
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GEN5
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GGX0
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GGY6
+# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GES5
