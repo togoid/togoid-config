@@ -9,6 +9,7 @@ WHERE {
   VALUES ?taxon { uptax:{{taxon}} }
   ?oma_protein orth:organism/obo:RO_0002162 ?taxon .
   ?oma_protein lscr:xrefUniprot ?uniprot .
+  FILTER regex(str(?oma_protein), "^https://omabrowser.org/oma/info/")
   BIND (strafter(str(?oma_protein), "https://omabrowser.org/oma/info/") AS ?oma_protein_id)
   BIND (strafter(str(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id)
 }
