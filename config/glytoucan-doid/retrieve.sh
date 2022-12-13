@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 set -euo pipefail
 
 # GlyTouCan IDとDOIDのペアを取得する。
@@ -32,7 +32,7 @@ while true; do
      for i in $ERROR_FILES; do
        $CURL -o ${WORKDIR}/${i}.txt -sSH "Accept: text/tab-separated-values" --data-urlencode query@${i}.rq $ENDPOINT
      done
-     ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.txt; done | xargs -i sh -c '(head -1 {} | grep -m 1 -q "^\?do") || basename {} .txt')
+     ERROR_FILES=$(for f in $ERROR_FILES; do echo ${WORKDIR}/${f}.txt; done | xargs -IFILE sh -c '(head -1 FILE | grep -m 1 -q "^\?do") || basename FILE .txt')
      sleep 5
   else
      break

@@ -7,7 +7,8 @@ PREFIX ggdb: <http://purl.jp/bio/12/ggdb/2015/6/owl#>
 SELECT DISTINCT ?do ?ag ?pg
 WHERE{
   GRAPH <http://rdf.glycosmos.org/genomealliance> {
-   ?gene glycan:genome_alliance_id / glycan:gl_doid ?do .
+#   ?gene glycan:genome_alliance_id / glycan:gl_doid ?do .
+   ?gene glycan:genome_alliance_id / sio:SIO_000255 / glycan:gl_doid ?do .
    BIND (xsd:int(substr(str(?gene), 33)) as ?gene_id)
   }
   GRAPH <http://rdf.glycoinfo.org/ggdb> {
