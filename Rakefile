@@ -745,21 +745,14 @@ namespace :aws do
   task :create_list => [UPDATE_TXT]
 
   file UPDATE_TXT do
-    STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`"); exit 1 if !S3_BUCKET_NAME
-    STDERR.puts("ERROR: missing update.txt location: use `export UPDATE_TXT=/path/to/update.txt`"); exit 1 if !UPDATE_TXT
-
+    puts "List of files to be updated at #{UPDATE_TXT}"
     open(UPDATE_TXT, 'w'){|f| f.puts(updated_files) }
   end
 
   desc "Upload TSV files to AWS S3"
   task :upload_s3 => UPDATE_TXT do
-    begin
-      raise NameError if !S3_BUCKET_NAME
-      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"")
-      system("aws s3 cp #{UPDATE_TXT} s3://#{S3_BUCKET_NAME}/tsv/update.txt")
-    rescue NameError
-      STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
-      exit 1
-    end
+    puts "Uploading files to #{S3_BUCKET_NAME}..."
+    system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"")
+    system("aws s3 cp #{UPDATE_TXT} s3://#{S3_BUCKET_NAME}/tsv/update.txt")
   end
 end
