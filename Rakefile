@@ -26,8 +26,8 @@ TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
 # For update procedure on AWS
-UPDATE_TXT     = File.join(OUTPUT_TSV_DIR, "update.txt")
-S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
+UPDATE_TXT     = ENV['TOGOID_UPDATE_TXT'] || File.join(OUTPUT_TSV_DIR, "update.txt")
+S3_BUCKET_NAME = ENV['S3_BUCKET_NAME'] || "togo-id-production"
 
 desc "Default task (update & convert)"
 #task :default => [ :pre, :update, :convert, :post ]
@@ -725,24 +725,30 @@ namespace :prepare do
     end
   end
 end
+
 # Upload task
 namespace :aws do
+  def updated_files
+    sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"`
+    sync_dryrun_stdout.split("\n").map{|line| File.basename(line.split("\s+").last) }
+  end
+
   desc "Create update.txt and upload TSV files to AWS S3"
   task :update => [:create_list, :upload_s3]
+
+  desc "Show updated files"
+  task :show_updated do
+    puts updated_files
+  end
 
   desc "Create update.txt"
   task :create_list => [UPDATE_TXT]
 
   file UPDATE_TXT do
-    begin
-      raise NameError if !S3_BUCKET_NAME
-      sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"`
-    rescue
-      STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
-      exit 1
-    end
-    update_files = sync_dryrun_stdout.split("\n").map{|line| File.basename(line.split("\s+").last) }
-    open(UPDATE_TXT, 'w'){|f| f.puts(update_files) }
+    STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`"); exit 1 if !S3_BUCKET_NAME
+    STDERR.puts("ERROR: missing update.txt location: use `export UPDATE_TXT=/path/to/update.txt`"); exit 1 if !UPDATE_TXT
+
+    open(UPDATE_TXT, 'w'){|f| f.puts(updated_files) }
   end
 
   desc "Upload TSV files to AWS S3"
@@ -750,7 +756,7 @@ namespace :aws do
     begin
       raise NameError if !S3_BUCKET_NAME
       system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"")
-      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"update.txt\"")
+      system("aws s3 cp #{UPDATE_TXT} s3://#{S3_BUCKET_NAME}/tsv/update.txt")
     rescue NameError
       STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
       exit 1
