@@ -1,37 +1,44 @@
-# Error: output/tsv/glytoucan-doid.tsv new file size per old 1583 / 3746 = 0.4225840896956754 < 0.5
-# Error: output/tsv/hgnc-ccds.tsv new file size per old 153 / 505146 = 0.00030288273093323514 < 0.5
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <body>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </body>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </html>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <body>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </body>
-# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </html>
-# Error: output/tsv/hgnc-pubmed.tsv new file size per old 153 / 467695 = 0.00032713627470894494 < 0.5
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <body>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </body>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </html>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <body>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <hr><center>nginx/1.16.0</center>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </body>
-# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </html>
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3FWF7
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3FJW5
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3FYX6
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GK62
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GM11
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GPK7
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GEN5
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GGX0
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GGY6
-# Error: output/tsv/oma_protein-uniprot.tsv seems to be malformed A0A1S3GES5
+# Error: output/tsv/rhea-chebi.tsv new file size per old 0 / 1402586 = 0.0 < 0.5
+# Error: Failed to create output/tsv/rhea-chebi.tsv or created file was empty
+# Error: output/tsv/rhea-ec.tsv new file size per old 0 / 114050 = 0.0 < 0.5
+# Error: Failed to create output/tsv/rhea-ec.tsv or created file was empty
+# Error: output/tsv/rhea-pubmed.tsv new file size per old 159 / 1866516 = 8.518544711108826e-05 < 0.5
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/502>here</a>.</p>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/502>here</a>.</p>
+# Error: output/tsv/rhea-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/rhea-reactome_reaction.tsv new file size per old 159 / 23160 = 0.0068652849740932645 < 0.5
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <html><head>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML </head><body>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/502>here</a>.</p>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML </body></html>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <html><head>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML </head><body>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/502>here</a>.</p>
+# Error: output/tsv/rhea-reactome_reaction.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 9611580 = 0.0 < 0.5
+# Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
+# Error: output/tsv/uniprot-dbsnp.tsv new file size per old 0 / 834775 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-dbsnp.tsv or created file was empty
+# Error: output/tsv/uniprot-ec.tsv new file size per old 0 / 693590664 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-ec.tsv or created file was empty
+# Error: output/tsv/uniprot-intact.tsv new file size per old 0 / 4400514 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-intact.tsv or created file was empty
+# Error: output/tsv/uniprot-omim_gene.tsv new file size per old 0 / 221286 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-omim_gene.tsv or created file was empty
+# Error: output/tsv/uniprot-omim_phenotype.tsv new file size per old 0 / 92348 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-omim_phenotype.tsv or created file was empty
+# Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 1785229006 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-pfam.tsv or created file was empty
