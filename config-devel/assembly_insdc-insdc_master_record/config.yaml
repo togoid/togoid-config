@@ -4,4 +4,4 @@ link:
   reverse: TIO_0000XX
 update:
   frequency: Monthly
-  method:"wget https://ddbj.nig.ac.jp/public/rdf/dblink/assembly_genome-insdc/assembly_genome2insdc.tsv"
+  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/assembly_genome-insdc/assembly_genome2insdc.tsv
