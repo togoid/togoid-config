@@ -264,8 +264,8 @@ insdc:
   prefix: 'http://identifiers.org/insdc/'
   examples:
     - ["U10991","AF116914","AK056978","DQ440258","U91725","AY301270","U32907","AY261360","AK001332","U13261"]
-insdc_master_record:
-  label: INSDC master record
+insdc_master:
+  label: INSDC master
   catalog: nbdc02567
   category: Project
   regex: '^(?:insdc:)?(?<id>[A-Z]{4,6}\d{8,10})(?:\.\d+)?$'
