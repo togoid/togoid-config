@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_xxxxxx
+  reverse: TIO_xxxxxx
+update:
+  frequency: Monthly
+  method: "wget https://ddbj.nig.ac.jp/public/rdf/dblink/jga_study-pubmed_id/jga_study2pubmed_id.tsv"

@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000041
+  reverse: TIO_000051
+update:
+  frequency: Monthly
+  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/assembly_genome-bp/assembly_genome2bp.tsv
