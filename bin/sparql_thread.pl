@@ -231,7 +231,7 @@ sub get_req {
 		$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
 		&log($e."\tFetch error: ".$err."\n");
 		print STDERR $e, "\tFetch error: ", $err, "\n";
-		return 0;
+	        exit 0;
 	    }
 	};
     }
