@@ -41,7 +41,8 @@ $THREAD_LIMIT = $OPT{t} if ($OPT{t});
 our $DEBUG = 1 if ($OPT{d});
 
 our $SLEEP_TIME = 300; # sec.
-our $TRIAL_NUM = 10;
+our $TRIAL_MAX = 10;
+our $TRIAL_COUNT = 0;
 
 # for resume
 our %LOG;
@@ -208,14 +209,12 @@ sub get_req {
     
     my $ua = LWP::UserAgent->new;
 
-    my $trials = 0;
     my $res;
     my $err = "";
-    while ($trials < $TRIAL_NUM) {
+    while ($TRIAL_COUNT < $TRIAL_MAX) {
 	$res = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json');
 	eval {
 	    decode_json($res -> content);
-	    $trials = $TRIAL_NUM;
 	    1
 	} or do {
 	    $err .= "Endpoint ".$EP." : ".$res -> status_line."; ";
@@ -227,8 +226,8 @@ sub get_req {
 	    1
 	} or do {
 	    sleep($SLEEP_TIME);
-	    $trials++;
-	    if ($trials == $TRIAL_NUM - 1) {
+	    $TRIAL_COUNT++;
+	    if ($TRIAL_COUNT == $TRIAL_MAX - 1) {
 		$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
 		&log($e."\tFetch error: ".$err."\n");
 		print STDERR $e, "\tFetch error: ", $err, "\n";

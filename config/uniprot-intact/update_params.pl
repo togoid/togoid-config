@@ -2,8 +2,8 @@
 our $THREAD_LIMIT = 10;
 
 # Endpoint
-our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
-our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
+our $EP = "https://integbio.jp/rdf/sib/sparql";
+#our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
 
 # SPARQL query for get-taxonomy-list
 our $QUERY_TAX = "PREFIX up: <http://purl.uniprot.org/core/>
