@@ -12,4 +12,4 @@ WHERE {
   GRAPH <http://togovar.biosciencedbc.jp/variant/annotation/clinvar> {
     ?variant dct:identifier ?variation_id .
   }
-}
+} limit 100000
