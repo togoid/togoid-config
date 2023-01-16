@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/togosite/sparql
+  method: sparql_csv2tsv.sh query.rq https://grch38.togovar.org/sparql

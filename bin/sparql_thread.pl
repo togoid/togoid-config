@@ -40,7 +40,7 @@ getopts('t:d', \%OPT);
 $THREAD_LIMIT = $OPT{t} if ($OPT{t});
 our $DEBUG = 1 if ($OPT{d});
 
-our $SLEEP_TIME = 300; # sec.
+our $SLEEP_TIME = 60; # sec.
 our $TRIAL_MAX = 10;
 our $TRIAL_COUNT = 0;
 
@@ -211,10 +211,12 @@ sub get_req {
 
     my $res;
     my $err = "";
-    while ($TRIAL_COUNT < $TRIAL_MAX) {
+    my $flag = 0;
+    while ($TRIAL_COUNT < $TRIAL_MAX && !$flag) {
 	$res = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json');
 	eval {
 	    decode_json($res -> content);
+	    $flag = 1;
 	    1
 	} or do {
 	    $err .= "Endpoint ".$EP." : ".$res -> status_line."; ";
@@ -223,6 +225,7 @@ sub get_req {
 
 	eval {
 	    decode_json($res -> content);
+	    $flag = 1;
 	    1
 	} or do {
 	    sleep($SLEEP_TIME);

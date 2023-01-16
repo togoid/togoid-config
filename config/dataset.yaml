@@ -674,7 +674,7 @@ togovar:
   category: Variant
   # FIXME: valid in RDF?
   regex: '^(?<id>tgv\d+)$'
-  prefix: 'http://togovar.biosciencedbc.jp/variation/'
+  prefix: 'http://identifiers.org/togovar/'
   examples:
     - ["tgv100005930","tgv100000890","tgv16331","tgv10000341","tgv21330879","tgv15847","tgv1354996","tgv100002132","tgv16568524","tgv62035164"]
 uniprot:
@@ -766,7 +766,7 @@ tair:
   catalog: nbdc00697
   category: Gene
   regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
-  prefix: 'https://www.arabidopsis.org/servlets/TairObject?type=locus&name='
+  prefix: 'http://identifiers.org/tair.name/'
   examples:
     - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
 sgd:
