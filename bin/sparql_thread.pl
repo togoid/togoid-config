@@ -215,7 +215,7 @@ sub get_req {
 	$res = $ua -> get($EP.$params, 'Accept' => 'application/sparql-results+json');
 	eval {
 	    decode_json($res -> content);
-	    1
+	    last;
 	} or do {
 	    $err .= "Endpoint ".$EP." : ".$res -> status_line."; ";
 	    $res = $ua -> get($EP_MIRROR.$params, 'Accept' => 'application/sparql-results+json') if ($EP_MIRROR);
@@ -223,7 +223,7 @@ sub get_req {
 
 	eval {
 	    decode_json($res -> content);
-	    1
+	    last;
 	} or do {
 	    sleep($SLEEP_TIME);
 	    $TRIAL_COUNT++;
