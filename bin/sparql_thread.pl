@@ -40,7 +40,7 @@ getopts('t:d', \%OPT);
 $THREAD_LIMIT = $OPT{t} if ($OPT{t});
 our $DEBUG = 1 if ($OPT{d});
 
-our $SLEEP_TIME = 300; # sec.
+our $SLEEP_TIME = 60; # sec.
 our $TRIAL_MAX = 10;
 our $TRIAL_COUNT = 0;
 
