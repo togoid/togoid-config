@@ -1,0 +1,6 @@
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 3332195 / 9611580 = 0.3466854565014285 < 0.5
+# Error: output/tsv/uniprot-omim_gene.tsv new file size per old 0 / 221286 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-omim_gene.tsv or created file was empty
+< HTTP/1.1 502 Proxy Error
+# Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 1785229006 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-pfam.tsv or created file was empty
