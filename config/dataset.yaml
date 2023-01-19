@@ -58,6 +58,16 @@ ccds:
   examples:
     - ["CCDS1471","CCDS10913","CCDS14790","CCDS35175","CCDS2395","CCDS58412","CCDS55555","CCDS34401","CCDS41889","CCDS9052"]
     - ["CCDS1471.1","CCDS10913.1","CCDS14790.1","CCDS35175.2","CCDS2395.1","CCDS58412.1","CCDS55555.1","CCDS34401.2","CCDS41889.1","CCDS9052.1"]
+cellosaurus:
+  label: Cellosaurus
+  catalog: nbdc02180
+  category: CellLine
+  regex: '^CVCL[:_](?<id>[A-Z0-9]{4})$'
+  prefix: 'http://www.cellosaurus.org/CVCL_'
+  format: ["CVCL:%s","CVCL_%s"]
+  examples:
+    - ["CVCL:7T24","CVCL:SE45","CVCL:XG73","CVCL:B6HT","CVCL:WM34","CVCL:7891","CVCL:FV52","CVCL:0367","CVCL:9Z18","CVCL:CG19"]
+    - ["CVCL_7T24","CVCL_SE45","CVCL_XG73","CVCL_B6HT","CVCL_WM34","CVCL_7891","CVCL_FV52","CVCL_0367","CVCL_9Z18","CVCL_CG19"]
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
@@ -184,6 +194,14 @@ flybase_gene:
   prefix: 'http://identifiers.org/fb/'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
+glytoucan:
+  label: GlyTouCan
+  catalog: nbdc01535
+  category: Glycan
+  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
+  prefix: 'http://identifiers.org/glytoucan/'
+  examples:
+    - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
 go:
   label: Gene ontology
   catalog: nbdc00074
@@ -256,6 +274,14 @@ human_protein_atlas:  # FIXME: too long?
   # FIXME: valid in RDF?
   regex: '^(?<id>ENSG\d{11})$'
   prefix: 'http://www.proteinatlas.org/'
+inchi_key:
+  label: InChIKey
+  catalog: FIXME
+  category: Compound
+  regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$'
+  prefix: 'http://identifiers.org/inchikey/'
+  examples:
+    - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N","RZWGTXHSYZGXKF-UHFFFAOYSA-N","RQQIIXFYTHWFKW-ZETCQYMHSA-N","RALAARQREFCZJO-UHFFFAOYSA-N","HVFRJJDZWVSUIB-UHFFFAOYSA-N","KVNZVXVZQFTXNA-UHFFFAOYSA-N","KVQUJTYBWCGJRS-UHFFFAOYSA-N","AFGLQVAJWVTAJT-UHFFFAOYSA-N","LHISABQPMWXWCC-UHFFFAOYSA-N","ZSXCHLJCWRSMMS-UHFFFAOYSA-N"]
 insdc:
   label: GenBank/ENA/DDBJ
   catalog: nbdc02567
@@ -436,6 +462,30 @@ ncbiprotein:
   category: Protein
   regex: '^(?:(?:\w+\d+(?:\.\d+)?)|(?:NP_\d+))$'
   prefix: 'http://identifiers.org/ncbiprotein/'
+ncit_disease:
+  label: NCIT disease
+  catalog: FIXME
+  category: Disease
+  regex: '^NCIT?[:_](?<id>C\d+)$'
+  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
+  format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
+  examples:
+    - ["NCIT:C48829","NCIT:C136825","NCIT:C48613","NCIT:C122795","NCIT:C67107","NCIT:C8417","NCIT:C8936","NCIT:C8644","NCIT:C80331","NCIT:C80342"]
+    - ["NCIT_C48829","NCIT_C136825","NCIT_C48613","NCIT_C122795","NCIT_C67107","NCIT_C8417","NCIT_C8936","NCIT_C8644","NCIT_C80331","NCIT_C80342"]
+    - ["NCI:C48829","NCI:C136825","NCI:C48613","NCI:C122795","NCI:C67107","NCI:C8417","NCI:C8936","NCI:C8644","NCI:C80331","NCI:C80342"]
+    - ["NCI_C48829","NCI_C136825","NCI_C48613","NCI_C122795","NCI_C67107","NCI_C8417","NCI_C8936","NCI_C8644","NCI_C80331","NCI_C80342"]
+ncit_tissue:
+  label: NCIT tissue
+  catalog: FIXME
+  category: Tissue
+  regex: '^NCIT?[:_](?<id>C\d+)$'
+  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
+  format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
+  examples:
+    - ["NCIT:C12279","NCIT:C94820","NCIT:C77674","NCIT:C32082","NCIT:C12971","NCIT:C34285","NCIT:C97112","NCIT:C105446","NCIT:C12846","NCIT:C12845"]
+    - ["NCIT_C12279","NCIT_C94820","NCIT_C77674","NCIT_C32082","NCIT_C12971","NCIT_C34285","NCIT_C97112","NCIT_C105446","NCIT_C12846","NCIT_C12845"]
+    - ["NCI:C12279","NCI:C94820","NCI:C77674","NCI:C32082","NCI:C12971","NCI:C34285","NCI:C97112","NCI:C105446","NCI:C12846","NCI:C12845"]
+    - ["NCI_C12279","NCI_C94820","NCI_C77674","NCI_C32082","NCI_C12971","NCI_C34285","NCI_C97112","NCI_C105446","NCI_C12846","NCI_C12845"]
 oma_group:
   label: OMA group
   catalog: nbdc02221
@@ -611,6 +661,14 @@ rhea:
   prefix: 'http://identifiers.org/rhea/'
   examples:
     - ["10253","10818","13517","11136","13729","10240","11728","16870","10732","11278"]
+sgd:
+  label: SGD
+  catalog: nbdc00202
+  category: Gene
+  regex: '^(?<id>S\d{9})$'
+  prefix: 'http://identifiers.org/sgd/'
+  examples:
+    - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
 sra_accession:
   label: SRA accession
   catalog: nbdc00687
@@ -667,7 +725,14 @@ swisslipids:
   prefix: 'http://identifiers.org/slm/SLM:'
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
-
+tair:
+  label: TAIR
+  catalog: nbdc00697
+  category: Gene
+  regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
+  prefix: 'http://identifiers.org/tair.name/'
+  examples:
+    - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
@@ -685,6 +750,16 @@ togovar:
   prefix: 'http://identifiers.org/togovar/'
   examples:
     - ["tgv100005930","tgv100000890","tgv16331","tgv10000341","tgv21330879","tgv15847","tgv1354996","tgv100002132","tgv16568524","tgv62035164"]
+uberon:
+  label: UBERON
+  catalog: FIXME
+  category: Tissue
+  regex: '^UBERON[:_](?<id>\d{7})$'
+  prefix: 'http://purl.obolibrary.org/obo/UBERON_'
+  format: ["UBERON:%s","UBERON_%s"]
+  examples:
+    - ["UBERON:0002115","UBERON:0001004","UBERON:0000007","UBERON:0001044","UBERON:0001825","UBERON:0001361","UBERON:0002186","UBERON:0000945","UBERON:0036068","UBERON:0001017"]
+    - ["UBERON_0002115","UBERON_0001004","UBERON_0000007","UBERON_0001044","UBERON_0001825","UBERON_0001361","UBERON_0002186","UBERON_0000945","UBERON_0036068","UBERON_0001017"]
 uniprot:
   label: UniProt
   catalog: nbdc00221
@@ -709,39 +784,6 @@ uniprot_reference_proteome:
   prefix: 'http://purl.uniprot.org/proteomes/'
   examples:
     - ["UP000005640","UP000002311","UP000005640","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
-wikipathways:
-  label: WikiPathways
-  catalog: nbdc02116
-  category: Pathway
-  regex: '^(?<id>WP\d{1,5})(?:\_r\d+)?$'
-  prefix: 'http://identifiers.org/wikipathways/'
-  examples:
-    - ["WP1531","WP4312","WP4877","WP5020","WP4400","WP4474","WP4183","WP3650","WP4545","WP4462"]
-    - ["WP1531_r107120","WP4312_r104287","WP4877_r116595","WP5020_r114721","WP4400_r108112","WP4474_r102094","WP4183_r106890","WP3650_r110699","WP4545_r116235","WP4462_r102079"]
-glytoucan:
-  label: GlyTouCan
-  catalog: nbdc01535
-  category: Glycan
-  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
-  prefix: 'http://identifiers.org/glytoucan/'
-  examples:
-    - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
-inchi_key:
-  label: InChIKey
-  catalog: FIXME
-  category: Compound
-  regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$'
-  prefix: 'http://identifiers.org/inchikey/'
-  examples:
-    - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N","RZWGTXHSYZGXKF-UHFFFAOYSA-N","RQQIIXFYTHWFKW-ZETCQYMHSA-N","RALAARQREFCZJO-UHFFFAOYSA-N","HVFRJJDZWVSUIB-UHFFFAOYSA-N","KVNZVXVZQFTXNA-UHFFFAOYSA-N","KVQUJTYBWCGJRS-UHFFFAOYSA-N","AFGLQVAJWVTAJT-UHFFFAOYSA-N","LHISABQPMWXWCC-UHFFFAOYSA-N","ZSXCHLJCWRSMMS-UHFFFAOYSA-N"]
-wormbase_gene:
-  label: WormBase gene
-  catalog: nbdc00740
-  category: Gene
-  regex: '^(?<id>WBGene\d{8})$'
-  prefix: 'http://identifiers.org/wb/'
-  examples:
-    - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
 vgnc:
   label: VGNC
   catalog: nbdc02624
@@ -753,14 +795,23 @@ vgnc:
     - ["39230","49608","85188","76040","72808","73601","9436","78821","74596","5304"]
     - ["VGNC:39230","VGNC:49608","VGNC:85188","VGNC:76040","VGNC:72808","VGNC:73601","VGNC:9436","VGNC:78821","VGNC:74596","VGNC:5304"]
     - ["vgnc:39230","vgnc:49608","vgnc:85188","vgnc:76040","vgnc:72808","vgnc:73601","vgnc:9436","vgnc:78821","vgnc:74596","vgnc:5304"]
-zfin_gene:
-  label: ZFIN gene
-  catalog: nbdc00746
-  category: Gene
-  regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
-  prefix: 'http://identifiers.org/zfin/'
+wikipathways:
+  label: WikiPathways
+  catalog: nbdc02116
+  category: Pathway
+  regex: '^(?<id>WP\d{1,5})(?:\_r\d+)?$'
+  prefix: 'http://identifiers.org/wikipathways/'
   examples:
-    - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
+    - ["WP1531","WP4312","WP4877","WP5020","WP4400","WP4474","WP4183","WP3650","WP4545","WP4462"]
+    - ["WP1531_r107120","WP4312_r104287","WP4877_r116595","WP5020_r114721","WP4400_r108112","WP4474_r102094","WP4183_r106890","WP3650_r110699","WP4545_r116235","WP4462_r102079"]
+wormbase_gene:
+  label: WormBase gene
+  catalog: nbdc00740
+  category: Gene
+  regex: '^(?<id>WBGene\d{8})$'
+  prefix: 'http://identifiers.org/wb/'
+  examples:
+    - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
 xenbase_gene:
   label: Xenbase gene
   catalog: nbdc01892
@@ -769,63 +820,11 @@ xenbase_gene:
   prefix: 'http://identifiers.org/xenbase/'
   examples:
     - ["XB-GENE-877040","XB-GENE-22060981","XB-GENE-17344257","XB-GENE-487684","XB-GENE-1014349","XB-GENE-17335133","XB-GENE-1012537","XB-GENE-494019","XB-GENE-5952945","XB-GENE-957742"]
-tair:
-  label: TAIR
-  catalog: nbdc00697
+zfin_gene:
+  label: ZFIN gene
+  catalog: nbdc00746
   category: Gene
-  regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
-  prefix: 'http://identifiers.org/tair.name/'
+  regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
+  prefix: 'http://identifiers.org/zfin/'
   examples:
-    - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
-sgd:
-  label: SGD
-  catalog: nbdc00202
-  category: Gene
-  regex: '^(?<id>S\d{9})$'
-  prefix: 'http://identifiers.org/sgd/'
-  examples:
-    - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
-uberon:
-  label: UBERON
-  catalog: FIXME
-  category: Tissue
-  regex: '^UBERON[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/UBERON_'
-  format: ["UBERON:%s","UBERON_%s"]
-  examples:
-    - ["UBERON:0002115","UBERON:0001004","UBERON:0000007","UBERON:0001044","UBERON:0001825","UBERON:0001361","UBERON:0002186","UBERON:0000945","UBERON:0036068","UBERON:0001017"]
-    - ["UBERON_0002115","UBERON_0001004","UBERON_0000007","UBERON_0001044","UBERON_0001825","UBERON_0001361","UBERON_0002186","UBERON_0000945","UBERON_0036068","UBERON_0001017"]
-cellosaurus:
-  label: Cellosaurus
-  catalog: nbdc02180
-  category: CellLine
-  regex: '^CVCL[:_](?<id>[A-Z0-9]{4})$'
-  prefix: 'http://www.cellosaurus.org/CVCL_'
-  format: ["CVCL:%s","CVCL_%s"]
-  examples:
-    - ["CVCL:7T24","CVCL:SE45","CVCL:XG73","CVCL:B6HT","CVCL:WM34","CVCL:7891","CVCL:FV52","CVCL:0367","CVCL:9Z18","CVCL:CG19"]
-    - ["CVCL_7T24","CVCL_SE45","CVCL_XG73","CVCL_B6HT","CVCL_WM34","CVCL_7891","CVCL_FV52","CVCL_0367","CVCL_9Z18","CVCL_CG19"]
-ncit_tissue:
-  label: NCIT tissue
-  catalog: FIXME
-  category: Tissue
-  regex: '^NCIT?[:_](?<id>C\d+)$'
-  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
-  format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
-  examples:
-    - ["NCIT:C12279","NCIT:C94820","NCIT:C77674","NCIT:C32082","NCIT:C12971","NCIT:C34285","NCIT:C97112","NCIT:C105446","NCIT:C12846","NCIT:C12845"]
-    - ["NCIT_C12279","NCIT_C94820","NCIT_C77674","NCIT_C32082","NCIT_C12971","NCIT_C34285","NCIT_C97112","NCIT_C105446","NCIT_C12846","NCIT_C12845"]
-    - ["NCI:C12279","NCI:C94820","NCI:C77674","NCI:C32082","NCI:C12971","NCI:C34285","NCI:C97112","NCI:C105446","NCI:C12846","NCI:C12845"]
-    - ["NCI_C12279","NCI_C94820","NCI_C77674","NCI_C32082","NCI_C12971","NCI_C34285","NCI_C97112","NCI_C105446","NCI_C12846","NCI_C12845"]
-ncit_disease:
-  label: NCIT disease
-  catalog: FIXME
-  category: Disease
-  regex: '^NCIT?[:_](?<id>C\d+)$'
-  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
-  format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
-  examples:
-    - ["NCIT:C48829","NCIT:C136825","NCIT:C48613","NCIT:C122795","NCIT:C67107","NCIT:C8417","NCIT:C8936","NCIT:C8644","NCIT:C80331","NCIT:C80342"]
-    - ["NCIT_C48829","NCIT_C136825","NCIT_C48613","NCIT_C122795","NCIT_C67107","NCIT_C8417","NCIT_C8936","NCIT_C8644","NCIT_C80331","NCIT_C80342"]
-    - ["NCI:C48829","NCI:C136825","NCI:C48613","NCI:C122795","NCI:C67107","NCI:C8417","NCI:C8936","NCI:C8644","NCI:C80331","NCI:C80342"]
-    - ["NCI_C48829","NCI_C136825","NCI_C48613","NCI_C122795","NCI_C67107","NCI_C8417","NCI_C8936","NCI_C8644","NCI_C80331","NCI_C80342"]
+    - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
