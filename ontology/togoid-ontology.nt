@@ -445,7 +445,7 @@
 <http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://purl.org/dc/terms/identifier> "assembly_insdc" .
 <http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly INSDC" .
-<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Assembly> .
+<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#FlybaseGene> <http://purl.org/dc/terms/identifier> "flybase_gene" .
@@ -527,6 +527,11 @@
 <http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly RefSeq" .
 <http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://purl.org/dc/terms/identifier> "insdc_master" .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#label> "INSDC master" .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
@@ -996,8 +1001,8 @@
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000078> .
-<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#label> "project sequences genome" .
-<http://togoid.dbcls.jp/ontology#TIO_000079> <http://togoid.dbcls.jp/ontology#display_label> "sequences" .
+<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#label> "project determines genome sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000079> <http://togoid.dbcls.jp/ontology#display_label> "determines genome sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
@@ -1082,3 +1087,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000092> .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#label> "genome codes proteome" .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://togoid.dbcls.jp/ontology#display_label> "codes" .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000095> .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#label> "project analyzes sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://togoid.dbcls.jp/ontology#display_label> "analyzes" .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000094> .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#label> "sample is analyzed in project" .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://togoid.dbcls.jp/ontology#display_label> "is analyzed in" .

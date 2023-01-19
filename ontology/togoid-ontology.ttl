@@ -582,7 +582,7 @@
     a owl:Class ;
     dcterms:identifier "assembly_insdc" ;
     rdfs:label "Assembly INSDC" ;
-    rdfs:subClassOf :Assembly, :Dataset .
+    rdfs:subClassOf :Genome, :Dataset .
 
 :FlybaseGene
     a owl:Class ;
@@ -679,6 +679,12 @@
     dcterms:identifier "assembly_refseq" ;
     rdfs:label "Assembly RefSeq" ;
     rdfs:subClassOf :Genome, :Dataset .
+
+:InsdcMaster
+    a owl:Class ;
+    dcterms:identifier "insdc_master" ;
+    rdfs:label "INSDC master" ;
+    rdfs:subClassOf :Project, :Dataset .
 
 :TIO_000001
     rdfs:subPropertyOf :relation ;
@@ -1304,8 +1310,8 @@
     rdfs:domain :Project ;
     rdfs:range :Genome ;
     owl:inverseOf :TIO_000078 ;
-    rdfs:label "project sequences genome" ;
-    :display_label "sequences" .
+    rdfs:label "project determines genome sequence" ;
+    :display_label "determines genome sequence" .
 
 :TIO_000080
     rdfs:subPropertyOf :relation ;
@@ -1418,4 +1424,20 @@
     owl:inverseOf :TIO_000092 ;
     rdfs:label "genome codes proteome" ;
     :display_label "codes" .
+
+:TIO_000094
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Project ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000095 ;
+    rdfs:label "project analyzes sample" ;
+    :display_label "analyzes" .
+
+:TIO_000095
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Sample ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000094 ;
+    rdfs:label "sample is analyzed in project" ;
+    :display_label "is analyzed in" .
 

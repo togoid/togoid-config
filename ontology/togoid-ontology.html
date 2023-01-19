@@ -116,7 +116,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    117
+                                    118
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -207,6 +207,8 @@
 				tio:InchiKey</option>
 <option value="Insdc">
 				tio:Insdc</option>
+<option value="InsdcMaster">
+				tio:InsdcMaster</option>
 <option value="Intact">
 				tio:Intact</option>
 <option value="Interaction">
@@ -380,7 +382,7 @@
 <tr>
 <td><a style="subPropertySearch" href="#SubProperties">
                                     Sub properties (
-                                    93
+                                    95
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value" id="navi5"><option value="TIO_000001">
@@ -568,7 +570,11 @@
 <option value="TIO_000092">
 				tio:TIO_000092</option>
 <option value="TIO_000093">
-				tio:TIO_000093</option></select></td>
+				tio:TIO_000093</option>
+<option value="TIO_000094">
+				tio:TIO_000094</option>
+<option value="TIO_000095">
+				tio:TIO_000095</option></select></td>
 </tr>
 <tr>
 <td><a href="#InstanceData">
@@ -702,14 +708,14 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
 					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Assembly">
-				tio:Assembly</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
 					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
-				tio:Dataset</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genome">
+				tio:Genome</a></td>
 </tr>
 </tbody>
 </table>
@@ -1950,6 +1956,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Gene">
 				tio:Gene</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#InsdcMaster"></a><tbody>
+<tr><th id="InsdcMaster">
+				tio:InsdcMaster<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>insdc_master</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>INSDC master</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
 </tr>
 </tbody>
 </table>
@@ -7872,7 +7912,7 @@
 <tr>
 <td><a href="http://togoid.dbcls.jp/ontology#display_label">
 					tio:display_label</a></td>
-<td>sequences</td>
+<td>determines genome sequence</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
@@ -7883,7 +7923,7 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>project sequences genome</td>
+<td>project determines genome sequence</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#range">
@@ -8546,6 +8586,98 @@
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#TIO_000092">
 				tio:TIO_000092</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000094"></a><tbody>
+<tr><th id="TIO_000094">
+				tio:TIO_000094<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>analyzes</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>project analyzes sample</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Sample">
+				tio:Sample</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000095">
+				tio:TIO_000095</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000095"></a><tbody>
+<tr><th id="TIO_000095">
+				tio:TIO_000095<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is analyzed in</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Sample">
+				tio:Sample</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>sample is analyzed in project</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000094">
+				tio:TIO_000094</a></td>
 </tr>
 </tbody>
 </table>
