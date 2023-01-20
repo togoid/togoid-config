@@ -175,6 +175,12 @@
     <rdfs:label>Function</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Gea">
+    <dcterms:identifier>gea</dcterms:identifier>
+    <rdfs:label>GEA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Experiment"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Gene">
     <rdfs:label>Gene</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
