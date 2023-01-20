@@ -1,7 +1,7 @@
 link:
   file: sample.tsv
-  forward: TIO_000042
-  reverse: TIO_000052
+  forward: TIO_000043
+  reverse: TIO_000053
 update:
   frequency: Monthly
   method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/gea-biosample/gea2biosample.tsv
