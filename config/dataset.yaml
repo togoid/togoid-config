@@ -194,6 +194,14 @@ flybase_gene:
   prefix: 'http://identifiers.org/fb/'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
+gea:
+  label: GEA
+  catalog: FIXME
+  category: Experiment
+  regex: '^(?<id>E-GEAD-\d+)$'
+  prefix: 'https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/'
+  examples:
+    - ["E-GEAD-446","E-GEAD-519","E-GEAD-328","E-GEAD-349","E-GEAD-284","E-GEAD-448","E-GEAD-460","E-GEAD-348","E-GEAD-344","E-GEAD-385"]
 glytoucan:
   label: GlyTouCan
   catalog: nbdc01535
