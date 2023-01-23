@@ -686,6 +686,12 @@
     rdfs:label "INSDC master" ;
     rdfs:subClassOf :Project, :Dataset .
 
+:Gea
+    a owl:Class ;
+    dcterms:identifier "gea" ;
+    rdfs:label "GEA" ;
+    rdfs:subClassOf :Experiment, :Dataset .
+
 :TIO_000001
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;

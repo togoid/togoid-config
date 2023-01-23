@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000050
+  reverse: TIO_000040
+update:
+  frequency: Monthly
+  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/gea-bioproject/gea2bioproject.tsv
