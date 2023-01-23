@@ -4,4 +4,4 @@ link:
   reverse: TIO_xxxxxx
 update:
   frequency: Monthly
-  method: "wget https://ddbj.nig.ac.jp/public/rdf/dblink/jga_study-jga_dataset/jga_study2jga_dataset.tsv"
+  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/jga_study-jga_dataset/jga_study2jga_dataset.tsv
