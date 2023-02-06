@@ -4,7 +4,7 @@ set -euo pipefail
 
 # UniProt IDとPfam IDのペアを取得する。
 
-ENDPOINT=https://integbio.jp/rdf/mirror/uniprot/sparql
+ENDPOINT=https://integbio.jp/rdf/sib/sparql
 WORKDIR=pfam2uniprot # 一時的にPfamID毎のUniProtIDリストファイルを保存するディレクトリ
 LIMIT=1000000 # SPARQLエンドポイントにおける取得可能データ件数の最大値
 CURL="/usr/bin/curl -v"
