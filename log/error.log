@@ -1,3 +1,1 @@
-< HTTP/1.1 502 Proxy Error
-# Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 1785229006 = 0.0 < 0.5
-# Error: Failed to create output/tsv/uniprot-pfam.tsv or created file was empty
+# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}
