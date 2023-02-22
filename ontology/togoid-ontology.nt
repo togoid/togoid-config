@@ -537,6 +537,11 @@
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#label> "GEA" .
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://purl.org/dc/terms/identifier> "pdb_ccd" .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#label> "PDB CCD" .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
@@ -1104,3 +1109,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000094> .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#label> "sample is analyzed in project" .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://togoid.dbcls.jp/ontology#display_label> "is analyzed in" .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Structure> .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000097> .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#label> "3D structure has compound" .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://togoid.dbcls.jp/ontology#display_label> "has compound" .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Structure> .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000096> .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#label> "compound is component of 3D structure" .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://togoid.dbcls.jp/ontology#display_label> "is component of" .

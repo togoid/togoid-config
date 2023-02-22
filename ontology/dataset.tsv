@@ -83,3 +83,4 @@ uniprot_reference_proteome	UniProt reference proteome	Proteome
 assembly_refseq	Assembly RefSeq	Genome
 insdc_master	INSDC master	Project
 gea	GEA	Experiment
+pdb_ccd	PDB CCD	Compound

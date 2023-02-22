@@ -1,0 +1,13 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT DISTINCT ?chembl_id ?pdbccd_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?molecule
+    a cco:SmallMolecule ;
+    cco:chemblId ?chembl_id ;
+    cco:moleculeXref ?pdbccd .
+  FILTER (STRSTARTS(STR(?pdbccd), "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/"))
+  BIND (STRAFTER(STR(?pdbccd), "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/") AS ?pdbccd_id)
+}
