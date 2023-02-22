@@ -1,1 +1,2 @@
+# Error: output/tsv/ncbigene-wormbase_gene.tsv new file size per old 441039 / 1186906 = 0.3715871349542424 < 0.5
 # Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}
