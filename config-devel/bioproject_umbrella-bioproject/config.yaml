@@ -4,4 +4,4 @@ link:
   reverse: TIO_000051
 update:
   frequency: Monthly
-  method: "wget https://ddbj.nig.ac.jp/public/rdf/dblink/bioproject_umbrella-bioproject/bioproject_umbrella2bioproject.tsv"
+  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/bioproject_umbrella-bioproject/bioproject_umbrella2bioproject.tsv
