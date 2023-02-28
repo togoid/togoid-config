@@ -692,6 +692,12 @@
     rdfs:label "GEA" ;
     rdfs:subClassOf :Experiment, :Dataset .
 
+:PdbCcd
+    a owl:Class ;
+    dcterms:identifier "pdb_ccd" ;
+    rdfs:label "PDB CCD" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
 :TIO_000001
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
@@ -1446,4 +1452,20 @@
     owl:inverseOf :TIO_000094 ;
     rdfs:label "sample is analyzed in project" ;
     :display_label "is analyzed in" .
+
+:TIO_000096
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Structure ;
+    rdfs:range :Compound ;
+    owl:inverseOf :TIO_000097 ;
+    rdfs:label "3D structure has compound" ;
+    :display_label "has compound" .
+
+:TIO_000097
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Compound ;
+    rdfs:range :Structure ;
+    owl:inverseOf :TIO_000096 ;
+    rdfs:label "compound is component of 3D structure" ;
+    :display_label "is component of" .
 

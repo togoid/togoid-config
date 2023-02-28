@@ -553,6 +553,14 @@ pdb:
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
     - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
+pdb_ccd:
+  label: PDB CCD
+  catalog: nbdc01766
+  category: Compound
+  regex: '^(?<id>\w{1,3})$'
+  prefix: 'http://identifiers.org/pdb-ccd/'
+  examples:
+    - ["D5Y","P2B","A6L","M35","A6M","S1P","D5Z","M36","P2C","P2D"]
 pfam:
   label: Pfam
   catalog: nbdc00163

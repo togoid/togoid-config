@@ -93,3 +93,5 @@ TIO_000092	proteome is coded by genome	is coded by	TIO_000093	Proteome	Genome
 TIO_000093	genome codes proteome	codes	TIO_000092	Genome	Proteome
 TIO_000094	project analyzes sample	analyzes	TIO_000095	Project	Sample
 TIO_000095	sample is analyzed in project	is analyzed in	TIO_000094	Sample	Project
+TIO_000096	3D structure has compound	has compound	TIO_000097	Structure	Compound
+TIO_000097	compound is component of 3D structure	is component of	TIO_000096	Compound	Structure

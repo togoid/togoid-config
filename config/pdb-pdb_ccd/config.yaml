@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000096
+  reverse: TIO_000097
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/pdb/sparql
