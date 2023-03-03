@@ -1,6 +1,6 @@
 link:
-  forward: 
-  reverse: 
+  forward: TIO_000099
+  reverse: TIO_000098
   file: sample.tsv
 update:
   frequency: threeTimesAYear
