@@ -1,0 +1,40 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ggdb: <http://purl.jp/bio/12/ggdb/2015/6/owl#>
+PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+SELECT (strafter(str(?glytoucan), "http://rdf.glycoinfo.org/glycan/") as ?gtc_id) (strafter(str(?ncbi_gene_id), "http://identifiers.org/ncbigene/") as ?gene_id)
+FROM <http://rdf.glycoinfo.org/ggdb>
+FROM <http://rdf.glytoucan.org/partner/jcggdb_aist>
+WHERE {
+  SELECT DISTINCT ?glytoucan ?ncbi_gene_id
+  WHERE{
+    ?ggdb a ggdb:Glycogene .
+    ?ggdb ggdb:has_gene ?gene .
+    ?gene sio:SIO_000008 ?attribute .
+    ?attribute a <http://edamontology.org/data_2295> ;
+               rdfs:seeAlso ?ncbi_gene_id .
+    ?ggdb ggdb:has_acceptor_substrates ?acceptor_substrates_ref .
+    ?acceptor_substrates_ref ggdb:has_reaction ?reaction .
+    ?reaction a ?type .
+    ?reaction ggdb:has_donor ?donor .
+    ?donor rdfs:label ?donor_id .  
+  # acceptor
+    {
+       ?reaction ggdb:has_acceptor ?acceptor .
+       ?acceptor dcterms:identifier ?acceptor_id .
+       ?resource_a dcterms:identifier ?acceptor_id .
+       ?resource_a a glycan:Resource_entry .
+       ?glytoucan glycan:has_resource_entry ?resource_a .
+      }
+   UNION
+  # product
+    {
+       ?reaction ggdb:has_product ?product .
+       ?product dcterms:identifier ?product_id .
+       ?resource_p dcterms:identifier ?product_id .
+       ?resource_p a glycan:Resource_entry .
+       ?glytoucan glycan:has_resource_entry ?resource_p .
+    }
+  }
+}
