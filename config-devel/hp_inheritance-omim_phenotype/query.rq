@@ -1,0 +1,15 @@
+## endpoint https://integbio.jp/rdf/sparql
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+ 
+SELECT DISTINCT ?hp_id ?omim_id
+FROM <http://rdf.integbio.jp/dataset/monarch>
+WHERE { 
+  ?omim
+   biolink:has_mode_of_inheritance ?hp.
+   FILTER (strstarts(str(?omim),'http://purl.obolibrary.org/obo/OMIM_'))
+   BIND (strafter(str(?omim), 'http://purl.obolibrary.org/obo/OMIM_') AS ?omim_id)
+   BIND (strafter(str(?hp), 'http://purl.obolibrary.org/obo/HP_') AS ?hp_id)
+ }

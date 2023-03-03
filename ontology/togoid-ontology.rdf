@@ -1362,6 +1362,22 @@
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000096"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000098">
+    <display_label>codes protein to process glycan</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+    <rdfs:label>gene codes protein to process glycan</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000099"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000099">
+    <display_label>is processed by protein coded by gene</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+    <rdfs:label>glycan is processed by protein coded by gene</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000098"/>
+  </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
     <rdfs:label>TAIR</rdfs:label>

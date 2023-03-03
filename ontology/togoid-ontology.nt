@@ -1121,3 +1121,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000096> .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#label> "compound is component of 3D structure" .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://togoid.dbcls.jp/ontology#display_label> "is component of" .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000099> .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#label> "gene codes protein to process glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://togoid.dbcls.jp/ontology#display_label> "codes protein to process glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000098> .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is processed by protein coded by gene" .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://togoid.dbcls.jp/ontology#display_label> "is processed by protein coded by gene" .

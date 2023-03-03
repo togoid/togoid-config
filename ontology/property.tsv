@@ -95,3 +95,5 @@ TIO_000094	project analyzes sample	analyzes	TIO_000095	Project	Sample
 TIO_000095	sample is analyzed in project	is analyzed in	TIO_000094	Sample	Project
 TIO_000096	3D structure has compound	has compound	TIO_000097	Structure	Compound
 TIO_000097	compound is component of 3D structure	is component of	TIO_000096	Compound	Structure
+TIO_000098	gene codes protein to process glycan	codes protein to process glycan	TIO_000099	Gene	Glycan
+TIO_000099	glycan is processed by protein coded by gene	is processed by protein coded by gene	TIO_000098	Glycan	Gene
