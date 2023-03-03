@@ -1469,3 +1469,19 @@
     rdfs:label "compound is component of 3D structure" ;
     :display_label "is component of" .
 
+:TIO_000098
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Gene ;
+    rdfs:range :Glycan ;
+    owl:inverseOf :TIO_000099 ;
+    rdfs:label "gene codes protein to process glycan" ;
+    :display_label "codes protein to process glycan" .
+
+:TIO_000099
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Gene ;
+    owl:inverseOf :TIO_000098 ;
+    rdfs:label "glycan is processed by protein coded by gene" ;
+    :display_label "is processed by protein coded by gene" .
+
