@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000068
+  reverse: TIO_000069
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F '\t' '{print $2 "\t" $1}' $TOGOID_ROOT/input/reactome/UniProt2Reactome_All_Levels.txt
