@@ -166,7 +166,8 @@ sub get {
     if ($FORCE_SPLIT{$tmp_id}) {
       $force_split = 1;
     } else {
-      $json = &get_req("?query=".uri_escape($query), $tmp_id);
+      $json = &get_req("?query=".uri_escape($query), $tmp_id, 1);
+      $force_split = 1 if ($json == 1);
       return 0 if (!$json) ;
     }
 
@@ -174,6 +175,7 @@ sub get {
     if ($force_split || (($#{$json->{results}->{bindings}} + 1) > 0 && ($#{$json->{results}->{bindings}} + 1) % 10000 == 0)) {
 	my @page = ();
 	if ($QUERY_SPLIT) { # if split-query (using 0-9 number) in the update_params.pl (ref. uniprot-ec)
+	  &log("split by num: ".$tmp_id."\n");
 	    for (my $i = 0; $i < 10; $i++) {
 		my $query_sp = $QUERY_SPLIT;
 		$query_sp =~ s/__NUMBER__/${i}/;
@@ -205,7 +207,7 @@ sub get {
 }
 
 sub get_req {
-    my ($params, $e) = @_;
+    my ($params, $e, $pre_query) = @_;
     
     my $ua = LWP::UserAgent->new;
 
@@ -230,11 +232,12 @@ sub get_req {
 	} or do {
 	    sleep($SLEEP_TIME);
 	    $TRIAL_COUNT++;
+	    $err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
+	    return 1 if ($pre_query && $QUERY_SPLIT);
 	    if ($TRIAL_COUNT == $TRIAL_MAX - 1) {
-		$err .= "Endpoint ".$EP_MIRROR." : ".$res -> status_line."; " if ($EP_MIRROR);
 		&log($e."\tFetch error: ".$err."\n");
 		print STDERR $e, "\tFetch error: ", $err, "\n";
-	        exit 0;
+	        exit 1;
 	    }
 	};
     }
