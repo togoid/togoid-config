@@ -586,6 +586,75 @@ namespace :prepare do
         download_file(INPUT_REACTOME_DIR, input_url)
         updated = true
       end
+
+      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/Ensembl2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/miRBase2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/miRBase2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/NCBI2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/NCBI2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+      input_file = "#{INPUT_REACTOME_DIR}/GtoP2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/GtoP2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/UniProt2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/miRBase2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/NCBI2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+      
+      input_file = "#{INPUT_REACTOME_DIR}/GtoP2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end

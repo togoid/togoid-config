@@ -322,6 +322,14 @@ interpro:
   prefix: 'http://identifiers.org/interpro/'
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
+iuphar_ligand:
+  label: IUPHAR ligand
+  catalog: FIXME
+  category: Compound
+  regex: '^(?<id>\d+)$'
+  prefix: 'http://identifiers.org/iuphar.ligand/'
+  examples:
+    - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 kegg_compound:
   label: KEGG Compound
   catalog: nbdc00814
