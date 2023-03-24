@@ -275,6 +275,26 @@ hp:
   examples:
     - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
     - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
+hp_phenotype:
+  label: HP Phenotype
+  catalog: nbdc02559
+  category: Disease
+  regex: '^HP[:_](?<id>\d{7})$'
+  prefix: 'http://purl.obolibrary.org/obo/HP_'
+  format: ["HP:%s","HP_%s"]
+  examples:
+    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
+    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
+hp_inheritance:
+  label: HP Inheritance
+  catalog: nbdc02559
+  category: Annotation
+  regex: '^HP[:_](?<id>\d{7})$'
+  prefix: 'http://purl.obolibrary.org/obo/HP_'
+  format: ["HP:%s","HP_%s"]
+  examples:
+    - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
+    - ["HP_0032382","HP_0001475","HP_0001417","HP_0010984","HP_0003745","HP_0001442","HP_0000007","HP_0025352","HP_0001426","HP_0001470"]
 human_protein_atlas:  # FIXME: too long?
   label: Human Protein Atlas
   catalog: nbdc00905
