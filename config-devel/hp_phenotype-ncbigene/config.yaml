@@ -1,6 +1,6 @@
 link:
-  forward: 
-  reverse: 
+  forward: TIO_000102
+  reverse: TIO_000103
   file: sample.tsv
 update:
   frequency: Irregular
