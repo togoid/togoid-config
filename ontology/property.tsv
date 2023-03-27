@@ -97,3 +97,9 @@ TIO_000096	3D structure has compound	has compound	TIO_000097	Structure	Compound
 TIO_000097	compound is component of 3D structure	is component of	TIO_000096	Compound	Structure
 TIO_000098	gene codes protein to process glycan	codes protein to process glycan	TIO_000099	Gene	Glycan
 TIO_000099	glycan is processed by protein coded by gene	is processed by protein coded by gene	TIO_000098	Glycan	Gene
+TIO_000100	disease has symptom	has symptom	TIO_000101	Phenotype	Phenotype
+TIO_000101	symptom is observed in disease	is observed in disease	TIO_000100	Phenotype	Phenotype
+TIO_000102	gene is related with symptom	is related with symptom	TIO_000103	Gene	Symptom
+TIO_000103	symptom is related with gene	is related with gene	TIO_000102	Symptom	Gene
+TIO_000104	phenotype has mode of inheritance	has mode of inferitance	TIO_000105	Phenotype	Classification
+TIO_000105	is mode of inheritance of phenotype	is mode of inheritance of	TIO_000104	Classification	Phenotype

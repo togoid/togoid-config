@@ -84,3 +84,5 @@ assembly_refseq	Assembly RefSeq	Genome
 insdc_master	INSDC master	Project
 gea	GEA	Experiment
 pdb_ccd	PDB CCD	Compound
+hp_phenotype	HP Phenotype	Phenotype
+hp_inheritance	HP Inheritance	Classification
