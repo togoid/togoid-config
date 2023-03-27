@@ -288,7 +288,7 @@ hp_phenotype:
 hp_inheritance:
   label: HP Inheritance
   catalog: nbdc02559
-  category: Annotation
+  category: Classification
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
   format: ["HP:%s","HP_%s"]
