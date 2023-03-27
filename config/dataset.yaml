@@ -130,7 +130,7 @@ dgidb:
 doid:
   label: Disease ontology
   catalog: nbdc00261
-  category: Disease
+  category: Phenotype
   regex: '^DO(?:ID)?[:_](?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
   format: ["DO:%s","DOID:%s","DOID_%s"]
@@ -268,7 +268,7 @@ cog:
 hp:
   label: Human Phenotype Ontology
   catalog: nbdc02559
-  category: Disease
+  category: Phenotype
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
   format: ["HP:%s","HP_%s"]
@@ -278,7 +278,7 @@ hp:
 hp_phenotype:
   label: HP Phenotype
   catalog: nbdc02559
-  category: Disease
+  category: Phenotype
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
   format: ["HP:%s","HP_%s"]
@@ -358,7 +358,7 @@ kegg_compound:
   prefix: 'http://identifiers.org/kegg.compound/'
 kegg_disease:
   catalog: nbdc00813
-  category: Disease
+  category: Phenotype
   label: KEGG Disease
   regex: '^KEGG:H(?<id>\d+)$'
   prefix: 'http://identifiers.org/kegg.disease/'
@@ -422,7 +422,7 @@ mbgd_organism:
 meddra:
   label: MedDRA
   catalog: nbdc02564
-  category: Disease
+  category: Phenotype
   regex: '^(?:(?:MedDRA|meddra):)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/meddra/'
   format: ["%s","MedDRA:%s","meddra:%s"]
@@ -433,7 +433,7 @@ meddra:
 medgen:
   label: MedGen
   catalog: nbdc02560
-  category: Disease
+  category: Phenotype
   regex: '^(?<id>CN?\d{4,7})$'
   prefix: 'http://identifiers.org/medgen/'
   examples:
@@ -441,7 +441,7 @@ medgen:
 mesh:
   label: MeSH
   catalog: nbdc00132
-  category: Disease
+  category: Phenotype
   regex: '^(?<id>[CD]\d{6,9})$'
   prefix: 'http://id.nlm.nih.gov/mesh/'
   examples:
@@ -467,7 +467,7 @@ mirbase:
 mondo:
   label: MONDO
   catalog: nbdc02563
-  category: Disease
+  category: Phenotype
   regex: '^MONDO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
   format: ["MONDO:%s","MONDO_%s"]
@@ -477,7 +477,7 @@ mondo:
 nando:
   label: NANDO
   catalog: nbdc02557
-  category: Disease
+  category: Phenotype
   regex: '^NANDO[:_](?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/NANDO_'
   format: ["NANDO:%s","NANDO_%s"]
@@ -501,7 +501,7 @@ ncbiprotein:
 ncit_disease:
   label: NCIT disease
   catalog: FIXME
-  category: Disease
+  category: Phenotype
   regex: '^NCIT?[:_](?<id>C\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/NCIT_'
   format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
@@ -552,7 +552,7 @@ omim_gene:
 omim_phenotype:
   label: OMIM phenotype
   catalog: nbdc00154
-  category: Disease
+  category: Phenotype
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
   format: ["%s","OMIM:%s","MIM:%s"]
@@ -563,7 +563,7 @@ omim_phenotype:
 orphanet:
   label: Orphanet
   catalog: nbdc01422
-  category: Disease
+  category: Phenotype
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
   format: ["ORPHA:%s","ORDO:%s","Orphanet:%s","Orphanet_%s"]
