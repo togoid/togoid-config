@@ -7,7 +7,7 @@ chembl_compound	ChEMBL compound	Compound
 chembl_target	ChEMBL target	Protein
 clinvar	ClinVar variant	Variant
 dbsnp	dbSNP	Variant
-doid	Disease ontology	Disease
+doid	Disease ontology	Phenotype
 drugbank	DrugBank	Drug
 ec	Enzyme nomenclature	Function
 ensembl_gene	Ensembl gene	Gene
@@ -19,7 +19,7 @@ hgnc	HGNC	Gene
 hgnc_symbol	HGNC gene symbol	Gene, Synonym
 hmdb	HMDB	Compound
 homologene	HomoloGene	Ortholog
-hp	Human Phenotype Ontology	Disease
+hp	Human Phenotype Ontology	Phenotype
 inchi_key	InChIKey	Compound
 insdc	GenBank/ENA/DDBJ	Gene
 intact	IntAct	Interaction
@@ -27,19 +27,19 @@ interpro	InterPro	Domain
 lrg	LRG	Gene
 mbgd_gene	MBGD gene	Gene
 mbgd_organism	MBGD organism	Organism
-meddra	MedDRA	Disease
-medgen	MedGen	Disease
-mesh	MeSH	Disease
+meddra	MedDRA	Phenotype
+medgen	MedGen	Phenotype
+mesh	MeSH	Phenotype
 mgi	MGI	Gene
 mirbase	miRBase	Transcript
-mondo	MONDO	Disease
-nando	NANDO	Disease
+mondo	MONDO	Phenotype
+nando	NANDO	Phenotype
 ncbigene	NCBI gene	Gene
 oma_group	OMA group	Ortholog
 oma_protein	OMA protein	Protein
 omim_gene	OMIM gene	Gene
-omim_phenotype	OMIM phenotype	Disease
-orphanet	Orphanet	Disease
+omim_phenotype	OMIM phenotype	Phenotype
+orphanet	Orphanet	Phenotype
 pdb	PDB	Structure
 pfam	Pfam	Domain
 pubchem_compound	PubChem compound	Compound
@@ -73,7 +73,7 @@ xenbase_gene	Xenbase gene	Gene
 tair	TAIR	Gene
 sgd	SGD	Gene
 cellosaurus	Cellosaurus	CellLine
-ncit_disease	NCIt disease	Disease
+ncit_disease	NCIt disease	Phenotype
 cog	COG	Ortholog
 pubchem_pathway	PubChem pathway	Pathway
 ncit_tissue	NCIt tissue	Anatomy
