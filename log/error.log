@@ -1,2 +1,95 @@
+# Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4431 = 0.0 < 0.5
+# Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
+# Error: output/tsv/medgen-hp.tsv new file size per old 159 / 279854 = 0.0005681533942698693 < 0.5
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-hp.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mesh.tsv new file size per old 159 / 283186 = 0.0005614684341740057 < 0.5
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mondo.tsv new file size per old 159 / 349792 = 0.0004545558503339127 < 0.5
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-ncbigene.tsv new file size per old 159 / 102622 = 0.0015493753775993452 < 0.5
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-omim_phenotype.tsv new file size per old 159 / 172624 = 0.000921077022893688 < 0.5
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-orphanet.tsv new file size per old 159 / 131743 = 0.0012068952430110138 < 0.5
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/medgen-orphanet.tsv seems to contain HTML </body></html>
+# Error: output/tsv/nando-mondo.tsv new file size per old 159 / 38224 = 0.004159690246965257 < 0.5
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <p>The document has moved <a href=https://biosciencedbc.jp/503>here</a>.</p>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </body></html>
 # Error: output/tsv/ncbigene-wormbase_gene.tsv new file size per old 441039 / 1186906 = 0.3715871349542424 < 0.5
 # Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}
