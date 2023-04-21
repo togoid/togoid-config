@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/togosite/sparql
+# Endpoint: https://togodx.dbcls.jp/human/sparql
 # Graph: http://rdf.integbio.jp/dataset/togosite/chebi
 
 PREFIX obo: <http://purl.obolibrary.org/obo/>

@@ -40,6 +40,14 @@ bioproject:
   prefix: 'http://identifiers.org/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
+bioproject_umbrella:
+  label: BioProject umbrella
+  catalog: nbdc00476
+  category: Project
+  regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
+  prefix: 'http://identifiers.org/bioproject/'
+  examples:
+    - ["PRJDB10770","PRJDB14691","PRJEB55721","PRJEB56110","PRJNA388429","PRJNA510115","PRJNA834739","PRJNA561326","PRJNA672702","PRJNA248220"]
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
