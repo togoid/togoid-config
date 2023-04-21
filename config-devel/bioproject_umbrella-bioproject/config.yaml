@@ -1,7 +1,7 @@
 link:
   file: sample.tsv
-  forward: TIO_000041
-  reverse: TIO_000051
+  forward: TIO_000106
+  reverse: TIO_000107
 update:
   frequency: Monthly
   method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/bioproject_umbrella-bioproject/bioproject_umbrella2bioproject.tsv
