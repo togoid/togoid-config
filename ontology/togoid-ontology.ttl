@@ -715,6 +715,12 @@
     rdfs:label "HP Inheritance" ;
     rdfs:subClassOf :Classification, :Dataset .
 
+:BioprojectUmbrella
+    a owl:Class ;
+    dcterms:identifier "bioproject_umbrella" ;
+    rdfs:label "BioProject umbrella" ;
+    rdfs:subClassOf :Project, :Dataset .
+
 :TIO_000001
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
@@ -1549,4 +1555,20 @@
     owl:inverseOf :TIO_000104 ;
     rdfs:label "is mode of inheritance of phenotype" ;
     :display_label "is mode of inheritance of" .
+
+:TIO_000106
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Category ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000107 ;
+    rdfs:label "has member" ;
+    :display_label "has member" .
+
+:TIO_000107
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Category ;
+    rdfs:range :Category ;
+    owl:inverseOf :TIO_000106 ;
+    rdfs:label "is member of" ;
+    :display_label "is member of" .
 

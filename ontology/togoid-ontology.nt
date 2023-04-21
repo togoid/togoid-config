@@ -555,6 +555,11 @@
 <http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#label> "HP Inheritance" .
 <http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Classification> .
 <http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://purl.org/dc/terms/identifier> "bioproject_umbrella" .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#label> "BioProject umbrella" .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
@@ -1182,3 +1187,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000104> .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2000/01/rdf-schema#label> "is mode of inheritance of phenotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://togoid.dbcls.jp/ontology#display_label> "is mode of inheritance of" .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000107> .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://togoid.dbcls.jp/ontology#display_label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000106> .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#label> "is member of" .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://togoid.dbcls.jp/ontology#display_label> "is member of" .

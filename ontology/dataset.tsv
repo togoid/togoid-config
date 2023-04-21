@@ -86,3 +86,4 @@ gea	GEA	Experiment
 pdb_ccd	PDB CCD	Compound
 hp_phenotype	HP Phenotype	Phenotype
 hp_inheritance	HP Inheritance	Classification
+bioproject_umbrella	BioProject umbrella	Project
