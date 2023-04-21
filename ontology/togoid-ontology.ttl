@@ -32,9 +32,9 @@
     rdfs:label "Compound" ;
     rdfs:subClassOf :Category , :Molecule .
 
-:Disease
+:Phenotype
     a owl:Class ;
-    rdfs:label "Disease" ;
+    rdfs:label "Phenotype" ;
     rdfs:subClassOf :Category .
 
 :Domain
@@ -182,6 +182,11 @@
     rdfs:label "Proteome" ;
     rdfs:subClassOf :Category .
 
+:Classification
+    a owl:Class ;
+    rdfs:label "Classification" ;
+    rdfs:subClassOf :Category .
+
 :AffyProbeset
     a owl:Class ;
     dcterms:identifier "affy_probeset" ;
@@ -240,7 +245,7 @@
     a owl:Class ;
     dcterms:identifier "doid" ;
     rdfs:label "Disease ontology" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Drugbank
     a owl:Class ;
@@ -312,7 +317,7 @@
     a owl:Class ;
     dcterms:identifier "hp" ;
     rdfs:label "Human Phenotype Ontology" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :InchiKey
     a owl:Class ;
@@ -360,19 +365,19 @@
     a owl:Class ;
     dcterms:identifier "meddra" ;
     rdfs:label "MedDRA" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Medgen
     a owl:Class ;
     dcterms:identifier "medgen" ;
     rdfs:label "MedGen" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Mesh
     a owl:Class ;
     dcterms:identifier "mesh" ;
     rdfs:label "MeSH" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Mgi
     a owl:Class ;
@@ -390,13 +395,13 @@
     a owl:Class ;
     dcterms:identifier "mondo" ;
     rdfs:label "MONDO" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Nando
     a owl:Class ;
     dcterms:identifier "nando" ;
     rdfs:label "NANDO" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Ncbigene
     a owl:Class ;
@@ -426,13 +431,13 @@
     a owl:Class ;
     dcterms:identifier "omim_phenotype" ;
     rdfs:label "OMIM phenotype" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Orphanet
     a owl:Class ;
     dcterms:identifier "orphanet" ;
     rdfs:label "Orphanet" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Pdb
     a owl:Class ;
@@ -636,7 +641,7 @@
     a owl:Class ;
     dcterms:identifier "ncit_disease" ;
     rdfs:label "NCIt disease" ;
-    rdfs:subClassOf :Disease, :Dataset .
+    rdfs:subClassOf :Phenotype, :Dataset .
 
 :Cog
     a owl:Class ;
@@ -697,6 +702,18 @@
     dcterms:identifier "pdb_ccd" ;
     rdfs:label "PDB CCD" ;
     rdfs:subClassOf :Compound, :Dataset .
+
+:HpPhenotype
+    a owl:Class ;
+    dcterms:identifier "hp_phenotype" ;
+    rdfs:label "HP Phenotype" ;
+    rdfs:subClassOf :Phenotype, :Dataset .
+
+:HpInheritance
+    a owl:Class ;
+    dcterms:identifier "hp_inheritance" ;
+    rdfs:label "HP Inheritance" ;
+    rdfs:subClassOf :Classification, :Dataset .
 
 :TIO_000001
     rdfs:subPropertyOf :relation ;
@@ -770,17 +787,17 @@
 :TIO_000010
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
-    rdfs:range :Disease ;
+    rdfs:range :Phenotype ;
     owl:inverseOf :TIO_000011 ;
-    rdfs:label "has related disease" ;
-    :display_label "has related disease" .
+    rdfs:label "has related phenotype" ;
+    :display_label "has related phenotype" .
 
 :TIO_000011
     rdfs:subPropertyOf :relation ;
-    rdfs:domain :Disease ;
+    rdfs:domain :Phenotype ;
     rdfs:range :Category ;
     owl:inverseOf :TIO_000010 ;
-    rdfs:label "disease is related with" ;
+    rdfs:label "phenotype is related with" ;
     :display_label "is related with" .
 
 :TIO_000012
@@ -1216,17 +1233,17 @@
 :TIO_000066
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Compound ;
-    rdfs:range :Disease ;
+    rdfs:range :Phenotype ;
     owl:inverseOf :TIO_000067 ;
-    rdfs:label "compound targets to disease" ;
+    rdfs:label "compound targets to phenotype" ;
     :display_label "targets to" .
 
 :TIO_000067
     rdfs:subPropertyOf :relation ;
-    rdfs:domain :Disease ;
+    rdfs:domain :Phenotype ;
     rdfs:range :Compound ;
     owl:inverseOf :TIO_000066 ;
-    rdfs:label "disease is targeted by compound" ;
+    rdfs:label "phenotype is targeted by compound" ;
     :display_label "is targeted by" .
 
 :TIO_000068
@@ -1344,18 +1361,18 @@
 :TIO_000082
     rdfs:subPropertyOf :relation ;
     rdfs:domain :CellLine ;
-    rdfs:range :Disease ;
+    rdfs:range :Phenotype ;
     owl:inverseOf :TIO_000083 ;
-    rdfs:label "cell line is model of disease" ;
+    rdfs:label "cell line is model of phenotype" ;
     :display_label "is model of" .
 
 :TIO_000083
     rdfs:subPropertyOf :relation ;
-    rdfs:domain :Disease ;
+    rdfs:domain :Phenotype ;
     rdfs:range :CellLine ;
     owl:inverseOf :TIO_000082 ;
-    rdfs:label "disease is seen in cell line" ;
-    :display_label "is seen in" .
+    rdfs:label "phenotype is observed in cell line" ;
+    :display_label "is observed in" .
 
 :TIO_000084
     rdfs:subPropertyOf :relation ;
@@ -1375,19 +1392,19 @@
 
 :TIO_000086
     rdfs:subPropertyOf :relation ;
-    rdfs:domain :Disease ;
+    rdfs:domain :Phenotype ;
     rdfs:range :Anatomy ;
     owl:inverseOf :TIO_000087 ;
-    rdfs:label "disease occurs in anatomic site" ;
-    :display_label "occurs in anatomic site" .
+    rdfs:label "phenotype is observed in anatomic site" ;
+    :display_label "is observed in anatomic site" .
 
 :TIO_000087
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Anatomy ;
-    rdfs:range :Disease ;
+    rdfs:range :Phenotype ;
     owl:inverseOf :TIO_000086 ;
-    rdfs:label "anatomic site can have disease" ;
-    :display_label "can have disease" .
+    rdfs:label "anatomic site can have phenotype" ;
+    :display_label "can have phenotype" .
 
 :TIO_000088
     rdfs:subPropertyOf :relation ;
@@ -1484,4 +1501,52 @@
     owl:inverseOf :TIO_000098 ;
     rdfs:label "glycan is processed by protein coded by gene" ;
     :display_label "is processed by protein coded by gene" .
+
+:TIO_000100
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Phenotype ;
+    rdfs:range :Phenotype ;
+    owl:inverseOf :TIO_000101 ;
+    rdfs:label "disease has symptom" ;
+    :display_label "has symptom" .
+
+:TIO_000101
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Phenotype ;
+    rdfs:range :Phenotype ;
+    owl:inverseOf :TIO_000100 ;
+    rdfs:label "symptom is observed in disease" ;
+    :display_label "is observed in disease" .
+
+:TIO_000102
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Gene ;
+    rdfs:range :Symptom ;
+    owl:inverseOf :TIO_000103 ;
+    rdfs:label "gene is related with symptom" ;
+    :display_label "is related with symptom" .
+
+:TIO_000103
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Symptom ;
+    rdfs:range :Gene ;
+    owl:inverseOf :TIO_000102 ;
+    rdfs:label "symptom is related with gene" ;
+    :display_label "is related with gene" .
+
+:TIO_000104
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Phenotype ;
+    rdfs:range :Classification ;
+    owl:inverseOf :TIO_000105 ;
+    rdfs:label "phenotype has mode of inheritance" ;
+    :display_label "has mode of inferitance" .
+
+:TIO_000105
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Classification ;
+    rdfs:range :Phenotype ;
+    owl:inverseOf :TIO_000104 ;
+    rdfs:label "is mode of inheritance of phenotype" ;
+    :display_label "is mode of inheritance of" .
 
