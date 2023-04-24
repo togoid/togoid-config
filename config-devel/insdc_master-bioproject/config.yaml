@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000001
+  reverse: TIO_000001
+update:
+  frequency: Monthly
+  method: curl https://ddbj.nig.ac.jp/public/rdf/dblink/insdc_master-bioproject/insdc_master2bioproject.tsv
