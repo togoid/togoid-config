@@ -1199,3 +1199,27 @@
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000106> .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#label> "is member of" .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://togoid.dbcls.jp/ontology#display_label> "is member of" .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000109> .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#label> "sequence is determined in project" .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://togoid.dbcls.jp/ontology#display_label> "is determined in project" .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000108> .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#label> "project determines sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://togoid.dbcls.jp/ontology#display_label> "determines sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000111> .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#label> "sequence is determined using sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://togoid.dbcls.jp/ontology#display_label> "is determined using sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000110> .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#label> "sample is used to determine sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://togoid.dbcls.jp/ontology#display_label> "is used to determine sequence" .

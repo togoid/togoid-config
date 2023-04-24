@@ -1572,3 +1572,35 @@
     rdfs:label "is member of" ;
     :display_label "is member of" .
 
+:TIO_000108
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Sequence ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000109 ;
+    rdfs:label "sequence is determined in project" ;
+    :display_label "is determined in project" .
+
+:TIO_000109
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Project ;
+    rdfs:range :Sequence ;
+    owl:inverseOf :TIO_000108 ;
+    rdfs:label "project determines sequence" ;
+    :display_label "determines sequence" .
+
+:TIO_000110
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Sequence ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000111 ;
+    rdfs:label "sequence is determined using sample" ;
+    :display_label "is determined using sample" .
+
+:TIO_000111
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Sample ;
+    rdfs:range :Sequence ;
+    owl:inverseOf :TIO_000110 ;
+    rdfs:label "sample is used to determine sequence" ;
+    :display_label "is used to determine sequence" .
+
