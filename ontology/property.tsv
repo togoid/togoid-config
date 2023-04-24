@@ -105,3 +105,7 @@ TIO_000104	phenotype has mode of inheritance	has mode of inferitance	TIO_000105	
 TIO_000105	is mode of inheritance of phenotype	is mode of inheritance of	TIO_000104	Classification	Phenotype
 TIO_000106	has member	has member	TIO_000107	Category	Category
 TIO_000107	is member of	is member of	TIO_000106	Category	Category
+TIO_000108	sequence is determined in project	is determined in project	TIO_000109	Sequence	Project
+TIO_000109	project determines sequence	determines sequence	TIO_000108	Project	Sequence
+TIO_000110	sequence is determined using sample	is determined using sample	TIO_000111	Sequence	Sample
+TIO_000111	sample is used to determine sequence	is used to determine sequence	TIO_000110	Sample	Sequence
