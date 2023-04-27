@@ -44,6 +44,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#BioprojectUmbrella">
+    <dcterms:identifier>bioproject_umbrella</dcterms:identifier>
+    <rdfs:label>BioProject umbrella</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Biosample">
     <dcterms:identifier>biosample</dcterms:identifier>
     <rdfs:label>BioSample</rdfs:label>
@@ -87,6 +93,10 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Classification">
+    <rdfs:label>Classification</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Clinvar">
     <dcterms:identifier>clinvar</dcterms:identifier>
     <rdfs:label>ClinVar variant</rdfs:label>
@@ -113,15 +123,11 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Variant"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Disease">
-    <rdfs:label>Disease</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
-  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Doid">
     <dcterms:identifier>doid</dcterms:identifier>
     <rdfs:label>Disease ontology</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Domain">
     <rdfs:label>Domain</rdfs:label>
@@ -236,7 +242,19 @@
     <dcterms:identifier>hp</dcterms:identifier>
     <rdfs:label>Human Phenotype Ontology</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#HpInheritance">
+    <dcterms:identifier>hp_inheritance</dcterms:identifier>
+    <rdfs:label>HP Inheritance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Classification"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#HpPhenotype">
+    <dcterms:identifier>hp_phenotype</dcterms:identifier>
+    <rdfs:label>HP Phenotype</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#InchiKey">
     <dcterms:identifier>inchi_key</dcterms:identifier>
@@ -303,19 +321,19 @@
     <dcterms:identifier>meddra</dcterms:identifier>
     <rdfs:label>MedDRA</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Medgen">
     <dcterms:identifier>medgen</dcterms:identifier>
     <rdfs:label>MedGen</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Mesh">
     <dcterms:identifier>mesh</dcterms:identifier>
     <rdfs:label>MeSH</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Metabobank">
     <dcterms:identifier>metabobank</dcterms:identifier>
@@ -343,13 +361,13 @@
     <dcterms:identifier>mondo</dcterms:identifier>
     <rdfs:label>MONDO</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Nando">
     <dcterms:identifier>nando</dcterms:identifier>
     <rdfs:label>NANDO</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Ncbigene">
     <dcterms:identifier>ncbigene</dcterms:identifier>
@@ -361,7 +379,7 @@
     <dcterms:identifier>ncit_disease</dcterms:identifier>
     <rdfs:label>NCIt disease</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NcitTissue">
     <dcterms:identifier>ncit_tissue</dcterms:identifier>
@@ -391,7 +409,7 @@
     <dcterms:identifier>omim_phenotype</dcterms:identifier>
     <rdfs:label>OMIM phenotype</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Organism">
     <rdfs:label>Organism</rdfs:label>
@@ -401,7 +419,7 @@
     <dcterms:identifier>orphanet</dcterms:identifier>
     <rdfs:label>Orphanet</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Ortholog">
     <rdfs:label>Ortholog</rdfs:label>
@@ -428,6 +446,10 @@
     <rdfs:label>Pfam</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Phenotype">
+    <rdfs:label>Phenotype</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Probe">
     <rdfs:label>Probe</rdfs:label>
@@ -659,17 +681,17 @@
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000006"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000010">
-    <display_label>has related disease</display_label>
+    <display_label>has related phenotype</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
-    <rdfs:label>has related disease</rdfs:label>
-    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:label>has related phenotype</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000011"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000011">
     <display_label>is related with</display_label>
-    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
-    <rdfs:label>disease is related with</rdfs:label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>phenotype is related with</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000010"/>
@@ -1109,15 +1131,15 @@
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000066">
     <display_label>targets to</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
-    <rdfs:label>compound targets to disease</rdfs:label>
-    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:label>compound targets to phenotype</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000067"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000067">
     <display_label>is targeted by</display_label>
-    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
-    <rdfs:label>disease is targeted by compound</rdfs:label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>phenotype is targeted by compound</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000066"/>
@@ -1237,15 +1259,15 @@
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000082">
     <display_label>is model of</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
-    <rdfs:label>cell line is model of disease</rdfs:label>
-    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:label>cell line is model of phenotype</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000083"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000083">
-    <display_label>is seen in</display_label>
-    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
-    <rdfs:label>disease is seen in cell line</rdfs:label>
+    <display_label>is observed in</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>phenotype is observed in cell line</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000082"/>
@@ -1267,18 +1289,18 @@
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000084"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000086">
-    <display_label>occurs in anatomic site</display_label>
-    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
-    <rdfs:label>disease occurs in anatomic site</rdfs:label>
+    <display_label>is observed in anatomic site</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>phenotype is observed in anatomic site</rdfs:label>
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000087"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000087">
-    <display_label>can have disease</display_label>
+    <display_label>can have phenotype</display_label>
     <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
-    <rdfs:label>anatomic site can have disease</rdfs:label>
-    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Disease"/>
+    <rdfs:label>anatomic site can have phenotype</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000086"/>
   </rdf:Description>
@@ -1377,6 +1399,102 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000098"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000100">
+    <display_label>has symptom</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>disease has symptom</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000101"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000101">
+    <display_label>is observed in disease</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>symptom is observed in disease</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000100"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000102">
+    <display_label>is related with symptom</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+    <rdfs:label>gene is related with symptom</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Symptom"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000103"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000103">
+    <display_label>is related with gene</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Symptom"/>
+    <rdfs:label>symptom is related with gene</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000102"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000104">
+    <display_label>has mode of inferitance</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>phenotype has mode of inheritance</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Classification"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000105">
+    <display_label>is mode of inheritance of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Classification"/>
+    <rdfs:label>is mode of inheritance of phenotype</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000104"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000106">
+    <display_label>has member</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+    <rdfs:label>has member</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000107"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000107">
+    <display_label>is member of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+    <rdfs:label>is member of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000106"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000108">
+    <display_label>is determined in project</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
+    <rdfs:label>sequence is determined in project</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000109"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000109">
+    <display_label>determines sequence</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
+    <rdfs:label>project determines sequence</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000108"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000110">
+    <display_label>is determined using sample</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
+    <rdfs:label>sequence is determined using sample</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000111"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000111">
+    <display_label>is used to determine sequence</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
+    <rdfs:label>sample is used to determine sequence</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000110"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
