@@ -7,8 +7,8 @@ TIO_000006	has GO cellular component	has GO cellular component	TIO_000009	Catego
 TIO_000007	is GO annotation of	is GO annotation of	TIO_000004	Go	Category
 TIO_000008	is GO biological process of	is GO biological process of	TIO_000005	Go	Category
 TIO_000009	is GO cellular component of	is GO cellular component of	TIO_000006	Go	Category
-TIO_000010	has related disease	has related disease	TIO_000011	Category	Disease
-TIO_000011	disease is related with	is related with	TIO_000010	Disease	Category
+TIO_000010	has related phenotype	has related phenotype	TIO_000011	Category	Phenotype
+TIO_000011	phenotype is related with	is related with	TIO_000010	Phenotype	Category
 TIO_000012	molecule interacts with molecule	interacts with	TIO_000012	Molecule	Molecule
 TIO_000013	protein has protein domain	has protein domain	TIO_000015	Protein	Domain
 TIO_000014	structure has protein domain	has protein domain	TIO_000016	Structure	Domain
@@ -63,8 +63,8 @@ TIO_000062	variant is located in sequence	is located in	TIO_000063	Variant	Seque
 TIO_000063	sequence has variant	has variant	TIO_000062	Sequence	Variant
 TIO_000064	is gene of organism	is gene of organism	TIO_000065	Gene	Organism
 TIO_000065	organism has gene	has gene	TIO_000064	Organism	Gene
-TIO_000066	compound targets to disease	targets to	TIO_000067	Compound	Disease
-TIO_000067	disease is targeted by compound	is targeted by	TIO_000066	Disease	Compound
+TIO_000066	compound targets to phenotype	targets to	TIO_000067	Compound	Phenotype
+TIO_000067	phenotype is targeted by compound	is targeted by	TIO_000066	Phenotype	Compound
 TIO_000068	pathway has participant molecule	has participant molecule	TIO_000069	Pathway	Molecule
 TIO_000069	molecule participates in pathway	participates in pathway	TIO_000068	Molecule	Pathway
 TIO_000070	pathway has participant reaction	has participant reaction	TIO_000071	Pathway	Reaction
@@ -79,12 +79,12 @@ TIO_000078	genome is sequenced in project	is sequenced in	TIO_000079	Genome	Proj
 TIO_000079	project determines genome sequence	determines genome sequence	TIO_000078	Project	Genome
 TIO_000080	genome is sequenced with sample	is sequenced with	TIO_000081	Genome	Sample
 TIO_000081	sample is used to sequence genome	is used to sequence	TIO_000080	Sample	Genome
-TIO_000082	cell line is model of disease	is model of	TIO_000083	CellLine	Disease
-TIO_000083	disease is seen in cell line	is seen in	TIO_000082	Disease	CellLine
+TIO_000082	cell line is model of phenotype	is model of	TIO_000083	CellLine	Phenotype
+TIO_000083	phenotype is observed in cell line	is observed in	TIO_000082	Phenotype	CellLine
 TIO_000084	pathway has participant gene	has participant gene	TIO_000085	Pathway	Gene
 TIO_000085	gene participates in pathway	participates in pathway	TIO_000084	Gene	Pathway
-TIO_000086	disease occurs in anatomic site	occurs in anatomic site	TIO_000087	Disease	Anatomy
-TIO_000087	anatomic site can have disease	can have disease	TIO_000086	Anatomy	Disease
+TIO_000086	phenotype is observed in anatomic site	is observed in anatomic site	TIO_000087	Phenotype	Anatomy
+TIO_000087	anatomic site can have phenotype	can have phenotype	TIO_000086	Anatomy	Phenotype
 TIO_000088	drug classification classifies compound	classifies	TIO_000089	Drug	Compound
 TIO_000089	compound is classified as drug classification	is classified as	TIO_000088	Compound	Drug
 TIO_000090	is proteome of organism	is proteome of	TIO_000091	Proteome	Organism
@@ -97,3 +97,15 @@ TIO_000096	3D structure has compound	has compound	TIO_000097	Structure	Compound
 TIO_000097	compound is component of 3D structure	is component of	TIO_000096	Compound	Structure
 TIO_000098	gene codes protein to process glycan	codes protein to process glycan	TIO_000099	Gene	Glycan
 TIO_000099	glycan is processed by protein coded by gene	is processed by protein coded by gene	TIO_000098	Glycan	Gene
+TIO_000100	disease has symptom	has symptom	TIO_000101	Phenotype	Phenotype
+TIO_000101	symptom is observed in disease	is observed in disease	TIO_000100	Phenotype	Phenotype
+TIO_000102	gene is related with symptom	is related with symptom	TIO_000103	Gene	Symptom
+TIO_000103	symptom is related with gene	is related with gene	TIO_000102	Symptom	Gene
+TIO_000104	phenotype has mode of inheritance	has mode of inferitance	TIO_000105	Phenotype	Classification
+TIO_000105	is mode of inheritance of phenotype	is mode of inheritance of	TIO_000104	Classification	Phenotype
+TIO_000106	has member	has member	TIO_000107	Category	Category
+TIO_000107	is member of	is member of	TIO_000106	Category	Category
+TIO_000108	sequence is determined in project	is determined in project	TIO_000109	Sequence	Project
+TIO_000109	project determines sequence	determines sequence	TIO_000108	Project	Sequence
+TIO_000110	sequence is determined using sample	is determined using sample	TIO_000111	Sequence	Sample
+TIO_000111	sample is used to determine sequence	is used to determine sequence	TIO_000110	Sample	Sequence
