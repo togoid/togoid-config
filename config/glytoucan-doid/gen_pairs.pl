@@ -7,7 +7,7 @@ use open ":utf8";
 
 while(<>){
   chomp;
-  if (index($_, "<") != 0){
+  if (index($_, '"http') != 0){
     next;
   }
   my @vals = split /\t/;

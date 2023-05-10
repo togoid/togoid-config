@@ -20,7 +20,7 @@ WHERE{
     BIND(concat("OMIM:",substr(str(?omim),29)) as ?omim_str)
     BIND (xsd:int(substr(str(?gene), 33)) as ?gene_id)
   }
-  GRAPH <http://purl.obolibrary.org/obo/doid> { ?do oboInOwl:hasDbXref ?omim_str }
+  GRAPH <http://purl.obolibrary.org/obo/doid> { ?do oboInOwl:hasDbXref ?omim_str1 . BIND(STR(?omim_str1) AS ?omim_str)}
 
   GRAPH <http://rdf.glycoinfo.org/ggdb> {
     [] a ggdb:Glycogene ;
