@@ -297,9 +297,8 @@ module TogoID
     def update_input_file?(file, url)
       if File.exists?(file)
         # Both checks should be made as the local file can be newer than remote when the previous download fails
-        check_remote_file_time(file, url)
         # and the local file can be smaller or size 0 even when it exists
-        check_remote_file_size(file, url)
+        check_remote_file_time(file, url) || check_remote_file_size(file, url)
       else
         true
       end
