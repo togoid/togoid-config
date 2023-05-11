@@ -1,6 +1,40 @@
-# Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4431 = 0.0 < 0.5
-# Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
-# Error: output/tsv/togovar-clinvar.tsv new file size per old 4170541 / 13681182 = 0.30483776913427507 < 0.5
-# Error: output/tsv/uniprot-pfam.tsv new file size per old 110 / 1785229006 = 6.161674475952359e-08 < 0.5
-# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}
-# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv new file size per old 189 / 341202 = 0.0005539240684403961 < 0.5
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <p>The document has moved <a href=https://sparql.hegroup.org/sparql/>here</a>.</p>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML <p>The document has moved <a href=https://sparql.hegroup.org/sparql/>here</a>.</p>
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv seems to contain HTML </body></html>
+# Error: output/tsv/rhea-chebi.tsv new file size per old 948456 / 2425698 = 0.39100333182448926 < 0.5
+# Error: output/tsv/rhea-pubmed.tsv new file size per old 0 / 1977112 = 0.0 < 0.5
+# Error: Failed to create output/tsv/rhea-pubmed.tsv or created file was empty
+# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 189 / 38843 = 0.004865741575058569 < 0.5
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <html><head>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </head><body>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The document has moved <a href=https://sparql.hegroup.org/sparql/>here</a>.</p>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <html><head>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <title>301 Moved Permanently</title>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </head><body>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <h1>Moved Permanently</h1>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The document has moved <a href=https://sparql.hegroup.org/sparql/>here</a>.</p>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
+tax:9606, Fetch error: Endpoint https://integbio.jp/rdf/sib/sparql, 500 Internal Server Error; query try: 3, max try: 3
+Thread 1 terminated abnormally: unexpected end of string while parsing JSON string, at character offset 4811071 (before "irtuoso S1TAT Error ...") at /data/togoid/git/togoid-config/bin/sparql_thread.pl line 241 thread 1.
+# Error: output/tsv/uniprot-dbsnp.tsv new file size per old 0 / 1184739 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-dbsnp.tsv or created file was empty
+# Error: output/tsv/uniprot-ec.tsv new file size per old 0 / 699955661 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-ec.tsv or created file was empty
+tax:9606, Fetch error: Endpoint https://integbio.jp/rdf/sib/sparql, 500 Internal Server Error; query try: 3, max try: 3
+Thread 1 terminated abnormally: unexpected end of string while parsing JSON string, at character offset 6847191 (before "irtuoso S1TAT Error ...") at /data/togoid/git/togoid-config/bin/sparql_thread.pl line 241 thread 1.
+# Error: output/tsv/uniprot-intact.tsv new file size per old 386715 / 4372949 = 0.08843345760492519 < 0.5
+# Error: output/tsv/uniprot-omim_gene.tsv new file size per old 0 / 224066 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uniprot-omim_gene.tsv or created file was empty
