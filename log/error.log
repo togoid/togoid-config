@@ -28,13 +28,13 @@
 # Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The document has moved <a href=https://sparql.hegroup.org/sparql/>here</a>.</p>
 # Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
 tax:9606, Fetch error: Endpoint https://integbio.jp/rdf/sib/sparql, 500 Internal Server Error; query try: 3, max try: 3
-Thread 1 terminated abnormally: unexpected end of string while parsing JSON string, at character offset 4811071 (before "irtuoso S1TAT Error ...") at /data/togoid/git/togoid-config/bin/sparql_thread.pl line 241 thread 1.
+Thread 1 terminated abnormally: unexpected end of string while parsing JSON string, at character offset 4036182 (before "irtuoso S1TAT Error ...") at /data/togoid/git/togoid-config/bin/sparql_thread.pl line 241 thread 1.
 # Error: output/tsv/uniprot-dbsnp.tsv new file size per old 0 / 1184739 = 0.0 < 0.5
 # Error: Failed to create output/tsv/uniprot-dbsnp.tsv or created file was empty
 # Error: output/tsv/uniprot-ec.tsv new file size per old 0 / 699955661 = 0.0 < 0.5
 # Error: Failed to create output/tsv/uniprot-ec.tsv or created file was empty
 tax:9606, Fetch error: Endpoint https://integbio.jp/rdf/sib/sparql, 500 Internal Server Error; query try: 3, max try: 3
-Thread 1 terminated abnormally: unexpected end of string while parsing JSON string, at character offset 6847191 (before "irtuoso S1TAT Error ...") at /data/togoid/git/togoid-config/bin/sparql_thread.pl line 241 thread 1.
+Thread 1 terminated abnormally: unexpected end of string while parsing JSON string, at character offset 4492348 (before "irtuoso S1TAT Error ...") at /data/togoid/git/togoid-config/bin/sparql_thread.pl line 241 thread 1.
 # Error: output/tsv/uniprot-intact.tsv new file size per old 386715 / 4372949 = 0.08843345760492519 < 0.5
 # Error: output/tsv/uniprot-omim_gene.tsv new file size per old 0 / 224066 = 0.0 < 0.5
 # Error: Failed to create output/tsv/uniprot-omim_gene.tsv or created file was empty
