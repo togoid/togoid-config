@@ -668,12 +668,19 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
         download_file(INPUT_REFSEQ_DIR, input_url)
+        # The index number of the gbff files (e.g. '1000' of 'complete.1000.rna.gbff.gz') is not stable.
+        # To keep the input directory up-to-date, delete all previous files before downloading the current files.
+        sh "rm -f #{INPUT_REFSEQ_DIR}/complete.*.rna.gbff.gz"
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
         # (It is reported that large files are contaminated by illegal bytes occationally)
         input_file = "complete.*.rna.gbff.gz"
         input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
         download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+
+        # Parse the gbff files and output all relations to a single tsv.
+        # Each config extract columns from the tsv.
+        sh "gzip -dc #{INPUT_REFSEQ_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_DIR}/refseq_rna_summary.tsv"
         updated = true
       end
 
