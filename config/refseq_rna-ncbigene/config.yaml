@@ -4,5 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
-    --geneid | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: awk -F "\t" '$1&&$5&&!a[$1, $5]++{print $1 "\t" $5}' $TOGOID_ROOT/input/refseq/refseq_rna_summary.tsv
