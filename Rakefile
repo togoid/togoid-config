@@ -464,7 +464,7 @@ namespace :prepare do
     download_lock(INPUT_HOMOLOGENE_DIR) do
       updated = false
       input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
+      input_url  = "http://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
         updated = true
@@ -479,7 +479,7 @@ namespace :prepare do
     download_lock(INPUT_COG_DIR) do
       updated = false
       input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      input_url  = "http://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_COG_DIR, input_url)
         updated = true
@@ -494,14 +494,14 @@ namespace :prepare do
     download_lock(INPUT_INTERPRO_DIR) do
       updated = false
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
+      input_url  = "http://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         updated = true
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
+      input_url  = "http://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
@@ -509,7 +509,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
+      input_url  = "http://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
@@ -685,7 +685,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+      input_url  = "http://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_REFSEQ_DIR, input_url)
         updated = true
@@ -765,13 +765,13 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
+      input_url  = "http://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_UNIPROT_DIR, input_url)
         updated = true
       end
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
+      input_url  = "http://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_UNIPROT_DIR, input_url)
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
