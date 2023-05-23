@@ -11,4 +11,5 @@ WHERE {
   ] .
   BIND (strafter(str(?pdb), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
   BIND (strafter(str(?target), "GO:") AS ?target_id)
+  FILTER(STRSTARTS(?pdb_id, "__NUM__"))
 }
