@@ -1,17 +1,1 @@
-# Error: output/tsv/refseq_rna-dbsnp.tsv new file size per old 0 / 5644490886 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-dbsnp.tsv or created file was empty
-# Error: output/tsv/refseq_rna-hgnc.tsv new file size per old 0 / 2565964 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-hgnc.tsv or created file was empty
-# Error: output/tsv/refseq_rna-ncbigene.tsv new file size per old 0 / 884898159 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-ncbigene.tsv or created file was empty
-# Error: output/tsv/refseq_rna-omim_gene.tsv new file size per old 0 / 2177209 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-omim_gene.tsv or created file was empty
-# Error: output/tsv/refseq_rna-pubmed.tsv new file size per old 0 / 94322742 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-pubmed.tsv or created file was empty
-# Error: output/tsv/refseq_rna-refseq_protein.tsv new file size per old 0 / 894651484 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-refseq_protein.tsv or created file was empty
-# Error: output/tsv/refseq_rna-taxonomy.tsv new file size per old 0 / 742787943 = 0.0 < 0.5
-# Error: Failed to create output/tsv/refseq_rna-taxonomy.tsv or created file was empty
-tax:9606, Fetch error: Endpoint https://integbio.jp/rdf/sib/sparql, 500 read timeout; query try: 3, max try: 3
-# Error: output/tsv/uniprot-omim_phenotype.tsv new file size per old 0 / 96482 = 0.0 < 0.5
-# Error: Failed to create output/tsv/uniprot-omim_phenotype.tsv or created file was empty
+ArgumentError: no time information in ""
