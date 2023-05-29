@@ -464,7 +464,7 @@ namespace :prepare do
     download_lock(INPUT_HOMOLOGENE_DIR) do
       updated = false
       input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
         updated = true
@@ -479,7 +479,7 @@ namespace :prepare do
     download_lock(INPUT_COG_DIR) do
       updated = false
       input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_COG_DIR, input_url)
         updated = true
@@ -685,7 +685,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_REFSEQ_DIR, input_url)
         updated = true
