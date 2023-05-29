@@ -9,7 +9,7 @@ ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 $verbose = true  # Flag to enable verbose output for STDERR
 
 # TogoID#file_older_than_days?()
-$duration = 7    # Default number of days to force update
+$duration = 6    # Default number of days to force update
 
 # TogoID#validate_tsv_output()
 $chklines = 10   # Number of head and tail lines to be validated
