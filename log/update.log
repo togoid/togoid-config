@@ -1,4 +1,4 @@
-*** Started: 2023-06-02T17:00:11 ***
+*** Started: 2023-06-02T17:15:40 ***
 
 ## Prepare input files for Cellosaurus
 # Checking lock file input/cellosaurus/download.lock for download
@@ -9,21 +9,22 @@
 # Preserving timestamp of the input/cellosaurus/download.lock
 ## Prepare input files for Ensembl
 # Checking lock file input/ensembl/download.lock for download
-# File input/ensembl/taxonomy.txt is created 6.968543222092754 days ago (will be updated when >6 days)
-sparql_csv2tsv.sh input/ensembl/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > input/ensembl/taxonomy.txt
-# Overwriting timestamp of the input/ensembl/download.lock
+# File input/ensembl/taxonomy.txt is created 0.010751971018206019 days ago (will be updated when >6 days)
+# Preserving timestamp of the input/ensembl/download.lock
 ## Prepare input files for Homologene
 # Checking lock file input/homologene/download.lock for download
-# Local file time:  2014-05-06 00:00:00 +0900 (input/homologene/homologene.data)
+# Local file time:  2014-05-07 00:12:54 +0900 (input/homologene/homologene.data)
 # Remote file time: 2014-05-06 15:12:54 +0000 (https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data)
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/homologene https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data
-# Overwriting timestamp of the input/homologene/download.lock
+# Local file size:  13803677 (input/homologene/homologene.data)
+# Remote file size: 13803677 (https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data)
+# Preserving timestamp of the input/homologene/download.lock
 ## Prepare input files for COG
 # Checking lock file input/cog/download.lock for download
-# Local file time:  2020-09-11 00:00:00 +0900 (input/cog/cog-20.cog.csv)
+# Local file time:  2020-09-11 10:37:40 +0900 (input/cog/cog-20.cog.csv)
 # Remote file time: 2020-09-11 01:37:40 +0000 (https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv)
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/cog https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv
-# Overwriting timestamp of the input/cog/download.lock
+# Local file size:  350149451 (input/cog/cog-20.cog.csv)
+# Remote file size: 350149451 (https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv)
+# Preserving timestamp of the input/cog/download.lock
 ## Prepare input files for InterPro
 # Checking lock file input/interpro/download.lock for download
 rake aborted!
