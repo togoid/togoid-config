@@ -1,4 +1,4 @@
-*** Started: 2023-06-02T17:15:40 ***
+*** Started: 2023-06-02T17:28:59 ***
 
 ## Prepare input files for Cellosaurus
 # Checking lock file input/cellosaurus/download.lock for download
@@ -9,7 +9,7 @@
 # Preserving timestamp of the input/cellosaurus/download.lock
 ## Prepare input files for Ensembl
 # Checking lock file input/ensembl/download.lock for download
-# File input/ensembl/taxonomy.txt is created 0.010751971018206019 days ago (will be updated when >6 days)
+# File input/ensembl/taxonomy.txt is created 0.02000119659048611 days ago (will be updated when >6 days)
 # Preserving timestamp of the input/ensembl/download.lock
 ## Prepare input files for Homologene
 # Checking lock file input/homologene/download.lock for download
@@ -27,14 +27,131 @@
 # Preserving timestamp of the input/cog/download.lock
 ## Prepare input files for InterPro
 # Checking lock file input/interpro/download.lock for download
+# Local file time:  2023-05-10 05:47:34 +0900 (input/interpro/interpro2go)
+# Remote file time: 2023-05-09 20:47:34 +0000 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go)
+# Local file size:  3098305 (input/interpro/interpro2go)
+# Remote file size: 3098305 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go)
+# Local file time:  2023-05-10 05:56:07 +0900 (input/interpro/protein2ipr.dat.gz)
+# Remote file time: 2023-05-09 20:56:07 +0000 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz)
+# Local file size:  18800992557 (input/interpro/protein2ipr.dat.gz)
+# Remote file size: 18800992557 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz)
+# Local file time:  2023-05-10 05:47:34 +0900 (input/interpro/interpro.xml.gz)
+# Remote file time: 2023-05-09 20:47:34 +0000 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz)
+# Local file size:  32805510 (input/interpro/interpro.xml.gz)
+# Remote file size: 32805510 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz)
+# Preserving timestamp of the input/interpro/download.lock
+## Prepare input files for NCBI Gene
+# Checking lock file input/ncbigene/download.lock for download
+# Local file time:  2023-05-26 13:21:00 +0900 (input/ncbigene/gene2refseq.gz)
+# Remote file time: 2023-06-02 04:26:01 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz
+gzip -dc input/ncbigene/gene2refseq.gz > input/ncbigene/gene2refseq
+# Local file time:  2023-05-26 13:18:23 +0900 (input/ncbigene/gene2ensembl.gz)
+# Remote file time: 2023-06-02 04:23:51 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz
+gzip -dc input/ncbigene/gene2ensembl.gz > input/ncbigene/gene2ensembl
+# Local file time:  2023-05-26 13:18:27 +0900 (input/ncbigene/gene2go.gz)
+# Remote file time: 2023-06-02 04:23:54 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz
+gzip -dc input/ncbigene/gene2go.gz > input/ncbigene/gene2go
+# Local file time:  2023-05-26 13:27:05 +0900 (input/ncbigene/Homo_sapiens.gene_info.gz)
+# Remote file time: 2023-06-02 04:32:51 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz
+gzip -dc input/ncbigene/Homo_sapiens.gene_info.gz > input/ncbigene/Homo_sapiens.gene_info
+# Local file time:  2023-05-26 13:22:42 +0900 (input/ncbigene/gene_info.gz)
+# Remote file time: 2023-06-02 04:27:26 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz
+gzip -dc input/ncbigene/gene_info.gz > input/ncbigene/gene_info
+# Overwriting timestamp of the input/ncbigene/download.lock
+## Prepare input files for Reactome
+# Checking lock file input/reactome/download.lock for download
+# Local file time:  2023-03-16 03:54:04 +0900 (input/reactome/UniProt2ReactomeReactions.txt)
+# Remote file time: 2023-03-15 18:54:04 +0000 (https://reactome.org/download/current/UniProt2ReactomeReactions.txt)
+# Local file size:  99138747 (input/reactome/UniProt2ReactomeReactions.txt)
+# Remote file size: 99138747 (https://reactome.org/download/current/UniProt2ReactomeReactions.txt)
+# Local file time:  2023-03-16 03:54:49 +0900 (input/reactome/ChEBI2ReactomeReactions.txt)
+# Remote file time: 2023-03-15 18:54:49 +0000 (https://reactome.org/download/current/ChEBI2ReactomeReactions.txt)
+# Local file size:  28395291 (input/reactome/ChEBI2ReactomeReactions.txt)
+# Remote file size: 28395291 (https://reactome.org/download/current/ChEBI2ReactomeReactions.txt)
+# Local file time:  2023-03-16 04:11:26 +0900 (input/reactome/Ensembl2ReactomeReactions.txt)
+# Remote file time: 2023-03-15 19:11:26 +0000 (https://reactome.org/download/current/Ensembl2ReactomeReactions.txt)
+# Local file size:  429583920 (input/reactome/Ensembl2ReactomeReactions.txt)
+# Remote file size: 429583920 (https://reactome.org/download/current/Ensembl2ReactomeReactions.txt)
+# Local file time:  2023-03-16 04:14:11 +0900 (input/reactome/miRBase2ReactomeReactions.txt)
+# Remote file time: 2023-03-15 19:14:11 +0000 (https://reactome.org/download/current/miRBase2ReactomeReactions.txt)
+# Local file size:  24502 (input/reactome/miRBase2ReactomeReactions.txt)
+# Remote file size: 24502 (https://reactome.org/download/current/miRBase2ReactomeReactions.txt)
+# Local file time:  2023-03-16 04:14:07 +0900 (input/reactome/NCBI2ReactomeReactions.txt)
+# Remote file time: 2023-03-15 19:14:07 +0000 (https://reactome.org/download/current/NCBI2ReactomeReactions.txt)
+# Local file size:  69819376 (input/reactome/NCBI2ReactomeReactions.txt)
+# Remote file size: 69819376 (https://reactome.org/download/current/NCBI2ReactomeReactions.txt)
+# Local file time:  2023-03-16 04:14:19 +0900 (input/reactome/GtoP2ReactomeReactions.txt)
+# Remote file time: 2023-03-15 19:14:19 +0000 (https://reactome.org/download/current/GtoP2ReactomeReactions.txt)
+# Local file size:  1908250 (input/reactome/GtoP2ReactomeReactions.txt)
+# Remote file size: 1908250 (https://reactome.org/download/current/GtoP2ReactomeReactions.txt)
+# Local file time:  2023-03-16 03:53:37 +0900 (input/reactome/UniProt2Reactome_All_Levels.txt)
+# Remote file time: 2023-03-15 18:53:37 +0000 (https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt)
+# Local file size:  113329889 (input/reactome/UniProt2Reactome_All_Levels.txt)
+# Remote file size: 113329889 (https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt)
+# Local file time:  2023-03-16 03:54:44 +0900 (input/reactome/ChEBI2Reactome_All_Levels.txt)
+# Remote file time: 2023-03-15 18:54:44 +0000 (https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt)
+# Local file size:  32444509 (input/reactome/ChEBI2Reactome_All_Levels.txt)
+# Remote file size: 32444509 (https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt)
+# Local file time:  2023-03-16 04:09:28 +0900 (input/reactome/Ensembl2Reactome_All_Levels.txt)
+# Remote file time: 2023-03-15 19:09:28 +0000 (https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt)
+# Local file size:  474095302 (input/reactome/Ensembl2Reactome_All_Levels.txt)
+# Remote file size: 474095302 (https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt)
+# Local file time:  2023-03-16 04:14:11 +0900 (input/reactome/miRBase2Reactome_All_Levels.txt)
+# Remote file time: 2023-03-15 19:14:11 +0000 (https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt)
+# Local file size:  37743 (input/reactome/miRBase2Reactome_All_Levels.txt)
+# Remote file size: 37743 (https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt)
+# Local file time:  2023-03-16 04:13:47 +0900 (input/reactome/NCBI2Reactome_All_Levels.txt)
+# Remote file time: 2023-03-15 19:13:47 +0000 (https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt)
+# Local file size:  79021012 (input/reactome/NCBI2Reactome_All_Levels.txt)
+# Remote file size: 79021012 (https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt)
+# Local file time:  2023-03-16 04:14:18 +0900 (input/reactome/GtoP2Reactome_All_Levels.txt)
+# Remote file time: 2023-03-15 19:14:18 +0000 (https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt)
+# Local file size:  4884943 (input/reactome/GtoP2Reactome_All_Levels.txt)
+# Remote file size: 4884943 (https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt)
+# Preserving timestamp of the input/reactome/download.lock
+## Prepare input files for RefSeq
+# Checking lock file input/refseq/download.lock for download
+# Local file time:  2023-05-05 17:30:49 +0900 (input/refseq/RELEASE_NUMBER)
+# Remote file time: 2023-05-05 08:30:49 +0000 (https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER)
+# Local file size:  4 (input/refseq/RELEASE_NUMBER)
+# Remote file size: 4 (https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER)
+# Local file time:  2023-05-26 09:26:00 +0900 (input/refseq/gene_refseq_uniprotkb_collab.gz)
+# Remote file time: 2023-05-31 09:26:25 +0000 (https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/refseq https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz
+# Overwriting timestamp of the input/refseq/download.lock
+## Prepare input files for Rhea
+# Checking lock file input/rhea/download.lock for download
+# Local file time:  2023-05-03 23:00:00 +0900 (input/rhea/rhea2uniprot_sprot.tsv)
+# Remote file time: 2023-05-03 14:00:00 +0000 (https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv)
+# Local file size:  7701901 (input/rhea/rhea2uniprot_sprot.tsv)
+# Remote file size: 7701901 (https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv)
+# Local file time:  2023-05-03 23:00:00 +0900 (input/rhea/rhea2uniprot_trembl.tsv.gz)
+# Remote file time: 2023-05-03 14:00:00 +0000 (https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_trembl.tsv.gz)
+# Local file size:  155313947 (input/rhea/rhea2uniprot_trembl.tsv.gz)
+# Remote file size: 155313947 (https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_trembl.tsv.gz)
+# Local file time:  2023-05-03 23:00:00 +0900 (input/rhea/rhea2go.tsv)
+# Remote file time: 2023-05-03 14:00:00 +0000 (https://ftp.expasy.org/databases/rhea/tsv/rhea2go.tsv)
+# Local file size:  114379 (input/rhea/rhea2go.tsv)
+# Remote file size: 114379 (https://ftp.expasy.org/databases/rhea/tsv/rhea2go.tsv)
+# Preserving timestamp of the input/rhea/download.lock
+## Prepare input files for SRA
+# Checking lock file input/sra/download.lock for download
+# Local file time:  2023-05-26 21:19:47 +0900 (input/sra/SRA_Accessions.tab)
+# Remote file time: 2023-06-01 12:47:43 +0000 (https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/sra https://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/SRA_Accessions.tab
+wget: memory exhausted
 rake aborted!
-ArgumentError: no time information in ""
-/data/togoid/git/togoid-config/Rakefile:361:in `check_remote_file_time'
-/data/togoid/git/togoid-config/Rakefile:301:in `update_input_file?'
-/data/togoid/git/togoid-config/Rakefile:498:in `block (3 levels) in <top (required)>'
+Command failed with status (1): [wget --quiet --recursive --no-parent --no-...]
+/data/togoid/git/togoid-config/Rakefile:338:in `download_file'
+/data/togoid/git/togoid-config/Rakefile:737:in `block (3 levels) in <top (required)>'
 /data/togoid/git/togoid-config/Rakefile:314:in `block in download_lock'
 /data/togoid/git/togoid-config/Rakefile:311:in `open'
 /data/togoid/git/togoid-config/Rakefile:311:in `download_lock'
-/data/togoid/git/togoid-config/Rakefile:494:in `block (2 levels) in <top (required)>'
-Tasks: TOP => default => prepare:all => prepare:interpro
+/data/togoid/git/togoid-config/Rakefile:732:in `block (2 levels) in <top (required)>'
+Tasks: TOP => default => prepare:all => prepare:sra
 (See full trace by running task with --trace)
