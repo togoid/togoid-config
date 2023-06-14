@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 set -euo pipefail
 #set -euo pipefail errtrace
 

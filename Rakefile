@@ -9,7 +9,7 @@ ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 $verbose = true  # Flag to enable verbose output for STDERR
 
 # TogoID#file_older_than_days?()
-$duration = 7    # Default number of days to force update
+$duration = 5    # Default number of days to force update
 
 # TogoID#validate_tsv_output()
 $chklines = 10   # Number of head and tail lines to be validated
@@ -297,9 +297,8 @@ module TogoID
     def update_input_file?(file, url)
       if File.exists?(file)
         # Both checks should be made as the local file can be newer than remote when the previous download fails
-        check_remote_file_time(file, url)
         # and the local file can be smaller or size 0 even when it exists
-        check_remote_file_size(file, url)
+        check_remote_file_time(file, url) || check_remote_file_size(file, url)
       else
         true
       end
@@ -465,7 +464,7 @@ namespace :prepare do
     download_lock(INPUT_HOMOLOGENE_DIR) do
       updated = false
       input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
         updated = true
@@ -480,7 +479,7 @@ namespace :prepare do
     download_lock(INPUT_COG_DIR) do
       updated = false
       input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_COG_DIR, input_url)
         updated = true
@@ -495,14 +494,14 @@ namespace :prepare do
     download_lock(INPUT_INTERPRO_DIR) do
       updated = false
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         updated = true
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
@@ -510,7 +509,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
@@ -669,17 +668,24 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
         download_file(INPUT_REFSEQ_DIR, input_url)
+        # The index number of the gbff files (e.g. '1000' of 'complete.1000.rna.gbff.gz') is not stable.
+        # To keep the input directory up-to-date, delete all previous files before downloading the current files.
+        sh "rm -f #{INPUT_REFSEQ_DIR}/complete.*.rna.gbff.gz"
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
         # (It is reported that large files are contaminated by illegal bytes occationally)
         input_file = "complete.*.rna.gbff.gz"
         input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
         download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+
+        # Parse the gbff files and output all relations to a single tsv.
+        # Each config extract columns from the tsv.
+        sh "gzip -dc #{INPUT_REFSEQ_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_DIR}/refseq_rna_summary.tsv"
         updated = true
       end
 
       input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_REFSEQ_DIR, input_url)
         updated = true
@@ -759,13 +765,13 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_UNIPROT_DIR, input_url)
         updated = true
       end
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_UNIPROT_DIR, input_url)
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"

@@ -1,6 +1,0 @@
-# Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4431 = 0.0 < 0.5
-# Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
-# Error: output/tsv/togovar-clinvar.tsv new file size per old 4170541 / 13681182 = 0.30483776913427507 < 0.5
-# Error: output/tsv/uniprot-pfam.tsv new file size per old 110 / 1785229006 = 6.161674475952359e-08 < 0.5
-# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}
-# Error: output/tsv/uniprot-pfam.tsv seems to be malformed xargs -a pfam_id_list.txt -P20 -i sh issue_query.sh pfam2uniprot/{}.txt https://integbio.jp/rdf/sib/sparql {}

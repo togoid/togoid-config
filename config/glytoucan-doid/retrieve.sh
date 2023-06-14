@@ -26,7 +26,7 @@ done
 
 # エラー終了しているファイルを検索し、改めて検索、をエラーがなくなるまで行う。
 # ファイル冒頭に "pubchem_id" が書かれていない場合に、エラーと判断する。
-ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^\?do") || basename {} .txt' \;)
+ERROR_FILES=$(find ${WORKDIR} -type f -exec sh -c '(head -1 {} | grep -m 1 -q "^.do") || basename {} .txt' \;)
 while true; do
   if [ -n "$ERROR_FILES" ]; then
      for i in $ERROR_FILES; do
