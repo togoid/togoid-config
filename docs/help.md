@@ -24,7 +24,7 @@ Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, 
 
 ## Statistics (as of 2023-06-12)
 - Number of target datasets 
-    - 89 (from 65 databases)
+    - 89 (from 64 databases)
 - For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 
 
 ## Web user interface
