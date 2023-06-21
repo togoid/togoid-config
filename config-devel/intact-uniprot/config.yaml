@@ -1,0 +1,16 @@
+link:
+  forward:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  reverse:
+    label: seeAlso
+    namespace: rdfs
+    prefix: http://www.w3.org/2000/01/rdf-schema#
+    predicate: seeAlso
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F "\t" 'FNR>=2{for(i=1; i<=2; i++){if($i ~ /^uniprotkb:/){n = split($14, a, "|"); for(j=1; j<=n; j++){if(a[j] ~ /^intact:/)print gensub("intact:", "", "g", a[j]) "\t" gensub("uniprotkb:", "", "g", $i)}}}}' $TOGOID_ROOT/input/intact/intact.txt
+

@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/rdf/ebi/sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT DISTINCT ?assay_id ?target_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?assay a cco:Assay ;
+         cco:chemblId ?assay_id ;
+         cco:hasTarget / cco:chemblId ?target_id .
+}
