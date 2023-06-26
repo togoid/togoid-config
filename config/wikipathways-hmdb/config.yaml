@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000068
+  reverse: TIO_000069
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: sparql_csv2tsv.sh query.rq https://sparql.wikipathways.org/sparql
