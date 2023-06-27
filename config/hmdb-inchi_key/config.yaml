@@ -4,5 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Four Year
-  method: hmdbid2inchikey.py
-  
+  method: wget https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip && unzip hmdb_metabolites.zip && python hmdbid2inchikey.py  
