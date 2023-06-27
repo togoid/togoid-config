@@ -1,0 +1,8 @@
+link:
+  forward: TIO_000020
+  reverse: TIO_000021
+  file: sample.tsv
+update:
+  frequency: Four Year
+  method: hmdbid2inchikey.py
+  
