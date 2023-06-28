@@ -1,6 +1,5 @@
 import xml.sax
 import sys
-import pdb
 
 class XMLHandler(xml.sax.ContentHandler):
     def __init__(self, target_tags):
@@ -15,7 +14,6 @@ class XMLHandler(xml.sax.ContentHandler):
             self.current_attrs[tag] = ""
 
     def startElement(self, tag, attrs):
-        #breakpoint()
         self.current_tag = tag
         self.current_depth += 1
         #print("depth:", self.current_depth)
