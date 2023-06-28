@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000020
+  reverse: TIO_000021
+  file: sample.tsv
+update:
+  frequency: Triennial
+  method: awk -F "\t" '$2=="inchikey"{print $1 "\t" $3}' $TOGOID_ROOT/input/hmdb_metabolites.tsv

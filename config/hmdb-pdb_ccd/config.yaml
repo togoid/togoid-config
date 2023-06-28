@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000097
+  reverse: TIO_000096
+  file: sample.tsv
+update:
+  frequency: Triennial
+  method: awk -F "\t" '$2=="pdb_id"{print $1 "\t" $3}' $TOGOID_ROOT/input/hmdb_metabolites.tsv
