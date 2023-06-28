@@ -1,0 +1,13 @@
+PREFIX bp:	<http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?pathway_id ?wp_id
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway>
+WHERE {
+  ?pathway a bp:Pathway;
+           skos:exactMatch ?orig .
+  FILTER(STRSTARTS(STR(?orig), "http://identifiers.org/wikipathways/"))
+  BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?pathway_id)
+  BIND(STRAFTER(STR(?orig), "http://identifiers.org/wikipathways/") AS ?wp_id)
+}
