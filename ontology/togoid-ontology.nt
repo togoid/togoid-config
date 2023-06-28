@@ -560,6 +560,11 @@
 <http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#label> "BioProject umbrella" .
 <http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://purl.org/dc/terms/identifier> "pathbank" .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#label> "Pathbank" .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .

@@ -721,6 +721,12 @@
     rdfs:label "BioProject umbrella" ;
     rdfs:subClassOf :Project, :Dataset .
 
+:Pathbank
+    a owl:Class ;
+    dcterms:identifier "pathbank" ;
+    rdfs:label "Pathbank" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
 :TIO_000001
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;

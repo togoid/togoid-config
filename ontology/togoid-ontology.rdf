@@ -425,6 +425,12 @@
     <rdfs:label>Ortholog</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Pathbank">
+    <dcterms:identifier>pathbank</dcterms:identifier>
+    <rdfs:label>Pathbank</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Pathway"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Pathway">
     <rdfs:label>Pathway</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
