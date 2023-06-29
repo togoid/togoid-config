@@ -295,6 +295,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Molecule"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Lipidmaps">
+    <dcterms:identifier>lipidmaps</dcterms:identifier>
+    <rdfs:label>LIPID MAPS</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Lipid"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Literature">
     <rdfs:label>Literature</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
@@ -1501,6 +1507,22 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Sequence"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000110"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000112">
+    <display_label>codes protein participating in</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+    <rdfs:label>gene codes protein participating in pathway</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Pathway"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000113"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000113">
+    <display_label>has component coded by</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Pathway"/>
+    <rdfs:label>pathway has component coded by gene</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000112"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
