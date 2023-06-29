@@ -401,6 +401,14 @@ kegg_reaction:
   category: Interaction
   regex: '^(?<id>R\d+)$'
   prefix: 'http://identifiers.org/kegg.reaction/'
+lipidmaps:
+  label: LIPID MAPS
+  catalog: FIXME
+  category: Lipids
+  regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
+  prefix: 'http://identifiers.org/lipidmaps/'
+  examples:
+    - []
 lrg:
   catalog: nbdc02566
   category: Gene

@@ -1,0 +1,13 @@
+# @endpoint https://lipidmaps.org/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX chebi: <http://purl.obolibrary.org/obo/chebi/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?lipidmaps_id ?sl_id
+WHERE {
+  ?lipidmaps a owl:Class ;
+             owl:equivalentClass ?eq_class .
+  FILTER(STRSTARTS(STR(?eq_class), "https://swisslipids.org/rdf/"))
+  BIND(STRAFTER(STR(?eq_class), "https://swisslipids.org/rdf/") AS ?sl_id)
+  BIND(STRAFTER(STR(?lipidmaps), "https://www.lipidmaps.org/rdf/") AS ?lipidmaps_id)
+}
