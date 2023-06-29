@@ -789,10 +789,11 @@ swisslipids:
   label: SwissLipids
   catalog: nbdc02026
   category: Lipids
-  regex: '^SLM:(?<id>\d+)$'
+  regex: '^SLM[:_](?<id>\d+)$'
   prefix: 'http://identifiers.org/slm/SLM:'
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
+    - ["SLM_000000002","SLM_000000003","SLM_000000006","SLM_000000007","SLM_000000035", "SLM_000000042","SLM_000000043","SLM_000000044", "SLM_000000047","SLM_000000048"]
 tair:
   label: TAIR
   catalog: nbdc00697

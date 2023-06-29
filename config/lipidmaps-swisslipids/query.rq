@@ -8,6 +8,6 @@ WHERE {
   ?lipidmaps a owl:Class ;
              owl:equivalentClass ?eq_class .
   FILTER(STRSTARTS(STR(?eq_class), "https://swisslipids.org/rdf/"))
-  BIND(STRAFTER(STR(?eq_class), "https://swisslipids.org/rdf/") AS ?sl_id)
+  BIND(STRAFTER(STR(?eq_class), "https://swisslipids.org/rdf/SLM_") AS ?sl_id)
   BIND(STRAFTER(STR(?lipidmaps), "https://www.lipidmaps.org/rdf/") AS ?lipidmaps_id)
 }
