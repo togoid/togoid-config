@@ -404,7 +404,7 @@ kegg_reaction:
 lipidmaps:
   label: LIPID MAPS
   catalog: FIXME
-  category: Lipids
+  category: Lipid
   regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
   prefix: 'http://identifiers.org/lipidmaps/'
   examples:
@@ -788,7 +788,7 @@ sra_sample:
 swisslipids:
   label: SwissLipids
   catalog: nbdc02026
-  category: Lipids
+  category: Lipid
   regex: '^SLM[:_](?<id>\d+)$'
   prefix: 'http://identifiers.org/slm/SLM:'
   examples:
