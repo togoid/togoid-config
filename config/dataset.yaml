@@ -401,6 +401,14 @@ kegg_reaction:
   category: Interaction
   regex: '^(?<id>R\d+)$'
   prefix: 'http://identifiers.org/kegg.reaction/'
+lipidmaps:
+  label: LIPID MAPS
+  catalog: FIXME
+  category: Lipid
+  regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
+  prefix: 'http://identifiers.org/lipidmaps/'
+  examples:
+    - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
 lrg:
   catalog: nbdc02566
   category: Gene
@@ -780,11 +788,12 @@ sra_sample:
 swisslipids:
   label: SwissLipids
   catalog: nbdc02026
-  category: Lipids
-  regex: '^SLM:(?<id>\d+)$'
+  category: Lipid
+  regex: '^SLM[:_](?<id>\d+)$'
   prefix: 'http://identifiers.org/slm/SLM:'
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
+    - ["SLM_000000002","SLM_000000003","SLM_000000006","SLM_000000007","SLM_000000035", "SLM_000000042","SLM_000000043","SLM_000000044", "SLM_000000047","SLM_000000048"]
 tair:
   label: TAIR
   catalog: nbdc00697
