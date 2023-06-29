@@ -7,7 +7,7 @@ SELECT DISTINCT ?lipidmaps_id ?chebi_id
 WHERE {
   ?lipidmaps a owl:Class ;
              owl:equivalentClass ?eq_class .
-  FILTER(STRSTARTS(STR(?eq_class), "http://purl.obolibrary.org/obo/chebi/"))
-  BIND(STRAFTER(STR(?eq_class), "http://purl.obolibrary.org/obo/chebi/") AS ?chebi_id)
+  FILTER(STRSTARTS(STR(?eq_class), "http://purl.obolibrary.org/obo/CHEBI_"))
+  BIND(STRAFTER(STR(?eq_class), "http://purl.obolibrary.org/obo/CHEBI_") AS ?chebi_id)
   BIND(STRAFTER(STR(?lipidmaps), "https://www.lipidmaps.org/rdf/") AS ?lipidmaps_id)
 }
