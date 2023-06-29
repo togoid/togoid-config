@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq https://sparql.wikipathways.org/sparql
+  method: sparql_csv2tsv.sh query.rq https://sparql.wikipathways.org/sparql | grep -P '^WP\d+\t\d+$'
