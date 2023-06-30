@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000032
+  reverse: TIO_000033
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: ega-pubmed.sh 
