@@ -1,0 +1,17 @@
+# @endpoint http://sparql.wikipathways.org/sparql
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?pathway_id ?lm_id
+FROM <http://rdf.wikipathways.org/>
+WHERE {
+  ?pathway a wp:Pathway .
+  ?lm
+    dct:isPartOf* ?pathway ;
+    a wp:Metabolite ;
+    dc:source 'LIPID MAPS' .
+  BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
+  BIND (strafter(str(?lm), "https://identifiers.org/lipidmaps/") AS ?lm_id)
+}
