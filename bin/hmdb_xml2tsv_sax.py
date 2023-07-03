@@ -9,7 +9,6 @@ class XMLHandler(xml.sax.ContentHandler):
         self.current_depth = 0
 
     def init_current_attrs(self):
-        self.current_attrs = {}
         for tag in self.target_tags:
             self.current_attrs[tag] = ""
 
@@ -24,7 +23,10 @@ class XMLHandler(xml.sax.ContentHandler):
     def characters(self, content):
         #print("text:", content)
         if self.current_tag in self.target_tags and self.current_depth == 3:
-            self.current_attrs[self.current_tag] = content
+            # The `characters` method may split strings at a random position.
+            # Concatenating a content rather than simply assigning (i.e. using `+=` rather than `=`) can avoid the issue.
+            # cf. https://bytes.com/topic/python/answers/447239-xml-sax-parser-bug
+            self.current_attrs[self.current_tag] += content
 
     def endElement(self, tag):
         #print("end tag:", tag)
