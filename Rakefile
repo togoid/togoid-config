@@ -504,6 +504,12 @@ namespace :prepare do
         download_file(INPUT_COG_DIR, input_url)
         updated = true
       end
+      input_file = "#{INPUT_COG_DIR}/cog-20.def.tab"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.def.tab"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_COG_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end
