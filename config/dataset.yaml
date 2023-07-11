@@ -350,6 +350,7 @@ interpro:
   prefix: 'http://identifiers.org/interpro/'
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
+  method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
 iuphar_ligand:
   label: IUPHAR ligand
   catalog: FIXME
