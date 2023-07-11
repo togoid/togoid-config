@@ -79,8 +79,8 @@ module TogoID
 
   # Dataset
   class Node
-    attr_reader :catalog, :category, :label, :prefix, :regex, :internal_format, :external_format
-    def initialize(hash)
+    attr_reader :catalog, :category, :label, :prefix, :regex, :internal_format, :external_format, :method, :name
+    def initialize(name, hash)
       @catalog = hash["catalog"]
       @category = hash["category"]
       @label = hash["label"]
@@ -88,6 +88,35 @@ module TogoID
       @regex = hash["regex"]
       @internal_format = hash["internal_format"]
       @external_format = hash["external_format"]
+      @method = hash["method"]
+      @name = name
+    end
+
+    def setup_files
+      @ttl_dir = "output/id_label/"
+      @ttl_file = "#{@ttl_dir}/#{@name}.ttl"
+      FileUtils.mkdir_p(@ttl_dir)
+    end
+
+    def rdfize_id_label
+      setup_files
+      File.open(@ttl_file, "w") do |ttl_file|
+        ttl_file.puts "@prefix #{@name}: <#{@prefix}> ."
+        ttl_file.puts "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> ."
+        ttl_file.puts "@prefix dcterms: <http://purl.org/dc/terms/> ."
+        ttl_file.puts
+        Dir.chdir(@ttl_dir) do
+          IO.popen(@method) do |io|
+            while line = io.gets
+              id, label = line.scrub.strip.split("\t")
+              sbj = "#{@name}:#{id}"
+              id_full = @prefix.gsub(/.+\//, "") + id
+              ttl_file.puts "#{sbj}\tdcterms:identifier\t\"#{id_full}\" ."
+              ttl_file.puts "#{sbj}\trdfs:label\t\"#{label}\" ."
+            end
+          end
+        end
+      end
     end
   end
 
@@ -152,8 +181,8 @@ module TogoID
         @dataset = YAML.load(File.read(yaml_path))
         raise NoConfigError, @source_ns unless @dataset[@source_ns]
         raise NoConfigError, @target_ns unless @dataset[@target_ns]
-        @source = Node.new(@dataset[@source_ns])
-        @target = Node.new(@dataset[@target_ns])
+        @source = Node.new(@source_ns, @dataset[@source_ns])
+        @target = Node.new(@target_ns, @dataset[@target_ns])
       rescue NoConfigError => error
         puts "Error: dataset #{error.message} is not defined in the dataset.yaml file"
         exit 1
