@@ -257,6 +257,7 @@ hmdb:
   examples:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
     - ["hmdb:HMDB0029433","hmdb:HMDB0015609","hmdb:HMDB0000042","hmdb:HMDB0002360","hmdb:HMDB0003345","hmdb:HMDB0003550","hmdb:HMDB0036769","hmdb:HMDB0000935","hmdb:HMDB0002755","hmdb:HMDB0004369"]
+  method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/hmdb/hmdb_metabolites.tsv
 homologene:
   label: HomoloGene
   catalog: nbdc00101
