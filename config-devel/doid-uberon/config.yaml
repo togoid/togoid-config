@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000001
+  reverse: TIO_000001
+  file: sample.tsv
+update:
+  frequency: Irregular
+  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/bioportal/sparql

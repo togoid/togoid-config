@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000002
+  reverse: TIO_000002
+  file: sample.tsv
+update:
+  frequency: Irregular
+  method: awk -F '\t' 'FNR!=1{id=gensub("SLM:","","g",$1);split(gensub(" ","","g",$2),b,"|");for(k in b){if(!a[id,b[k]]++)print  id "\t" b[k]}}' $TOGOID_ROOT/input/swisslipids/lipids2uniprot.tsv

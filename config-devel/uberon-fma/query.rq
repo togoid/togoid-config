@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?uberon_id ?fma_id
+FROM <http://purl.obolibrary.org/obo/merged/UBERON>
+WHERE {
+  ?uberon oboinowl:hasDbXref ?fma .
+  FILTER(STRSTARTS(STR(?uberon), "http://purl.obolibrary.org/obo/UBERON_"))
+  FILTER(STRSTARTS(STR(?fma), "FMA:"))
+  BIND(STRAFTER(STR(?uberon), "http://purl.obolibrary.org/obo/UBERON_") AS ?uberon_id)
+  BIND(STRAFTER(STR(?fma), "FMA:") AS ?fma_id)
+}

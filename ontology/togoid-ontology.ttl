@@ -721,6 +721,18 @@
     rdfs:label "BioProject umbrella" ;
     rdfs:subClassOf :Project, :Dataset .
 
+:Pathbank
+    a owl:Class ;
+    dcterms:identifier "pathbank" ;
+    rdfs:label "Pathbank" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
+:Lipidmaps
+    a owl:Class ;
+    dcterms:identifier "lipidmaps" ;
+    rdfs:label "LIPID MAPS" ;
+    rdfs:subClassOf :Lipid, :Dataset .
+
 :TIO_000001
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Category ;
@@ -1603,4 +1615,20 @@
     owl:inverseOf :TIO_000110 ;
     rdfs:label "sample is used to determine sequence" ;
     :display_label "is used to determine sequence" .
+
+:TIO_000112
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Gene ;
+    rdfs:range :Pathway ;
+    owl:inverseOf :TIO_000113 ;
+    rdfs:label "gene codes protein participating in pathway" ;
+    :display_label "codes protein participating in" .
+
+:TIO_000113
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Pathway ;
+    rdfs:range :Gene ;
+    owl:inverseOf :TIO_000112 ;
+    rdfs:label "pathway has component coded by gene" ;
+    :display_label "has component coded by" .
 

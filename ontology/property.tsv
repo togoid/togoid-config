@@ -109,3 +109,5 @@ TIO_000108	sequence is determined in project	is determined in project	TIO_000109
 TIO_000109	project determines sequence	determines sequence	TIO_000108	Project	Sequence
 TIO_000110	sequence is determined using sample	is determined using sample	TIO_000111	Sequence	Sample
 TIO_000111	sample is used to determine sequence	is used to determine sequence	TIO_000110	Sample	Sequence
+TIO_000112	gene codes protein participating in pathway	codes protein participating in	TIO_000113	Gene	Pathway
+TIO_000113	pathway has component coded by gene	has component coded by	TIO_000112	Pathway	Gene

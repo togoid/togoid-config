@@ -1,0 +1,16 @@
+# Endpoint: http://sparql.hegroup.org/sparql/
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?child ?parent
+FROM <http://purl.obolibrary.org/obo/merged/UBERON>
+WHERE {
+  ?child rdfs:label ?child_label .
+  ?child rdfs:subClassOf+ ?parent .
+  FILTER(STRSTARTS(STR(?child), "http://purl.obolibrary.org/obo/UBERON_"))
+  FILTER(STRSTARTS(STR(?parent), "http://purl.obolibrary.org/obo/UBERON_"))
+  #BIND(STRAFTER(STR(?child), "http://purl.obolibrary.org/obo/UBERON_") AS ?child_id)
+}

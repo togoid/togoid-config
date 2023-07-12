@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000020
+  reverse: TIO_000021
+  file: sample.tsv
+update:
+  frequency: Irregular
+  method: awk -F '\t' 'FNR!=1 && $11 && $11!="-" && $11!~/none$/{print gensub("SLM:","","g",$1) "\t" gensub("InChIKey=","","g",$11)}' $TOGOID_ROOT/input/swisslipids/lipids.tsv

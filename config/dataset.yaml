@@ -401,6 +401,14 @@ kegg_reaction:
   category: Interaction
   regex: '^(?<id>R\d+)$'
   prefix: 'http://identifiers.org/kegg.reaction/'
+lipidmaps:
+  label: LIPID MAPS
+  catalog: FIXME
+  category: Lipid
+  regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
+  prefix: 'http://identifiers.org/lipidmaps/'
+  examples:
+    - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
 lrg:
   catalog: nbdc02566
   category: Gene
@@ -580,6 +588,14 @@ orphanet:
     - ["ORDO:101078","ORDO:596","ORDO:1934","ORDO:1047","ORDO:60025","ORDO:166090","ORDO:275745","ORDO:1171","ORDO:93277","ORDO:247598"]
     - ["Orphanet:101078","Orphanet:596","Orphanet:1934","Orphanet:1047","Orphanet:60025","Orphanet:166090","Orphanet:275745","Orphanet:1171","Orphanet:93277","Orphanet:247598"]
     - ["Orphanet_101078","Orphanet_596","Orphanet_1934","Orphanet_1047","Orphanet_60025","Orphanet_166090","Orphanet_275745","Orphanet_1171","Orphanet_93277","Orphanet_247598"]
+pathbank:
+  label: Pathbank
+  catalog: FIXME
+  category: Pathway
+  regex: '^(?<id>SMP\d+)$'
+  prefix: 'http://pathbank.org/view/'
+  examples:
+    - ["SMP0000055","SMP0000057","SMP0000029","SMP0000044","SMP0000048","SMP0000046","SMP0000059","SMP0000067","SMP0000007","SMP0000004"]
 pdb:
   label: PDB
   catalog: nbdc00156
@@ -772,11 +788,12 @@ sra_sample:
 swisslipids:
   label: SwissLipids
   catalog: nbdc02026
-  category: Lipids
-  regex: '^SLM:(?<id>\d+)$'
+  category: Lipid
+  regex: '^SLM[:_](?<id>\d+)$'
   prefix: 'http://identifiers.org/slm/SLM:'
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
+    - ["SLM_000000002","SLM_000000003","SLM_000000006","SLM_000000007","SLM_000000035", "SLM_000000042","SLM_000000043","SLM_000000044", "SLM_000000047","SLM_000000048"]
 tair:
   label: TAIR
   catalog: nbdc00697

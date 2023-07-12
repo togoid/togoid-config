@@ -266,6 +266,8 @@ module TogoID
         return "prepare:cellosaurus"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}hmdb/
+        return "prepare:hmdb"
       when /#{OUTPUT_TSV_DIR}homologene/
         return "prepare:homologene"
       when /#{OUTPUT_TSV_DIR}cog/
@@ -402,13 +404,14 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_COG_DIR         = "input/cog"
+  directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
@@ -452,6 +455,23 @@ namespace :prepare do
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
       if file_older_than_days?(taxonomy_file)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://integbio.jp/rdf/ebi/sparql > #{taxonomy_file}"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for HMDB"
+  task :hmdb => INPUT_HMDB_DIR do
+    $stderr.puts "## Prepare input files for HMDB"
+    download_lock(INPUT_HMDB_DIR) do
+      updated = false
+      input_file = "#{INPUT_HMDB_DIR}/hmdb_metabolites.zip"
+      input_url  = "https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HMDB_DIR, input_url)
+        sh "unzip #{input_file} -d #{INPUT_HMDB_DIR}/"
+        sh "python bin/hmdb_xml2tsv_sax.py #{INPUT_HMDB_DIR}/hmdb_metabolites.xml > #{INPUT_HMDB_DIR}/hmdb_metabolites.tsv"
         updated = true
       end
       updated
@@ -752,6 +772,14 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
         sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
+        updated = true
+      end
+
+      input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv.gz"
+      input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids2uniprot.tsv"
+      if update_input_file?(input_file, input_url)
+        sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
         updated = true
       end
       updated

@@ -4,6 +4,7 @@ assembly_insdc	biosample	TIO_000080	TIO_000081
 assembly_insdc	insdc_master	TIO_000078	TIO_000079
 atc	pubchem_compound	TIO_000088	TIO_000089
 bioproject	biosample	TIO_000094	TIO_000095
+bioproject_umbrella	bioproject	TIO_000106	TIO_000107
 biosample	bioproject	TIO_000095	TIO_000094
 cellosaurus	ncit_disease	TIO_000082	TIO_000083
 cellosaurus	orphanet	TIO_000082	TIO_000083
@@ -62,6 +63,14 @@ hgnc	refseq_rna	TIO_000035	TIO_000034
 hgnc	rgd	TIO_000017	TIO_000017
 hgnc	uniprot	TIO_000025	TIO_000024
 homologene	ncbigene	TIO_000018	TIO_000019
+hp_inheritance	omim_phenotype	TIO_000105	TIO_000104
+hp_phenotype	ncbigene	TIO_000102	TIO_000103
+hp_phenotype	omim_phenotype	TIO_000101	TIO_000100
+hp_phenotype	orphanet	TIO_000101	TIO_000100
+insdc	bioproject	TIO_000108	TIO_000109
+insdc	biosample	TIO_000110	TIO_000111
+insdc_master	bioproject	TIO_000001	TIO_000001
+insdc_master	biosample	TIO_000094	TIO_000095
 interpro	go	TIO_000004	TIO_000007
 interpro	pdb	TIO_000016	TIO_000014
 interpro	pfam	TIO_000001	TIO_000001
@@ -70,14 +79,14 @@ interpro	reactome_pathway	TIO_000073	TIO_000072
 interpro	uniprot	TIO_000015	TIO_000013
 mbgd_gene	uniprot	TIO_000025	TIO_000024
 mbgd_organism	taxonomy	TIO_000002	TIO_000002
-medgen	hp	TIO_000001	TIO_000001
+medgen	hp_phenotype	TIO_000001	TIO_000001
 medgen	mesh	TIO_000001	TIO_000001
 medgen	mondo	TIO_000001	TIO_000001
 medgen	ncbigene	TIO_000011	TIO_000010
 medgen	omim_phenotype	TIO_000001	TIO_000001
 medgen	orphanet	TIO_000001	TIO_000001
 mondo	doid	TIO_000001	TIO_000001
-mondo	hp	TIO_000001	TIO_000001
+mondo	hp_phenotype	TIO_000001	TIO_000001
 mondo	meddra	TIO_000001	TIO_000001
 mondo	mesh	TIO_000001	TIO_000001
 mondo	omim_phenotype	TIO_000001	TIO_000001
@@ -194,7 +203,6 @@ uniprot	omim_gene	TIO_000024	TIO_000025
 uniprot	omim_phenotype	TIO_000010	TIO_000011
 uniprot	orphanet	TIO_000010	TIO_000011
 uniprot	pdb	TIO_000026	TIO_000027
-uniprot	pfam	TIO_000013	TIO_000015
 uniprot	reactome_pathway	TIO_000069	TIO_000068
 uniprot	refseq_protein	TIO_000002	TIO_000002
 uniprot	uniprot_mnemonic	TIO_000022	TIO_000023

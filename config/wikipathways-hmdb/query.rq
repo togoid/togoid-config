@@ -1,0 +1,17 @@
+# Endpoint: http://sparql.wikipathways.org/sparql
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?pathway_id ?hmdb_id
+FROM <http://rdf.wikipathways.org/>
+WHERE {
+  ?pathway a wp:Pathway .
+  ?hmdb
+    dct:isPartOf* ?pathway ;
+    a wp:Metabolite ;
+    dc:source 'HMDB' .
+  BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
+  BIND (strafter(str(?hmdb), "https://identifiers.org/hmdb/") AS ?hmdb_id)
+}
