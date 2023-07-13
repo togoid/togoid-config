@@ -80,20 +80,20 @@ module TogoID
         if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
           $stderr.puts "## Update #{config_file_name(pair)} => #{tsv_file_name(pair)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-          if File.exists?(tsv_file_name(pair))
+          if File.exist?(tsv_file_name(pair))
             # Backup previous TSV output
             sh "mv #{tsv_file_name(pair)} #{tsv_file_name_old(pair)}", verbose: false
           end
           sh "togoid-config #{config_dir_name(pair)} update"
           if validate_tsv_output(pair)
             $stderr.puts "# Success: #{tsv_file_name(pair)} is updated"
-            if File.exists?(tsv_file_name_old(pair))
+            if File.exist?(tsv_file_name_old(pair))
               # Remove prevous TSV output
               sh "rm #{tsv_file_name_old(pair)}", verbose: false
             end
           else
             $stderr.puts "# Failure: #{tsv_file_name(pair)} is not updated"
-            if File.exists?(tsv_file_name_old(pair))
+            if File.exist?(tsv_file_name_old(pair))
               # Revert previous TSV output"
               sh "mv #{tsv_file_name_old(pair)} #{tsv_file_name(pair)}", verbose: false
             end
@@ -150,13 +150,13 @@ module TogoID
     # Return true (needs update) when the TSV file does not exist or the size is zero
     def check_tsv_filesize(pair)
       output = tsv_file_name(pair)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs update) when the TTL file does not exist or the size is zero
     def check_ttl_filesize(pair)
       output = ttl_file_name(pair)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs udpate) when the TSV file is older than the config file
@@ -184,11 +184,11 @@ module TogoID
 
     # Return true (needs update) unless the output file exists and newer than the given timestamp file (if available)
     def file_older_than_stamp?(file, stamp)
-      if File.exists?(file) && File.exists?(stamp) && File.mtime(file) > File.mtime(stamp)
+      if File.exist?(file) && File.exist?(stamp) && File.mtime(file) > File.mtime(stamp)
         $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
         false
       else
-        if File.exists?(stamp)
+        if File.exist?(stamp)
           $stderr.puts "# File #{file} is older than #{stamp}" if $verbose
           true
         else
@@ -200,7 +200,7 @@ module TogoID
 
     # Return true (needs update) when the file is older than $duration (or given) days
     def file_older_than_days?(file, days = $duration)
-      if File.exists?(file)
+      if File.exist?(file)
         age = (Time.now - File.mtime(file)) / (24*60*60)
         $stderr.puts "# File #{file} is created #{age} days ago (will be updated when >#{days} days)" if $verbose
         age > days
@@ -214,7 +214,7 @@ module TogoID
       old = tsv_file_name_old(pair)
       check = true
       count = 0
-      if File.exists?(tsv) and File.exists?(old)
+      if File.exist?(tsv) and File.exist?(old)
         ratio = 1.0 * File.size(tsv) / File.size(old)
         # New file is not smaller than a half of old file size
         if ratio < $minratio
@@ -223,7 +223,7 @@ module TogoID
         end
       end
       # Check if new TSV is valid (regardless of the previous TSV output exists or not)
-      if File.exists?(tsv) and File.size(tsv) > 0
+      if File.exist?(tsv) and File.size(tsv) > 0
         head = `head -#{$chklines} #{tsv}`
         tail = `tail -#{$chklines} #{tsv}`
         [head, tail].each do |lines|
@@ -297,7 +297,7 @@ module TogoID
 
     # Check if the file is updated or the sizes differ or the file doesn't exist
     def update_input_file?(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         # Both checks should be made as the local file can be newer than remote when the previous download fails
         # and the local file can be smaller or size 0 even when it exists
         check_remote_file_time(file, url) || check_remote_file_size(file, url)
@@ -343,7 +343,7 @@ module TogoID
 
     # Return true (needs update) when the remote file size is different from the local one
     def check_remote_file_size(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         # The wget --timestamping (-N) option won't check the file size especially when
         # previous download was interrupted and left broken files with newer dates.
         local_file_size  = File.size(file)
@@ -358,7 +358,7 @@ module TogoID
 
     # Return true (needs update) when the remote file is newer than the local file
     def check_remote_file_time(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         local_file_time  = File.mtime(file)  # Time object
         remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
