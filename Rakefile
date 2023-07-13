@@ -769,19 +769,14 @@ namespace :prepare do
 
       input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids.tsv.gz"
       input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids.tsv"
-      if update_input_file?(input_file, input_url)
-        sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
-        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
-        updated = true
-      end
+      sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+      sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
 
       input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv.gz"
       input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids2uniprot.tsv"
-      if update_input_file?(input_file, input_url)
-        sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
-        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
-        updated = true
-      end
+      sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+      sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
+      updated = true
       updated
     end
   end
