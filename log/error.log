@@ -1,1 +1,16 @@
-NameError: uninitialized constant INPUT_REFSEQ_DIR
+# Error: output/tsv/refseq_protein-uniprot.tsv new file size per old 0 / 3825961217 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_protein-uniprot.tsv or created file was empty
+# Error: output/tsv/refseq_rna-dbsnp.tsv new file size per old 0 / 6749335412 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-dbsnp.tsv or created file was empty
+# Error: output/tsv/refseq_rna-hgnc.tsv new file size per old 0 / 4114004 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-hgnc.tsv or created file was empty
+# Error: output/tsv/refseq_rna-ncbigene.tsv new file size per old 0 / 1192439830 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-ncbigene.tsv or created file was empty
+# Error: output/tsv/refseq_rna-omim_gene.tsv new file size per old 0 / 3670018 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-omim_gene.tsv or created file was empty
+# Error: output/tsv/refseq_rna-pubmed.tsv new file size per old 0 / 111648955 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-pubmed.tsv or created file was empty
+# Error: output/tsv/refseq_rna-refseq_protein.tsv new file size per old 0 / 1188795219 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-refseq_protein.tsv or created file was empty
+# Error: output/tsv/refseq_rna-taxonomy.tsv new file size per old 0 / 1000117460 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-taxonomy.tsv or created file was empty
