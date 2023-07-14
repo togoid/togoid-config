@@ -278,8 +278,10 @@ module TogoID
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}reactome/
         return "prepare:reactome"
-      when /#{OUTPUT_TSV_DIR}refseq/
-        return "prepare:refseq"
+      when /#{OUTPUT_TSV_DIR}refseq_protein/
+        return "prepare:refseq_protein"
+      when /#{OUTPUT_TSV_DIR}refseq_rna/
+        return "prepare:refseq_rna"
       when /#{OUTPUT_TSV_DIR}rhea/
         return "prepare:rhea"
       when /#{OUTPUT_TSV_DIR}sra/
@@ -404,7 +406,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
@@ -415,7 +417,8 @@ namespace :prepare do
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
-  directory INPUT_REFSEQ_DIR      = "input/refseq"
+  directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
+  directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
   directory INPUT_RHEA_DIR        = "input/rhea"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
@@ -678,36 +681,45 @@ namespace :prepare do
     end
   end
 
-  desc "Prepare required files for RefSeq"
-  task :refseq => INPUT_REFSEQ_DIR do
-    $stderr.puts "## Prepare input files for RefSeq"
-    download_lock(INPUT_REFSEQ_DIR) do
+  desc "Prepare required files for RefSeq RNA"
+  task :refseq_rna => INPUT_REFSEQ_RNA_DIR do
+    $stderr.puts "## Prepare input files for RefSeq RNA"
+    download_lock(INPUT_REFSEQ_RNA_DIR) do
       updated = false
       input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
-        download_file(INPUT_REFSEQ_DIR, input_url)
+        download_file(INPUT_REFSEQ_RNA_DIR, input_url)
         # The index number of the gbff files (e.g. '1000' of 'complete.1000.rna.gbff.gz') is not stable.
         # To keep the input directory up-to-date, delete all previous files before downloading the current files.
-        sh "rm -f #{INPUT_REFSEQ_DIR}/complete.*.rna.gbff.gz"
+        sh "rm -f #{INPUT_REFSEQ_RNA_DIR}/complete.*.rna.gbff.gz"
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
         # (It is reported that large files are contaminated by illegal bytes occationally)
         input_file = "complete.*.rna.gbff.gz"
         input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
-        download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+        download_file(INPUT_REFSEQ_RNA_DIR, input_url, input_file)
 
         # Parse the gbff files and output all relations to a single tsv.
         # Each config extract columns from the tsv.
-        sh "gzip -dc #{INPUT_REFSEQ_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_DIR}/refseq_rna_summary.tsv"
+        sh "gzip -dc #{INPUT_REFSEQ_RNA_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_RNA_DIR}/refseq_rna_summary.tsv"
         updated = true
       end
+      updated
+    end
+  end
 
-      input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
+  desc "Prepare required files for RefSeq Protein"
+  task :refseq_protein => INPUT_REFSEQ_PROTEIN_DIR do
+    $stderr.puts "## Prepare input files for RefSeq Protein"
+    download_lock(INPUT_REFSEQ_PROTEIN_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_REFSEQ_PROTEIN_DIR}/gene_refseq_uniprotkb_collab.gz"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
-        download_file(INPUT_REFSEQ_DIR, input_url)
+        download_file(INPUT_REFSEQ_PROTEIN_DIR, input_url)
         updated = true
       end
       updated
