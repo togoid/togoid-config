@@ -686,7 +686,7 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for RefSeq RNA"
     download_lock(INPUT_REFSEQ_RNA_DIR) do
       updated = false
-      input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
+      input_file = "#{INPUT_REFSEQ_RNA_DIR}/RELEASE_NUMBER"
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
