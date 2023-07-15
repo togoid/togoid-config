@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: awk -F "\t" '$1&&$5&&!a[$1, $5]++{print $1 "\t" $5}' $TOGOID_ROOT/input/refseq/refseq_rna_summary.tsv
+  method: awk -F "\t" '$1&&$5&&!a[$1, $5]++{print $1 "\t" $5}' $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv
