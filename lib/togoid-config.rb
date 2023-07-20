@@ -93,7 +93,7 @@ module TogoID
     end
 
     def setup_files
-      @ttl_dir = "output/id_label/"
+      @ttl_dir = "output/id-label/"
       @ttl_file = "#{@ttl_dir}/#{@name}.ttl"
       FileUtils.mkdir_p(@ttl_dir)
     end

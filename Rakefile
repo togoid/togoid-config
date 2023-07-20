@@ -21,7 +21,7 @@ $minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
-directory OUTPUT_ID_LABEL_TTL_DIR = "output/id_label/"
+directory OUTPUT_ID_LABEL_TTL_DIR = "output/id-label/"
 
 CFG_FILES = FileList["config/*/config.yaml"]
 TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
