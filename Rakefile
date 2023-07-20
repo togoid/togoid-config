@@ -42,13 +42,13 @@ S3_BUCKET_NAME = ENV['S3_BUCKET_NAME'] || "togo-id-production"
 
 desc "Default task (update & convert)"
 #task :default => [ :pre, :update, :convert, :post ]
-task :default => [ :pre, 'prepare:all', :update, :convert, :post ]
+task :default => [ :pre, 'prepare:all', :update, :convert, :id_label, :post ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
 task :convert => TTL_FILES
 desc "Update all ID and label TTL files"
-task :rdfize => ID_LABEL_FILES
+task :id_label => ID_LABEL_FILES
 
 desc "Pre task"
 task :pre do
