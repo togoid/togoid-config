@@ -93,20 +93,20 @@ module TogoID
         if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
           $stderr.puts "## Update #{config_file_name(pair)} => #{tsv_file_name(pair)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-          if File.exists?(tsv_file_name(pair))
+          if File.exist?(tsv_file_name(pair))
             # Backup previous TSV output
             sh "mv #{tsv_file_name(pair)} #{tsv_file_name_old(pair)}", verbose: false
           end
           sh "togoid-config #{config_dir_name(pair)} update"
           if validate_tsv_output(pair)
             $stderr.puts "# Success: #{tsv_file_name(pair)} is updated"
-            if File.exists?(tsv_file_name_old(pair))
+            if File.exist?(tsv_file_name_old(pair))
               # Remove prevous TSV output
               sh "rm #{tsv_file_name_old(pair)}", verbose: false
             end
           else
             $stderr.puts "# Failure: #{tsv_file_name(pair)} is not updated"
-            if File.exists?(tsv_file_name_old(pair))
+            if File.exist?(tsv_file_name_old(pair))
               # Revert previous TSV output"
               sh "mv #{tsv_file_name_old(pair)} #{tsv_file_name(pair)}", verbose: false
             end
@@ -188,13 +188,13 @@ module TogoID
     # Return true (needs update) when the TSV file does not exist or the size is zero
     def check_tsv_filesize(pair)
       output = tsv_file_name(pair)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs update) when the TTL file does not exist or the size is zero
     def check_ttl_filesize(pair)
       output = ttl_file_name(pair)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs update) when the TTL file does not exist or the size is zero
@@ -236,11 +236,11 @@ module TogoID
 
     # Return true (needs update) unless the output file exists and newer than the given timestamp file (if available)
     def file_older_than_stamp?(file, stamp)
-      if File.exists?(file) && File.exists?(stamp) && File.mtime(file) > File.mtime(stamp)
+      if File.exist?(file) && File.exist?(stamp) && File.mtime(file) > File.mtime(stamp)
         $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
         false
       else
-        if File.exists?(stamp)
+        if File.exist?(stamp)
           $stderr.puts "# File #{file} is older than #{stamp}" if $verbose
           true
         else
@@ -252,7 +252,7 @@ module TogoID
 
     # Return true (needs update) when the file is older than $duration (or given) days
     def file_older_than_days?(file, days = $duration)
-      if File.exists?(file)
+      if File.exist?(file)
         age = (Time.now - File.mtime(file)) / (24*60*60)
         $stderr.puts "# File #{file} is created #{age} days ago (will be updated when >#{days} days)" if $verbose
         age > days
@@ -266,7 +266,7 @@ module TogoID
       old = tsv_file_name_old(pair)
       check = true
       count = 0
-      if File.exists?(tsv) and File.exists?(old)
+      if File.exist?(tsv) and File.exist?(old)
         ratio = 1.0 * File.size(tsv) / File.size(old)
         # New file is not smaller than a half of old file size
         if ratio < $minratio
@@ -275,7 +275,7 @@ module TogoID
         end
       end
       # Check if new TSV is valid (regardless of the previous TSV output exists or not)
-      if File.exists?(tsv) and File.size(tsv) > 0
+      if File.exist?(tsv) and File.size(tsv) > 0
         head = `head -#{$chklines} #{tsv}`
         tail = `tail -#{$chklines} #{tsv}`
         [head, tail].each do |lines|
@@ -330,8 +330,10 @@ module TogoID
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}reactome/
         return "prepare:reactome"
-      when /#{OUTPUT_TSV_DIR}refseq/
-        return "prepare:refseq"
+      when /#{OUTPUT_TSV_DIR}refseq_protein/
+        return "prepare:refseq_protein"
+      when /#{OUTPUT_TSV_DIR}refseq_rna/
+        return "prepare:refseq_rna"
       when /#{OUTPUT_TSV_DIR}rhea/
         return "prepare:rhea"
       when /#{OUTPUT_TSV_DIR}sra/
@@ -349,7 +351,7 @@ module TogoID
 
     # Check if the file is updated or the sizes differ or the file doesn't exist
     def update_input_file?(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         # Both checks should be made as the local file can be newer than remote when the previous download fails
         # and the local file can be smaller or size 0 even when it exists
         check_remote_file_time(file, url) || check_remote_file_size(file, url)
@@ -395,7 +397,7 @@ module TogoID
 
     # Return true (needs update) when the remote file size is different from the local one
     def check_remote_file_size(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         # The wget --timestamping (-N) option won't check the file size especially when
         # previous download was interrupted and left broken files with newer dates.
         local_file_size  = File.size(file)
@@ -410,7 +412,7 @@ module TogoID
 
     # Return true (needs update) when the remote file is newer than the local file
     def check_remote_file_time(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         local_file_time  = File.mtime(file)  # Time object
         remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
@@ -465,7 +467,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
@@ -476,7 +478,8 @@ namespace :prepare do
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
-  directory INPUT_REFSEQ_DIR      = "input/refseq"
+  directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
+  directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
   directory INPUT_RHEA_DIR        = "input/rhea"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
@@ -745,36 +748,45 @@ namespace :prepare do
     end
   end
 
-  desc "Prepare required files for RefSeq"
-  task :refseq => INPUT_REFSEQ_DIR do
-    $stderr.puts "## Prepare input files for RefSeq"
-    download_lock(INPUT_REFSEQ_DIR) do
+  desc "Prepare required files for RefSeq RNA"
+  task :refseq_rna => INPUT_REFSEQ_RNA_DIR do
+    $stderr.puts "## Prepare input files for RefSeq RNA"
+    download_lock(INPUT_REFSEQ_RNA_DIR) do
       updated = false
-      input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
+      input_file = "#{INPUT_REFSEQ_RNA_DIR}/RELEASE_NUMBER"
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
-        download_file(INPUT_REFSEQ_DIR, input_url)
+        download_file(INPUT_REFSEQ_RNA_DIR, input_url)
         # The index number of the gbff files (e.g. '1000' of 'complete.1000.rna.gbff.gz') is not stable.
         # To keep the input directory up-to-date, delete all previous files before downloading the current files.
-        sh "rm -f #{INPUT_REFSEQ_DIR}/complete.*.rna.gbff.gz"
+        sh "rm -f #{INPUT_REFSEQ_RNA_DIR}/complete.*.rna.gbff.gz"
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
         # (It is reported that large files are contaminated by illegal bytes occationally)
         input_file = "complete.*.rna.gbff.gz"
         input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
-        download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+        download_file(INPUT_REFSEQ_RNA_DIR, input_url, input_file)
 
         # Parse the gbff files and output all relations to a single tsv.
         # Each config extract columns from the tsv.
-        sh "gzip -dc #{INPUT_REFSEQ_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_DIR}/refseq_rna_summary.tsv"
+        sh "gzip -dc #{INPUT_REFSEQ_RNA_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_RNA_DIR}/refseq_rna_summary.tsv"
         updated = true
       end
+      updated
+    end
+  end
 
-      input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
+  desc "Prepare required files for RefSeq Protein"
+  task :refseq_protein => INPUT_REFSEQ_PROTEIN_DIR do
+    $stderr.puts "## Prepare input files for RefSeq Protein"
+    download_lock(INPUT_REFSEQ_PROTEIN_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_REFSEQ_PROTEIN_DIR}/gene_refseq_uniprotkb_collab.gz"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
-        download_file(INPUT_REFSEQ_DIR, input_url)
+        download_file(INPUT_REFSEQ_PROTEIN_DIR, input_url)
         updated = true
       end
       updated
@@ -836,19 +848,14 @@ namespace :prepare do
 
       input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids.tsv.gz"
       input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids.tsv"
-      if update_input_file?(input_file, input_url)
-        sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
-        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
-        updated = true
-      end
+      sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+      sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
 
       input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv.gz"
       input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids2uniprot.tsv"
-      if update_input_file?(input_file, input_url)
-        sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
-        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
-        updated = true
-      end
+      sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+      sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
+      updated = true
       updated
     end
   end

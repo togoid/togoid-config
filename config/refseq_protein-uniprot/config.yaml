@@ -4,5 +4,5 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/gene_refseq_uniprotkb_collab.gz | grep
+  method: gzip -dc $TOGOID_ROOT/input/refseq_protein/gene_refseq_uniprotkb_collab.gz | grep
     -v '^#' | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
