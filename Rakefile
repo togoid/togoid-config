@@ -152,7 +152,7 @@ module TogoID
         if check_id_label_filesize(name) or check_id_label_timestamp(name)
           $stderr.puts "## Update #{id_label_file_name(name)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{name}"
-          sh "togoid-rdfize-id-label config/dataset.yaml #{name}"
+          sh "togoid-rdfize-id-label #{name}"
           $stderr.puts "> #{`date +%FT%T`.strip} #{name}"
         else
           $stderr.puts "# => Preserving #{ttl_file_name(name)}"
