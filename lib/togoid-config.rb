@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'uri'
 
 module TogoID
 
@@ -247,15 +248,17 @@ module TogoID
     #   * => 'a\-b\_c\.d\~e\!f\$g\&h\,i\;j\=k\#l\@m\%n\/o\?p\*q\+r\(s\) AFFX\-HUMGAPDH\/M33197\_3\_at tX\(XXX\)D\_tRNA'
     # See also: http://docs.openlinksw.com/virtuoso/fn_ttlp_mt/
     #SED_PN_LOCAL_ESC = 's/[-_.~!$&,;=#@%\/\?\*\+\(\)]/\\\\&/g'
-    SED_PN_LOCAL_ESC = 's/[~!$&,;=#@%\/\?\*\+\(\)]/\\\\&/g'
+    #SED_PN_LOCAL_ESC = 's/[~!$&,;=#@%\/\?\*\+\(\)]/\\\\&/g'
 
     def tsv2ttl(tsv, ttl)
       # To reduce method call
       fwd_predicate = set_predicate(@link.fwd)
       rev_predicate = set_predicate(@link.rev)
       # Should check whether source_id or target_id contains chars that need to be escaped in Turtle
-      Kernel.open("| sed -e '#{SED_PN_LOCAL_ESC}' #{tsv}").each do |line|
-        source_id, target_id, = line.strip.split(/\s+/)
+      ## Use URL encoding instead of backslash escaping
+      # Kernel.open("| sed -e '#{SED_PN_LOCAL_ESC}' #{tsv}").each do |line|
+      File.readlines(tsv).each do |line|
+        source_id, target_id, = line.strip.split(/\s+/).map{|s| URI.encode_www_form_component(s)}
         ttl.puts triple("#{@source_ns}:#{source_id}", "#{fwd_predicate}", "#{@target_ns}:#{target_id}") if fwd_predicate
         ttl.puts triple("#{@target_ns}:#{target_id}", "#{rev_predicate}", "#{@source_ns}:#{source_id}") if rev_predicate
       end
