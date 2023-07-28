@@ -1,6 +1,7 @@
 # TogoID
 
 require 'time'
+require 'yaml'
 
 ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 
@@ -20,10 +21,20 @@ $minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
+directory OUTPUT_ID_LABEL_TTL_DIR = "output/id-label/"
 
 CFG_FILES = FileList["config/*/config.yaml"]
 TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
+
+datasets = YAML.load(File.read("config/dataset.yaml"))
+id_label_files_strs = []
+datasets.each do |dataset, hash|
+  if hash.has_key?("method")
+    id_label_files_strs.push("#{OUTPUT_ID_LABEL_TTL_DIR}#{dataset}.ttl")
+  end
+end
+ID_LABEL_FILES = FileList.new(id_label_files_strs)
 
 # For update procedure on AWS
 UPDATE_TXT     = ENV['TOGOID_UPDATE_TXT'] || File.join(OUTPUT_TSV_DIR, "update.txt")
@@ -31,11 +42,13 @@ S3_BUCKET_NAME = ENV['S3_BUCKET_NAME'] || "togo-id-production"
 
 desc "Default task (update & convert)"
 #task :default => [ :pre, :update, :convert, :post ]
-task :default => [ :pre, 'prepare:all', :update, :convert, :post ]
+task :default => [ :pre, 'prepare:all', :update, :convert, :id_label, :post ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
 task :convert => TTL_FILES
+desc "Update all ID and label TTL files"
+task :id_label => ID_LABEL_FILES
 
 desc "Pre task"
 task :pre do
@@ -127,6 +140,27 @@ module TogoID
       return "config/dataset.yaml"
     end
 
+    # Entry point for ID and Label TTL
+    def update_id_label(taskname)
+      if taskname[/#{OUTPUT_ID_LABEL_TTL_DIR}/]
+        name = taskname.sub(/#{OUTPUT_ID_LABEL_TTL_DIR}/, '').sub(/\.ttl$/, '')
+        if $verbose
+          $verbose = false
+          $stderr.puts "### Update ID and Label TTL for #{name} if check_id_label_filesize #{check_id_label_filesize(name)} or check_id_label_timestamp #{check_id_label_timestamp(name)}"
+          $verbose = true
+        end
+        if check_id_label_filesize(name) or check_id_label_timestamp(name)
+          $stderr.puts "## Update #{id_label_file_name(name)}"
+          $stderr.puts "< #{`date +%FT%T`.strip} #{name}"
+          sh "togoid-rdfize-id-label #{name}"
+          $stderr.puts "> #{`date +%FT%T`.strip} #{name}"
+        else
+          $stderr.puts "# => Preserving #{ttl_file_name(name)}"
+        end
+      end
+      return "config/dataset.yaml"
+    end
+
     def config_dir_name(pair)
       "config/#{pair}"
     end
@@ -147,6 +181,10 @@ module TogoID
       "#{OUTPUT_TTL_DIR}#{pair}.ttl"
     end
 
+    def id_label_file_name(name)
+      "#{OUTPUT_ID_LABEL_TTL_DIR}#{name}.ttl"
+    end
+
     # Return true (needs update) when the TSV file does not exist or the size is zero
     def check_tsv_filesize(pair)
       output = tsv_file_name(pair)
@@ -157,6 +195,12 @@ module TogoID
     def check_ttl_filesize(pair)
       output = ttl_file_name(pair)
       return ! (File.exist?(output) and File.size(output) > 0)
+    end
+
+    # Return true (needs update) when the TTL file does not exist or the size is zero
+    def check_id_label_filesize(name)
+      output = id_label_file_name(name)
+      return ! (File.exists?(output) and File.size(output) > 0)
     end
 
     # Return true (needs udpate) when the TSV file is older than the config file
@@ -179,6 +223,14 @@ module TogoID
     def check_ttl_timestamp(pair)
       input  = tsv_file_name(pair)
       output = ttl_file_name(pair)
+      file_older_than_stamp?(output, input)
+    end
+
+    # Return true (needs update) when the TSV file is older than the timestamp file
+    def check_id_label_timestamp(name)
+      input  = "input/#{name}/download.lock"
+      output = id_label_file_name(name)
+      # If there is no timpestamp file (input), update the pair anyway
       file_older_than_stamp?(output, input)
     end
 
@@ -402,6 +454,15 @@ rule(/#{OUTPUT_TTL_DIR}\S+\.ttl/ => [
   $stderr.puts t.investigation if $verbose
 end
 
+# Dependency for ID and Label TTL files
+rule(/#{OUTPUT_ID_LABEL_TTL_DIR}\S+\.ttl/ => [
+  OUTPUT_ID_LABEL_TTL_DIR,
+  method(:update_id_label)
+]) do |t|
+  $stderr.puts "Rule for ID and Label TTL (#{t.name})"
+  $stderr.puts t.investigation if $verbose
+end
+
 ### Preparatioin tasks
 
 namespace :prepare do
@@ -503,6 +564,12 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_COG_DIR, input_url)
+        updated = true
+      end
+      input_file = "#{INPUT_COG_DIR}/cog-20.def.tab"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.def.tab"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_COG_DIR, input_url)
         updated = true
