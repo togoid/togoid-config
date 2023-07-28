@@ -1,0 +1,6 @@
+# Error: output/tsv/lipidmaps-chebi.tsv new file size per old 0 / 251099 = 0.0 < 0.5
+# Error: Failed to create output/tsv/lipidmaps-chebi.tsv or created file was empty
+# Error: output/tsv/lipidmaps-inchi_key.tsv new file size per old 0 / 1950350 = 0.0 < 0.5
+# Error: Failed to create output/tsv/lipidmaps-inchi_key.tsv or created file was empty
+# Error: output/tsv/lipidmaps-swisslipids.tsv new file size per old 0 / 283840 = 0.0 < 0.5
+# Error: Failed to create output/tsv/lipidmaps-swisslipids.tsv or created file was empty
