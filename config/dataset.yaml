@@ -30,7 +30,7 @@ atc:
   category: Drug
   regex: '^(?<id>[A-Z]\d{2}[A-Z]{2}\d{2})$'
   prefix: 'http://identifiers.org/atc/'
-  example:
+  examples:
     - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
 bioproject:
   label: BioProject
