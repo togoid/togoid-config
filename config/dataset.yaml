@@ -164,12 +164,6 @@ ec:
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
-ena:
-  catalog: nbdc00432
-  category: Gene
-  label: ENA
-  regex: '^(?:ena\.embl:)?(?<id>[A-Z]+[0-9]+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/ena.embl/'
 ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
@@ -275,16 +269,6 @@ cog:
   examples:
     - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
   method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
-hp:
-  label: Human Phenotype Ontology
-  catalog: nbdc02559
-  category: Phenotype
-  regex: '^HP[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/HP_'
-  format: ["HP:%s","HP_%s"]
-  examples:
-    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
-    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 hp_phenotype:
   label: HP Phenotype
   catalog: nbdc02559
@@ -305,13 +289,6 @@ hp_inheritance:
   examples:
     - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
     - ["HP_0032382","HP_0001475","HP_0001417","HP_0010984","HP_0003745","HP_0001442","HP_0000007","HP_0025352","HP_0001426","HP_0001470"]
-human_protein_atlas:  # FIXME: too long?
-  label: Human Protein Atlas
-  catalog: nbdc00905
-  category: Protein
-  # FIXME: valid in RDF?
-  regex: '^(?<id>ENSG\d{11})$'
-  prefix: 'http://www.proteinatlas.org/'
 inchi_key:
   label: InChIKey
   catalog: FIXME
@@ -691,7 +668,6 @@ refseq_genomic:
   examples:
     - ["NG_004671","NG_011844","NG_008481","NG_007973","NG_001091","NG_008005","NG_023230","NG_046394","NG_009617","NG_016421","NG_021472"]
     - ["NG_004671.3","NG_011844.2","NG_008481.4","NG_007973.1","NG_001091.7","NG_008005.1","NG_023230.1","NG_046394.1","NG_009617.1","NG_016421.2","NG_021472.2"]
-
 refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
@@ -712,7 +688,6 @@ refseq_rna:
   examples:
     - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
     - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
-
 rgd:
   label: RGD
   catalog: nbdc00188
