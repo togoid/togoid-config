@@ -17,6 +17,9 @@ def parse_xml(rootnode):
                 for db_xref_node in link_node.findall("db_xref"):
                     print(ipr_id, db_xref_node.attrib["db"],
                           db_xref_node.attrib["dbkey"], sep="\t")
+        name_node = ipr_node.find("name")
+        if name_node is not None:
+            print(ipr_id, "name", name_node.text, sep="\t")
     return
 
 def main():

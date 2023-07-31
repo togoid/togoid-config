@@ -47,7 +47,7 @@ def extract_text_to_tsv(xml_file, target_tags):
     parser.parse(xml_file)
 
 
-target_tags = ["accession", "inchikey", "drugbank_id", "pdb_id", "pubchem_compound_id", "chebi_id"]
+target_tags = ["accession", "name", "inchikey", "drugbank_id", "pdb_id", "pubchem_compound_id", "chebi_id"]
 ns = "{http://www.hmdb.ca}"
 input_xml = sys.argv[1]
 extract_text_to_tsv(input_xml, target_tags)

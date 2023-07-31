@@ -4,7 +4,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-SELECT DISTINCT ?atc_id ?pubchem_id
+SELECT DISTINCT ?pubchem_id ?atc_id
 WHERE {
   ?attr a sio:CHEMINF_000562 ;
         sio:is-attribute-of ?cid ;
