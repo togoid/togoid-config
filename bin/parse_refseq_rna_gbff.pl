@@ -87,10 +87,12 @@ while (<>){
 # REFERENCE を抽出
 #   このなかの PUBMED に PubMed ID (PMID) が記載されている。
 #   複数記載されているため while() ですべてのパタンマッチを抽出。
+#   出力オプション未指定の場合は、カンマ区切りの ID リストを作成。
+	my $pubmed_all = '';
 	while ($gbff =~ /
 		^(REFERENCE\ .*?)  # REFERENCE 全体にマッチ
 		^(?=\S)            # 次の項目の開始位置の手前まで
-	/smxg and $pmid_op){   # 出力オプション未指定の場合はループを実行しない
+	/smxg and ($pmid_op or $summary_op)){
 		my $reference = $1 ;
 
 # REFERENCE -> PUBMED を抽出
@@ -99,7 +101,11 @@ while (<>){
 			^\ +PUBMED\ +(\S+)
 		/mx) ? $1 : '' ;
 		print "$locus	$pubmed\n" if $pmid_op ;  # RefSeq RNA -> PubMed ID の対応を出力
+		if ($pubmed ne '') {
+			$pubmed_all .= ',' . $pubmed;
+		}
 	}
+	$pubmed_all =~ s/^,//g;
 
 # FEATURES 全体を抽出
 #   Feature Table だよ。
@@ -159,12 +165,18 @@ while (<>){
 # FEATURES -> gene -> /db_xref="MIM:xxxxx" を抽出
 #   MIM number（整数）
 #   複数記載されている場合があるため while() ですべてのパタンマッチを抽出。
+#   出力オプション未指定の場合は、カンマ区切りの ID リストを作成。
+	my $mim_all = '';
 	while ($gene_feature =~ /
 		^\ +\/db_xref=\"MIM:(.*?)\"$
-	/mxg and $mim_op){                # 出力オプション未指定の場合はループを実行しない
+	/mxg and ($mim_op or $summary_op)){
 		my $mim = $1 ;
 		print "$locus	$mim\n" if $mim_op ;  # RefSeq RNA -> MIM number の対応を出力
+		if ($mim ne '') {
+			$mim_all .= ',' . $mim;
+		}
 	}
+	$mim_all =~ s/^,//g;
 
 # FEATURES -> CDS 全体を抽出
 #   RefSeq RNA においては、CDS は基本的に1つしかないはずなので、
@@ -185,11 +197,13 @@ while (<>){
 
 # FEATURES -> variation 全体を抽出
 #   複数記載されているため while() ですべてのパタンマッチを抽出。
+#   出力オプション未指定の場合は、カンマ区切りの ID リストを作成。
+	my $dbsnp_all = '';
 	while ($features =~ /
 		^(\ {5}variation\ .*?)(  # variation feature の範囲にマッチ
 		^(?!\ {6}) |             # 次の項目の開始位置の手前まで
 		\Z )                     # または FEATURES の末尾まで
-	/smxg and $dbsnp_op){        # 出力オプション未指定の場合はループを実行しない
+	/smxg and ($dbsnp_op or $summary_op)){
 		my $variation_feature = $1 ;
 
 # FEATURES -> variation -> /db_xref="dbSNP:xxxxx" を抽出
@@ -200,7 +214,11 @@ while (<>){
 			^\ +\/db_xref=\"dbSNP:(.*?)\"$
 		/mx) ? $1 : '' ;
 		print "$locus	rs$dbsnp\n" if $dbsnp_op ;  # RefSeq RNA -> dbSNP の対応を出力
+		if ($dbsnp ne '') {
+			$dbsnp_all .= ',rs' . $dbsnp;
+		}
 	}
+	$dbsnp_all =~ s/^,//g;
 
 # エントリのまとめを1行で出力
 	print join "\t", (
@@ -211,6 +229,9 @@ while (<>){
 		$geneid,     # Gene ID
 		$hgnc,       # HGNC ID
 		$protein_id, # RefSeq Protein accession.version
+		$mim_all,    # comma separated MIM IDs
+		$pubmed_all, # comma separated PubMed IDs
+		$dbsnp_all,  # comma separated dbSNP IDs
 	), "\n" if $summary_op ;
 }
 

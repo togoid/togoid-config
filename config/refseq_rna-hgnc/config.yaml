@@ -4,5 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: gzip -dc $TOGOID_ROOT/input/refseq/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl
-    --hgnc |  sed 's/HGNC://' | awk -F "\t" '$1 != "" && $2 != ""' | awk '!a[$0]++'
+  method: awk -F "\t" '$1&&$6&&!a[$1, $6]++{print $1 "\t" gensub("HGNC:", "", "g", $6)}' $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv

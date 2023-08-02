@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000012
+  reverse: TIO_000012
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: sparql_thread.pl -t 4

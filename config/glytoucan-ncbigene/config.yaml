@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000099
+  reverse: TIO_000098
+  file: sample.tsv
+update:
+  frequency: threeTimesAYear
+  method: sparql_csv2tsv.sh query.rq https://ts.glycosmos.org/sparql

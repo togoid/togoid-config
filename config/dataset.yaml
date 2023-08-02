@@ -30,7 +30,7 @@ atc:
   category: Drug
   regex: '^(?<id>[A-Z]\d{2}[A-Z]{2}\d{2})$'
   prefix: 'http://identifiers.org/atc/'
-  example:
+  examples:
     - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
 bioproject:
   label: BioProject
@@ -40,6 +40,14 @@ bioproject:
   prefix: 'http://identifiers.org/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
+bioproject_umbrella:
+  label: BioProject umbrella
+  catalog: nbdc00476
+  category: Project
+  regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
+  prefix: 'http://identifiers.org/bioproject/'
+  examples:
+    - ["PRJDB10770","PRJDB14691","PRJEB55721","PRJEB56110","PRJNA388429","PRJNA510115","PRJNA834739","PRJNA561326","PRJNA672702","PRJNA248220"]
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
@@ -130,7 +138,7 @@ dgidb:
 doid:
   label: Disease ontology
   catalog: nbdc00261
-  category: Disease
+  category: Phenotype
   regex: '^DO(?:ID)?[:_](?<id>\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/DOID_'
   format: ["DO:%s","DOID:%s","DOID_%s"]
@@ -156,12 +164,6 @@ ec:
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
-ena:
-  catalog: nbdc00432
-  category: Gene
-  label: ENA
-  regex: '^(?:ena\.embl:)?(?<id>[A-Z]+[0-9]+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/ena.embl/'
 ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
@@ -249,6 +251,7 @@ hmdb:
   examples:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
     - ["hmdb:HMDB0029433","hmdb:HMDB0015609","hmdb:HMDB0000042","hmdb:HMDB0002360","hmdb:HMDB0003345","hmdb:HMDB0003550","hmdb:HMDB0036769","hmdb:HMDB0000935","hmdb:HMDB0002755","hmdb:HMDB0004369"]
+  method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/hmdb/hmdb_metabolites.tsv
 homologene:
   label: HomoloGene
   catalog: nbdc00101
@@ -265,23 +268,27 @@ cog:
   prefix: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
   examples:
     - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
-hp:
-  label: Human Phenotype Ontology
+  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
+hp_phenotype:
+  label: HP Phenotype
   catalog: nbdc02559
-  category: Disease
+  category: Phenotype
   regex: '^HP[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/HP_'
   format: ["HP:%s","HP_%s"]
   examples:
     - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
     - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
-human_protein_atlas:  # FIXME: too long?
-  label: Human Protein Atlas
-  catalog: nbdc00905
-  category: Protein
-  # FIXME: valid in RDF?
-  regex: '^(?<id>ENSG\d{11})$'
-  prefix: 'http://www.proteinatlas.org/'
+hp_inheritance:
+  label: HP Inheritance
+  catalog: nbdc02559
+  category: Classification
+  regex: '^HP[:_](?<id>\d{7})$'
+  prefix: 'http://purl.obolibrary.org/obo/HP_'
+  format: ["HP:%s","HP_%s"]
+  examples:
+    - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
+    - ["HP_0032382","HP_0001475","HP_0001417","HP_0010984","HP_0003745","HP_0001442","HP_0000007","HP_0025352","HP_0001426","HP_0001470"]
 inchi_key:
   label: InChIKey
   catalog: FIXME
@@ -322,6 +329,7 @@ interpro:
   prefix: 'http://identifiers.org/interpro/'
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
+  method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
 jga_dataset:
   label: JGA Dataset
   catalog: nbdc02152
@@ -338,6 +346,14 @@ jga_study:
   prefix: 'http://ddbj.nig.ac.jp/resource/jga-study/'
   examples:
     - ["JGAS000006","JGAS000008","JGAS000009","JGAS000012","JGAS000013","JGAS000014","JGAS000015","JGAS000016","JGAS000024","JGAS000026"]
+iuphar_ligand:
+  label: IUPHAR ligand
+  catalog: FIXME
+  category: Compound
+  regex: '^(?<id>\d+)$'
+  prefix: 'http://identifiers.org/iuphar.ligand/'
+  examples:
+    - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 kegg_compound:
   label: KEGG Compound
   catalog: nbdc00814
@@ -346,7 +362,7 @@ kegg_compound:
   prefix: 'http://identifiers.org/kegg.compound/'
 kegg_disease:
   catalog: nbdc00813
-  category: Disease
+  category: Phenotype
   label: KEGG Disease
   regex: '^KEGG:H(?<id>\d+)$'
   prefix: 'http://identifiers.org/kegg.disease/'
@@ -381,6 +397,14 @@ kegg_reaction:
   category: Interaction
   regex: '^(?<id>R\d+)$'
   prefix: 'http://identifiers.org/kegg.reaction/'
+lipidmaps:
+  label: LIPID MAPS
+  catalog: FIXME
+  category: Lipid
+  regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
+  prefix: 'http://identifiers.org/lipidmaps/'
+  examples:
+    - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
 lrg:
   catalog: nbdc02566
   category: Gene
@@ -410,7 +434,7 @@ mbgd_organism:
 meddra:
   label: MedDRA
   catalog: nbdc02564
-  category: Disease
+  category: Phenotype
   regex: '^(?:(?:MedDRA|meddra):)?(?<id>\d+)$'
   prefix: 'http://identifiers.org/meddra/'
   format: ["%s","MedDRA:%s","meddra:%s"]
@@ -421,7 +445,7 @@ meddra:
 medgen:
   label: MedGen
   catalog: nbdc02560
-  category: Disease
+  category: Phenotype
   regex: '^(?<id>CN?\d{4,7})$'
   prefix: 'http://identifiers.org/medgen/'
   examples:
@@ -429,7 +453,7 @@ medgen:
 mesh:
   label: MeSH
   catalog: nbdc00132
-  category: Disease
+  category: Phenotype
   regex: '^(?<id>[CD]\d{6,9})$'
   prefix: 'http://id.nlm.nih.gov/mesh/'
   examples:
@@ -455,7 +479,7 @@ mirbase:
 mondo:
   label: MONDO
   catalog: nbdc02563
-  category: Disease
+  category: Phenotype
   regex: '^MONDO[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/MONDO_'
   format: ["MONDO:%s","MONDO_%s"]
@@ -465,7 +489,7 @@ mondo:
 nando:
   label: NANDO
   catalog: nbdc02557
-  category: Disease
+  category: Phenotype
   regex: '^NANDO[:_](?<id>\d{7})$'
   prefix: 'http://nanbyodata.jp/ontology/NANDO_'
   format: ["NANDO:%s","NANDO_%s"]
@@ -498,7 +522,7 @@ ncbiprotein:
 ncit_disease:
   label: NCIT disease
   catalog: FIXME
-  category: Disease
+  category: Phenotype
   regex: '^NCIT?[:_](?<id>C\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/NCIT_'
   format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
@@ -549,7 +573,7 @@ omim_gene:
 omim_phenotype:
   label: OMIM phenotype
   catalog: nbdc00154
-  category: Disease
+  category: Phenotype
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
   prefix: 'http://identifiers.org/mim/'
   format: ["%s","OMIM:%s","MIM:%s"]
@@ -560,7 +584,7 @@ omim_phenotype:
 orphanet:
   label: Orphanet
   catalog: nbdc01422
-  category: Disease
+  category: Phenotype
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
   prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
   format: ["ORPHA:%s","ORDO:%s","Orphanet:%s","Orphanet_%s"]
@@ -569,6 +593,14 @@ orphanet:
     - ["ORDO:101078","ORDO:596","ORDO:1934","ORDO:1047","ORDO:60025","ORDO:166090","ORDO:275745","ORDO:1171","ORDO:93277","ORDO:247598"]
     - ["Orphanet:101078","Orphanet:596","Orphanet:1934","Orphanet:1047","Orphanet:60025","Orphanet:166090","Orphanet:275745","Orphanet:1171","Orphanet:93277","Orphanet:247598"]
     - ["Orphanet_101078","Orphanet_596","Orphanet_1934","Orphanet_1047","Orphanet_60025","Orphanet_166090","Orphanet_275745","Orphanet_1171","Orphanet_93277","Orphanet_247598"]
+pathbank:
+  label: Pathbank
+  catalog: FIXME
+  category: Pathway
+  regex: '^(?<id>SMP\d+)$'
+  prefix: 'http://pathbank.org/view/'
+  examples:
+    - ["SMP0000055","SMP0000057","SMP0000029","SMP0000044","SMP0000048","SMP0000046","SMP0000059","SMP0000067","SMP0000007","SMP0000004"]
 pdb:
   label: PDB
   catalog: nbdc00156
@@ -578,6 +610,14 @@ pdb:
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
     - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
+pdb_ccd:
+  label: PDB CCD
+  catalog: nbdc01766
+  category: Compound
+  regex: '^(?<id>\w{1,3})$'
+  prefix: 'http://identifiers.org/pdb-ccd/'
+  examples:
+    - ["D5Y","P2B","A6L","M35","A6M","S1P","D5Z","M36","P2C","P2D"]
 pfam:
   label: Pfam
   catalog: nbdc00163
@@ -653,7 +693,6 @@ refseq_genomic:
   examples:
     - ["NG_004671","NG_011844","NG_008481","NG_007973","NG_001091","NG_008005","NG_023230","NG_046394","NG_009617","NG_016421","NG_021472"]
     - ["NG_004671.3","NG_011844.2","NG_008481.4","NG_007973.1","NG_001091.7","NG_008005.1","NG_023230.1","NG_046394.1","NG_009617.1","NG_016421.2","NG_021472.2"]
-
 refseq_protein:
   label: RefSeq protein
   catalog: nbdc00187
@@ -674,7 +713,6 @@ refseq_rna:
   examples:
     - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
     - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
-
 rgd:
   label: RGD
   catalog: nbdc00188
@@ -753,11 +791,13 @@ sra_sample:
 swisslipids:
   label: SwissLipids
   catalog: nbdc02026
-  category: Lipids
-  regex: '^SLM:(?<id>\d+)$'
+  category: Lipid
+  regex: '^SLM[:_](?<id>\d+)$'
   prefix: 'http://identifiers.org/slm/SLM:'
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
+    - ["SLM_000000002","SLM_000000003","SLM_000000006","SLM_000000007","SLM_000000035", "SLM_000000042","SLM_000000043","SLM_000000044", "SLM_000000047","SLM_000000048"]
+  method: awk -F "\t" 'FNR>=2{print gensub(/^SLM:/,"","g",$1) "\t" $3}' $TOGOID_ROOT/input/swisslipids/lipids.tsv
 tair:
   label: TAIR
   catalog: nbdc00697

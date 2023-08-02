@@ -1,27 +1,6 @@
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <html><head>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <title>404 Not Found</title>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML </head><body>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <h1>Not Found</h1>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <p>The requested URL /public/rdf/dblink/bioproject-biosample/biosample2bioproject.tsv was not found on this server.</p>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML </body></html>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <html><head>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <title>404 Not Found</title>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML </head><body>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <h1>Not Found</h1>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML <p>The requested URL /public/rdf/dblink/bioproject-biosample/biosample2bioproject.tsv was not found on this server.</p>
-# Error: output/tsv/biosample-bioproject.tsv seems to contain HTML </body></html>
-# Error: output/tsv/togovar-clinvar.tsv new file size per old 2901157 / 9611580 = 0.3018397599562195 < 0.5
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed SELECT DISTINCT ?tgv_id ?variation_id
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed WHERE {
-# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML GRAPH <http://togovar.biosciencedbc.jp/variant> {
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed ?variant dct:identifier ?tgv_id .
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed }
-# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML GRAPH <http://togovar.biosciencedbc.jp/variant/annotation/clinvar> {
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed ?variant dct:identifier ?variation_id .
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed }
-# Error: output/tsv/togovar-clinvar.tsv seems to be malformed } limit 2000000
-< HTTP/1.1 502 Proxy Error
-# Error: output/tsv/uniprot-pfam.tsv new file size per old 0 / 1785229006 = 0.0 < 0.5
-# Error: Failed to create output/tsv/uniprot-pfam.tsv or created file was empty
+# Error: output/tsv/lipidmaps-chebi.tsv new file size per old 0 / 251099 = 0.0 < 0.5
+# Error: Failed to create output/tsv/lipidmaps-chebi.tsv or created file was empty
+# Error: output/tsv/lipidmaps-inchi_key.tsv new file size per old 0 / 1950350 = 0.0 < 0.5
+# Error: Failed to create output/tsv/lipidmaps-inchi_key.tsv or created file was empty
+# Error: output/tsv/lipidmaps-swisslipids.tsv new file size per old 0 / 283840 = 0.0 < 0.5
+# Error: Failed to create output/tsv/lipidmaps-swisslipids.tsv or created file was empty

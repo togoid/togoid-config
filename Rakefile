@@ -1,6 +1,7 @@
 # TogoID
 
 require 'time'
+require 'yaml'
 
 ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 
@@ -9,7 +10,7 @@ ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 $verbose = true  # Flag to enable verbose output for STDERR
 
 # TogoID#file_older_than_days?()
-$duration = 7    # Default number of days to force update
+$duration = 5    # Default number of days to force update
 
 # TogoID#validate_tsv_output()
 $chklines = 10   # Number of head and tail lines to be validated
@@ -20,22 +21,34 @@ $minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
 directory OUTPUT_TTL_DIR = "output/ttl/"
+directory OUTPUT_ID_LABEL_TTL_DIR = "output/id-label/"
 
 CFG_FILES = FileList["config/*/config.yaml"]
 TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
 TTL_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TTL_DIR).sub(/$/, '.ttl')
 
+datasets = YAML.load(File.read("config/dataset.yaml"))
+id_label_files_strs = []
+datasets.each do |dataset, hash|
+  if hash.has_key?("method")
+    id_label_files_strs.push("#{OUTPUT_ID_LABEL_TTL_DIR}#{dataset}.ttl")
+  end
+end
+ID_LABEL_FILES = FileList.new(id_label_files_strs)
+
 # For update procedure on AWS
-UPDATE_TXT     = File.join(OUTPUT_TSV_DIR, "update.txt")
-S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
+UPDATE_TXT     = ENV['TOGOID_UPDATE_TXT'] || File.join(OUTPUT_TSV_DIR, "update.txt")
+S3_BUCKET_NAME = ENV['S3_BUCKET_NAME'] || "togo-id-production"
 
 desc "Default task (update & convert)"
 #task :default => [ :pre, :update, :convert, :post ]
-task :default => [ :pre, 'prepare:all', :update, :convert, :post ]
+task :default => [ :pre, 'prepare:all', :update, :convert, :id_label, :post ]
 desc "Update all TSV files"
 task :update  => TSV_FILES
 desc "Update all TTL files"
 task :convert => TTL_FILES
+desc "Update all ID and label TTL files"
+task :id_label => ID_LABEL_FILES
 
 desc "Pre task"
 task :pre do
@@ -80,20 +93,20 @@ module TogoID
         if check_tsv_filesize(pair) or check_config_timestamp(pair) or check_tsv_timestamp(pair)
           $stderr.puts "## Update #{config_file_name(pair)} => #{tsv_file_name(pair)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{pair}"
-          if File.exists?(tsv_file_name(pair))
+          if File.exist?(tsv_file_name(pair))
             # Backup previous TSV output
             sh "mv #{tsv_file_name(pair)} #{tsv_file_name_old(pair)}", verbose: false
           end
           sh "togoid-config #{config_dir_name(pair)} update"
           if validate_tsv_output(pair)
             $stderr.puts "# Success: #{tsv_file_name(pair)} is updated"
-            if File.exists?(tsv_file_name_old(pair))
+            if File.exist?(tsv_file_name_old(pair))
               # Remove prevous TSV output
               sh "rm #{tsv_file_name_old(pair)}", verbose: false
             end
           else
             $stderr.puts "# Failure: #{tsv_file_name(pair)} is not updated"
-            if File.exists?(tsv_file_name_old(pair))
+            if File.exist?(tsv_file_name_old(pair))
               # Revert previous TSV output"
               sh "mv #{tsv_file_name_old(pair)} #{tsv_file_name(pair)}", verbose: false
             end
@@ -127,6 +140,27 @@ module TogoID
       return "config/dataset.yaml"
     end
 
+    # Entry point for ID and Label TTL
+    def update_id_label(taskname)
+      if taskname[/#{OUTPUT_ID_LABEL_TTL_DIR}/]
+        name = taskname.sub(/#{OUTPUT_ID_LABEL_TTL_DIR}/, '').sub(/\.ttl$/, '')
+        if $verbose
+          $verbose = false
+          $stderr.puts "### Update ID and Label TTL for #{name} if check_id_label_filesize #{check_id_label_filesize(name)} or check_id_label_timestamp #{check_id_label_timestamp(name)}"
+          $verbose = true
+        end
+        if check_id_label_filesize(name) or check_id_label_timestamp(name)
+          $stderr.puts "## Update #{id_label_file_name(name)}"
+          $stderr.puts "< #{`date +%FT%T`.strip} #{name}"
+          sh "togoid-rdfize-id-label #{name}"
+          $stderr.puts "> #{`date +%FT%T`.strip} #{name}"
+        else
+          $stderr.puts "# => Preserving #{ttl_file_name(name)}"
+        end
+      end
+      return "config/dataset.yaml"
+    end
+
     def config_dir_name(pair)
       "config/#{pair}"
     end
@@ -147,15 +181,25 @@ module TogoID
       "#{OUTPUT_TTL_DIR}#{pair}.ttl"
     end
 
+    def id_label_file_name(name)
+      "#{OUTPUT_ID_LABEL_TTL_DIR}#{name}.ttl"
+    end
+
     # Return true (needs update) when the TSV file does not exist or the size is zero
     def check_tsv_filesize(pair)
       output = tsv_file_name(pair)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs update) when the TTL file does not exist or the size is zero
     def check_ttl_filesize(pair)
       output = ttl_file_name(pair)
+      return ! (File.exist?(output) and File.size(output) > 0)
+    end
+
+    # Return true (needs update) when the TTL file does not exist or the size is zero
+    def check_id_label_filesize(name)
+      output = id_label_file_name(name)
       return ! (File.exists?(output) and File.size(output) > 0)
     end
 
@@ -182,13 +226,21 @@ module TogoID
       file_older_than_stamp?(output, input)
     end
 
+    # Return true (needs update) when the TSV file is older than the timestamp file
+    def check_id_label_timestamp(name)
+      input  = "input/#{name}/download.lock"
+      output = id_label_file_name(name)
+      # If there is no timpestamp file (input), update the pair anyway
+      file_older_than_stamp?(output, input)
+    end
+
     # Return true (needs update) unless the output file exists and newer than the given timestamp file (if available)
     def file_older_than_stamp?(file, stamp)
-      if File.exists?(file) && File.exists?(stamp) && File.mtime(file) > File.mtime(stamp)
+      if File.exist?(file) && File.exist?(stamp) && File.mtime(file) > File.mtime(stamp)
         $stderr.puts "# File #{file} is newer than #{stamp}" if $verbose
         false
       else
-        if File.exists?(stamp)
+        if File.exist?(stamp)
           $stderr.puts "# File #{file} is older than #{stamp}" if $verbose
           true
         else
@@ -200,7 +252,7 @@ module TogoID
 
     # Return true (needs update) when the file is older than $duration (or given) days
     def file_older_than_days?(file, days = $duration)
-      if File.exists?(file)
+      if File.exist?(file)
         age = (Time.now - File.mtime(file)) / (24*60*60)
         $stderr.puts "# File #{file} is created #{age} days ago (will be updated when >#{days} days)" if $verbose
         age > days
@@ -214,7 +266,7 @@ module TogoID
       old = tsv_file_name_old(pair)
       check = true
       count = 0
-      if File.exists?(tsv) and File.exists?(old)
+      if File.exist?(tsv) and File.exist?(old)
         ratio = 1.0 * File.size(tsv) / File.size(old)
         # New file is not smaller than a half of old file size
         if ratio < $minratio
@@ -223,7 +275,7 @@ module TogoID
         end
       end
       # Check if new TSV is valid (regardless of the previous TSV output exists or not)
-      if File.exists?(tsv) and File.size(tsv) > 0
+      if File.exist?(tsv) and File.size(tsv) > 0
         head = `head -#{$chklines} #{tsv}`
         tail = `tail -#{$chklines} #{tsv}`
         [head, tail].each do |lines|
@@ -266,6 +318,8 @@ module TogoID
         return "prepare:cellosaurus"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}hmdb/
+        return "prepare:hmdb"
       when /#{OUTPUT_TSV_DIR}homologene/
         return "prepare:homologene"
       when /#{OUTPUT_TSV_DIR}cog/
@@ -276,8 +330,10 @@ module TogoID
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}reactome/
         return "prepare:reactome"
-      when /#{OUTPUT_TSV_DIR}refseq/
-        return "prepare:refseq"
+      when /#{OUTPUT_TSV_DIR}refseq_protein/
+        return "prepare:refseq_protein"
+      when /#{OUTPUT_TSV_DIR}refseq_rna/
+        return "prepare:refseq_rna"
       when /#{OUTPUT_TSV_DIR}rhea/
         return "prepare:rhea"
       when /#{OUTPUT_TSV_DIR}sra/
@@ -295,11 +351,10 @@ module TogoID
 
     # Check if the file is updated or the sizes differ or the file doesn't exist
     def update_input_file?(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         # Both checks should be made as the local file can be newer than remote when the previous download fails
-        check_remote_file_time(file, url)
         # and the local file can be smaller or size 0 even when it exists
-        check_remote_file_size(file, url)
+        check_remote_file_time(file, url) || check_remote_file_size(file, url)
       else
         true
       end
@@ -342,7 +397,7 @@ module TogoID
 
     # Return true (needs update) when the remote file size is different from the local one
     def check_remote_file_size(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         # The wget --timestamping (-N) option won't check the file size especially when
         # previous download was interrupted and left broken files with newer dates.
         local_file_size  = File.size(file)
@@ -357,7 +412,7 @@ module TogoID
 
     # Return true (needs update) when the remote file is newer than the local file
     def check_remote_file_time(file, url)
-      if File.exists?(file)
+      if File.exist?(file)
         local_file_time  = File.mtime(file)  # Time object
         remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
@@ -399,21 +454,32 @@ rule(/#{OUTPUT_TTL_DIR}\S+\.ttl/ => [
   $stderr.puts t.investigation if $verbose
 end
 
+# Dependency for ID and Label TTL files
+rule(/#{OUTPUT_ID_LABEL_TTL_DIR}\S+\.ttl/ => [
+  OUTPUT_ID_LABEL_TTL_DIR,
+  method(:update_id_label)
+]) do |t|
+  $stderr.puts "Rule for ID and Label TTL (#{t.name})"
+  $stderr.puts t.investigation if $verbose
+end
+
 ### Preparatioin tasks
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_COG_DIR         = "input/cog"
+  directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_REACTOME_DIR    = "input/reactome"
-  directory INPUT_REFSEQ_DIR      = "input/refseq"
+  directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
+  directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
   directory INPUT_RHEA_DIR        = "input/rhea"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
@@ -459,13 +525,30 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for HMDB"
+  task :hmdb => INPUT_HMDB_DIR do
+    $stderr.puts "## Prepare input files for HMDB"
+    download_lock(INPUT_HMDB_DIR) do
+      updated = false
+      input_file = "#{INPUT_HMDB_DIR}/hmdb_metabolites.zip"
+      input_url  = "https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HMDB_DIR, input_url)
+        sh "unzip #{input_file} -d #{INPUT_HMDB_DIR}/"
+        sh "python bin/hmdb_xml2tsv_sax.py #{INPUT_HMDB_DIR}/hmdb_metabolites.xml > #{INPUT_HMDB_DIR}/hmdb_metabolites.tsv"
+        updated = true
+      end
+      updated
+    end
+  end
+
   desc "Prepare required files for HomoloGene"
   task :homologene => INPUT_HOMOLOGENE_DIR do
     $stderr.puts "## Prepare input files for Homologene"
     download_lock(INPUT_HOMOLOGENE_DIR) do
       updated = false
       input_file = "#{INPUT_HOMOLOGENE_DIR}/homologene.data"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
         updated = true
@@ -480,7 +563,13 @@ namespace :prepare do
     download_lock(INPUT_COG_DIR) do
       updated = false
       input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_COG_DIR, input_url)
+        updated = true
+      end
+      input_file = "#{INPUT_COG_DIR}/cog-20.def.tab"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.def.tab"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_COG_DIR, input_url)
         updated = true
@@ -495,14 +584,14 @@ namespace :prepare do
     download_lock(INPUT_INTERPRO_DIR) do
       updated = false
       input_file = "#{INPUT_INTERPRO_DIR}/interpro2go"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         updated = true
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/protein2ipr.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_INTERPRO_DIR}/protein2ipr.dat"
@@ -510,7 +599,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_INTERPRO_DIR}/interpro.xml.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
@@ -586,33 +675,118 @@ namespace :prepare do
         download_file(INPUT_REACTOME_DIR, input_url)
         updated = true
       end
+
+      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/Ensembl2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/miRBase2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/miRBase2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/NCBI2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/NCBI2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+      input_file = "#{INPUT_REACTOME_DIR}/GtoP2ReactomeReactions.txt"
+      input_url  = "https://reactome.org/download/current/GtoP2ReactomeReactions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/UniProt2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/miRBase2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_REACTOME_DIR}/NCBI2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
+      
+      input_file = "#{INPUT_REACTOME_DIR}/GtoP2Reactome_All_Levels.txt"
+      input_url  = "https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_REACTOME_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end
 
-  desc "Prepare required files for RefSeq"
-  task :refseq => INPUT_REFSEQ_DIR do
-    $stderr.puts "## Prepare input files for RefSeq"
-    download_lock(INPUT_REFSEQ_DIR) do
+  desc "Prepare required files for RefSeq RNA"
+  task :refseq_rna => INPUT_REFSEQ_RNA_DIR do
+    $stderr.puts "## Prepare input files for RefSeq RNA"
+    download_lock(INPUT_REFSEQ_RNA_DIR) do
       updated = false
-      input_file = "#{INPUT_REFSEQ_DIR}/RELEASE_NUMBER"
+      input_file = "#{INPUT_REFSEQ_RNA_DIR}/RELEASE_NUMBER"
       input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
-        download_file(INPUT_REFSEQ_DIR, input_url)
+        download_file(INPUT_REFSEQ_RNA_DIR, input_url)
+        # The index number of the gbff files (e.g. '1000' of 'complete.1000.rna.gbff.gz') is not stable.
+        # To keep the input directory up-to-date, delete all previous files before downloading the current files.
+        sh "rm -f #{INPUT_REFSEQ_RNA_DIR}/complete.*.rna.gbff.gz"
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
         # (It is reported that large files are contaminated by illegal bytes occationally)
         input_file = "complete.*.rna.gbff.gz"
         input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
-        download_file(INPUT_REFSEQ_DIR, input_url, input_file)
+        download_file(INPUT_REFSEQ_RNA_DIR, input_url, input_file)
+
+        # Parse the gbff files and output all relations to a single tsv.
+        # Each config extract columns from the tsv.
+        sh "gzip -dc #{INPUT_REFSEQ_RNA_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_RNA_DIR}/refseq_rna_summary.tsv"
         updated = true
       end
+      updated
+    end
+  end
 
-      input_file = "#{INPUT_REFSEQ_DIR}/gene_refseq_uniprotkb_collab.gz"
-      input_url  = "ftp://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
+  desc "Prepare required files for RefSeq Protein"
+  task :refseq_protein => INPUT_REFSEQ_PROTEIN_DIR do
+    $stderr.puts "## Prepare input files for RefSeq Protein"
+    download_lock(INPUT_REFSEQ_PROTEIN_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_REFSEQ_PROTEIN_DIR}/gene_refseq_uniprotkb_collab.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/gene_refseq_uniprotkb_collab.gz"
       if update_input_file?(input_file, input_url)
-        download_file(INPUT_REFSEQ_DIR, input_url)
+        download_file(INPUT_REFSEQ_PROTEIN_DIR, input_url)
         updated = true
       end
       updated
@@ -674,11 +848,14 @@ namespace :prepare do
 
       input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids.tsv.gz"
       input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids.tsv"
-      if update_input_file?(input_file, input_url)
-        sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
-        sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
-        updated = true
-      end
+      sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+      sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids.tsv"
+
+      input_file = "#{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv.gz"
+      input_url = "https://www.swisslipids.org/api/file.php?cas=download_files&file=lipids2uniprot.tsv"
+      sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
+      sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
+      updated = true
       updated
     end
   end
@@ -690,13 +867,13 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_UNIPROT_DIR, input_url)
         updated = true
       end
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
-      input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_UNIPROT_DIR, input_url)
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
@@ -725,35 +902,34 @@ namespace :prepare do
     end
   end
 end
+
 # Upload task
 namespace :aws do
+  def updated_files
+    sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"`
+    sync_dryrun_stdout.split("\n").map{|line| File.basename(line.split("\s+").last) }
+  end
+
   desc "Create update.txt and upload TSV files to AWS S3"
   task :update => [:create_list, :upload_s3]
+
+  desc "Show updated files"
+  task :show_updated do
+    puts updated_files
+  end
 
   desc "Create update.txt"
   task :create_list => [UPDATE_TXT]
 
   file UPDATE_TXT do
-    begin
-      raise NameError if !S3_BUCKET_NAME
-      sync_dryrun_stdout = `aws s3 sync --dryrun #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"`
-    rescue
-      STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
-      exit 1
-    end
-    update_files = sync_dryrun_stdout.split("\n").map{|line| File.basename(line.split("\s+").last) }
-    open(UPDATE_TXT, 'w'){|f| f.puts(update_files) }
+    puts "List of files to be updated at #{UPDATE_TXT}"
+    open(UPDATE_TXT, 'w'){|f| f.puts(updated_files) }
   end
 
   desc "Upload TSV files to AWS S3"
   task :upload_s3 => UPDATE_TXT do
-    begin
-      raise NameError if !S3_BUCKET_NAME
-      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"")
-      system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"update.txt\"")
-    rescue NameError
-      STDERR.puts("ERROR: missing S3 bucket name: use `export S3_BUCKET_NAME=your_bucket_name`")
-      exit 1
-    end
+    puts "Uploading files to #{S3_BUCKET_NAME}..."
+    system("aws s3 sync #{OUTPUT_TSV_DIR}/ s3://#{S3_BUCKET_NAME}/tsv --include \"*tsv\"")
+    system("aws s3 cp #{UPDATE_TXT} s3://#{S3_BUCKET_NAME}/tsv/update.txt")
   end
 end

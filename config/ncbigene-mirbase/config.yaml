@@ -5,4 +5,4 @@ link:
 update:
   frequency: Weekly
   method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^miRBase:/)print
-    $2 "\t" gensub(/^.*:/,"","g",a[i])}}' $TOGOID_ROOT/input/ncbigene/Homo_sapiens.gene_info
+    $2 "\t" gensub(/^.*:/,"","g",a[i])}}' $TOGOID_ROOT/input/ncbigene/gene_info

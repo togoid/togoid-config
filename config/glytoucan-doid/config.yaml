@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: threeTimesAYear
-  method: bash retrieve.sh
+  method: sh retrieve.sh

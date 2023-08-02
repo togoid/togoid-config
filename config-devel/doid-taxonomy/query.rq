@@ -1,0 +1,13 @@
+# Endpoint: https://integbio.jp/rdf/bioportal/sparql
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?do_id ?ncit_id
+FROM <http://rdf.integbio.jp/dataset/bioportal/doid>
+WHERE {
+  ?doid rdfs:subClassOf ?o ;
+        rdfs:label ?label .
+
+  FILTER (strstarts(?ncit,'NCI:'))
+  BIND (strafter(str(?ncit), 'NCI:') AS ?ncit_id)
+  BIND (strafter(str(?do), 'DOID:') AS ?do_id)
+}

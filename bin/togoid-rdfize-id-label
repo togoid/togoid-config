@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+#
+# Usage: togoid-rdfize-id-label <dataset name>
+#
+
+ENV['TOGOID_ROOT'] = File.join(File.dirname(File.expand_path(__FILE__)), '..')
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'yaml'
+require 'togoid-config'
+
+target = ARGV.shift
+yamlfile = File.join(ENV['TOGOID_ROOT'], 'config/dataset.yaml')
+datasets = YAML.load(File.read(yamlfile))
+
+datasets.each do |dataset, hash|
+  if dataset == target
+    node = TogoID::Node.new(dataset, hash)
+    node.rdfize_id_label
+  end
+end

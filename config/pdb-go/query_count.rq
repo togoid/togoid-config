@@ -1,0 +1,12 @@
+# Endpoint: https://integbio.jp/rdf/pdb/sparql
+PREFIX pdbo: <http://rdf.wwpdb.org/schema/pdbx-v50.owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT COUNT(DISTINCT *)
+FROM <http://rdf.integbio.jp/dataset/pdbj>
+WHERE {
+  ?pdb pdbo:has_entityCategory/pdbo:has_entity/pdbo:referenced_by_struct_asym/pdbo:referenced_by_pdbx_sifts_xref_db_segments [
+    pdbo:pdbx_sifts_xref_db_segments.xref_db "GO" ;
+    pdbo:pdbx_sifts_xref_db_segments.xref_db_acc ?target
+  ] .
+}

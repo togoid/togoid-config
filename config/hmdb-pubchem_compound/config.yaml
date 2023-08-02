@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000001
+  reverse: TIO_000001
+  file: sample.tsv
+update:
+  frequency: Triennial
+  method: awk -F "\t" '$2=="pubchem_compound_id"{print $1 "\t" $3}' $TOGOID_ROOT/input/hmdb/hmdb_metabolites.tsv

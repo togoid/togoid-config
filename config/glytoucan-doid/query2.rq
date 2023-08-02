@@ -17,7 +17,7 @@ WHERE{
     BIND (xsd:int(substr(str(?gene), 33)) as ?gene_id)
     BIND (replace(str(?disease), "http://linkedlifedata.com/resource/umls/id/", "UMLS_CUI:") as ?disease_m)
   }
-  GRAPH <http://purl.obolibrary.org/obo/doid> { ?do go:hasDbXref ?disease_m }
+  GRAPH <http://purl.obolibrary.org/obo/doid> { ?do go:hasDbXref ?disease_m1 . BIND(STR(?disease_m1) AS ?disease_m) }
   GRAPH <http://rdf.glycoinfo.org/ggdb> {
     [] a ggdb:Glycogene ;
        ggdb:has_acceptor_substrates / ggdb:has_reaction [
