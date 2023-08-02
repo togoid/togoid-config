@@ -322,6 +322,22 @@ interpro:
   prefix: 'http://identifiers.org/interpro/'
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
+jga_dataset:
+  label: JGA Dataset
+  catalog: nbdc02152
+  category: Project
+  regex: '^(?<id>JGAD\d{6})$'
+  prefix: 'http://ddbj.nig.ac.jp/resource/jga-dataset/'
+  examples:
+    - ["JGAD000006","JGAD000008","JGAD000009","JGAD000012","JGAD000013","JGAD000014","JGAD000015","JGAD000016","JGAD000024","JGAD000026"]
+jga_study:
+  label: JGA Study
+  catalog: nbdc02152
+  category: Project
+  regex: '^(?<id>JGAS\d{6})$'
+  prefix: 'http://ddbj.nig.ac.jp/resource/jga-study/'
+  examples:
+    - ["JGAS000006","JGAS000008","JGAS000009","JGAS000012","JGAS000013","JGAS000014","JGAS000015","JGAS000016","JGAS000024","JGAS000026"]
 kegg_compound:
   label: KEGG Compound
   catalog: nbdc00814
@@ -456,6 +472,15 @@ nando:
   examples:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
     - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
+nbdc_human_db:
+  label: NBDC Human DB
+  catalog: nbdc01348
+  category: Project
+  regex: '^(?<id>hum\d{4})([.\-]v\d+)?$'
+  prefix: 'http://humandbs.biosciencedbc.jp/'
+  examples:
+    - ["hum0004","hum0006","hum0007","hum0008","hum0010","hum0001","hum0011","hum0012","hum0018","hum0019"]
+    - ["hum0004.v1","hum0006.v5","hum0007.v1","hum0008.v1","hum0010.v1","hum0001.v1","hum0011.v1","hum0012.v1","hum0018.v1","hum0019.v1"]
 ncbigene:
   label: NCBI gene
   catalog: nbdc00073
