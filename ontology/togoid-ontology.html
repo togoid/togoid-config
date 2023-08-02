@@ -116,7 +116,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    126
+                                    129
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -223,6 +223,10 @@
 				tio:Interaction</option>
 <option value="Interpro">
 				tio:Interpro</option>
+<option value="JgaDataset">
+				tio:JgaDataset</option>
+<option value="JgaStudy">
+				tio:JgaStudy</option>
 <option value="Lipid">
 				tio:Lipid</option>
 <option value="Lipidmaps">
@@ -253,6 +257,8 @@
 				tio:Mondo</option>
 <option value="Nando">
 				tio:Nando</option>
+<option value="NbdcHumandb">
+				tio:NbdcHumandb</option>
 <option value="Ncbigene">
 				tio:Ncbigene</option>
 <option value="NcitDisease">
@@ -2273,6 +2279,74 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#JgaDataset"></a><tbody>
+<tr><th id="JgaDataset">
+				tio:JgaDataset<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>jga_dataset</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>JGA dataset</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#JgaStudy"></a><tbody>
+<tr><th id="JgaStudy">
+				tio:JgaStudy<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>jga_study</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>JGA study</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#Lipid"></a><tbody>
 <tr><th id="Lipid">
 				tio:Lipid<span class="cp-type">
@@ -2752,6 +2826,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Phenotype">
 				tio:Phenotype</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#NbdcHumandb"></a><tbody>
+<tr><th id="NbdcHumandb">
+				tio:NbdcHumandb<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>nbdc_humandb</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>NBDC Human Database</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
 </tr>
 </tbody>
 </table>
