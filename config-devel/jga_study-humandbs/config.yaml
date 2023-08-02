@@ -1,7 +1,7 @@
 link:
   file: sample.tsv
-  forward: TIO_xxxxxx
-  reverse: TIO_xxxxxx
+  forward: TIO_000107
+  reverse: TIO_000106
 update:
   frequency: Monthly
   method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/jga_study-humID/jga_study2humID.tsv

@@ -1,7 +1,7 @@
 link:
   file: sample.tsv
-  forward: TIO_xxxxxx
-  reverse: TIO_xxxxxx
+  forward: TIO_000106
+  reverse: TIO_000107
 update:
   frequency: Monthly
   method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/jga_study-jga_dataset/jga_study2jga_dataset.tsv
