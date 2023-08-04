@@ -76,6 +76,7 @@ cellosaurus:
   examples:
     - ["CVCL:7T24","CVCL:SE45","CVCL:XG73","CVCL:B6HT","CVCL:WM34","CVCL:7891","CVCL:FV52","CVCL:0367","CVCL:9Z18","CVCL:CG19"]
     - ["CVCL_7T24","CVCL_SE45","CVCL_XG73","CVCL_B6HT","CVCL_WM34","CVCL_7891","CVCL_FV52","CVCL_0367","CVCL_9Z18","CVCL_CG19"]
+  method: awk 'BEGIN{RS="\n//\n";FS="\n"}{label="";for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^ID/){label=substr($i,6)}};print ac "\t" label}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
