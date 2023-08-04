@@ -714,6 +714,7 @@ refseq_rna:
   examples:
     - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
     - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
+  method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_symmary.tsv
 rgd:
   label: RGD
   catalog: nbdc00188
