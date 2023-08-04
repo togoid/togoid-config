@@ -75,6 +75,14 @@ while (<>){
 		^LOCUS\ +(\S+)
 	/mx) ? $1 : '' ;
 
+# DEFINITION を抽出
+#   エントリのタイトル。生物種名や遺伝子名などを含む。
+	my $definition = ($gbff =~ /
+		^(DEFINITION\ +)(.*?)  # DEFINITION 全体にマッチ
+		^(?=\S)                # 次の項目の開始位置の手前まで
+	/smx) ? $2 : '' ;
+	$definition =~ s/ +/ /g ;
+	$definition =~ s/\n//g ;
 # VERSION を抽出
 #   RefSeq においては、accession.version（例：NM_123456.7）が記載されている。
 #   当該エントリの塩基配列が訂正・更新されると version が変わることになる。
@@ -232,6 +240,7 @@ while (<>){
 		$mim_all,    # comma separated MIM IDs
 		$pubmed_all, # comma separated PubMed IDs
 		$dbsnp_all,  # comma separated dbSNP IDs
+		$definition  # RefSeq RNA definition
 	), "\n" if $summary_op ;
 }
 
