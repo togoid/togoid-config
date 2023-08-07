@@ -727,6 +727,24 @@
     rdfs:label "Pathbank" ;
     rdfs:subClassOf :Pathway, :Dataset .
 
+:JgaDataset
+    a owl:Class ;
+    dcterms:identifier "jga_dataset" ;
+    rdfs:label "JGA dataset" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:JgaStudy
+    a owl:Class ;
+    dcterms:identifier "jga_study" ;
+    rdfs:label "JGA study" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:NbdcHumandb
+    a owl:Class ;
+    dcterms:identifier "nbdc_humandb" ;
+    rdfs:label "NBDC Human Database" ;
+    rdfs:subClassOf :Project, :Dataset .
+
 :Lipidmaps
     a owl:Class ;
     dcterms:identifier "lipidmaps" ;

@@ -565,6 +565,21 @@
 <http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#label> "Pathbank" .
 <http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://purl.org/dc/terms/identifier> "jga_dataset" .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#label> "JGA dataset" .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://purl.org/dc/terms/identifier> "jga_study" .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#label> "JGA study" .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://purl.org/dc/terms/identifier> "nbdc_humandb" .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#label> "NBDC Human Database" .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Lipidmaps> <http://purl.org/dc/terms/identifier> "lipidmaps" .
 <http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#label> "LIPID MAPS" .

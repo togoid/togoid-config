@@ -290,6 +290,18 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#JgaDataset">
+    <dcterms:identifier>jga_dataset</dcterms:identifier>
+    <rdfs:label>JGA dataset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#JgaStudy">
+    <dcterms:identifier>jga_study</dcterms:identifier>
+    <rdfs:label>JGA study</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Lipid">
     <rdfs:label>Lipid</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
@@ -374,6 +386,12 @@
     <rdfs:label>NANDO</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NbdcHumandb">
+    <dcterms:identifier>nbdc_humandb</dcterms:identifier>
+    <rdfs:label>NBDC Human Database</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Ncbigene">
     <dcterms:identifier>ncbigene</dcterms:identifier>

@@ -88,4 +88,7 @@ hp_phenotype	HP Phenotype	Phenotype
 hp_inheritance	HP Inheritance	Classification
 bioproject_umbrella	BioProject umbrella	Project
 pathbank	Pathbank	Pathway
+jga_dataset	JGA dataset	Project
+jga_study	JGA study	Project
+nbdc_humandb	NBDC Human Database	Project
 lipidmaps	LIPID MAPS	Lipid
