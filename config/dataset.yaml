@@ -32,6 +32,7 @@ atc:
   prefix: 'http://identifiers.org/atc/'
   examples:
     - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
+  method: 'curl -s -H "Accept: text/csv" --data-urlencode "query@$TOGOID_ROOT/bin/sparql/atc_label.rq" "https://rdfportal.org/pubchem/sparql" | sed 1d | perl -pe ''s/,/\t/; s/\"//g; s/\r\n/\n/g'''
 bioproject:
   label: BioProject
   catalog: nbdc00476
