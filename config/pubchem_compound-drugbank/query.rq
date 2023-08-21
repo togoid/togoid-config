@@ -1,16 +1,15 @@
-# Endpoint: https://integbio.jp/rdf/pubchem/sparql
+# Endpoint: https://rdfportal.org/pubchem/sparql
 
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 
-select distinct ?pubchem_id ?drugbunk_id
-from <http://rdf.ncbi.nlm.nih.gov/pubchem/synonym>
+SELECT DISTINCT ?pubchem_id ?drugbank_id
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/synonym>
 {
   [ a cheminf:CHEMINF_000406 ;
-    cheminf:has-value ?dbid ;
-    sio:is-attribute-of ?cid ] .
-    BIND (ucase(str(?dbid)) as  ?drugbunk_id)
-    BIND (strafter(str(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
-} 
+    sio:SIO_000300 ?drugbank_id ;
+    sio:SIO_000011 ?cid ] .
+    BIND (STRAFTER(STR(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
+}

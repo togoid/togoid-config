@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/pubchem/sparql
+  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/pubchem/sparql
