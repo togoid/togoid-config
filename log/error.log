@@ -1,6 +1,143 @@
-# Error: output/tsv/oma_protein-ensembl_gene.tsv new file size per old 0 / 542087 = 0.0 < 0.5
-# Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/oma_protein-ensembl_transcript.tsv new file size per old 0 / 1739039 = 0.0 < 0.5
-# Error: Failed to create output/tsv/oma_protein-ensembl_transcript.tsv or created file was empty
-# Error: output/tsv/oma_protein-uniprot.tsv new file size per old 0 / 362188009 = 0.0 < 0.5
-# Error: Failed to create output/tsv/oma_protein-uniprot.tsv or created file was empty
+# Error: output/tsv/pubchem_compound-atc.tsv new file size per old 248 / 72636 = 0.003414284927584118 < 0.5
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-atc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-atc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-chebi.tsv new file size per old 248 / 2068317 = 0.00011990425065403417 < 0.5
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-chembl_compound.tsv new file size per old 0 / 48272789 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_compound-chembl_compound.tsv or created file was empty
+# Error: output/tsv/pubchem_compound-drugbank.tsv new file size per old 248 / 165020 = 0.0015028481396194401 < 0.5
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv new file size per old 302 / 577555 = 0.0005228939235224351 < 0.5
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <title>502 Proxy Error</title>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <h1>Proxy Error</h1>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <p>The proxy server received an invalid
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML response from an upstream server.<br />
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML The proxy server could not handle the request<p>Reason: <strong>DNS lookup failure for: sparql-proxy-pubchem-2</strong></p></p>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <title>502 Proxy Error</title>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <h1>Proxy Error</h1>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <p>The proxy server received an invalid
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML response from an upstream server.<br />
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML The proxy server could not handle the request<p>Reason: <strong>DNS lookup failure for: sparql-proxy-pubchem-2</strong></p></p>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv new file size per old 302 / 371339 = 0.0008132730470001804 < 0.5
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <title>502 Proxy Error</title>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <h1>Proxy Error</h1>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <p>The proxy server received an invalid
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML response from an upstream server.<br />
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML The proxy server could not handle the request<p>Reason: <strong>DNS lookup failure for: sparql-proxy-pubchem-2</strong></p></p>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <title>502 Proxy Error</title>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <h1>Proxy Error</h1>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <p>The proxy server received an invalid
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML response from an upstream server.<br />
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML The proxy server could not handle the request<p>Reason: <strong>DNS lookup failure for: sparql-proxy-pubchem-2</strong></p></p>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv new file size per old 248 / 1318229 = 0.00018813119723507828 < 0.5
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-pubchem_compound.tsv new file size per old 0 / 18520035 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-pubchem_compound.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv new file size per old 248 / 54226 = 0.004573451849666212 < 0.5
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-uniprot.tsv new file size per old 0 / 9094290 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-uniprot.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv new file size per old 302 / 14853 = 0.020332592742206963 < 0.5
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <title>502 Proxy Error</title>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <h1>Proxy Error</h1>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <p>The proxy server received an invalid
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML response from an upstream server.<br />
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML The proxy server could not handle the request<p>Reason: <strong>DNS lookup failure for: sparql-proxy-pubchem-2</strong></p></p>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <title>502 Proxy Error</title>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <h1>Proxy Error</h1>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <p>The proxy server received an invalid
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML response from an upstream server.<br />
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML The proxy server could not handle the request<p>Reason: <strong>DNS lookup failure for: sparql-proxy-pubchem-2</strong></p></p>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </body></html>
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 5693585 / 13681182 = 0.41616177608045857 < 0.5

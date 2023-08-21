@@ -1,0 +1,11 @@
+# @endpoint https://rdfportal.org/sib/sparql
+
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?id ?label
+WHERE {
+  ?s a up:Enzyme ;
+     skos:prefLabel ?label .
+  BIND(STRAFTER(STR(?s), "http://purl.uniprot.org/enzyme/") AS ?id)
+}

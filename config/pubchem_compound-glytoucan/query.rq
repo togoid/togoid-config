@@ -1,17 +1,12 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX source: <http://rdf.ncbi.nlm.nih.gov/pubchem/source/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
-PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
-PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-#SELECT (count(*) as ?total) {
-SELECT (substr(str(?cid), 49) as ?pubchem_id) (substr(str(?glytoucanid),34) as ?glytoucan_id) {
-  SELECT DISTINCT ?cid ?glytoucanid {
-    [ dcterms:source source:ID11830 ;
-      skos:exactMatch ?glytoucanid ;
-      cheminf:CHEMINF_000477 ?cid ] .
-  #  ?cid obo:has-role pubchemv:FDAApprovedDrugs .
-  }
+SELECT DISTINCT ?pubchem_id ?glytoucan_id {
+  [ dcterms:source source:ID11830 ;
+    skos:exactMatch ?glytoucan ;
+    cheminf:CHEMINF_000477 ?pubchem ] .
+  BIND(STRAFTER(STR(?pubchem), "compound/CID") AS ?pubchem_id)
+  BIND(STRAFTER(STR(?glytoucan), "glytoucan/") AS ?glytoucan_id)
 }

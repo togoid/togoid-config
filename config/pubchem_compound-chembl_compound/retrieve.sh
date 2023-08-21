@@ -3,7 +3,7 @@ set -euo pipefail
 
 # PubChem IDとChEMBL IDのペアを取得する。
 
-ENDPOINT=https://integbio.jp/rdf/pubchem/sparql
+ENDPOINT=https://rdfportal.org/pubchem/sparql
 WORKDIR=pubchem2chembl # 一時的にPfamID毎のUniProtIDリストファイルを保存するディレクトリ
 LIMIT=1000000 # SPARQLエンドポイントにおける取得可能データ件数の最大値
 CURL=/usr/bin/curl

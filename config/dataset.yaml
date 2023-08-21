@@ -32,6 +32,7 @@ atc:
   prefix: 'http://identifiers.org/atc/'
   examples:
     - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
+  method: 'curl -s -H "Accept: text/csv" --data-urlencode "query@$TOGOID_ROOT/bin/sparql/atc_label.rq" "https://rdfportal.org/pubchem/sparql" | sed 1d | perl -pe ''s/,/\t/; s/\"//g; s/\r\n/\n/g'''
 bioproject:
   label: BioProject
   catalog: nbdc00476
@@ -165,6 +166,7 @@ ec:
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
+  method: 'curl -s -H "Accept: text/csv" --data-urlencode "query@$TOGOID_ROOT/bin/sparql/ec_label.rq" "https://rdfportal.org/sib/sparql" | sed 1d | perl -pe ''s/,/\t/; s/\"//g; s/\r\n/\n/g'''
 ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
