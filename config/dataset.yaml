@@ -629,6 +629,7 @@ pfam:
   prefix: 'http://identifiers.org/pfam/'
   examples:
     - ["PF03719","PF03726","PF02809","PF00105","PF00250","PF00412","PF01412","PF00459","PF02532","PF01226"]
+  method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro.tsv $TOGOID_ROOT/input/interpro.tsv
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
