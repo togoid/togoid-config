@@ -661,6 +661,7 @@ pubchem_pathway:
   examples:
     - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
     - ["PWID10572","PWID1","PWID10576","PWID10577","PWID10579","PWID10573","PWID10582","PWID10574","PWID10575","PWID10581"]
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pubchem_pathway_label.rq https://rdfportal.org/pubchem/sparql
 pubmed:
   label: PubMed
   catalog: nbdc00179

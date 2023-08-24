@@ -1,0 +1,10 @@
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?pathway_id ?label
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway>
+WHERE {
+  ?pathway a bp:Pathway;
+           dcterms:title ?label .
+  BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?pathway_id)
+}
