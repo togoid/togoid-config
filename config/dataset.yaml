@@ -604,6 +604,7 @@ pathbank:
   prefix: 'http://pathbank.org/view/'
   examples:
     - ["SMP0000055","SMP0000057","SMP0000029","SMP0000044","SMP0000048","SMP0000046","SMP0000059","SMP0000067","SMP0000007","SMP0000004"]
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pathbank_label.rq https://rdfportal.org/pubchem/sparql
 pdb:
   label: PDB
   catalog: nbdc00156
