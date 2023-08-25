@@ -314,6 +314,8 @@ module TogoID
       case taskname
 #      when /#{OUTPUT_TSV_DIR}drugbank/
 #        return "prepare:drugbank"
+      when /#{OUTPUT_TSV_DIR}bioproject/
+        return "prepare:bioproject"
       when /#{OUTPUT_TSV_DIR}cellosaurus/
         return "prepare:cellosaurus"
       when /#{OUTPUT_TSV_DIR}ensembl/
@@ -467,9 +469,10 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
+  directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
@@ -498,6 +501,19 @@ namespace :prepare do
     end
   end
 =end
+
+  desc "Prepare required files for Bioproject"
+  task :bioproject => INPUT_BIOPROJECT_DIR do
+    $stderr.puts "## Prepare input files for Bioproject"
+    download_lock(INPUT_BIOPROJECT_DIR) do
+      input_file = "#{INPUT_BIOPROJECT_DIR}/bioproject.xml"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_BIOPROJECT_DIR, input_url)
+        sh "python bin/bioproject_xml2tsv.py #{INPUT_BIOPROJECT_DIR}/bioproject.xml > #{INPUT_BIOPROJECT_DIR}/bioproject.tsv"
+      end
+    end
+  end
 
   desc "Prepare required files for Cellosaurus"
   task :cellosaurus => INPUT_CELLOSAURUS_DIR do
