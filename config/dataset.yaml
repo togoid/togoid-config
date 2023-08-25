@@ -41,6 +41,7 @@ bioproject:
   prefix: 'http://identifiers.org/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
+  method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
 bioproject_umbrella:
   label: BioProject umbrella
   catalog: nbdc00476
