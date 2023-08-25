@@ -116,7 +116,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    129
+                                    130
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -191,6 +191,8 @@
 				tio:Gene</option>
 <option value="Genome">
 				tio:Genome</option>
+<option value="GeoSeries">
+				tio:GeoSeries</option>
 <option value="Glycan">
 				tio:Glycan</option>
 <option value="Glytoucan">
@@ -205,8 +207,6 @@
 				tio:Hmdb</option>
 <option value="Homologene">
 				tio:Homologene</option>
-<option value="Hp">
-				tio:Hp</option>
 <option value="HpInheritance">
 				tio:HpInheritance</option>
 <option value="HpPhenotype">
@@ -359,6 +359,8 @@
 				tio:Togovar</option>
 <option value="Transcript">
 				tio:Transcript</option>
+<option value="Uberon">
+				tio:Uberon</option>
 <option value="Uniprot">
 				tio:Uniprot</option>
 <option value="UniprotMnemonic">
@@ -1745,6 +1747,40 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#GeoSeries"></a><tbody>
+<tr><th id="GeoSeries">
+				tio:GeoSeries<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>geo_series</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>GEO series</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Project">
+				tio:Project</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#Glycan"></a><tbody>
 <tr><th id="Glycan">
 				tio:Glycan<span class="cp-type">
@@ -1980,40 +2016,6 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Ortholog">
 				tio:Ortholog</a></td>
-</tr>
-</tbody>
-</table>
-<table class="subsection">
-<a name="http://togoid.dbcls.jp/ontology#Hp"></a><tbody>
-<tr><th id="Hp">
-				tio:Hp<span class="cp-type">
-								(rdf:type
-								<a href="http://www.w3.org/2002/07/owl#Class">
-					owl:Class</a>
-								)
-							</span>
-</th></tr>
-<tr>
-<td><a href="http://purl.org/dc/terms/identifier">
-                                        dcterms:identifier</a></td>
-<td>hp</td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
-					rdfs:label</a></td>
-<td>Human Phenotype Ontology</td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
-				tio:Dataset</a></td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Phenotype">
-				tio:Phenotype</a></td>
 </tr>
 </tbody>
 </table>
@@ -4402,6 +4404,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Sequence">
 				tio:Sequence</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Uberon"></a><tbody>
+<tr><th id="Uberon">
+				tio:Uberon<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>uberon</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>UBERON</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Tissue">
+				tio:Tissue</a></td>
 </tr>
 </tbody>
 </table>

@@ -193,10 +193,34 @@
     rdfs:label "Affymetrix probeset" ;
     rdfs:subClassOf :Probe, :Dataset .
 
+:AssemblyInsdc
+    a owl:Class ;
+    dcterms:identifier "assembly_insdc" ;
+    rdfs:label "Assembly INSDC" ;
+    rdfs:subClassOf :Genome, :Dataset .
+
+:AssemblyRefseq
+    a owl:Class ;
+    dcterms:identifier "assembly_refseq" ;
+    rdfs:label "Assembly RefSeq" ;
+    rdfs:subClassOf :Genome, :Dataset .
+
+:Atc
+    a owl:Class ;
+    dcterms:identifier "atc" ;
+    rdfs:label "ATC classification" ;
+    rdfs:subClassOf :Drug, :Dataset .
+
 :Bioproject
     a owl:Class ;
     dcterms:identifier "bioproject" ;
     rdfs:label "BioProject" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:BioprojectUmbrella
+    a owl:Class ;
+    dcterms:identifier "bioproject_umbrella" ;
+    rdfs:label "BioProject umbrella" ;
     rdfs:subClassOf :Project, :Dataset .
 
 :Biosample
@@ -210,6 +234,12 @@
     dcterms:identifier "ccds" ;
     rdfs:label "Consensus CDS" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:Cellosaurus
+    a owl:Class ;
+    dcterms:identifier "cellosaurus" ;
+    rdfs:label "Cellosaurus" ;
+    rdfs:subClassOf :CellLine, :Dataset .
 
 :Chebi
     a owl:Class ;
@@ -234,6 +264,12 @@
     dcterms:identifier "clinvar" ;
     rdfs:label "ClinVar variant" ;
     rdfs:subClassOf :Variant, :Dataset .
+
+:Cog
+    a owl:Class ;
+    dcterms:identifier "cog" ;
+    rdfs:label "COG" ;
+    rdfs:subClassOf :Ortholog, :Dataset .
 
 :Dbsnp
     a owl:Class ;
@@ -277,6 +313,24 @@
     rdfs:label "Ensembl transcript" ;
     rdfs:subClassOf :Transcript, :Dataset .
 
+:FlybaseGene
+    a owl:Class ;
+    dcterms:identifier "flybase_gene" ;
+    rdfs:label "FlyBase gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:Gea
+    a owl:Class ;
+    dcterms:identifier "gea" ;
+    rdfs:label "GEA" ;
+    rdfs:subClassOf :Experiment, :Dataset .
+
+:GeoSeries
+    a owl:Class ;
+    dcterms:identifier "geo_series" ;
+    rdfs:label "GEO series" ;
+    rdfs:subClassOf :Project, :Dataset .
+
 :Glytoucan
     a owl:Class ;
     dcterms:identifier "glytoucan" ;
@@ -313,10 +367,16 @@
     rdfs:label "HomoloGene" ;
     rdfs:subClassOf :Ortholog, :Dataset .
 
-:Hp
+:HpInheritance
     a owl:Class ;
-    dcterms:identifier "hp" ;
-    rdfs:label "Human Phenotype Ontology" ;
+    dcterms:identifier "hp_inheritance" ;
+    rdfs:label "HP Inheritance" ;
+    rdfs:subClassOf :Classification, :Dataset .
+
+:HpPhenotype
+    a owl:Class ;
+    dcterms:identifier "hp_phenotype" ;
+    rdfs:label "HP Phenotype" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
 :InchiKey
@@ -331,6 +391,12 @@
     rdfs:label "GenBank/ENA/DDBJ" ;
     rdfs:subClassOf :Gene, :Dataset .
 
+:InsdcMaster
+    a owl:Class ;
+    dcterms:identifier "insdc_master" ;
+    rdfs:label "INSDC master" ;
+    rdfs:subClassOf :Project, :Dataset .
+
 :Intact
     a owl:Class ;
     dcterms:identifier "intact" ;
@@ -342,6 +408,24 @@
     dcterms:identifier "interpro" ;
     rdfs:label "InterPro" ;
     rdfs:subClassOf :Domain, :Dataset .
+
+:JgaDataset
+    a owl:Class ;
+    dcterms:identifier "jga_dataset" ;
+    rdfs:label "JGA dataset" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:JgaStudy
+    a owl:Class ;
+    dcterms:identifier "jga_study" ;
+    rdfs:label "JGA study" ;
+    rdfs:subClassOf :Project, :Dataset .
+
+:Lipidmaps
+    a owl:Class ;
+    dcterms:identifier "lipidmaps" ;
+    rdfs:label "LIPID MAPS" ;
+    rdfs:subClassOf :Lipid, :Dataset .
 
 :Lrg
     a owl:Class ;
@@ -379,6 +463,12 @@
     rdfs:label "MeSH" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
+:Metabobank
+    a owl:Class ;
+    dcterms:identifier "metabobank" ;
+    rdfs:label "MetaboBank" ;
+    rdfs:subClassOf :Submission, :Dataset .
+
 :Mgi
     a owl:Class ;
     dcterms:identifier "mgi" ;
@@ -403,11 +493,29 @@
     rdfs:label "NANDO" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
+:NbdcHumandb
+    a owl:Class ;
+    dcterms:identifier "nbdc_humandb" ;
+    rdfs:label "NBDC Human Database" ;
+    rdfs:subClassOf :Project, :Dataset .
+
 :Ncbigene
     a owl:Class ;
     dcterms:identifier "ncbigene" ;
     rdfs:label "NCBI gene" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:NcitDisease
+    a owl:Class ;
+    dcterms:identifier "ncit_disease" ;
+    rdfs:label "NCIt disease" ;
+    rdfs:subClassOf :Phenotype, :Dataset .
+
+:NcitTissue
+    a owl:Class ;
+    dcterms:identifier "ncit_tissue" ;
+    rdfs:label "NCIt tissue" ;
+    rdfs:subClassOf :Anatomy, :Dataset .
 
 :OmaGroup
     a owl:Class ;
@@ -439,11 +547,23 @@
     rdfs:label "Orphanet" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
+:Pathbank
+    a owl:Class ;
+    dcterms:identifier "pathbank" ;
+    rdfs:label "Pathbank" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
 :Pdb
     a owl:Class ;
     dcterms:identifier "pdb" ;
     rdfs:label "PDB" ;
     rdfs:subClassOf :Structure, :Dataset .
+
+:PdbCcd
+    a owl:Class ;
+    dcterms:identifier "pdb_ccd" ;
+    rdfs:label "PDB CCD" ;
+    rdfs:subClassOf :Compound, :Dataset .
 
 :Pfam
     a owl:Class ;
@@ -456,6 +576,12 @@
     dcterms:identifier "pubchem_compound" ;
     rdfs:label "PubChem compound" ;
     rdfs:subClassOf :Compound, :Dataset .
+
+:PubchemPathway
+    a owl:Class ;
+    dcterms:identifier "pubchem_pathway" ;
+    rdfs:label "PubChem pathway" ;
+    rdfs:subClassOf :Pathway, :Dataset .
 
 :PubchemSubstance
     a owl:Class ;
@@ -511,6 +637,12 @@
     rdfs:label "Rhea" ;
     rdfs:subClassOf :Reaction, :Dataset .
 
+:Sgd
+    a owl:Class ;
+    dcterms:identifier "sgd" ;
+    rdfs:label "SGD" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
 :SraAccession
     a owl:Class ;
     dcterms:identifier "sra_accession" ;
@@ -547,6 +679,18 @@
     rdfs:label "SRA sample" ;
     rdfs:subClassOf :Sample, :Dataset .
 
+:Swisslipids
+    a owl:Class ;
+    dcterms:identifier "swisslipids" ;
+    rdfs:label "SwissLipids" ;
+    rdfs:subClassOf :Lipid, :Dataset .
+
+:Tair
+    a owl:Class ;
+    dcterms:identifier "tair" ;
+    rdfs:label "TAIR" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
 :Taxonomy
     a owl:Class ;
     dcterms:identifier "taxonomy" ;
@@ -558,6 +702,12 @@
     dcterms:identifier "togovar" ;
     rdfs:label "TogoVar variant" ;
     rdfs:subClassOf :Variant, :Dataset .
+
+:Uberon
+    a owl:Class ;
+    dcterms:identifier "uberon" ;
+    rdfs:label "UBERON" ;
+    rdfs:subClassOf :Tissue, :Dataset .
 
 :Uniprot
     a owl:Class ;
@@ -571,35 +721,11 @@
     rdfs:label "UniProt mnemonic" ;
     rdfs:subClassOf :Protein , :Synonym, :Dataset .
 
-:Wikipathways
+:UniprotReferenceProteome
     a owl:Class ;
-    dcterms:identifier "wikipathways" ;
-    rdfs:label "WikiPathways" ;
-    rdfs:subClassOf :Pathway, :Dataset .
-
-:Metabobank
-    a owl:Class ;
-    dcterms:identifier "metabobank" ;
-    rdfs:label "MetaboBank" ;
-    rdfs:subClassOf :Submission, :Dataset .
-
-:AssemblyInsdc
-    a owl:Class ;
-    dcterms:identifier "assembly_insdc" ;
-    rdfs:label "Assembly INSDC" ;
-    rdfs:subClassOf :Genome, :Dataset .
-
-:FlybaseGene
-    a owl:Class ;
-    dcterms:identifier "flybase_gene" ;
-    rdfs:label "FlyBase gene" ;
-    rdfs:subClassOf :Gene, :Dataset .
-
-:WormbaseGene
-    a owl:Class ;
-    dcterms:identifier "wormbase_gene" ;
-    rdfs:label "WormBase gene" ;
-    rdfs:subClassOf :Gene, :Dataset .
+    dcterms:identifier "uniprot_reference_proteome" ;
+    rdfs:label "UniProt reference proteome" ;
+    rdfs:subClassOf :Proteome, :Dataset .
 
 :Vgnc
     a owl:Class ;
@@ -607,10 +733,16 @@
     rdfs:label "VGNC" ;
     rdfs:subClassOf :Gene, :Dataset .
 
-:ZfinGene
+:Wikipathways
     a owl:Class ;
-    dcterms:identifier "zfin_gene" ;
-    rdfs:label "ZFIN gene" ;
+    dcterms:identifier "wikipathways" ;
+    rdfs:label "WikiPathways" ;
+    rdfs:subClassOf :Pathway, :Dataset .
+
+:WormbaseGene
+    a owl:Class ;
+    dcterms:identifier "wormbase_gene" ;
+    rdfs:label "WormBase gene" ;
     rdfs:subClassOf :Gene, :Dataset .
 
 :XenbaseGene
@@ -619,137 +751,11 @@
     rdfs:label "Xenbase gene" ;
     rdfs:subClassOf :Gene, :Dataset .
 
-:Tair
+:ZfinGene
     a owl:Class ;
-    dcterms:identifier "tair" ;
-    rdfs:label "TAIR" ;
+    dcterms:identifier "zfin_gene" ;
+    rdfs:label "ZFIN gene" ;
     rdfs:subClassOf :Gene, :Dataset .
-
-:Sgd
-    a owl:Class ;
-    dcterms:identifier "sgd" ;
-    rdfs:label "SGD" ;
-    rdfs:subClassOf :Gene, :Dataset .
-
-:Cellosaurus
-    a owl:Class ;
-    dcterms:identifier "cellosaurus" ;
-    rdfs:label "Cellosaurus" ;
-    rdfs:subClassOf :CellLine, :Dataset .
-
-:NcitDisease
-    a owl:Class ;
-    dcterms:identifier "ncit_disease" ;
-    rdfs:label "NCIt disease" ;
-    rdfs:subClassOf :Phenotype, :Dataset .
-
-:Cog
-    a owl:Class ;
-    dcterms:identifier "cog" ;
-    rdfs:label "COG" ;
-    rdfs:subClassOf :Ortholog, :Dataset .
-
-:PubchemPathway
-    a owl:Class ;
-    dcterms:identifier "pubchem_pathway" ;
-    rdfs:label "PubChem pathway" ;
-    rdfs:subClassOf :Pathway, :Dataset .
-
-:NcitTissue
-    a owl:Class ;
-    dcterms:identifier "ncit_tissue" ;
-    rdfs:label "NCIt tissue" ;
-    rdfs:subClassOf :Anatomy, :Dataset .
-
-:Atc
-    a owl:Class ;
-    dcterms:identifier "atc" ;
-    rdfs:label "ATC classification" ;
-    rdfs:subClassOf :Drug, :Dataset .
-
-:Swisslipids
-    a owl:Class ;
-    dcterms:identifier "swisslipids" ;
-    rdfs:label "SwissLipids" ;
-    rdfs:subClassOf :Lipid, :Dataset .
-
-:UniprotReferenceProteome
-    a owl:Class ;
-    dcterms:identifier "uniprot_reference_proteome" ;
-    rdfs:label "UniProt reference proteome" ;
-    rdfs:subClassOf :Proteome, :Dataset .
-
-:AssemblyRefseq
-    a owl:Class ;
-    dcterms:identifier "assembly_refseq" ;
-    rdfs:label "Assembly RefSeq" ;
-    rdfs:subClassOf :Genome, :Dataset .
-
-:InsdcMaster
-    a owl:Class ;
-    dcterms:identifier "insdc_master" ;
-    rdfs:label "INSDC master" ;
-    rdfs:subClassOf :Project, :Dataset .
-
-:Gea
-    a owl:Class ;
-    dcterms:identifier "gea" ;
-    rdfs:label "GEA" ;
-    rdfs:subClassOf :Experiment, :Dataset .
-
-:PdbCcd
-    a owl:Class ;
-    dcterms:identifier "pdb_ccd" ;
-    rdfs:label "PDB CCD" ;
-    rdfs:subClassOf :Compound, :Dataset .
-
-:HpPhenotype
-    a owl:Class ;
-    dcterms:identifier "hp_phenotype" ;
-    rdfs:label "HP Phenotype" ;
-    rdfs:subClassOf :Phenotype, :Dataset .
-
-:HpInheritance
-    a owl:Class ;
-    dcterms:identifier "hp_inheritance" ;
-    rdfs:label "HP Inheritance" ;
-    rdfs:subClassOf :Classification, :Dataset .
-
-:BioprojectUmbrella
-    a owl:Class ;
-    dcterms:identifier "bioproject_umbrella" ;
-    rdfs:label "BioProject umbrella" ;
-    rdfs:subClassOf :Project, :Dataset .
-
-:Pathbank
-    a owl:Class ;
-    dcterms:identifier "pathbank" ;
-    rdfs:label "Pathbank" ;
-    rdfs:subClassOf :Pathway, :Dataset .
-
-:JgaDataset
-    a owl:Class ;
-    dcterms:identifier "jga_dataset" ;
-    rdfs:label "JGA dataset" ;
-    rdfs:subClassOf :Project, :Dataset .
-
-:JgaStudy
-    a owl:Class ;
-    dcterms:identifier "jga_study" ;
-    rdfs:label "JGA study" ;
-    rdfs:subClassOf :Project, :Dataset .
-
-:NbdcHumandb
-    a owl:Class ;
-    dcterms:identifier "nbdc_humandb" ;
-    rdfs:label "NBDC Human Database" ;
-    rdfs:subClassOf :Project, :Dataset .
-
-:Lipidmaps
-    a owl:Class ;
-    dcterms:identifier "lipidmaps" ;
-    rdfs:label "LIPID MAPS" ;
-    rdfs:subClassOf :Lipid, :Dataset .
 
 :TIO_000001
     rdfs:subPropertyOf :relation ;
