@@ -84,7 +84,7 @@ swisslipids	SwissLipids	Lipid
 tair	TAIR	Gene
 taxonomy	Taxonomy	Organism
 togovar	TogoVar variant	Variant
-uberon	UBERON	Tissue
+uberon	UBERON	Anatomy
 uniprot	UniProt	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
 uniprot_reference_proteome	UniProt reference proteome	Proteome

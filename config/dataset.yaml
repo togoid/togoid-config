@@ -546,7 +546,7 @@ ncit_disease:
 ncit_tissue:
   label: NCIT tissue
   catalog: FIXME
-  category: Tissue
+  category: Anatomy
   regex: '^NCIT?[:_](?<id>C\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/NCIT_'
   format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
@@ -842,7 +842,7 @@ togovar:
 uberon:
   label: UBERON
   catalog: FIXME
-  category: Tissue
+  category: Anatomy
   regex: '^UBERON[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/UBERON_'
   format: ["UBERON:%s","UBERON_%s"]

@@ -1568,8 +1568,8 @@
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Uberon">
     <dcterms:identifier>uberon</dcterms:identifier>
     <rdfs:label>UBERON</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Tissue"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Uniprot">
     <dcterms:identifier>uniprot</dcterms:identifier>

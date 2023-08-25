@@ -707,7 +707,7 @@
     a owl:Class ;
     dcterms:identifier "uberon" ;
     rdfs:label "UBERON" ;
-    rdfs:subClassOf :Tissue, :Dataset .
+    rdfs:subClassOf :Anatomy, :Dataset .
 
 :Uniprot
     a owl:Class ;
