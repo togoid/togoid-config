@@ -207,6 +207,14 @@ gea:
   prefix: 'https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/'
   examples:
     - ["E-GEAD-446","E-GEAD-519","E-GEAD-328","E-GEAD-349","E-GEAD-284","E-GEAD-448","E-GEAD-460","E-GEAD-348","E-GEAD-344","E-GEAD-385"]
+geo_series:
+  label: GEO series
+  catalog: nbdc00080
+  category: Project
+  regex: '^(?<id>GEO\d+)$'
+  prefix: 'http://identifiers.org/geo/'
+  examples:
+    - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
 glytoucan:
   label: GlyTouCan
   catalog: nbdc01535
