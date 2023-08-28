@@ -118,11 +118,31 @@
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/2000/01/rdf-schema#label> "Affymetrix probeset" .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Probe> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://purl.org/dc/terms/identifier> "assembly_insdc" .
+<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly INSDC" .
+<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
+<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://purl.org/dc/terms/identifier> "assembly_refseq" .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly RefSeq" .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
+<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Atc> <http://purl.org/dc/terms/identifier> "atc" .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#label> "ATC classification" .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Drug> .
+<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Bioproject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Bioproject> <http://purl.org/dc/terms/identifier> "bioproject" .
 <http://togoid.dbcls.jp/ontology#Bioproject> <http://www.w3.org/2000/01/rdf-schema#label> "BioProject" .
 <http://togoid.dbcls.jp/ontology#Bioproject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#Bioproject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://purl.org/dc/terms/identifier> "bioproject_umbrella" .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#label> "BioProject umbrella" .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Biosample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Biosample> <http://purl.org/dc/terms/identifier> "biosample" .
 <http://togoid.dbcls.jp/ontology#Biosample> <http://www.w3.org/2000/01/rdf-schema#label> "BioSample" .
@@ -133,6 +153,11 @@
 <http://togoid.dbcls.jp/ontology#Ccds> <http://www.w3.org/2000/01/rdf-schema#label> "Consensus CDS" .
 <http://togoid.dbcls.jp/ontology#Ccds> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#Ccds> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://purl.org/dc/terms/identifier> "cellosaurus" .
+<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/2000/01/rdf-schema#label> "Cellosaurus" .
+<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#CellLine> .
+<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Chebi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Chebi> <http://purl.org/dc/terms/identifier> "chebi" .
 <http://togoid.dbcls.jp/ontology#Chebi> <http://www.w3.org/2000/01/rdf-schema#label> "ChEBI compound" .
@@ -153,6 +178,11 @@
 <http://togoid.dbcls.jp/ontology#Clinvar> <http://www.w3.org/2000/01/rdf-schema#label> "ClinVar variant" .
 <http://togoid.dbcls.jp/ontology#Clinvar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#Clinvar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Cog> <http://purl.org/dc/terms/identifier> "cog" .
+<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#label> "COG" .
+<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Ortholog> .
+<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Dbsnp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Dbsnp> <http://purl.org/dc/terms/identifier> "dbsnp" .
 <http://togoid.dbcls.jp/ontology#Dbsnp> <http://www.w3.org/2000/01/rdf-schema#label> "dbSNP" .
@@ -188,6 +218,21 @@
 <http://togoid.dbcls.jp/ontology#EnsemblTranscript> <http://www.w3.org/2000/01/rdf-schema#label> "Ensembl transcript" .
 <http://togoid.dbcls.jp/ontology#EnsemblTranscript> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#EnsemblTranscript> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://purl.org/dc/terms/identifier> "flybase_gene" .
+<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "FlyBase gene" .
+<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Gea> <http://purl.org/dc/terms/identifier> "gea" .
+<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#label> "GEA" .
+<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Experiment> .
+<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#GeoSeries> <http://purl.org/dc/terms/identifier> "geo_series" .
+<http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#label> "GEO series" .
+<http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://purl.org/dc/terms/identifier> "glytoucan" .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#label> "GlyTouCan" .
@@ -219,11 +264,16 @@
 <http://togoid.dbcls.jp/ontology#Homologene> <http://www.w3.org/2000/01/rdf-schema#label> "HomoloGene" .
 <http://togoid.dbcls.jp/ontology#Homologene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Ortholog> .
 <http://togoid.dbcls.jp/ontology#Homologene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Hp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Hp> <http://purl.org/dc/terms/identifier> "hp" .
-<http://togoid.dbcls.jp/ontology#Hp> <http://www.w3.org/2000/01/rdf-schema#label> "Human Phenotype Ontology" .
-<http://togoid.dbcls.jp/ontology#Hp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
-<http://togoid.dbcls.jp/ontology#Hp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#HpInheritance> <http://purl.org/dc/terms/identifier> "hp_inheritance" .
+<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#label> "HP Inheritance" .
+<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Classification> .
+<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://purl.org/dc/terms/identifier> "hp_phenotype" .
+<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/2000/01/rdf-schema#label> "HP Phenotype" .
+<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
+<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#InchiKey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#InchiKey> <http://purl.org/dc/terms/identifier> "inchi_key" .
 <http://togoid.dbcls.jp/ontology#InchiKey> <http://www.w3.org/2000/01/rdf-schema#label> "InChIKey" .
@@ -234,6 +284,11 @@
 <http://togoid.dbcls.jp/ontology#Insdc> <http://www.w3.org/2000/01/rdf-schema#label> "GenBank/ENA/DDBJ" .
 <http://togoid.dbcls.jp/ontology#Insdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#Insdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://purl.org/dc/terms/identifier> "insdc_master" .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#label> "INSDC master" .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Intact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Intact> <http://purl.org/dc/terms/identifier> "intact" .
 <http://togoid.dbcls.jp/ontology#Intact> <http://www.w3.org/2000/01/rdf-schema#label> "IntAct" .
@@ -244,6 +299,21 @@
 <http://togoid.dbcls.jp/ontology#Interpro> <http://www.w3.org/2000/01/rdf-schema#label> "InterPro" .
 <http://togoid.dbcls.jp/ontology#Interpro> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#Interpro> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://purl.org/dc/terms/identifier> "jga_dataset" .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#label> "JGA dataset" .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://purl.org/dc/terms/identifier> "jga_study" .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#label> "JGA study" .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://purl.org/dc/terms/identifier> "lipidmaps" .
+<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#label> "LIPID MAPS" .
+<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Lipid> .
+<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Lrg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Lrg> <http://purl.org/dc/terms/identifier> "lrg" .
 <http://togoid.dbcls.jp/ontology#Lrg> <http://www.w3.org/2000/01/rdf-schema#label> "LRG" .
@@ -274,6 +344,11 @@
 <http://togoid.dbcls.jp/ontology#Mesh> <http://www.w3.org/2000/01/rdf-schema#label> "MeSH" .
 <http://togoid.dbcls.jp/ontology#Mesh> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#Mesh> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Metabobank> <http://purl.org/dc/terms/identifier> "metabobank" .
+<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/2000/01/rdf-schema#label> "MetaboBank" .
+<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Submission> .
+<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Mgi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Mgi> <http://purl.org/dc/terms/identifier> "mgi" .
 <http://togoid.dbcls.jp/ontology#Mgi> <http://www.w3.org/2000/01/rdf-schema#label> "MGI" .
@@ -294,11 +369,26 @@
 <http://togoid.dbcls.jp/ontology#Nando> <http://www.w3.org/2000/01/rdf-schema#label> "NANDO" .
 <http://togoid.dbcls.jp/ontology#Nando> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#Nando> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://purl.org/dc/terms/identifier> "nbdc_humandb" .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#label> "NBDC Human Database" .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://purl.org/dc/terms/identifier> "ncbigene" .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#label> "NCBI gene" .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#NcitDisease> <http://purl.org/dc/terms/identifier> "ncit_disease" .
+<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/2000/01/rdf-schema#label> "NCIt disease" .
+<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
+<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://purl.org/dc/terms/identifier> "ncit_tissue" .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#label> "NCIt tissue" .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Anatomy> .
+<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#OmaGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#OmaGroup> <http://purl.org/dc/terms/identifier> "oma_group" .
 <http://togoid.dbcls.jp/ontology#OmaGroup> <http://www.w3.org/2000/01/rdf-schema#label> "OMA group" .
@@ -324,11 +414,21 @@
 <http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/2000/01/rdf-schema#label> "Orphanet" .
 <http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://purl.org/dc/terms/identifier> "pathbank" .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#label> "Pathbank" .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
+<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Pdb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Pdb> <http://purl.org/dc/terms/identifier> "pdb" .
 <http://togoid.dbcls.jp/ontology#Pdb> <http://www.w3.org/2000/01/rdf-schema#label> "PDB" .
 <http://togoid.dbcls.jp/ontology#Pdb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#Pdb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://purl.org/dc/terms/identifier> "pdb_ccd" .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#label> "PDB CCD" .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Pfam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Pfam> <http://purl.org/dc/terms/identifier> "pfam" .
 <http://togoid.dbcls.jp/ontology#Pfam> <http://www.w3.org/2000/01/rdf-schema#label> "Pfam" .
@@ -339,6 +439,11 @@
 <http://togoid.dbcls.jp/ontology#PubchemCompound> <http://www.w3.org/2000/01/rdf-schema#label> "PubChem compound" .
 <http://togoid.dbcls.jp/ontology#PubchemCompound> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#PubchemCompound> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://purl.org/dc/terms/identifier> "pubchem_pathway" .
+<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#label> "PubChem pathway" .
+<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
+<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#PubchemSubstance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#PubchemSubstance> <http://purl.org/dc/terms/identifier> "pubchem_substance" .
 <http://togoid.dbcls.jp/ontology#PubchemSubstance> <http://www.w3.org/2000/01/rdf-schema#label> "PubChem substance" .
@@ -384,6 +489,11 @@
 <http://togoid.dbcls.jp/ontology#Rhea> <http://www.w3.org/2000/01/rdf-schema#label> "Rhea" .
 <http://togoid.dbcls.jp/ontology#Rhea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Reaction> .
 <http://togoid.dbcls.jp/ontology#Rhea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Sgd> <http://purl.org/dc/terms/identifier> "sgd" .
+<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#label> "SGD" .
+<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#SraAccession> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#SraAccession> <http://purl.org/dc/terms/identifier> "sra_accession" .
 <http://togoid.dbcls.jp/ontology#SraAccession> <http://www.w3.org/2000/01/rdf-schema#label> "SRA accession" .
@@ -414,6 +524,16 @@
 <http://togoid.dbcls.jp/ontology#SraSample> <http://www.w3.org/2000/01/rdf-schema#label> "SRA sample" .
 <http://togoid.dbcls.jp/ontology#SraSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#SraSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://purl.org/dc/terms/identifier> "swisslipids" .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#label> "SwissLipids" .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Lipid> .
+<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Tair> <http://purl.org/dc/terms/identifier> "tair" .
+<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/2000/01/rdf-schema#label> "TAIR" .
+<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Taxonomy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Taxonomy> <http://purl.org/dc/terms/identifier> "taxonomy" .
 <http://togoid.dbcls.jp/ontology#Taxonomy> <http://www.w3.org/2000/01/rdf-schema#label> "Taxonomy" .
@@ -424,6 +544,11 @@
 <http://togoid.dbcls.jp/ontology#Togovar> <http://www.w3.org/2000/01/rdf-schema#label> "TogoVar variant" .
 <http://togoid.dbcls.jp/ontology#Togovar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#Togovar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Uberon> <http://purl.org/dc/terms/identifier> "uberon" .
+<http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/2000/01/rdf-schema#label> "UBERON" .
+<http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Anatomy> .
+<http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://purl.org/dc/terms/identifier> "uniprot" .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt" .
@@ -435,156 +560,36 @@
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Synonym> .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Wikipathways> <http://purl.org/dc/terms/identifier> "wikipathways" .
-<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/2000/01/rdf-schema#label> "WikiPathways" .
-<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
-<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Metabobank> <http://purl.org/dc/terms/identifier> "metabobank" .
-<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/2000/01/rdf-schema#label> "MetaboBank" .
-<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Submission> .
-<http://togoid.dbcls.jp/ontology#Metabobank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://purl.org/dc/terms/identifier> "assembly_insdc" .
-<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly INSDC" .
-<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
-<http://togoid.dbcls.jp/ontology#AssemblyInsdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://purl.org/dc/terms/identifier> "flybase_gene" .
-<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "FlyBase gene" .
-<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://purl.org/dc/terms/identifier> "wormbase_gene" .
-<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "WormBase gene" .
-<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Vgnc> <http://purl.org/dc/terms/identifier> "vgnc" .
-<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#label> "VGNC" .
-<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#ZfinGene> <http://purl.org/dc/terms/identifier> "zfin_gene" .
-<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#label> "ZFIN gene" .
-<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://purl.org/dc/terms/identifier> "xenbase_gene" .
-<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "Xenbase gene" .
-<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Tair> <http://purl.org/dc/terms/identifier> "tair" .
-<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/2000/01/rdf-schema#label> "TAIR" .
-<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#Tair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Sgd> <http://purl.org/dc/terms/identifier> "sgd" .
-<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#label> "SGD" .
-<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
-<http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://purl.org/dc/terms/identifier> "cellosaurus" .
-<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/2000/01/rdf-schema#label> "Cellosaurus" .
-<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#CellLine> .
-<http://togoid.dbcls.jp/ontology#Cellosaurus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#NcitDisease> <http://purl.org/dc/terms/identifier> "ncit_disease" .
-<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/2000/01/rdf-schema#label> "NCIt disease" .
-<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
-<http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Cog> <http://purl.org/dc/terms/identifier> "cog" .
-<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#label> "COG" .
-<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Ortholog> .
-<http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://purl.org/dc/terms/identifier> "pubchem_pathway" .
-<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#label> "PubChem pathway" .
-<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
-<http://togoid.dbcls.jp/ontology#PubchemPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#NcitTissue> <http://purl.org/dc/terms/identifier> "ncit_tissue" .
-<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#label> "NCIt tissue" .
-<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Anatomy> .
-<http://togoid.dbcls.jp/ontology#NcitTissue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Atc> <http://purl.org/dc/terms/identifier> "atc" .
-<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#label> "ATC classification" .
-<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Drug> .
-<http://togoid.dbcls.jp/ontology#Atc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Swisslipids> <http://purl.org/dc/terms/identifier> "swisslipids" .
-<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#label> "SwissLipids" .
-<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Lipid> .
-<http://togoid.dbcls.jp/ontology#Swisslipids> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://purl.org/dc/terms/identifier> "uniprot_reference_proteome" .
 <http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt reference proteome" .
 <http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Proteome> .
 <http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://purl.org/dc/terms/identifier> "assembly_refseq" .
-<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly RefSeq" .
-<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Genome> .
-<http://togoid.dbcls.jp/ontology#AssemblyRefseq> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://purl.org/dc/terms/identifier> "insdc_master" .
-<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#label> "INSDC master" .
-<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
-<http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Gea> <http://purl.org/dc/terms/identifier> "gea" .
-<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#label> "GEA" .
-<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Experiment> .
-<http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#PdbCcd> <http://purl.org/dc/terms/identifier> "pdb_ccd" .
-<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#label> "PDB CCD" .
-<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Compound> .
-<http://togoid.dbcls.jp/ontology#PdbCcd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://purl.org/dc/terms/identifier> "hp_phenotype" .
-<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/2000/01/rdf-schema#label> "HP Phenotype" .
-<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
-<http://togoid.dbcls.jp/ontology#HpPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#HpInheritance> <http://purl.org/dc/terms/identifier> "hp_inheritance" .
-<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#label> "HP Inheritance" .
-<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Classification> .
-<http://togoid.dbcls.jp/ontology#HpInheritance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://purl.org/dc/terms/identifier> "bioproject_umbrella" .
-<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#label> "BioProject umbrella" .
-<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
-<http://togoid.dbcls.jp/ontology#BioprojectUmbrella> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Pathbank> <http://purl.org/dc/terms/identifier> "pathbank" .
-<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#label> "Pathbank" .
-<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
-<http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#JgaDataset> <http://purl.org/dc/terms/identifier> "jga_dataset" .
-<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#label> "JGA dataset" .
-<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
-<http://togoid.dbcls.jp/ontology#JgaDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#JgaStudy> <http://purl.org/dc/terms/identifier> "jga_study" .
-<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#label> "JGA study" .
-<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
-<http://togoid.dbcls.jp/ontology#JgaStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://purl.org/dc/terms/identifier> "nbdc_humandb" .
-<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#label> "NBDC Human Database" .
-<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
-<http://togoid.dbcls.jp/ontology#NbdcHumandb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://purl.org/dc/terms/identifier> "lipidmaps" .
-<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#label> "LIPID MAPS" .
-<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Lipid> .
-<http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Vgnc> <http://purl.org/dc/terms/identifier> "vgnc" .
+<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#label> "VGNC" .
+<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Wikipathways> <http://purl.org/dc/terms/identifier> "wikipathways" .
+<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/2000/01/rdf-schema#label> "WikiPathways" .
+<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Pathway> .
+<http://togoid.dbcls.jp/ontology#Wikipathways> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://purl.org/dc/terms/identifier> "wormbase_gene" .
+<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "WormBase gene" .
+<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#WormbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://purl.org/dc/terms/identifier> "xenbase_gene" .
+<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "Xenbase gene" .
+<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#XenbaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#ZfinGene> <http://purl.org/dc/terms/identifier> "zfin_gene" .
+<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#label> "ZFIN gene" .
+<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .

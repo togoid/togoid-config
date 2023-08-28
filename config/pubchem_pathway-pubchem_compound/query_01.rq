@@ -7,7 +7,7 @@ FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway>
 WHERE {
     ?pathway a bp:Pathway;
       obo:RO_0000057 ?participant.
-    FILTER(CONTAINS(STR(?participant), "CID"))
+    FILTER(STRSTARTS(STR(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID"))
     BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?path_id)
     BIND(STRAFTER(STR(?participant), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?cid)
 }

@@ -1,11 +1,17 @@
 affy_probeset	Affymetrix probeset	Probe
+assembly_insdc	Assembly INSDC	Genome
+assembly_refseq	Assembly RefSeq	Genome
+atc	ATC classification	Drug
 bioproject	BioProject	Project
+bioproject_umbrella	BioProject umbrella	Project
 biosample	BioSample	Sample
 ccds	Consensus CDS	Gene
+cellosaurus	Cellosaurus	CellLine
 chebi	ChEBI compound	Compound
 chembl_compound	ChEMBL compound	Compound
 chembl_target	ChEMBL target	Protein
 clinvar	ClinVar variant	Variant
+cog	COG	Ortholog
 dbsnp	dbSNP	Variant
 doid	Disease ontology	Phenotype
 drugbank	DrugBank	Drug
@@ -13,36 +19,51 @@ ec	Enzyme nomenclature	Function
 ensembl_gene	Ensembl gene	Gene
 ensembl_protein	Ensembl protein	Protein
 ensembl_transcript	Ensembl transcript	Transcript
+flybase_gene	FlyBase gene	Gene
+gea	GEA	Experiment
+geo_series	GEO series	Project
 glytoucan	GlyTouCan	Glycan
 go	Gene ontology	Function
 hgnc	HGNC	Gene
 hgnc_symbol	HGNC gene symbol	Gene, Synonym
 hmdb	HMDB	Compound
 homologene	HomoloGene	Ortholog
-hp	Human Phenotype Ontology	Phenotype
+hp_inheritance	HP Inheritance	Classification
+hp_phenotype	HP Phenotype	Phenotype
 inchi_key	InChIKey	Compound
 insdc	GenBank/ENA/DDBJ	Gene
+insdc_master	INSDC master	Project
 intact	IntAct	Interaction
 interpro	InterPro	Domain
+jga_dataset	JGA dataset	Project
+jga_study	JGA study	Project
+lipidmaps	LIPID MAPS	Lipid
 lrg	LRG	Gene
 mbgd_gene	MBGD gene	Gene
 mbgd_organism	MBGD organism	Organism
 meddra	MedDRA	Phenotype
 medgen	MedGen	Phenotype
 mesh	MeSH	Phenotype
+metabobank	MetaboBank	Submission
 mgi	MGI	Gene
 mirbase	miRBase	Transcript
 mondo	MONDO	Phenotype
 nando	NANDO	Phenotype
+nbdc_humandb	NBDC Human Database	Project
 ncbigene	NCBI gene	Gene
+ncit_disease	NCIt disease	Phenotype
+ncit_tissue	NCIt tissue	Anatomy
 oma_group	OMA group	Ortholog
 oma_protein	OMA protein	Protein
 omim_gene	OMIM gene	Gene
 omim_phenotype	OMIM phenotype	Phenotype
 orphanet	Orphanet	Phenotype
+pathbank	Pathbank	Pathway
 pdb	PDB	Structure
+pdb_ccd	PDB CCD	Compound
 pfam	Pfam	Domain
 pubchem_compound	PubChem compound	Compound
+pubchem_pathway	PubChem pathway	Pathway
 pubchem_substance	PubChem substance	Compound
 pubmed	PubMed	Literature
 reactome_pathway	Reactome pathway	Pathway
@@ -52,43 +73,23 @@ refseq_protein	RefSeq protein	Protein
 refseq_rna	RefSeq RNA	Transcript
 rgd	RGD	Gene
 rhea	Rhea	Reaction
+sgd	SGD	Gene
 sra_accession	SRA accession	Submission
 sra_analysis	SRA analysis	Analysis
 sra_experiment	SRA experiment	Experiment
 sra_project	SRA project	Project
 sra_run	SRA run	SequenceRun
 sra_sample	SRA sample	Sample
+swisslipids	SwissLipids	Lipid
+tair	TAIR	Gene
 taxonomy	Taxonomy	Organism
 togovar	TogoVar variant	Variant
+uberon	UBERON	Anatomy
 uniprot	UniProt	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
-wikipathways	WikiPathways	Pathway
-metabobank	MetaboBank	Submission
-assembly_insdc	Assembly INSDC	Genome
-flybase_gene	FlyBase gene	Gene
-wormbase_gene	WormBase gene	Gene
-vgnc	VGNC	Gene
-zfin_gene	ZFIN gene	Gene
-xenbase_gene	Xenbase gene	Gene
-tair	TAIR	Gene
-sgd	SGD	Gene
-cellosaurus	Cellosaurus	CellLine
-ncit_disease	NCIt disease	Phenotype
-cog	COG	Ortholog
-pubchem_pathway	PubChem pathway	Pathway
-ncit_tissue	NCIt tissue	Anatomy
-atc	ATC classification	Drug
-swisslipids	SwissLipids	Lipid
 uniprot_reference_proteome	UniProt reference proteome	Proteome
-assembly_refseq	Assembly RefSeq	Genome
-insdc_master	INSDC master	Project
-gea	GEA	Experiment
-pdb_ccd	PDB CCD	Compound
-hp_phenotype	HP Phenotype	Phenotype
-hp_inheritance	HP Inheritance	Classification
-bioproject_umbrella	BioProject umbrella	Project
-pathbank	Pathbank	Pathway
-jga_dataset	JGA dataset	Project
-jga_study	JGA study	Project
-nbdc_humandb	NBDC Human Database	Project
-lipidmaps	LIPID MAPS	Lipid
+vgnc	VGNC	Gene
+wikipathways	WikiPathways	Pathway
+wormbase_gene	WormBase gene	Gene
+xenbase_gene	Xenbase gene	Gene
+zfin_gene	ZFIN gene	Gene

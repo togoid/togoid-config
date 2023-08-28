@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000032
+  reverse: TIO_000033
+update:
+  frequency: Monthly
+  method: awk -F "\t" '$2=="PubMed"{print $1 "\t" $3}' $TOGOID_ROOT/input/bioproject/bioproject.tsv

@@ -32,7 +32,7 @@ atc:
   prefix: 'http://identifiers.org/atc/'
   examples:
     - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
-  method: 'curl -s -H "Accept: text/csv" --data-urlencode "query@$TOGOID_ROOT/bin/sparql/atc_label.rq" "https://rdfportal.org/pubchem/sparql" | sed 1d | perl -pe ''s/,/\t/; s/\"//g; s/\r\n/\n/g'''
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/atc_label.rq https://rdfportal.org/pubchem/sparql
 bioproject:
   label: BioProject
   catalog: nbdc00476
@@ -41,6 +41,7 @@ bioproject:
   prefix: 'http://identifiers.org/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
+  method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
 bioproject_umbrella:
   label: BioProject umbrella
   catalog: nbdc00476
@@ -166,7 +167,7 @@ ec:
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
-  method: 'curl -s -H "Accept: text/csv" --data-urlencode "query@$TOGOID_ROOT/bin/sparql/ec_label.rq" "https://rdfportal.org/sib/sparql" | sed 1d | perl -pe ''s/,/\t/; s/\"//g; s/\r\n/\n/g'''
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/ec_label.rq https://rdfportal.org/sib/sparql
 ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
@@ -207,6 +208,14 @@ gea:
   prefix: 'https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/'
   examples:
     - ["E-GEAD-446","E-GEAD-519","E-GEAD-328","E-GEAD-349","E-GEAD-284","E-GEAD-448","E-GEAD-460","E-GEAD-348","E-GEAD-344","E-GEAD-385"]
+geo_series:
+  label: GEO series
+  catalog: nbdc00080
+  category: Project
+  regex: '^(?<id>GEO\d+)$'
+  prefix: 'http://identifiers.org/geo/'
+  examples:
+    - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
 glytoucan:
   label: GlyTouCan
   catalog: nbdc01535
@@ -537,7 +546,7 @@ ncit_disease:
 ncit_tissue:
   label: NCIT tissue
   catalog: FIXME
-  category: Tissue
+  category: Anatomy
   regex: '^NCIT?[:_](?<id>C\d+)$'
   prefix: 'http://purl.obolibrary.org/obo/NCIT_'
   format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
@@ -604,6 +613,7 @@ pathbank:
   prefix: 'http://pathbank.org/view/'
   examples:
     - ["SMP0000055","SMP0000057","SMP0000029","SMP0000044","SMP0000048","SMP0000046","SMP0000059","SMP0000067","SMP0000007","SMP0000004"]
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pathbank_label.rq https://rdfportal.org/pubchem/sparql
 pdb:
   label: PDB
   catalog: nbdc00156
@@ -629,6 +639,7 @@ pfam:
   prefix: 'http://identifiers.org/pfam/'
   examples:
     - ["PF03719","PF03726","PF02809","PF00105","PF00250","PF00412","PF01412","PF00459","PF02532","PF01226"]
+  method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro.tsv $TOGOID_ROOT/input/interpro.tsv
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
@@ -659,6 +670,7 @@ pubchem_pathway:
   examples:
     - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
     - ["PWID10572","PWID1","PWID10576","PWID10577","PWID10579","PWID10573","PWID10582","PWID10574","PWID10575","PWID10581"]
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pubchem_pathway_label.rq https://rdfportal.org/pubchem/sparql
 pubmed:
   label: PubMed
   catalog: nbdc00179
@@ -830,7 +842,7 @@ togovar:
 uberon:
   label: UBERON
   catalog: FIXME
-  category: Tissue
+  category: Anatomy
   regex: '^UBERON[:_](?<id>\d{7})$'
   prefix: 'http://purl.obolibrary.org/obo/UBERON_'
   format: ["UBERON:%s","UBERON_%s"]
