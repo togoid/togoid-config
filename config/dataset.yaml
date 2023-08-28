@@ -212,7 +212,7 @@ geo_series:
   label: GEO series
   catalog: nbdc00080
   category: Project
-  regex: '^(?<id>GEO\d+)$'
+  regex: '^(?<id>GSE\d+)$'
   prefix: 'http://identifiers.org/geo/'
   examples:
     - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
