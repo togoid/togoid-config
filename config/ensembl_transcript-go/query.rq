@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
@@ -7,7 +7,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # GRAPH varies e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
 SELECT DISTINCT ?enst_id ?go_id
-FROM <http://rdf.integbio.jp/dataset/ensembl>
+FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }
   ?ensg obo:RO_0002162 ?taxon .

@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>

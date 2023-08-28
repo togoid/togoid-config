@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 
 SELECT DISTINCT ?source ?ensg_id

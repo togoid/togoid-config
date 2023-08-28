@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/mirror/ebi/sparql
+# Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX biopax: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
