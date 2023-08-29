@@ -3,7 +3,7 @@ PREFIX mo: <http://med2rdf/ontology/medgen#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?medgen_id ?omim_id 
-FROM <http://rdf.integbio.jp/dataset/togosite/medgen>
+FROM <http://rdfportal.org/dataset/medgen>
 WHERE {
   ?medgen_uri
     dct:identifier ?medgen_id ;
