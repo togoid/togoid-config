@@ -2,7 +2,7 @@
 our $THREAD_LIMIT = 10;
 
 # Endpoint
-our $EP = "https://integbio.jp/rdf/mirror/uniprot/sparql";
+our $EP = "https://rdfportal.org/sib/sparql";
 our $EP_MIRROR = "https://sparql.uniprot.org/sparql";
 
 # SPARQL query for get-taxonomy-list
