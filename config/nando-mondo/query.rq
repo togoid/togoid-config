@@ -3,7 +3,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?nando_id ?mondo_id
-FROM <http://rdf.integbio.jp/dataset/togosite/nando>
+FROM <http://rdf.integbio.jp/dataset/bioportal/nando>
 WHERE {
   ?nando 
     dcterms:identifier ?nandoid ;
