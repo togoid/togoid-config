@@ -5,7 +5,8 @@ digraph togoid {
     fontname = "Migu 1M"
   ];
   edge [
-    fontname = "Migu 1M"
+    fontname = "Migu 1M",
+    dir = "both"
   ];
 
   "Affymetrix probeset" [fillcolor = "#53C666"] ;
@@ -104,470 +105,392 @@ digraph togoid {
   "UniProt reference proteome" [fillcolor = "#006400"] ;
   "Assembly RefSeq" [fillcolor = "#006400"] ;
 
-  "Affymetrix probeset" -> "NCBI gene" [ label = "probe detects gene or transcript"  ] ;
-  "NCBI gene" -> "Affymetrix probeset" [ label = "gene or transcript is target of probe"  ] ;
-  "Assembly INSDC" -> "BioProject" [ label = "genome is sequenced in project"  ] ;
-  "BioProject" -> "Assembly INSDC" [ label = "project determines genome sequence"  ] ;
-  "Assembly INSDC" -> "BioSample" [ label = "genome is sequenced with sample"  ] ;
-  "BioSample" -> "Assembly INSDC" [ label = "sample is used to sequence genome"  ] ;
-  "Assembly INSDC" -> "INSDC master" [ label = "genome is sequenced in project"  ] ;
-  "INSDC master" -> "Assembly INSDC" [ label = "project determines genome sequence"  ] ;
-  "BioProject" -> "BioSample" [ label = "project analyzes sample"  ] ;
-  "BioSample" -> "BioProject" [ label = "sample is analyzed in project"  ] ;
-  "BioProject" -> "GEO series" [ label = "is nearly equivalent to"  ] ;
-  "GEO series" -> "BioProject" [ label = "is nearly equivalent to"  ] ;
-  "BioProject" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "BioProject" [ label = "is reference of"  ] ;
-  "BioProject umbrella" -> "BioProject" [ label = "has member"  ] ;
-  "BioProject" -> "BioProject umbrella" [ label = "is member of"  ] ;
-  "BioSample" -> "BioProject" [ label = "sample is analyzed in project"  ] ;
-  "BioProject" -> "BioSample" [ label = "project analyzes sample"  ] ;
-  "Cellosaurus" -> "NCIT disease" [ label = "cell line is model of phenotype"  ] ;
-  "NCIT disease" -> "Cellosaurus" [ label = "phenotype is observed in cell line"  ] ;
-  "Cellosaurus" -> "Orphanet" [ label = "cell line is model of phenotype"  ] ;
-  "Orphanet" -> "Cellosaurus" [ label = "phenotype is observed in cell line"  ] ;
-  "ChEBI compound" -> "InChIKey" [ label = "compound is represented as InChIKey"  ] ;
-  "InChIKey" -> "ChEBI compound" [ label = "InChIKey represents compound"  ] ;
-  "ChEMBL compound" -> "ChEBI compound" [ label = "is equivalent to"  ] ;
-  "ChEBI compound" -> "ChEMBL compound" [ label = "is equivalent to"  ] ;
-  "ChEMBL compound" -> "ChEMBL target" [ label = "molecule interacts with molecule"  ] ;
-  "ChEMBL target" -> "ChEMBL compound" [ label = "molecule interacts with molecule"  ] ;
-  "ChEMBL compound" -> "DrugBank" [ label = "is nearly equivalent to"  ] ;
-  "DrugBank" -> "ChEMBL compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEMBL compound" -> "HMDB" [ label = "is nearly equivalent to"  ] ;
-  "HMDB" -> "ChEMBL compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEMBL compound" -> "InChIKey" [ label = "compound is represented as InChIKey"  ] ;
-  "InChIKey" -> "ChEMBL compound" [ label = "InChIKey represents compound"  ] ;
-  "ChEMBL compound" -> "MeSH" [ label = "has related phenotype"  ] ;
-  "MeSH" -> "ChEMBL compound" [ label = "phenotype is related with"  ] ;
-  "ChEMBL compound" -> "PDB CCD" [ label = "is nearly equivalent to"  ] ;
-  "PDB CCD" -> "ChEMBL compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEMBL compound" -> "PubChem compound" [ label = "is nearly equivalent to"  ] ;
-  "PubChem compound" -> "ChEMBL compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEMBL compound" -> "PubChem substance" [ label = "is equivalent to"  ] ;
-  "PubChem substance" -> "ChEMBL compound" [ label = "is equivalent to"  ] ;
-  "ChEMBL compound" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "ChEMBL compound" [ label = "is reference of"  ] ;
-  "ChEMBL target" -> "Ensembl gene" [ label = "protein is product of gene"  ] ;
-  "Ensembl gene" -> "ChEMBL target" [ label = "gene has protein as product"  ] ;
-  "ChEMBL target" -> "Gene ontology" [ label = "has GO cellular component"  ] ;
-  "Gene ontology" -> "ChEMBL target" [ label = "is GO cellular component of"  ] ;
-  "ChEMBL target" -> "InterPro" [ label = "protein has protein domain"  ] ;
-  "InterPro" -> "ChEMBL target" [ label = "protein domain is in protein"  ] ;
-  "ChEMBL target" -> "PDB" [ label = "protein has 3D structure"  ] ;
-  "PDB" -> "ChEMBL target" [ label = "is 3D structure of protein"  ] ;
-  "ChEMBL target" -> "Pfam" [ label = "protein has protein domain"  ] ;
-  "Pfam" -> "ChEMBL target" [ label = "protein domain is in protein"  ] ;
-  "ChEMBL target" -> "Reactome pathway" [ label = "molecule participates in pathway"  ] ;
-  "Reactome pathway" -> "ChEMBL target" [ label = "pathway has participant molecule"  ] ;
-  "ChEMBL target" -> "UniProt" [ label = "is equivalent to"  ] ;
-  "UniProt" -> "ChEMBL target" [ label = "is equivalent to"  ] ;
-  "ClinVar variant" -> "MedGen" [ label = "has related phenotype"  ] ;
-  "MedGen" -> "ClinVar variant" [ label = "phenotype is related with"  ] ;
-  "COG" -> "GenBank/ENA/DDBJ" [ label = "orthologous group has member sequence"  ] ;
-  "GenBank/ENA/DDBJ" -> "COG" [ label = "sequence is member of orthologous group"  ] ;
-  "COG" -> "RefSeq protein" [ label = "orthologous group has member sequence"  ] ;
-  "RefSeq protein" -> "COG" [ label = "sequence is member of orthologous group"  ] ;
-  "Disease ontology" -> "MeSH" [ label = "is nearly equivalent to"  ] ;
-  "MeSH" -> "Disease ontology" [ label = "is nearly equivalent to"  ] ;
-  "Disease ontology" -> "NCIT disease" [ label = "is nearly equivalent to"  ] ;
-  "NCIT disease" -> "Disease ontology" [ label = "is nearly equivalent to"  ] ;
-  "Disease ontology" -> "OMIM phenotype" [ label = "is nearly equivalent to"  ] ;
-  "OMIM phenotype" -> "Disease ontology" [ label = "is nearly equivalent to"  ] ;
-  "Ensembl gene" -> "Affymetrix probeset" [ label = "gene or transcript is target of probe"  ] ;
-  "Affymetrix probeset" -> "Ensembl gene" [ label = "probe detects gene or transcript"  ] ;
-  "Ensembl gene" -> "Ensembl protein" [ label = "gene has protein as product"  ] ;
-  "Ensembl protein" -> "Ensembl gene" [ label = "protein is product of gene"  ] ;
-  "Ensembl gene" -> "Ensembl transcript" [ label = "gene is transcribed to transcript"  ] ;
-  "Ensembl transcript" -> "Ensembl gene" [ label = "transcript is transcribed from gene"  ] ;
-  "Ensembl gene" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "Ensembl gene" [ label = "is nearly equivalent to"  ] ;
-  "Ensembl gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "Ensembl gene" [ label = "is nearly equivalent to"  ] ;
-  "Ensembl gene" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "Ensembl gene" [ label = "protein is product of gene"  ] ;
-  "Ensembl protein" -> "Ensembl transcript" [ label = "protein is translated from transcript"  ] ;
-  "Ensembl transcript" -> "Ensembl protein" [ label = "transcript is translated to protein"  ] ;
-  "Ensembl transcript" -> "Affymetrix probeset" [ label = "gene or transcript is target of probe"  ] ;
-  "Affymetrix probeset" -> "Ensembl transcript" [ label = "probe detects gene or transcript"  ] ;
-  "Ensembl transcript" -> "Gene ontology" [ label = "has GO annotation"  ] ;
-  "Gene ontology" -> "Ensembl transcript" [ label = "is GO annotation of"  ] ;
-  "Ensembl transcript" -> "HGNC" [ label = "transcript is transcribed from gene"  ] ;
-  "HGNC" -> "Ensembl transcript" [ label = "gene is transcribed to transcript"  ] ;
-  "Ensembl transcript" -> "RefSeq RNA" [ label = "is nearly equivalent to"  ] ;
-  "RefSeq RNA" -> "Ensembl transcript" [ label = "is nearly equivalent to"  ] ;
-  "GEA" -> "BioProject" [ label = "experiment belongs to project"  ] ;
-  "BioProject" -> "GEA" [ label = "project performs experiment"  ] ;
-  "GEA" -> "BioSample" [ label = "experiment captures sample"  ] ;
-  "BioSample" -> "GEA" [ label = "sample is captured to perform experiment"  ] ;
-  "GlyTouCan" -> "Disease ontology" [ label = "has related phenotype"  ] ;
-  "Disease ontology" -> "GlyTouCan" [ label = "phenotype is related with"  ] ;
-  "GlyTouCan" -> "NCBI gene" [ label = "glycan is processed by protein coded by gene"  ] ;
-  "NCBI gene" -> "GlyTouCan" [ label = "gene codes protein to process glycan"  ] ;
-  "GlyTouCan" -> "UniProt" [ label = "glycan is attached to protein"  ] ;
-  "UniProt" -> "GlyTouCan" [ label = "protein is modified with glycan"  ] ;
-  "HGNC" -> "Consensus CDS" [ label = "is nearly equivalent to"  ] ;
-  "Consensus CDS" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "Enzyme nomenclature" [ label = "sequence has EC number"  ] ;
-  "Enzyme nomenclature" -> "HGNC" [ label = "is EC number of sequence"  ] ;
-  "HGNC" -> "Ensembl gene" [ label = "is nearly equivalent to"  ] ;
-  "Ensembl gene" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "HGNC gene symbol" [ label = "has synonym"  ] ;
-  "HGNC gene symbol" -> "HGNC" [ label = "is synonym of"  ] ;
-  "HGNC" -> "GenBank/ENA/DDBJ" [ label = "is nearly equivalent to"  ] ;
-  "GenBank/ENA/DDBJ" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "LRG" [ label = "is nearly equivalent to"  ] ;
-  "LRG" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "MGI" [ label = "sequence is orthologous to sequence"  ] ;
-  "MGI" -> "HGNC" [ label = "sequence is orthologous to sequence"  ] ;
-  "HGNC" -> "miRBase" [ label = "gene is transcribed to transcript"  ] ;
-  "miRBase" -> "HGNC" [ label = "transcript is transcribed from gene"  ] ;
-  "HGNC" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "OMIM gene" [ label = "is nearly equivalent to"  ] ;
-  "OMIM gene" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "HGNC" [ label = "is reference of"  ] ;
-  "HGNC" -> "RefSeq RNA" [ label = "gene is transcribed to transcript"  ] ;
-  "RefSeq RNA" -> "HGNC" [ label = "transcript is transcribed from gene"  ] ;
-  "HGNC" -> "RGD" [ label = "sequence is orthologous to sequence"  ] ;
-  "RGD" -> "HGNC" [ label = "sequence is orthologous to sequence"  ] ;
-  "HGNC" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "HGNC" [ label = "protein is product of gene"  ] ;
-  "HMDB" -> "ChEBI compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEBI compound" -> "HMDB" [ label = "is nearly equivalent to"  ] ;
-  "HMDB" -> "InChIKey" [ label = "compound is represented as InChIKey"  ] ;
-  "InChIKey" -> "HMDB" [ label = "InChIKey represents compound"  ] ;
-  "HMDB" -> "PDB CCD" [ label = "compound is component of 3D structure"  ] ;
-  "PDB CCD" -> "HMDB" [ label = "3D structure has compound"  ] ;
-  "HMDB" -> "PubChem compound" [ label = "is nearly equivalent to"  ] ;
-  "PubChem compound" -> "HMDB" [ label = "is nearly equivalent to"  ] ;
-  "HomoloGene" -> "NCBI gene" [ label = "orthologous group has member sequence"  ] ;
-  "NCBI gene" -> "HomoloGene" [ label = "sequence is member of orthologous group"  ] ;
-  "HP Inheritance" -> "OMIM phenotype" [ label = "is mode of inheritance of phenotype"  ] ;
-  "OMIM phenotype" -> "HP Inheritance" [ label = "phenotype has mode of inheritance"  ] ;
-  "HP Phenotype" -> "NCBI gene" [ label = "gene is related with symptom"  ] ;
-  "NCBI gene" -> "HP Phenotype" [ label = "symptom is related with gene"  ] ;
-  "HP Phenotype" -> "OMIM phenotype" [ label = "symptom is observed in disease"  ] ;
-  "OMIM phenotype" -> "HP Phenotype" [ label = "disease has symptom"  ] ;
-  "HP Phenotype" -> "Orphanet" [ label = "symptom is observed in disease"  ] ;
-  "Orphanet" -> "HP Phenotype" [ label = "disease has symptom"  ] ;
-  "GenBank/ENA/DDBJ" -> "BioProject" [ label = "sequence is determined in project"  ] ;
-  "BioProject" -> "GenBank/ENA/DDBJ" [ label = "project determines sequence"  ] ;
-  "GenBank/ENA/DDBJ" -> "BioSample" [ label = "sequence is determined using sample"  ] ;
-  "BioSample" -> "GenBank/ENA/DDBJ" [ label = "sample is used to determine sequence"  ] ;
-  "INSDC master" -> "BioProject" [ label = "is nearly equivalent to"  ] ;
-  "BioProject" -> "INSDC master" [ label = "is nearly equivalent to"  ] ;
-  "INSDC master" -> "BioSample" [ label = "project analyzes sample"  ] ;
-  "BioSample" -> "INSDC master" [ label = "sample is analyzed in project"  ] ;
-  "InterPro" -> "Gene ontology" [ label = "has GO annotation"  ] ;
-  "Gene ontology" -> "InterPro" [ label = "is GO annotation of"  ] ;
-  "InterPro" -> "PDB" [ label = "protein domain is in structure"  ] ;
-  "PDB" -> "InterPro" [ label = "structure has protein domain"  ] ;
-  "InterPro" -> "Pfam" [ label = "is nearly equivalent to"  ] ;
-  "Pfam" -> "InterPro" [ label = "is nearly equivalent to"  ] ;
-  "InterPro" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "InterPro" [ label = "is reference of"  ] ;
-  "InterPro" -> "Reactome pathway" [ label = "protein domain participates in pathway"  ] ;
-  "Reactome pathway" -> "InterPro" [ label = "pathway has protein domain"  ] ;
-  "InterPro" -> "UniProt" [ label = "protein domain is in protein"  ] ;
-  "UniProt" -> "InterPro" [ label = "protein has protein domain"  ] ;
-  "JGA Study" -> "JGA Dataset" [ label = "has member"  ] ;
-  "JGA Dataset" -> "JGA Study" [ label = "is member of"  ] ;
-  "JGA Study" -> "NBDC Human DB" [ label = "is member of"  ] ;
-  "NBDC Human DB" -> "JGA Study" [ label = "has member"  ] ;
-  "JGA Study" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "JGA Study" [ label = "is reference of"  ] ;
-  "LIPID MAPS" -> "ChEBI compound" [ label = "is equivalent to"  ] ;
-  "ChEBI compound" -> "LIPID MAPS" [ label = "is equivalent to"  ] ;
-  "LIPID MAPS" -> "InChIKey" [ label = "compound is represented as InChIKey"  ] ;
-  "InChIKey" -> "LIPID MAPS" [ label = "InChIKey represents compound"  ] ;
-  "LIPID MAPS" -> "SwissLipids" [ label = "is equivalent to"  ] ;
-  "SwissLipids" -> "LIPID MAPS" [ label = "is equivalent to"  ] ;
-  "MBGD gene" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "MBGD gene" [ label = "protein is product of gene"  ] ;
-  "MBGD organism" -> "Taxonomy" [ label = "is equivalent to"  ] ;
-  "Taxonomy" -> "MBGD organism" [ label = "is equivalent to"  ] ;
-  "MedGen" -> "HP Phenotype" [ label = "is nearly equivalent to"  ] ;
-  "HP Phenotype" -> "MedGen" [ label = "is nearly equivalent to"  ] ;
-  "MedGen" -> "MeSH" [ label = "is nearly equivalent to"  ] ;
-  "MeSH" -> "MedGen" [ label = "is nearly equivalent to"  ] ;
-  "MedGen" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "MedGen" [ label = "is nearly equivalent to"  ] ;
-  "MedGen" -> "NCBI gene" [ label = "phenotype is related with"  ] ;
-  "NCBI gene" -> "MedGen" [ label = "has related phenotype"  ] ;
-  "MedGen" -> "OMIM phenotype" [ label = "is nearly equivalent to"  ] ;
-  "OMIM phenotype" -> "MedGen" [ label = "is nearly equivalent to"  ] ;
-  "MedGen" -> "Orphanet" [ label = "is nearly equivalent to"  ] ;
-  "Orphanet" -> "MedGen" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "Disease ontology" [ label = "is nearly equivalent to"  ] ;
-  "Disease ontology" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "HP Phenotype" [ label = "is nearly equivalent to"  ] ;
-  "HP Phenotype" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "MedDRA" [ label = "is nearly equivalent to"  ] ;
-  "MedDRA" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "MeSH" [ label = "is nearly equivalent to"  ] ;
-  "MeSH" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "OMIM phenotype" [ label = "is nearly equivalent to"  ] ;
-  "OMIM phenotype" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "Orphanet" [ label = "is nearly equivalent to"  ] ;
-  "Orphanet" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "NANDO" -> "MONDO" [ label = "is nearly equivalent to"  ] ;
-  "MONDO" -> "NANDO" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "Ensembl gene" [ label = "is nearly equivalent to"  ] ;
-  "Ensembl gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "Ensembl protein" [ label = "gene has protein as product"  ] ;
-  "Ensembl protein" -> "NCBI gene" [ label = "protein is product of gene"  ] ;
-  "NCBI gene" -> "Ensembl transcript" [ label = "gene is transcribed to transcript"  ] ;
-  "Ensembl transcript" -> "NCBI gene" [ label = "transcript is transcribed from gene"  ] ;
-  "NCBI gene" -> "FlyBase Gene" [ label = "is nearly equivalent to"  ] ;
-  "FlyBase Gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "Gene ontology" [ label = "has GO annotation"  ] ;
-  "Gene ontology" -> "NCBI gene" [ label = "is GO annotation of"  ] ;
-  "NCBI gene" -> "HGNC" [ label = "is nearly equivalent to"  ] ;
-  "HGNC" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "MGI" [ label = "is nearly equivalent to"  ] ;
-  "MGI" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "miRBase" [ label = "gene is transcribed to transcript"  ] ;
-  "miRBase" -> "NCBI gene" [ label = "transcript is transcribed from gene"  ] ;
-  "NCBI gene" -> "OMIM gene" [ label = "is nearly equivalent to"  ] ;
-  "OMIM gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "RefSeq genomic" [ label = "is nearly equivalent to"  ] ;
-  "RefSeq genomic" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "RefSeq protein" [ label = "gene has protein as product"  ] ;
-  "RefSeq protein" -> "NCBI gene" [ label = "protein is product of gene"  ] ;
-  "NCBI gene" -> "RefSeq RNA" [ label = "gene is transcribed to transcript"  ] ;
-  "RefSeq RNA" -> "NCBI gene" [ label = "transcript is transcribed from gene"  ] ;
-  "NCBI gene" -> "RGD" [ label = "is nearly equivalent to"  ] ;
-  "RGD" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "SGD" [ label = "is nearly equivalent to"  ] ;
-  "SGD" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "TAIR" [ label = "is nearly equivalent to"  ] ;
-  "TAIR" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "Taxonomy" [ label = "is gene of organism"  ] ;
-  "Taxonomy" -> "NCBI gene" [ label = "organism has gene"  ] ;
-  "NCBI gene" -> "VGNC" [ label = "is nearly equivalent to"  ] ;
-  "VGNC" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "WormBase gene" [ label = "is nearly equivalent to"  ] ;
-  "WormBase gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "Xenbase gene" [ label = "is nearly equivalent to"  ] ;
-  "Xenbase gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCBI gene" -> "ZFIN gene" [ label = "is nearly equivalent to"  ] ;
-  "ZFIN gene" -> "NCBI gene" [ label = "is nearly equivalent to"  ] ;
-  "NCIT disease" -> "NCIT tissue" [ label = "phenotype is observed in anatomic site"  ] ;
-  "NCIT tissue" -> "NCIT disease" [ label = "anatomic site can have phenotype"  ] ;
-  "OMA protein" -> "Ensembl gene" [ label = "protein is product of gene"  ] ;
-  "Ensembl gene" -> "OMA protein" [ label = "gene has protein as product"  ] ;
-  "OMA protein" -> "Ensembl transcript" [ label = "protein is translated from transcript"  ] ;
-  "Ensembl transcript" -> "OMA protein" [ label = "transcript is translated to protein"  ] ;
-  "OMA protein" -> "UniProt" [ label = "is equivalent to"  ] ;
-  "UniProt" -> "OMA protein" [ label = "is equivalent to"  ] ;
-  "Orphanet" -> "MedDRA" [ label = "is nearly equivalent to"  ] ;
-  "MedDRA" -> "Orphanet" [ label = "is nearly equivalent to"  ] ;
-  "Orphanet" -> "MeSH" [ label = "is nearly equivalent to"  ] ;
-  "MeSH" -> "Orphanet" [ label = "is nearly equivalent to"  ] ;
-  "Orphanet" -> "OMIM phenotype" [ label = "is nearly equivalent to"  ] ;
-  "OMIM phenotype" -> "Orphanet" [ label = "is nearly equivalent to"  ] ;
-  "PDB" -> "Gene ontology" [ label = "has GO annotation"  ] ;
-  "Gene ontology" -> "PDB" [ label = "is GO annotation of"  ] ;
-  "PDB" -> "InterPro" [ label = "protein has protein domain"  ] ;
-  "InterPro" -> "PDB" [ label = "protein domain is in protein"  ] ;
-  "PDB" -> "PDB CCD" [ label = "3D structure has compound"  ] ;
-  "PDB CCD" -> "PDB" [ label = "compound is component of 3D structure"  ] ;
-  "PDB" -> "Pfam" [ label = "protein has protein domain"  ] ;
-  "Pfam" -> "PDB" [ label = "protein domain is in protein"  ] ;
-  "PDB" -> "UniProt" [ label = "is 3D structure of protein"  ] ;
-  "UniProt" -> "PDB" [ label = "protein has 3D structure"  ] ;
-  "PubChem compound" -> "ATC classification" [ label = "drug classification classifies compound"  ] ;
-  "ATC classification" -> "PubChem compound" [ label = "compound is classified as drug classification"  ] ;
-  "PubChem compound" -> "ChEBI compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEBI compound" -> "PubChem compound" [ label = "is nearly equivalent to"  ] ;
-  "PubChem compound" -> "ChEMBL compound" [ label = "is nearly equivalent to"  ] ;
-  "ChEMBL compound" -> "PubChem compound" [ label = "is nearly equivalent to"  ] ;
-  "PubChem compound" -> "DrugBank" [ label = "is nearly equivalent to"  ] ;
-  "DrugBank" -> "PubChem compound" [ label = "is nearly equivalent to"  ] ;
-  "PubChem compound" -> "GlyTouCan" [ label = "is nearly equivalent to"  ] ;
-  "GlyTouCan" -> "PubChem compound" [ label = "is nearly equivalent to"  ] ;
-  "PubChem compound" -> "InChIKey" [ label = "compound is represented as InChIKey"  ] ;
-  "InChIKey" -> "PubChem compound" [ label = "InChIKey represents compound"  ] ;
-  "PubChem pathway" -> "NCBI gene" [ label = "pathway has participant gene"  ] ;
-  "NCBI gene" -> "PubChem pathway" [ label = "gene participates in pathway"  ] ;
-  "PubChem pathway" -> "Pathbank" [ label = "is equivalent to"  ] ;
-  "Pathbank" -> "PubChem pathway" [ label = "is equivalent to"  ] ;
-  "PubChem pathway" -> "PubChem compound" [ label = "pathway has participant molecule"  ] ;
-  "PubChem compound" -> "PubChem pathway" [ label = "molecule participates in pathway"  ] ;
-  "PubChem pathway" -> "Reactome pathway" [ label = "is equivalent to"  ] ;
-  "Reactome pathway" -> "PubChem pathway" [ label = "is equivalent to"  ] ;
-  "PubChem pathway" -> "UniProt" [ label = "pathway has participant molecule"  ] ;
-  "UniProt" -> "PubChem pathway" [ label = "molecule participates in pathway"  ] ;
-  "PubChem pathway" -> "WikiPathways" [ label = "is equivalent to"  ] ;
-  "WikiPathways" -> "PubChem pathway" [ label = "is equivalent to"  ] ;
-  "Reactome pathway" -> "ChEBI compound" [ label = "pathway has participant molecule"  ] ;
-  "ChEBI compound" -> "Reactome pathway" [ label = "molecule participates in pathway"  ] ;
-  "Reactome pathway" -> "Gene ontology" [ label = "has GO biological process"  ] ;
-  "Gene ontology" -> "Reactome pathway" [ label = "is GO biological process of"  ] ;
-  "Reactome pathway" -> "IUPHAR ligand" [ label = "pathway has participant molecule"  ] ;
-  "IUPHAR ligand" -> "Reactome pathway" [ label = "molecule participates in pathway"  ] ;
-  "Reactome pathway" -> "miRBase" [ label = "pathway has participant molecule"  ] ;
-  "miRBase" -> "Reactome pathway" [ label = "molecule participates in pathway"  ] ;
-  "Reactome pathway" -> "Reactome reaction" [ label = "pathway has participant reaction"  ] ;
-  "Reactome reaction" -> "Reactome pathway" [ label = "reaction participates in pathway"  ] ;
-  "Reactome pathway" -> "UniProt" [ label = "pathway has participant molecule"  ] ;
-  "UniProt" -> "Reactome pathway" [ label = "molecule participates in pathway"  ] ;
-  "Reactome reaction" -> "ChEBI compound" [ label = "reaction has participant molecule"  ] ;
-  "ChEBI compound" -> "Reactome reaction" [ label = "molecule participates in reaction"  ] ;
-  "Reactome reaction" -> "Gene ontology" [ label = "has GO biological process"  ] ;
-  "Gene ontology" -> "Reactome reaction" [ label = "is GO biological process of"  ] ;
-  "Reactome reaction" -> "IUPHAR ligand" [ label = "reaction has participant molecule"  ] ;
-  "IUPHAR ligand" -> "Reactome reaction" [ label = "molecule participates in reaction"  ] ;
-  "Reactome reaction" -> "miRBase" [ label = "reaction has participant molecule"  ] ;
-  "miRBase" -> "Reactome reaction" [ label = "molecule participates in reaction"  ] ;
-  "Reactome reaction" -> "UniProt" [ label = "reaction has participant molecule"  ] ;
-  "UniProt" -> "Reactome reaction" [ label = "molecule participates in reaction"  ] ;
-  "RefSeq protein" -> "UniProt" [ label = "is nearly equivalent to"  ] ;
-  "UniProt" -> "RefSeq protein" [ label = "is nearly equivalent to"  ] ;
-  "RefSeq RNA" -> "dbSNP" [ label = "sequence has variant"  ] ;
-  "dbSNP" -> "RefSeq RNA" [ label = "variant is located in sequence"  ] ;
-  "RefSeq RNA" -> "HGNC" [ label = "transcript is transcribed from gene"  ] ;
-  "HGNC" -> "RefSeq RNA" [ label = "gene is transcribed to transcript"  ] ;
-  "RefSeq RNA" -> "NCBI gene" [ label = "transcript is transcribed from gene"  ] ;
-  "NCBI gene" -> "RefSeq RNA" [ label = "gene is transcribed to transcript"  ] ;
-  "RefSeq RNA" -> "OMIM gene" [ label = "transcript is transcribed from gene"  ] ;
-  "OMIM gene" -> "RefSeq RNA" [ label = "gene is transcribed to transcript"  ] ;
-  "RefSeq RNA" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "RefSeq RNA" [ label = "is reference of"  ] ;
-  "RefSeq RNA" -> "RefSeq protein" [ label = "transcript is translated to protein"  ] ;
-  "RefSeq protein" -> "RefSeq RNA" [ label = "protein is translated from transcript"  ] ;
-  "RefSeq RNA" -> "Taxonomy" [ label = "is gene of organism"  ] ;
-  "Taxonomy" -> "RefSeq RNA" [ label = "organism has gene"  ] ;
-  "Rhea" -> "ChEBI compound" [ label = "reaction has participant molecule"  ] ;
-  "ChEBI compound" -> "Rhea" [ label = "molecule participates in reaction"  ] ;
-  "Rhea" -> "Enzyme nomenclature" [ label = "is nearly equivalent to"  ] ;
-  "Enzyme nomenclature" -> "Rhea" [ label = "is nearly equivalent to"  ] ;
-  "Rhea" -> "Gene ontology" [ label = "has GO annotation"  ] ;
-  "Gene ontology" -> "Rhea" [ label = "is GO annotation of"  ] ;
-  "Rhea" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "Rhea" [ label = "is reference of"  ] ;
-  "Rhea" -> "Reactome reaction" [ label = "is nearly equivalent to"  ] ;
-  "Reactome reaction" -> "Rhea" [ label = "is nearly equivalent to"  ] ;
-  "Rhea" -> "UniProt" [ label = "reaction has participant molecule"  ] ;
-  "UniProt" -> "Rhea" [ label = "molecule participates in reaction"  ] ;
-  "SRA accession" -> "BioProject" [ label = "submission includes project"  ] ;
-  "BioProject" -> "SRA accession" [ label = "project belongs to submission"  ] ;
-  "SRA accession" -> "BioSample" [ label = "submission includes sample"  ] ;
-  "BioSample" -> "SRA accession" [ label = "sample belongs to submission"  ] ;
-  "SRA accession" -> "SRA analysis" [ label = "submission includes analysis"  ] ;
-  "SRA analysis" -> "SRA accession" [ label = "analysis belongs to submission"  ] ;
-  "SRA accession" -> "SRA experiment" [ label = "submission includes experiment"  ] ;
-  "SRA experiment" -> "SRA accession" [ label = "experiment belongs to submission"  ] ;
-  "SRA accession" -> "SRA project" [ label = "submission includes project"  ] ;
-  "SRA project" -> "SRA accession" [ label = "project belongs to submission"  ] ;
-  "SRA accession" -> "SRA run" [ label = "submission includes sequence run"  ] ;
-  "SRA run" -> "SRA accession" [ label = "sequence run belongs to submission"  ] ;
-  "SRA accession" -> "SRA sample" [ label = "submission includes sample"  ] ;
-  "SRA sample" -> "SRA accession" [ label = "sample belongs to submission"  ] ;
-  "SRA experiment" -> "BioProject" [ label = "experiment belongs to project"  ] ;
-  "BioProject" -> "SRA experiment" [ label = "project performs experiment"  ] ;
-  "SRA experiment" -> "BioSample" [ label = "experiment captures sample"  ] ;
-  "BioSample" -> "SRA experiment" [ label = "sample is captured to perform experiment"  ] ;
-  "SRA experiment" -> "SRA project" [ label = "experiment belongs to project"  ] ;
-  "SRA project" -> "SRA experiment" [ label = "project performs experiment"  ] ;
-  "SRA experiment" -> "SRA sample" [ label = "experiment captures sample"  ] ;
-  "SRA sample" -> "SRA experiment" [ label = "sample is captured to perform experiment"  ] ;
-  "SRA project" -> "BioProject" [ label = "is equivalent to"  ] ;
-  "BioProject" -> "SRA project" [ label = "is equivalent to"  ] ;
-  "SRA run" -> "BioProject" [ label = "sequence run belongs to project"  ] ;
-  "BioProject" -> "SRA run" [ label = "project produces sequence run"  ] ;
-  "SRA run" -> "BioSample" [ label = "sequence run is produced from sample"  ] ;
-  "BioSample" -> "SRA run" [ label = "sample is captured to produce sequence run"  ] ;
-  "SRA run" -> "SRA experiment" [ label = "sequence run is produced in experiment"  ] ;
-  "SRA experiment" -> "SRA run" [ label = "experiment produces sequence run"  ] ;
-  "SRA run" -> "SRA project" [ label = "sequence run belongs to project"  ] ;
-  "SRA project" -> "SRA run" [ label = "project produces sequence run"  ] ;
-  "SRA run" -> "SRA sample" [ label = "sequence run is produced from sample"  ] ;
-  "SRA sample" -> "SRA run" [ label = "sample is captured to produce sequence run"  ] ;
-  "SRA sample" -> "BioSample" [ label = "is equivalent to"  ] ;
-  "BioSample" -> "SRA sample" [ label = "is equivalent to"  ] ;
-  "SwissLipids" -> "ChEBI compound" [ label = "is equivalent to"  ] ;
-  "ChEBI compound" -> "SwissLipids" [ label = "is equivalent to"  ] ;
-  "SwissLipids" -> "HMDB" [ label = "is equivalent to"  ] ;
-  "HMDB" -> "SwissLipids" [ label = "is equivalent to"  ] ;
-  "SwissLipids" -> "InChIKey" [ label = "compound is represented as InChIKey"  ] ;
-  "InChIKey" -> "SwissLipids" [ label = "InChIKey represents compound"  ] ;
-  "Taxonomy" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "Taxonomy" [ label = "is reference of"  ] ;
-  "TogoVar variant" -> "ClinVar variant" [ label = "variant has clinical significance"  ] ;
-  "ClinVar variant" -> "TogoVar variant" [ label = "is clinical significance of"  ] ;
-  "TogoVar variant" -> "dbSNP" [ label = "variant has corresponding variant"  ] ;
-  "dbSNP" -> "TogoVar variant" [ label = "variant has corresponding variant"  ] ;
-  "TogoVar variant" -> "Ensembl gene" [ label = "variant is located in sequence"  ] ;
-  "Ensembl gene" -> "TogoVar variant" [ label = "sequence has variant"  ] ;
-  "TogoVar variant" -> "Ensembl transcript" [ label = "variant is located in sequence"  ] ;
-  "Ensembl transcript" -> "TogoVar variant" [ label = "sequence has variant"  ] ;
-  "TogoVar variant" -> "HGNC" [ label = "variant is located in sequence"  ] ;
-  "HGNC" -> "TogoVar variant" [ label = "sequence has variant"  ] ;
-  "TogoVar variant" -> "NCBI gene" [ label = "variant is located in sequence"  ] ;
-  "NCBI gene" -> "TogoVar variant" [ label = "sequence has variant"  ] ;
-  "TogoVar variant" -> "PubMed" [ label = "has reference"  ] ;
-  "PubMed" -> "TogoVar variant" [ label = "is reference of"  ] ;
-  "TogoVar variant" -> "RefSeq RNA" [ label = "variant is located in sequence"  ] ;
-  "RefSeq RNA" -> "TogoVar variant" [ label = "sequence has variant"  ] ;
-  "UBERON" -> "NCIT tissue" [ label = "is nearly equivalent to"  ] ;
-  "NCIT tissue" -> "UBERON" [ label = "is nearly equivalent to"  ] ;
-  "UniProt" -> "ChEMBL target" [ label = "is equivalent to"  ] ;
-  "ChEMBL target" -> "UniProt" [ label = "is equivalent to"  ] ;
-  "UniProt" -> "dbSNP" [ label = "sequence has variant"  ] ;
-  "dbSNP" -> "UniProt" [ label = "variant is located in sequence"  ] ;
-  "UniProt" -> "Enzyme nomenclature" [ label = "sequence has EC number"  ] ;
-  "Enzyme nomenclature" -> "UniProt" [ label = "is EC number of sequence"  ] ;
-  "UniProt" -> "Ensembl gene" [ label = "protein is product of gene"  ] ;
-  "Ensembl gene" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "Ensembl protein" [ label = "is equivalent to"  ] ;
-  "Ensembl protein" -> "UniProt" [ label = "is equivalent to"  ] ;
-  "UniProt" -> "Ensembl transcript" [ label = "protein is translated from transcript"  ] ;
-  "Ensembl transcript" -> "UniProt" [ label = "transcript is translated to protein"  ] ;
-  "UniProt" -> "Gene ontology" [ label = "has GO annotation"  ] ;
-  "Gene ontology" -> "UniProt" [ label = "is GO annotation of"  ] ;
-  "UniProt" -> "HGNC" [ label = "protein is product of gene"  ] ;
-  "HGNC" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "GenBank/ENA/DDBJ" [ label = "protein is product of gene"  ] ;
-  "GenBank/ENA/DDBJ" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "IntAct" [ label = "molecule participates in interaction"  ] ;
-  "IntAct" -> "UniProt" [ label = "interaction has participant molecule"  ] ;
-  "UniProt" -> "NCBI gene" [ label = "protein is product of gene"  ] ;
-  "NCBI gene" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "OMA group" [ label = "sequence is member of orthologous group"  ] ;
-  "OMA group" -> "UniProt" [ label = "orthologous group has member sequence"  ] ;
-  "UniProt" -> "OMIM gene" [ label = "protein is product of gene"  ] ;
-  "OMIM gene" -> "UniProt" [ label = "gene has protein as product"  ] ;
-  "UniProt" -> "OMIM phenotype" [ label = "has related phenotype"  ] ;
-  "OMIM phenotype" -> "UniProt" [ label = "phenotype is related with"  ] ;
-  "UniProt" -> "Orphanet" [ label = "has related phenotype"  ] ;
-  "Orphanet" -> "UniProt" [ label = "phenotype is related with"  ] ;
-  "UniProt" -> "PDB" [ label = "protein has 3D structure"  ] ;
-  "PDB" -> "UniProt" [ label = "is 3D structure of protein"  ] ;
-  "UniProt" -> "Reactome pathway" [ label = "molecule participates in pathway"  ] ;
-  "Reactome pathway" -> "UniProt" [ label = "pathway has participant molecule"  ] ;
-  "UniProt" -> "RefSeq protein" [ label = "is equivalent to"  ] ;
-  "RefSeq protein" -> "UniProt" [ label = "is equivalent to"  ] ;
-  "UniProt" -> "UniProt mnemonic" [ label = "has synonym"  ] ;
-  "UniProt mnemonic" -> "UniProt" [ label = "is synonym of"  ] ;
-  "UniProt reference proteome" -> "Assembly INSDC" [ label = "proteome is coded by genome"  ] ;
-  "Assembly INSDC" -> "UniProt reference proteome" [ label = "genome codes proteome"  ] ;
-  "UniProt reference proteome" -> "Assembly RefSeq" [ label = "proteome is coded by genome"  ] ;
-  "Assembly RefSeq" -> "UniProt reference proteome" [ label = "genome codes proteome"  ] ;
-  "UniProt reference proteome" -> "Taxonomy" [ label = "is proteome of organism"  ] ;
-  "Taxonomy" -> "UniProt reference proteome" [ label = "organism has proteome"  ] ;
-  "WikiPathways" -> "ChEBI compound" [ label = "pathway has participant molecule"  ] ;
-  "ChEBI compound" -> "WikiPathways" [ label = "molecule participates in pathway"  ] ;
-  "WikiPathways" -> "Disease ontology" [ label = "has related phenotype"  ] ;
-  "Disease ontology" -> "WikiPathways" [ label = "phenotype is related with"  ] ;
-  "WikiPathways" -> "HMDB" [ label = "pathway has participant molecule"  ] ;
-  "HMDB" -> "WikiPathways" [ label = "molecule participates in pathway"  ] ;
-  "WikiPathways" -> "LIPID MAPS" [ label = "pathway has participant molecule"  ] ;
-  "LIPID MAPS" -> "WikiPathways" [ label = "molecule participates in pathway"  ] ;
-  "WikiPathways" -> "NCBI gene" [ label = "pathway has component coded by gene"  ] ;
-  "NCBI gene" -> "WikiPathways" [ label = "gene codes protein participating in pathway"  ] ;
-  "WikiPathways" -> "UniProt" [ label = "pathway has participant molecule"  ] ;
-  "UniProt" -> "WikiPathways" [ label = "molecule participates in pathway"  ] ;
+  "Affymetrix probeset" -> "NCBI gene" [ label = "probe detects gene or transcript
+gene or transcript is target of probe" ] ;
+  "Assembly INSDC" -> "BioProject" [ label = "genome is sequenced in project
+project determines genome sequence" ] ;
+  "Assembly INSDC" -> "BioSample" [ label = "genome is sequenced with sample
+sample is used to sequence genome" ] ;
+  "Assembly INSDC" -> "INSDC master" [ label = "genome is sequenced in project
+project determines genome sequence" ] ;
+  "BioProject" -> "BioSample" [ label = "project analyzes sample
+sample is analyzed in project" ] ;
+  "BioProject" -> "GEO series" [ label = "is nearly equivalent to" ] ;
+  "BioProject" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "BioProject umbrella" -> "BioProject" [ label = "has member
+is member of" ] ;
+  "BioSample" -> "BioProject" [ label = "sample is analyzed in project
+project analyzes sample" ] ;
+  "Cellosaurus" -> "NCIT disease" [ label = "cell line is model of phenotype
+phenotype is observed in cell line" ] ;
+  "Cellosaurus" -> "Orphanet" [ label = "cell line is model of phenotype
+phenotype is observed in cell line" ] ;
+  "ChEBI compound" -> "InChIKey" [ label = "compound is represented as InChIKey
+InChIKey represents compound" ] ;
+  "ChEMBL compound" -> "ChEBI compound" [ label = "is equivalent to" ] ;
+  "ChEMBL compound" -> "ChEMBL target" [ label = "molecule interacts with molecule" ] ;
+  "ChEMBL compound" -> "DrugBank" [ label = "is nearly equivalent to" ] ;
+  "ChEMBL compound" -> "HMDB" [ label = "is nearly equivalent to" ] ;
+  "ChEMBL compound" -> "InChIKey" [ label = "compound is represented as InChIKey
+InChIKey represents compound" ] ;
+  "ChEMBL compound" -> "MeSH" [ label = "has related phenotype
+phenotype is related with" ] ;
+  "ChEMBL compound" -> "PDB CCD" [ label = "is nearly equivalent to" ] ;
+  "ChEMBL compound" -> "PubChem compound" [ label = "is nearly equivalent to" ] ;
+  "ChEMBL compound" -> "PubChem substance" [ label = "is equivalent to" ] ;
+  "ChEMBL compound" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "ChEMBL target" -> "Ensembl gene" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "ChEMBL target" -> "Gene ontology" [ label = "has GO cellular component
+is GO cellular component of" ] ;
+  "ChEMBL target" -> "InterPro" [ label = "protein has protein domain
+protein domain is in protein" ] ;
+  "ChEMBL target" -> "PDB" [ label = "protein has 3D structure
+is 3D structure of protein" ] ;
+  "ChEMBL target" -> "Pfam" [ label = "protein has protein domain
+protein domain is in protein" ] ;
+  "ChEMBL target" -> "Reactome pathway" [ label = "molecule participates in pathway
+pathway has participant molecule" ] ;
+  "ChEMBL target" -> "UniProt" [ label = "is equivalent to" ] ;
+  "ClinVar variant" -> "MedGen" [ label = "has related phenotype
+phenotype is related with" ] ;
+  "COG" -> "GenBank/ENA/DDBJ" [ label = "orthologous group has member sequence
+sequence is member of orthologous group" ] ;
+  "COG" -> "RefSeq protein" [ label = "orthologous group has member sequence
+sequence is member of orthologous group" ] ;
+  "Disease ontology" -> "MeSH" [ label = "is nearly equivalent to" ] ;
+  "Disease ontology" -> "NCIT disease" [ label = "is nearly equivalent to" ] ;
+  "Disease ontology" -> "OMIM phenotype" [ label = "is nearly equivalent to" ] ;
+  "Ensembl gene" -> "Affymetrix probeset" [ label = "gene or transcript is target of probe
+probe detects gene or transcript" ] ;
+  "Ensembl gene" -> "Ensembl protein" [ label = "gene has protein as product
+protein is product of gene" ] ;
+  "Ensembl gene" -> "Ensembl transcript" [ label = "gene is transcribed to transcript
+transcript is transcribed from gene" ] ;
+  "Ensembl gene" -> "HGNC" [ label = "is nearly equivalent to" ] ;
+  "Ensembl gene" -> "NCBI gene" [ label = "is nearly equivalent to" ] ;
+  "Ensembl gene" -> "UniProt" [ label = "gene has protein as product
+protein is product of gene" ] ;
+  "Ensembl protein" -> "Ensembl transcript" [ label = "protein is translated from transcript
+transcript is translated to protein" ] ;
+  "Ensembl transcript" -> "Affymetrix probeset" [ label = "gene or transcript is target of probe
+probe detects gene or transcript" ] ;
+  "Ensembl transcript" -> "Gene ontology" [ label = "has GO annotation
+is GO annotation of" ] ;
+  "Ensembl transcript" -> "HGNC" [ label = "transcript is transcribed from gene
+gene is transcribed to transcript" ] ;
+  "Ensembl transcript" -> "RefSeq RNA" [ label = "is nearly equivalent to" ] ;
+  "GEA" -> "BioProject" [ label = "experiment belongs to project
+project performs experiment" ] ;
+  "GEA" -> "BioSample" [ label = "experiment captures sample
+sample is captured to perform experiment" ] ;
+  "GlyTouCan" -> "Disease ontology" [ label = "has related phenotype
+phenotype is related with" ] ;
+  "GlyTouCan" -> "NCBI gene" [ label = "glycan is processed by protein coded by gene
+gene codes protein to process glycan" ] ;
+  "GlyTouCan" -> "UniProt" [ label = "glycan is attached to protein
+protein is modified with glycan" ] ;
+  "HGNC" -> "Consensus CDS" [ label = "is nearly equivalent to" ] ;
+  "HGNC" -> "Enzyme nomenclature" [ label = "sequence has EC number
+is EC number of sequence" ] ;
+  "HGNC" -> "Ensembl gene" [ label = "is nearly equivalent to" ] ;
+  "HGNC" -> "HGNC gene symbol" [ label = "has synonym
+is synonym of" ] ;
+  "HGNC" -> "GenBank/ENA/DDBJ" [ label = "is nearly equivalent to" ] ;
+  "HGNC" -> "LRG" [ label = "is nearly equivalent to" ] ;
+  "HGNC" -> "MGI" [ label = "sequence is orthologous to sequence" ] ;
+  "HGNC" -> "miRBase" [ label = "gene is transcribed to transcript
+transcript is transcribed from gene" ] ;
+  "HGNC" -> "NCBI gene" [ label = "is nearly equivalent to" ] ;
+  "HGNC" -> "OMIM gene" [ label = "is nearly equivalent to" ] ;
+  "HGNC" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "HGNC" -> "RefSeq RNA" [ label = "gene is transcribed to transcript
+transcript is transcribed from gene" ] ;
+  "HGNC" -> "RGD" [ label = "sequence is orthologous to sequence" ] ;
+  "HGNC" -> "UniProt" [ label = "gene has protein as product
+protein is product of gene" ] ;
+  "HMDB" -> "ChEBI compound" [ label = "is nearly equivalent to" ] ;
+  "HMDB" -> "InChIKey" [ label = "compound is represented as InChIKey
+InChIKey represents compound" ] ;
+  "HMDB" -> "PDB CCD" [ label = "compound is component of 3D structure
+3D structure has compound" ] ;
+  "HMDB" -> "PubChem compound" [ label = "is nearly equivalent to" ] ;
+  "HomoloGene" -> "NCBI gene" [ label = "orthologous group has member sequence
+sequence is member of orthologous group" ] ;
+  "HP Inheritance" -> "OMIM phenotype" [ label = "is mode of inheritance of phenotype
+phenotype has mode of inheritance" ] ;
+  "HP Phenotype" -> "NCBI gene" [ label = "gene is related with symptom
+symptom is related with gene" ] ;
+  "HP Phenotype" -> "OMIM phenotype" [ label = "symptom is observed in disease
+disease has symptom" ] ;
+  "HP Phenotype" -> "Orphanet" [ label = "symptom is observed in disease
+disease has symptom" ] ;
+  "GenBank/ENA/DDBJ" -> "BioProject" [ label = "sequence is determined in project
+project determines sequence" ] ;
+  "GenBank/ENA/DDBJ" -> "BioSample" [ label = "sequence is determined using sample
+sample is used to determine sequence" ] ;
+  "INSDC master" -> "BioProject" [ label = "is nearly equivalent to" ] ;
+  "INSDC master" -> "BioSample" [ label = "project analyzes sample
+sample is analyzed in project" ] ;
+  "InterPro" -> "Gene ontology" [ label = "has GO annotation
+is GO annotation of" ] ;
+  "InterPro" -> "PDB" [ label = "protein domain is in structure
+structure has protein domain" ] ;
+  "InterPro" -> "Pfam" [ label = "is nearly equivalent to" ] ;
+  "InterPro" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "InterPro" -> "Reactome pathway" [ label = "protein domain participates in pathway
+pathway has protein domain" ] ;
+  "InterPro" -> "UniProt" [ label = "protein domain is in protein
+protein has protein domain" ] ;
+  "JGA Study" -> "JGA Dataset" [ label = "has member
+is member of" ] ;
+  "JGA Study" -> "NBDC Human DB" [ label = "is member of
+has member" ] ;
+  "JGA Study" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "LIPID MAPS" -> "ChEBI compound" [ label = "is equivalent to" ] ;
+  "LIPID MAPS" -> "InChIKey" [ label = "compound is represented as InChIKey
+InChIKey represents compound" ] ;
+  "LIPID MAPS" -> "SwissLipids" [ label = "is equivalent to" ] ;
+  "MBGD gene" -> "UniProt" [ label = "gene has protein as product
+protein is product of gene" ] ;
+  "MBGD organism" -> "Taxonomy" [ label = "is equivalent to" ] ;
+  "MedGen" -> "HP Phenotype" [ label = "is nearly equivalent to" ] ;
+  "MedGen" -> "MeSH" [ label = "is nearly equivalent to" ] ;
+  "MedGen" -> "MONDO" [ label = "is nearly equivalent to" ] ;
+  "MedGen" -> "NCBI gene" [ label = "phenotype is related with
+has related phenotype" ] ;
+  "MedGen" -> "OMIM phenotype" [ label = "is nearly equivalent to" ] ;
+  "MedGen" -> "Orphanet" [ label = "is nearly equivalent to" ] ;
+  "MONDO" -> "Disease ontology" [ label = "is nearly equivalent to" ] ;
+  "MONDO" -> "HP Phenotype" [ label = "is nearly equivalent to" ] ;
+  "MONDO" -> "MedDRA" [ label = "is nearly equivalent to" ] ;
+  "MONDO" -> "MeSH" [ label = "is nearly equivalent to" ] ;
+  "MONDO" -> "OMIM phenotype" [ label = "is nearly equivalent to" ] ;
+  "MONDO" -> "Orphanet" [ label = "is nearly equivalent to" ] ;
+  "NANDO" -> "MONDO" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "Ensembl gene" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "Ensembl protein" [ label = "gene has protein as product
+protein is product of gene" ] ;
+  "NCBI gene" -> "Ensembl transcript" [ label = "gene is transcribed to transcript
+transcript is transcribed from gene" ] ;
+  "NCBI gene" -> "FlyBase Gene" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "Gene ontology" [ label = "has GO annotation
+is GO annotation of" ] ;
+  "NCBI gene" -> "HGNC" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "MGI" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "miRBase" [ label = "gene is transcribed to transcript
+transcript is transcribed from gene" ] ;
+  "NCBI gene" -> "OMIM gene" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "RefSeq genomic" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "RefSeq protein" [ label = "gene has protein as product
+protein is product of gene" ] ;
+  "NCBI gene" -> "RefSeq RNA" [ label = "gene is transcribed to transcript
+transcript is transcribed from gene" ] ;
+  "NCBI gene" -> "RGD" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "SGD" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "TAIR" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "Taxonomy" [ label = "is gene of organism
+organism has gene" ] ;
+  "NCBI gene" -> "VGNC" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "WormBase gene" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "Xenbase gene" [ label = "is nearly equivalent to" ] ;
+  "NCBI gene" -> "ZFIN gene" [ label = "is nearly equivalent to" ] ;
+  "NCIT disease" -> "NCIT tissue" [ label = "phenotype is observed in anatomic site
+anatomic site can have phenotype" ] ;
+  "OMA protein" -> "Ensembl gene" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "OMA protein" -> "Ensembl transcript" [ label = "protein is translated from transcript
+transcript is translated to protein" ] ;
+  "OMA protein" -> "UniProt" [ label = "is equivalent to" ] ;
+  "Orphanet" -> "MedDRA" [ label = "is nearly equivalent to" ] ;
+  "Orphanet" -> "MeSH" [ label = "is nearly equivalent to" ] ;
+  "Orphanet" -> "OMIM phenotype" [ label = "is nearly equivalent to" ] ;
+  "PDB" -> "Gene ontology" [ label = "has GO annotation
+is GO annotation of" ] ;
+  "PDB" -> "InterPro" [ label = "protein has protein domain
+protein domain is in protein" ] ;
+  "PDB" -> "PDB CCD" [ label = "3D structure has compound
+compound is component of 3D structure" ] ;
+  "PDB" -> "Pfam" [ label = "protein has protein domain
+protein domain is in protein" ] ;
+  "PDB" -> "UniProt" [ label = "is 3D structure of protein
+protein has 3D structure" ] ;
+  "PubChem compound" -> "ATC classification" [ label = "drug classification classifies compound
+compound is classified as drug classification" ] ;
+  "PubChem compound" -> "ChEBI compound" [ label = "is nearly equivalent to" ] ;
+  "PubChem compound" -> "ChEMBL compound" [ label = "is nearly equivalent to" ] ;
+  "PubChem compound" -> "DrugBank" [ label = "is nearly equivalent to" ] ;
+  "PubChem compound" -> "GlyTouCan" [ label = "is nearly equivalent to" ] ;
+  "PubChem compound" -> "InChIKey" [ label = "compound is represented as InChIKey
+InChIKey represents compound" ] ;
+  "PubChem pathway" -> "NCBI gene" [ label = "pathway has participant gene
+gene participates in pathway" ] ;
+  "PubChem pathway" -> "Pathbank" [ label = "is equivalent to" ] ;
+  "PubChem pathway" -> "PubChem compound" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "PubChem pathway" -> "Reactome pathway" [ label = "is equivalent to" ] ;
+  "PubChem pathway" -> "UniProt" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "PubChem pathway" -> "WikiPathways" [ label = "is equivalent to" ] ;
+  "Reactome pathway" -> "ChEBI compound" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "Reactome pathway" -> "Gene ontology" [ label = "has GO biological process
+is GO biological process of" ] ;
+  "Reactome pathway" -> "IUPHAR ligand" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "Reactome pathway" -> "miRBase" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "Reactome pathway" -> "Reactome reaction" [ label = "pathway has participant reaction
+reaction participates in pathway" ] ;
+  "Reactome pathway" -> "UniProt" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "Reactome reaction" -> "ChEBI compound" [ label = "reaction has participant molecule
+molecule participates in reaction" ] ;
+  "Reactome reaction" -> "Gene ontology" [ label = "has GO biological process
+is GO biological process of" ] ;
+  "Reactome reaction" -> "IUPHAR ligand" [ label = "reaction has participant molecule
+molecule participates in reaction" ] ;
+  "Reactome reaction" -> "miRBase" [ label = "reaction has participant molecule
+molecule participates in reaction" ] ;
+  "Reactome reaction" -> "UniProt" [ label = "reaction has participant molecule
+molecule participates in reaction" ] ;
+  "RefSeq protein" -> "UniProt" [ label = "is nearly equivalent to" ] ;
+  "RefSeq RNA" -> "dbSNP" [ label = "sequence has variant
+variant is located in sequence" ] ;
+  "RefSeq RNA" -> "HGNC" [ label = "transcript is transcribed from gene
+gene is transcribed to transcript" ] ;
+  "RefSeq RNA" -> "NCBI gene" [ label = "transcript is transcribed from gene
+gene is transcribed to transcript" ] ;
+  "RefSeq RNA" -> "OMIM gene" [ label = "transcript is transcribed from gene
+gene is transcribed to transcript" ] ;
+  "RefSeq RNA" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "RefSeq RNA" -> "RefSeq protein" [ label = "transcript is translated to protein
+protein is translated from transcript" ] ;
+  "RefSeq RNA" -> "Taxonomy" [ label = "is gene of organism
+organism has gene" ] ;
+  "Rhea" -> "ChEBI compound" [ label = "reaction has participant molecule
+molecule participates in reaction" ] ;
+  "Rhea" -> "Enzyme nomenclature" [ label = "is nearly equivalent to" ] ;
+  "Rhea" -> "Gene ontology" [ label = "has GO annotation
+is GO annotation of" ] ;
+  "Rhea" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "Rhea" -> "Reactome reaction" [ label = "is nearly equivalent to" ] ;
+  "Rhea" -> "UniProt" [ label = "reaction has participant molecule
+molecule participates in reaction" ] ;
+  "SRA accession" -> "BioProject" [ label = "submission includes project
+project belongs to submission" ] ;
+  "SRA accession" -> "BioSample" [ label = "submission includes sample
+sample belongs to submission" ] ;
+  "SRA accession" -> "SRA analysis" [ label = "submission includes analysis
+analysis belongs to submission" ] ;
+  "SRA accession" -> "SRA experiment" [ label = "submission includes experiment
+experiment belongs to submission" ] ;
+  "SRA accession" -> "SRA project" [ label = "submission includes project
+project belongs to submission" ] ;
+  "SRA accession" -> "SRA run" [ label = "submission includes sequence run
+sequence run belongs to submission" ] ;
+  "SRA accession" -> "SRA sample" [ label = "submission includes sample
+sample belongs to submission" ] ;
+  "SRA experiment" -> "BioProject" [ label = "experiment belongs to project
+project performs experiment" ] ;
+  "SRA experiment" -> "BioSample" [ label = "experiment captures sample
+sample is captured to perform experiment" ] ;
+  "SRA experiment" -> "SRA project" [ label = "experiment belongs to project
+project performs experiment" ] ;
+  "SRA experiment" -> "SRA sample" [ label = "experiment captures sample
+sample is captured to perform experiment" ] ;
+  "SRA project" -> "BioProject" [ label = "is equivalent to" ] ;
+  "SRA run" -> "BioProject" [ label = "sequence run belongs to project
+project produces sequence run" ] ;
+  "SRA run" -> "BioSample" [ label = "sequence run is produced from sample
+sample is captured to produce sequence run" ] ;
+  "SRA run" -> "SRA experiment" [ label = "sequence run is produced in experiment
+experiment produces sequence run" ] ;
+  "SRA run" -> "SRA project" [ label = "sequence run belongs to project
+project produces sequence run" ] ;
+  "SRA run" -> "SRA sample" [ label = "sequence run is produced from sample
+sample is captured to produce sequence run" ] ;
+  "SRA sample" -> "BioSample" [ label = "is equivalent to" ] ;
+  "SwissLipids" -> "ChEBI compound" [ label = "is equivalent to" ] ;
+  "SwissLipids" -> "HMDB" [ label = "is equivalent to" ] ;
+  "SwissLipids" -> "InChIKey" [ label = "compound is represented as InChIKey
+InChIKey represents compound" ] ;
+  "Taxonomy" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "TogoVar variant" -> "ClinVar variant" [ label = "variant has clinical significance
+is clinical significance of" ] ;
+  "TogoVar variant" -> "dbSNP" [ label = "variant has corresponding variant" ] ;
+  "TogoVar variant" -> "Ensembl gene" [ label = "variant is located in sequence
+sequence has variant" ] ;
+  "TogoVar variant" -> "Ensembl transcript" [ label = "variant is located in sequence
+sequence has variant" ] ;
+  "TogoVar variant" -> "HGNC" [ label = "variant is located in sequence
+sequence has variant" ] ;
+  "TogoVar variant" -> "NCBI gene" [ label = "variant is located in sequence
+sequence has variant" ] ;
+  "TogoVar variant" -> "PubMed" [ label = "has reference
+is reference of" ] ;
+  "TogoVar variant" -> "RefSeq RNA" [ label = "variant is located in sequence
+sequence has variant" ] ;
+  "UBERON" -> "NCIT tissue" [ label = "is nearly equivalent to" ] ;
+  "UniProt" -> "ChEMBL target" [ label = "is equivalent to" ] ;
+  "UniProt" -> "dbSNP" [ label = "sequence has variant
+variant is located in sequence" ] ;
+  "UniProt" -> "Enzyme nomenclature" [ label = "sequence has EC number
+is EC number of sequence" ] ;
+  "UniProt" -> "Ensembl gene" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "UniProt" -> "Ensembl protein" [ label = "is equivalent to" ] ;
+  "UniProt" -> "Ensembl transcript" [ label = "protein is translated from transcript
+transcript is translated to protein" ] ;
+  "UniProt" -> "Gene ontology" [ label = "has GO annotation
+is GO annotation of" ] ;
+  "UniProt" -> "HGNC" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "UniProt" -> "GenBank/ENA/DDBJ" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "UniProt" -> "IntAct" [ label = "molecule participates in interaction
+interaction has participant molecule" ] ;
+  "UniProt" -> "NCBI gene" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "UniProt" -> "OMA group" [ label = "sequence is member of orthologous group
+orthologous group has member sequence" ] ;
+  "UniProt" -> "OMIM gene" [ label = "protein is product of gene
+gene has protein as product" ] ;
+  "UniProt" -> "OMIM phenotype" [ label = "has related phenotype
+phenotype is related with" ] ;
+  "UniProt" -> "Orphanet" [ label = "has related phenotype
+phenotype is related with" ] ;
+  "UniProt" -> "PDB" [ label = "protein has 3D structure
+is 3D structure of protein" ] ;
+  "UniProt" -> "Reactome pathway" [ label = "molecule participates in pathway
+pathway has participant molecule" ] ;
+  "UniProt" -> "RefSeq protein" [ label = "is equivalent to" ] ;
+  "UniProt" -> "UniProt mnemonic" [ label = "has synonym
+is synonym of" ] ;
+  "UniProt reference proteome" -> "Assembly INSDC" [ label = "proteome is coded by genome
+genome codes proteome" ] ;
+  "UniProt reference proteome" -> "Assembly RefSeq" [ label = "proteome is coded by genome
+genome codes proteome" ] ;
+  "UniProt reference proteome" -> "Taxonomy" [ label = "is proteome of organism
+organism has proteome" ] ;
+  "WikiPathways" -> "ChEBI compound" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "WikiPathways" -> "Disease ontology" [ label = "has related phenotype
+phenotype is related with" ] ;
+  "WikiPathways" -> "HMDB" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "WikiPathways" -> "LIPID MAPS" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
+  "WikiPathways" -> "NCBI gene" [ label = "pathway has component coded by gene
+gene codes protein participating in pathway" ] ;
+  "WikiPathways" -> "UniProt" [ label = "pathway has participant molecule
+molecule participates in pathway" ] ;
 }
