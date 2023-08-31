@@ -3,7 +3,7 @@
 # Usage:
 #   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot > togoid.dot
 #   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot --id > togoid.dot
-#   dot -Kdot -Ppng togoid.dot -otogoid.png
+#   dot -Kdot -Tpng togoid.dot -otogoid.png
 #
 # See also:
 #   https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d
