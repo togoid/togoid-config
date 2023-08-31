@@ -12,12 +12,6 @@ digraph togoid {
   "Affymetrix probeset" [fillcolor = "#53C666"] ;
   "NCBI gene" [fillcolor = "#53C666"] ;
   "Assembly INSDC" [fillcolor = "#006400"] ;
-  "BioProject" [fillcolor = "#696969"] ;
-  "BioSample" [fillcolor = "#696969"] ;
-  "INSDC master" [fillcolor = "#696969"] ;
-  "GEO series" [fillcolor = "#696969"] ;
-  "PubMed" [fillcolor = "#696969"] ;
-  "BioProject umbrella" [fillcolor = "#696969"] ;
   "Cellosaurus" [fillcolor = "#006400"] ;
   "NCIT disease" [fillcolor = "#5361c6"] ;
   "Orphanet" [fillcolor = "#5361c6"] ;
@@ -104,6 +98,12 @@ digraph togoid {
   "UniProt mnemonic" [fillcolor = "#A2C653"] ;
   "UniProt reference proteome" [fillcolor = "#006400"] ;
   "Assembly RefSeq" [fillcolor = "#006400"] ;
+  "BioProject" [fillcolor = "#696969"] ;
+  "BioSample" [fillcolor = "#696969"] ;
+  "INSDC master" [fillcolor = "#696969"] ;
+  "GEO series" [fillcolor = "#696969"] ;
+  "PubMed" [fillcolor = "#696969"] ;
+  "BioProject umbrella" [fillcolor = "#696969"] ;
 
   "Affymetrix probeset" -> "NCBI gene" [ label = "probe detects gene or transcript
 gene or transcript is target of probe" ] ;
