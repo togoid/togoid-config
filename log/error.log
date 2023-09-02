@@ -1,1 +1,18 @@
+# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
+# Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 139 / 13681182 = 1.0159940858911167e-05 < 0.5
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <head><title>404 Not Found</title></head>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <center><h1>404 Not Found</h1></center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <hr><center>nginx/1.22.0</center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </html>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <head><title>404 Not Found</title></head>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <center><h1>404 Not Found</h1></center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <hr><center>nginx/1.22.0</center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </html>
+# Error: output/tsv/togovar-ensembl_transcript.tsv new file size per old 2227555815 / 8069270901 = 0.2760541618108206 < 0.5
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to be malformed tgv
