@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
@@ -7,7 +7,7 @@ PREFIX ido: <http://identifiers.org/>
 
 # GRAPH may change by version e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens
 SELECT DISTINCT ?enst_id ?hgnc_id
-FROM <http://rdf.integbio.jp/dataset/ensembl>
+FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   ?ensg obo:RO_0002162 taxon:9606 ;
         rdfs:seeAlso ?hgnc .

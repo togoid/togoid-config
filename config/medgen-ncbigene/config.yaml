@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency:
-  method: sparql_csv2tsv.sh query.rq https://togodx.dbcls.jp/human/sparql
+  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/ncbi/sparql

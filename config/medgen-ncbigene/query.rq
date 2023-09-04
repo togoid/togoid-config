@@ -1,7 +1,7 @@
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 SELECT DISTINCT ?medgen_id ?ncbigene_id
-FROM <http://rdf.integbio.jp/dataset/togosite/medgen>
+FROM <http://rdfportal.org/dataset/medgen>
 WHERE {
   # ro: causes or contributes to condition
   ?ncbigene obo:RO_0003302 ?medgen

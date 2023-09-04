@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/bioportal/sparql
+# Endpoint: https://rdfportal.org/bioportal/sparql
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?ordo_id ?omim_id

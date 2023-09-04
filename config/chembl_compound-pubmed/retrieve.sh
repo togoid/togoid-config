@@ -3,7 +3,7 @@ set -euo pipefail
 
 # PubChem IDとPubMed IDのペアを取得する。
 
-ENDPOINT=https://integbio.jp/rdf/ebi/sparql
+ENDPOINT=https://rdfportal.org/ebi/sparql
 LIMIT=1000000 # SPARQLエンドポイントにおける取得可能データ件数の最大値
 CURL=/usr/bin/curl
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 query_file    = ARGV.shift || "query.rq"
-endpoint      = ARGV.shift || "https://integbio.jp/rdf/ebi/sparql"
+endpoint      = ARGV.shift || "https://rdfportal.org/ebi/sparql"
 taxonomy_list = ARGV.shift || "../../input/ensembl/taxonomy.txt"
 
 query_template = File.read(query_file)

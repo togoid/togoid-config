@@ -1,4 +1,4 @@
-# Endpoint: https://integbio.jp/rdf/sib/sparql
+# Endpoint: https://rdfportal.org/sib/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 

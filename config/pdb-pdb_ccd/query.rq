@@ -1,8 +1,8 @@
-# Endpoint: https://integbio.jp/rdf/pdb/sparql
+# Endpoint: https://rdfportal.org/pdb/sparql
 PREFIX pdbo: <http://rdf.wwpdb.org/schema/pdbx-v50.owl#>
 
 SELECT DISTINCT ?pdb_id ?pdbccd_id
-FROM <http://rdf.integbio.jp/dataset/pdbj>
+FROM <http://rdfportal.org/dataset/pdbj>
 WHERE {
   ?pdb a pdbo:datablock ;
        pdbo:has_entityCategory/pdbo:has_entity/pdbo:referenced_by_pdbx_entity_nonpoly/pdbo:pdbx_entity_nonpoly.comp_id ?pdbccd_id .

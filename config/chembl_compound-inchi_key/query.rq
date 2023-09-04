@@ -1,4 +1,4 @@
-# https://integbio.jp/rdf/ebi/sparql
+# https://rdfportal.org/ebi/sparql
 PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 SELECT DISTINCT ?chembl_id  ?inchikey

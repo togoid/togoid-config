@@ -3,7 +3,7 @@
 # Usage:
 #   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot > togoid.dot
 #   togoid-config-summary config/*/*.yaml | togoid-config-summary-dot --id > togoid.dot
-#   dot -Kdot -Ppng togoid.dot -otogoid.png
+#   dot -Kdot -Tpng togoid.dot -otogoid.png
 #
 # See also:
 #   https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d
@@ -54,10 +54,7 @@ ARGF.each do |line|
 
   nodes[s_name] = s_category
   nodes[t_name] = t_category
-  edges << [ s_name, t_name, f_name ]
-  if r_pred and ! r_pred.empty?
-    edges << [ t_name, s_name, r_name ]
-  end
+  edges << [ s_name, t_name, f_name , r_name]
 end
 
 puts 'digraph togoid {
@@ -67,7 +64,8 @@ puts 'digraph togoid {
     fontname = "Migu 1M"
   ];
   edge [
-    fontname = "Migu 1M"
+    fontname = "Migu 1M",
+    dir = "both"
   ];
 '
 
@@ -80,11 +78,13 @@ end
 puts
 
 edges.each do |ary|
-  source, target, label = *ary
-  if opt_id and label[/rdfs:seeAlso/]
-    opt = ", fontcolor = red"
+  source, target, f_label, r_label = *ary
+  if f_label == r_label
+    label = f_label
+  else
+    label = f_label + "\n" + r_label
   end
-  puts %Q{  "#{source}" -> "#{target}" [ label = "#{label}" #{opt} ] ;}
+  puts %Q{  "#{source}" -> "#{target}" [ label = "#{label}" ] ;}
 end
 
 puts '}'

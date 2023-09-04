@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 set -euo pipefail
 
-ENDPOINT=https://integbio.jp/rdf/pdb/sparql
+ENDPOINT=https://rdfportal.org/pdb/sparql
 CURL=/usr/bin/curl
 
 # ペアを取得するクエリのテンプレート。
