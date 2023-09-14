@@ -330,6 +330,8 @@ module TogoID
         return "prepare:interpro"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
+      when /#{OUTPUT_TSV_DIR}mane/
+        return "prepare:mane"
       when /#{OUTPUT_TSV_DIR}reactome/
         return "prepare:reactome"
       when /#{OUTPUT_TSV_DIR}refseq_protein/
@@ -469,7 +471,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :mane, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -480,6 +482,7 @@ namespace :prepare do
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
+  directory INPUT_MANE_DIR        = "input/mane"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
@@ -667,6 +670,39 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for MANE select"
+  task :mane => INPUT_MANE_DIR do
+    $stderr.puts "## Prepare input files for MANE select"
+    download_lock(INPUT_MANE_DIR) do
+      updated = false
+      input_file = "#{INPUT_MANE_DIR}/README_versions.txt"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/MANE/MANE_human/current/README_versions.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_MANE_DIR, input_url)
+        updated = true
+      end
+
+      mane_var = `head -n 1 #{INPUT_MANE_DIR}/README_versions.txt|sed -e 's/MANE Version\t//'|tr -d '\n'`
+      
+      input_file = "#{INPUT_MANE_DIR}/MANE.GRCh38.v#{mane_var}.ensembl_genomic.gff.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/MANE/MANE_human/current/MANE.GRCh38.v#{mane_var}.ensembl_genomic.gff.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_MANE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_MANE_DIR}/ensembl_genomic.gff; rm #{input_file}"
+        updated = true
+      end
+
+      input_file = "#{INPUT_MANE_DIR}/MANE.GRCh38.v#{mane_var}.refseq_genomic.gff.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/MANE/MANE_human/current/MANE.GRCh38.v#{mane_var}.refseq_genomic.gff.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_MANE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_MANE_DIR}/refseq_genomic.gff; rm #{input_file}"
         updated = true
       end
       updated

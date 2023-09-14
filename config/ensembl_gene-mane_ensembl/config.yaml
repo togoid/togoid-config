@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000035
+  reverse: TIO_000034
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: grep 'tag=MANE_Select' $TOGOID_ROOT/input/mane/ensembl_genomic.gff | awk -F '\t' '$3=="transcript"{print $9}' | awk -F ';' '{split($1,a,"="); split($2,b,"="); split(a[2],c,"."); split(b[2],d,"."); print(d[1], "\t", c[1])}'
