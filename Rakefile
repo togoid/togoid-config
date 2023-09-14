@@ -405,7 +405,7 @@ module TogoID
         # The wget --timestamping (-N) option won't check the file size especially when
         # previous download was interrupted and left broken files with newer dates.
         local_file_size  = File.size(file)
-        remote_file_size = `curl -sI #{url} | grep '^Content-Length:' | awk '{print $2}'`.strip.to_i
+        remote_file_size = `curl -sIL #{url} | grep -i '^content-length:' | tail -1 | awk '{print $2}'`.strip.to_i
         $stderr.puts "# Local file size:  #{local_file_size} (#{file})"
         $stderr.puts "# Remote file size: #{remote_file_size} (#{url})"
         return local_file_size != remote_file_size
@@ -418,7 +418,7 @@ module TogoID
     def check_remote_file_time(file, url)
       if File.exist?(file)
         local_file_time  = File.mtime(file)  # Time object
-        remote_file_time = Time.parse(`curl -sI #{url} | grep '^Last-Modified:' | sed -e 's/^Last-Modified: //'`)  # Time object
+        remote_file_time = Time.parse(`curl -sIL #{url} | grep -i '^last-modified:' | tail -1 | sed -e 's/^[Ll]ast-[Mm]odified: //'`)  # Time object
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
         $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
         return local_file_time < remote_file_time
