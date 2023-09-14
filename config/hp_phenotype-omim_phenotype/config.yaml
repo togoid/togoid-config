@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Irregular
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/sparql
+  method: awk -F "\t" '$1~/^OMIM/&&$11=="P"&&$3!="NOT"{print substr($4,4) "\t" substr($1,6)}' $TOGOID_ROOT/input/hp_phenotype/phenotype.hpoa

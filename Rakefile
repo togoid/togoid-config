@@ -324,6 +324,8 @@ module TogoID
         return "prepare:hmdb"
       when /#{OUTPUT_TSV_DIR}homologene/
         return "prepare:homologene"
+      when /#{OUTPUT_TSV_DIR}hp_phenotype/
+        return "prepare:hp_phenotype"
       when /#{OUTPUT_TSV_DIR}cog/
         return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
@@ -469,13 +471,14 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
+  directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
@@ -567,6 +570,28 @@ namespace :prepare do
       input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HOMOLOGENE_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for HP Phenotype"
+  task :hp_phenotype => INPUT_HP_PHENOTYPE_DIR do
+    $stderr.puts "## Prepare input files for HP Phenotype"
+    download_lock(INPUT_HP_PHENOTYPE_DIR) do
+      updated = false
+      input_file = "#{INPUT_HP_PHENOTYPE_DIR}/phenotype.hpoa"
+      input_url  = "http://purl.obolibrary.org/obo/hp/hpoa/phenotype.hpoa"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HP_PHENOTYPE_DIR, input_url)
+        updated = true
+      end
+
+      input_file = "#{INPUT_HP_PHENOTYPE_DIR}/genes_to_phenotype.txt"
+      input_url  = "http://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HP_PHENOTYPE_DIR, input_url)
         updated = true
       end
       updated
