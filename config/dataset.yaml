@@ -429,19 +429,19 @@ mane_ensembl:
   label: MANE Select Ensembl transcript
   catalog: nbdc00054
   category: Transcript
-  regex: '^(?:(?:(?<id1>ENS[A-Z]*T\d{11})(?:\.\d+)?)|(?<id2>FBtr\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+t\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(?<id7>Q\d{4}_[a-z]{1,3}RNA)|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(?<id9>snR\d+-?[A-Za-z]?_sno?RNA)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$'
+  regex: '^(?<id>ENST\d{11}\.\d+)$'
   prefix: 'http://identifiers.org/ensembl/'
   examples:
-    - ["ENST00000439055", "ENST00000603540", "ENST00000380573", "ENST00000255082", "ENST00000264377", "ENST00000260408", "ENST00000307624", "ENST00000263080", "ENST00000645972", "ENST00000256389"]
+    - ["ENST00000439055.6", "ENST00000603540.2", "ENST00000380573.4", "ENST00000255082.8", "ENST00000264377.8", "ENST00000260408.8", "ENST00000307624", "ENST00000263080.8", "ENST00000645972.2", "ENST00000256389.5"]
 mane_refseq:
   label: MANE Select RefSeq RNA
   catalog: nbdc00187
   category: Transcript
   # NM_; NR_; XM_; XR_
-  regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
+  regex: '^(?<id>NM_\d+\.\d+)$'
   prefix: 'http://identifiers.org/refseq/'
   examples:
-    - ["NM_080658", "NM_003814", "NM_001320570", "NM_001110", "NM_000049", "NM_003812", "NM_130767", "NM_000680", "NM_001142807", "NM_003813", "NM_001365788"]
+    - ["NM_080658.2", "NM_003814.5", "NM_001320570.5", "NM_001110.4", "NM_000049.4", "NM_003812.4", "NM_130767.3", "NM_000680.4", "NM_001142807.4", "NM_003813.4", "NM_001365788.1"]
 mbgd_gene:
   label: MBGD gene
   catalog: nbdc00130
