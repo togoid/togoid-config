@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: grep 'tag=MANE Select' $TOGOID_ROOT/input/mane/refseq_genomic.gff | awk -F '\t' '$3=="mRNA" {print $9}' | awk -F ';'  -v 'OFS=\t' '{split($1,b,"=rna-"); split($3,c,"HGNC:HGNC:"); split(c[2],d,","); split(b[2],e,"-"); print d[1],e[1]}'
+  method: grep 'tag=MANE Select' $TOGOID_ROOT/input/mane/refseq_genomic.gff | grep 'HGNC:' | awk -F '\t' '$3=="mRNA" {print $9}' | awk -F ';'  -v 'OFS=\t' '{split($1,b,"=rna-"); split($3,c,"HGNC:HGNC:"); split(c[2],d,","); split(b[2],e,"-"); print d[1],e[1]}'
