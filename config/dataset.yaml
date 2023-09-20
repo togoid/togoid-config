@@ -639,7 +639,7 @@ pfam:
   prefix: 'http://identifiers.org/pfam/'
   examples:
     - ["PF03719","PF03726","PF02809","PF00105","PF00250","PF00412","PF01412","PF00459","PF02532","PF01226"]
-  method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro.tsv $TOGOID_ROOT/input/interpro.tsv
+  method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro/interpro.tsv $TOGOID_ROOT/input/interpro/interpro.tsv
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
@@ -728,7 +728,7 @@ refseq_rna:
   examples:
     - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
     - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
-  method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_symmary.tsv
+  method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv
 rgd:
   label: RGD
   catalog: nbdc00188
