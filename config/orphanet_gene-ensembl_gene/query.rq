@@ -4,14 +4,14 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX ordo: <http://www.orpha.net/ORDO/Orphanet_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?disease_id ?ensembl_id
+SELECT DISTINCT ?gene_id ?ensembl_id
 FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
 WHERE {
   VALUES ?gene_class {ordo:410298 ordo:410299}
-  ?disease rdfs:subClassOf ?gene_class ;
-           oboinowl:hasDbXref ?ensembl .
+  ?gene rdfs:subClassOf ?gene_class ;
+        oboinowl:hasDbXref ?ensembl .
 
   FILTER (STRSTARTS(?ensembl, 'Ensembl:'))
-  BIND (STRAFTER(STR(?disease), 'http://www.orpha.net/ORDO/Orphanet_') AS ?disease_id)
+  BIND (STRAFTER(STR(?gene), 'http://www.orpha.net/ORDO/Orphanet_') AS ?gene_id)
   BIND (STRAFTER(?ensembl, 'Ensembl:') AS ?ensembl_id)
 }
