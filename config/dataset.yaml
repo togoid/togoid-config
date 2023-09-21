@@ -593,8 +593,20 @@ omim_phenotype:
     - ["207780","236100","237500","300716","125310","165199","617175","137600","600089","601317"]
     - ["OMIM:207780","OMIM:236100","OMIM:237500","OMIM:300716","OMIM:125310","OMIM:165199","OMIM:617175","OMIM:137600","OMIM:600089","OMIM:601317"]
     - ["MIM:207780","MIM:236100","MIM:237500","MIM:300716","MIM:125310","MIM:165199","MIM:617175","MIM:137600","MIM:600089","MIM:601317"]
-orphanet:
-  label: Orphanet
+orphanet_gene:
+  label: Orphanet gene
+  catalog: nbdc01422
+  category: Gene
+  regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
+  prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+  format: ["ORPHA:%s","ORDO:%s","Orphanet:%s","Orphanet_%s"]
+  examples:
+    - ["ORPHA:217124","ORPHA:218033","ORPHA:218036","ORPHA:218040","ORPHA:218045","ORPHA:218049","ORPHA:218358","ORPHA:218376","ORPHA:218672","ORPHA:218675"]
+    - ["ORDO:217124","ORDO:218033","ORDO:218036","ORDO:218040","ORDO:218045","ORDO:218049","ORDO:218358","ORDO:218376","ORDO:218672","ORDO:218675"]
+    - ["Orphanet:217124","Orphanet:218033","Orphanet:218036","Orphanet:218040","Orphanet:218045","Orphanet:218049","Orphanet:218358","Orphanet:218376","Orphanet:218672","Orphanet:218675"]
+    - ["Orphanet_217124","Orphanet_218033","Orphanet_218036","Orphanet_218040","Orphanet_218045","Orphanet_218049","Orphanet_218358","Orphanet_218376","Orphanet_218672","Orphanet_218675"]
+orphanet_phenotype:
+  label: Orphanet phenotype
   catalog: nbdc01422
   category: Phenotype
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
