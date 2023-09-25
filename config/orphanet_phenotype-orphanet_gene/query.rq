@@ -1,0 +1,32 @@
+# @endpoint https://rdfportal.org/bioportal/sparql
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ordo: <http://www.orpha.net/ORDO/Orphanet_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?gene_id ?disease_id
+FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
+WHERE {
+  VALUES ?prop {
+    ordo:317343	 # "disease-causing germline mutation(s) in"
+    ordo:317344	 # "disease-causing somatic mutation(s) in"
+    ordo:317345	 # "major susceptibility factor in"
+    ordo:317346	 # "modifying germline mutation in"
+    ordo:317348	 # "part of a fusion gene in"
+    ordo:317349	 # "role in the phenotype of"
+    ordo:327767	 # "candidate gene tested in"
+    ordo:410295	 # "disease-causing germline mutation(s) (loss of function) in"
+    ordo:410296	 # "disease-causing germline mutation(s) (gain of function) in"
+    ordo:465410	 # "biomarker tested in"
+  }
+  ?gene rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ?prop ;
+    owl:someValuesFrom ?disease
+  ] .
+  ?gene rdfs:subClassOf+ ordo:C010 .  # genetic material
+  #?disease rdfs:subClassOf+ ordo:C001 .  # clinical entity
+  BIND(STRAFTER(STR(?gene), "http://www.orpha.net/ORDO/Orphanet_") AS ?gene_id)
+  BIND(STRAFTER(STR(?disease), "http://www.orpha.net/ORDO/Orphanet_") AS ?disease_id)
+}

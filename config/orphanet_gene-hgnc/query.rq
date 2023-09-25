@@ -1,0 +1,18 @@
+# @endpoint https://rdfportal.org/bioportal/sparql
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ordo: <http://www.orpha.net/ORDO/Orphanet_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?gene_id ?hgnc_id
+FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
+WHERE {
+  ## Terms under ordo:410297 (disorder-associated locus) also have xref to HGNC, but the HGNC entries are obsolete.
+  VALUES ?gene_class {ordo:410298 ordo:410299}
+  ?gene rdfs:subClassOf ?gene_class ;
+        oboinowl:hasDbXref ?hgnc .
+
+  FILTER (STRSTARTS(?hgnc, 'HGNC:'))
+  BIND (STRAFTER(STR(?gene), 'http://www.orpha.net/ORDO/Orphanet_') AS ?gene_id)
+  BIND (STRAFTER(?hgnc, 'HGNC:') AS ?hgnc_id)
+}
