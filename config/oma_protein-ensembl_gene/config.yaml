@@ -4,4 +4,6 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear
-  method: sparql_csv2tsv.sh query.rq https://sparql.omabrowser.org/sparql/
+  method: awk -F "\t" '$4=="Ensembl" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!="YEAST"{print $2}' $TOGOID_ROOT/input/oma/oma-species.txt > taxonomy.txt
+    && sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ taxonomy.txt
+

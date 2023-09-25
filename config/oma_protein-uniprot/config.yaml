@@ -4,5 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear
-  method: sparql_csv2tsv.sh taxonomy.rq https://sparql.omabrowser.org/sparql/ > taxonomy.txt
-    && sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ taxonomy.txt
+  method: zgrep -vE "(^#)|_" $TOGOID_ROOT/input/oma/oma-uniprot.txt.gz

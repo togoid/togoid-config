@@ -8,8 +8,10 @@ PREFIX lscr: <http://purl.org/lscr#>
 SELECT DISTINCT ?oma_protein_id ?ensg_id
 FROM <http://omabrowser.org/graph>
 WHERE {
-  ?oma_protein orth:organism/obo:RO_0002162 uptax:9606 .
-  ?oma_protein sio:SIO_010079/lscr:xrefEnsemblGene ?ensg .
+  VALUES ?taxon { uptax:{{taxon}} }
+  ?oma_protein a orth:Protein ;
+               orth:organism/obo:RO_0002162 ?taxon ;
+               sio:SIO_010079/lscr:xrefEnsemblGene ?ensg .
   BIND (strafter(str(?oma_protein), 'https://omabrowser.org/oma/info/') AS ?oma_protein_id)
   BIND (strafter(str(?ensg), 'http://rdf.ebi.ac.uk/resource/ensembl/') AS ?ensg_id)
 }
