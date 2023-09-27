@@ -332,6 +332,8 @@ module TogoID
         return "prepare:interpro"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
+      when /#{OUTPUT_TSV_DIR}prosite/
+        return "prepare:prosite"
       when /#{OUTPUT_TSV_DIR}reactome/
         return "prepare:reactome"
       when /#{OUTPUT_TSV_DIR}refseq_protein/
@@ -471,7 +473,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :ncbigene, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :ncbigene, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -483,6 +485,7 @@ namespace :prepare do
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
+  directory INPUT_PROSITE_DIR     = "input/prosite"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
@@ -698,6 +701,21 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for PROSITE"
+  task :prosite => INPUT_PROSITE_DIR do
+    $stderr.puts "## Prepare input files for PROSITE"
+    download_lock(INPUT_PROSITE_DIR) do
+      updated = false
+      input_file = "#{INPUT_PROSITE_DIR}/prosite.dat"
+      input_url  = "https://ftp.expasy.org/databases/prosite/prosite.dat"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_PROSITE_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+  
   desc "Prepare required files for Reactome"
   task :reactome => INPUT_REACTOME_DIR do
     $stderr.puts "## Prepare input files for Reactome"
