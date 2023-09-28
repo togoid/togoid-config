@@ -788,7 +788,7 @@ smart:
   label: SMART
   catalog: nbdc00682
   category: Domain
-  regex: '^(?<id>PM\d{5})$'
+  regex: '^(?<id>SM\d{5})$'
   prefix: 'http://identifiers.org/smart/'
   examples:
     - ["SM00130","SM00239","SM00043","SM00091","SM00104","SM01001","SM00135","SM00281","SM00996","SM00015"]
