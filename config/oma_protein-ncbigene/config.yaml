@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000024
+  reverse: TIO_000025
+  file: sample.tsv
+update:
+  frequency: twoTimesAYear
+  method: zcat $TOGOID_ROOT/input/oma/oma-entrez.txt.gz | awk -F "\t" '/^[^#]/{split($2, a, "; "); for(k in a){print $1 "\t" a[k]}}'
