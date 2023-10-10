@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: curl -sL https://grch38.togovar.org/public/togoid/tgvid2ensembl.transcript.tsv
+  method: curl -sSL https://grch38.togovar.org/public/togoid/tgvid2ensembl.transcript.tsv

@@ -4,4 +4,4 @@ link:
   reverse: TIO_000111
 update:
   frequency: Monthly
-  method: curl -s https://ddbj.nig.ac.jp/public/rdf/dblink/insdc-biosample/insdc2biosample.tsv
+  method: curl -sS https://ddbj.nig.ac.jp/public/rdf/dblink/insdc-biosample/insdc2biosample.tsv
