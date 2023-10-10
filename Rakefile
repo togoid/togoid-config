@@ -330,6 +330,12 @@ module TogoID
         return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
+      when /#{OUTPUT_TSV_DIR}mgi_allele/
+        return "prepare:mgi_allele"
+      when /#{OUTPUT_TSV_DIR}mgi_gene/
+        return "prepare:mgi_gene"
+      when /#{OUTPUT_TSV_DIR}mgi_genotype/
+        return "prepare:mgi_genotype"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}oma/
@@ -473,7 +479,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :ncbigene, :oma, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_allele, :mgi_gene, :mgi_genotype, :ncbigene, :oma, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -484,6 +490,9 @@ namespace :prepare do
   directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
+  directory INPUT_MGI_ALLELE_DIR  = "input/mgi_allele"
+  directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
+  directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_OMA_DIR         = "input/oma"
   directory INPUT_REACTOME_DIR    = "input/reactome"
@@ -648,6 +657,64 @@ namespace :prepare do
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
         updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for MGI allele"
+  task :mgi_allele => INPUT_MGI_ALLELE_DIR do
+    $stderr.puts "## Prepare input files for MGI_ALLELE"
+    download_lock(INPUT_MGI_ALLELE_DIR) do
+      updated = false
+      filenames = ["MGI_PhenotypicAllele.rpt"]
+      filenames.each do |filename|
+        input_file = "#{INPUT_MGI_ALLELE_DIR}/#{filename}"
+        input_url  = "https://www.informatics.jax.org/downloads/reports/#{filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_MGI_ALLELE_DIR, input_url)
+          updated = true
+        end
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for MGI gene"
+  task :mgi_gene => INPUT_MGI_GENE_DIR do
+    $stderr.puts "## Prepare input files for MGI_GENE"
+    download_lock(INPUT_MGI_GENE_DIR) do
+      updated = false
+      filenames = ["MRK_List2.rpt",
+                   "MGI_Gene_Model_Coord.rpt",
+                   "MRK_SwissProt_TrEMBL.rpt",
+                   "HGNC_AllianceHomology.rpt"]
+      filenames.each do |filename|
+        input_file = "#{INPUT_MGI_GENE_DIR}/#{filename}"
+        input_url  = "https://www.informatics.jax.org/downloads/reports/#{filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_MGI_GENE_DIR, input_url)
+          updated = true
+        end
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for MGI_GENOTYPE"
+  task :mgi_genotype => INPUT_MGI_GENOTYPE_DIR do
+    $stderr.puts "## Prepare input files for MGI_GENOTYPE"
+    download_lock(INPUT_MGI_GENOTYPE_DIR) do
+      updated = false
+      filenames = ["MGI_DiseaseGeneModel.rpt",
+                   "MGI_GenePheno.rpt"]
+      filenames.each do |filename|
+        input_file = "#{INPUT_MGI_GENOTYPE_DIR}/#{filename}"
+        input_url  = "https://www.informatics.jax.org/downloads/reports/#{filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_MGI_GENOTYPE_DIR, input_url)
+          updated = true
+        end
       end
       updated
     end
