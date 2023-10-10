@@ -113,6 +113,9 @@
 <http://togoid.dbcls.jp/ontology#Classification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Classification> <http://www.w3.org/2000/01/rdf-schema#label> "Classification" .
 <http://togoid.dbcls.jp/ontology#Classification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
+<http://togoid.dbcls.jp/ontology#AnnotationRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#AnnotationRule> <http://www.w3.org/2000/01/rdf-schema#label> "Annotation rule" .
+<http://togoid.dbcls.jp/ontology#AnnotationRule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://purl.org/dc/terms/identifier> "affy_probeset" .
 <http://togoid.dbcls.jp/ontology#AffyProbeset> <http://www.w3.org/2000/01/rdf-schema#label> "Affymetrix probeset" .
@@ -409,11 +412,16 @@
 <http://togoid.dbcls.jp/ontology#OmimPhenotype> <http://www.w3.org/2000/01/rdf-schema#label> "OMIM phenotype" .
 <http://togoid.dbcls.jp/ontology#OmimPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#OmimPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#Orphanet> <http://purl.org/dc/terms/identifier> "orphanet" .
-<http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/2000/01/rdf-schema#label> "Orphanet" .
-<http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
-<http://togoid.dbcls.jp/ontology#Orphanet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#OrphanetGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#OrphanetGene> <http://purl.org/dc/terms/identifier> "orphanet_gene" .
+<http://togoid.dbcls.jp/ontology#OrphanetGene> <http://www.w3.org/2000/01/rdf-schema#label> "Orphanet gene" .
+<http://togoid.dbcls.jp/ontology#OrphanetGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#OrphanetGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#OrphanetPhenotype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#OrphanetPhenotype> <http://purl.org/dc/terms/identifier> "orphanet_phenotype" .
+<http://togoid.dbcls.jp/ontology#OrphanetPhenotype> <http://www.w3.org/2000/01/rdf-schema#label> "Orphanet phenotype" .
+<http://togoid.dbcls.jp/ontology#OrphanetPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
+<http://togoid.dbcls.jp/ontology#OrphanetPhenotype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Pathbank> <http://purl.org/dc/terms/identifier> "pathbank" .
 <http://togoid.dbcls.jp/ontology#Pathbank> <http://www.w3.org/2000/01/rdf-schema#label> "Pathbank" .
@@ -434,6 +442,16 @@
 <http://togoid.dbcls.jp/ontology#Pfam> <http://www.w3.org/2000/01/rdf-schema#label> "Pfam" .
 <http://togoid.dbcls.jp/ontology#Pfam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#Pfam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Prosite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Prosite> <http://purl.org/dc/terms/identifier> "prosite" .
+<http://togoid.dbcls.jp/ontology#Prosite> <http://www.w3.org/2000/01/rdf-schema#label> "PROSITE" .
+<http://togoid.dbcls.jp/ontology#Prosite> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Domain> .
+<http://togoid.dbcls.jp/ontology#Prosite> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#PrositeProrule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#PrositeProrule> <http://purl.org/dc/terms/identifier> "prosite_prorule" .
+<http://togoid.dbcls.jp/ontology#PrositeProrule> <http://www.w3.org/2000/01/rdf-schema#label> "PROSITE ProRule" .
+<http://togoid.dbcls.jp/ontology#PrositeProrule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#AnnotationRule> .
+<http://togoid.dbcls.jp/ontology#PrositeProrule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#PubchemCompound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#PubchemCompound> <http://purl.org/dc/terms/identifier> "pubchem_compound" .
 <http://togoid.dbcls.jp/ontology#PubchemCompound> <http://www.w3.org/2000/01/rdf-schema#label> "PubChem compound" .
@@ -494,6 +512,11 @@
 <http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#label> "SGD" .
 <http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Smart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Smart> <http://purl.org/dc/terms/identifier> "smart" .
+<http://togoid.dbcls.jp/ontology#Smart> <http://www.w3.org/2000/01/rdf-schema#label> "SMART" .
+<http://togoid.dbcls.jp/ontology#Smart> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Domain> .
+<http://togoid.dbcls.jp/ontology#Smart> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#SraAccession> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#SraAccession> <http://purl.org/dc/terms/identifier> "sra_accession" .
 <http://togoid.dbcls.jp/ontology#SraAccession> <http://www.w3.org/2000/01/rdf-schema#label> "SRA accession" .
@@ -1265,3 +1288,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000112> .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2000/01/rdf-schema#label> "pathway has component coded by gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://togoid.dbcls.jp/ontology#display_label> "has component coded by" .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Domain> .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Function> .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000115> .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#label> "domain has annotation rule" .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://togoid.dbcls.jp/ontology#display_label> "has annotation rule" .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Function> .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Domain> .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000114> .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#label> "is annotation rule of" .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://togoid.dbcls.jp/ontology#display_label> "is annotation rule of" .
