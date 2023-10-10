@@ -203,7 +203,7 @@ taxonomy-pubmed.tsv	48570
 togovar-clinvar.tsv	720705
 togovar-dbsnp.tsv	66877211
 togovar-ensembl_gene.tsv	72473309
-togovar-ensembl_transcript.tsv	145811306
+togovar-ensembl_transcript.tsv	287277970
 togovar-hgnc.tsv	60732887
 togovar-medgen.tsv	935843
 togovar-ncbigene.tsv	60001809
@@ -238,4 +238,4 @@ wikipathways-hmdb.tsv	4003
 wikipathways-lipidmaps.tsv	1351
 wikipathways-ncbigene.tsv	30063
 wikipathways-uniprot.tsv	33210
-total	4425045968
+total	4566512632
