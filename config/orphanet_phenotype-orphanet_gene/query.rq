@@ -5,7 +5,7 @@ PREFIX ordo: <http://www.orpha.net/ORDO/Orphanet_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-SELECT DISTINCT ?gene_id ?disease_id
+SELECT DISTINCT ?disease_id ?gene_id
 FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
 WHERE {
   VALUES ?prop {
