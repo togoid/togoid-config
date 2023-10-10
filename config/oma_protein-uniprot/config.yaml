@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear
-  method: zgrep -vE "(^#)|_" $TOGOID_ROOT/input/oma/oma-uniprot.txt.gz
+  method: zgrep -vE "(^#)|_" $TOGOID_ROOT/input/oma_protein/oma-uniprot.txt.gz

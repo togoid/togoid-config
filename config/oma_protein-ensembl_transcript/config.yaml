@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear
-  method: sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ $TOGOID_ROOT/input/oma/taxonomy.txt
+  method: sparql_taxon.rb query.rq https://sparql.omabrowser.org/sparql/ $TOGOID_ROOT/input/oma_protein/taxonomy.txt
