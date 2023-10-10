@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000010
+  reverse: TIO_000011
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" '!a[$8,$5]++{print gensub(/^MGI:/, "", "g", $8) "\t" gensub(/^MP:/, "", "g", $5)}' $TOGOID_ROOT/input/mgi_genotype/MGI_GenePheno.rpt
