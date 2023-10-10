@@ -663,7 +663,7 @@ prosite:
 prosite_prorule:
   label: PROSITE ProRule
   catalog: nbdc00241
-  category: Domain
+  category: AnnotationRule
   regex: '^(?<id>PRU\d{5})$'
   prefix: 'https://prosite.expasy.org/rule/'
   examples:
