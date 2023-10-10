@@ -662,24 +662,6 @@ namespace :prepare do
     end
   end
 
-  desc "Prepare required files for MGI allele"
-  task :mgi_allele => INPUT_MGI_ALLELE_DIR do
-    $stderr.puts "## Prepare input files for MGI_ALLELE"
-    download_lock(INPUT_MGI_ALLELE_DIR) do
-      updated = false
-      filenames = ["MGI_PhenotypicAllele.rpt"]
-      filenames.each do |filename|
-        input_file = "#{INPUT_MGI_ALLELE_DIR}/#{filename}"
-        input_url  = "https://www.informatics.jax.org/downloads/reports/#{filename}"
-        if update_input_file?(input_file, input_url)
-          download_file(INPUT_MGI_ALLELE_DIR, input_url)
-          updated = true
-        end
-      end
-      updated
-    end
-  end
-
   desc "Prepare required files for MGI gene"
   task :mgi_gene => INPUT_MGI_GENE_DIR do
     $stderr.puts "## Prepare input files for MGI_GENE"
@@ -688,7 +670,8 @@ namespace :prepare do
       filenames = ["MRK_List2.rpt",
                    "MGI_Gene_Model_Coord.rpt",
                    "MRK_SwissProt_TrEMBL.rpt",
-                   "HGNC_AllianceHomology.rpt"]
+                   "HGNC_AllianceHomology.rpt",
+                   "MGI_PhenotypicAllele.rpt"]
       filenames.each do |filename|
         input_file = "#{INPUT_MGI_GENE_DIR}/#{filename}"
         input_url  = "https://www.informatics.jax.org/downloads/reports/#{filename}"
