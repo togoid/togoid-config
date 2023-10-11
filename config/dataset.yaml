@@ -490,6 +490,7 @@ mgi_allele:
   examples:
     - ["MGI:1857242","MGI:1857411","MGI:1857502","MGI:1857508","MGI:1857422","MGI:1857421","MGI:1857473","MGI:1856155","MGI:1857491","MGI:1857496"]
     - ["mgi:1857242","mgi:1857411","mgi:1857502","mgi:1857508","mgi:1857422","mgi:1857421","mgi:1857473","mgi:1856155","mgi:1857491","mgi:1857496"]
+  method: awk -F "\t" '/^[^#]/{print gensub(/^MGI:/, "", "g", $1) "\t" $2}' $TOGOID_ROOT/input/mgi_gene/MGI_PhenotypicAllele.rpt
 mgi_gene:
   label: MGI gene
   catalog: nbdc00135
@@ -500,6 +501,7 @@ mgi_gene:
   examples:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
     - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
+  method: awk -F "\t" 'FNR>=2{print gensub(/^MGI:/, "", "g", $1) "\t" $7}' $TOGOID_ROOT/input/mgi_gene/MRK_List2.rpt
 mgi_genotype:
   label: MGI genotype
   catalog: nbdc00135
