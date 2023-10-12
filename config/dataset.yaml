@@ -470,16 +470,6 @@ mesh:
   prefix: 'http://id.nlm.nih.gov/mesh/'
   examples:
     - ["D002065","C562829","C566582","D010623","D003327","D001715","D000453","D010260","C537322","C563418"]
-mgi:
-  label: MGI
-  catalog: nbdc00135
-  category: Gene
-  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
-  prefix: 'http://identifiers.org/mgi/MGI:'
-  format: ["MGI:%s","mgi:%s"]
-  examples:
-    - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
-    - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
 mgi_allele:
   label: MGI allele
   catalog: nbdc00135
