@@ -336,8 +336,10 @@ module TogoID
         return "prepare:mgi_genotype"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
-      when /#{OUTPUT_TSV_DIR}oma/
-        return "prepare:oma"
+      when /#{OUTPUT_TSV_DIR}oma_protein/
+        return "prepare:oma_protein"
+      when /#{OUTPUT_TSV_DIR}prosite/
+        return "prepare:prosite"
       when /#{OUTPUT_TSV_DIR}reactome/
         return "prepare:reactome"
       when /#{OUTPUT_TSV_DIR}refseq_protein/
@@ -477,7 +479,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -491,7 +493,8 @@ namespace :prepare do
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
-  directory INPUT_OMA_DIR         = "input/oma"
+  directory INPUT_OMA_PROTEIN_DIR = "input/oma_protein"
+  directory INPUT_PROSITE_DIR     = "input/prosite"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
@@ -748,29 +751,44 @@ namespace :prepare do
     end
   end
 
-  desc "Prepare required files for OMA"
-  task :oma => INPUT_OMA_DIR do
-    $stderr.puts "## Prepare input files for OMA"
-    download_lock(INPUT_OMA_DIR) do
+  desc "Prepare required files for OMA protein"
+  task :oma_protein => INPUT_OMA_PROTEIN_DIR do
+    $stderr.puts "## Prepare input files for OMA protein"
+    download_lock(INPUT_OMA_PROTEIN_DIR) do
       updated = false
       filenames = ["oma-entrez.txt.gz",
                    "oma-species.txt",
                    "oma-uniprot.txt.gz"]
       filenames.each do |filename|
-        input_file = "#{INPUT_OMA_DIR}/#{filename}"
+        input_file = "#{INPUT_OMA_PROTEIN_DIR}/#{filename}"
         input_url  = "https://omabrowser.org/All/#{filename}"
         if update_input_file?(input_file, input_url)
-          download_file(INPUT_OMA_DIR, input_url)
+          download_file(INPUT_OMA_PROTEIN_DIR, input_url)
           updated = true
         end
       end
       if updated
-        sh "awk -F \"\t\" '$4==\"Ensembl\" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!=\"YEAST\"{print $2}' #{INPUT_OMA_DIR}/oma-species.txt > #{INPUT_OMA_DIR}/taxonomy.txt"
+        sh "awk -F \"\t\" '$4==\"Ensembl\" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!=\"YEAST\"{print $2}' #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{INPUT_OMA_DIR}/taxonomy.txt"
       end
       updated
     end
   end
 
+  desc "Prepare required files for PROSITE"
+  task :prosite => INPUT_PROSITE_DIR do
+    $stderr.puts "## Prepare input files for PROSITE"
+    download_lock(INPUT_PROSITE_DIR) do
+      updated = false
+      input_file = "#{INPUT_PROSITE_DIR}/prosite.dat"
+      input_url  = "https://ftp.expasy.org/databases/prosite/prosite.dat"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_PROSITE_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+  
   desc "Prepare required files for Reactome"
   task :reactome => INPUT_REACTOME_DIR do
     $stderr.puts "## Prepare input files for Reactome"

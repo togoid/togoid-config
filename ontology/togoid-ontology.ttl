@@ -187,6 +187,11 @@
     rdfs:label "Classification" ;
     rdfs:subClassOf :Category .
 
+:AnnotationRule
+    a owl:Class ;
+    rdfs:label "Annotation rule" ;
+    rdfs:subClassOf :Category .
+
 :AffyProbeset
     a owl:Class ;
     dcterms:identifier "affy_probeset" ;
@@ -541,10 +546,16 @@
     rdfs:label "OMIM phenotype" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
-:Orphanet
+:OrphanetGene
     a owl:Class ;
-    dcterms:identifier "orphanet" ;
-    rdfs:label "Orphanet" ;
+    dcterms:identifier "orphanet_gene" ;
+    rdfs:label "Orphanet gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
+
+:OrphanetPhenotype
+    a owl:Class ;
+    dcterms:identifier "orphanet_phenotype" ;
+    rdfs:label "Orphanet phenotype" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
 :Pathbank
@@ -570,6 +581,18 @@
     dcterms:identifier "pfam" ;
     rdfs:label "Pfam" ;
     rdfs:subClassOf :Domain, :Dataset .
+
+:Prosite
+    a owl:Class ;
+    dcterms:identifier "prosite" ;
+    rdfs:label "PROSITE" ;
+    rdfs:subClassOf :Domain, :Dataset .
+
+:PrositeProrule
+    a owl:Class ;
+    dcterms:identifier "prosite_prorule" ;
+    rdfs:label "PROSITE ProRule" ;
+    rdfs:subClassOf :AnnotationRule, :Dataset .
 
 :PubchemCompound
     a owl:Class ;
@@ -642,6 +665,12 @@
     dcterms:identifier "sgd" ;
     rdfs:label "SGD" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:Smart
+    a owl:Class ;
+    dcterms:identifier "smart" ;
+    rdfs:label "SMART" ;
+    rdfs:subClassOf :Domain, :Dataset .
 
 :SraAccession
     a owl:Class ;
@@ -1655,4 +1684,20 @@
     owl:inverseOf :TIO_000112 ;
     rdfs:label "pathway has component coded by gene" ;
     :display_label "has component coded by" .
+
+:TIO_000114
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Domain ;
+    rdfs:range :Function ;
+    owl:inverseOf :TIO_000115 ;
+    rdfs:label "domain has annotation rule" ;
+    :display_label "has annotation rule" .
+
+:TIO_000115
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Function ;
+    rdfs:range :Domain ;
+    owl:inverseOf :TIO_000114 ;
+    rdfs:label "is annotation rule of" ;
+    :display_label "is annotation rule of" .
 

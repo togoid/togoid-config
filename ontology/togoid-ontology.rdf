@@ -20,6 +20,10 @@
     <rdfs:label>Anatomy</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#AnnotationRule">
+    <rdfs:label>Annotation rule</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#AssemblyInsdc">
     <dcterms:identifier>assembly_insdc</dcterms:identifier>
     <rdfs:label>Assembly INSDC</rdfs:label>
@@ -439,9 +443,15 @@
     <rdfs:label>Organism</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Orphanet">
-    <dcterms:identifier>orphanet</dcterms:identifier>
-    <rdfs:label>Orphanet</rdfs:label>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#OrphanetGene">
+    <dcterms:identifier>orphanet_gene</dcterms:identifier>
+    <rdfs:label>Orphanet gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#OrphanetPhenotype">
+    <dcterms:identifier>orphanet_phenotype</dcterms:identifier>
+    <rdfs:label>Orphanet phenotype</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
@@ -488,6 +498,18 @@
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Project">
     <rdfs:label>Project</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Prosite">
+    <dcterms:identifier>prosite</dcterms:identifier>
+    <rdfs:label>PROSITE</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#PrositeProrule">
+    <dcterms:identifier>prosite_prorule</dcterms:identifier>
+    <rdfs:label>PROSITE ProRule</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#AnnotationRule"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Protein">
     <rdfs:label>Protein</rdfs:label>
@@ -586,6 +608,12 @@
     <rdfs:label>SGD</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Smart">
+    <dcterms:identifier>smart</dcterms:identifier>
+    <rdfs:label>SMART</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#SraAccession">
     <dcterms:identifier>sra_accession</dcterms:identifier>
@@ -1541,6 +1569,22 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000112"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000114">
+    <display_label>has annotation rule</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
+    <rdfs:label>domain has annotation rule</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Function"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000115"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000115">
+    <display_label>is annotation rule of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Function"/>
+    <rdfs:label>is annotation rule of</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000114"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>

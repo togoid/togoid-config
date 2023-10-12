@@ -111,3 +111,5 @@ TIO_000110	sequence is determined using sample	is determined using sample	TIO_00
 TIO_000111	sample is used to determine sequence	is used to determine sequence	TIO_000110	Sample	Sequence
 TIO_000112	gene codes protein participating in pathway	codes protein participating in	TIO_000113	Gene	Pathway
 TIO_000113	pathway has component coded by gene	has component coded by	TIO_000112	Pathway	Gene
+TIO_000114	domain has annotation rule	has annotation rule	TIO_000115	Domain	Function
+TIO_000115	is annotation rule of	is annotation rule of	TIO_000114	Function	Domain
