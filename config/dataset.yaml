@@ -524,10 +524,11 @@ mp:
   label: Mammalian Phenotype Ontology
   catalog: FIXME
   category: Phenotype
-  regex: '^(?<id>.+)$'
+  regex: '^MP[:_](?<id>\d{7})$'
   prefix: 'http://identifiers.org/mp/MP:'
   examples:
     - ["MP:0000600","MP:0001716","MP:0001698","MP:0001092","MP:0000961","MP:0000245","MP:0000828","MP:0000826","MP:0005039","MP:0002840"]
+    - ["MP_0000600","MP_0001716","MP_0001698","MP_0001092","MP_0000961","MP_0000245","MP_0000828","MP_0000826","MP_0005039","MP_0002840"]
 nando:
   label: NANDO
   catalog: nbdc02557
