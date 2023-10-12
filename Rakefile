@@ -330,8 +330,6 @@ module TogoID
         return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
-      when /#{OUTPUT_TSV_DIR}mgi_allele/
-        return "prepare:mgi_allele"
       when /#{OUTPUT_TSV_DIR}mgi_gene/
         return "prepare:mgi_gene"
       when /#{OUTPUT_TSV_DIR}mgi_genotype/
@@ -479,7 +477,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_allele, :mgi_gene, :mgi_genotype, :ncbigene, :oma, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -490,7 +488,6 @@ namespace :prepare do
   directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
-  directory INPUT_MGI_ALLELE_DIR  = "input/mgi_allele"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
