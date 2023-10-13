@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: awk -F "\t" '$6{split($6, a, "|"); for(k in a)print gensub(/^DOID:/, "", "g", $5) "\t" gensub(/^MGI:/, "", "g", a[k])}' $TOGOID_ROOT/input/mgi_genotype/MGI_DiseaseGeneModel.rpt
+  method: awk -F "\t" '$6{split($6, a, "|"); for(k in a)print gensub(/^MGI:/, "", "g", a[k]) "\t" gensub(/^DOID:/, "", "g", $5)}' $TOGOID_ROOT/input/mgi_genotype/MGI_DiseaseGeneModel.rpt
