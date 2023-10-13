@@ -684,12 +684,13 @@ namespace :prepare do
     end
   end
 
-  desc "Prepare required files for MGI_GENOTYPE"
+  desc "Prepare required files for MGI genotype"
   task :mgi_genotype => INPUT_MGI_GENOTYPE_DIR do
     $stderr.puts "## Prepare input files for MGI_GENOTYPE"
     download_lock(INPUT_MGI_GENOTYPE_DIR) do
       updated = false
       filenames = ["MGI_DiseaseGeneModel.rpt",
+                   "MGI_DiseaseMouseModel.rpt",
                    "MGI_GenePheno.rpt"]
       filenames.each do |filename|
         input_file = "#{INPUT_MGI_GENOTYPE_DIR}/#{filename}"

@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: awk -F "\t" '{split($3, a, "|"); for(k in a)print gensub(/^MGI:/, "", "g", $8) "\t" gensub(/^MGI:/, "", "g", a[k])}'  $TOGOID_ROOT/input/mgi_genotype/MGI_GenePheno.rpt | sort | uniq
+  method: awk -F "\t" 'FNR==NR{split($3, a, "|"); for(k in a)print gensub(/^MGI:/, "", "g", $8) "\t" gensub(/^MGI:/, "", "g", a[k])}FNR!=NR&&$7{split($10, a, "|"); for(k in a)print gensub(/^RRID:MGI:/, "", "g", a[k]) "\t" gensub(/^MGI:/, "", "g", $7)}' $TOGOID_ROOT/input/mgi_genotype/MGI_GenePheno.rpt $TOGOID_ROOT/input/mgi_genotype/MGI_DiseaseMouseModel.rpt | sort -u
