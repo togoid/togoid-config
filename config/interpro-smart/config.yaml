@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000001
+  reverse: TIO_000001
+  file: sample.tsv
+update:
+  frequency: Bimonthly
+  method: awk -F '\t' -v db=SMART '$2 == db {print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv

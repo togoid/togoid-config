@@ -652,6 +652,22 @@ pfam:
   examples:
     - ["PF03719","PF03726","PF02809","PF00105","PF00250","PF00412","PF01412","PF00459","PF02532","PF01226"]
   method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro/interpro.tsv $TOGOID_ROOT/input/interpro/interpro.tsv
+prosite:
+  label: PROSITE
+  catalog: nbdc00241
+  category: Domain
+  regex: '^(?<id>PS\d{5})$'
+  prefix: 'http://identifiers.org/prosite/'
+  examples:
+    - ["PS01177","PS00516","PS01065","PS00418","PS01085","PS01086","PS01293","PS00355","PS01253","PS00992"]
+prosite_prorule:
+  label: PROSITE ProRule
+  catalog: nbdc00241
+  category: AnnotationRule
+  regex: '^(?<id>PRU\d{5})$'
+  prefix: 'https://prosite.expasy.org/rule/'
+  examples:
+    - ["PRU00498","PRU00672","PRU00673","PRU00293","PRU00499","PRU10142","PRU10001","PRU10002","PRU10004","PRU10005"]
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
@@ -768,6 +784,14 @@ sgd:
   prefix: 'http://identifiers.org/sgd/'
   examples:
     - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
+smart:
+  label: SMART
+  catalog: nbdc00682
+  category: Domain
+  regex: '^(?<id>SM\d{5})$'
+  prefix: 'http://identifiers.org/smart/'
+  examples:
+    - ["SM00130","SM00239","SM00043","SM00091","SM00104","SM01001","SM00135","SM00281","SM00996","SM00015"]
 sra_accession:
   label: SRA accession
   catalog: nbdc00687

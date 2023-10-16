@@ -57,11 +57,14 @@ oma_group	OMA group	Ortholog
 oma_protein	OMA protein	Protein
 omim_gene	OMIM gene	Gene
 omim_phenotype	OMIM phenotype	Phenotype
-orphanet	Orphanet	Phenotype
+orphanet_gene	Orphanet gene	Gene
+orphanet_phenotype	Orphanet phenotype	Phenotype
 pathbank	Pathbank	Pathway
 pdb	PDB	Structure
 pdb_ccd	PDB CCD	Compound
 pfam	Pfam	Domain
+prosite	PROSITE	Domain
+prosite_prorule	PROSITE ProRule	AnnotationRule
 pubchem_compound	PubChem compound	Compound
 pubchem_pathway	PubChem pathway	Pathway
 pubchem_substance	PubChem substance	Compound
@@ -74,6 +77,7 @@ refseq_rna	RefSeq RNA	Transcript
 rgd	RGD	Gene
 rhea	Rhea	Reaction
 sgd	SGD	Gene
+smart	SMART	Domain
 sra_accession	SRA accession	Submission
 sra_analysis	SRA analysis	Analysis
 sra_experiment	SRA experiment	Experiment
