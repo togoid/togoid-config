@@ -1,0 +1,15 @@
+## endpoint https://knowledge.brc.riken.jp/bioresource/sparql
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+select ?mouse_id ?mondo_id
+where{
+   graph <http://metadb.riken.jp/db/mouse_diseaseID>{
+    ?mouse obo:RO_0003301 ?disease }
+    FILTER contains(str(?disease),'http://purl.obolibrary.org/obo/MONDO_')
+    BIND (strafter(str(?mouse), 'http://metadb.riken.jp/db/rikenbrc_mouse/') AS ?mouse_id)
+    BIND (strafter(str(?disease), 'http://purl.obolibrary.org/obo/MONDO_') AS ?mondo_id)
+}
+           }
