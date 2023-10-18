@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: awk -F "\t" '!a[$8,$5]++{print gensub(/^MGI:/, "", "g", $8) "\t" gensub(/^MP:/, "", "g", $5)}' $TOGOID_ROOT/input/mgi_genotype/MGI_GenePheno.rpt
+  method: awk -F "\t" '$6~/^MP:/&&!a[$1, $6]++{print gensub(/^MGI:/,"","g",$1) "\t" gensub(/^MP:/,"","g",$6)}' $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv

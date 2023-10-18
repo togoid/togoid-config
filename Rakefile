@@ -689,9 +689,7 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for MGI_GENOTYPE"
     download_lock(INPUT_MGI_GENOTYPE_DIR) do
       updated = false
-      filenames = ["MGI_DiseaseGeneModel.rpt",
-                   "MGI_DiseaseMouseModel.rpt",
-                   "MGI_GenePheno.rpt"]
+      filenames = ["MGI_DiseaseGeneModel.rpt"]
       filenames.each do |filename|
         input_file = "#{INPUT_MGI_GENOTYPE_DIR}/#{filename}"
         input_url  = "https://www.informatics.jax.org/downloads/reports/#{filename}"
@@ -699,6 +697,9 @@ namespace :prepare do
           download_file(INPUT_MGI_GENOTYPE_DIR, input_url)
           updated = true
         end
+      end
+      if updated
+        sh "python bin/query_mousemine.py > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
       end
       updated
     end
