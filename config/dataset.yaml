@@ -107,13 +107,6 @@ chembl_target:
   prefix: 'http://identifiers.org/chembl.target/'
   examples:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
-civic_gene:
-  label: CIVIC gene
-  catalog: nbdc02558
-  category: Gene
-  # FIXME: valid in RDF?
-  regex: '^(?<id>\d+)$'
-  prefix: 'http://civic.genome.wustl.edu/links/genes/'
 clinvar:
   label: ClinVar variant
   catalog: nbdc01514
@@ -132,12 +125,6 @@ dbsnp:
   prefix: 'http://identifiers.org/dbsnp/'
   examples:
     - ["rs746303788","rs1407020249","rs374003162","rs4647297","rs549539526","rs1387864740","rs1177577242","rs769848663","rs16961655","rs79135400"]
-dgidb:
-  label: DGIdb
-  catalog: nbdc02562
-  category: Interaction
-  regex: '^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-  prefix: FIXME
 doid:
   label: Disease ontology
   catalog: nbdc00261
@@ -366,49 +353,6 @@ iuphar_ligand:
   prefix: 'http://identifiers.org/iuphar.ligand/'
   examples:
     - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
-kegg_compound:
-  label: KEGG Compound
-  catalog: nbdc00814
-  category: Compound
-  regex: '^(?<id>C\d+)$'
-  prefix: 'http://identifiers.org/kegg.compound/'
-kegg_disease:
-  catalog: nbdc00813
-  category: Phenotype
-  label: KEGG Disease
-  regex: '^KEGG:H(?<id>\d+)$'
-  prefix: 'http://identifiers.org/kegg.disease/'
-kegg_drug:
-  label: KEGG Drug
-  catalog: nbdc00812
-  category: Drug
-  regex: '^(?<id>D\d+)$'
-  prefix: 'http://identifiers.org/kegg.drug/'
-kegg_genes:
-  label: KEGG Genes
-  catalog: nbdc00532
-  # FIXME: leave two categories as is?
-  category: Gene, Protein
-  regex: '^\w+:[\w\d\.-]*$'
-  prefix: 'http://identifiers.org/kegg.genes/'
-kegg_orthology:  # FIXME: ko?
-  label: KEGG Orthology
-  catalog: nbdc00817
-  category: Ortholog
-  regex: '^(?<id>K\d+)$'
-  prefix: 'http://identifiers.org/kegg.orthology/'
-kegg_pathway:
-  label: KEGG Pathway
-  catalog: nbdc00118
-  category: Pathway
-  regex: '^(?<id>\w{2,4}\d{5})$'
-  prefix: 'http://identifiers.org/kegg.pathway/'
-kegg_reaction:
-  label: KEGG Reaction
-  catalog: nbdc00818
-  category: Interaction
-  regex: '^(?<id>R\d+)$'
-  prefix: 'http://identifiers.org/kegg.reaction/'
 lipidmaps:
   label: LIPID MAPS
   catalog: FIXME
@@ -556,12 +500,6 @@ ncbigene:
   prefix: 'http://identifiers.org/ncbigene/'
   examples:
     - ["63962027","1046","63961921","102606930","100472895","407025","84148","88","31157","100463227"]
-ncbiprotein:
-  label: NCBI protein
-  catalog: nbdc00584
-  category: Protein
-  regex: '^(?:(?:\w+\d+(?:\.\d+)?)|(?:NP_\d+))$'
-  prefix: 'http://identifiers.org/ncbiprotein/'
 ncit_disease:
   label: NCIT disease
   catalog: FIXME
