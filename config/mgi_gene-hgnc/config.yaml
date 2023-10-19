@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000017
+  reverse: TIO_000017
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" 'FNR>=2&&$16!="null"{split($16, a, "|"); for(k in a){print gensub(/^MGI:/, "", "g", $1) "\t" gensub(/^HGNC:/, "", "g", a[k])}}' $TOGOID_ROOT/input/mgi_gene/HGNC_AllianceHomology.rpt

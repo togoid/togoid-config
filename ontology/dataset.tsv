@@ -45,9 +45,12 @@ meddra	MedDRA	Phenotype
 medgen	MedGen	Phenotype
 mesh	MeSH	Phenotype
 metabobank	MetaboBank	Submission
-mgi	MGI	Gene
+mgi_allele	MGI allele	Variant
+mgi_gene	MGI gene	Gene
+mgi_genotype	MGI genotype	Genotype
 mirbase	miRBase	Transcript
 mondo	MONDO	Phenotype
+mp	Mammalian Phenotype Ontology	Phenotype
 nando	NANDO	Phenotype
 nbdc_humandb	NBDC Human Database	Project
 ncbigene	NCBI gene	Gene

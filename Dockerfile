@@ -10,12 +10,14 @@ RUN apt-get update -y && apt-get install -y \
       wget=1.21.2-2ubuntu1 \
       gawk=1:5.1.0-1build3 \
       python3=3.10.6-1~22.04 \
+      python3-pip=22.0.2+dfsg-1ubuntu0.3 \
       ruby-full=1:3.0~exp1 \
       awscli=1.22.34-1 && \
       rm -fr /usr/bin/python && \
       ln -s /usr/bin/python3.8 /usr/bin/python && \
       ln -s bash /bin/sh.bash && \
       mv /bin/sh.bash /bin/sh
+RUN pip install intermine
 
 ADD . /togoid
 WORKDIR /togoid
