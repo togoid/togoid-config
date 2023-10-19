@@ -419,16 +419,22 @@
     rdfs:label "InterPro" ;
     rdfs:subClassOf :Domain, :Dataset .
 
+:IupharLigand
+    a owl:Class ;
+    dcterms:identifier "iuphar_ligand" ;
+    rdfs:label "IUPHAR ligand" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
 :JgaDataset
     a owl:Class ;
     dcterms:identifier "jga_dataset" ;
-    rdfs:label "JGA dataset" ;
+    rdfs:label "JGA Dataset" ;
     rdfs:subClassOf :Project, :Dataset .
 
 :JgaStudy
     a owl:Class ;
     dcterms:identifier "jga_study" ;
-    rdfs:label "JGA study" ;
+    rdfs:label "JGA Study" ;
     rdfs:subClassOf :Project, :Dataset .
 
 :Lipidmaps
@@ -473,12 +479,6 @@
     rdfs:label "MeSH" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
-:Metabobank
-    a owl:Class ;
-    dcterms:identifier "metabobank" ;
-    rdfs:label "MetaboBank" ;
-    rdfs:subClassOf :Submission, :Dataset .
-
 :MgiAllele
     a owl:Class ;
     dcterms:identifier "mgi_allele" ;
@@ -521,9 +521,9 @@
     rdfs:label "NANDO" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
-:NbdcHumandb
+:NbdcHumanDb
     a owl:Class ;
-    dcterms:identifier "nbdc_humandb" ;
+    dcterms:identifier "nbdc_human_db" ;
     rdfs:label "NBDC Human Database" ;
     rdfs:subClassOf :Project, :Dataset .
 

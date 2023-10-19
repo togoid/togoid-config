@@ -298,15 +298,21 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#IupharLigand">
+    <dcterms:identifier>iuphar_ligand</dcterms:identifier>
+    <rdfs:label>IUPHAR ligand</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#JgaDataset">
     <dcterms:identifier>jga_dataset</dcterms:identifier>
-    <rdfs:label>JGA dataset</rdfs:label>
+    <rdfs:label>JGA Dataset</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#JgaStudy">
     <dcterms:identifier>jga_study</dcterms:identifier>
-    <rdfs:label>JGA study</rdfs:label>
+    <rdfs:label>JGA Study</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
   </owl:Class>
@@ -361,12 +367,6 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Metabobank">
-    <dcterms:identifier>metabobank</dcterms:identifier>
-    <rdfs:label>MetaboBank</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Submission"/>
-  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#MgiAllele">
     <dcterms:identifier>mgi_allele</dcterms:identifier>
     <rdfs:label>MGI allele</rdfs:label>
@@ -413,8 +413,8 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NbdcHumandb">
-    <dcterms:identifier>nbdc_humandb</dcterms:identifier>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NbdcHumanDb">
+    <dcterms:identifier>nbdc_human_db</dcterms:identifier>
     <rdfs:label>NBDC Human Database</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>

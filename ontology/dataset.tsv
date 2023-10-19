@@ -35,8 +35,9 @@ insdc	GenBank/ENA/DDBJ	Gene
 insdc_master	INSDC master	Project
 intact	IntAct	Interaction
 interpro	InterPro	Domain
-jga_dataset	JGA dataset	Project
-jga_study	JGA study	Project
+iuphar_ligand	IUPHAR ligand	Compound
+jga_dataset	JGA Dataset	Project
+jga_study	JGA Study	Project
 lipidmaps	LIPID MAPS	Lipid
 lrg	LRG	Gene
 mbgd_gene	MBGD gene	Gene
@@ -44,7 +45,6 @@ mbgd_organism	MBGD organism	Organism
 meddra	MedDRA	Phenotype
 medgen	MedGen	Phenotype
 mesh	MeSH	Phenotype
-metabobank	MetaboBank	Submission
 mgi_allele	MGI allele	Variant
 mgi_gene	MGI gene	Gene
 mgi_genotype	MGI genotype	Genotype
@@ -52,7 +52,7 @@ mirbase	miRBase	Transcript
 mondo	MONDO	Phenotype
 mp	Mammalian Phenotype Ontology	Phenotype
 nando	NANDO	Phenotype
-nbdc_humandb	NBDC Human Database	Project
+nbdc_human_db	NBDC Human Database	Project
 ncbigene	NCBI gene	Gene
 ncit_disease	NCIt disease	Phenotype
 ncit_tissue	NCIt tissue	Anatomy

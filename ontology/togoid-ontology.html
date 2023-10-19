@@ -227,6 +227,8 @@
 				tio:Interaction</option>
 <option value="Interpro">
 				tio:Interpro</option>
+<option value="IupharLigand">
+				tio:IupharLigand</option>
 <option value="JgaDataset">
 				tio:JgaDataset</option>
 <option value="JgaStudy">
@@ -249,8 +251,6 @@
 				tio:Medgen</option>
 <option value="Mesh">
 				tio:Mesh</option>
-<option value="Metabobank">
-				tio:Metabobank</option>
 <option value="MgiAllele">
 				tio:MgiAllele</option>
 <option value="MgiGene">
@@ -267,8 +267,8 @@
 				tio:Mp</option>
 <option value="Nando">
 				tio:Nando</option>
-<option value="NbdcHumandb">
-				tio:NbdcHumandb</option>
+<option value="NbdcHumanDb">
+				tio:NbdcHumanDb</option>
 <option value="Ncbigene">
 				tio:Ncbigene</option>
 <option value="NcitDisease">
@@ -2353,6 +2353,40 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#IupharLigand"></a><tbody>
+<tr><th id="IupharLigand">
+				tio:IupharLigand<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>iuphar_ligand</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>IUPHAR ligand</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Compound">
+				tio:Compound</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#JgaDataset"></a><tbody>
 <tr><th id="JgaDataset">
 				tio:JgaDataset<span class="cp-type">
@@ -2370,7 +2404,7 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>JGA dataset</td>
+<td>JGA Dataset</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -2404,7 +2438,7 @@
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>JGA study</td>
+<td>JGA Study</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -2711,40 +2745,6 @@
 </tbody>
 </table>
 <table class="subsection">
-<a name="http://togoid.dbcls.jp/ontology#Metabobank"></a><tbody>
-<tr><th id="Metabobank">
-				tio:Metabobank<span class="cp-type">
-								(rdf:type
-								<a href="http://www.w3.org/2002/07/owl#Class">
-					owl:Class</a>
-								)
-							</span>
-</th></tr>
-<tr>
-<td><a href="http://purl.org/dc/terms/identifier">
-                                        dcterms:identifier</a></td>
-<td>metabobank</td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
-					rdfs:label</a></td>
-<td>MetaboBank</td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
-				tio:Dataset</a></td>
-</tr>
-<tr>
-<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-					rdfs:subClassOf</a></td>
-<td><a href="http://togoid.dbcls.jp/ontology#Submission">
-				tio:Submission</a></td>
-</tr>
-</tbody>
-</table>
-<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#MgiAllele"></a><tbody>
 <tr><th id="MgiAllele">
 				tio:MgiAllele<span class="cp-type">
@@ -3006,9 +3006,9 @@
 </tbody>
 </table>
 <table class="subsection">
-<a name="http://togoid.dbcls.jp/ontology#NbdcHumandb"></a><tbody>
-<tr><th id="NbdcHumandb">
-				tio:NbdcHumandb<span class="cp-type">
+<a name="http://togoid.dbcls.jp/ontology#NbdcHumanDb"></a><tbody>
+<tr><th id="NbdcHumanDb">
+				tio:NbdcHumanDb<span class="cp-type">
 								(rdf:type
 								<a href="http://www.w3.org/2002/07/owl#Class">
 					owl:Class</a>
@@ -3018,7 +3018,7 @@
 <tr>
 <td><a href="http://purl.org/dc/terms/identifier">
                                         dcterms:identifier</a></td>
-<td>nbdc_humandb</td>
+<td>nbdc_human_db</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">

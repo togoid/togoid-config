@@ -139,7 +139,7 @@ doid:
 drugbank:
   label: DrugBank
   catalog: nbdc01071
-  category: Compound
+  category: Drug
   regex: '^(?<id>DB\d{5})$'
   prefix: 'http://identifiers.org/drugbank/'
   examples:
@@ -180,7 +180,7 @@ ensembl_transcript:
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
 flybase_gene:
-  label: FlyBase Gene
+  label: FlyBase gene
   catalog: nbdc00064
   category: Gene
   regex: '^(?<id>FBgn\d{7})$'
@@ -484,7 +484,7 @@ nando:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
     - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
 nbdc_human_db:
-  label: NBDC Human DB
+  label: NBDC Human Database
   catalog: nbdc01348
   category: Project
   regex: '^(?<id>hum\d{4})([.\-]v\d+)?$'
@@ -501,7 +501,7 @@ ncbigene:
   examples:
     - ["63962027","1046","63961921","102606930","100472895","407025","84148","88","31157","100463227"]
 ncit_disease:
-  label: NCIT disease
+  label: NCIt disease
   catalog: FIXME
   category: Phenotype
   regex: '^NCIT?[:_](?<id>C\d+)$'
@@ -513,7 +513,7 @@ ncit_disease:
     - ["NCI:C48829","NCI:C136825","NCI:C48613","NCI:C122795","NCI:C67107","NCI:C8417","NCI:C8936","NCI:C8644","NCI:C80331","NCI:C80342"]
     - ["NCI_C48829","NCI_C136825","NCI_C48613","NCI_C122795","NCI_C67107","NCI_C8417","NCI_C8936","NCI_C8644","NCI_C80331","NCI_C80342"]
 ncit_tissue:
-  label: NCIT tissue
+  label: NCIt tissue
   catalog: FIXME
   category: Anatomy
   regex: '^NCIT?[:_](?<id>C\d+)$'
