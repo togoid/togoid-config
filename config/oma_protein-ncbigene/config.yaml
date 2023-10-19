@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: twoTimesAYear
-  method: zcat $TOGOID_ROOT/input/oma_protein/oma-entrez.txt.gz | awk -F "\t" '/^[^#]/{split($2, a, "; "); for(k in a){print $1 "\t" a[k]}}'
+  method: zcat $TOGOID_ROOT/input/oma_protein/oma-entrez.txt.gz | awk -F "\t" '/^[^#]/&&$2~/^[0-9]+$/{split($2, a, "; "); for(k in a){print $1 "\t" a[k]}}'
