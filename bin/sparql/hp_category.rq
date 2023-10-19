@@ -1,0 +1,15 @@
+# @endpoint https://rdfportal.org/bioportal/sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT distinct ?id ?category_id
+FROM <http://rdf.integbio.jp/dataset/bioportal/hp>
+WHERE {
+  ?category rdfs:subClassOf obo:HP_0000001 ;
+            oboinowl:id ?category_id .
+
+  ?s rdfs:subClassOf+ ?category ;
+     oboinowl:id ?id .
+}

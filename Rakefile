@@ -600,6 +600,7 @@ namespace :prepare do
         download_file(INPUT_HP_PHENOTYPE_DIR, input_url)
         updated = true
       end
+      sh "bin/sparql_csv2tsv.sh bin/sparql/hp_category.rq https://rdfportal.org/bioportal/sparql > #{INPUT_HP_PHENOTYPE_DIR}/hp_category.tsv"
       updated
     end
   end
