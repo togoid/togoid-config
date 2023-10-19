@@ -192,6 +192,11 @@
     rdfs:label "Annotation rule" ;
     rdfs:subClassOf :Category .
 
+:Genotype
+    a owl:Class ;
+    rdfs:label "Genotype" ;
+    rdfs:subClassOf :Category .
+
 :AffyProbeset
     a owl:Class ;
     dcterms:identifier "affy_probeset" ;
@@ -474,11 +479,23 @@
     rdfs:label "MetaboBank" ;
     rdfs:subClassOf :Submission, :Dataset .
 
-:Mgi
+:MgiAllele
     a owl:Class ;
-    dcterms:identifier "mgi" ;
-    rdfs:label "MGI" ;
+    dcterms:identifier "mgi_allele" ;
+    rdfs:label "MGI allele" ;
+    rdfs:subClassOf :Variant, :Dataset .
+
+:MgiGene
+    a owl:Class ;
+    dcterms:identifier "mgi_gene" ;
+    rdfs:label "MGI gene" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:MgiGenotype
+    a owl:Class ;
+    dcterms:identifier "mgi_genotype" ;
+    rdfs:label "MGI genotype" ;
+    rdfs:subClassOf :Genotype, :Dataset .
 
 :Mirbase
     a owl:Class ;
@@ -490,6 +507,12 @@
     a owl:Class ;
     dcterms:identifier "mondo" ;
     rdfs:label "MONDO" ;
+    rdfs:subClassOf :Phenotype, :Dataset .
+
+:Mp
+    a owl:Class ;
+    dcterms:identifier "mp" ;
+    rdfs:label "Mammalian Phenotype Ontology" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
 :Nando
@@ -1700,4 +1723,20 @@
     owl:inverseOf :TIO_000114 ;
     rdfs:label "is annotation rule of" ;
     :display_label "is annotation rule of" .
+
+:TIO_000116
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Genotype ;
+    rdfs:range :Variant ;
+    owl:inverseOf :TIO_000117 ;
+    rdfs:label "genotype is composed of allele" ;
+    :display_label "is composed of allele" .
+
+:TIO_000117
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Variant ;
+    rdfs:range :Genotype ;
+    owl:inverseOf :TIO_000116 ;
+    rdfs:label "allele composes genotype" ;
+    :display_label "composes genotype" .
 

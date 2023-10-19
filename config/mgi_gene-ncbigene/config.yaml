@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000001
+  reverse: TIO_000001
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" 'FNR>=2&&$6!="null"{print gensub(/^MGI:/, "", "g", $1) "\t" $6}' $TOGOID_ROOT/input/mgi_gene/MGI_Gene_Model_Coord.rpt

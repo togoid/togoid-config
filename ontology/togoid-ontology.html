@@ -116,7 +116,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    135
+                                    139
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -193,6 +193,8 @@
 				tio:Gene</option>
 <option value="Genome">
 				tio:Genome</option>
+<option value="Genotype">
+				tio:Genotype</option>
 <option value="GeoSeries">
 				tio:GeoSeries</option>
 <option value="Glycan">
@@ -249,14 +251,20 @@
 				tio:Mesh</option>
 <option value="Metabobank">
 				tio:Metabobank</option>
-<option value="Mgi">
-				tio:Mgi</option>
+<option value="MgiAllele">
+				tio:MgiAllele</option>
+<option value="MgiGene">
+				tio:MgiGene</option>
+<option value="MgiGenotype">
+				tio:MgiGenotype</option>
 <option value="Mirbase">
 				tio:Mirbase</option>
 <option value="Molecule">
 				tio:Molecule</option>
 <option value="Mondo">
 				tio:Mondo</option>
+<option value="Mp">
+				tio:Mp</option>
 <option value="Nando">
 				tio:Nando</option>
 <option value="NbdcHumandb">
@@ -416,7 +424,7 @@
 <tr>
 <td><a style="subPropertySearch" href="#SubProperties">
                                     Sub properties (
-                                    115
+                                    117
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value" id="navi5"><option value="TIO_000001">
@@ -648,7 +656,11 @@
 <option value="TIO_000114">
 				tio:TIO_000114</option>
 <option value="TIO_000115">
-				tio:TIO_000115</option></select></td>
+				tio:TIO_000115</option>
+<option value="TIO_000116">
+				tio:TIO_000116</option>
+<option value="TIO_000117">
+				tio:TIO_000117</option></select></td>
 </tr>
 <tr>
 <td><a href="#InstanceData">
@@ -1784,6 +1796,29 @@
 </tbody>
 </table>
 <table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Genotype"></a><tbody>
+<tr><th id="Genotype">
+				tio:Genotype<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Genotype</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Category">
+				tio:Category</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
 <a name="http://togoid.dbcls.jp/ontology#GeoSeries"></a><tbody>
 <tr><th id="GeoSeries">
 				tio:GeoSeries<span class="cp-type">
@@ -2710,9 +2745,9 @@
 </tbody>
 </table>
 <table class="subsection">
-<a name="http://togoid.dbcls.jp/ontology#Mgi"></a><tbody>
-<tr><th id="Mgi">
-				tio:Mgi<span class="cp-type">
+<a name="http://togoid.dbcls.jp/ontology#MgiAllele"></a><tbody>
+<tr><th id="MgiAllele">
+				tio:MgiAllele<span class="cp-type">
 								(rdf:type
 								<a href="http://www.w3.org/2002/07/owl#Class">
 					owl:Class</a>
@@ -2722,12 +2757,46 @@
 <tr>
 <td><a href="http://purl.org/dc/terms/identifier">
                                         dcterms:identifier</a></td>
-<td>mgi</td>
+<td>mgi_allele</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
-<td>MGI</td>
+<td>MGI allele</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Variant">
+				tio:Variant</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#MgiGene"></a><tbody>
+<tr><th id="MgiGene">
+				tio:MgiGene<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>mgi_gene</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>MGI gene</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -2740,6 +2809,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Gene">
 				tio:Gene</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#MgiGenotype"></a><tbody>
+<tr><th id="MgiGenotype">
+				tio:MgiGenotype<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>mgi_genotype</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>MGI genotype</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genotype">
+				tio:Genotype</a></td>
 </tr>
 </tbody>
 </table>
@@ -2819,6 +2922,40 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>MONDO</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Phenotype">
+				tio:Phenotype</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#Mp"></a><tbody>
+<tr><th id="Mp">
+				tio:Mp<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>mp</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>Mammalian Phenotype Ontology</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -10228,6 +10365,98 @@
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#TIO_000114">
 				tio:TIO_000114</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000116"></a><tbody>
+<tr><th id="TIO_000116">
+				tio:TIO_000116<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is composed of allele</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genotype">
+				tio:Genotype</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>genotype is composed of allele</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Variant">
+				tio:Variant</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000117">
+				tio:TIO_000117</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000117"></a><tbody>
+<tr><th id="TIO_000117">
+				tio:TIO_000117<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>composes genotype</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Variant">
+				tio:Variant</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>allele composes genotype</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Genotype">
+				tio:Genotype</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000116">
+				tio:TIO_000116</a></td>
 </tr>
 </tbody>
 </table>

@@ -470,8 +470,19 @@ mesh:
   prefix: 'http://id.nlm.nih.gov/mesh/'
   examples:
     - ["D002065","C562829","C566582","D010623","D003327","D001715","D000453","D010260","C537322","C563418"]
-mgi:
-  label: MGI
+mgi_allele:
+  label: MGI allele
+  catalog: nbdc00135
+  category: Variant
+  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
+  prefix: 'http://identifiers.org/mgi/MGI:'
+  format: ["MGI:%s","mgi:%s"]
+  examples:
+    - ["MGI:1857242","MGI:1857411","MGI:1857502","MGI:1857508","MGI:1857422","MGI:1857421","MGI:1857473","MGI:1856155","MGI:1857491","MGI:1857496"]
+    - ["mgi:1857242","mgi:1857411","mgi:1857502","mgi:1857508","mgi:1857422","mgi:1857421","mgi:1857473","mgi:1856155","mgi:1857491","mgi:1857496"]
+  method: awk -F "\t" '/^[^#]/{print gensub(/^MGI:/, "", "g", $1) "\t" $2}' $TOGOID_ROOT/input/mgi_gene/MGI_PhenotypicAllele.rpt
+mgi_gene:
+  label: MGI gene
   catalog: nbdc00135
   category: Gene
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
@@ -480,6 +491,17 @@ mgi:
   examples:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
     - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
+  method: awk -F "\t" 'FNR>=2{print gensub(/^MGI:/, "", "g", $1) "\t" $7}' $TOGOID_ROOT/input/mgi_gene/MRK_List2.rpt
+mgi_genotype:
+  label: MGI genotype
+  catalog: nbdc00135
+  category: Genotype
+  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
+  prefix: 'http://identifiers.org/mgi/MGI:'
+  format: ["MGI:%s","mgi:%s"]
+  examples:
+    - ["MGI:2166359","MGI:2166381","MGI:2166442","MGI:2166483","MGI:2166498","MGI:2166566","MGI:2166570","MGI:2166662","MGI:2166806","MGI:2166814"]
+    - ["mgi:2166359","mgi:2166381","mgi:2166442","mgi:2166483","mgi:2166498","mgi:2166566","mgi:2166570","mgi:2166662","mgi:2166806","mgi:2166814"]
 mirbase:
   label: miRBase
   catalog: nbdc00136
@@ -498,6 +520,15 @@ mondo:
   examples:
     - ["MONDO:0000115","MONDO:0002345","MONDO:0011571","MONDO:0020035","MONDO:0020920","MONDO:0004627","MONDO:0005480","MONDO:0010852","MONDO:0002053","MONDO:0015758"]
     - ["MONDO_0000115","MONDO_0002345","MONDO_0011571","MONDO_0020035","MONDO_0020920","MONDO_0004627","MONDO_0005480","MONDO_0010852","MONDO_0002053","MONDO_0015758"]
+mp:
+  label: Mammalian Phenotype Ontology
+  catalog: FIXME
+  category: Phenotype
+  regex: '^MP[:_](?<id>\d{7})$'
+  prefix: 'http://identifiers.org/mp/MP:'
+  examples:
+    - ["MP:0000600","MP:0001716","MP:0001698","MP:0001092","MP:0000961","MP:0000245","MP:0000828","MP:0000826","MP:0005039","MP:0002840"]
+    - ["MP_0000600","MP_0001716","MP_0001698","MP_0001092","MP_0000961","MP_0000245","MP_0000828","MP_0000826","MP_0005039","MP_0002840"]
 nando:
   label: NANDO
   catalog: nbdc02557
