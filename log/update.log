@@ -1,12 +1,12 @@
-*** Started: 2023-10-20T17:00:15 ***
+*** Started: 2023-10-20T17:41:52 ***
 
 ## Prepare input files for Bioproject
 # Checking lock file input/bioproject/download.lock for download
-# Local file time:  2023-10-12 20:58:31 +0900 (input/bioproject/bioproject.xml)
+# Local file time:  2023-10-19 21:09:00 +0900 (input/bioproject/bioproject.xml)
 # Remote file time: 2023-10-19 12:09:00 +0000 (https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml)
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/bioproject https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml
-python bin/bioproject_xml2tsv.py input/bioproject/bioproject.xml > input/bioproject/bioproject.tsv
-# Overwriting timestamp of the input/bioproject/download.lock
+# Local file size:  2501610242 (input/bioproject/bioproject.xml)
+# Remote file size: 2501610242 (https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml)
+# Preserving timestamp of the input/bioproject/download.lock
 ## Prepare input files for Cellosaurus
 # Checking lock file input/cellosaurus/download.lock for download
 # Local file time:  2023-10-05 17:17:42 +0900 (input/cellosaurus/cellosaurus.txt)
@@ -16,9 +16,8 @@ python bin/bioproject_xml2tsv.py input/bioproject/bioproject.xml > input/bioproj
 # Preserving timestamp of the input/cellosaurus/download.lock
 ## Prepare input files for Ensembl
 # Checking lock file input/ensembl/download.lock for download
-# File input/ensembl/taxonomy.txt is created 6.999943906417025 days ago (will be updated when >5 days)
-sparql_csv2tsv.sh input/ensembl/taxonomy.rq https://rdfportal.org/ebi/sparql > input/ensembl/taxonomy.txt
-# Overwriting timestamp of the input/ensembl/download.lock
+# File input/ensembl/taxonomy.txt is created 0.025341068674247687 days ago (will be updated when >5 days)
+# Preserving timestamp of the input/ensembl/download.lock
 ## Prepare input files for HMDB
 # Checking lock file input/hmdb/download.lock for download
 # Local file time:  2021-11-18 04:54:48 +0900 (input/hmdb/hmdb_metabolites.zip)
@@ -73,30 +72,78 @@ bin/sparql_csv2tsv.sh bin/sparql/hp_category.rq https://rdfportal.org/bioportal/
 # Preserving timestamp of the input/interpro/download.lock
 ## Prepare input files for MGI_GENE
 # Checking lock file input/mgi_gene/download.lock for download
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/mgi_gene https://www.informatics.jax.org/downloads/reports/MRK_List2.rpt
-mkdir -p input/mgi_gene
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/mgi_gene https://www.informatics.jax.org/downloads/reports/MGI_Gene_Model_Coord.rpt
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/mgi_gene https://www.informatics.jax.org/downloads/reports/MRK_SwissProt_TrEMBL.rpt
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/mgi_gene https://www.informatics.jax.org/downloads/reports/HGNC_AllianceHomology.rpt
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/mgi_gene https://www.informatics.jax.org/downloads/reports/MGI_PhenotypicAllele.rpt
-# Overwriting timestamp of the input/mgi_gene/download.lock
+# Local file time:  2023-10-16 21:11:25 +0900 (input/mgi_gene/MRK_List2.rpt)
+# Remote file time: 2023-10-16 12:11:25 +0000 (https://www.informatics.jax.org/downloads/reports/MRK_List2.rpt)
+# Local file size:  83320977 (input/mgi_gene/MRK_List2.rpt)
+# Remote file size: 83320977 (https://www.informatics.jax.org/downloads/reports/MRK_List2.rpt)
+# Local file time:  2023-10-16 21:06:00 +0900 (input/mgi_gene/MGI_Gene_Model_Coord.rpt)
+# Remote file time: 2023-10-16 12:06:00 +0000 (https://www.informatics.jax.org/downloads/reports/MGI_Gene_Model_Coord.rpt)
+# Local file size:  9323706 (input/mgi_gene/MGI_Gene_Model_Coord.rpt)
+# Remote file size: 9323706 (https://www.informatics.jax.org/downloads/reports/MGI_Gene_Model_Coord.rpt)
+# Local file time:  2023-10-16 21:11:44 +0900 (input/mgi_gene/MRK_SwissProt_TrEMBL.rpt)
+# Remote file time: 2023-10-16 12:11:44 +0000 (https://www.informatics.jax.org/downloads/reports/MRK_SwissProt_TrEMBL.rpt)
+# Local file size:  2119831 (input/mgi_gene/MRK_SwissProt_TrEMBL.rpt)
+# Remote file size: 2119831 (https://www.informatics.jax.org/downloads/reports/MRK_SwissProt_TrEMBL.rpt)
+# Local file time:  2023-10-16 21:04:15 +0900 (input/mgi_gene/HGNC_AllianceHomology.rpt)
+# Remote file time: 2023-10-16 12:04:15 +0000 (https://www.informatics.jax.org/downloads/reports/HGNC_AllianceHomology.rpt)
+# Local file size:  11343147 (input/mgi_gene/HGNC_AllianceHomology.rpt)
+# Remote file size: 11343147 (https://www.informatics.jax.org/downloads/reports/HGNC_AllianceHomology.rpt)
+# Local file time:  2023-10-16 21:09:58 +0900 (input/mgi_gene/MGI_PhenotypicAllele.rpt)
+# Remote file time: 2023-10-16 12:09:58 +0000 (https://www.informatics.jax.org/downloads/reports/MGI_PhenotypicAllele.rpt)
+# Local file size:  22862696 (input/mgi_gene/MGI_PhenotypicAllele.rpt)
+# Remote file size: 22862696 (https://www.informatics.jax.org/downloads/reports/MGI_PhenotypicAllele.rpt)
+# Preserving timestamp of the input/mgi_gene/download.lock
 ## Prepare input files for MGI_GENOTYPE
 # Checking lock file input/mgi_genotype/download.lock for download
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/mgi_genotype https://www.informatics.jax.org/downloads/reports/MGI_DiseaseGeneModel.rpt
-mkdir -p input/mgi_genotype
-python bin/query_mousemine.py > input/mgi_genotype/mousemine_genotype.tsv
-Traceback (most recent call last):
-  File "/data/togoid/git/togoid-config/bin/query_mousemine.py", line 1, in <module>
-    from intermine.webservice import Service
-  File "/data/togoid/local/lib/python3.9/site-packages/intermine/webservice.py", line 6, in <module>
-    import requests
-ModuleNotFoundError: No module named 'requests'
+# Local file time:  2023-10-16 21:05:32 +0900 (input/mgi_genotype/MGI_DiseaseGeneModel.rpt)
+# Remote file time: 2023-10-16 12:05:32 +0000 (https://www.informatics.jax.org/downloads/reports/MGI_DiseaseGeneModel.rpt)
+# Local file size:  10736835 (input/mgi_genotype/MGI_DiseaseGeneModel.rpt)
+# Remote file size: 10736835 (https://www.informatics.jax.org/downloads/reports/MGI_DiseaseGeneModel.rpt)
+# Preserving timestamp of the input/mgi_genotype/download.lock
+## Prepare input files for NCBI Gene
+# Checking lock file input/ncbigene/download.lock for download
+# Local file time:  2023-10-13 13:06:22 +0900 (input/ncbigene/gene2refseq.gz)
+# Remote file time: 2023-10-20 04:05:10 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz
+gzip -dc input/ncbigene/gene2refseq.gz > input/ncbigene/gene2refseq
+# Local file time:  2023-10-13 13:03:59 +0900 (input/ncbigene/gene2ensembl.gz)
+# Remote file time: 2023-10-20 04:02:51 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz
+gzip -dc input/ncbigene/gene2ensembl.gz > input/ncbigene/gene2ensembl
+# Local file time:  2023-10-13 13:04:02 +0900 (input/ncbigene/gene2go.gz)
+# Remote file time: 2023-10-20 04:02:54 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz
+gzip -dc input/ncbigene/gene2go.gz > input/ncbigene/gene2go
+# Local file time:  2023-10-13 13:12:30 +0900 (input/ncbigene/Homo_sapiens.gene_info.gz)
+# Remote file time: 2023-10-20 04:10:54 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz
+gzip -dc input/ncbigene/Homo_sapiens.gene_info.gz > input/ncbigene/Homo_sapiens.gene_info
+# Local file time:  2023-10-13 13:07:55 +0900 (input/ncbigene/gene_info.gz)
+# Remote file time: 2023-10-20 04:06:43 +0000 (https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/ncbigene https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz
+gzip -dc input/ncbigene/gene_info.gz > input/ncbigene/gene_info
+# Overwriting timestamp of the input/ncbigene/download.lock
+## Prepare input files for OMA protein
+# Checking lock file input/oma_protein/download.lock for download
+# Local file time:  2022-11-05 22:16:44 +0900 (input/oma_protein/oma-entrez.txt.gz)
+# Remote file time: 2023-07-03 12:50:08 +0000 (https://omabrowser.org/All/oma-entrez.txt.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/oma_protein https://omabrowser.org/All/oma-entrez.txt.gz
+# Local file time:  2022-11-05 16:05:59 +0900 (input/oma_protein/oma-species.txt)
+# Remote file time: 2023-08-22 08:17:18 +0000 (https://omabrowser.org/All/oma-species.txt)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/oma_protein https://omabrowser.org/All/oma-species.txt
+# Local file time:  2022-11-05 22:16:36 +0900 (input/oma_protein/oma-uniprot.txt.gz)
+# Remote file time: 2023-07-03 12:49:58 +0000 (https://omabrowser.org/All/oma-uniprot.txt.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/oma_protein https://omabrowser.org/All/oma-uniprot.txt.gz
 rake aborted!
-Command failed with status (1): [python bin/query_mousemine.py > input/mgi_...]
-/data/togoid/git/togoid-config/Rakefile:703:in `block (3 levels) in <top (required)>'
+NameError: uninitialized constant INPUT_OMA_DIR
+Did you mean?  INPUT_SRA_DIR
+               INPUT_COG_DIR
+               INPUT_RHEA_DIR
+               INPUT_HMDB_DIR
+/data/togoid/git/togoid-config/Rakefile:774:in `block (3 levels) in <top (required)>'
 /data/togoid/git/togoid-config/Rakefile:382:in `block in download_lock'
 /data/togoid/git/togoid-config/Rakefile:379:in `open'
 /data/togoid/git/togoid-config/Rakefile:379:in `download_lock'
-/data/togoid/git/togoid-config/Rakefile:691:in `block (2 levels) in <top (required)>'
-Tasks: TOP => default => prepare:all => prepare:mgi_genotype
+/data/togoid/git/togoid-config/Rakefile:760:in `block (2 levels) in <top (required)>'
+Tasks: TOP => default => prepare:all => prepare:oma_protein
 (See full trace by running task with --trace)
