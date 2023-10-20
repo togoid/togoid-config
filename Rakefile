@@ -771,7 +771,7 @@ namespace :prepare do
         end
       end
       if updated
-        sh "awk -F \"\t\" '$4==\"Ensembl\" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!=\"YEAST\"{print $2}' #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{INPUT_OMA_DIR}/taxonomy.txt"
+        sh "awk -F \"\t\" '$4==\"Ensembl\" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!=\"YEAST\"{print $2}' #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{INPUT_OMA_PROTEIN_DIR}/taxonomy.txt"
       end
       updated
     end
