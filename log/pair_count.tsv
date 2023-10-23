@@ -56,7 +56,6 @@ hgnc-hgnc_symbol.tsv	42910
 hgnc-insdc.tsv	21188
 hgnc-lrg.tsv	1325
 hgnc-mgi_gene.tsv	21739
-hgnc-mgi.tsv	21739
 hgnc-mirbase.tsv	1912
 hgnc-ncbigene.tsv	42861
 hgnc-omim_gene.tsv	16562
@@ -104,9 +103,9 @@ mgi_gene-hgnc.tsv	24607
 mgi_gene-mgi_allele.tsv	100105
 mgi_gene-ncbigene.tsv	55043
 mgi_gene-uniprot.tsv	79656
-mgi_genotype-doid.tsv	0
-mgi_genotype-mgi_allele.tsv	0
-mgi_genotype-mp.tsv	0
+mgi_genotype-doid.tsv	7711
+mgi_genotype-mgi_allele.tsv	122136
+mgi_genotype-mp.tsv	391037
 mondo-doid.tsv	10712
 mondo-hp_phenotype.tsv	574
 mondo-meddra.tsv	1486
@@ -121,7 +120,6 @@ ncbigene-flybase_gene.tsv	25107
 ncbigene-go.tsv	2938755
 ncbigene-hgnc.tsv	43703
 ncbigene-mgi_gene.tsv	71696
-ncbigene-mgi.tsv	71704
 ncbigene-mirbase.tsv	17541
 ncbigene-omim_gene.tsv	18342
 ncbigene-refseq_genomic.tsv	211615
@@ -251,4 +249,4 @@ wikipathways-hmdb.tsv	4003
 wikipathways-lipidmaps.tsv	1352
 wikipathways-ncbigene.tsv	30100
 wikipathways-uniprot.tsv	33205
-total	4528377533
+total	4528804974
