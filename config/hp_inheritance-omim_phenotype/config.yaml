@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Irregular
-  method: sparql_csv2tsv.sh query.rq https://integbio.jp/rdf/sparql
+  method: awk -F "\t" 'FNR==NR&&$2=="HP:0000005"{a[$1]=1}FNR!=NR&&a[$4]&&$1~/^OMIM:/{print gensub(/^HP:/,"","g",$4) "\t" gensub(/^OMIM:/,"","g",$1)}' $TOGOID_ROOT/input/hp_phenotype/hp_category.tsv $TOGOID_ROOT/input/hp_phenotype/phenotype.hpoa | sort -u

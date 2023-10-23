@@ -107,13 +107,6 @@ chembl_target:
   prefix: 'http://identifiers.org/chembl.target/'
   examples:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
-civic_gene:
-  label: CIVIC gene
-  catalog: nbdc02558
-  category: Gene
-  # FIXME: valid in RDF?
-  regex: '^(?<id>\d+)$'
-  prefix: 'http://civic.genome.wustl.edu/links/genes/'
 clinvar:
   label: ClinVar variant
   catalog: nbdc01514
@@ -132,12 +125,6 @@ dbsnp:
   prefix: 'http://identifiers.org/dbsnp/'
   examples:
     - ["rs746303788","rs1407020249","rs374003162","rs4647297","rs549539526","rs1387864740","rs1177577242","rs769848663","rs16961655","rs79135400"]
-dgidb:
-  label: DGIdb
-  catalog: nbdc02562
-  category: Interaction
-  regex: '^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-  prefix: FIXME
 doid:
   label: Disease ontology
   catalog: nbdc00261
@@ -152,7 +139,7 @@ doid:
 drugbank:
   label: DrugBank
   catalog: nbdc01071
-  category: Compound
+  category: Drug
   regex: '^(?<id>DB\d{5})$'
   prefix: 'http://identifiers.org/drugbank/'
   examples:
@@ -193,13 +180,14 @@ ensembl_transcript:
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
 flybase_gene:
-  label: FlyBase Gene
+  label: FlyBase gene
   catalog: nbdc00064
   category: Gene
   regex: '^(?<id>FBgn\d{7})$'
   prefix: 'http://identifiers.org/fb/'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
+  method: awk -F '\t' -v 'db=FLYBASE' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 gea:
   label: GEA
   catalog: FIXME
@@ -366,49 +354,6 @@ iuphar_ligand:
   prefix: 'http://identifiers.org/iuphar.ligand/'
   examples:
     - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
-kegg_compound:
-  label: KEGG Compound
-  catalog: nbdc00814
-  category: Compound
-  regex: '^(?<id>C\d+)$'
-  prefix: 'http://identifiers.org/kegg.compound/'
-kegg_disease:
-  catalog: nbdc00813
-  category: Phenotype
-  label: KEGG Disease
-  regex: '^KEGG:H(?<id>\d+)$'
-  prefix: 'http://identifiers.org/kegg.disease/'
-kegg_drug:
-  label: KEGG Drug
-  catalog: nbdc00812
-  category: Drug
-  regex: '^(?<id>D\d+)$'
-  prefix: 'http://identifiers.org/kegg.drug/'
-kegg_genes:
-  label: KEGG Genes
-  catalog: nbdc00532
-  # FIXME: leave two categories as is?
-  category: Gene, Protein
-  regex: '^\w+:[\w\d\.-]*$'
-  prefix: 'http://identifiers.org/kegg.genes/'
-kegg_orthology:  # FIXME: ko?
-  label: KEGG Orthology
-  catalog: nbdc00817
-  category: Ortholog
-  regex: '^(?<id>K\d+)$'
-  prefix: 'http://identifiers.org/kegg.orthology/'
-kegg_pathway:
-  label: KEGG Pathway
-  catalog: nbdc00118
-  category: Pathway
-  regex: '^(?<id>\w{2,4}\d{5})$'
-  prefix: 'http://identifiers.org/kegg.pathway/'
-kegg_reaction:
-  label: KEGG Reaction
-  catalog: nbdc00818
-  category: Interaction
-  regex: '^(?<id>R\d+)$'
-  prefix: 'http://identifiers.org/kegg.reaction/'
 lipidmaps:
   label: LIPID MAPS
   catalog: FIXME
@@ -470,8 +415,19 @@ mesh:
   prefix: 'http://id.nlm.nih.gov/mesh/'
   examples:
     - ["D002065","C562829","C566582","D010623","D003327","D001715","D000453","D010260","C537322","C563418"]
-mgi:
-  label: MGI
+mgi_allele:
+  label: MGI allele
+  catalog: nbdc00135
+  category: Variant
+  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
+  prefix: 'http://identifiers.org/mgi/MGI:'
+  format: ["MGI:%s","mgi:%s"]
+  examples:
+    - ["MGI:1857242","MGI:1857411","MGI:1857502","MGI:1857508","MGI:1857422","MGI:1857421","MGI:1857473","MGI:1856155","MGI:1857491","MGI:1857496"]
+    - ["mgi:1857242","mgi:1857411","mgi:1857502","mgi:1857508","mgi:1857422","mgi:1857421","mgi:1857473","mgi:1856155","mgi:1857491","mgi:1857496"]
+  method: awk -F "\t" '/^[^#]/{print gensub(/^MGI:/, "", "g", $1) "\t" $2}' $TOGOID_ROOT/input/mgi_gene/MGI_PhenotypicAllele.rpt
+mgi_gene:
+  label: MGI gene
   catalog: nbdc00135
   category: Gene
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
@@ -480,6 +436,18 @@ mgi:
   examples:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
     - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
+  method: awk -F "\t" 'FNR>=2{print gensub(/^MGI:/, "", "g", $1) "\t" $7}' $TOGOID_ROOT/input/mgi_gene/MRK_List2.rpt
+mgi_genotype:
+  label: MGI genotype
+  catalog: nbdc00135
+  category: Genotype
+  regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
+  prefix: 'http://identifiers.org/mgi/MGI:'
+  format: ["MGI:%s","mgi:%s"]
+  examples:
+    - ["MGI:2166359","MGI:2166381","MGI:2166442","MGI:2166483","MGI:2166498","MGI:2166566","MGI:2166570","MGI:2166662","MGI:2166806","MGI:2166814"]
+    - ["mgi:2166359","mgi:2166381","mgi:2166442","mgi:2166483","mgi:2166498","mgi:2166566","mgi:2166570","mgi:2166662","mgi:2166806","mgi:2166814"]
+  method: awk -F "\t" '{print gensub(/^MGI:/,"","g",$1) "\t" $2}' $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv
 mirbase:
   label: miRBase
   catalog: nbdc00136
@@ -488,6 +456,7 @@ mirbase:
   prefix: 'http://identifiers.org/mirbase/'
   examples:
     - ["MI0003587","MI0000252","MI0000811","MI0014201","MI0003578","MI0000293","MI0006384","MI0006361","MI0000480","MI0006419"]
+  method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^miRBase:/)print gensub(/^.*:/,"","g",a[i]) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 mondo:
   label: MONDO
   catalog: nbdc02563
@@ -498,6 +467,15 @@ mondo:
   examples:
     - ["MONDO:0000115","MONDO:0002345","MONDO:0011571","MONDO:0020035","MONDO:0020920","MONDO:0004627","MONDO:0005480","MONDO:0010852","MONDO:0002053","MONDO:0015758"]
     - ["MONDO_0000115","MONDO_0002345","MONDO_0011571","MONDO_0020035","MONDO_0020920","MONDO_0004627","MONDO_0005480","MONDO_0010852","MONDO_0002053","MONDO_0015758"]
+mp:
+  label: Mammalian Phenotype Ontology
+  catalog: FIXME
+  category: Phenotype
+  regex: '^MP[:_](?<id>\d{7})$'
+  prefix: 'http://identifiers.org/mp/MP:'
+  examples:
+    - ["MP:0000600","MP:0001716","MP:0001698","MP:0001092","MP:0000961","MP:0000245","MP:0000828","MP:0000826","MP:0005039","MP:0002840"]
+    - ["MP_0000600","MP_0001716","MP_0001698","MP_0001092","MP_0000961","MP_0000245","MP_0000828","MP_0000826","MP_0005039","MP_0002840"]
 nando:
   label: NANDO
   catalog: nbdc02557
@@ -509,7 +487,7 @@ nando:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
     - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
 nbdc_human_db:
-  label: NBDC Human DB
+  label: NBDC Human Database
   catalog: nbdc01348
   category: Project
   regex: '^(?<id>hum\d{4})([.\-]v\d+)?$'
@@ -525,14 +503,8 @@ ncbigene:
   prefix: 'http://identifiers.org/ncbigene/'
   examples:
     - ["63962027","1046","63961921","102606930","100472895","407025","84148","88","31157","100463227"]
-ncbiprotein:
-  label: NCBI protein
-  catalog: nbdc00584
-  category: Protein
-  regex: '^(?:(?:\w+\d+(?:\.\d+)?)|(?:NP_\d+))$'
-  prefix: 'http://identifiers.org/ncbiprotein/'
 ncit_disease:
-  label: NCIT disease
+  label: NCIt disease
   catalog: FIXME
   category: Phenotype
   regex: '^NCIT?[:_](?<id>C\d+)$'
@@ -544,7 +516,7 @@ ncit_disease:
     - ["NCI:C48829","NCI:C136825","NCI:C48613","NCI:C122795","NCI:C67107","NCI:C8417","NCI:C8936","NCI:C8644","NCI:C80331","NCI:C80342"]
     - ["NCI_C48829","NCI_C136825","NCI_C48613","NCI_C122795","NCI_C67107","NCI_C8417","NCI_C8936","NCI_C8644","NCI_C80331","NCI_C80342"]
 ncit_tissue:
-  label: NCIT tissue
+  label: NCIt tissue
   catalog: FIXME
   category: Anatomy
   regex: '^NCIT?[:_](?<id>C\d+)$'
@@ -768,6 +740,7 @@ rgd:
     - ["1308312","1311120","1309724","1565514","7683241","1307957","71036","1307876","1308965","1305482"]
     - ["RGD:1308312","RGD:1311120","RGD:1309724","RGD:1565514","RGD:7683241","RGD:1307957","RGD:71036","RGD:1307876","RGD:1308965","RGD:1305482"]
     - ["rgd:1308312","rgd:1311120","rgd:1309724","rgd:1565514","rgd:7683241","rgd:1307957","rgd:71036","rgd:1307876","rgd:1308965","rgd:1305482"]
+  method: awk -F '\t' '$6~/RGD:/{split($6,a,"|");for(k in a){if(a[k]~/^RGD:/)print substr(a[k],5) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 rhea:
   label: Rhea
   catalog: nbdc02083
@@ -784,6 +757,7 @@ sgd:
   prefix: 'http://identifiers.org/sgd/'
   examples:
     - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
+  method: awk -F '\t' -v 'db=SGD' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 smart:
   label: SMART
   catalog: nbdc00682
@@ -858,6 +832,7 @@ tair:
   prefix: 'http://identifiers.org/tair.name/'
   examples:
     - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
+  method: awk -F '\t' -v 'db=TAIR' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 taxonomy:
   label: Taxonomy
   catalog: nbdc00700
@@ -909,6 +884,7 @@ uniprot_reference_proteome:
   prefix: 'http://purl.uniprot.org/proteomes/'
   examples:
     - ["UP000005640","UP000002311","UP000005640","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
+  method: zcat $TOGOID_ROOT/input/uniprot/uniprot_reference_proteome.tab.gz | awk -F "\t" 'FNR>=2{print $1 "\t" $4}'
 vgnc:
   label: VGNC
   catalog: nbdc02624
@@ -920,6 +896,7 @@ vgnc:
     - ["39230","49608","85188","76040","72808","73601","9436","78821","74596","5304"]
     - ["VGNC:39230","VGNC:49608","VGNC:85188","VGNC:76040","VGNC:72808","VGNC:73601","VGNC:9436","VGNC:78821","VGNC:74596","VGNC:5304"]
     - ["vgnc:39230","vgnc:49608","vgnc:85188","vgnc:76040","vgnc:72808","vgnc:73601","vgnc:9436","vgnc:78821","vgnc:74596","vgnc:5304"]
+  method: awk -F '\t' -v 'db=VGNC:VGNC' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 wikipathways:
   label: WikiPathways
   catalog: nbdc02116
@@ -937,6 +914,7 @@ wormbase_gene:
   prefix: 'http://identifiers.org/wb/'
   examples:
     - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
+  method: awk -F '\t' -v 'db=WormBase' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 xenbase_gene:
   label: Xenbase gene
   catalog: nbdc01892
@@ -945,6 +923,7 @@ xenbase_gene:
   prefix: 'http://identifiers.org/xenbase/'
   examples:
     - ["XB-GENE-877040","XB-GENE-22060981","XB-GENE-17344257","XB-GENE-487684","XB-GENE-1014349","XB-GENE-17335133","XB-GENE-1012537","XB-GENE-494019","XB-GENE-5952945","XB-GENE-957742"]
+  method: awk -F '\t' -v 'db=Xenbase' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 zfin_gene:
   label: ZFIN gene
   catalog: nbdc00746
@@ -953,3 +932,4 @@ zfin_gene:
   prefix: 'http://identifiers.org/zfin/'
   examples:
     - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
+  method: awk -F '\t' -v 'db=ZFIN' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info

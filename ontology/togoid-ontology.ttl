@@ -192,6 +192,11 @@
     rdfs:label "Annotation rule" ;
     rdfs:subClassOf :Category .
 
+:Genotype
+    a owl:Class ;
+    rdfs:label "Genotype" ;
+    rdfs:subClassOf :Category .
+
 :AffyProbeset
     a owl:Class ;
     dcterms:identifier "affy_probeset" ;
@@ -414,16 +419,22 @@
     rdfs:label "InterPro" ;
     rdfs:subClassOf :Domain, :Dataset .
 
+:IupharLigand
+    a owl:Class ;
+    dcterms:identifier "iuphar_ligand" ;
+    rdfs:label "IUPHAR ligand" ;
+    rdfs:subClassOf :Compound, :Dataset .
+
 :JgaDataset
     a owl:Class ;
     dcterms:identifier "jga_dataset" ;
-    rdfs:label "JGA dataset" ;
+    rdfs:label "JGA Dataset" ;
     rdfs:subClassOf :Project, :Dataset .
 
 :JgaStudy
     a owl:Class ;
     dcterms:identifier "jga_study" ;
-    rdfs:label "JGA study" ;
+    rdfs:label "JGA Study" ;
     rdfs:subClassOf :Project, :Dataset .
 
 :Lipidmaps
@@ -468,17 +479,23 @@
     rdfs:label "MeSH" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
-:Metabobank
+:MgiAllele
     a owl:Class ;
-    dcterms:identifier "metabobank" ;
-    rdfs:label "MetaboBank" ;
-    rdfs:subClassOf :Submission, :Dataset .
+    dcterms:identifier "mgi_allele" ;
+    rdfs:label "MGI allele" ;
+    rdfs:subClassOf :Variant, :Dataset .
 
-:Mgi
+:MgiGene
     a owl:Class ;
-    dcterms:identifier "mgi" ;
-    rdfs:label "MGI" ;
+    dcterms:identifier "mgi_gene" ;
+    rdfs:label "MGI gene" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:MgiGenotype
+    a owl:Class ;
+    dcterms:identifier "mgi_genotype" ;
+    rdfs:label "MGI genotype" ;
+    rdfs:subClassOf :Genotype, :Dataset .
 
 :Mirbase
     a owl:Class ;
@@ -492,15 +509,21 @@
     rdfs:label "MONDO" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
+:Mp
+    a owl:Class ;
+    dcterms:identifier "mp" ;
+    rdfs:label "Mammalian Phenotype Ontology" ;
+    rdfs:subClassOf :Phenotype, :Dataset .
+
 :Nando
     a owl:Class ;
     dcterms:identifier "nando" ;
     rdfs:label "NANDO" ;
     rdfs:subClassOf :Phenotype, :Dataset .
 
-:NbdcHumandb
+:NbdcHumanDb
     a owl:Class ;
-    dcterms:identifier "nbdc_humandb" ;
+    dcterms:identifier "nbdc_human_db" ;
     rdfs:label "NBDC Human Database" ;
     rdfs:subClassOf :Project, :Dataset .
 
@@ -1700,4 +1723,20 @@
     owl:inverseOf :TIO_000114 ;
     rdfs:label "is annotation rule of" ;
     :display_label "is annotation rule of" .
+
+:TIO_000116
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Genotype ;
+    rdfs:range :Variant ;
+    owl:inverseOf :TIO_000117 ;
+    rdfs:label "genotype is composed of allele" ;
+    :display_label "is composed of allele" .
+
+:TIO_000117
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Variant ;
+    rdfs:range :Genotype ;
+    owl:inverseOf :TIO_000116 ;
+    rdfs:label "allele composes genotype" ;
+    :display_label "composes genotype" .
 

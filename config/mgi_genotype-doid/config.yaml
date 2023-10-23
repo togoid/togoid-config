@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000010
+  reverse: TIO_000011
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" '$6~/^DOID:/&&!a[$1, $6]++{print gensub(/^MGI:/,"","g",$1) "\t" gensub(/^DOID:/,"","g",$6)}' $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv

@@ -1,0 +1,12 @@
+## endpoint https://knowledge.brc.riken.jp/bioresource/sparql
+
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+
+select distinct ?mouse_id ?mp_id
+where {
+    ?mouse sio:SIO_001279/sio:SIO_000255 ?mp.
+    BIND (strafter(str(?mouse), 'http://metadb.riken.jp/db/rikenbrc_mouse/') AS ?mouse_id)
+    BIND (strafter(str(?mp), 'http://purl.obolibrary.org/obo/MP_') AS ?mp_id)
+           }

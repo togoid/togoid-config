@@ -200,6 +200,10 @@
     <rdfs:label>Genome</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Genotype">
+    <rdfs:label>Genotype</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#GeoSeries">
     <dcterms:identifier>geo_series</dcterms:identifier>
     <rdfs:label>GEO series</rdfs:label>
@@ -294,15 +298,21 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#IupharLigand">
+    <dcterms:identifier>iuphar_ligand</dcterms:identifier>
+    <rdfs:label>IUPHAR ligand</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#JgaDataset">
     <dcterms:identifier>jga_dataset</dcterms:identifier>
-    <rdfs:label>JGA dataset</rdfs:label>
+    <rdfs:label>JGA Dataset</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#JgaStudy">
     <dcterms:identifier>jga_study</dcterms:identifier>
-    <rdfs:label>JGA study</rdfs:label>
+    <rdfs:label>JGA Study</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
   </owl:Class>
@@ -357,17 +367,23 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Metabobank">
-    <dcterms:identifier>metabobank</dcterms:identifier>
-    <rdfs:label>MetaboBank</rdfs:label>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#MgiAllele">
+    <dcterms:identifier>mgi_allele</dcterms:identifier>
+    <rdfs:label>MGI allele</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
-    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Submission"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Variant"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Mgi">
-    <dcterms:identifier>mgi</dcterms:identifier>
-    <rdfs:label>MGI</rdfs:label>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#MgiGene">
+    <dcterms:identifier>mgi_gene</dcterms:identifier>
+    <rdfs:label>MGI gene</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#MgiGenotype">
+    <dcterms:identifier>mgi_genotype</dcterms:identifier>
+    <rdfs:label>MGI genotype</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Genotype"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Mirbase">
     <dcterms:identifier>mirbase</dcterms:identifier>
@@ -385,14 +401,20 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Mp">
+    <dcterms:identifier>mp</dcterms:identifier>
+    <rdfs:label>Mammalian Phenotype Ontology</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Nando">
     <dcterms:identifier>nando</dcterms:identifier>
     <rdfs:label>NANDO</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NbdcHumandb">
-    <dcterms:identifier>nbdc_humandb</dcterms:identifier>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#NbdcHumanDb">
+    <dcterms:identifier>nbdc_human_db</dcterms:identifier>
     <rdfs:label>NBDC Human Database</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Project"/>
@@ -1585,6 +1607,22 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Domain"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000114"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000116">
+    <display_label>is composed of allele</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Genotype"/>
+    <rdfs:label>genotype is composed of allele</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Variant"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000117"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000117">
+    <display_label>composes genotype</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Variant"/>
+    <rdfs:label>allele composes genotype</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Genotype"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000116"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
