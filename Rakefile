@@ -700,7 +700,7 @@ namespace :prepare do
         end
       end
       if updated
-        sh "python bin/query_mousemine.py > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
+        sh "ruby bin/query_mousemine.rb > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
       end
       updated
     end
