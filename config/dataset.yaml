@@ -447,7 +447,7 @@ mgi_genotype:
   examples:
     - ["MGI:2166359","MGI:2166381","MGI:2166442","MGI:2166483","MGI:2166498","MGI:2166566","MGI:2166570","MGI:2166662","MGI:2166806","MGI:2166814"]
     - ["mgi:2166359","mgi:2166381","mgi:2166442","mgi:2166483","mgi:2166498","mgi:2166566","mgi:2166570","mgi:2166662","mgi:2166806","mgi:2166814"]
-  method: awk -F "\t" '{print gensub(/^MGI:/,"","g",$1) "\t" $2}' $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv
+  method: awk -F "\t" '!a[$1]++{print gensub(/^MGI:/,"","g",$1) "\t" $2}' $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv
 mirbase:
   label: miRBase
   catalog: nbdc00136
