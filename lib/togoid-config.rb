@@ -119,6 +119,7 @@ module TogoID
               id, label = line.scrub.strip.split("\t")
               sbj = "#{@name}:#{id}"
               id_full = @prefix.gsub(/.+\//, "") + id
+              label = label.gsub(/["\\]/, '\\\\\&')
               ttl_file.puts "#{sbj}\tdcterms:identifier\t\"#{id_full}\" ."
               ttl_file.puts "#{sbj}\trdfs:label\t\"#{label}\" ."
             end
