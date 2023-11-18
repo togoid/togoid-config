@@ -1,25 +1,5 @@
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000010.1	Q96624	114424	114429	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000011.1	Q96625	114424	114429	similar
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000012.1	Q96626	114424	114429	similar
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000013.1	Q96629	114424	114429	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000013.1	Q9JA54	114424	114424	similar
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000021.1	Q64842	129950	10510	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000022.1	Q64843	129950	10510	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000023.1	Q64844	129950	10510	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000024.1	Q64845	129950	10510	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed AP_000026.1	O72540	129950	10510	similar
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980239	A1IGT7	62046	62046	uniprot
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980240	A1IGT8	62046	62046	uniprot
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980241	A1IGT9	62046	62046	uniprot
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980242	A1IGU0	62046	62046	uniprot
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980243.1	Q06HP4	408719	408719	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980244.1	Q06HP3	408719	408719	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980245.1	Q06HP2	408719	408719	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980246.1	Q06HP1	408719	408719	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980247.1	Q06HP0	408719	408719	identical
-# Error: output/tsv/refseq_protein-uniprot.tsv seems to be malformed YP_980248.1	Q06HN9	408719	408719	identical
-# Error: output/tsv/togovar-clinvar.tsv new file size per old 3468032 / 13681182 = 0.25348920875403896 < 0.5
-/data/togoid/git/togoid-config/lib/togoid-config.rb:122:in `block (3 levels) in rdfize_id_label': undefined method `gsub' for nil:NilClass (NoMethodError)
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 13681182 = 0.0 < 0.5
+# Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
