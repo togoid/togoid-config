@@ -473,6 +473,7 @@ mp:
   category: Phenotype
   regex: '^MP[:_](?<id>\d{7})$'
   prefix: 'http://identifiers.org/mp/MP:'
+  format: ["MP:%s","MP_%s"]
   examples:
     - ["MP:0000600","MP:0001716","MP:0001698","MP:0001092","MP:0000961","MP:0000245","MP:0000828","MP:0000826","MP:0005039","MP:0002840"]
     - ["MP_0000600","MP_0001716","MP_0001698","MP_0001092","MP_0000961","MP_0000245","MP_0000828","MP_0000826","MP_0005039","MP_0002840"]
@@ -820,6 +821,7 @@ swisslipids:
   category: Lipid
   regex: '^SLM[:_](?<id>\d+)$'
   prefix: 'http://identifiers.org/slm/SLM:'
+  format: ["SLM:%s","SLM_%s"]
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
     - ["SLM_000000002","SLM_000000003","SLM_000000006","SLM_000000007","SLM_000000035", "SLM_000000042","SLM_000000043","SLM_000000044", "SLM_000000047","SLM_000000048"]
