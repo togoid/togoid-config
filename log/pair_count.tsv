@@ -3,8 +3,8 @@ assembly_insdc-bioproject.tsv	1906757
 assembly_insdc-biosample.tsv	1918263
 assembly_insdc-insdc_master.tsv	1852636
 bioproject-biosample.tsv	2303395
-bioproject-geo_series.tsv	196015
-bioproject-pubmed.tsv	257153
+bioproject-geo_series.tsv	196482
+bioproject-pubmed.tsv	257721
 bioproject_umbrella-bioproject.tsv	98690
 biosample-bioproject.tsv	2303395
 cellosaurus-ncit_disease.tsv	68557
@@ -38,10 +38,10 @@ ensembl_gene-ensembl_protein.tsv	12180884
 ensembl_gene-ensembl_transcript.tsv	14437446
 ensembl_gene-hgnc.tsv	44278
 ensembl_gene-ncbigene.tsv	6179217
-ensembl_gene-uniprot.tsv	4924829
+ensembl_gene-uniprot.tsv	4503879
 ensembl_protein-ensembl_transcript.tsv	12180887
 ensembl_transcript-affy_probeset.tsv	218298
-ensembl_transcript-go.tsv	52748677
+ensembl_transcript-go.tsv	0
 ensembl_transcript-hgnc.tsv	219677
 ensembl_transcript-refseq_rna.tsv	10179574
 gea-bioproject.tsv	141
@@ -249,4 +249,4 @@ wikipathways-hmdb.tsv	4014
 wikipathways-lipidmaps.tsv	1361
 wikipathways-ncbigene.tsv	29837
 wikipathways-uniprot.tsv	33519
-total	4571588684
+total	4518420092

@@ -1,5 +1,1 @@
-# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
-# Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
-# Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 13681182 = 0.0 < 0.5
-# Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
+ArgumentError: no time information in ""
