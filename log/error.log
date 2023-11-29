@@ -1,5 +1,1026 @@
-# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
-# Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
+# Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 248 / 314378 = 0.000788859271323057 < 0.5
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv new file size per old 0 / 49176622 = 0.0 < 0.5
+# Error: Failed to create output/tsv/assembly_insdc-bioproject.tsv or created file was empty
+# Error: output/tsv/assembly_insdc-biosample.tsv new file size per old 0 / 52185705 = 0.0 < 0.5
+# Error: Failed to create output/tsv/assembly_insdc-biosample.tsv or created file was empty
+# Error: output/tsv/assembly_insdc-insdc_master.tsv new file size per old 0 / 54792622 = 0.0 < 0.5
+# Error: Failed to create output/tsv/assembly_insdc-insdc_master.tsv or created file was empty
+# Error: output/tsv/bioproject-biosample.tsv new file size per old 0 / 57583818 = 0.0 < 0.5
+# Error: Failed to create output/tsv/bioproject-biosample.tsv or created file was empty
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv new file size per old 0 / 2333425 = 0.0 < 0.5
+# Error: Failed to create output/tsv/bioproject_umbrella-bioproject.tsv or created file was empty
+# Error: output/tsv/biosample-bioproject.tsv new file size per old 0 / 57583818 = 0.0 < 0.5
+# Error: Failed to create output/tsv/biosample-bioproject.tsv or created file was empty
+# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 248 / 61845 = 0.0040100250626566416 < 0.5
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv new file size per old 67456 / 463730916 = 0.0001454636679862854 < 0.5
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_protein-ensembl_transcript.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-affy_probeset.tsv new file size per old 0 / 5921737 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ensembl_transcript-affy_probeset.tsv or created file was empty
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_transcript-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv new file size per old 248 / 4752880 = 5.217888943125011e-05 < 0.5
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv new file size per old 67456 / 324577782 = 0.00020782691774016743 < 0.5
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/ensembl_transcript-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/gea-bioproject.tsv new file size per old 0 / 3032 = 0.0 < 0.5
+# Error: Failed to create output/tsv/gea-bioproject.tsv or created file was empty
+# Error: output/tsv/gea-biosample.tsv new file size per old 0 / 121104 = 0.0 < 0.5
+# Error: Failed to create output/tsv/gea-biosample.tsv or created file was empty
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 248 / 540016 = 0.00045924565198068206 < 0.5
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ccds.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ccds.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ccds.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ec.tsv new file size per old 248 / 28390 = 0.00873547023599859 < 0.5
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ec.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ec.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ec.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ensembl_gene.tsv new file size per old 248 / 893375 = 0.0002775989925843011 < 0.5
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv new file size per old 248 / 596189 = 0.00041597547086578247 < 0.5
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-hgnc_symbol.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-insdc.tsv new file size per old 248 / 301258 = 0.0008232146532208273 < 0.5
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-insdc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-insdc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-insdc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-lrg.tsv new file size per old 248 / 17966 = 0.013803851719915395 < 0.5
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-lrg.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-lrg.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-lrg.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-mgi_gene.tsv new file size per old 248 / 311534 = 0.0007960607830926962 < 0.5
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-mgi_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-mirbase.tsv new file size per old 248 / 30592 = 0.008106694560669456 < 0.5
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-mirbase.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-mirbase.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-mirbase.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ncbigene.tsv new file size per old 248 / 583534 = 0.00042499665829240455 < 0.5
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-omim_gene.tsv new file size per old 248 / 213543 = 0.0011613586022487274 < 0.5
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-omim_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-omim_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-omim_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-pubmed.tsv new file size per old 248 / 484788 = 0.0005115638175862439 < 0.5
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-pubmed.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-pubmed.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-pubmed.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-refseq_rna.tsv new file size per old 248 / 461015 = 0.0005379434508638548 < 0.5
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-refseq_rna.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-rgd.tsv new file size per old 248 / 250822 = 0.0009887489933099968 < 0.5
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-rgd.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-rgd.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-rgd.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-uniprot.tsv new file size per old 248 / 259333 = 0.0009562994296907837 < 0.5
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-uniprot.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <html><head>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML </head><body>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/hgnc-uniprot.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/hgnc-uniprot.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hp_inheritance-omim_phenotype.tsv new file size per old 0 / 129900 = 0.0 < 0.5
+# Error: Failed to create output/tsv/hp_inheritance-omim_phenotype.tsv or created file was empty
+# Error: output/tsv/insdc-bioproject.tsv new file size per old 0 / 1191557755 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc-bioproject.tsv or created file was empty
+# Error: output/tsv/insdc-biosample.tsv new file size per old 0 / 4269980335 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc-biosample.tsv or created file was empty
+# Error: output/tsv/insdc_master-bioproject.tsv new file size per old 0 / 41801168 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc_master-bioproject.tsv or created file was empty
+# Error: output/tsv/insdc_master-biosample.tsv new file size per old 0 / 43765492 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc_master-biosample.tsv or created file was empty
+# Error: output/tsv/jga_study-jga_dataset.tsv new file size per old 0 / 4378 = 0.0 < 0.5
+# Error: Failed to create output/tsv/jga_study-jga_dataset.tsv or created file was empty
+# Error: output/tsv/jga_study-nbdc_human_db.tsv new file size per old 0 / 5795 = 0.0 < 0.5
+# Error: Failed to create output/tsv/jga_study-nbdc_human_db.tsv or created file was empty
+# Error: output/tsv/jga_study-pubmed.tsv new file size per old 0 / 2597 = 0.0 < 0.5
+# Error: Failed to create output/tsv/jga_study-pubmed.tsv or created file was empty
+# Error: output/tsv/medgen-hp_phenotype.tsv new file size per old 248 / 283458 = 0.0008749091576177071 < 0.5
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-hp_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mesh.tsv new file size per old 248 / 289268 = 0.0008573364492442994 < 0.5
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-mesh.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-mesh.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mondo.tsv new file size per old 248 / 366639 = 0.0006764146749254716 < 0.5
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-mondo.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-mondo.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-ncbigene.tsv new file size per old 248 / 104108 = 0.0023821416221616013 < 0.5
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-omim_phenotype.tsv new file size per old 248 / 176688 = 0.0014036040930906456 < 0.5
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv new file size per old 248 / 137225 = 0.001807250865367098 < 0.5
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/medgen-orphanet_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-doid.tsv new file size per old 248 / 155460 = 0.0015952656631931044 < 0.5
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-doid.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-doid.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-doid.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 248 / 9184 = 0.02700348432055749 < 0.5
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-hp_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-meddra.tsv new file size per old 248 / 25262 = 0.009817116617844984 < 0.5
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-meddra.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-meddra.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-meddra.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-mesh.tsv new file size per old 248 / 133836 = 0.0018530141367046236 < 0.5
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-mesh.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-mesh.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-omim_phenotype.tsv new file size per old 248 / 145395 = 0.0017056982702293752 < 0.5
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 248 / 146923 = 0.001687958998931413 < 0.5
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/mondo-orphanet_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/nando-mondo.tsv new file size per old 248 / 38240 = 0.006485355648535565 < 0.5
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/nando-mondo.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <html><head>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </head><body>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/nando-mondo.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/nando-mondo.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv new file size per old 248 / 99337 = 0.0024965521406927933 < 0.5
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-ensembl_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-hgnc.tsv new file size per old 248 / 54005 = 0.004592167391908156 < 0.5
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-hgnc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv new file size per old 248 / 60424 = 0.004104329405534225 < 0.5
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-omim_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-uniprot.tsv new file size per old 248 / 60188 = 0.004120422675616402 < 0.5
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_gene-uniprot.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv new file size per old 248 / 17104 = 0.014499532273152479 < 0.5
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-meddra.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv new file size per old 248 / 23642 = 0.010489806276964725 < 0.5
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-mesh.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv new file size per old 248 / 98942 = 0.002506518970710113 < 0.5
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv new file size per old 248 / 103255 = 0.0024018207350733622 < 0.5
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-go.tsv new file size per old 2232 / 21907743 = 0.0001018817867271859 < 0.5
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-interpro.tsv new file size per old 248 / 10899870 = 2.2752564938847895e-05 < 0.5
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-interpro.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-interpro.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-interpro.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-pdb_ccd.tsv new file size per old 248 / 4665872 = 5.315190815350271e-05 < 0.5
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-pdb_ccd.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-pfam.tsv new file size per old 248 / 4414345 = 5.618047524604443e-05 < 0.5
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-pfam.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-pfam.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-pfam.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-uniprot.tsv new file size per old 248 / 4173296 = 5.9425451729280644e-05 < 0.5
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-uniprot.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pdb-uniprot.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pdb-uniprot.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-atc.tsv new file size per old 248 / 72636 = 0.003414284927584118 < 0.5
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-atc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-atc.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-atc.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-chebi.tsv new file size per old 248 / 2127659 = 0.0001165600314712085 < 0.5
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-chembl_compound.tsv new file size per old 0 / 52771371 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_compound-chembl_compound.tsv or created file was empty
+# Error: output/tsv/pubchem_compound-drugbank.tsv new file size per old 248 / 165607 = 0.001497521240044201 < 0.5
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-drugbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv new file size per old 248 / 577555 = 0.00042939633454822486 < 0.5
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_compound-glytoucan.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv new file size per old 248 / 386522 = 0.0006416193644863681 < 0.5
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv new file size per old 248 / 1318229 = 0.00018813119723507828 < 0.5
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-pathbank.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-pubchem_compound.tsv new file size per old 0 / 18535342 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-pubchem_compound.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv new file size per old 248 / 55502 = 0.004468307448380239 < 0.5
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-uniprot.tsv new file size per old 0 / 9132367 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-uniprot.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv new file size per old 248 / 15771 = 0.015725064992708135 < 0.5
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </body></html>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <html><head>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </head><body>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv seems to contain HTML </body></html>
+# Error: output/tsv/reactome_pathway-go.tsv new file size per old 248 / 276996 = 0.0008953197880113792 < 0.5
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/reactome_pathway-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/reactome_pathway-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/reactome_pathway-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv new file size per old 248 / 10770993 = 2.3024803748363775e-05 < 0.5
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <html><head>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML </head><body>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML </body></html>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <html><head>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML </head><body>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/reactome_pathway-reactome_reaction.tsv seems to contain HTML </body></html>
+# Error: output/tsv/reactome_reaction-go.tsv new file size per old 248 / 71679 = 0.003459869696842869 < 0.5
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/reactome_reaction-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML </body></html>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <html><head>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML </head><body>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/reactome_reaction-go.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/reactome_reaction-go.tsv seems to contain HTML </body></html>
 # Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 13681182 = 0.0 < 0.5
 # Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
