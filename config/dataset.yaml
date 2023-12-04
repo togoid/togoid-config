@@ -467,6 +467,16 @@ mondo:
   examples:
     - ["MONDO:0000115","MONDO:0002345","MONDO:0011571","MONDO:0020035","MONDO:0020920","MONDO:0004627","MONDO:0005480","MONDO:0010852","MONDO:0002053","MONDO:0015758"]
     - ["MONDO_0000115","MONDO_0002345","MONDO_0011571","MONDO_0020035","MONDO_0020920","MONDO_0004627","MONDO_0005480","MONDO_0010852","MONDO_0002053","MONDO_0015758"]
+  label_resolver:
+    type: pubdictionaries
+    relations:
+      - label: Name
+        dictionary: togoid_mondo_label
+        preferred: true
+      - label: Exact synonym
+        dictionary: togoid_mondo_exact_synonym
+      - label: Related synonym
+        dictionary: togoid_mondo_related_synonym
 mp:
   label: Mammalian Phenotype Ontology
   catalog: FIXME
@@ -504,6 +514,18 @@ ncbigene:
   prefix: 'http://identifiers.org/ncbigene/'
   examples:
     - ["63962027","1046","63961921","102606930","100472895","407025","84148","88","31157","100463227"]
+  label_resolver:
+    type: sparqlist
+    api: http://ep.dbcls.jp/togoid/sparqlist/api/label2id_ncbigene
+    taxonomy: true
+    relations:
+      - label: NCBI Gene symbol
+        uri: http://www.w3.org/2000/01/rdf-schema#label
+        preferred: true
+      - label: Synonym
+        uri: http://ddbj.nig.ac.jp/ontologies/nucleotide/gene_synonym
+      - label: Official symbol
+        uri: http://ddbj.nig.ac.jp/ontologies/nucleotide/standard_name
 ncit_disease:
   label: NCIt disease
   catalog: FIXME
