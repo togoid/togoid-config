@@ -497,7 +497,7 @@ nbdc_human_db:
     - ["hum0004","hum0006","hum0007","hum0008","hum0010","hum0001","hum0011","hum0012","hum0018","hum0019"]
     - ["hum0004.v1","hum0006.v5","hum0007.v1","hum0008.v1","hum0010.v1","hum0001.v1","hum0011.v1","hum0012.v1","hum0018.v1","hum0019.v1"]
 ncbigene:
-  label: NCBI gene
+  label: NCBI Gene
   catalog: nbdc00073
   category: Gene
   regex: '^(?<id>\d+)$'
