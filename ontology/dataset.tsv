@@ -53,7 +53,7 @@ mondo	MONDO	Phenotype
 mp	Mammalian Phenotype Ontology	Phenotype
 nando	NANDO	Phenotype
 nbdc_human_db	NBDC Human Database	Project
-ncbigene	NCBI gene	Gene
+ncbigene	NCBI Gene	Gene
 ncit_disease	NCIt disease	Phenotype
 ncit_tissue	NCIt tissue	Anatomy
 oma_group	OMA group	Ortholog
