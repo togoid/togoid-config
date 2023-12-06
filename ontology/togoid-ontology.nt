@@ -397,7 +397,7 @@
 <http://togoid.dbcls.jp/ontology#NbdcHumanDb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://purl.org/dc/terms/identifier> "ncbigene" .
-<http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#label> "NCBI gene" .
+<http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#label> "NCBI Gene" .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#Ncbigene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#NcitDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

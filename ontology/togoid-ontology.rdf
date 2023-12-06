@@ -421,7 +421,7 @@
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Ncbigene">
     <dcterms:identifier>ncbigene</dcterms:identifier>
-    <rdfs:label>NCBI gene</rdfs:label>
+    <rdfs:label>NCBI Gene</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
   </owl:Class>

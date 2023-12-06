@@ -530,7 +530,7 @@
 :Ncbigene
     a owl:Class ;
     dcterms:identifier "ncbigene" ;
-    rdfs:label "NCBI gene" ;
+    rdfs:label "NCBI Gene" ;
     rdfs:subClassOf :Gene, :Dataset .
 
 :NcitDisease
