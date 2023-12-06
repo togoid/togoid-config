@@ -1,5 +1,5 @@
 # TogoID ver. 1.1
-Datasets last updated: 2023-11-27
+Datasets last updated: 2023-12-04
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) は、直感的なインターフェースにより生命科学系データベース(DB)間のつながりを探索的に確認しながらID変換を行うことができるウェブアプリケーションです。同一の実体を指すID間の変換だけでなく、関連する別のカテゴリーのIDへの変換も可能です。また、直接リンクされていないDBのID間でも、他のDBを経由した変換を探索することができます。
@@ -28,7 +28,7 @@ Datasets last updated: 2023-11-27
 
 - [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## 統計 (2023-11-27)
+## 統計 (2023-12-04)
 - 対象データセット数 
     - 102 (72のデータベースに由来)
 - 対象DBの詳細やID例については、"DATASETS" タブ からご覧いただけます。 
