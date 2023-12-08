@@ -477,6 +477,8 @@ mondo:
         dictionary: togoid_mondo_exact_synonym
       - label: Related synonym
         dictionary: togoid_mondo_related_synonym
+      - label: Broad synonym
+        dictionary: togoid_mondo_broad_synonym
 mp:
   label: Mammalian Phenotype Ontology
   catalog: FIXME
