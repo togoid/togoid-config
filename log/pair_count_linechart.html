@@ -53,8 +53,7 @@
 
   // テキストファイルから選択肢を読み込む関数
   function loadOptions() {
-    // ファイルのパス
-    const filePath = 'https://raw.githubusercontent.com/sh-ikeda/togoid-stats/main/pair_count/pair_count_series.tsv';
+    const filePath = 'https://raw.githubusercontent.com/togoid/togoid-config/main/log/pair_count_history.tsv';
     // ファイルを非同期で読み込む
     fetch(filePath)
       .then(response => response.text())
