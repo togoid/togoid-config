@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TogoID Pair Stats</title>
+</head>
+<body>
+<script type="module" src="https://togostanza.github.io/metastanza/linechart.js" async></script>
+
+<select id="options">
+</select>
+
+<togostanza-linechart
+  id="linechart"
+  data-url="https://raw.githubusercontent.com/togoid/togoid-config/main/log/pair_count_history.tsv"
+  data-type="tsv"
+  category="Date"
+  value="ncbigene-go"
+  group-by=""
+  category-title=""
+  value-title=""
+  legend-title=""
+  custom-css-url=""
+  width="400"
+  height="200"
+  padding="50"
+  legend="true"
+  xgrid="true"
+  ygrid="true"
+  xtick="false"
+  ytick="true"
+  xlabel-angle="90"
+  ylabel-angle="0"
+  xlabel-padding="40"
+  ylabel-padding="5"
+  xtitle-padding="10"
+  ytitle-padding="10"
+  xaxis-placement="bottom"
+  yaxis-placement="left"
+></togostanza-linechart>
+
+<script>
+  // ページ読み込み時に選択肢を読み込む
+  document.addEventListener("DOMContentLoaded", function () {
+    loadOptions();
+    // プルダウンメニューの変更をリッスン
+    document.getElementById('options').addEventListener('change', function (event) {
+      const chartElement = document.getElementById('linechart');
+      chartElement.setAttribute('value', event.target.value);
+    })
+  });
+
+  // テキストファイルから選択肢を読み込む関数
+  function loadOptions() {
+    // ファイルのパス
+    const filePath = 'https://raw.githubusercontent.com/sh-ikeda/togoid-stats/main/pair_count/pair_count_series.tsv';
+    // ファイルを非同期で読み込む
+    fetch(filePath)
+      .then(response => response.text())
+      .then(data => {
+        // 改行ごとに分割して選択肢を取得
+        const lines = data.split('\n');
+
+        // プルダウンメニューに選択肢を追加
+        const selectElement = document.getElementById('options');
+        lines.forEach(line => {
+          const sep_line = line.split('\t');
+          if (sep_line[0] != "") {
+            const optionElement = document.createElement('option');
+            optionElement.value = sep_line[0].trim();
+            optionElement.text = sep_line[0].trim();
+            if (sep_line[0] == "ncbigene-go")
+              optionElement.setAttribute('selected', 'selected');
+            selectElement.appendChild(optionElement);
+          }
+        });
+      })
+      .catch(error => console.error('選択肢の読み込みに失敗しました', error));
+    }
+</script>
+
+</body>
+</html>
