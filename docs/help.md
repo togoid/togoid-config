@@ -1,8 +1,8 @@
 # TogoID ver. 1.1
-Datasets last updated: 2023-12-18
+Datasets last updated: 2023-12-25
 
 ## About
-- [TogoID](https://togoid.dbcls.jp/) is an ID conversion service implementing unique features with an intuitive web interface and an API for programmatic access. TogoID currently supports 89 datasets covering various biological categories. TogoID users can perform exploratory multistep conversions to find a path among IDs. To guide the interpretation of biological meanings in the conversions, we crafted an [ontology](https://togoid.dbcls.jp/ontology) that defines the semantics of the dataset relations.
+- [TogoID](https://togoid.dbcls.jp/) is an ID conversion service implementing unique features with an intuitive web interface and an API for programmatic access. TogoID supports datasets from various biological categories such as gene, protein, chemical compound, pathway, disease, etc. TogoID users can perform exploratory multistep conversions to find a path among IDs. To guide the interpretation of biological meanings in the conversions, we crafted an [ontology](https://togoid.dbcls.jp/ontology) that defines the semantics of the dataset relations.
 - The TogoID service is freely available on the [TogoID](https://togoid.dbcls.jp/) website, and the [API](https://togoid.dbcls.jp/apidoc/) is also provided to allow programmatic access.
 - To encourage developers to add new dataset pairs, the source code for extracting ID relations is publicly available at [GitHub](https://github.com/dbcls/togoid-config). TogoID performs weekly updates using the programs.
 - See the "DATASETS" tab for a list of supported datasets.
@@ -22,7 +22,7 @@ Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, 
 
 - [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## Statistics (as of 2023-12-18)
+## Statistics (as of 2023-12-25)
 - Number of target datasets 
     - 102 (from 72 databases)
 - For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 

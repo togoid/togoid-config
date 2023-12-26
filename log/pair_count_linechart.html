@@ -58,21 +58,17 @@
     fetch(filePath)
       .then(response => response.text())
       .then(data => {
-        // 改行ごとに分割して選択肢を取得
-        const lines = data.split('\n');
-
         // プルダウンメニューに選択肢を追加
+        const lines = data.split('\n');
+        const colnames = lines[0].split('\t').slice(1);
         const selectElement = document.getElementById('options');
-        lines.forEach(line => {
-          const sep_line = line.split('\t');
-          if (sep_line[0] != "") {
-            const optionElement = document.createElement('option');
-            optionElement.value = sep_line[0].trim();
-            optionElement.text = sep_line[0].trim();
-            if (sep_line[0] == "ncbigene-go")
-              optionElement.setAttribute('selected', 'selected');
-            selectElement.appendChild(optionElement);
-          }
+        colnames.forEach(colname => {
+          const optionElement = document.createElement('option');
+          optionElement.value = colname.trim();
+          optionElement.text = colname.trim();
+          if (colname == "ncbigene-go")
+            optionElement.setAttribute('selected', 'selected');
+          selectElement.appendChild(optionElement);
         });
       })
       .catch(error => console.error('選択肢の読み込みに失敗しました', error));
