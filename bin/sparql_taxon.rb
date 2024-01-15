@@ -12,7 +12,7 @@ File.read(taxonomy_list).split("\n").each do |taxon|
   loop_count = 0
   while i % limit == 0
     if loop_count * limit != i
-      $stderr.puts "Error: Failed to retrieve taxon:#{taxon} in loop_count:#{loop_count}"
+      $stderr.puts "Warning: Failed to retrieve taxon:#{taxon} in loop_count:#{loop_count}"
       break
     end
     query = query_template.sub('{{taxon}}', taxon) + " OFFSET #{i} LIMIT #{limit}"
