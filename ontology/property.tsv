@@ -34,7 +34,7 @@ TIO_000033	is reference of	is reference of	TIO_000032	Literature	Category
 TIO_000034	transcript is transcribed from gene	is transcribed from	TIO_000035	Transcript	Gene
 TIO_000035	gene is transcribed to transcript	is transcribed to	TIO_000034	Gene	Transcript
 TIO_000036	transcript is translated to protein	is translated to	TIO_000037	Transcript	Protein
-TIO_000037	protein is translated from transcript	is tranlated from	TIO_000036	Protein	Transcript
+TIO_000037	protein is translated from transcript	is translated from	TIO_000036	Protein	Transcript
 TIO_000038	submission includes analysis	includes analysis	TIO_000048	Submission	Analysis
 TIO_000039	submission includes experiment	includes experiment	TIO_000049	Submission	Experiment
 TIO_000040	project performs experiment	performs experiment	TIO_000050	Project	Experiment
@@ -115,3 +115,7 @@ TIO_000114	domain has annotation rule	has annotation rule	TIO_000115	Domain	Func
 TIO_000115	is annotation rule of	is annotation rule of	TIO_000114	Function	Domain
 TIO_000116	genotype is composed of allele	is composed of allele	TIO_000117	Genotype	Variant
 TIO_000117	allele composes genotype	composes genotype	TIO_000116	Variant	Genotype
+TIO_000118	protein processes glycan	processes	TIO_000119	Protein	Glycan
+TIO_000119	glycan is processed by protein	is processed by	TIO_000118	Glycan	Protein
+TIO_000120	compound targets to molecule	targets to	TIO_000121	Compound	Molecule
+TIO_000121	molecule is targeted by compound	is targeted by	TIO_000120	Molecule	Compound
