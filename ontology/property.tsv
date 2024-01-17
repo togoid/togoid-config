@@ -115,3 +115,7 @@ TIO_000114	domain has annotation rule	has annotation rule	TIO_000115	Domain	Func
 TIO_000115	is annotation rule of	is annotation rule of	TIO_000114	Function	Domain
 TIO_000116	genotype is composed of allele	is composed of allele	TIO_000117	Genotype	Variant
 TIO_000117	allele composes genotype	composes genotype	TIO_000116	Variant	Genotype
+TIO_000118	protein processes glycan	processes	TIO_000119	Protein	Glycan
+TIO_000119	glycan is processed by protein	is processed by	TIO_000118	Glycan	Protein
+TIO_000120	compound targets to molecule	targets to	TIO_000121	Compound	Molecule
+TIO_000121	molecule is targeted by compound	is targeted by	TIO_000120	Molecule	Compound
