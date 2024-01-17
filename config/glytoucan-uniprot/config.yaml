@@ -1,7 +1,14 @@
-link:
-  forward: TIO_000060
-  reverse: TIO_000061
-  file: sample.tsv
-update:
-  frequency: threeTimesAYear
-  method: sparql_csv2tsv.sh query.rq https://ts.glycosmos.org/sparql
+- link:
+    forward: TIO_000060
+    reverse: TIO_000061
+    file: sample1.tsv
+  update:
+    frequency: threeTimesAYear
+    method: sparql_csv2tsv.sh query.rq https://ts.glycosmos.org/sparql
+- link:
+    forward: TIO_000119
+    reverse: TIO_000118
+    file: sample2.tsv
+  update:
+    frequency: threeTimesAYear
+    method: awk 'BEGIN{FS="\t"}FNR==1&&FNR!=NR{FS=","}FNR==NR{a[$1]=$2;next}FNR>=2&&$5!="-"&&a[$1]&&!b[$1,$5]++{print $5 "\t" a[$1]}FNR>=2&&$6!="-"&&a[$1]&&!b[$1,$6]++{print $6 "\t" a[$1]}' $TOGOID_ROOT/input/glytoucan/glycogene-uniprot.tsv $TOGOID_ROOT/input/glytoucan/glycosmos_ggdbs_pubmed.csv
