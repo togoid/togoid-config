@@ -1,0 +1,13 @@
+# endpoint https://rdfportal.org/ebi/sparql
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?compound_id ?target_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE
+{
+  ?chembl a cco:SmallMolecule ;
+          cco:chemblId ?compound_id ;
+          cco:hasMechanism / cco:hasTarget ?target .
+  ?target cco:chemblId ?target_id .
+}
