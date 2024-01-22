@@ -1,6 +1,6 @@
 link:
-  forward: TIO_000097
-  reverse: TIO_000096
+  forward: TIO_000001
+  reverse: TIO_000001
   file: sample.tsv
 update:
   frequency: Triennial

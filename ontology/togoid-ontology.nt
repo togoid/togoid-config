@@ -849,7 +849,7 @@
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000036> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2000/01/rdf-schema#label> "protein is translated from transcript" .
-<http://togoid.dbcls.jp/ontology#TIO_000037> <http://togoid.dbcls.jp/ontology#display_label> "is tranlated from" .
+<http://togoid.dbcls.jp/ontology#TIO_000037> <http://togoid.dbcls.jp/ontology#display_label> "is translated from" .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Analysis> .
@@ -1330,3 +1330,27 @@
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000116> .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2000/01/rdf-schema#label> "allele composes genotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://togoid.dbcls.jp/ontology#display_label> "composes genotype" .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000119> .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#label> "protein processes glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://togoid.dbcls.jp/ontology#display_label> "processes" .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000118> .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is processed by protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://togoid.dbcls.jp/ontology#display_label> "is processed by" .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000121> .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#label> "compound targets to molecule" .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://togoid.dbcls.jp/ontology#display_label> "targets to" .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Molecule> .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000120> .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#label> "molecule is targeted by compound" .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://togoid.dbcls.jp/ontology#display_label> "is targeted by" .

@@ -1098,7 +1098,7 @@
     rdfs:range :Transcript ;
     owl:inverseOf :TIO_000036 ;
     rdfs:label "protein is translated from transcript" ;
-    :display_label "is tranlated from" .
+    :display_label "is translated from" .
 
 :TIO_000038
     rdfs:subPropertyOf :relation ;
@@ -1739,4 +1739,36 @@
     owl:inverseOf :TIO_000116 ;
     rdfs:label "allele composes genotype" ;
     :display_label "composes genotype" .
+
+:TIO_000118
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Glycan ;
+    owl:inverseOf :TIO_000119 ;
+    rdfs:label "protein processes glycan" ;
+    :display_label "processes" .
+
+:TIO_000119
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000118 ;
+    rdfs:label "glycan is processed by protein" ;
+    :display_label "is processed by" .
+
+:TIO_000120
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Compound ;
+    rdfs:range :Molecule ;
+    owl:inverseOf :TIO_000121 ;
+    rdfs:label "compound targets to molecule" ;
+    :display_label "targets to" .
+
+:TIO_000121
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Molecule ;
+    rdfs:range :Compound ;
+    owl:inverseOf :TIO_000120 ;
+    rdfs:label "molecule is targeted by compound" ;
+    :display_label "is targeted by" .
 
