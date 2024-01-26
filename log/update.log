@@ -1,4 +1,4 @@
-*** Started: 2024-01-26T17:44:44 ***
+*** Started: 2024-01-26T18:06:56 ***
 
 ## Prepare input files for Bioproject
 # Checking lock file input/bioproject/download.lock for download
@@ -7,16 +7,63 @@
 # Local file size:  2604031159 (input/bioproject/bioproject.xml)
 # Remote file size: 2604031159 (https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml)
 # Preserving timestamp of the input/bioproject/download.lock
-## Prepare input files for Cellosaurus
-# Checking lock file input/cellosaurus/download.lock for download
+## Prepare input files for Ensembl
+# Checking lock file input/ensembl/download.lock for download
+# File input/ensembl/taxonomy.txt is created 7.041898591766713 days ago (will be updated when >5 days)
+sparql_csv2tsv.sh input/ensembl/taxonomy.rq https://rdfportal.org/ebi/sparql > input/ensembl/taxonomy.txt
+# Overwriting timestamp of the input/ensembl/download.lock
+## Prepare input files for HMDB
+# Checking lock file input/hmdb/download.lock for download
+# Local file time:  2021-11-18 04:54:48 +0900 (input/hmdb/hmdb_metabolites.zip)
+# Remote file time: 2021-11-17 19:54:48 +0000 (https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip)
+# Local file size:  953913010 (input/hmdb/hmdb_metabolites.zip)
+# Remote file size: 953913010 (https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip)
+# Preserving timestamp of the input/hmdb/download.lock
+## Prepare input files for Homologene
+# Checking lock file input/homologene/download.lock for download
+# Local file time:  2014-05-07 00:12:54 +0900 (input/homologene/homologene.data)
+# Remote file time: 2014-05-06 15:12:54 +0000 (https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data)
+# Local file size:  13803677 (input/homologene/homologene.data)
+# Remote file size: 13803677 (https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data)
+# Preserving timestamp of the input/homologene/download.lock
+## Prepare input files for HP Phenotype
+# Checking lock file input/hp_phenotype/download.lock for download
+# Local file time:  2024-01-16 23:54:59 +0900 (input/hp_phenotype/phenotype.hpoa)
+# Remote file time: 2024-01-16 14:54:59 +0000 (http://purl.obolibrary.org/obo/hp/hpoa/phenotype.hpoa)
+# Local file size:  31795534 (input/hp_phenotype/phenotype.hpoa)
+# Remote file size: 31795534 (http://purl.obolibrary.org/obo/hp/hpoa/phenotype.hpoa)
+# Local file time:  2024-01-16 23:54:31 +0900 (input/hp_phenotype/genes_to_phenotype.txt)
+# Remote file time: 2024-01-16 14:54:31 +0000 (http://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt)
+# Local file size:  18998203 (input/hp_phenotype/genes_to_phenotype.txt)
+# Remote file size: 18998203 (http://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt)
+bin/sparql_csv2tsv.sh bin/sparql/hp_category.rq https://rdfportal.org/bioportal/sparql > input/hp_phenotype/hp_category.tsv
+# Preserving timestamp of the input/hp_phenotype/download.lock
+## Prepare input files for COG
+# Checking lock file input/cog/download.lock for download
+# Local file time:  2020-09-11 10:37:40 +0900 (input/cog/cog-20.cog.csv)
+# Remote file time: 2020-09-11 01:37:40 +0000 (https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv)
+# Local file size:  350149451 (input/cog/cog-20.cog.csv)
+# Remote file size: 350149451 (https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv)
+# Local file time:  2020-09-11 21:02:27 +0900 (input/cog/cog-20.def.tab)
+# Remote file time: 2020-09-11 12:02:27 +0000 (https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.def.tab)
+# Local file size:  372608 (input/cog/cog-20.def.tab)
+# Remote file size: 372608 (https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.def.tab)
+# Preserving timestamp of the input/cog/download.lock
+## Prepare input files for InterPro
+# Checking lock file input/interpro/download.lock for download
+# Local file time:  2023-11-09 04:11:51 +0900 (input/interpro/interpro2go)
+# Remote file time: 2024-01-24 19:36:59 +0000 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/interpro https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go
+# Local file time:  2023-11-09 04:24:20 +0900 (input/interpro/protein2ipr.dat.gz)
+# Remote file time: 2024-01-24 19:46:36 +0000 (https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz)
+wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/interpro https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz
 rake aborted!
-ArgumentError: no time information in ""
-/data/togoid/git/togoid-config/Rakefile:429:in `check_remote_file_time'
-/data/togoid/git/togoid-config/Rakefile:369:in `update_input_file?'
-/data/togoid/git/togoid-config/Rakefile:539:in `block (3 levels) in <top (required)>'
+Command failed with status (4): [wget --quiet --recursive --no-parent --no-...]
+/data/togoid/git/togoid-config/Rakefile:406:in `download_file'
+/data/togoid/git/togoid-config/Rakefile:651:in `block (3 levels) in <top (required)>'
 /data/togoid/git/togoid-config/Rakefile:382:in `block in download_lock'
 /data/togoid/git/togoid-config/Rakefile:379:in `open'
 /data/togoid/git/togoid-config/Rakefile:379:in `download_lock'
-/data/togoid/git/togoid-config/Rakefile:536:in `block (2 levels) in <top (required)>'
-Tasks: TOP => default => prepare:all => prepare:cellosaurus
+/data/togoid/git/togoid-config/Rakefile:639:in `block (2 levels) in <top (required)>'
+Tasks: TOP => default => prepare:all => prepare:interpro
 (See full trace by running task with --trace)
