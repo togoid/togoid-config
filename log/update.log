@@ -1,12 +1,12 @@
-*** Started: 2024-01-26T17:00:17 ***
+*** Started: 2024-01-26T17:44:44 ***
 
 ## Prepare input files for Bioproject
 # Checking lock file input/bioproject/download.lock for download
-# Local file time:  2024-01-18 21:03:11 +0900 (input/bioproject/bioproject.xml)
+# Local file time:  2024-01-25 21:02:04 +0900 (input/bioproject/bioproject.xml)
 # Remote file time: 2024-01-25 12:02:04 +0000 (https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml)
-wget --quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate --directory-prefix input/bioproject https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml
-python bin/bioproject_xml2tsv.py input/bioproject/bioproject.xml > input/bioproject/bioproject.tsv
-# Overwriting timestamp of the input/bioproject/download.lock
+# Local file size:  2604031159 (input/bioproject/bioproject.xml)
+# Remote file size: 2604031159 (https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml)
+# Preserving timestamp of the input/bioproject/download.lock
 ## Prepare input files for Cellosaurus
 # Checking lock file input/cellosaurus/download.lock for download
 rake aborted!
