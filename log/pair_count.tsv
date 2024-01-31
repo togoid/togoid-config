@@ -183,11 +183,11 @@ refseq_rna-omim_gene.tsv	188971
 refseq_rna-pubmed.tsv	5815771
 refseq_rna-refseq_protein.tsv	51648876
 refseq_rna-taxonomy.tsv	59343570
-rhea-chebi.tsv	201816
-rhea-ec.tsv	7528
+rhea-chebi.tsv	206037
+rhea-ec.tsv	7598
 rhea-go.tsv	4404
-rhea-pubmed.tsv	135188
-rhea-reactome_reaction.tsv	1438
+rhea-pubmed.tsv	138072
+rhea-reactome_reaction.tsv	1480
 rhea-uniprot.tsv	41696785
 sra_accession-bioproject.tsv	477979
 sra_accession-biosample.tsv	28659975
@@ -249,4 +249,4 @@ wikipathways-hmdb.tsv	4013
 wikipathways-lipidmaps.tsv	1361
 wikipathways-ncbigene.tsv	29837
 wikipathways-uniprot.tsv	33518
-total	4650052414
+total	4650059631
