@@ -400,10 +400,14 @@ module TogoID
       # Certificate for reactome.org seems to be expired between 20211004 and 20211015
       opts = "--quiet --recursive --no-parent --no-directories --timestamping --no-check-certificate"
       # Also specify output directory by --directory-prefix (-P)
-      if glob
-        sh "wget #{opts} --directory-prefix #{dir} --accept '#{glob}' #{url}"
-      else
-        sh "wget #{opts} --directory-prefix #{dir} #{url}"
+      begin
+        if glob
+          sh "wget #{opts} --directory-prefix #{dir} --accept '#{glob}' #{url}"
+        else
+          sh "wget #{opts} --directory-prefix #{dir} #{url}"
+        end
+      rescue StandardError => e
+          puts "Error: #{e.message}"
       end
     end
 
