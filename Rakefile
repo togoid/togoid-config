@@ -420,6 +420,10 @@ module TogoID
         remote_file_size = `curl -sIL #{url} | grep -i '^content-length:' | tail -1 | awk '{print $2}'`.strip.to_i
         $stderr.puts "# Local file size:  #{local_file_size} (#{file})"
         $stderr.puts "# Remote file size: #{remote_file_size} (#{url})"
+        if remote_file_size == 0
+          $stderr.puts "Error: Remote file is empty"
+          return false
+        end
         return local_file_size != remote_file_size
       else
         return true
@@ -430,7 +434,12 @@ module TogoID
     def check_remote_file_time(file, url)
       if File.exist?(file)
         local_file_time  = File.mtime(file)  # Time object
-        remote_file_time = Time.parse(`curl -sIL #{url} | grep -i '^last-modified:' | tail -1 | sed -e 's/^[Ll]ast-[Mm]odified: //'`)  # Time object
+        begin
+          remote_file_time = Time.parse(`curl -sIL #{url} | grep -i '^last-modified:' | tail -1 | sed -e 's/^[Ll]ast-[Mm]odified: //'`)  # Time object
+        rescue ArgumentError => e
+          puts "Error: #{e.message}"
+          return false
+        end
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
         $stderr.puts "# Remote file time: #{remote_file_time} (#{url})"
         return local_file_time < remote_file_time
