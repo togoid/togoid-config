@@ -10,23 +10,28 @@ class XMLHandler(xml.sax.ContentHandler):
 
     def init_current_sample(self):
         self.current_bsid = ""
+        self.current_bpids = []
         self.current_geoid = ""
         self.current_geo_url = ""
         self.current_content = ""
         self.current_db = ""
         self.current_link_label = ""
+        self.current_link_target = ""
 
     def startElement(self, tag, attrs):
         self.tag_stack.append(tag)
 
         if tag == "BioSample":
             self.init_current_sample()
+
         if self.tag_stack == ["BioSampleSet", "BioSample", "Ids", "Id"]:
             if attrs.__contains__("db"):
                 self.current_db = attrs.getValue("db")
         elif self.tag_stack == ["BioSampleSet", "BioSample", "Links", "Link"]:
             if attrs.__contains__("label"):
                 self.current_link_label = attrs.getValue("label")
+            if attrs.__contains__("target"):
+                self.current_link_target = attrs.getValue("target")
 
     def characters(self, content):
         self.current_content += content.strip()
@@ -35,19 +40,25 @@ class XMLHandler(xml.sax.ContentHandler):
         if self.tag_stack == ["BioSampleSet", "BioSample", "Ids", "Id"]:
             if self.current_db == "BioSample":
                 self.current_bsid = self.current_content
-                self.current_db = ""
             elif self.current_db == "GEO":
                 self.current_geoid = self.current_content
-                self.current_db = ""
+            self.current_db = ""
+
         elif self.tag_stack == ["BioSampleSet", "BioSample", "Links", "Link"]:
             if self.current_link_label == "GEO Web Link" or re.match(r'^GEO Sample', self.current_link_label):
                 self.current_geo_url = self.current_content
+            if self.current_link_target == "bioproject":
+                self.current_bpids.append(self.current_content)
+            self.current_link_target = ""
+            self.current_link_label = ""
 
         if self.tag_stack == ["BioSampleSet", "BioSample"]:
             if self.current_geoid != "":
                 print(self.current_bsid, "GEO ID", self.current_geoid, sep="\t")
             if self.current_geo_url != "":
                 print(self.current_bsid, "GEO URL", self.current_geo_url, sep="\t")
+            for bpid in self.current_bpids:
+                print(self.current_bsid, "BioProject ID", bpid, sep="\t")
 
         self.tag_stack.pop()
         self.current_content = ""
