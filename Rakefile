@@ -556,7 +556,7 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_BIOSAMPLE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_BIOSAMPLE_DIR}/biosample_set.xml"
-        sh "python bin/biosample_xml2tsv.py biosample_set.xml > biosample_set.tsv"
+        sh "python bin/biosample_xml2tsv.py #{INPUT_BIOSAMPLE_DIR}/biosample_set.xml > #{INPUT_BIOSAMPLE_DIR}/biosample_set.tsv"
       end
     end
   end
