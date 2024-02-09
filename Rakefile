@@ -359,7 +359,8 @@ module TogoID
       when /#{OUTPUT_TSV_DIR}taxonomy/
         return "prepare:taxonomy"
       else
-        return "config/dataset.yaml"
+        File.open("input/update.txt", "w")
+        return "input/update.txt"
       end
     end
 
@@ -464,9 +465,9 @@ include TogoID::Prepare
 # Dependency for TSV files (check dependency for preparation by target names)
 rule(/#{OUTPUT_TSV_DIR}\S+\.tsv/ => [
   OUTPUT_TSV_DIR,
-  method(:prepare_task),
-  method(:update_tsv)
+  method(:prepare_task)
 ]) do |t|
+  update_tsv(t.name)
   $stderr.puts "Rule for TSV (#{t.name})"
   $stderr.puts t.investigation if $verbose
 end
