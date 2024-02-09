@@ -9,6 +9,7 @@ class XMLHandler(xml.sax.ContentHandler):
 
     def init_current_package(self):
         self.current_bpid = ""
+        self.current_id = ""  # internal ID
         self.current_title = ""
         self.current_xrefdb = ""
         self.current_content = ""
@@ -21,6 +22,7 @@ class XMLHandler(xml.sax.ContentHandler):
             self.init_current_package()
         if self.tag_stack == ["PackageSet", "Package", "Project", "Project", "ProjectID", "ArchiveID"]:
             self.current_bpid = attrs.getValue("accession")
+            self.current_id = attrs.getValue("id")
         elif self.tag_stack == ["PackageSet", "Package", "Project", "Project", "ProjectDescr", "Publication"]:
             self.current_pmids.append(attrs.getValue("id"))
         elif self.tag_stack == ["PackageSet", "Package", "Project", "Project", "ProjectDescr", "ExternalLink", "dbXREF"]:
@@ -35,6 +37,7 @@ class XMLHandler(xml.sax.ContentHandler):
     def endElement(self, tag):
         if self.tag_stack == ["PackageSet", "Package"]:
             print(self.current_bpid, "Title", self.current_title, sep="\t")
+            print(self.current_bpid, "ID", self.current_id, sep="\t")
             for pmid in self.current_pmids:
                 # ID might be PMC ID, DOI, etc. The type is not described in the xml.
                 if re.match(r"^[0-9]+$", pmid):
