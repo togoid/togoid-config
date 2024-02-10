@@ -1,5 +1,25 @@
 Error: no time information in ""
 Error: Remote file is empty
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000002	19655	PRJNA19655
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000003	19659	PRJNA19659
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000004	19859	PRJNA19859
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000007	19663	PRJNA19663
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000008	18155	PRJNA18155
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000012	19923	PRJNA19923
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000013	12851	PRJNA12851
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000014	20521	PRJNA20521
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000015	20523	PRJNA20523
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN00000016	20525	PRJNA20525
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861738	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861739	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861740	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861741	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861742	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861743	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861744	1074499	PRJNA1074499
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861746	1074502	PRJNA1074502
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861921	565663	PRJNA565663
+# Error: output/tsv/biosample-bioproject.tsv seems to be malformed SAMN39861927	565663	PRJNA565663
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
