@@ -37,11 +37,22 @@ ec:
   # Human readable label of the dataset (intended to be used in a Web UI)
   label: Enzyme nomenclature
   # Database identifier provided by the Integbio Database Catalog https://integbio.jp/dbcatalog/
-  catalog: nbdc00019
+  catalog: nbdc01883
   # Primary category of the database (category must be defined in the TogoID ontology)
   category: Function
+  # Regular expression used for automatic detection of the dataset from identifiers given by users.
+  # If only a part of the user input should be recognized as an identifier, use a named capture to indicate the part.
+  regex: '^(?:EC:)?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
   # URI prefix (intended to be used as a URI prefix in RDF)
   prefix: http://identifiers.org/ec-code/
+  # (Optional) ID format that can be options for output (intended to be used in a Web UI)
+  format: ["EC:%s"]
+  # Example IDs which are accepted by the TogoID service (thus different types of IDs can be included)
+  examples:
+    - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
+    - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
+  # (Optional) Command to create an id-label tsv file
+  method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/ec_label.rq https://rdfportal.org/sib/sparql
 hgnc:
   label: HGNC
   catalog: nbdc01774
@@ -59,28 +70,6 @@ pubchem_substance:
   prefix: 'https://identifiers.org/pubchem.substance/'
 ```
 
-Optional definition of the ID format can be included.
-
-```yaml
-# Some datasets have ambiguous identifiers
-go:
-  label: Gene ontology
-  catalog: nbdc00074
-  category: Function
-  # Regular expression can be used for automatic detection of the dataset from identifiers given by users.
-  # If only a part of the user input should be recognized as an identifier, use a named capture to indicate the part.
-  regex: '^(GO[:_])?(?<id>\d{7})$'
-  # Identifier format stored in the TSV files (defined by the Handlebars notation with a named capture).
-  internal_format: '{{id}}'
-  # Identifier format used for export in the TogoID API (defined by the Handlebars notation with a named capture).
-  external_format: 'GO:{{id}}'
-  prefix: 'http://purl.obolibrary.org/obo/GO_'
-  # Example IDs which will be accepted by the TogoID service (thus different types of IDs can be included)
-  examples:
-    - [ "0046782", "0033644", "0016021", "0033644", "0016021" ]
-    - [ "GO:0046782", "GO:0033644", "GO:0016021", "GO:0033644", "GO:0016021" ]
-```
-
 ### config.yaml
 
 Update procedure of link data and metadata for pair of datasets with their relation including definitions of forward/reverse predicates for RDF generation.
@@ -90,7 +79,7 @@ Update procedure of link data and metadata for pair of datasets with their relat
 link:
   # Forward link (source to target), predicate must be defined in the TogoID ontology
   forward: TIO_000028
-  # Reverse link (optional; target to source)
+  # Reverse link (target to source)
   reverse: TIO_000029
   # Example file name(s) of link data (only for testing)
   file: sample.tsv
