@@ -4,4 +4,4 @@ link:
   reverse: TIO_000094
 update:
   frequency: Monthly
-  method: awk -F "\t" 'FNR==NR&&$2=="ID"{a[$3]=$1}FNR!=NR&&$2=="BioProject ID"{print $1 "\t" a[$3]}' $TOGOID_ROOT/input/bioproject/bioproject.tsv $TOGOID_ROOT/input/biosample/biosample_set.tsv
+  method: awk -F "\t" 'FNR==NR&&$2=="ID"{a[$3]=$1}FNR!=NR&&$2=="BioProject ID"&&a[$3]{print $1 "\t" a[$3]}' $TOGOID_ROOT/input/bioproject/bioproject.tsv $TOGOID_ROOT/input/biosample/biosample_set.tsv
