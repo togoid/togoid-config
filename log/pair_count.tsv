@@ -6,7 +6,7 @@ bioproject-biosample.tsv	2515326
 bioproject-geo_series.tsv	201852
 bioproject-pubmed.tsv	262617
 bioproject_umbrella-bioproject.tsv	103278
-biosample-bioproject.tsv	2503589
+biosample-bioproject.tsv	17873523
 biosample-geo_sample.tsv	8779234
 cellosaurus-ncit_disease.tsv	70983
 cellosaurus-orphanet_phenotype.tsv	39474
@@ -250,4 +250,4 @@ wikipathways-hmdb.tsv	4013
 wikipathways-lipidmaps.tsv	1361
 wikipathways-ncbigene.tsv	29837
 wikipathways-uniprot.tsv	33518
-total	4660011002
+total	4675380936
