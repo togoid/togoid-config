@@ -234,6 +234,11 @@
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#label> "GEA" .
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#GeoSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#GeoSample> <http://purl.org/dc/terms/identifier> "geo_sample" .
+<http://togoid.dbcls.jp/ontology#GeoSample> <http://www.w3.org/2000/01/rdf-schema#label> "GEO sample" .
+<http://togoid.dbcls.jp/ontology#GeoSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#GeoSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#GeoSeries> <http://purl.org/dc/terms/identifier> "geo_series" .
 <http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#label> "GEO series" .

@@ -197,6 +197,14 @@ gea:
   prefix: 'https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/'
   examples:
     - ["E-GEAD-446","E-GEAD-519","E-GEAD-328","E-GEAD-349","E-GEAD-284","E-GEAD-448","E-GEAD-460","E-GEAD-348","E-GEAD-344","E-GEAD-385"]
+geo_sample:
+  label: GEO sample
+  catalog: nbdc00080
+  category: Sample
+  regex: '^(?<id>GSM\d+)$'
+  prefix: 'http://identifiers.org/geo/'
+  examples:
+    - ["GSM3683883","GSM6900216","GSM2660556","GSM6582742","GSM4471614","GSM3395982","GSM2500217","GSM2748246","GSM4402543","GSM586869"]
 geo_series:
   label: GEO series
   catalog: nbdc00080

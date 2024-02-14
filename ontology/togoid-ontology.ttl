@@ -335,6 +335,12 @@
     rdfs:label "GEA" ;
     rdfs:subClassOf :Experiment, :Dataset .
 
+:GeoSample
+    a owl:Class ;
+    dcterms:identifier "geo_sample" ;
+    rdfs:label "GEO sample" ;
+    rdfs:subClassOf :Sample, :Dataset .
+
 :GeoSeries
     a owl:Class ;
     dcterms:identifier "geo_series" ;

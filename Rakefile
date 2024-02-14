@@ -316,6 +316,8 @@ module TogoID
 #        return "prepare:drugbank"
       when /#{OUTPUT_TSV_DIR}bioproject/
         return "prepare:bioproject"
+      when /#{OUTPUT_TSV_DIR}biosample/
+        return "prepare:biosample"
       when /#{OUTPUT_TSV_DIR}cellosaurus/
         return "prepare:cellosaurus"
       when /#{OUTPUT_TSV_DIR}ensembl/
@@ -357,7 +359,8 @@ module TogoID
       when /#{OUTPUT_TSV_DIR}taxonomy/
         return "prepare:taxonomy"
       else
-        return "config/dataset.yaml"
+        File.open("input/update.txt", "w")
+        return "input/update.txt"
       end
     end
 
@@ -462,9 +465,9 @@ include TogoID::Prepare
 # Dependency for TSV files (check dependency for preparation by target names)
 rule(/#{OUTPUT_TSV_DIR}\S+\.tsv/ => [
   OUTPUT_TSV_DIR,
-  method(:prepare_task),
-  method(:update_tsv)
+  method(:prepare_task)
 ]) do |t|
+  update_tsv(t.name)
   $stderr.puts "Rule for TSV (#{t.name})"
   $stderr.puts t.investigation if $verbose
 end
@@ -492,10 +495,11 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
+  directory INPUT_BIOSAMPLE_DIR  = "input/biosample"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
@@ -530,15 +534,29 @@ namespace :prepare do
   end
 =end
 
-  desc "Prepare required files for Bioproject"
+  desc "Prepare required files for BioProject"
   task :bioproject => INPUT_BIOPROJECT_DIR do
-    $stderr.puts "## Prepare input files for Bioproject"
+    $stderr.puts "## Prepare input files for BioProject"
     download_lock(INPUT_BIOPROJECT_DIR) do
       input_file = "#{INPUT_BIOPROJECT_DIR}/bioproject.xml"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_BIOPROJECT_DIR, input_url)
         sh "python bin/bioproject_xml2tsv.py #{INPUT_BIOPROJECT_DIR}/bioproject.xml > #{INPUT_BIOPROJECT_DIR}/bioproject.tsv"
+      end
+    end
+  end
+
+  desc "Prepare required files for BioSample"
+  task :biosample => INPUT_BIOSAMPLE_DIR do
+    $stderr.puts "## Prepare input files for BioSample"
+    download_lock(INPUT_BIOSAMPLE_DIR) do
+      input_file = "#{INPUT_BIOSAMPLE_DIR}/biosample_set.xml.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_BIOSAMPLE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_BIOSAMPLE_DIR}/biosample_set.xml"
+        sh "python bin/biosample_xml2tsv.py #{INPUT_BIOSAMPLE_DIR}/biosample_set.xml > #{INPUT_BIOSAMPLE_DIR}/biosample_set.tsv"
       end
     end
   end
