@@ -4,4 +4,4 @@ link:
   reverse: TIO_000002
 update:
   frequency: Daily
-  method: awk -F "\t" '($2=="GEO ID"&&$3~/^GSM/)||($2=="GEO URL"&&$3=gensub(/.+acc=/,"","g",$3))&&!a[$1,$3]++{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
+  method: awk -F "\t" '($2=="GEO ID"&&$3~/^GSM[0-9]+$/)||($2=="GEO URL"&&$3=gensub(/.+acc=/,"","g",$3))&&!a[$1,$3]++{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
