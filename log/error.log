@@ -1,5 +1,9 @@
 Error: no time information in ""
 Error: Remote file is empty
+Error: no time information in ""
+Error: no time information in ""
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
+# Error: output/tsv/wikipathways-ncbigene.tsv new file size per old 126079 / 366619 = 0.34389652473003307 < 0.5
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 137961 / 470542 = 0.2931959315002699 < 0.5
