@@ -244,10 +244,10 @@ uniprot_reference_proteome-assembly_refseq.tsv	153
 uniprot_reference_proteome-taxonomy.tsv	515802
 uniprot-refseq_protein.tsv	48658238
 uniprot-uniprot_mnemonic.tsv	250322721
-wikipathways-chebi.tsv	10000
+wikipathways-chebi.tsv	11471
 wikipathways-doid.tsv	951
 wikipathways-hmdb.tsv	4013
 wikipathways-lipidmaps.tsv	1361
 wikipathways-ncbigene.tsv	29837
 wikipathways-uniprot.tsv	33518
-total	4680257639
+total	4680259110
