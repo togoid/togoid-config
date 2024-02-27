@@ -84,7 +84,7 @@ for i in $(seq 0 ${LOOP}); do
     HEADER=""
     n=0
     TRY_LIMIT=3
-    while ! [[ ${HEADER} =~ ^\"[[:alnum:]_]+\"$'\t'\"[[:alnum:]_]+\"$ ]]; do
+    while ! [[ ${HEADER} =~ ^\"[[:alnum:]_]+\"($'\t'\"[[:alnum:]_]+\")*$ ]]; do
         if [[ $n = $TRY_LIMIT ]]; then
             echo "Error: Tried query #${i} ${n} times, but failed all." 1>&2
             exit 1
