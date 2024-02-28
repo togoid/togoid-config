@@ -3,7 +3,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 PREFIX pubmed: <http://rdf.ncbi.nlm.nih.gov/pubmed/>
 SELECT DISTINCT ?rhea_id ?pubmed_id
-FROM <http://rdf.integbio.jp/dataset/rhea>
+FROM <http://rdfportal.org/dataset/rhea>
 WHERE {
   VALUES ?reaction {rhea:Reaction rhea:DirectionalReaction rhea:BidirectionalReaction }
   ?rhea rdfs:subClassOf ?reaction ;

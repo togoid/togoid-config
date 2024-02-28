@@ -21,6 +21,7 @@ ensembl_protein	Ensembl protein	Protein
 ensembl_transcript	Ensembl transcript	Transcript
 flybase_gene	FlyBase gene	Gene
 gea	GEA	Experiment
+geo_sample	GEO sample	Sample
 geo_series	GEO series	Project
 glytoucan	GlyTouCan	Glycan
 go	Gene ontology	Function
@@ -53,7 +54,7 @@ mondo	MONDO	Phenotype
 mp	Mammalian Phenotype Ontology	Phenotype
 nando	NANDO	Phenotype
 nbdc_human_db	NBDC Human Database	Project
-ncbigene	NCBI gene	Gene
+ncbigene	NCBI Gene	Gene
 ncit_disease	NCIt disease	Phenotype
 ncit_tissue	NCIt tissue	Anatomy
 oma_group	OMA group	Ortholog

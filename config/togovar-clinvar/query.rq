@@ -5,11 +5,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?tgv_id ?variation_id
 WHERE {
-  GRAPH <http://togovar.biosciencedbc.jp/variant> {
+  GRAPH <http://togovar.org/variant> {
     ?variant dct:identifier ?tgv_id .
   }
 
-  GRAPH <http://togovar.biosciencedbc.jp/variant/annotation/clinvar> {
+  GRAPH <http://togovar.org/variant/annotation/clinvar> {
     ?variant dct:identifier ?variation_id .
   }
 } limit 2000000
