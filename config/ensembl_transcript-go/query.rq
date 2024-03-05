@@ -1,19 +1,18 @@
 # Endpoint: https://rdfportal.org/ebi/sparql
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
-PREFIX ido: <http://identifiers.org/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
 
-# GRAPH varies e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
 SELECT DISTINCT ?enst_id ?go_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }
   ?ensg obo:RO_0002162 ?taxon .
-  ?enst obo:SO_transcribed_from ?ensg ;
+  ?enst so:transcribed_from ?ensg ;
         rdfs:seeAlso ?go ;
-        dc:identifier ?enst_id .
-  ?go a ido:go .
-  BIND (strafter(str(?go), "GO:") AS ?go_id)
+        dcterms:identifier ?enst_id .
+  FILTER (STRSTARTS (STR(?go), "http://purl.obolibrary.org/obo/"))
+  BIND (STRAFTER(STR(?go), "GO_") AS ?go_id)
 }
