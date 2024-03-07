@@ -246,7 +246,7 @@ hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
   category: Gene
-  regex: '^(?<id>[A-Za-z0-9_\-]+\@?)$'
+  regex: '^(?<id>[A-Z0-9_(orf)\-]+\@?)$'
   prefix: 'http://identifiers.org/hgnc.symbol/'
   examples:
     - ["MBNL2","RGS20","LINC02011","IGHV1-14","SH3RF2","SPATA13","HNRNPCP10","LINC00334","TMEM241","RN7SL753P"]
