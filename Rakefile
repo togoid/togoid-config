@@ -743,7 +743,7 @@ namespace :prepare do
     download_lock(INPUT_NCBIGENE_DIR) do
       updated = false
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2refseq.gz"
-      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2refseq.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2refseq.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2refseq"
@@ -751,7 +751,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2ensembl.gz"
-      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2ensembl.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2ensembl"
@@ -759,7 +759,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene2go.gz"
-      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene2go.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2go.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene2go"
@@ -767,7 +767,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info.gz"
-      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/Homo_sapiens.gene_info"
@@ -775,7 +775,7 @@ namespace :prepare do
       end
 
       input_file = "#{INPUT_NCBIGENE_DIR}/gene_info.gz"
-      input_url  = "https://ftp.ncbi.nih.gov/gene/DATA/gene_info.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene_info.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_NCBIGENE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_NCBIGENE_DIR}/gene_info"
@@ -920,7 +920,7 @@ namespace :prepare do
     download_lock(INPUT_REFSEQ_RNA_DIR) do
       updated = false
       input_file = "#{INPUT_REFSEQ_RNA_DIR}/RELEASE_NUMBER"
-      input_url  = "https://ftp.ncbi.nih.gov/refseq/release/RELEASE_NUMBER"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/refseq/release/RELEASE_NUMBER"
       if update_input_file?(input_file, input_url)
         # If the RELEASE_NUMBER file is updated, fetch it and then download required data.
         download_file(INPUT_REFSEQ_RNA_DIR, input_url)
