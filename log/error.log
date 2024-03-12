@@ -1,6 +1,20 @@
 Error: no time information in ""
 Error: Remote file is empty
 Error: no time information in ""
+Error: Remote file is empty
+Error: no time information in ""
+Error: Remote file is empty
+Error: no time information in ""
+Error: Remote file is empty
+Error: no time information in ""
+Error: Remote file is empty
+Error: no time information in ""
+Error: Remote file is empty
+Error: no time information in ""
+Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/pubchem_compound-atc.tsv new file size per old 28643 / 72636 = 0.39433614185803184 < 0.5
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv new file size per old 0 / 370570 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ncit_disease-ncit_tissue.tsv or created file was empty
+# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 0 / 38828 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uberon-ncit_tissue.tsv or created file was empty

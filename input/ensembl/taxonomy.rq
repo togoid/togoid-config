@@ -1,12 +1,11 @@
-# Endpoint: https://integbio.jp/rdf/ebi/sparql
+# Endpoint: https://rdfportal.org/ebi/sparql
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
-# GRAPH varies e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
 SELECT DISTINCT ?tax_id
 WHERE {
-  [] obo:SO_transcribed_from ?ensg .
+  [] so:transcribed_from ?ensg .
   ?ensg obo:RO_0002162 ?taxon .  # in-taxon
-  ?taxon dc:identifier ?tax_id .
-  # FILTER (strstarts(str(?taxon), "http://identifiers.org/taxonomy/"))
+  ?taxon dcterms:identifier ?tax_id .
 }

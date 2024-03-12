@@ -1,17 +1,15 @@
 # Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
-PREFIX ido: <http://identifiers.org/>
 
 SELECT DISTINCT ?ensg_id ?hgnc_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   ?ensg obo:RO_0002162 taxon:9606 ;
-        dc:identifier ?ensg_id ;
+        dcterms:identifier ?ensg_id ;
         rdfs:seeAlso ?hgnc .
-  ?hgnc a ido:hgnc .
-  ?hgnc dc:identifier ?hgnc_compact_id .
-  BIND (strafter(?hgnc_compact_id, 'HGNC:') AS ?hgnc_id)
+  FILTER (STRSTARTS (STR(?hgnc), "http://identifiers.org/hgnc/"))
+  BIND (STRAFTER(STR(?hgnc), 'HGNC:') AS ?hgnc_id)
 }

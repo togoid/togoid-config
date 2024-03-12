@@ -1,18 +1,17 @@
 # Endpoint: https://rdfportal.org/ebi/sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
-PREFIX ido: <http://identifiers.org/>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
 
-# GRAPH may change by version e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens
 SELECT DISTINCT ?enst_id ?hgnc_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   ?ensg obo:RO_0002162 taxon:9606 ;
         rdfs:seeAlso ?hgnc .
-  ?hgnc a ido:hgnc .
-  ?enst obo:SO_transcribed_from ?ensg ;
-        dc:identifier ?enst_id .
-  BIND (strafter(str(?hgnc), 'HGNC:') AS ?hgnc_id)
+  ?enst so:transcribed_from ?ensg ;
+        dcterms:identifier ?enst_id .
+  FILTER (STRSTARTS (STR(?hgnc), "http://identifiers.org/hgnc/"))
+  BIND (STRAFTER(STR(?hgnc), 'HGNC:') AS ?hgnc_id)
 }
