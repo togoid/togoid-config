@@ -221,7 +221,7 @@ togovar-medgen.tsv	935843
 togovar-ncbigene.tsv	60001809
 togovar-pubmed.tsv	692119
 togovar-refseq_rna.tsv	173346179
-uberon-ncit_tissue.tsv	2585
+uberon-ncit_tissue.tsv	2578
 uniprot-chembl_target.tsv	10144
 uniprot-dbsnp.tsv	65716
 uniprot-ec.tsv	39722925
@@ -250,4 +250,4 @@ wikipathways-hmdb.tsv	4091
 wikipathways-lipidmaps.tsv	1418
 wikipathways-ncbigene.tsv	30159
 wikipathways-uniprot.tsv	33518
-total	4721829499
+total	4721829492
