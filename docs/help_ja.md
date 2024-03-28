@@ -1,5 +1,5 @@
 # TogoID ver. 1.1
-Datasets last updated: 2024-01-15
+Datasets last updated: 2024-03-23
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) は、直感的なインターフェースにより生命科学系データベース(DB)間のつながりを探索的に確認しながらID変換を行うことができるウェブアプリケーションです。同一の実体を指すID間の変換だけでなく、関連する別のカテゴリーのIDへの変換も可能です。また、直接リンクされていないDBのID間でも、他のDBを経由した変換を探索することができます。
@@ -24,13 +24,13 @@ Datasets last updated: 2024-01-15
 - ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。
     1. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json)
     2. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene,uniprot&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene,uniprot&format=json)
-    3. [https://api.togoid.dbcls.jp/convert?format=json&include=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649](https://api.togoid.dbcls.jp/convert?format=json&include=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649)
+    3. [https://api.togoid.dbcls.jp/convert?format=json&report=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649](https://api.togoid.dbcls.jp/convert?format=json&report=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649)
 
 - [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## 統計 (2024-01-15)
+## 統計 (2024-03-23)
 - 対象データセット数 
-    - 102 (72のデータベースに由来)
+    - 103 (72のデータベースに由来)
 - 対象DBの詳細やID例については、"DATASETS" タブ からご覧いただけます。 
 
 ## Web user interface

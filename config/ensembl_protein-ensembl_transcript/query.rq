@@ -1,15 +1,16 @@
 # Endpoint: https://rdfportal.org/ebi/sparql
-PREFIX dc: <http://purl.org/dc/elements/1.1/> 
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
 
-# GRAPH varies e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
-SELECT DISTINCT ?ensp_id ?enst_id
+SELECT DISTINCT ?enst_id ?ensp_id
+FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }
   ?ensg obo:RO_0002162 ?taxon .
-  ?enst obo:SO_transcribed_from ?ensg ;
-        obo:SO_translates_to ?ensp ;
-        dc:identifier ?enst_id .
-  ?ensp dc:identifier ?ensp_id .
+  ?enst so:transcribed_from ?ensg ;
+        dcterms:identifier ?enst_id ;
+        so:translates_to ?ensp .
+  ?ensp dcterms:identifier ?ensp_id .
 }

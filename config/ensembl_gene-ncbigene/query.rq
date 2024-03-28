@@ -1,17 +1,16 @@
 # Endpoint: https://rdfportal.org/ebi/sparql
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
-PREFIX ido: <http://identifiers.org/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-# GRAPH varies e.g., http://rdf.ebi.ac.uk/dataset/ensembl/102/homo_sapiens for tax_id 9606
 SELECT DISTINCT ?ensg_id ?ncbigene_id
+FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }
   ?ensg obo:RO_0002162 ?taxon ;
         rdfs:seeAlso ?ncbigene ;
-        dc:identifier ?ensg_id .
-  ?ncbigene a ido:ncbigene .
-  BIND (strafter(str(?ncbigene), "ncbigene/") AS ?ncbigene_id)
+        dcterms:identifier ?ensg_id .
+  FILTER (STRSTARTS (STR(?ncbigene), "http://identifiers.org/ncbigene/"))
+  BIND (STRAFTER(STR(?ncbigene), "ncbigene/") AS ?ncbigene_id)
 }

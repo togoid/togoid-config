@@ -1,0 +1,20 @@
+# @endpoint https://sparql.wikipathways.org/sparql
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (COUNT(*) as ?total)
+WHERE
+{
+  SELECT DISTINCT ?pathway_id ?ncbigene_id
+  FROM <http://rdf.wikipathways.org/>
+  WHERE {
+    ?pathway a wp:Pathway .
+    ?ncbigene dct:isPartOf* ?pathway ;
+              a wp:GeneProduct ;
+              dc:source "Entrez Gene" .
+    BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
+    BIND (strafter(str(?ncbigene), "https://identifiers.org/ncbigene/") AS ?ncbigene_id)
+  }
+}

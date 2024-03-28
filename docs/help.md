@@ -1,5 +1,5 @@
 # TogoID ver. 1.1
-Datasets last updated: 2024-01-15
+Datasets last updated: 2024-03-23
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) is an ID conversion service implementing unique features with an intuitive web interface and an API for programmatic access. TogoID supports datasets from various biological categories such as gene, protein, chemical compound, pathway, disease, etc. TogoID users can perform exploratory multistep conversions to find a path among IDs. To guide the interpretation of biological meanings in the conversions, we crafted an [ontology](https://togoid.dbcls.jp/ontology) that defines the semantics of the dataset relations.
@@ -18,13 +18,13 @@ Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, 
 - TogoID is also available as an API, which allows other applications to use it for ID conversion.
     1. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene&format=json)
     2. [https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene,uniprot&format=json](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,ensembl_gene,uniprot&format=json)
-    3. [https://api.togoid.dbcls.jp/convert?format=json&include=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649](https://api.togoid.dbcls.jp/convert?format=json&include=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649)
+    3. [https://api.togoid.dbcls.jp/convert?format=json&report=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649](https://api.togoid.dbcls.jp/convert?format=json&report=pair&route=pubchem_compound,chebi,reactome_reaction,uniprot,ncbigene&ids=649)
 
 - [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/)
 
-## Statistics (as of 2024-01-15)
+## Statistics (as of 2024-03-23)
 - Number of target datasets 
-    - 102 (from 72 databases)
+    - 103 (from 72 databases)
 - For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 
 
 ## Web user interface

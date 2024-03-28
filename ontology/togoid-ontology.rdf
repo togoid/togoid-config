@@ -204,6 +204,12 @@
     <rdfs:label>Genotype</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#GeoSample">
+    <dcterms:identifier>geo_sample</dcterms:identifier>
+    <rdfs:label>GEO sample</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#GeoSeries">
     <dcterms:identifier>geo_series</dcterms:identifier>
     <rdfs:label>GEO series</rdfs:label>
