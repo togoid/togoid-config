@@ -49,7 +49,7 @@ gea-bioproject.tsv	141
 gea-biosample.tsv	5046
 glytoucan-doid.tsv	290
 glytoucan-ncbigene.tsv	1270
-glytoucan-uniprot.tsv	49240
+glytoucan-uniprot.tsv	50841
 hgnc-ccds.tsv	35219
 hgnc-ec.tsv	1995
 hgnc-ensembl_gene.tsv	40970
@@ -250,4 +250,4 @@ wikipathways-hmdb.tsv	4091
 wikipathways-lipidmaps.tsv	1418
 wikipathways-ncbigene.tsv	30159
 wikipathways-uniprot.tsv	33518
-total	4732243776
+total	4732245377
