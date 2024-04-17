@@ -1,6 +1,9 @@
-# 2024-04-09
+# 2024-04-17
 - Weekly update has been completed.
-  Last week's update failed for technical reasons. We apologise for any inconvenience caused.
+
+# 2024-04-09
+- Weekly update has been completed.  
+  Last week's update failed for technical reasons. We apologize for any inconvenience caused.
 
 # 2024-03-26
 - Weekly update has been completed.
