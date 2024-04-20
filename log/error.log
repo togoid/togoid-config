@@ -3,5 +3,5 @@ Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1596 / 4376 = 0.3647166361974406 < 0.5
-# Error: output/tsv/wikipathways-chebi.tsv new file size per old 69419 / 148433 = 0.4676790201639797 < 0.5
-# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 57836 / 470542 = 0.12291357625886744 < 0.5
+# Error: output/tsv/wikipathways-chebi.tsv new file size per old 69458 / 148433 = 0.4679417649714012 < 0.5
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 57906 / 470542 = 0.12306234087499097 < 0.5
