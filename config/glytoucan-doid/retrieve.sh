@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # GlyTouCan IDとDOIDのペアを取得する。
-# 構成としては、Genome AllianceとDisGeNetからのデータを取得するSPRQLクエリをそれぞれquery1.rq、query2.rqでエンドポイントに発行して、それを元にペアを生成する。
+# 構成としては、Genome AllianceとDisGeNetからのデータを取得するSPARQLクエリをそれぞれquery1.rq、query2.rqでエンドポイントに発行して、それを元にペアを生成する。
 # 両者をUNIONで結ぶと180秒の時間制限によるタイムアウトが生じる。
 
 ENDPOINT=https://ts.glycosmos.org/sparql
