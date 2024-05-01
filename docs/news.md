@@ -1,3 +1,8 @@
+# 2024-05-01
+- Weekly update has been completed.  
+- New feature:  
+  The URL parameters "ids" and "route" are now available to specify IDs to convert and a route for a conversion path, respectively.
+
 # 2024-04-23
 - Weekly update has been completed.
 
