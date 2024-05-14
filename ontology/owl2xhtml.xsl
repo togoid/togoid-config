@@ -208,13 +208,11 @@ by Masahide Kanzaki, and from the OWL2HTML stylesheet (2), by Li Ding. We are ve
 					TIO: TogoID Ontology
 				</td>
 				<td id="menu">
-					<a href="https://togoid.dbcls.jp/ontology/togoid-ontology.ttl">Turtle</a>
+					<a href="https://github.com/togoid/togoid-config/blob/production/ontology/togoid-ontology.ttl">Turtle</a>
 					&#183; <!-- middot -->
-					<a href="https://togoid.dbcls.jp/ontology/togoid-ontology.rdf">RDF/XML</a>
+					<a href="https://github.com/togoid/togoid-config/blob/production/ontology/togoid-ontology.rdf">RDF/XML</a>
                                         &#183; <!-- middot -->
-					<a href="https://github.com/dbcls/togoid-config/">Contact/Help</a>
-					&#183; <!-- middot -->
-					<a href="https://togoid.dbcls.jp/" rel="help">Documentation</a>
+					<a href="https://github.com/togoid/togoid-config/issues">Contact</a>
 				</td>
 			</tr>
 		</table> <!-- end of header -->

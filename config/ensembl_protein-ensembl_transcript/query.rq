@@ -4,7 +4,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX taxon: <http://identifiers.org/taxonomy/>
 PREFIX so: <http://purl.obolibrary.org/obo/so#>
 
-SELECT DISTINCT ?enst_id ?ensp_id
+SELECT DISTINCT ?ensp_id ?enst_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
   VALUES ?taxon { taxon:{{taxon}} }

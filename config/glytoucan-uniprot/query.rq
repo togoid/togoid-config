@@ -1,16 +1,14 @@
 PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>
 PREFIX gco:<http://purl.jp/bio/12/glyco/conjugate#>
-PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
-PREFIX faldo: <http://biohackathon.org/resource/faldo#>
 PREFIX up: <http://purl.uniprot.org/core/>
 
-SELECT DISTINCT ?gtc_id (substr(str(?protein),33) as ?uniprot_id)
+SELECT DISTINCT ?gtc_id ?uniprot_id
 WHERE {
- GRAPH <http://rdf.glycosmos.org/glycan_glycoprotein> {
+ GRAPH <http://rdf.glycosmos.org/glycoprotein> {
     ?protein gco:glycosylated_at [
-      glycan:is_from_source ?db ;
-      gco:has_saccharide ?gtc  ] .
+      gco:has_saccharide ?gtc
+    ] .
   }
-  BIND(strafter(str(?gtc),"can/") as ?gtc_id)
-  BIND(URI(concat("http://rdf.glycoinfo.org/glycan/",?gtc_id)) as ?gtc_uri)
+  BIND(strafter(str(?gtc), "http://rdf.glycoinfo.org/glycan/") as ?gtc_id)
+  BIND(strafter(str(?protein), "http://glycosmos.org/glycoprotein/") as ?uniprot_id)
 }
