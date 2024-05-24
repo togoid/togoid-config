@@ -1,7 +1,2 @@
 Error: no time information in ""
 Error: Remote file is empty
-# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
-# Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/glytoucan-doid.tsv new file size per old 1596 / 4376 = 0.3647166361974406 < 0.5
-# Error: output/tsv/wikipathways-chebi.tsv new file size per old 69817 / 148433 = 0.47036036460894814 < 0.5
-# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 57944 / 470542 = 0.12314309880945803 < 0.5
