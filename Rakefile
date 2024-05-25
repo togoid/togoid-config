@@ -410,7 +410,7 @@ module TogoID
           sh "wget #{opts} --directory-prefix #{dir} #{url}"
         end
       rescue StandardError => e
-          puts "Error: #{e.message}"
+          $stderr.puts "Error: download_file(#{dir}, #{url}): #{e.message}"
       end
     end
 
@@ -440,7 +440,7 @@ module TogoID
         begin
           remote_file_time = Time.parse(`curl -sIL #{url} | grep -i '^last-modified:' | tail -1 | sed -e 's/^[Ll]ast-[Mm]odified: //'`)  # Time object
         rescue ArgumentError => e
-          puts "Error: #{e.message}"
+          $stderr.puts "Error: check_remote_file_time(#{file}, #{url}): #{e.message}"
           return false
         end
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
