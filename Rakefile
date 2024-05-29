@@ -410,7 +410,7 @@ module TogoID
           sh "wget #{opts} --directory-prefix #{dir} #{url}"
         end
       rescue StandardError => e
-          puts "Error: #{e.message}"
+          $stderr.puts "Error: download_file(#{dir}, #{url}): #{e.message}"
       end
     end
 
@@ -440,7 +440,7 @@ module TogoID
         begin
           remote_file_time = Time.parse(`curl -sIL #{url} | grep -i '^last-modified:' | tail -1 | sed -e 's/^[Ll]ast-[Mm]odified: //'`)  # Time object
         rescue ArgumentError => e
-          puts "Error: #{e.message}"
+          $stderr.puts "Error: check_remote_file_time(#{file}, #{url}): #{e.message}"
           return false
         end
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
@@ -1045,7 +1045,11 @@ namespace :prepare do
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
         updated = true
       end
-      sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
+      begin
+        sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
+      rescue StandardError => e
+        $stderr.puts "Error: prepare uniprot_reference_proteome: #{e.message}"
+      end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
       updated
