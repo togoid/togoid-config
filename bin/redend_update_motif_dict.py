@@ -1,7 +1,9 @@
 import csv
-import requests
+import json
 import sys
+import urllib.request
 import urllib.parse
+# import requests
 
 
 def get_gtcids(motif, wurcs, api, redend):
@@ -20,11 +22,13 @@ def get_gtcids(motif, wurcs, api, redend):
             url = api + "partialmatch?wurcs=" + encoded_wurcs
 
         try:
-            r = requests.get(url)
-            json = r.json()
-            gtcids = list(map(lambda h: h["id"], json))
+            # r = requests.get(url)
+            # res_json = r.json()
+            r = urllib.request.urlopen(url)
+            res_json = json.loads(r.read())
+            gtcids = list(map(lambda h: h["id"], res_json))
         except Exception as e:
-            print(f'Error: {e}: {api}', file=sys.stderr)
+            print(f'Error: {e}: {url} {motif}', file=sys.stderr)
             sys.exit(1)
             # gtcids = []
 
