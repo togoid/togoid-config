@@ -3,6 +3,9 @@ Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1596 / 4376 = 0.3647166361974406 < 0.5
+    raise ImportError(
+ImportError: urllib3 v2.0 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'OpenSSL 1.0.2k-fips  26 Jan 2017'. See: https://github.com/urllib3/urllib3/issues/2168
+# Error: Failed to create output/tsv/glytoucan_motif-glytoucan.tsv or created file was empty
 # Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
 # Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5

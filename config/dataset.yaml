@@ -221,6 +221,14 @@ glytoucan:
   prefix: 'http://identifiers.org/glytoucan/'
   examples:
     - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
+glytoucan_motif:
+  label: GlyTouCan motif
+  catalog: nbdc01535
+  category: Glycan
+  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
+  prefix: 'http://identifiers.org/glytoucan/'
+  examples:
+    - ["G64227KZ","G14091MR","G00552RX","G18625KA","G54733XO","G72557NR","G90598GO","G93805MV","G99524KA","G00029MO"]
 go:
   label: Gene ontology
   catalog: nbdc00074
