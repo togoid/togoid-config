@@ -227,6 +227,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#GlytoucanMotif">
+    <dcterms:identifier>glytoucan_motif</dcterms:identifier>
+    <rdfs:label>GlyTouCan motif</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Go">
     <dcterms:identifier>go</dcterms:identifier>
     <rdfs:label>Gene ontology</rdfs:label>
@@ -1661,6 +1667,22 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Compound"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000120"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000122">
+    <display_label>has motif</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+    <rdfs:label>glycan has motif</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000123"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000123">
+    <display_label>appears in glycan</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+    <rdfs:label>motif appears in glycan</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000122"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>

@@ -24,6 +24,7 @@ gea	GEA	Experiment
 geo_sample	GEO sample	Sample
 geo_series	GEO series	Project
 glytoucan	GlyTouCan	Glycan
+glytoucan_motif	GlyTouCan motif	Glycan
 go	Gene ontology	Function
 hgnc	HGNC	Gene
 hgnc_symbol	HGNC gene symbol	Gene, Synonym
