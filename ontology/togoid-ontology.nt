@@ -249,6 +249,11 @@
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#label> "GlyTouCan" .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://purl.org/dc/terms/identifier> "glytoucan_motif" .
+<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/2000/01/rdf-schema#label> "GlyTouCan motif" .
+<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Go> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Go> <http://purl.org/dc/terms/identifier> "go" .
 <http://togoid.dbcls.jp/ontology#Go> <http://www.w3.org/2000/01/rdf-schema#label> "Gene ontology" .
@@ -1359,3 +1364,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000120> .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#label> "molecule is targeted by compound" .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://togoid.dbcls.jp/ontology#display_label> "is targeted by" .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000123> .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#label> "glycan has motif" .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://togoid.dbcls.jp/ontology#display_label> "has motif" .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000122> .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#label> "motif appears in glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://togoid.dbcls.jp/ontology#display_label> "appears in glycan" .
