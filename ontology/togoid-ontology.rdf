@@ -221,15 +221,15 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Molecule"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Glytoucan">
-    <dcterms:identifier>glytoucan</dcterms:identifier>
-    <rdfs:label>GlyTouCan</rdfs:label>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Glycomotif">
+    <dcterms:identifier>glycomotif</dcterms:identifier>
+    <rdfs:label>GlycoMotif</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
   </owl:Class>
-  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#GlytoucanMotif">
-    <dcterms:identifier>glytoucan_motif</dcterms:identifier>
-    <rdfs:label>GlyTouCan motif</rdfs:label>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Glytoucan">
+    <dcterms:identifier>glytoucan</dcterms:identifier>
+    <rdfs:label>GlyTouCan</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Glycan"/>
   </owl:Class>
