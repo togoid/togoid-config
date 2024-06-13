@@ -347,16 +347,16 @@
     rdfs:label "GEO series" ;
     rdfs:subClassOf :Project, :Dataset .
 
+:Glycomotif
+    a owl:Class ;
+    dcterms:identifier "glycomotif" ;
+    rdfs:label "GlycoMotif" ;
+    rdfs:subClassOf :Glycan, :Dataset .
+
 :Glytoucan
     a owl:Class ;
     dcterms:identifier "glytoucan" ;
     rdfs:label "GlyTouCan" ;
-    rdfs:subClassOf :Glycan, :Dataset .
-
-:GlytoucanMotif
-    a owl:Class ;
-    dcterms:identifier "glytoucan_motif" ;
-    rdfs:label "GlyTouCan motif" ;
     rdfs:subClassOf :Glycan, :Dataset .
 
 :Go

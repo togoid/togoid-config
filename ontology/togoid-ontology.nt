@@ -244,16 +244,16 @@
 <http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#label> "GEO series" .
 <http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#GeoSeries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Glycomotif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Glycomotif> <http://purl.org/dc/terms/identifier> "glycomotif" .
+<http://togoid.dbcls.jp/ontology#Glycomotif> <http://www.w3.org/2000/01/rdf-schema#label> "GlycoMotif" .
+<http://togoid.dbcls.jp/ontology#Glycomotif> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#Glycomotif> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://purl.org/dc/terms/identifier> "glytoucan" .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#label> "GlyTouCan" .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#Glytoucan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://purl.org/dc/terms/identifier> "glytoucan_motif" .
-<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/2000/01/rdf-schema#label> "GlyTouCan motif" .
-<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Glycan> .
-<http://togoid.dbcls.jp/ontology#GlytoucanMotif> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Go> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Go> <http://purl.org/dc/terms/identifier> "go" .
 <http://togoid.dbcls.jp/ontology#Go> <http://www.w3.org/2000/01/rdf-schema#label> "Gene ontology" .
