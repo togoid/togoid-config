@@ -225,7 +225,7 @@ glycomotif:
   label: GlycoMotif
   catalog: FIXME
   category: Glycan
-  regex: '^(GM\.)?(?<id>G[0-9]{5}[A-Z]{2})$'
+  regex: '^(?:GM\.)?(?<id>G[0-9]{5}[A-Z]{2})$'
   prefix: 'http://glycomotif.glyomics.org/glycomotif/GM.'
   format: ["GM.%s"]
   examples:
