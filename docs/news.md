@@ -1,3 +1,7 @@
+# 2024-06-13
+- Weekly update has been completed.  
+- A new dataset "GlyTouCan motif" has been added.
+
 # 2024-06-06
 - Weekly update has been completed.
 

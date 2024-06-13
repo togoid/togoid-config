@@ -58,5 +58,5 @@ if __name__ == '__main__':
     motif_dict = make_dict(api, motif_list_filepath)
 
     for motif in motif_dict:
-        for glycan in motif_dict:
+        for glycan in motif_dict[motif]:
             print(motif, glycan, sep="\t")
