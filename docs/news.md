@@ -1,3 +1,6 @@
+# 2024-06-18
+- Weekly update has been completed.
+
 # 2024-06-13
 - Weekly update has been completed.  
 - A new dataset "GlycoMotif" has been added.
