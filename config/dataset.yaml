@@ -108,7 +108,7 @@ chembl_target:
   prefix: 'http://identifiers.org/chembl.target/'
   examples:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
-clinvar:
+clinvar_variant:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
