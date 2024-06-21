@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: curl -sSL https://grch38.togovar.org/public/togoid/clinvar-medgen.tsv
+  method: awk -v prefix="MedGen:" -f $TOGOID_ROOT/bin/parse_vcv_phenotype.awk $TOGOID_ROOT/input/clinvar/variant_summary.txt
