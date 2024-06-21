@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000010
+  reverse: TIO_000011
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -v prefix="Orphanet:" -f $TOGOID_ROOT/bin/parse_rcv_phenotype.awk $TOGOID_ROOT/input/clinvar/variant_summary.txt

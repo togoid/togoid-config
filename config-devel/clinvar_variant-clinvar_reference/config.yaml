@@ -1,0 +1,7 @@
+link:
+  forward: FIXME
+  reverse: FIXME
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" 'FNR>=2{split($12,b,"|");for(k in b){if(!a[$31, b[k]]++){print $31 "\t" b[k]}}}' $TOGOID_ROOT/input/clinvar/variant_summary.txt
