@@ -320,6 +320,8 @@ module TogoID
         return "prepare:biosample"
       when /#{OUTPUT_TSV_DIR}cellosaurus/
         return "prepare:cellosaurus"
+      when /#{OUTPUT_TSV_DIR}clinvar/
+        return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
       when /#{OUTPUT_TSV_DIR}hmdb/
@@ -495,12 +497,13 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_BIOSAMPLE_DIR  = "input/biosample"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
+  directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
@@ -569,6 +572,19 @@ namespace :prepare do
       input_url  = "https://ftp.expasy.org/databases/cellosaurus/cellosaurus.txt"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_CELLOSAURUS_DIR, input_url)
+      end
+    end
+  end
+
+  desc "Prepare required files for ClinVar"
+  task :clinvar => INPUT_CLINVAR_DIR do
+    $stderr.puts "## Prepare input files for ClinVar"
+    download_lock(INPUT_CLINVAR_DIR) do
+      input_file = "#{INPUT_CLINVAR_DIR}/variant_summary.txt.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_CLINVAR_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_CLINVAR_DIR}/variant_summary.txt"
       end
     end
   end

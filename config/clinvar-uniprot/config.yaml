@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000062
+  reverse: TIO_000063
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" 'FNR>=2{split($29,b,","); for(k in b){if(b[k]~/^UniProtKB:/){up=gensub(/((^UniProtKB:)|(#VAR_[0-9]+$))/,"","g",b[k]); if(!a[$31,up]++){print $31 "\t" up}}}}' $TOGOID_ROOT/input/clinvar/variant_summary.txt
