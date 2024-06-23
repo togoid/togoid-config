@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000058
+  reverse: TIO_000059
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" 'FNR>=2&&$10!="-1"{print $31 "\trs" $10}' $TOGOID_ROOT/input/clinvar/variant_summary.txt

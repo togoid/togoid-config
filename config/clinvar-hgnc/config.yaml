@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000062
+  reverse: TIO_000063
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F "\t" 'FNR>=2&&$6!="-"&&!a[$31,$6]++{print $31 "\t" gensub("HGNC:","","g",$6)}' $TOGOID_ROOT/input/clinvar/variant_summary.txt
