@@ -1,3 +1,6 @@
+# 2024-07-02
+- Weekly update has been completed.
+
 # 2024-06-25
 - Weekly update has been completed.  
 - Some new pairs related with ClinVar have been added.
