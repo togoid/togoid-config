@@ -342,6 +342,8 @@ module TogoID
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}oma_protein/
         return "prepare:oma_protein"
+      when /#{OUTPUT_TSV_DIR}pmc/
+        return "prepare:pmc"
       when /#{OUTPUT_TSV_DIR}prosite/
         return "prepare:prosite"
       when /#{OUTPUT_TSV_DIR}reactome/
@@ -497,7 +499,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -515,6 +517,7 @@ namespace :prepare do
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_OMA_PROTEIN_DIR = "input/oma_protein"
   directory INPUT_PROSITE_DIR     = "input/prosite"
+  directory INPUT_PMC_DIR     = "input/pmc"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
@@ -838,7 +841,23 @@ namespace :prepare do
       updated
     end
   end
-  
+
+  desc "Prepare required files for PMC"
+  task :pmc => INPUT_PMC_DIR do
+    $stderr.puts "## Prepare input files for PMC"
+    download_lock(INPUT_PMC_DIR) do
+      updated = false
+      input_file = "#{INPUT_PMC_DIR}/PMC-ids.csv.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/pmc/PMC-ids.csv.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_PMC_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_PMC_DIR}/PMC-ids.csv"
+        updated = true
+      end
+      updated
+    end
+  end
+
   desc "Prepare required files for Reactome"
   task :reactome => INPUT_REACTOME_DIR do
     $stderr.puts "## Prepare input files for Reactome"
