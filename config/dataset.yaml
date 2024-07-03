@@ -60,6 +60,7 @@ biosample:
   prefix: 'http://identifiers.org/biosample/'
   examples:
     - ["SAMD00003683","SAMD00006315","SAMD00003741","SAMD00011226","SAMN13091859","SAMN05877962","SAMN05877838","SAMEA104232303","SAMEA4760552","SAMEA1572228"]
+  method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
 ccds:
   label: Consensus CDS
   catalog: nbdc00023
