@@ -966,7 +966,7 @@ wormbase_gene:
   prefix: 'http://identifiers.org/wb/'
   examples:
     - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
-  method: awk -F '\t' -v 'db=WormBase' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  method: awk -F '\t' -v 'db=AllianceGenome:WB' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 xenbase_gene:
   label: Xenbase gene
   catalog: nbdc01892
