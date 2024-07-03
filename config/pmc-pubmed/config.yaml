@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000002
+  reverse: TIO_000002
+update:
+  frequency: Daily
+  method: awk -F "," 'FNR>=2&&$10{print gensub(/^PMC/,"","g",$9) "\t" $10}' $TOGOID_ROOT/input/pmc/PMC-ids.csv
