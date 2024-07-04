@@ -863,88 +863,30 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for Reactome"
     download_lock(INPUT_REACTOME_DIR) do
       updated = false
-      input_file = "#{INPUT_REACTOME_DIR}/UniProt2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/UniProt2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
+
+      files = [
+        "UniProt2ReactomeReactions.txt",
+        "ChEBI2ReactomeReactions.txt",
+        "Ensembl2ReactomeReactions.txt",
+        "miRBase2ReactomeReactions.txt",
+        "NCBI2ReactomeReactions.txt",
+        "GtoP2ReactomeReactions.txt",
+        "UniProt2Reactome_All_Levels.txt",
+        "ChEBI2Reactome_All_Levels.txt",
+        "Ensembl2Reactome_All_Levels.txt",
+        "miRBase2Reactome_All_Levels.txt",
+        "NCBI2Reactome_All_Levels.txt",
+        "GtoP2Reactome_All_Levels.txt"
+      ]
+      for file in files do
+        input_file = "#{INPUT_REACTOME_DIR}/#{file}"
+        input_url  = "https://reactome.org/download/current/#{file}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_REACTOME_DIR, input_url)
+          updated = true
+        end
       end
 
-      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/ChEBI2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/Ensembl2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/miRBase2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/miRBase2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/NCBI2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/NCBI2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-      input_file = "#{INPUT_REACTOME_DIR}/GtoP2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/GtoP2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/UniProt2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/miRBase2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/NCBI2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-      
-      input_file = "#{INPUT_REACTOME_DIR}/GtoP2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
       updated
     end
   end
