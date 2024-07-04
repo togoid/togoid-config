@@ -838,6 +838,13 @@ namespace :prepare do
         download_file(INPUT_PROSITE_DIR, input_url)
         updated = true
       end
+
+      input_file = "#{INPUT_PROSITE_DIR}/prorule.dat"
+      input_url  = "https://ftp.expasy.org/databases/prosite/prorule.dat"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_PROSITE_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end

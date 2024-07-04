@@ -684,6 +684,7 @@ prosite:
   prefix: 'http://identifiers.org/prosite/'
   examples:
     - ["PS01177","PS00516","PS01065","PS00418","PS01085","PS01086","PS01293","PS00355","PS01253","PS00992"]
+  method: awk 'BEGIN{FS="\n"; RS="//\n"}FNR>=2{for(i=1;i<=NF;i++){if($i~/^DE   /){label=substr($i,6)}if($i~/AC   /){split($i,b,";");id=substr(b[1],6)}}print id "\t" label}' $TOGOID_ROOT/input/prosite/prosite.dat
 prosite_prorule:
   label: PROSITE ProRule
   catalog: nbdc00241
@@ -692,6 +693,7 @@ prosite_prorule:
   prefix: 'https://prosite.expasy.org/rule/'
   examples:
     - ["PRU00498","PRU00672","PRU00673","PRU00293","PRU00499","PRU10142","PRU10001","PRU10002","PRU10004","PRU10005"]
+  method: awk 'BEGIN{FS="\n"; RS="//\n"}FNR>=2{for(i=1;i<=NF;i++){if($i~/^Names/){label=substr($i,8)}if($i~/AC   /){split($i,b,";");id=substr(b[1],6)}}print id "\t" label}' $TOGOID_ROOT/input/prosite/prorule.dat
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
