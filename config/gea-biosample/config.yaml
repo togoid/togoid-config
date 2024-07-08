@@ -4,4 +4,4 @@ link:
   reverse: TIO_000053
 update:
   frequency: Monthly
-  method: curl -sS https://ddbj.nig.ac.jp/public/rdf/dblink/gea-biosample/gea2biosample.tsv
+  method: curl -sS https://ddbj.nig.ac.jp/public/dblink/gea-biosample/gea2biosample.tsv

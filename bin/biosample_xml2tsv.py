@@ -15,6 +15,7 @@ class XMLHandler(xml.sax.ContentHandler):
         self.current_geo_url = ""
         self.current_content = ""
         self.current_db = ""
+        self.current_title = ""
         self.current_link_label = ""
         self.current_link_target = ""
 
@@ -52,11 +53,16 @@ class XMLHandler(xml.sax.ContentHandler):
             self.current_link_target = ""
             self.current_link_label = ""
 
+        elif self.tag_stack == ["BioSampleSet", "BioSample", "Description", "Title"]:
+            self.current_title = self.current_content
+
         if self.tag_stack == ["BioSampleSet", "BioSample"]:
             if self.current_geoid != "":
                 print(self.current_bsid, "GEO ID", self.current_geoid, sep="\t")
             if self.current_geo_url != "":
                 print(self.current_bsid, "GEO URL", self.current_geo_url, sep="\t")
+            if self.current_title != "":
+                print(self.current_bsid, "Title", self.current_title, sep="\t")
             for bpid in self.current_bpids:
                 print(self.current_bsid, "BioProject ID", bpid, sep="\t")
 

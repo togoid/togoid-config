@@ -617,6 +617,12 @@
     rdfs:label "Pfam" ;
     rdfs:subClassOf :Domain, :Dataset .
 
+:Pmc
+    a owl:Class ;
+    dcterms:identifier "pmc" ;
+    rdfs:label "PMC" ;
+    rdfs:subClassOf :Literature, :Dataset .
+
 :Prosite
     a owl:Class ;
     dcterms:identifier "prosite" ;
