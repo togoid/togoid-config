@@ -2,52 +2,7 @@ Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi
 Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/gea-bioproject.tsv new file size per old 150 / 3032 = 0.04947229551451187 < 0.5
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <html>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <body>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML </body>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML </html>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <html>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <body>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML </body>
-# Error: output/tsv/gea-bioproject.tsv seems to contain HTML </html>
-# Error: output/tsv/gea-biosample.tsv new file size per old 150 / 121104 = 0.0012386048355132778 < 0.5
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <html>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <body>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <hr><center>nginx</center>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML </body>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML </html>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <html>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <body>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML <hr><center>nginx</center>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML </body>
-# Error: output/tsv/gea-biosample.tsv seems to contain HTML </html>
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1596 / 4376 = 0.3647166361974406 < 0.5
-# Error: output/tsv/jga_study-jga_dataset.tsv new file size per old 160 / 4378 = 0.03654636820465966 < 0.5
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <html>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <body>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <hr><center>nginx</center>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML </body>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML </html>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <html>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <head><title>504 Gateway Time-out</title></head>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <body>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <center><h1>504 Gateway Time-out</h1></center>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML <hr><center>nginx</center>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML </body>
-# Error: output/tsv/jga_study-jga_dataset.tsv seems to contain HTML </html>
 # Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
 # Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
