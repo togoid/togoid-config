@@ -15,5 +15,5 @@ Error: Remote file is empty
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/wikipathways-chebi.tsv new file size per old 71570 / 148433 = 0.4821704068502287 < 0.5
-# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 59274 / 470542 = 0.12596962651580518 < 0.5
+# Error: output/tsv/wikipathways-chebi.tsv new file size per old 71691 / 148433 = 0.4829855894578699 < 0.5
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 59610 / 470542 = 0.12668369667319815 < 0.5
