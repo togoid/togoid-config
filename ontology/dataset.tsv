@@ -23,6 +23,7 @@ flybase_gene	FlyBase gene	Gene
 gea	GEA	Experiment
 geo_sample	GEO sample	Sample
 geo_series	GEO series	Project
+glycomotif	GlycoMotif	Glycan
 glytoucan	GlyTouCan	Glycan
 go	Gene ontology	Function
 hgnc	HGNC	Gene
@@ -67,6 +68,7 @@ pathbank	Pathbank	Pathway
 pdb	PDB	Structure
 pdb_ccd	PDB CCD	Compound
 pfam	Pfam	Domain
+pmc	PMC	Literature
 prosite	PROSITE	Domain
 prosite_prorule	PROSITE ProRule	AnnotationRule
 pubchem_compound	PubChem compound	Compound

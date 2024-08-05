@@ -347,6 +347,12 @@
     rdfs:label "GEO series" ;
     rdfs:subClassOf :Project, :Dataset .
 
+:Glycomotif
+    a owl:Class ;
+    dcterms:identifier "glycomotif" ;
+    rdfs:label "GlycoMotif" ;
+    rdfs:subClassOf :Glycan, :Dataset .
+
 :Glytoucan
     a owl:Class ;
     dcterms:identifier "glytoucan" ;
@@ -610,6 +616,12 @@
     dcterms:identifier "pfam" ;
     rdfs:label "Pfam" ;
     rdfs:subClassOf :Domain, :Dataset .
+
+:Pmc
+    a owl:Class ;
+    dcterms:identifier "pmc" ;
+    rdfs:label "PMC" ;
+    rdfs:subClassOf :Literature, :Dataset .
 
 :Prosite
     a owl:Class ;
@@ -1777,4 +1789,20 @@
     owl:inverseOf :TIO_000120 ;
     rdfs:label "molecule is targeted by compound" ;
     :display_label "is targeted by" .
+
+:TIO_000122
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Glycan ;
+    owl:inverseOf :TIO_000123 ;
+    rdfs:label "glycan has motif" ;
+    :display_label "has motif" .
+
+:TIO_000123
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Glycan ;
+    owl:inverseOf :TIO_000122 ;
+    rdfs:label "motif appears in glycan" ;
+    :display_label "appears in glycan" .
 
