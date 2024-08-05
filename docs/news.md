@@ -1,3 +1,42 @@
+# 2024-07-30
+- Weekly update has been completed.
+
+# 2024-07-25
+- Weekly update has been completed.
+
+# 2024-07-16
+- Weekly update has been completed.
+
+# 2024-07-09
+- Weekly update has been completed.  
+- A new dataset "PMC" had been added.
+
+# 2024-07-02
+- Weekly update has been completed.
+
+# 2024-06-25
+- Weekly update has been completed.  
+- Some new pairs related with ClinVar have been added.
+
+# 2024-06-18
+- Weekly update has been completed.
+
+# 2024-06-13
+- Weekly update has been completed.  
+- A new dataset "GlycoMotif" has been added.
+
+# 2024-06-06
+- Weekly update has been completed.
+
+# 2024-05-29
+- Weekly update has been completed.
+
+# 2024-05-22
+- Weekly update has been completed.
+
+# 2024-05-15
+- Weekly update has been completed.
+
 # 2024-05-08
 - Weekly update has been completed.
 
