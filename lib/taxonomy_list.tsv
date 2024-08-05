@@ -1,67 +1,18 @@
-10020	Dipodomys ordii	Ord's kangaroo rat	
-10029	Cricetulus griseus	Chinese hamster	Chinese hamsters
-10036	Mesocricetus auratus	golden hamster	Syrian golden hamster, Syrian golden hamsters, Syrian hamster
+9606	Homo sapiens	human	
 10090	Mus musculus	house mouse	mouse
 10116	Rattus norvegicus	Norway rat	brown rat, rat, rats
-10141	Cavia porcellus	domestic guinea pig	guinea pig
-10181	Heterocephalus glaber	naked mole-rat	naked mole rat
-10228	Trichoplax adhaerens		
-1069201	Aspergillus luchuensis		
-110368	Bicyclus anynana	squinting bush brown	
-113334	Melitaea cinxia	Glanville fritillary	
-121225	Pediculus humanus	human louse	body lice, head lice, human lice
-125878	Nanorana parkeri		
-126957	Strigamia maritima		
-127582	Trichechus manatus latirostris	Florida manatee	
-12957	Atta cephalotes		
-13037	Danaus plexippus	monarch butterfly	American monarch
-13146	Melopsittacus undulatus	budgerigar	
-13249	Rhodnius prolixus		
-132908	Pteropus vampyrus	large flying fox	
-13333	Amborella trichopoda		
-135651	Caenorhabditis brenneri		
-136037	Zootermopsis nevadensis		
-13616	Monodelphis domestica	gray short-tailed opossum	
-13686	Solenopsis invicta	red fire ant	imported red fire ant, red imported fire ant
-13735	Pelodiscus sinensis	Chinese soft-shelled turtle	Chinese softshell turtle
-143292	Manis pentadactyla	Chinese pangolin	
-143630	Paroedura picta		
-15368	Brachypodium distachyon	stiff brome	annual false brome, false brome, purple false brome
+7955	Danio rerio	zebrafish	leopard danio, zebra danio, zebra fish
+7227	Drosophila melanogaster	fruit fly	
+6239	Caenorhabditis elegans		
+4932	Saccharomyces cerevisiae	baker's yeast	brewer's yeast, S. cerevisiae
+3702	Arabidopsis thaliana	thale cress	mouse-ear cress, thale-cress
 1582	Lacticaseibacillus casei		
-162425	Aspergillus nidulans		
-1868482	Carlito syrichta	Philippine tarsier	
-225164	Lottia gigantea	owl limpet	
-242159	Ostreococcus sp. 'lucimarinus'		
-248742	Coccomyxa subellipsoidea		
-264402	Capsella grandiflora		
-2697049	Severe acute respiratory syndrome coronavirus 2		
 2711	Citrus sinensis	sweet orange	apfelsine, naranja, navel orange, Valencia orange
-27679	Saimiri boliviensis	Bolivian squirrel monkey	
-27923	Mnemiopsis leidyi	sea walnut	American comb jelly, warty comb jelly
-28377	Anolis carolinensis	green anole	Carolina anole
 2850	Phaeodactylum tricornutum		
-28985	Kluyveromyces lactis		
-29159	Crassostrea gigas	Pacific oyster	
-29656	Spirodela polyrhiza	great duckweed	
-29730	Gossypium raimondii	Peruvian cotton	
-29760	Vitis vinifera	wine grape	
-30538	Vicugna pacos	alpaca	
 3055	Chlamydomonas reinhardtii		
-30608	Microcebus murinus	gray mouse lemur	grey mouse lemur
-30611	Otolemur garnettii	small-eared galago	
 3067	Volvox carteri		
-31033	Takifugu rubripes	torafugu	tiger puffer
-31234	Caenorhabditis remanei		
-318829	Pyricularia oryzae		rice blast fungus
 3197	Marchantia polymorpha	liverwort	
 3218	Physcomitrium patens		
-32264	Tetranychus urticae	two-spotted spider mite	red spider mite, twospotted mite
-33178	Aspergillus terreus		
-34305	Lotus japonicus		
-35019	Thamnophis sirtalis		
-35128	Thalassiosira pseudonana		
-35883	Ipomoea nil	Japanese morning glory	qian niu
-36166	Megaselia scalaris		
 3625	Actinidia chinensis		golden kiwifruit, zhong hua mi hou tao
 3641	Theobroma cacao	cacao	chocolate, cocoa
 3649	Carica papaya	papaya	mamon
@@ -70,29 +21,18 @@
 3662	Cucurbita moschata	crookneck pumpkin	ayote, Canada pumpkin, crookneck winter squash, cushaw squash, lacayote
 3664	Cucurbita pepo subsp. pepo	vegetable marrow	field pumpkin
 3694	Populus trichocarpa	black cottonwood	western balsam poplar
-3702	Arabidopsis thaliana	thale cress	mouse-ear cress, thale-cress
 3708	Brassica napus	rape	oilseed rape, rapeseeds
 3711	Brassica rapa	field mustard	
 3712	Brassica oleracea	wild cabbage	
 3726	Raphanus sativus	radish	
-37344	Athalia rosae	coleseed sawfly	
-37347	Tupaia belangeri	northern tree shrew	common tree shrew
 3750	Malus domestica	apple	apple tree, cultivated apple
 3760	Prunus persica	peach	
-37682	Aegilops tauschii		
-37727	Talaromyces marneffei		
 3847	Glycine max	soybean	soybeans
 3880	Medicago truncatula	barrel medic	
-38833	Micromonas pusilla		
 3914	Vigna angularis	adzuki bean	azuki bean
 3983	Manihot esculenta	cassava	manioc, tapioca, yuca
 3988	Ricinus communis	castor bean	
-39946	Oryza sativa Indica Group	long-grained rice	Indian rice, Indica rice
-39947	Oryza sativa Japonica Group	Japanese rice	Japonica rice
 4006	Linum usitatissimum	flax	
-400682	Amphimedon queenslandica		
-40148	Oryza glumipatula		
-40149	Oryza meridionalis		Australian wild rice
 4039	Daucus carota	carrot	carrots, Queen Anne's lace
 4072	Capsicum annuum		
 4081	Solanum lycopersicum	tomato	
@@ -100,17 +40,11 @@
 4111	Solanum melongena	eggplant	aubergine, brinjal
 4113	Solanum tuberosum	potato	potatoes
 4155	Erythranthe guttata	spotted monkey flower	common monkey flower, yellow monkey flower
-42254	Sorex araneus	European shrew	Eurasian shrew
 4232	Helianthus annuus	common sunflower	
-43151	Anopheles darlingi		American malaria mosquito
-43179	Ictidomys tridecemlineatus	thirteen-lined ground squirrel	
-43780	Nasalis larvatus	proboscis monkey	
 4513	Hordeum vulgare		barley
-45157	Cyanidioschyzon merolae		
 4528	Oryza longistaminata		long-staminate rice, red rice
 4529	Oryza rufipogon		common wild rice, red rice
 4533	Oryza brachyantha	malo sina	
-45351	Nematostella vectensis	starlet sea anemone	
 4537	Oryza punctata		
 4538	Oryza glaberrima	African rice	
 4555	Setaria italica	foxtail millet	
@@ -118,54 +52,34 @@
 4565	Triticum aestivum	bread wheat	Canadian hard winter wheat, common wheat, wheat
 4572	Triticum urartu		
 4577	Zea mays		maize
-460519	Komagataella phaffii		
 4641	Musa acuminata	dwarf banana	banana, dessert bananas, sweet banana
-482537	Galeopterus variegatus	Sunda flying lemur	Malayan flying lemur
-48698	Poecilia formosa	Amazon molly	
-48883	Geospiza fortis	medium ground-finch	
 4896	Schizosaccharomyces pombe	fission yeast	
 4911	Kluyveromyces marxianus		
-4932	Saccharomyces cerevisiae	baker's yeast	brewer's yeast, S. cerevisiae
-49390	Coffea canephora		robusta coffee
 4950	Torulaspora delbrueckii		
 4952	Yarrowia lipolytica		
 4959	Debaryomyces hansenii		
 5062	Aspergillus oryzae		
-51511	Ciona savignyi	Pacific transparent sea squirt	transparent tunicate
 5286	Rhodotorula toruloides		
 5346	Coprinopsis cinerea		
-54126	Pristionchus pacificus		
 5476	Candida albicans		
 5478	Nakaseomyces glabratus		
 5518	Fusarium graminearum		
-57918	Fragaria vesca	wild strawberry	alpine strawberry, European strawberry, wood strawberry
 5901	Tetrahymena malaccensis		
 5911	Tetrahymena thermophila		
 5932	Ichthyophthirius multifiliis		
-59463	Myotis lucifugus	little brown bat	
-59689	Arabidopsis lyrata		lyrate rockcress
-59729	Taeniopygia guttata	zebra finch	
-59894	Ficedula albicollis	Collared flycatcher	
-60711	Chlorocebus sabaeus	green monkey	
 6087	Hydra vulgaris	swiftwater hydra	
-61622	Rhinopithecus roxellana	golden snub-nosed monkey	
 6183	Schistosoma mansoni		
-61853	Nomascus leucogenys	northern white-cheeked gibbon	White-cheeked Gibbon
 6238	Caenorhabditis briggsae		
-6239	Caenorhabditis elegans		
 6279	Brugia malayi		agent of lymphatic filariasis
 6282	Onchocerca volvulus		
 6334	Trichinella spiralis		
 6412	Helobdella robusta		
 6500	Aplysia californica	California sea hare	
-65489	Oryza barthii		African wild rice
 6669	Daphnia pulex	common water flea	
-69293	Gasterosteus aculeatus	three-spined stickleback	three spined stickleback
 6945	Ixodes scapularis	black-legged tick	blacklegged tick, deer tick, shoulder tick
 7029	Acyrthosiphon pisum	pea aphid	
 7070	Tribolium castaneum	red flour beetle	rust-red flour beetle
 7091	Bombyx mori	domestic silkworm	silk moth, silkworm
-71139	Eucalyptus grandis		rose gum
 7159	Aedes aegypti	yellow fever mosquito	
 7160	Aedes albopictus	Asian tiger mosquito	forest day mosquito
 7165	Anopheles gambiae	African malaria mosquito	
@@ -174,7 +88,6 @@
 7217	Drosophila ananassae		
 7220	Drosophila erecta		
 7222	Drosophila grimshawi		
-7227	Drosophila melanogaster	fruit fly	
 7230	Drosophila mojavensis		
 7234	Drosophila persimilis		
 7237	Drosophila pseudoobscura		
@@ -185,31 +98,22 @@
 7260	Drosophila willistoni		
 7425	Nasonia vitripennis	jewel wasp	
 7460	Apis mellifera	honey bee	bee, European honey bee, honeybee, Western honey bee
-746128	Aspergillus fumigatus		
-74613	Glycyrrhiza uralensis		Chinese licorice, gan zao
 7668	Strongylocentrotus purpuratus	purple sea urchin	purple urchin
-77166	Dendroctonus ponderosae	mountain pine beetle	
 7719	Ciona intestinalis	vase tunicate	sea vase, yellow sea squirt
 7739	Branchiostoma floridae	Florida lancelet	
 7757	Petromyzon marinus	sea lamprey	marine lamprey, sea lampreys
-77586	Leersia perrieri		
 7868	Callorhinchus milii	elephant shark	Australian ghost shark, elephant fish, ghost shark, makorepe, plownose chimaera, reperepe
 7897	Latimeria chalumnae	coelacanth	
 7918	Lepisosteus oculatus	spotted gar	
-7955	Danio rerio	zebrafish	leopard danio, zebra danio, zebra fish
-79684	Microtus ochrogaster	prairie vole	prairie voles
 7994	Astyanax mexicanus	Mexican tetra	blind cave fish
 8049	Gadus morhua	Atlantic cod	
 8083	Xiphophorus maculatus	southern platyfish	
 8090	Oryzias latipes	Japanese medaka	Japanese rice fish, medaka
 8128	Oreochromis niloticus	Nile tilapia	
-81985	Capsella rubella		
 8355	Xenopus laevis	African clawed frog	clawed frog, common platanna, platanna
 8364	Xenopus tropicalis	tropical clawed frog	western clawed frog
 8478	Chrysemys picta bellii	western painted turtle	
 8496	Alligator mississippiensis	American alligator	
-85681	Citrus x clementina		clementine
-88036	Selaginella moellendorffii		
 8822	Apteryx australis	Southern brown kiwi	brown kiwi
 8839	Anas platyrhynchos	mallard	duck, mallard duck, mallard ducks
 9031	Gallus gallus	chicken	bantam, chickens
@@ -220,7 +124,6 @@
 9361	Dasypus novemcinctus	nine-banded armadillo	
 9365	Erinaceus europaeus	western European hedgehog	common hedgehog, European hedgehog
 9371	Echinops telfairi	small Madagascar hedgehog	lesser hedgehog tenrec
-947166	Ramazzottius varieornatus		
 9483	Callithrix jacchus	white-tufted-ear marmoset	common marmoset, white ear-tufted marmoset
 9541	Macaca fascicularis	crab-eating macaque	crab eating macaque, cynomolgus macaque, cynomolgus monkey, cynomolgus monkeys, long-tailed macaque
 9544	Macaca mulatta	Rhesus monkey	rhesus macaque, rhesus macaques, rhesus monkeys
@@ -230,7 +133,6 @@
 9597	Pan paniscus	pygmy chimpanzee	bonobo
 9598	Pan troglodytes	chimpanzee	
 9601	Pongo abelii	Sumatran orangutan	orang utan, Orang-utan, Orangutan
-9606	Homo sapiens	human	
 9615	Canis lupus familiaris	dog	dogs
 9646	Ailuropoda melanoleuca	giant panda	
 9669	Mustela putorius furo	domestic ferret	black ferret, ferret
@@ -248,4 +150,102 @@
 9940	Ovis aries	sheep	domestic sheep, lambs, wild sheep
 9978	Ochotona princeps	American pika	southern American pika
 9986	Oryctolagus cuniculus	rabbit	domestic rabbit, European rabbit, Japanese white rabbit, rabbits
+10020	Dipodomys ordii	Ord's kangaroo rat	
+10029	Cricetulus griseus	Chinese hamster	Chinese hamsters
+10036	Mesocricetus auratus	golden hamster	Syrian golden hamster, Syrian golden hamsters, Syrian hamster
+10141	Cavia porcellus	domestic guinea pig	guinea pig
+10181	Heterocephalus glaber	naked mole-rat	naked mole rat
+10228	Trichoplax adhaerens		
+12957	Atta cephalotes		
+13037	Danaus plexippus	monarch butterfly	American monarch
+13146	Melopsittacus undulatus	budgerigar	
+13249	Rhodnius prolixus		
+13333	Amborella trichopoda		
+13616	Monodelphis domestica	gray short-tailed opossum	
+13686	Solenopsis invicta	red fire ant	imported red fire ant, red imported fire ant
+13735	Pelodiscus sinensis	Chinese soft-shelled turtle	Chinese softshell turtle
+15368	Brachypodium distachyon	stiff brome	annual false brome, false brome, purple false brome
+27679	Saimiri boliviensis	Bolivian squirrel monkey	
+27923	Mnemiopsis leidyi	sea walnut	American comb jelly, warty comb jelly
+28377	Anolis carolinensis	green anole	Carolina anole
+28985	Kluyveromyces lactis		
+29159	Crassostrea gigas	Pacific oyster	
+29656	Spirodela polyrhiza	great duckweed	
+29730	Gossypium raimondii	Peruvian cotton	
+29760	Vitis vinifera	wine grape	
+30538	Vicugna pacos	alpaca	
+30608	Microcebus murinus	gray mouse lemur	grey mouse lemur
+30611	Otolemur garnettii	small-eared galago	
+31033	Takifugu rubripes	torafugu	tiger puffer
+31234	Caenorhabditis remanei		
+32264	Tetranychus urticae	two-spotted spider mite	red spider mite, twospotted mite
+33178	Aspergillus terreus		
+34305	Lotus japonicus		
+35019	Thamnophis sirtalis		
+35128	Thalassiosira pseudonana		
+35883	Ipomoea nil	Japanese morning glory	qian niu
+36166	Megaselia scalaris		
+37344	Athalia rosae	coleseed sawfly	
+37347	Tupaia belangeri	northern tree shrew	common tree shrew
+37682	Aegilops tauschii		
+37727	Talaromyces marneffei		
+38833	Micromonas pusilla		
+39946	Oryza sativa Indica Group	long-grained rice	Indian rice, Indica rice
+39947	Oryza sativa Japonica Group	Japanese rice	Japonica rice
+40148	Oryza glumipatula		
+40149	Oryza meridionalis		Australian wild rice
+42254	Sorex araneus	European shrew	Eurasian shrew
+43151	Anopheles darlingi		American malaria mosquito
+43179	Ictidomys tridecemlineatus	thirteen-lined ground squirrel	
+43780	Nasalis larvatus	proboscis monkey	
+45157	Cyanidioschyzon merolae		
+45351	Nematostella vectensis	starlet sea anemone	
+48698	Poecilia formosa	Amazon molly	
+48883	Geospiza fortis	medium ground-finch	
+49390	Coffea canephora		robusta coffee
+51511	Ciona savignyi	Pacific transparent sea squirt	transparent tunicate
+54126	Pristionchus pacificus		
+57918	Fragaria vesca	wild strawberry	alpine strawberry, European strawberry, wood strawberry
+59463	Myotis lucifugus	little brown bat	
+59689	Arabidopsis lyrata		lyrate rockcress
+59729	Taeniopygia guttata	zebra finch	
+59894	Ficedula albicollis	Collared flycatcher	
+60711	Chlorocebus sabaeus	green monkey	
+61622	Rhinopithecus roxellana	golden snub-nosed monkey	
+61853	Nomascus leucogenys	northern white-cheeked gibbon	White-cheeked Gibbon
+65489	Oryza barthii		African wild rice
+69293	Gasterosteus aculeatus	three-spined stickleback	three spined stickleback
+71139	Eucalyptus grandis		rose gum
+74613	Glycyrrhiza uralensis		Chinese licorice, gan zao
+77166	Dendroctonus ponderosae	mountain pine beetle	
+77586	Leersia perrieri		
+79684	Microtus ochrogaster	prairie vole	prairie voles
+81985	Capsella rubella		
+85681	Citrus x clementina		clementine
+88036	Selaginella moellendorffii		
 99883	Tetraodon nigroviridis	spotted green pufferfish	
+110368	Bicyclus anynana	squinting bush brown	
+113334	Melitaea cinxia	Glanville fritillary	
+121225	Pediculus humanus	human louse	body lice, head lice, human lice
+125878	Nanorana parkeri		
+126957	Strigamia maritima		
+127582	Trichechus manatus latirostris	Florida manatee	
+132908	Pteropus vampyrus	large flying fox	
+135651	Caenorhabditis brenneri		
+136037	Zootermopsis nevadensis		
+143292	Manis pentadactyla	Chinese pangolin	
+143630	Paroedura picta		
+162425	Aspergillus nidulans		
+225164	Lottia gigantea	owl limpet	
+242159	Ostreococcus sp. 'lucimarinus'		
+248742	Coccomyxa subellipsoidea		
+264402	Capsella grandiflora		
+318829	Pyricularia oryzae		rice blast fungus
+400682	Amphimedon queenslandica		
+460519	Komagataella phaffii		
+482537	Galeopterus variegatus	Sunda flying lemur	Malayan flying lemur
+746128	Aspergillus fumigatus		
+947166	Ramazzottius varieornatus		
+1069201	Aspergillus luchuensis		
+1868482	Carlito syrichta	Philippine tarsier	
+2697049	Severe acute respiratory syndrome coronavirus 2		
