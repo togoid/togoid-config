@@ -4,4 +4,4 @@ link:
   reverse: TIO_000033
 update:
   frequency: Monthly
-  method: curl -sS https://ddbj.nig.ac.jp/public/rdf/dblink/jga_study-pubmed_id/jga_study2pubmed_id.tsv
+  method: curl -sS https://ddbj.nig.ac.jp/public/dblink/jga_study-pubmed_id/jga_study2pubmed_id.tsv

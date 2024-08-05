@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000123
+  reverse: TIO_000122
+  file: sample.tsv
+update:
+  frequency: threeTimesAYear
+  method: python $TOGOID_ROOT/bin/redend_update_motif_dict.py https://api.alpha.glycosmos.org/ $TOGOID_ROOT/bin/modi_redend_sorted_motif_list.csv
