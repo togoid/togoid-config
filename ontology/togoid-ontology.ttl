@@ -1806,3 +1806,19 @@
     rdfs:label "motif appears in glycan" ;
     :display_label "appears in glycan" .
 
+:TIO_000124
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Organism ;
+    owl:inverseOf :TIO_000125 ;
+    rdfs:label "is protein of organism" ;
+    :display_label "is protein of organism" .
+
+:TIO_000125
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Organism ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000124 ;
+    rdfs:label "organism has protein" ;
+    :display_label "has protein" .
+
