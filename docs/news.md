@@ -1,3 +1,7 @@
+# 2024-08-11
+- Weekly update has been completed.  
+- A new pair `uniprot-taxonomy` has been added.
+
 # 2024-08-06
 - Weekly update has been completed.
 
@@ -12,7 +16,7 @@
 
 # 2024-07-09
 - Weekly update has been completed.  
-- A new dataset "PMC" had been added.
+- A new dataset "PMC" has been added.
 
 # 2024-07-02
 - Weekly update has been completed.
