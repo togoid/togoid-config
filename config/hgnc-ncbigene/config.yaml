@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/primary/sparql
+  method: awk -F "\t" 'FNR>=2&&$19{gsub("\"","",$19); split($19,a,"|"); for(k in a)print substr($1,6) "\t" a[k]}' $TOGOID_ROOT/input/hgnc/hgnc_complete_set.tsv
