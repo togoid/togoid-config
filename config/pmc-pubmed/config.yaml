@@ -4,4 +4,4 @@ link:
   reverse: TIO_000002
 update:
   frequency: Daily
-  method: awk -F "," 'FNR>=2&&$10{print gensub(/^PMC/,"","g",$9) "\t" $10}' $TOGOID_ROOT/input/pmc/PMC-ids.csv
+  method: awk -v FPAT='([^,]*)|(\"[^\"]+\")' 'FNR>=2&&$10{print gensub(/^PMC/,"","g",$9) "\t" $10}' $TOGOID_ROOT/input/pmc/PMC-ids.csv
