@@ -60,7 +60,7 @@ glytoucan-ncbigene.tsv	1270
 glytoucan-uniprot.tsv	50841
 hgnc-ccds.tsv	35510
 hgnc-ec.tsv	2048
-hgnc-ensembl_gene.tsv	40970
+hgnc-ensembl_gene.tsv	41222
 hgnc-hgnc_symbol.tsv	43861
 hgnc-insdc.tsv	21166
 hgnc-lrg.tsv	1325
@@ -261,4 +261,4 @@ wikipathways-hmdb.tsv	4103
 wikipathways-lipidmaps.tsv	1398
 wikipathways-ncbigene.tsv	30204
 wikipathways-uniprot.tsv	33518
-total	5219706505
+total	5219706757
