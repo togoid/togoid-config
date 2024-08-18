@@ -1,3 +1,6 @@
+# 2024-08-18
+- Weekly update has been completed.  
+
 # 2024-08-11
 - Weekly update has been completed.  
 - A new pair `uniprot-taxonomy` has been added.
