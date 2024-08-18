@@ -324,6 +324,8 @@ module TogoID
         return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}hgnc/
+        return "prepare:hgnc"
       when /#{OUTPUT_TSV_DIR}hmdb/
         return "prepare:hmdb"
       when /#{OUTPUT_TSV_DIR}homologene/
@@ -499,7 +501,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -511,6 +513,7 @@ namespace :prepare do
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_HMDB_DIR        = "input/hmdb"
+  directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
@@ -600,6 +603,21 @@ namespace :prepare do
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
       if file_older_than_days?(taxonomy_file)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{taxonomy_file}"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for HGNC"
+  task :hgnc => INPUT_HGNC_DIR do
+    $stderr.puts "## Prepare input files for HGNC"
+    download_lock(INPUT_HGNC_DIR) do
+      updated = false
+      input_file = "#{INPUT_HGNC_DIR}/hgnc_complete_set.tsv"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.tsv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HGNC_DIR, input_url)
         updated = true
       end
       updated
