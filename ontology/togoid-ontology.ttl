@@ -1806,3 +1806,51 @@
     rdfs:label "motif appears in glycan" ;
     :display_label "appears in glycan" .
 
+:TIO_000124
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Organism ;
+    owl:inverseOf :TIO_000125 ;
+    rdfs:label "is protein of organism" ;
+    :display_label "is protein of organism" .
+
+:TIO_000125
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Organism ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000124 ;
+    rdfs:label "organism has protein" ;
+    :display_label "has protein" .
+
+:TIO_000126
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000127 ;
+    rdfs:label "glycan is acceptor of enzymatic reaction by protein" ;
+    :display_label "is acceptor of enzymatic reaction by" .
+
+:TIO_000127
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Glycan ;
+    owl:inverseOf :TIO_000126 ;
+    rdfs:label "protein enzymatically processes glycan" ;
+    :display_label "enzymatically processes" .
+
+:TIO_000128
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Glycan ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000129 ;
+    rdfs:label "glycan is product of enzymatic reaction by protein" ;
+    :display_label "is product of enzymatic reaction by" .
+
+:TIO_000129
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Glycan ;
+    owl:inverseOf :TIO_000128 ;
+    rdfs:label "protein enzymatically produces glycan" ;
+    :display_label "enzymatically produces" .
+
