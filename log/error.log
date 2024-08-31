@@ -6,6 +6,7 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1538 / 4376 = 0.35146252285191953 < 0.5
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 260816 / 544502 = 0.47899915886443023 < 0.5
 # Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
 # Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
@@ -18,5 +19,9 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv new file size per old 0 / 385314 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ncit_disease-ncit_tissue.tsv or created file was empty
+# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 0 / 38722 = 0.0 < 0.5
+# Error: Failed to create output/tsv/uberon-ncit_tissue.tsv or created file was empty
 # Error: output/tsv/wikipathways-chebi.tsv new file size per old 71839 / 148433 = 0.48398267231680286 < 0.5
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 59610 / 470542 = 0.12668369667319815 < 0.5
