@@ -1,3 +1,6 @@
+# *NOTICE*  
+The TogoID service will be temporarily unavailable due to a system update from 10:00 am to 1:00 pm (JST) on Friday, September 6, 2024. We apologize for any incovenience caused.
+
 # 2024-09-05
 - Weekly update has been completed.  
 
