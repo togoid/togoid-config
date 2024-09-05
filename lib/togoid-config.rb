@@ -168,7 +168,12 @@ module TogoID
     attr_reader :source, :target, :link, :update
     def initialize(config_file)
       begin
-        config = YAML.load(File.read(config_file))
+        configs = YAML.load(File.read(config_file))
+        if configs.is_a? Array
+          config = configs[0]
+        else
+          config = configs
+        end
         @path = File.dirname(config_file)
         @source_ns, @target_ns = File.basename(@path).split('-')
         @link = Link.new(config["link"])
