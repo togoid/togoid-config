@@ -324,6 +324,8 @@ module TogoID
         return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}glytoucan/
+        return "prepare:glytoucan"
       when /#{OUTPUT_TSV_DIR}hgnc/
         return "prepare:hgnc"
       when /#{OUTPUT_TSV_DIR}hmdb/
@@ -501,7 +503,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -512,6 +514,7 @@ namespace :prepare do
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
+  directory INPUT_GLYTOUCAN_DIR   = "input/glytoucan"
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
@@ -603,6 +606,22 @@ namespace :prepare do
       taxonomy_file = "#{INPUT_ENSEMBL_DIR}/taxonomy.txt"
       if file_older_than_days?(taxonomy_file)
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{taxonomy_file}"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for GlyTouCan"
+  task :glytoucan => INPUT_GLYTOUCAN_DIR do
+    $stderr.puts "## Prepare input files for GlyTouCan"
+    download_lock(INPUT_GLYTOUCAN_DIR) do
+      updated = false
+      input_file = "#{INPUT_GLYTOUCAN_DIR}/glycosmos_ggdbs_pubmed.csv"
+      input_url  = "https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_GLYTOUCAN_DIR, input_url)
+        sh "sparql_csv2tsv.sh bin/sparql/glycogene-uniprot.rq https://ts.glycosmos.org/sparql > #{INPUT_GLYTOUCAN_DIR}/glycogene-uniprot.tsv"
         updated = true
       end
       updated
