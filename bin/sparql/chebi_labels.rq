@@ -1,0 +1,15 @@
+PREFIX chebi: <http://purl.obolibrary.org/obo/chebi/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?chebi_id ?p ?label
+FROM <http://rdf.ebi.ac.uk/dataset/chebi>
+WHERE {
+  VALUES ?p {
+    rdfs:label
+    oboinowl:hasExactSynonym
+    oboinowl:hasRelatedSynonym
+  }
+  ?chebi ?p ?label .
+  BIND (STRAFTER(STR(?chebi), "CHEBI_") AS ?chebi_id)
+}

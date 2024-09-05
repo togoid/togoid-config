@@ -672,7 +672,7 @@ pmc:
   catalog: nbdc01836
   category: Literature
   regex: '^(?:PMC)?(?<id>\d+)$'
-  prefix: 'http://identifiers.org/pmc/'
+  prefix: 'http://identifiers.org/pmc/PMC'
   examples:
     - ["PMC7857752","PMC10139720","PMC3815299","PMC4990340","PMC6885017","PMC5286597","PMC8035296","PMC46450","PMC11138896","PMC9528096"]
     - ["7857752","10139720","3815299","4990340","6885017","5286597","8035296","46450","11138896","9528096"]

@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000124
+  reverse: TIO_000125
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: zcat ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz | awk -F "\t" '$2=="NCBI_TaxID"{print $1 "\t" $3}'

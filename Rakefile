@@ -320,10 +320,14 @@ module TogoID
         return "prepare:biosample"
       when /#{OUTPUT_TSV_DIR}cellosaurus/
         return "prepare:cellosaurus"
+      when /#{OUTPUT_TSV_DIR}clinvar/
+        return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
       when /#{OUTPUT_TSV_DIR}glytoucan/
         return "prepare:glytoucan"
+      when /#{OUTPUT_TSV_DIR}hgnc/
+        return "prepare:hgnc"
       when /#{OUTPUT_TSV_DIR}hmdb/
         return "prepare:hmdb"
       when /#{OUTPUT_TSV_DIR}homologene/
@@ -342,6 +346,8 @@ module TogoID
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}oma_protein/
         return "prepare:oma_protein"
+      when /#{OUTPUT_TSV_DIR}pmc/
+        return "prepare:pmc"
       when /#{OUTPUT_TSV_DIR}prosite/
         return "prepare:prosite"
       when /#{OUTPUT_TSV_DIR}reactome/
@@ -412,7 +418,7 @@ module TogoID
           sh "wget #{opts} --directory-prefix #{dir} #{url}"
         end
       rescue StandardError => e
-          puts "Error: #{e.message}"
+          $stderr.puts "Error: download_file(#{dir}, #{url}): #{e.message}"
       end
     end
 
@@ -442,7 +448,7 @@ module TogoID
         begin
           remote_file_time = Time.parse(`curl -sIL #{url} | grep -i '^last-modified:' | tail -1 | sed -e 's/^[Ll]ast-[Mm]odified: //'`)  # Time object
         rescue ArgumentError => e
-          puts "Error: #{e.message}"
+          $stderr.puts "Error: check_remote_file_time(#{file}, #{url}): #{e.message}"
           return false
         end
         $stderr.puts "# Local file time:  #{local_file_time} (#{file})"
@@ -497,24 +503,27 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :ensembl, :glytoucan, :hmdb, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_BIOSAMPLE_DIR  = "input/biosample"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
+  directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
   directory INPUT_GLYTOUCAN_DIR   = "input/glytoucan"
   directory INPUT_HMDB_DIR        = "input/hmdb"
+  directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_OMA_PROTEIN_DIR = "input/oma_protein"
   directory INPUT_PROSITE_DIR     = "input/prosite"
+  directory INPUT_PMC_DIR     = "input/pmc"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
@@ -576,6 +585,19 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for ClinVar"
+  task :clinvar => INPUT_CLINVAR_DIR do
+    $stderr.puts "## Prepare input files for ClinVar"
+    download_lock(INPUT_CLINVAR_DIR) do
+      input_file = "#{INPUT_CLINVAR_DIR}/variant_summary.txt.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_CLINVAR_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_CLINVAR_DIR}/variant_summary.txt"
+      end
+    end
+  end
+
   desc "Prepare taxonomy ID list for Ensembl"
   task :ensembl => INPUT_ENSEMBL_DIR do
     $stderr.puts "## Prepare input files for Ensembl"
@@ -600,6 +622,21 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_GLYTOUCAN_DIR, input_url)
         sh "sparql_csv2tsv.sh bin/sparql/glycogene-uniprot.rq https://ts.glycosmos.org/sparql > #{INPUT_GLYTOUCAN_DIR}/glycogene-uniprot.tsv"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for HGNC"
+  task :hgnc => INPUT_HGNC_DIR do
+    $stderr.puts "## Prepare input files for HGNC"
+    download_lock(INPUT_HGNC_DIR) do
+      updated = false
+      input_file = "#{INPUT_HGNC_DIR}/hgnc_complete_set.tsv"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.tsv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_HGNC_DIR, input_url)
         updated = true
       end
       updated
@@ -838,97 +875,62 @@ namespace :prepare do
         download_file(INPUT_PROSITE_DIR, input_url)
         updated = true
       end
+
+      input_file = "#{INPUT_PROSITE_DIR}/prorule.dat"
+      input_url  = "https://ftp.expasy.org/databases/prosite/prorule.dat"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_PROSITE_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end
-  
+
+  desc "Prepare required files for PMC"
+  task :pmc => INPUT_PMC_DIR do
+    $stderr.puts "## Prepare input files for PMC"
+    download_lock(INPUT_PMC_DIR) do
+      updated = false
+      input_file = "#{INPUT_PMC_DIR}/PMC-ids.csv.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/pmc/PMC-ids.csv.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_PMC_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_PMC_DIR}/PMC-ids.csv"
+        updated = true
+      end
+      updated
+    end
+  end
+
   desc "Prepare required files for Reactome"
   task :reactome => INPUT_REACTOME_DIR do
     $stderr.puts "## Prepare input files for Reactome"
     download_lock(INPUT_REACTOME_DIR) do
       updated = false
-      input_file = "#{INPUT_REACTOME_DIR}/UniProt2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/UniProt2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
+
+      files = [
+        "UniProt2ReactomeReactions.txt",
+        "ChEBI2ReactomeReactions.txt",
+        "Ensembl2ReactomeReactions.txt",
+        "miRBase2ReactomeReactions.txt",
+        "NCBI2ReactomeReactions.txt",
+        "GtoP2ReactomeReactions.txt",
+        "UniProt2Reactome_All_Levels.txt",
+        "ChEBI2Reactome_All_Levels.txt",
+        "Ensembl2Reactome_All_Levels.txt",
+        "miRBase2Reactome_All_Levels.txt",
+        "NCBI2Reactome_All_Levels.txt",
+        "GtoP2Reactome_All_Levels.txt"
+      ]
+      for file in files do
+        input_file = "#{INPUT_REACTOME_DIR}/#{file}"
+        input_url  = "https://reactome.org/download/current/#{file}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_REACTOME_DIR, input_url)
+          updated = true
+        end
       end
 
-      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/ChEBI2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/Ensembl2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/miRBase2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/miRBase2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/NCBI2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/NCBI2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-      input_file = "#{INPUT_REACTOME_DIR}/GtoP2ReactomeReactions.txt"
-      input_url  = "https://reactome.org/download/current/GtoP2ReactomeReactions.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/UniProt2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/ChEBI2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/Ensembl2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/miRBase2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-
-      input_file = "#{INPUT_REACTOME_DIR}/NCBI2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
-      
-      input_file = "#{INPUT_REACTOME_DIR}/GtoP2Reactome_All_Levels.txt"
-      input_url  = "https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_REACTOME_DIR, input_url)
-        updated = true
-      end
       updated
     end
   end
@@ -1064,7 +1066,11 @@ namespace :prepare do
         sh "gzip -dc #{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz | cut -f 1,7 | grep 'GO:' > #{INPUT_UNIPROT_DIR}/idmapping_selected.go"
         updated = true
       end
-      sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
+      begin
+        sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
+      rescue StandardError => e
+        $stderr.puts "Error: prepare uniprot_reference_proteome: #{e.message}"
+      end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
       updated
