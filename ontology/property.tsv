@@ -123,7 +123,3 @@ TIO_000122	glycan has motif	has motif	TIO_000123	Glycan	Glycan
 TIO_000123	motif appears in glycan	appears in glycan	TIO_000122	Glycan	Glycan
 TIO_000124	is protein of organism	is protein of organism	TIO_000125	Protein	Organism
 TIO_000125	organism has protein	has protein	TIO_000124	Organism	Protein
-TIO_000126	glycan is acceptor of enzymatic reaction by protein	is acceptor of enzymatic reaction by	TIO_000127	Glycan	Protein
-TIO_000127	protein enzymatically processes glycan	enzymatically processes	TIO_000126	Protein	Glycan
-TIO_000128	glycan is product of enzymatic reaction by protein	is product of enzymatic reaction by	TIO_000129	Glycan	Protein
-TIO_000129	protein enzymatically produces glycan	enzymatically produces	TIO_000128	Protein	Glycan

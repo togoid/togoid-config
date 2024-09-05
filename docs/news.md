@@ -1,3 +1,22 @@
+# *NOTICE*  
+The TogoID service will be temporarily unavailable due to a system update from 10:00 am to 1:00 pm (JST) on Friday, September 6, 2024. We apologize for any incovenience caused.
+
+# 2024-09-05
+- Weekly update has been completed.  
+
+# 2024-08-26
+- Weekly update has been completed.  
+
+# 2024-08-18
+- Weekly update has been completed.  
+
+# 2024-08-11
+- Weekly update has been completed.  
+- A new pair `uniprot-taxonomy` has been added.
+
+# 2024-08-06
+- Weekly update has been completed.
+
 # 2024-07-30
 - Weekly update has been completed.
 
@@ -9,7 +28,7 @@
 
 # 2024-07-09
 - Weekly update has been completed.  
-- A new dataset "PMC" had been added.
+- A new dataset "PMC" has been added.
 
 # 2024-07-02
 - Weekly update has been completed.
