@@ -1393,3 +1393,27 @@
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000124> .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2000/01/rdf-schema#label> "organism has protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://togoid.dbcls.jp/ontology#display_label> "has protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000127> .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is acceptor of enzymatic reaction by protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://togoid.dbcls.jp/ontology#display_label> "is acceptor of enzymatic reaction by" .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000126> .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#label> "protein enzymatically processes glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://togoid.dbcls.jp/ontology#display_label> "enzymatically processes" .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000129> .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is product of enzymatic reaction by protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://togoid.dbcls.jp/ontology#display_label> "is product of enzymatic reaction by" .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000128> .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#label> "protein enzymatically produces glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://togoid.dbcls.jp/ontology#display_label> "enzymatically produces" .
