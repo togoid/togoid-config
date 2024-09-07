@@ -1,8 +1,9 @@
+Error: download_file(input/glytoucan, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C10%2C9%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5BAad21122h-2a_2-6_5%2ANCC%2F3%3DO%5D%5Ba2112h-1b_1-5_2%2ANCC%2F3%3DO%5D%2F1-2-3-3-3-4-2-3-3-3%2Fa4-b1_b3-c2_b4-f1_c8-d2_d8-e2_f3-g1_f6-j2_g3-h2_h8-i2&rootnode=true G14091MR
+Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1538 / 4376 = 0.35146252285191953 < 0.5
@@ -19,9 +20,5 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/ncit_disease-ncit_tissue.tsv new file size per old 0 / 385314 = 0.0 < 0.5
-# Error: Failed to create output/tsv/ncit_disease-ncit_tissue.tsv or created file was empty
-# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 0 / 38722 = 0.0 < 0.5
-# Error: Failed to create output/tsv/uberon-ncit_tissue.tsv or created file was empty
 # Error: output/tsv/wikipathways-chebi.tsv new file size per old 71839 / 148433 = 0.48398267231680286 < 0.5
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 59610 / 470542 = 0.12668369667319815 < 0.5
