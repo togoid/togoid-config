@@ -5,6 +5,9 @@
 - TogoID now supports handling multiple semantic relations between the same dataset pair (e.g., try converting between GlyTouCan and UniProt).  
 A detailed document is currently being prepared.
 
+# 2024-09-09
+- Weekly update has been completed.  
+
 # 2024-09-05
 - Weekly update has been completed.  
 
