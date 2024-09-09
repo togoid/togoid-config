@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get install -y \
       curl=7.81.0-1ubuntu1.17 \
       wget=1.21.2-2ubuntu1 \
       gawk=1:5.1.0-1build3 \
-      python3=3.10.6-1~22.04 \
+      python3=3.10.6-1~22.04.1 \
       ruby-full=1:3.0~exp1 \
       gem=1:0.94-7 \
       awscli=1.22.34-1 && \
