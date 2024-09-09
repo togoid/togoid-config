@@ -14,7 +14,7 @@ RUN apt-get update -y && apt-get install -y \
       gem=1:0.94-7 \
       awscli=1.22.34-1 && \
       rm -fr /usr/bin/python && \
-      ln -s /usr/bin/python3.8 /usr/bin/python && \
+      ln -s /usr/bin/python3.10 /usr/bin/python && \
       ln -s bash /bin/sh.bash && \
       mv /bin/sh.bash /bin/sh
 RUN gem install intermine
