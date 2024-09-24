@@ -20,5 +20,24 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
+# Error: output/tsv/ncit_disease-ncit_tissue.tsv new file size per old 0 / 385314 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ncit_disease-ncit_tissue.tsv or created file was empty
+# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 248 / 38722 = 0.0064046278601311915 < 0.5
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <html><head>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </head><body>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <html><head>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </head><body>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
 # Error: output/tsv/wikipathways-chebi.tsv new file size per old 72255 / 148433 = 0.48678528359596585 < 0.5
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 59610 / 470542 = 0.12668369667319815 < 0.5
