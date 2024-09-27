@@ -1,7 +1,23 @@
-link:
-  forward: TIO_000002
-  reverse: TIO_000002
-  file: sample.tsv
-update:
-  frequency: Monthly
-  method: sparql_thread.pl -t 10
+- link:
+    forward: TIO_000002
+    reverse: TIO_000002
+    file: sample1.tsv
+  update:
+    frequency: Monthly
+    method: sparql_csv2tsv.sh single_protein.rq https://rdfportal.org/ebi/sparql
+- link:
+    forward: TIO_000130
+    reverse: TIO_000131
+    file: sample2.tsv
+    description: "The ChEMBL Target entries in this relation are of protein families. Each UniProt entry is a member of the families."
+  update:
+    frequency: Monthly
+    method: sparql_csv2tsv.sh protein_family.rq https://rdfportal.org/ebi/sparql
+- link:
+    forward: TIO_000132
+    reverse: TIO_000133
+    file: sample3.tsv
+    description: "The ChEMBL Target entries in this relation are of protein complexes. Each complex is composed of the proteins specified by the UniProt IDs."
+  update:
+    frequency: Monthly
+    method: sparql_csv2tsv.sh protein_complex.rq https://rdfportal.org/ebi/sparql

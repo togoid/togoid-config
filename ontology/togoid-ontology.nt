@@ -1417,3 +1417,27 @@
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000128> .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#label> "protein enzymatically produces glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://togoid.dbcls.jp/ontology#display_label> "enzymatically produces" .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000131> .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#label> "protein is member of protein family" .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://togoid.dbcls.jp/ontology#display_label> "is member of" .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000130> .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#label> "protein family has member of protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://togoid.dbcls.jp/ontology#display_label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000133> .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#label> "protein is component of protein complex" .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://togoid.dbcls.jp/ontology#display_label> "is component of" .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000132> .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#label> "protein complex includes protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://togoid.dbcls.jp/ontology#display_label> "includes" .
