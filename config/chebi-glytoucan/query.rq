@@ -10,7 +10,7 @@ FROM <http://rdf.ebi.ac.uk/dataset/chebi>
 WHERE {
   ?chebi oboinowl:hasDbXref ?glytoucan_prefixed_id ;
          oboinowl:id ?chebi_prefixed_id .
-  FILTER(STRSTARTS (STR(?glytoucan_prefixed_id), "GlyTouCan:"))
-  BIND (STRAFTER (STR(?glytoucan_prefixed_id), "GlyTouCan:") AS ?glytoucan_id)
-  BIND (STRAFTER (STR(?chebi_prefixed_id), "CHEBI:") AS ?chebi_id)
+  FILTER (STRSTARTS(STR(?glytoucan_prefixed_id), "GlyTouCan:"))
+  BIND (STRAFTER(STR(?glytoucan_prefixed_id), "GlyTouCan:") AS ?glytoucan_id)
+  BIND (STRAFTER(STR(?chebi_prefixed_id), "CHEBI:") AS ?chebi_id)
 }
