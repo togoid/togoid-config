@@ -8,6 +8,57 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1538 / 4376 = 0.35146252285191953 < 0.5
 # Error: output/tsv/hgnc-ccds.tsv new file size per old 260816 / 544502 = 0.47899915886443023 < 0.5
+# Error: output/tsv/lipidmaps-chebi.tsv new file size per old 248 / 253350 = 0.0009788829682257747 < 0.5
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-inchi_key.tsv new file size per old 248 / 1976727 = 0.0001254599142926666 < 0.5
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-swisslipids.tsv new file size per old 248 / 284047 = 0.0008730949455547849 < 0.5
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
 # Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
 # Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
@@ -20,24 +71,5 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/ncit_disease-ncit_tissue.tsv new file size per old 0 / 385314 = 0.0 < 0.5
-# Error: Failed to create output/tsv/ncit_disease-ncit_tissue.tsv or created file was empty
-# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 248 / 38722 = 0.0064046278601311915 < 0.5
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <html><head>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <title>503 Service Unavailable</title>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </head><body>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <h1>Service Unavailable</h1>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The server is temporarily unable to service your
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to be malformed request due to maintenance downtime or capacity
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML problems. Please try again later.</p>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <html><head>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <title>503 Service Unavailable</title>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </head><body>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <h1>Service Unavailable</h1>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML <p>The server is temporarily unable to service your
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to be malformed request due to maintenance downtime or capacity
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML problems. Please try again later.</p>
-# Error: output/tsv/uberon-ncit_tissue.tsv seems to contain HTML </body></html>
 # Error: output/tsv/wikipathways-chebi.tsv new file size per old 72255 / 148433 = 0.48678528359596585 < 0.5
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 59610 / 470542 = 0.12668369667319815 < 0.5
