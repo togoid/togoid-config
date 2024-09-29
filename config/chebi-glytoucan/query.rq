@@ -1,0 +1,16 @@
+# Endpoint: https://rdfportal.org/ebi/sparql
+# Graph: http://rdf.ebi.ac.uk/dataset/chebi
+
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX chebi: <http://purl.obolibrary.org/obo/chebi/>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?chebi_id ?glytoucan_id
+FROM <http://rdf.ebi.ac.uk/dataset/chebi>
+WHERE {
+  ?chebi oboinowl:hasDbXref ?glytoucan_prefixed_id ;
+         oboinowl:id ?chebi_prefixed_id .
+  FILTER (STRSTARTS(STR(?glytoucan_prefixed_id), "GlyTouCan:"))
+  BIND (STRAFTER(STR(?glytoucan_prefixed_id), "GlyTouCan:") AS ?glytoucan_id)
+  BIND (STRAFTER(STR(?chebi_prefixed_id), "CHEBI:") AS ?chebi_id)
+}

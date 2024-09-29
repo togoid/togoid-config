@@ -127,3 +127,7 @@ TIO_000126	glycan is acceptor of enzymatic reaction by protein	is acceptor of en
 TIO_000127	protein enzymatically processes glycan	enzymatically processes	TIO_000126	Protein	Glycan
 TIO_000128	glycan is product of enzymatic reaction by protein	is product of enzymatic reaction by	TIO_000129	Glycan	Protein
 TIO_000129	protein enzymatically produces glycan	enzymatically produces	TIO_000128	Protein	Glycan
+TIO_000130	protein is member of protein family	is member of	TIO_000131	Protein	Protein
+TIO_000131	protein family has member of protein	has member	TIO_000130	Protein	Protein
+TIO_000132	protein is component of protein complex	is component of	TIO_000133	Protein	Protein
+TIO_000133	protein complex includes protein	includes	TIO_000132	Protein	Protein

@@ -1,0 +1,14 @@
+# @endpoint https://rdfportal.org/ebi/sparql
+
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?chembl_target_id ?uniprot_id
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+WHERE {
+  ?chembl_target a cco:ProteinComplex ;
+                 cco:chemblId ?chembl_target_id ;
+                 cco:hasTargetComponent / cco:targetCmptXref ?uniprot .
+  ?uniprot a cco:UniprotRef .
+  BIND (STRAFTER(STR(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id)
+}

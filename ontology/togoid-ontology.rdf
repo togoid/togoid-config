@@ -1738,6 +1738,38 @@
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000128"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000130">
+    <display_label>is member of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:label>protein is member of protein family</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000131"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000131">
+    <display_label>has member</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:label>protein family has member of protein</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000130"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000132">
+    <display_label>is component of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:label>protein is component of protein complex</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000133"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000133">
+    <display_label>includes</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:label>protein complex includes protein</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000132"/>
+  </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
     <rdfs:label>TAIR</rdfs:label>

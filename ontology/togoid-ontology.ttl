@@ -1854,3 +1854,35 @@
     rdfs:label "protein enzymatically produces glycan" ;
     :display_label "enzymatically produces" .
 
+:TIO_000130
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000131 ;
+    rdfs:label "protein is member of protein family" ;
+    :display_label "is member of" .
+
+:TIO_000131
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000130 ;
+    rdfs:label "protein family has member of protein" ;
+    :display_label "has member" .
+
+:TIO_000132
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000133 ;
+    rdfs:label "protein is component of protein complex" ;
+    :display_label "is component of" .
+
+:TIO_000133
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000132 ;
+    rdfs:label "protein complex includes protein" ;
+    :display_label "includes" .
+
