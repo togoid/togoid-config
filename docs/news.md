@@ -5,6 +5,11 @@
 - TogoID now supports handling multiple semantic relations between the same dataset pair (e.g., try converting between GlyTouCan and UniProt).  
 A detailed document is currently being prepared.
 
+# 2024-09-30
+- Weekly update has been completed.  
+- A new pair `chebi-glytoucan` has been added.  
+- For the `chembl_target-uniprot` pair, new relations "protein family has member of protein" and "protein complex includes protein" have been added.
+
 # 2024-09-24
 - Weekly update has been completed.
 
