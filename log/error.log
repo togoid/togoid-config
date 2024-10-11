@@ -1,4 +1,6 @@
 Error: download_file(input/glytoucan, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
+Error: check_remote_file_time(input/hgnc/hgnc_complete_set.tsv, https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.tsv): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
