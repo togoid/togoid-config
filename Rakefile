@@ -634,7 +634,7 @@ namespace :prepare do
     download_lock(INPUT_HGNC_DIR) do
       updated = false
       input_file = "#{INPUT_HGNC_DIR}/hgnc_complete_set.tsv"
-      input_url  = "https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.tsv"
+      input_url  = "https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_HGNC_DIR, input_url)
         updated = true

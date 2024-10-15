@@ -1,6 +1,3 @@
-# *NOTICE*  
-The TogoID service will be temporarily unavailable due to a system update from 10:00 am to 00:00 pm (JST) on Tuesday, October 15, 2024. We apologize for any incovenience caused.
-
 # 2024-09-06
 *New features released!*  
 - You can now display labels for IDs by toggling the "Show labels" switch in the results table.  
@@ -8,8 +5,11 @@ The TogoID service will be temporarily unavailable due to a system update from 1
 - TogoID now supports handling multiple semantic relations between the same dataset pair (e.g., try converting between GlyTouCan and UniProt).  
 A detailed document is currently being prepared.
 
+# 2024-10-15
+- Weekly update has been completed.
+
 # 2024-10-10
-- Weekly update has been completed.  
+- Weekly update has been completed.
 
 # 2024-09-30
 - Weekly update has been completed.  
