@@ -1,6 +1,3 @@
-# *NOTICE*  
-The TogoID service will be temporarily unavailable due to a system update from 10:00 am to 00:00 pm (JST) on Tuesday, October 15, 2024. We apologize for any incovenience caused.
-
 # 2024-09-06
 *New features released!*  
 - You can now display labels for IDs by toggling the "Show labels" switch in the results table.  
