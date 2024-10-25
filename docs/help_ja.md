@@ -10,26 +10,6 @@ Datasets last updated: 2024-10-21
 ## 動画マニュアル
 - [TogoIDを使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/gXnvm6Fn4R8)
 
-## 論文
-- Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
-
-## 紹介PDF･記事
-- [TogoID: データベース統合の基盤となるID変換サービス](https://biosciencedbc.jp/event/symposium/togo2021/files/poster03_togo2021.pdf)
-    - 2021年10月トーゴーの日シンポジウムにて[発表](https://biosciencedbc.jp/event/symposium/togo2021/poster/003.html)   
-- [TogoID：生命科学系データベースのさまざまなIDを探索的に変換できるウェブアプリケーション](https://doi.org/10.18958/7013-00005-0000134-00)
-    - 実験医学2022年5月号　クローズアップ実験法 
-    - DOI [10.18958/7013-00005-0000134-00](https://doi.org/10.18958/7013-00005-0000134-00)
-
-## API
-ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。  
-利用方法の詳細は [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/) をご覧ください。  
-以下は、NCBI Gene ID を UniProt ID 経由で PDB ID に変換した結果を取得する例です。
-    1. [変換できなかった ID も含めて json で取得する](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=json&report=full)
-    2. [入力とターゲットの対応関係を tsv で取得する](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=tsv&report=pair)
-
-また、LABEL2ID の機能には [PubDictionaries](https://pubdictionaries.org/) を利用しています。[TogoID で用いている辞書](https://pubdictionaries.org/users/togoid) は公開されているので、PubDictionaries の API を使用してアクセスすることができます。
-    例: [シノニムを含めてヒトの遺伝子シンボルを検索し NCBI Gene ID に変換する](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
-
 ## 統計 (2024-10-21)
 - 対象データセット数 
     - 105 (73 のデータベースに由来)
@@ -136,3 +116,23 @@ TogoID が対象としているデータセットの詳細を閲覧できます�
 1. データセットのカテゴリーで絞り込めます。
 2. データセットからリンクされているデータセット。右の数字は総ペア数を示します。データセット名をクリックするとこのタブの当該データセットの項目に移動します。
 3. ID 例。入力可能な ID パターンも示しています。HP phenotype では "HP:" と "HP_" というプレフィックスのパターンが使えることを示しています。クリックすると ID 入力欄に入力され、変換を試すことができます。
+
+## API
+ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。  
+利用方法の詳細は [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/) をご覧ください。  
+以下は、NCBI Gene ID を UniProt ID 経由で PDB ID に変換した結果を取得する例です。
+    1. [変換できなかった ID も含めて json で取得する](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=json&report=full)
+    2. [入力とターゲットの対応関係を tsv で取得する](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=tsv&report=pair)
+
+また、LABEL2ID の機能には [PubDictionaries](https://pubdictionaries.org/) を利用しています。[TogoID で用いている辞書](https://pubdictionaries.org/users/togoid) は公開されているので、PubDictionaries の API を使用してアクセスすることができます。
+    例: [シノニムを含めてヒトの遺伝子シンボルを検索し NCBI Gene ID に変換する](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
+
+## 論文
+- Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
+
+## 紹介PDF･記事
+- [TogoID: データベース統合の基盤となるID変換サービス](https://biosciencedbc.jp/event/symposium/togo2021/files/poster03_togo2021.pdf)
+    - 2021年10月トーゴーの日シンポジウムにて[発表](https://biosciencedbc.jp/event/symposium/togo2021/poster/003.html)
+- [TogoID：生命科学系データベースのさまざまなIDを探索的に変換できるウェブアプリケーション](https://doi.org/10.18958/7013-00005-0000134-00)
+    - 実験医学2022年5月号　クローズアップ実験法
+    - DOI [10.18958/7013-00005-0000134-00](https://doi.org/10.18958/7013-00005-0000134-00)

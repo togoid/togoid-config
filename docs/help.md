@@ -10,19 +10,6 @@ Datasets last updated: 2024-10-21
 ## Video tutorial
 - [How to use TogoID: an exploratory ID converter to bridge biological datasets](https://youtu.be/gXnvm6Fn4R8)
 
-## Publication
-Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
-
-## API
-TogoID is also available as an API, which allows other applications to use it for ID conversion.  
-For details, see [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/).  
-Below are examples to obtain the result of the conversion from NCBI Gene IDs to PDB IDs via UniProt IDs.
-    1. [Obtain as JSON with unconverted IDs](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=json&report=full)
-    2. [Obtain only source and target IDs as tsv](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=tsv&report=pair)
-
-For LABEL2ID, TogoID uses [PubDictionaries](https://pubdictionaries.org/). [The dictionaries used in TogoID](https://pubdictionaries.org/users/togoid) is publicly available, and you can access it through the PubDictionaries API.
-    e.g. [Retrieve human gene symbols including synonyms and convert them to NCBI Gene IDs](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
-
 ## Statistics (as of 2024-10-21)
 - Number of target datasets 
     - 105 (from 73 databases)
@@ -134,3 +121,16 @@ The DATASETS tab shows the details of the datasets TogoID covers.
 1. Filters by dataset categories.
 2. The datasets linked to this dataset. The number indicates how many of ID pairs exist between these datasets. By clicking a dataset name you can jump to the dataset on this page.
 3. Example IDs. This also shows ID patterns that can be entered. For HP phenotype, patterns with the prefixes "HP:" and "HP_" are available. Clicking this will enter the IDs into the ID input field and you can try converting them.
+
+## API
+TogoID is also available as an API, which allows other applications to use it for ID conversion.  
+For details, see [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/).  
+Below are examples to obtain the result of the conversion from NCBI Gene IDs to PDB IDs via UniProt IDs.
+    1. [Obtain as JSON with unconverted IDs](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=json&report=full)
+    2. [Obtain only source and target IDs as tsv](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=tsv&report=pair)
+
+For LABEL2ID, TogoID uses [PubDictionaries](https://pubdictionaries.org/). [The dictionaries used in TogoID](https://pubdictionaries.org/users/togoid) is publicly available, and you can access it through the PubDictionaries API.
+    e.g. [Retrieve human gene symbols including synonyms and convert them to NCBI Gene IDs](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
+
+## Publication
+Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
