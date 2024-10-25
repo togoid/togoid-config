@@ -554,8 +554,6 @@ ncbigene:
         preferred: true
       - label: Synonym
         dictionary: togoid_ncbigene_synonym
-      - label: Official symbol
-        dictionary: togoid_ncbigene_official_symbol
 ncit_disease:
   label: NCIt disease
   catalog: FIXME
