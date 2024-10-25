@@ -21,7 +21,7 @@ Some databases include records in multiple categories of concepts. In TogoID, su
 
 ### EXPLORE
 In the EXPLORE mode, you can perform exploratory multi-step ID conversion, where you can convert your ID list to the IDs of another dataset and subsequently to another dataset.
-![Fig-1A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1A.jpg)
+![Fig-1A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1A.jpg)
 1. The input IDs. You can directly paste your ID list to the window or upload your text file. Newline/Comma/Space-separated lists are allowed.
 
 2. The candidate datasets of the input IDs. The numbers on the right side indicate how many of the input IDs match the regular expression pattern of the ID notation of the dataset.
@@ -38,8 +38,8 @@ In the EXPLORE mode, you can perform exploratory multi-step ID conversion, where
 ### NAVIGATE
 In the NAVIGATE mode, you can find paths that link your input dataset to a destination dataset and perform the ID conversion through the selected path.
 
-![Fig-1B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1B.jpg)
-![Fig-1C](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1C.jpg)
+![Fig-1B](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1B.jpg)
+![Fig-1C](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1C.jpg)
 
 7. The candidate datasets of the input IDs.
 
@@ -49,7 +49,7 @@ In the NAVIGATE mode, you can find paths that link your input dataset to a desti
 
 ### Results modal window
 In the modal window displayed when the table icon is clicked in the EXPLORE or NAVIGATE mode, you can preview the conversion result table with up to 100 lines. After you select a table format, you can download the entire results or copy them to the clipboard.
-![Fig-1D](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1D.jpg)
+![Fig-1D](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1D.jpg)
 You can configure the table with the radio buttons.  
 You can download the table or copy it to your clipboard. The format of the downloaded or copied table is the same as the previewed table.
 
@@ -73,7 +73,7 @@ Sliding the switch shows the labels for the IDs. Labels are not available for so
 
 14. If there are multiple patterns for the ID notation, you can specify the pattern in this drop-down list. For example, for Gene Ontology IDs, you can choose the prefix "GO:" or "GO_". You can also display the URL for each entry in the original database.
 
-![Fig-1E](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig1E.jpg)
+![Fig-1E](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1E.jpg)
 
 15. If you just want to get the labels for the input IDs without converting the IDs, hover over the dataset and click the table icon.
 
@@ -82,7 +82,7 @@ Sliding the switch shows the labels for the IDs. Labels are not available for so
 ### LABEL2ID
 The LABEL2ID tab allows you to convert labels to IDs, e.g. gene symbols to NCBI Gene IDs or disease names to MONDO IDs.
 #### Gene symbols to NCBI Gene IDs
-![Fig-2A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2A.jpg)
+![Fig-2A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2A.jpg)
 1. The Input labels. Only a newline is allowed as a label delimiter because labels may contain spaces.
 
 2. Drop-down list for selecting a dataset.
@@ -93,7 +93,7 @@ The LABEL2ID tab allows you to convert labels to IDs, e.g. gene symbols to NCBI 
 
 5. After selecting the conditions, click the EXECUTE button.
 
-![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2B.jpg)
+![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2B.jpg)
 
 6. The Table of conversion results.
 
@@ -107,17 +107,17 @@ The LABEL2ID tab allows you to convert labels to IDs, e.g. gene symbols to NCBI 
 #### Disease names to MONDO IDs
 For conversions of disease names etc., fuzzy matching is allowed.
 
-![Fig-2C](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2C.jpg)
+![Fig-2C](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2C.jpg)
 
 8. The ambiguity score threshold to tolerate in label matches. Threshold can be set to a value between 0.5 and 1. When this is set to 1, only exact matched labels are allowed, while lower values allow for less strict matches.
 
-![Fig-2D](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig2D.jpg)
+![Fig-2D](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2D.jpg)
 9. The matching score is shown on the result table.
 
 ### DATASETS
 The DATASETS tab shows the details of the datasets TogoID covers.
-![Fig-3A](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig3A.jpg)
-![Fig-3B](https://raw.githubusercontent.com/dbcls/togoid-config/main/docs/img/TogoID_Original_Fig3B.jpg)
+![Fig-3A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig3A.jpg)
+![Fig-3B](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig3B.jpg)
 1. Filters by dataset categories.
 2. The datasets linked to this dataset. The number indicates how many of ID pairs exist between these datasets. By clicking a dataset name you can jump to the dataset on this page.
 3. Example IDs. This also shows ID patterns that can be entered. For HP phenotype, patterns with the prefixes "HP:" and "HP_" are available. Clicking this will enter the IDs into the ID input field and you can try converting them.
