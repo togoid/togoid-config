@@ -21,7 +21,7 @@ Datasets last updated: 2024-10-21
 
 ### EXPLORE
 EXPLORE タブでは、入力した ID を他のデータセットの ID に変換し、その変換された ID をさらに他のデータセットの ID に変換するというマルチステップな ID 変換を探索的に行うことができます。
-![Fig-1A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1A.jpg)
+![Fig-1A](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig1A.jpg)
 1. ID の入力欄。ID リストを直接ペーストするか、テキストファイルをアップロードすることができます。各 ID は、改行、コンマ、スペースのいずれかで区切られている必要があります。
 
 2. 入力した ID が属するデータセットの候補。右の数字は、入力 ID のうちそのデータセットの ID の正規表現にマッチするものの数。
@@ -36,8 +36,8 @@ EXPLORE タブでは、入力した ID を他のデータセットの ID に変�
 
 ### NAVIGATE
 NAVIGATE タブでは、変換元と変換先のデータセットを指定することで、両者をつなぐデータセットのパスの候補を調べ、指定したパスで ID 変換を行うことができます。
-![Fig-1B](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1B.jpg)
-![Fig-1C](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1C.jpg)
+![Fig-1B](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig1B.jpg)
+![Fig-1C](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig1C.jpg)
 
 7. 入力 ID の属するデータセットの候補。
 
@@ -47,7 +47,7 @@ NAVIGATE タブでは、変換元と変換先のデータセットを指定す�
 
 ### Results ウインドウ
 EXPLORE もしくは NAVIGATE タブで、テーブルアイコンをクリックしたときに表示されるモーダルウインドウでは、変換結果のテーブルを最大 100 行プレビューできます。テーブルの形式を選択したうえで、結果の全体をダウンロードしたりクリップボードにコピーしたりできます。
-![Fig-1D](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1D.jpg)
+![Fig-1D](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig1D.jpg)
 10. Report  
 - All converted IDs: 変換された ID を、経由したデータセットの ID も含めて表示します。
 - Source and target IDs: 入力とターゲットの ID のみを表示します。
@@ -68,7 +68,7 @@ Copy CURL では、UNIX の curl コマンドで POST メソッドを利用し�
 
 14. ID 記法に複数のパターンがある場合、このプルダウンメニューでパターンを指定できます。例えば Gene Ontology の ID では、プレフィックスが "GO:" の場合と "GO_" の場合があるので、ここで必要に応じて変更できます。また、オリジナルデータベースにおける各エントリーの URL を表示することもできます。
 
-![Fig-1E](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig1E.jpg)
+![Fig-1E](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig1E.jpg)
 15. ID の変換を行わずに、入力 ID のラベルの取得だけを行いたい場合、入力した ID に該当するデータセットにマウスオーバーし、テーブルアイコンをクリックします。
 16. 開いたモーダルウインドウで、Show labels をクリックし、ラベルを表示します。
 
@@ -77,7 +77,7 @@ LABEL2ID タブでは、ラベルを ID に変換できます。例えば、遺�
 
 #### 遺伝子シンボルを NCBI Gene ID に変換する場合
 
-![Fig-2A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2A.jpg)
+![Fig-2A](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig2A.jpg)
 
 1. ラベルの入力欄。ラベルにはスペースが含まれることもあるため、ラベルの区切り文字は改行のみが許されています。
 
@@ -89,7 +89,7 @@ LABEL2ID タブでは、ラベルを ID に変換できます。例えば、遺�
 
 5. 条件を選択後、EXECUTE ボタンをクリックします。
 
-![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2B.jpg)
+![Fig-2B](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig2B.jpg)
 
 6. 変換結果のテーブル。
 - Input: 入力した ID
@@ -102,17 +102,17 @@ LABEL2ID タブでは、ラベルを ID に変換できます。例えば、遺�
 #### 疾患名を MONDO ID に変換する場合
 疾患名などは、表記揺れを許した変換が可能です。
 
-![Fig-2C](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2C.jpg)
+![Fig-2C](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig2C.jpg)
 
 8. ラベルのマッチにおいて許容する曖昧性のスコアの閾値。0.5 から 1 の間で設定でき、1 だと完全一致のみが許され、値が小さくなるほど寛容なマッチが許容されます。
 
-![Fig-2D](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig2D.jpg)
+![Fig-2D](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig2D.jpg)
 
 9. 結果のテーブルでは、マッチのスコアが表示されます。
 
 ### DATASETS
 TogoID が対象としているデータセットの詳細を閲覧できます。
-![Fig-3A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig3A.jpg)
+![Fig-3A](https://raw.githubusercontent.com/dbcls/togoid-config/production/docs/img/TogoID_Original_Fig3A.jpg)
 1. データセットのカテゴリーで絞り込めます。
 2. データセットからリンクされているデータセット。右の数字は総ペア数を示します。データセット名をクリックするとこのタブの当該データセットの項目に移動します。
 3. ID 例。入力可能な ID パターンも示しています。HP phenotype では "HP:" と "HP_" というプレフィックスのパターンが使えることを示しています。クリックすると ID 入力欄に入力され、変換を試すことができます。
