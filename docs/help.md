@@ -117,7 +117,6 @@ For conversions of disease names etc., fuzzy matching is allowed.
 ### DATASETS
 The DATASETS tab shows the details of the datasets TogoID covers.
 ![Fig-3A](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig3A.jpg)
-![Fig-3B](https://raw.githubusercontent.com/dbcls/togoid-config/update_document_v2.0/docs/img/TogoID_Original_Fig3B.jpg)
 1. Filters by dataset categories.
 2. The datasets linked to this dataset. The number indicates how many of ID pairs exist between these datasets. By clicking a dataset name you can jump to the dataset on this page.
 3. Example IDs. This also shows ID patterns that can be entered. For HP phenotype, patterns with the prefixes "HP:" and "HP_" are available. Clicking this will enter the IDs into the ID input field and you can try converting them.
