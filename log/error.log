@@ -7,7 +7,7 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 1538 / 4376 = 0.35146252285191953 < 0.5
-# Error: output/tsv/hgnc-ccds.tsv new file size per old 260816 / 544502 = 0.47899915886443023 < 0.5
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 252491 / 544502 = 0.46370995882476096 < 0.5
 # Error: output/tsv/lipidmaps-chebi.tsv new file size per old 248 / 253350 = 0.0009788829682257747 < 0.5
 # Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
 # Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
@@ -59,6 +59,10 @@ Error: HTTP Error 502: Bad Gateway: https://api.alpha.glycosmos.org/partialmatch
 # Error: output/tsv/lipidmaps-swisslipids.tsv seems to be malformed request due to maintenance downtime or capacity
 # Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML problems. Please try again later.</p>
 # Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
+# Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
 # Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
