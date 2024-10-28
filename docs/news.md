@@ -1,9 +1,7 @@
-# 2024-09-06
-*New features released!*  
-- You can now display labels for IDs by toggling the "Show labels" switch in the results table.  
-- In the LABEL2ID tab, you can convert labels into IDs (e.g., gene symbols to NCBI Gene IDs or disease names to MONDO IDs).  
-- TogoID now supports handling multiple semantic relations between the same dataset pair (e.g., try converting between GlyTouCan and UniProt).  
-A detailed document is currently being prepared.
+
+# 2024-10-28
+- Weekly update has been completed.  
+- The documentation has been updated. Please see the DOCUMENTS tab to learn about TogoID's features including recent developments.
 
 # 2024-10-21
 - Weekly update has been completed.
@@ -27,6 +25,12 @@ A detailed document is currently being prepared.
 
 # 2024-09-09
 - Weekly update has been completed.
+
+# 2024-09-06
+*New features released!*  
+- You can now display labels for IDs by toggling the "Show labels" switch in the results table.  
+- In the LABEL2ID tab, you can convert labels into IDs (e.g., gene symbols to NCBI Gene IDs or disease names to MONDO IDs).  
+- TogoID now supports handling multiple semantic relations between the same dataset pair (e.g., try converting between GlyTouCan and UniProt).  
 
 # 2024-09-05
 - Weekly update has been completed.
