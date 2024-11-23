@@ -1,2 +1,78 @@
 Error: download_file(input/glytoucan, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
-(EOF or read error, treating as "[N]one" ...)
+Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
+Error: Remote file is empty
+# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
+# Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
+Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
+# Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
+# Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
+# Error: output/tsv/glytoucan-doid.tsv new file size per old 1538 / 4376 = 0.35146252285191953 < 0.5
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 252491 / 544502 = 0.46370995882476096 < 0.5
+# Error: output/tsv/lipidmaps-chebi.tsv new file size per old 248 / 253350 = 0.0009788829682257747 < 0.5
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-chebi.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-inchi_key.tsv new file size per old 248 / 1976727 = 0.0001254599142926666 < 0.5
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-swisslipids.tsv new file size per old 248 / 284047 = 0.0008730949455547849 < 0.5
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>503 Service Unavailable</title>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML problems. Please try again later.</p>
+# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
+# Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
+# Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
+# Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
+# Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-hp_phenotype.tsv or created file was empty
+# Error: output/tsv/mondo-meddra.tsv new file size per old 0 / 25262 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-meddra.tsv or created file was empty
+# Error: output/tsv/mondo-mesh.tsv new file size per old 0 / 133836 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-mesh.tsv or created file was empty
+# Error: output/tsv/mondo-omim_phenotype.tsv new file size per old 0 / 145395 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
+# Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 60240 / 470542 = 0.12802257821830995 < 0.5
