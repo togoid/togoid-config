@@ -791,10 +791,10 @@
     rdfs:label "UniProt mnemonic" ;
     rdfs:subClassOf :Protein , :Synonym, :Dataset .
 
-:UniprotReferenceProteome
+:UniprotProteome
     a owl:Class ;
-    dcterms:identifier "uniprot_reference_proteome" ;
-    rdfs:label "UniProt reference proteome" ;
+    dcterms:identifier "uniprot_proteome" ;
+    rdfs:label "UniProt proteome" ;
     rdfs:subClassOf :Proteome, :Dataset .
 
 :Vgnc
