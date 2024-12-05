@@ -1,7 +1,0 @@
-link:
-  forward: TIO_000092
-  reverse: TIO_000093
-  file: sample.tsv
-update:
-  frequency: Monthly
-  method: gzip -dc ${TOGOID_ROOT}/input/uniprot/uniprot_reference_proteome.tab.gz | sed -e '1d' | cut -f1,3 | grep GCF |cut -f1 -d '.' 

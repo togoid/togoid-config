@@ -97,7 +97,7 @@ togovar	TogoVar variant	Variant
 uberon	UBERON	Anatomy
 uniprot	UniProt	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
-uniprot_reference_proteome	UniProt reference proteome	Proteome
+uniprot_proteome	UniProt proteome	Proteome
 vgnc	VGNC	Gene
 wikipathways	WikiPathways	Pathway
 wormbase_gene	WormBase gene	Gene

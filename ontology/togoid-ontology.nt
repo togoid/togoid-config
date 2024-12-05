@@ -616,11 +616,11 @@
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Synonym> .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
-<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://purl.org/dc/terms/identifier> "uniprot_reference_proteome" .
-<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt reference proteome" .
-<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Proteome> .
-<http://togoid.dbcls.jp/ontology#UniprotReferenceProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#UniprotProteome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#UniprotProteome> <http://purl.org/dc/terms/identifier> "uniprot_proteome" .
+<http://togoid.dbcls.jp/ontology#UniprotProteome> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt proteome" .
+<http://togoid.dbcls.jp/ontology#UniprotProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Proteome> .
+<http://togoid.dbcls.jp/ontology#UniprotProteome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Vgnc> <http://purl.org/dc/terms/identifier> "vgnc" .
 <http://togoid.dbcls.jp/ontology#Vgnc> <http://www.w3.org/2000/01/rdf-schema#label> "VGNC" .

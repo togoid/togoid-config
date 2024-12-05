@@ -20,8 +20,8 @@ $minratio = 0.5  # Minimum acceptable size ratio of new / old TSV file sizes
 ### Tasks
 
 directory OUTPUT_TSV_DIR = "output/tsv/"
-directory OUTPUT_TTL_DIR = "output/ttl/"
-directory OUTPUT_ID_LABEL_TTL_DIR = "output/id-label/"
+directory OUTPUT_TTL_DIR = "output/ttl/relation/"
+directory OUTPUT_ID_LABEL_TTL_DIR = "output/ttl/label/"
 
 CFG_FILES = FileList["config/*/config.yaml"]
 TSV_FILES = CFG_FILES.pathmap("%-1d").sub(/^/, OUTPUT_TSV_DIR).sub(/$/, '.tsv')
@@ -1067,9 +1067,9 @@ namespace :prepare do
         updated = true
       end
       begin
-        sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
+        sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
       rescue StandardError => e
-        $stderr.puts "Error: prepare uniprot_reference_proteome: #{e.message}"
+        $stderr.puts "Error: prepare uniprot_proteome: #{e.message}"
       end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"

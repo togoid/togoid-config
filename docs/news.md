@@ -1,5 +1,6 @@
 # 2024-12-05
 - Weekly update has been completed.
+- The dataset `uniprot_reference_proteome` has been renamed to `uniprot_proteome`, because this dataset includes proteomes other than the reference proteomes. We apologize for any inconvenience caused.
 
 # 2024-11-26
 - Weekly update has been completed.
