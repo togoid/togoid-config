@@ -939,15 +939,15 @@ uniprot_mnemonic:
   prefix: 'http://purl.uniprot.org/uniprot/'
   examples:
     - ["2ABA_ORYSJ","33K_ADES1","1003L_ASFK5","1A1D_VARPS","1B02_GORGO","1003L_ASFP4","1433B_MACFA","1107L_ASFWA","3BHS1_MOUSE","14331_SCHMA"]
-uniprot_reference_proteome:
-  label: UniProt reference proteome
+uniprot_proteome:
+  label: UniProt proteome
   catalog: nbdc00221
   category: Proteome
   regex: '^(?<id>UP\d{0,9})$'
   prefix: 'http://purl.uniprot.org/proteomes/'
   examples:
     - ["UP000005640","UP000002311","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
-  method: zcat $TOGOID_ROOT/input/uniprot/uniprot_reference_proteome.tab.gz | awk -F "\t" 'FNR>=2&&$1&&$4{print $1 "\t" $4}'
+  method: zcat $TOGOID_ROOT/input/uniprot/uniprot_proteome.tab.gz | awk -F "\t" 'FNR>=2&&$1&&$4{print $1 "\t" $4}'
   description: 'This is a proteome dataset defined by UniProt. UniProt assigns IDs to the set of proteins expressed by a single organism. Since multiple genomes are often sequenced for the same organism, and a proteome is defined for each genome, proteome IDs to distinguish individual proteomes from the same taxonomy identifier were introduced. [More info](https://www.uniprot.org/help/proteome_id)'
 vgnc:
   label: VGNC

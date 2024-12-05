@@ -1067,9 +1067,9 @@ namespace :prepare do
         updated = true
       end
       begin
-        sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_reference_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
+        sh "wget --quiet --no-check-certificate -O #{INPUT_UNIPROT_DIR}/uniprot_proteome.tab.gz 'https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29'"
       rescue StandardError => e
-        $stderr.puts "Error: prepare uniprot_reference_proteome: #{e.message}"
+        $stderr.puts "Error: prepare uniprot_proteome: #{e.message}"
       end
       # Not used:
       #input_url  = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz"
