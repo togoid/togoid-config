@@ -101,7 +101,7 @@ module TogoID
     end
 
     def setup_files
-      @ttl_dir = "output/id-label/"
+      @ttl_dir = "output/ttl/label"
       @ttl_file = "#{@ttl_dir}/#{@name}.ttl"
       FileUtils.mkdir_p(@ttl_dir)
     end
@@ -205,7 +205,7 @@ module TogoID
 
     def setup_files
       @tsv_dir = "output/tsv"
-      @ttl_dir = "output/ttl"
+      @ttl_dir = "output/ttl/relation"
       @tsv_file = "#{@tsv_dir}/#{@source_ns}-#{@target_ns}.tsv"
       @ttl_file = "#{@ttl_dir}/#{@source_ns}-#{@target_ns}.ttl"
       FileUtils.mkdir_p(@tsv_dir)
