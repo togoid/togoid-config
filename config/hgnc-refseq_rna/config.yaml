@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: awk -F "\t" 'FNR>=2&&$24{gsub("\"","",$24); split($24,a,"|"); for(k in a){if(a[k]~/^[NX][MR]_/)print substr($1,6) "\t" a[k]}}' $TOGOID_ROOT/input/hgnc/hgnc_complete_set.txt
+  method: awk -F "\t" 'FNR>=2&&$24{gsub("\"","",$24); split($24,a,"|"); for(k in a){if(a[k]~/^[NX][MR]_/)print substr($1,6) "\t" gensub(/\.$/,"","g",a[k])}}' $TOGOID_ROOT/input/hgnc/hgnc_complete_set.txt
