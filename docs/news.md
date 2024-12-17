@@ -1,8 +1,5 @@
-# *NOTICE*
-Some of the features of TogoID will be temporarily unavailable due to our system maintenance from 09:00 on December 13, 2024, to 18:00 on December 16, 2024 (JST).  
-The *LABEL2ID* function will not be available, and the *label display features* for some datasets will also be affected.  
-The *ID-to-ID conversion function will remain available* as usual throughout the maintenance period.  
-We apologize for any incovenience caused.  
+# 2024-12-17
+- Weekly update has been completed.
 
 # 2024-12-09
 - Weekly update has been completed.
