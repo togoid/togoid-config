@@ -550,12 +550,22 @@ namespace :prepare do
   task :bioproject => INPUT_BIOPROJECT_DIR do
     $stderr.puts "## Prepare input files for BioProject"
     download_lock(INPUT_BIOPROJECT_DIR) do
+      updated = false
       input_file = "#{INPUT_BIOPROJECT_DIR}/bioproject.xml"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/bioproject/bioproject.xml"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_BIOPROJECT_DIR, input_url)
         sh "python bin/bioproject_xml2tsv.py #{INPUT_BIOPROJECT_DIR}/bioproject.xml > #{INPUT_BIOPROJECT_DIR}/bioproject.tsv"
+        updated = true
       end
+
+      input_file = "#{INPUT_BIOPROJECT_DIR}/bioproject2biosample.tsv"
+      input_url  = "https://ddbj.nig.ac.jp/public/dblink/bioproject-biosample/bioproject2biosample.tsv"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_BIOPROJECT_DIR, input_url)
+        updated = true
+      end
+      updated
     end
   end
 
@@ -563,13 +573,16 @@ namespace :prepare do
   task :biosample => INPUT_BIOSAMPLE_DIR do
     $stderr.puts "## Prepare input files for BioSample"
     download_lock(INPUT_BIOSAMPLE_DIR) do
+      updated = false
       input_file = "#{INPUT_BIOSAMPLE_DIR}/biosample_set.xml.gz"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/biosample/biosample_set.xml.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_BIOSAMPLE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_BIOSAMPLE_DIR}/biosample_set.xml"
         sh "python bin/biosample_xml2tsv.py #{INPUT_BIOSAMPLE_DIR}/biosample_set.xml > #{INPUT_BIOSAMPLE_DIR}/biosample_set.tsv"
+        updated = true
       end
+      updated
     end
   end
 
