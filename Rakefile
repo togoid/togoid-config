@@ -577,11 +577,14 @@ namespace :prepare do
   task :cellosaurus => INPUT_CELLOSAURUS_DIR do
     $stderr.puts "## Prepare input files for Cellosaurus"
     download_lock(INPUT_CELLOSAURUS_DIR) do
+      updated = false
       input_file = "#{INPUT_CELLOSAURUS_DIR}/cellosaurus.txt"
       input_url  = "https://ftp.expasy.org/databases/cellosaurus/cellosaurus.txt"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_CELLOSAURUS_DIR, input_url)
+        updated = true
       end
+      updated
     end
   end
 
@@ -589,12 +592,15 @@ namespace :prepare do
   task :clinvar => INPUT_CLINVAR_DIR do
     $stderr.puts "## Prepare input files for ClinVar"
     download_lock(INPUT_CLINVAR_DIR) do
+      updated = false
       input_file = "#{INPUT_CLINVAR_DIR}/variant_summary.txt.gz"
       input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_CLINVAR_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_CLINVAR_DIR}/variant_summary.txt"
+        updated = true
       end
+      updated
     end
   end
 
