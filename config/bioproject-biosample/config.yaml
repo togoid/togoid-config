@@ -2,6 +2,7 @@ link:
   file: sample.tsv
   forward: TIO_000094
   reverse: TIO_000095
+  description: "The relationship between BioSample and BioProject is derived from the XML files provided by BioSample (biosample_set.xml) and BioProject (bioproject.xml). However, these files do not comprehensively cover all relations. If you are unable to find direct relations between your input BioSample/BioProject IDs and the corresponding BioProject/BioSample IDs, please consider using the path via SRA Experiment IDs, which may contains expected relations."
 update:
   frequency: Monthly
-  method: curl -sS https://ddbj.nig.ac.jp/public/dblink/bioproject-biosample/bioproject2biosample.tsv
+  method: awk -F "\t" 'FNR==1{fn++} fn==1{b[$1,$2]=1; print $1 "\t" $2} fn==2&&$2=="ID"{a[$3]=$1} fn==3&&$2=="BioProject ID"&&a[$3]&&!b[a[$3],$1]{print a[$3] "\t" $1}' $TOGOID_ROOT/input/bioproject/bioproject2biosample.tsv $TOGOID_ROOT/input/bioproject/bioproject.tsv $TOGOID_ROOT/input/biosample/biosample_set.tsv
