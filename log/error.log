@@ -1,5 +1,3 @@
-Error: check_remote_file_time(input/glytoucan/glycosmos_ggdbs_pubmed.csv, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): no time information in ""
-Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
