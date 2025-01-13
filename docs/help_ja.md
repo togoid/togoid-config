@@ -8,7 +8,7 @@ Datasets last updated: 2025-01-13
 - TogoIDに収載されているデータセットの詳細については、"DATASETS"タブからご覧いただけます。
 
 ## 動画マニュアル
-- [TogoIDを使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/gXnvm6Fn4R8)
+- [TogoID ver. 2.0を使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/ORW1GGIaJsY)
 
 ## 統計 (2025-01-13)
 - 対象データセット数 

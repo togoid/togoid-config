@@ -8,7 +8,7 @@ Datasets last updated: 2025-01-13
 - See the "DATASETS" tab for a list of supported datasets.
 
 ## Video tutorial
-- [How to use TogoID: an exploratory ID converter to bridge biological datasets](https://youtu.be/gXnvm6Fn4R8)
+- [How to use TogoID ver 2.0: an exploratory ID converter to bridge biological datasets](https://youtu.be/ORW1GGIaJsY)
 
 ## Statistics (as of 2025-01-13)
 - Number of target datasets 
