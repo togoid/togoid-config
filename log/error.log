@@ -1,9 +1,11 @@
-Error: check_remote_file_time(input/glytoucan/glycosmos_ggdbs_pubmed.csv, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): no time information in ""
-Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
+# Error: output/tsv/ensembl_gene-affy_probeset.tsv new file size per old 0 / 1493051 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ensembl_gene-affy_probeset.tsv or created file was empty
+# Error: output/tsv/ensembl_transcript-affy_probeset.tsv new file size per old 0 / 6536965 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ensembl_transcript-affy_probeset.tsv or created file was empty
 Error: <urlopen error [Errno 110] Connection timed out>: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
@@ -65,4 +67,17 @@ Error: <urlopen error [Errno 110] Connection timed out>: https://api.alpha.glyco
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 139 / 15732849 = 8.835017738999466e-06 < 0.5
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <head><title>404 Not Found</title></head>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <center><h1>404 Not Found</h1></center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <hr><center>nginx/1.27.3</center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </html>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <head><title>404 Not Found</title></head>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <center><h1>404 Not Found</h1></center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML <hr><center>nginx/1.27.3</center>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </body>
+# Error: output/tsv/togovar-clinvar.tsv seems to contain HTML </html>
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 60240 / 470542 = 0.12802257821830995 < 0.5

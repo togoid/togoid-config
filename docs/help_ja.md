@@ -1,5 +1,5 @@
 # TogoID ver. 2.0
-Datasets last updated: 2024-12-30
+Datasets last updated: 2025-01-13
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) は、直感的なインターフェースにより生命科学系データベース(DB)間のつながりを探索的に確認しながらID変換を行うことができるウェブアプリケーションです。同一の実体を指すID間の変換だけでなく、関連する別のカテゴリーのIDへの変換も可能です。また、直接リンクされていないDBのID間でも、他のDBを経由した変換を探索することができます。
@@ -8,9 +8,9 @@ Datasets last updated: 2024-12-30
 - TogoIDに収載されているデータセットの詳細については、"DATASETS"タブからご覧いただけます。
 
 ## 動画マニュアル
-- [TogoIDを使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/gXnvm6Fn4R8)
+- [TogoID ver. 2.0を使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/ORW1GGIaJsY)
 
-## 統計 (2024-12-30)
+## 統計 (2025-01-13)
 - 対象データセット数 
     - 105 (73 のデータベースに由来)
 - 対象DBの詳細やID例については、"DATASETS" タブ からご覧いただけます。 
@@ -128,6 +128,8 @@ TogoID が対象としているデータセットの詳細を閲覧できます�
 例: [シノニムを含めてヒトの遺伝子シンボルを検索し NCBI Gene ID に変換する](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
 
 ## 論文
+- Shuya Ikeda, Kiyoko F Aoki-Kinoshita, Hirokazu Chiba, Susumu Goto, Masae Hosoda, Shuichi Kawashima, Jin-Dong Kim, Yuki Moriya, Tazro Ohta, Hiromasa Ono, Terue Takatsuki, Yasunori Yamamoto, Toshiaki Katayama, Expanding the concept of ID conversion in TogoID by introducing multi-semantic and label features, J Biomed Semantics. 2025 Jan 8;16(1):1. [doi:10.1186/s13326-024-00322-1](https://doi.org/10.1186/s13326-024-00322-1).
+
 - Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
 
 ## 紹介PDF･記事
