@@ -2,6 +2,9 @@
 - [Our new publication](https://link.springer.com/article/10.1186/s13326-024-00322-1) has been published.
 - Weekly update has been completed.
 
+# 2025-01-21
+- Weekly update has been completed.
+
 # 2024-12-30
 - Weekly update has been completed.
 
