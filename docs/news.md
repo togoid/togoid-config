@@ -1,6 +1,9 @@
 # 2025-01-13
 - [Our new publication](https://link.springer.com/article/10.1186/s13326-024-00322-1) has been published.
 
+# 2025-02-04
+- Weekly update has been completed.
+
 # 2025-01-28
 - Weekly update has been completed.
 
