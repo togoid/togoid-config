@@ -1,12 +1,12 @@
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?pathway_id ?wp_id
 FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway>
 WHERE {
   ?pathway a bp:Pathway;
-           owl:sameAs ?orig .
+           rdfs:seeAlso ?orig .
   FILTER(STRSTARTS(STR(?orig), "http://identifiers.org/wikipathways/"))
   BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?pathway_id)
   BIND(STRAFTER(STR(?orig), "http://identifiers.org/wikipathways/") AS ?wp_id)

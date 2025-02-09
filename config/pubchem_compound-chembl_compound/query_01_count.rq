@@ -2,15 +2,15 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 PREFIX source: <http://rdf.ncbi.nlm.nih.gov/pubchem/source/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT (count(*) as ?total) {
-SELECT DISTINCT ?cid ?chembl_id
+SELECT (COUNT(*) as ?total) {
+SELECT DISTINCT ?cid ?chembl
 FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/substance>
 WHERE {
-    [] cheminf:CHEMINF_000477 ?cid ;
-        dcterms:source source:ChEMBL ; # has PubChem normalized counterpart
-        skos:exactMatch ?chembl_b .
-        BIND (strafter(str(?chembl_b), "CHEMBL") AS ?chembl_id)
+  [] cheminf:CHEMINF_000477 ?cid ;
+     dcterms:source source:ChEMBL ; # has PubChem normalized counterpart
+     rdfs:seeAlso ?chembl .
+  FILTER (STRSTARTS(STR(?chembl), "http://identifiers.org/chembl.compound:"))
 }
 }
