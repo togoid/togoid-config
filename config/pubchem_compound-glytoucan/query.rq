@@ -1,12 +1,13 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX source: <http://rdf.ncbi.nlm.nih.gov/pubchem/source/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?pubchem_id ?glytoucan_id {
   [ dcterms:source source:ID11830 ;
-    skos:exactMatch ?glytoucan ;
+    rdfs:seeAlso ?glytoucan ;
     cheminf:CHEMINF_000477 ?pubchem ] .
   BIND(STRAFTER(STR(?pubchem), "compound/CID") AS ?pubchem_id)
-  BIND(STRAFTER(STR(?glytoucan), "glytoucan/") AS ?glytoucan_id)
+  FILTER (STRSTARTS(STR(?glytoucan), "http://identifiers.org/glytoucan:"))
+  BIND(STRAFTER(STR(?glytoucan), "http://identifiers.org/glytoucan:") AS ?glytoucan_id)
 }

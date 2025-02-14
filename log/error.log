@@ -1,11 +1,5 @@
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
-Error: check_remote_file_time(input/interpro/interpro2go, https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/interpro/protein2ipr.dat.gz, https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/interpro/interpro.xml.gz, https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro.xml.gz): no time information in ""
-Error: Remote file is empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
@@ -69,4 +63,16 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
+# Error: output/tsv/pubchem_compound-chembl_compound.tsv new file size per old 0 / 53838777 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_compound-chembl_compound.tsv or created file was empty
+# Error: output/tsv/pubchem_compound-glytoucan.tsv new file size per old 0 / 1277768 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_compound-glytoucan.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-pathbank.tsv new file size per old 0 / 1318229 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-pathbank.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv new file size per old 0 / 56888 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-reactome_pathway.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-uniprot.tsv new file size per old 0 / 9181412 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-uniprot.tsv or created file was empty
+# Error: output/tsv/pubchem_pathway-wikipathways.tsv new file size per old 0 / 16836 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pubchem_pathway-wikipathways.tsv or created file was empty
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 61682 / 470542 = 0.13108712931045474 < 0.5

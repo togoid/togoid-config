@@ -2,7 +2,7 @@
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT (COUNT(*) AS ?total)
 WHERE {
@@ -11,7 +11,7 @@ WHERE {
     ?pathway a bp:Pathway ;
              obo:RO_0000057 [
              a sio:SIO_010043 ;
-             skos:closeMatch ?protein
+             rdfs:seeAlso ?protein
            ] .
     FILTER(CONTAINS(STR(?protein), "http://purl.uniprot.org/uniprot/"))
   }
