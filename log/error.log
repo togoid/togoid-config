@@ -63,16 +63,8 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/pubchem_compound-chembl_compound.tsv new file size per old 0 / 53838777 = 0.0 < 0.5
-# Error: Failed to create output/tsv/pubchem_compound-chembl_compound.tsv or created file was empty
-# Error: output/tsv/pubchem_compound-glytoucan.tsv new file size per old 0 / 1277768 = 0.0 < 0.5
-# Error: Failed to create output/tsv/pubchem_compound-glytoucan.tsv or created file was empty
-# Error: output/tsv/pubchem_pathway-pathbank.tsv new file size per old 0 / 1318229 = 0.0 < 0.5
-# Error: Failed to create output/tsv/pubchem_pathway-pathbank.tsv or created file was empty
 # Error: output/tsv/pubchem_pathway-reactome_pathway.tsv new file size per old 0 / 56888 = 0.0 < 0.5
 # Error: Failed to create output/tsv/pubchem_pathway-reactome_pathway.tsv or created file was empty
-# Error: output/tsv/pubchem_pathway-uniprot.tsv new file size per old 0 / 9181412 = 0.0 < 0.5
-# Error: Failed to create output/tsv/pubchem_pathway-uniprot.tsv or created file was empty
 # Error: output/tsv/pubchem_pathway-wikipathways.tsv new file size per old 0 / 16836 = 0.0 < 0.5
 # Error: Failed to create output/tsv/pubchem_pathway-wikipathways.tsv or created file was empty
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 61682 / 470542 = 0.13108712931045474 < 0.5
