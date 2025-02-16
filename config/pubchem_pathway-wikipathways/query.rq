@@ -7,7 +7,7 @@ FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway>
 WHERE {
   ?pathway a bp:Pathway;
            rdfs:seeAlso ?orig .
-  FILTER(STRSTARTS(STR(?orig), "http://identifiers.org/wikipathways/"))
+  FILTER(STRSTARTS(STR(?orig), "http://identifiers.org/wikipathways:"))
   BIND(STRAFTER(STR(?pathway), "http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID") AS ?pathway_id)
-  BIND(STRAFTER(STR(?orig), "http://identifiers.org/wikipathways/") AS ?wp_id)
+  BIND(STRAFTER(STR(?orig), "http://identifiers.org/wikipathways:") AS ?wp_id)
 }
