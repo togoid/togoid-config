@@ -1,13 +1,41 @@
+Error: check_remote_file_time(input/bioproject/bioproject2biosample.tsv, https://ddbj.nig.ac.jp/public/dblink/bioproject-biosample/bioproject2biosample.tsv): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
+# Error: output/tsv/assembly_insdc-bioproject.tsv new file size per old 0 / 58955319 = 0.0 < 0.5
+# Error: Failed to create output/tsv/assembly_insdc-bioproject.tsv or created file was empty
+# Error: output/tsv/assembly_insdc-biosample.tsv new file size per old 0 / 60555966 = 0.0 < 0.5
+# Error: Failed to create output/tsv/assembly_insdc-biosample.tsv or created file was empty
+# Error: output/tsv/assembly_insdc-insdc_master.tsv new file size per old 0 / 63716447 = 0.0 < 0.5
+# Error: Failed to create output/tsv/assembly_insdc-insdc_master.tsv or created file was empty
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv new file size per old 0 / 2475955 = 0.0 < 0.5
+# Error: Failed to create output/tsv/bioproject_umbrella-bioproject.tsv or created file was empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
+# Error: output/tsv/gea-bioproject.tsv new file size per old 0 / 3032 = 0.0 < 0.5
+# Error: Failed to create output/tsv/gea-bioproject.tsv or created file was empty
+# Error: output/tsv/gea-biosample.tsv new file size per old 0 / 121104 = 0.0 < 0.5
+# Error: Failed to create output/tsv/gea-biosample.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
 # Error: output/tsv/hgnc-ccds.tsv new file size per old 252491 / 544502 = 0.46370995882476096 < 0.5
+# Error: output/tsv/insdc-bioproject.tsv new file size per old 0 / 1191557755 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc-bioproject.tsv or created file was empty
+# Error: output/tsv/insdc-biosample.tsv new file size per old 0 / 4269980335 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc-biosample.tsv or created file was empty
+# Error: output/tsv/insdc_master-bioproject.tsv new file size per old 0 / 41801168 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc_master-bioproject.tsv or created file was empty
+# Error: output/tsv/insdc_master-biosample.tsv new file size per old 0 / 43765492 = 0.0 < 0.5
+# Error: Failed to create output/tsv/insdc_master-biosample.tsv or created file was empty
+# Error: output/tsv/jga_study-jga_dataset.tsv new file size per old 0 / 4378 = 0.0 < 0.5
+# Error: Failed to create output/tsv/jga_study-jga_dataset.tsv or created file was empty
+# Error: output/tsv/jga_study-nbdc_human_db.tsv new file size per old 0 / 5795 = 0.0 < 0.5
+# Error: Failed to create output/tsv/jga_study-nbdc_human_db.tsv or created file was empty
+# Error: output/tsv/jga_study-pubmed.tsv new file size per old 0 / 2597 = 0.0 < 0.5
+# Error: Failed to create output/tsv/jga_study-pubmed.tsv or created file was empty
 # Error: output/tsv/lipidmaps-chebi.tsv new file size per old 148 / 253350 = 0.000584172093941188 < 0.5
 # Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
 # Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>403 Forbidden</title>
@@ -67,4 +95,4 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/pubchem_pathway-reactome_pathway.tsv or created file was empty
 # Error: output/tsv/pubchem_pathway-wikipathways.tsv new file size per old 0 / 16836 = 0.0 < 0.5
 # Error: Failed to create output/tsv/pubchem_pathway-wikipathways.tsv or created file was empty
-# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 61682 / 470542 = 0.13108712931045474 < 0.5
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 62368 / 470542 = 0.1325450225484654 < 0.5
