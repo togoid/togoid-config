@@ -554,6 +554,14 @@ ncbigene:
         preferred: true
       - label: Synonym
         dictionary: togoid_ncbigene_synonym
+  annotations:
+    - variable: type_of_gene
+      label: Type of gene
+      items: ["protein-coding", "ncRNA", "pseudo", "rRNA", "tRNA", "scRNA", "snRNA", "snoRNA", "miscRNA", "biological-region", "unknown", "other"]
+    - variable: gene_synonym
+      label: Synonym
+    - variable: full_name
+      label: Full name
 ncit_disease:
   label: NCIt disease
   catalog: FIXME
@@ -931,6 +939,12 @@ uniprot:
   prefix: 'http://purl.uniprot.org/uniprot/'
   examples:
     - ["A0A174V9D2","A0A1V4U2Y9","Q7NXD4","P0AAM3","O43423","D4IJI4","Q66SS1","B5IDU9","D3TBR4","D4ILS5"]
+  annotations:
+    - variable: reviewed
+      label: SwissProt
+      items: ["true", "false"]
+    - variable: short_name
+      label: Short name
 uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221
