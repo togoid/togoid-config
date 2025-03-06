@@ -102,6 +102,10 @@ chebi:
         dictionary: togoid_chebi_exact_synonym
       - label: Related synonym
         dictionary: togoid_chebi_related_synonym
+  annotations:
+    - variable: mass
+      label: Molecular mass
+      numerical: true
 chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02555
