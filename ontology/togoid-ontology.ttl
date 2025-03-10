@@ -707,6 +707,12 @@
     rdfs:label "SGD" ;
     rdfs:subClassOf :Gene, :Dataset .
 
+:Sio
+    a owl:Class ;
+    dcterms:identifier "sio" ;
+    rdfs:label "SIO" ;
+    rdfs:subClassOf :Classification, :Dataset .
+
 :Smart
     a owl:Class ;
     dcterms:identifier "smart" ;

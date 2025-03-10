@@ -83,6 +83,7 @@ refseq_rna	RefSeq RNA	Transcript
 rgd	RGD	Gene
 rhea	Rhea	Reaction
 sgd	SGD	Gene
+sio	SIO	Classification
 smart	SMART	Domain
 sra_accession	SRA accession	Submission
 sra_analysis	SRA analysis	Analysis

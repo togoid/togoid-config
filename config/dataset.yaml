@@ -832,6 +832,14 @@ sgd:
   examples:
     - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
   method: awk -F '\t' -v 'db=SGD' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+sio:
+  label: SIO
+  catalog: FIXME
+  category: Classification
+  regex: '^SIO_(?<id>\d{6})$'
+  prefix: 'http://semanticscience.org/resource/'
+  examples:
+    - ["SIO_000008","SIO_000095","SIO_000216","SIO_000253","SIO_000628","SIO_000772","SIO_000061","SIO_000223","SIO_000300"]
 smart:
   label: SMART
   catalog: nbdc00682
