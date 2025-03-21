@@ -92,7 +92,7 @@ module TogoID
       @catalog = hash["catalog"]
       @category = hash["category"]
       @label = hash["label"]
-      @prefix = hash["prefix"]
+      @prefix = hash["prefix"].find{|x| x["rdf"]}["uri"]
       @regex = hash["regex"]
       @internal_format = hash["internal_format"]
       @external_format = hash["external_format"]
