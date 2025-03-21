@@ -16,9 +16,13 @@ assembly_insdc:
   category: Genome
   regex: '^(?<id>GCA_\d{9})(\.\d+)?$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.gca/'
       rdf: true
+    - label: 'NCBI Genome Assembly'
+      uri: 'https://www.ncbi.nlm.nih.gov/datasets/genome/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
   examples:
     - ["GCA_000001215","GCA_000001405","GCA_000001545","GCA_000001635","GCA_000001735","GCA_000001765","GCA_000001895","GCA_000001905","GCA_000001985","GCA_000002035"]
     - ["GCA_000001215.4","GCA_000001405.29","GCA_000001545.3","GCA_000001635.9","GCA_000001735.2","GCA_000001765.3","GCA_000001895.4","GCA_000001905.1","GCA_000001985.1","GCA_000002035.4"]
@@ -28,9 +32,13 @@ assembly_refseq:
   category: Genome
   regex: '^(?<id>GCF_\d{9})(\.\d+)?$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.gca/'
       rdf: true
+    - label: 'NCBI Genome Assembly'
+      uri: 'https://www.ncbi.nlm.nih.gov/datasets/genome/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
   examples:
     - ["GCF_000002035","GCF_009870125","GCF_000840205","GCF_000004195","GCF_000475195","GCF_000296755","GCF_000151885","GCF_000715135","GCF_001039355","GCF_000331145"]
     - ["GCF_000002035.6","GCF_009870125.1","GCF_000840205.1","GCF_000004195.4","GCF_000475195.1","GCF_000296755.1","GCF_000151885.1","GCF_000715135.1","GCF_001039355.2","GCF_000331145.1"]
@@ -52,9 +60,15 @@ bioproject:
   category: Project
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI BioProject'
+      uri: 'https://www.ncbi.nlm.nih.gov/bioproject?term='
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/bioproject/'
       rdf: true
+    - label: 'EBI BioProject'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ BioProject'
+      uri: 'https://ddbj.nig.ac.jp/search/entry/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
   method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
@@ -64,9 +78,15 @@ bioproject_umbrella:
   category: Project
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI BioProject'
+      uri: 'https://www.ncbi.nlm.nih.gov/bioproject?term='
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/bioproject/'
       rdf: true
+    - label: 'EBI BioProject'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ BioProject'
+      uri: 'https://ddbj.nig.ac.jp/search/entry/bioproject/'
   examples:
     - ["PRJDB10770","PRJDB14691","PRJEB55721","PRJEB56110","PRJNA388429","PRJNA510115","PRJNA834739","PRJNA561326","PRJNA672702","PRJNA248220"]
 biosample:
@@ -76,9 +96,15 @@ biosample:
   category: Sample
   regex: '^(?<id>SAM[NED]\w?\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI BioSample'
+      uri: 'https://www.ncbi.nlm.nih.gov/biosample?term='
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/biosample/'
       rdf: true
+    - label: 'EBI BioSamples'
+      uri: 'https://www.ebi.ac.uk/biosamples/sample/'
+    - label: 'DDBJ BioSample'
+      uri: 'https://ddbj.nig.ac.jp/search/entry/biosample/'
   examples:
     - ["SAMD00003683","SAMD00006315","SAMD00003741","SAMD00011226","SAMN13091859","SAMN05877962","SAMN05877838","SAMEA104232303","SAMEA4760552","SAMEA1572228"]
   method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
@@ -178,9 +204,15 @@ dbsnp:
   category: Variant
   regex: '^(?<id>rs\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/dbsnp/'
       rdf: true
+    - label: 'GWAS Catalog'
+      uri: 'https://www.ebi.ac.uk/gwas/variants/'
+    - label: 'Ensembl'
+      uri: 'https://www.ensembl.org/Homo_sapiens/Variation/Explore?v='
+    - label: 'GTEx'
+      uri: 'https://www.gtexportal.org/home/snp/'
   examples:
     - ["rs746303788","rs1407020249","rs374003162","rs4647297","rs549539526","rs1387864740","rs1177577242","rs769848663","rs16961655","rs79135400"]
 doid:
@@ -214,9 +246,19 @@ ec:
   category: Function
   regex: '^(?:EC:)?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/ec-code/'
       rdf: true
+    - label: 'BRENDA'
+      uri: 'https://www.brenda-enzymes.org/enzyme.php?ecno='
+    - label: 'Expasy ENZYME'
+      uri: 'https://enzyme.expasy.org/EC/'
+    - label: 'ExplorEnz'
+      uri: 'https://www.enzyme-database.org/query.php?ec='
+    - label: 'IntEnz'
+      uri: 'https://www.ebi.ac.uk/intenz/query?cmd=SearchEC&ec='
+    - label: 'KEGG'
+      uri: 'https://www.genome.jp/dbget-bin/www_bget?ec:'
   format: ["%s","EC:%s"]
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
@@ -228,9 +270,19 @@ ensembl_gene:
   category: Gene
   regex: '^(?:(?:(?<id1>ENS[A-Z]*G\d{11})(?:\.\d+)?)|(?<id2>FBgn\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+)|(?<id5>WBGene\d{8})|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4})|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?)|(?<id9>snR\d+-?[A-Za-z]?)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$'
   prefix:
-    - label: 'rdf'
+    - label: 'Ensembl'
+      uri: 'https://www.ensembl.org/id/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/ensembl/'
       rdf: true
+    - label: 'Expression Atlas'
+      uri: 'http://www.ebi.ac.uk/gxa/genes/'
+    - label: 'Bgee'
+      uri: 'https://www.bgee.org/gene/'
+    - label: 'GTEx (Only human IDs)'
+      uri: 'https://www.gtexportal.org/home/gene/'
+    - label: 'Human Protein Atlas  (Only human IDs)'
+      uri: 'https://www.proteinatlas.org/'
   examples:
     - ["ENSG00000186283","ENSAMEG00000018238","ENSG00000167916","ENSG00000213417","ENSG00000133328","ENSG00000274404","ENSG00000184363","FBgn0021742","FBgn0030057","FBgn0265139"]
 ensembl_protein:
@@ -261,9 +313,11 @@ flybase_gene:
   category: Gene
   regex: '^(?<id>FBgn\d{7})$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/fb/'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/FB:'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
   method: awk -F '\t' -v 'db=FLYBASE' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -431,9 +485,11 @@ inchi_key:
   category: Compound
   regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/inchikey/'
       rdf: true
+    - label: 'PubChem RDF'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/'
   examples:
     - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N","RZWGTXHSYZGXKF-UHFFFAOYSA-N","RQQIIXFYTHWFKW-ZETCQYMHSA-N","RALAARQREFCZJO-UHFFFAOYSA-N","HVFRJJDZWVSUIB-UHFFFAOYSA-N","KVNZVXVZQFTXNA-UHFFFAOYSA-N","KVQUJTYBWCGJRS-UHFFFAOYSA-N","AFGLQVAJWVTAJT-UHFFFAOYSA-N","LHISABQPMWXWCC-UHFFFAOYSA-N","ZSXCHLJCWRSMMS-UHFFFAOYSA-N"]
 insdc:
@@ -442,9 +498,15 @@ insdc:
   category: Gene
   regex: '^(?:insdc:)?(?<id>[A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc/'
       rdf: true
+    - label: 'GenBank'
+      uri: 'https://www.ncbi.nlm.nih.gov/nuccore/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ'
+      uri: 'https://getentry.ddbj.nig.ac.jp/getentry?database=ddbj&accession_number='
   examples:
     - ["U10991","AF116914","AK056978","DQ440258","U91725","AY301270","U32907","AY261360","AK001332","U13261"]
 insdc_master:
@@ -453,9 +515,13 @@ insdc_master:
   category: Project
   regex: '^(?:insdc:)?(?<id>[A-Z]{4,6}\d{8,10})(?:\.\d+)?$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc/'
       rdf: true
+    - label: 'GenBank'
+      uri: 'https://www.ncbi.nlm.nih.gov/nuccore/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
   examples:
     - ["ABGA00000000","AADE00000000","AABR00000000","AAGU00000000","ABAR00000000","AADD00000000","ABBA00000000","AAHY00000000","AADG00000000","AAGJ00000000"]
 intact:
@@ -616,9 +682,11 @@ mgi_gene:
   category: Gene
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/mgi/MGI:'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/MGI:'
   format: ["MGI:%s","mgi:%s"]
   examples:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
@@ -903,9 +971,11 @@ pmc:
   category: Literature
   regex: '^(?:PMC)?(?<id>\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/pmc/PMC'
       rdf: true
+    - label: 'Europe PMC'
+      uri: 'http://europepmc.org/articles/'
   examples:
     - ["PMC7857752","PMC10139720","PMC3815299","PMC4990340","PMC6885017","PMC5286597","PMC8035296","PMC46450","PMC11138896","PMC9528096"]
     - ["7857752","10139720","3815299","4990340","6885017","5286597","8035296","46450","11138896","9528096"]
@@ -1055,9 +1125,11 @@ rgd:
   category: Gene
   regex: '^(?:(?:RGD|rgd):)?(?<id>\d{4,})$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/rgd/'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/RGD:'
   format: ["%s","RGD:%s","rgd:%s"]
   examples:
     - ["1308312","1311120","1309724","1565514","7683241","1307957","71036","1307876","1308965","1305482"]
@@ -1081,9 +1153,11 @@ sgd:
   category: Gene
   regex: '^(?<id>S\d{9})$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/sgd/'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/SGD:'
   examples:
     - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
   method: awk -F '\t' -v 'db=SGD' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -1115,9 +1189,15 @@ sra_accession:
   category: Submission
   regex: '^(?<id>[SED]RA\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.sra/'
       rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-submission/'
   examples:
     - ["DRA000741","DRA000768","DRA001014","DRA000833","SRA000144","SRA000605","SRA008879","ERA007227","ERA011638","ERA013580"]
 sra_analysis:
@@ -1126,9 +1206,15 @@ sra_analysis:
   category: Analysis
   regex: '^(?<id>[SED]RZ\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.sra/'
       rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-analysis/'
   examples:
     - ["DRZ000249","DRZ000087","DRZ003045","DRZ000829","SRZ168127","SRZ008405","SRZ010259","SRZ011419","SRZ006662","SRZ010567"]
 sra_experiment:
@@ -1137,9 +1223,15 @@ sra_experiment:
   category: Experiment
   regex: '^(?<id>[SED]RX\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.sra/'
       rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-experiment/'
   examples:
     - ["DRX000585","DRX000114","DRX000613","DRX000681","SRX000921","SRX000254","SRX000626","ERX149204","ERX001260","ERX000427"]
 sra_project:
@@ -1148,9 +1240,15 @@ sra_project:
   category: Project
   regex: '^(?<id>[SED]RP\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.sra/'
       rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-study/'
   examples:
     - ["DRP000994","DRP000877","DRP000649","DRP000147","SRP266466","SRP297268","SRP000065","ERP001266","ERP007720","ERP104141"]
 sra_run:
@@ -1159,9 +1257,15 @@ sra_run:
   category: SequenceRun
   regex: '^(?<id>[SED]RR\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.sra/'
       rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-run/'
   examples:
     - ["DRR000834","DRR000683","DRR000264","DRR000453","SRR029947","SRR000290","SRR004854","ERR499402","ERR004130","ERR000715"]
 sra_sample:
@@ -1170,9 +1274,15 @@ sra_sample:
   category: Sample
   regex: '^(?<id>[SED]RS\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.sra/'
       rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-sample/'
   examples:
     - ["DRS001431","DRS001371","DRS000894","DRS000386","SRS2618009","SRS7846025","SRS000159","ERS452503","ERS000126","ERS010423"]
 swisslipids:
@@ -1207,9 +1317,17 @@ taxonomy:
   category: Organism
   regex: '^(?<id>\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/taxonomy/'
       rdf: true
+    - label: 'NCBI Taxonomy'
+      uri: 'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id='
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/Taxon:'
+    - label: 'UniProt'
+      uri: 'https://purl.uniprot.org/taxonomy/'
+    - label: 'OLS'
+      uri: 'https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon/terms?short_form=NCBITaxon_'
   examples:
     - ["1171376","484906","1214242","1124991","1037911","1266844","243277","696747","263820","713604"]
 togovar:
@@ -1243,9 +1361,21 @@ uniprot:
   category: Protein
   regex: '^(?:(?<id1>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|(?<id2>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$'
   prefix:
-    - label: 'rdf'
+    - label: 'UniProt'
       uri: 'http://purl.uniprot.org/uniprot/'
       rdf: true
+    - label: 'InterPro'
+      uri: 'https://www.ebi.ac.uk/interpro/protein/'
+    - label: 'jPOST'
+      uri: 'https://globe.jpostdb.org/protein?id='
+    - label: 'GlyCosmos'
+      uri: 'https://glycosmos.org/glycoproteins/show/uniprot/'
+    - label: 'Pharos'
+      uri: 'https://pharos.nih.gov/targets/'
+    - label: 'IntAct'
+      uri: 'https://www.ebi.ac.uk/intact/search?query=id:'
+    - label: 'AlphaFold DB'
+      uri: 'https://alphafold.ebi.ac.uk/entry/'
   examples:
     - ["A0A174V9D2","A0A1V4U2Y9","Q7NXD4","P0AAM3","O43423","D4IJI4","Q66SS1","B5IDU9","D3TBR4","D4ILS5"]
   annotations:
@@ -1311,9 +1441,11 @@ wormbase_gene:
   category: Gene
   regex: '^(?<id>WBGene\d{8})$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/wb/'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/WB:'
   examples:
     - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
   method: awk -F '\t' -v 'db=AllianceGenome:WB' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -1323,9 +1455,11 @@ xenbase_gene:
   category: Gene
   regex: '^(?<id>XB\-[A-Z]+\-\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/xenbase/'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/Xenbase:'
   examples:
     - ["XB-GENE-877040","XB-GENE-22060981","XB-GENE-17344257","XB-GENE-487684","XB-GENE-1014349","XB-GENE-17335133","XB-GENE-1012537","XB-GENE-494019","XB-GENE-5952945","XB-GENE-957742"]
   method: awk -F '\t' -v 'db=Xenbase' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -1335,9 +1469,11 @@ zfin_gene:
   category: Gene
   regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
   prefix:
-    - label: 'rdf'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/zfin/'
       rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/ZFIN:'
   examples:
     - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
   method: awk -F '\t' -v 'db=ZFIN' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
