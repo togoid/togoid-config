@@ -189,7 +189,7 @@ module TogoID
     def load_dataset
       begin
         yaml_path = File.join(File.dirname(@path), 'dataset.yaml')
-        unless File.exists?(yaml_path)
+        unless File.exist?(yaml_path)
           yaml_path = './config/dataset.yaml'
         end
         @dataset = YAML.load(File.read(yaml_path))
@@ -233,7 +233,7 @@ module TogoID
     end
 
     def exec_convert
-      if File.exists?(@tsv_file)
+      if File.exist?(@tsv_file)
         File.open(@ttl_file, "w") do |ttl_file|
           ttl_file.puts prefix
           ttl_file.puts
