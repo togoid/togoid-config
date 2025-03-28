@@ -1234,6 +1234,8 @@ sra_experiment:
       uri: 'https://www.ebi.ac.uk/ena/data/view/'
     - label: 'DDBJ SRA'
       uri: 'https://ddbj.nig.ac.jp/resource/sra-experiment/'
+    - label: 'ChIP-Atlas'
+      uri: 'https://chip-atlas.org/view?id='
   examples:
     - ["DRX000585","DRX000114","DRX000613","DRX000681","SRX000921","SRX000254","SRX000626","ERX149204","ERX001260","ERX000427"]
 sra_project:
