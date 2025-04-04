@@ -358,6 +358,8 @@ module TogoID
         return "prepare:refseq_rna"
       when /#{OUTPUT_TSV_DIR}rhea/
         return "prepare:rhea"
+      when /#{OUTPUT_TSV_DIR}rnacentral/
+        return "prepare:rnacentral"
       when /#{OUTPUT_TSV_DIR}sra/
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}swisslipids/
@@ -503,7 +505,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -528,6 +530,7 @@ namespace :prepare do
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
   directory INPUT_RHEA_DIR        = "input/rhea"
+  directory INPUT_RNACENTRAL_DIR  = "input/rnacentral"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
@@ -1026,6 +1029,32 @@ namespace :prepare do
         download_file(INPUT_RHEA_DIR, input_url)
         updated = true
       end
+
+      updated
+    end
+  end
+
+  desc "Prepare required files for RNAcentral"
+  task :rnacentral => INPUT_RNACENTRAL_DIR do
+    $stderr.puts "## Prepare input files for RNAcentral"
+    download_lock(INPUT_RNACENTRAL_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_RNACENTRAL_DIR}/id_mapping.tsv.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/id_mapping/id_mapping.tsv.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/id_mapping.tsv"
+        updated = true
+      end
+
+      # input_file = "#{INPUT_RNACENTRAL_DIR}/rnacentral.gpi.gz"
+      # input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz"
+      # if update_input_file?(input_file, input_url)
+      #   download_file(INPUT_RNACENTRAL_DIR, input_url)
+      #   sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/rnacentral.gpi"
+      #   updated = true
+      # end
 
       updated
     end

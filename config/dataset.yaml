@@ -200,6 +200,14 @@ flybase_gene:
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
   method: awk -F '\t' -v 'db=FLYBASE' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+flybase_transcript:
+  label: FlyBase transcript
+  catalog: nbdc00064
+  category: Transcript
+  regex: '^(?<id>FBtr\d{7})$'
+  prefix: 'http://identifiers.org/fb/'
+  examples:
+    - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
 gea:
   label: GEA
   catalog: FIXME
@@ -392,6 +400,14 @@ lipidmaps:
   prefix: 'http://identifiers.org/lipidmaps/'
   examples:
     - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
+lncbook_gene:
+  label: LncBook gene
+  catalog: FIXME
+  category: Gene
+  regex: '^(?<id>HSALNC[0-9]{7})$'
+  prefix: 'https://ngdc.cncb.ac.cn/lncbook/gene?geneid='
+  examples:
+    - ["HSALNG0044971","HSALNG0063621","HSALNG0088821","HSALNG0028312","HSALNG0083434","HSALNG0115829","HSALNG0072678","HSALNG0031034","HSALNG0038414","HSALNG0011632"]
 lrg:
   catalog: nbdc02566
   category: Gene
@@ -791,6 +807,14 @@ refseq_rna:
     - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
     - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
   method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv
+rfam:
+  label: Rfam
+  catalog: nbdc00654
+  category: Transcript
+  regex: '^(?<id>RF\d{5})?$'
+  prefix: 'http://identifiers.org/rfam/'
+  examples:
+    - ["RF00001","RF01502","RF00017","RF00906","RF00013","RF00163","RF00005","RF01787","RF00100","RF04272"]
 rgd:
   label: RGD
   catalog: nbdc00188
@@ -811,6 +835,14 @@ rhea:
   prefix: 'http://identifiers.org/rhea/'
   examples:
     - ["10253","10818","13517","11136","13729","10240","11728","16870","10732","11278"]
+rnacentral:
+  label: RNAcentral
+  catalog: FIXME
+  category: Transcript
+  regex: '^(?<id>URS[0-9A-F]{10})(\_\d+)?$'
+  prefix: 'http://identifiers.org/rnacentral/'
+  examples:
+    - ["URS00000000C7","URS0000000145","URS0000000041","URS000000002A","URS00000000C3","URS0000000185","URS0000000119","URS000000002A","URS0000000193","URS0000000152"]
 sgd:
   label: SGD
   catalog: nbdc00202
@@ -997,3 +1029,11 @@ zfin_gene:
   examples:
     - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
   method: awk -F '\t' -v 'db=ZFIN' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+zfin_transcript:
+  label: ZFIN transcript
+  catalog: nbdc00746
+  category: Transcript
+  regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
+  prefix: 'http://identifiers.org/zfin/'
+  examples:
+    - ["ZDB-TSCRIPT-090929-12612","ZDB-TSCRIPT-121213-534","ZDB-TSCRIPT-131113-1447","ZDB-TSCRIPT-131113-2944","ZDB-TSCRIPT-131113-3950","ZDB-TSCRIPT-130528-437","ZDB-TSCRIPT-141209-570","ZDB-TSCRIPT-131113-1539","ZDB-TSCRIPT-131113-984","ZDB-TSCRIPT-131113-1525"]
