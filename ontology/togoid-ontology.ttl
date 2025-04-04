@@ -329,6 +329,12 @@
     rdfs:label "FlyBase gene" ;
     rdfs:subClassOf :Gene, :Dataset .
 
+:FlybaseTranscript
+    a owl:Class ;
+    dcterms:identifier "flybase_transcript" ;
+    rdfs:label "FlyBase transcript" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
 :Gea
     a owl:Class ;
     dcterms:identifier "gea" ;
@@ -454,6 +460,12 @@
     dcterms:identifier "lipidmaps" ;
     rdfs:label "LIPID MAPS" ;
     rdfs:subClassOf :Lipid, :Dataset .
+
+:LncbookGene
+    a owl:Class ;
+    dcterms:identifier "lncbook_gene" ;
+    rdfs:label "LncBook gene" ;
+    rdfs:subClassOf :Gene, :Dataset .
 
 :Lrg
     a owl:Class ;
@@ -689,6 +701,12 @@
     rdfs:label "RefSeq RNA" ;
     rdfs:subClassOf :Transcript, :Dataset .
 
+:Rfam
+    a owl:Class ;
+    dcterms:identifier "rfam" ;
+    rdfs:label "Rfam" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
 :Rgd
     a owl:Class ;
     dcterms:identifier "rgd" ;
@@ -701,11 +719,23 @@
     rdfs:label "Rhea" ;
     rdfs:subClassOf :Reaction, :Dataset .
 
+:Rnacentral
+    a owl:Class ;
+    dcterms:identifier "rnacentral" ;
+    rdfs:label "RNAcentral" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
 :Sgd
     a owl:Class ;
     dcterms:identifier "sgd" ;
     rdfs:label "SGD" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:Sio
+    a owl:Class ;
+    dcterms:identifier "sio" ;
+    rdfs:label "SIO" ;
+    rdfs:subClassOf :Classification, :Dataset .
 
 :Smart
     a owl:Class ;
@@ -826,6 +856,12 @@
     dcterms:identifier "zfin_gene" ;
     rdfs:label "ZFIN gene" ;
     rdfs:subClassOf :Gene, :Dataset .
+
+:ZfinTranscript
+    a owl:Class ;
+    dcterms:identifier "zfin_transcript" ;
+    rdfs:label "ZFIN transcript" ;
+    rdfs:subClassOf :Transcript, :Dataset .
 
 :TIO_000001
     rdfs:subPropertyOf :relation ;
@@ -1885,4 +1921,36 @@
     owl:inverseOf :TIO_000132 ;
     rdfs:label "protein complex includes protein" ;
     :display_label "includes" .
+
+:TIO_000134
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Structure ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000135 ;
+    rdfs:label "3D structure contains transcript" ;
+    :display_label "contains transcript" .
+
+:TIO_000135
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Structure ;
+    owl:inverseOf :TIO_000134 ;
+    rdfs:label "transcript is component of 3D structure" ;
+    :display_label "is component of" .
+
+:TIO_000136
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000131 ;
+    rdfs:label "transcript is member of RNA family" ;
+    :display_label "is member of" .
+
+:TIO_000137
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000130 ;
+    rdfs:label "RNA family has member of transcript" ;
+    :display_label "has member" .
 
