@@ -1,6 +1,4 @@
 # TogoID ver. 2.0
-Datasets last updated: 2025-04-08
-
   - [About](#about)
   - [動画マニュアル](#動画マニュアル)
   - [統計](#統計)
@@ -24,7 +22,7 @@ Datasets last updated: 2025-04-08
 - [TogoID ver. 2.0を使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/ORW1GGIaJsY)
 
 ## 統計
-- 対象データセット数 (2025-04-08)
+- 対象データセット数
     - 105 (73 のデータベースに由来)
 - 対象DBの詳細やID例については、"DATASETS" タブ からご覧いただけます。 
 

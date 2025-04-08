@@ -1,6 +1,4 @@
 # TogoID ver. 2.0
-Datasets last updated: 2025-04-08
-
   - [About](#about)
   - [Video tutorial](#video-tutorial)
   - [Statistics](#statistics)
@@ -23,7 +21,7 @@ Datasets last updated: 2025-04-08
 - [How to use TogoID ver 2.0: an exploratory ID converter to bridge biological datasets](https://youtu.be/ORW1GGIaJsY)
 
 ## Statistics
-- Number of target datasets (as of 2025-04-08)
+- Number of target datasets
     - 105 (from 73 databases)
 - For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 
 
