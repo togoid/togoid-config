@@ -217,7 +217,7 @@ flybase_protein:
   prefix: 'http://identifiers.org/fb/'
   examples:
     - ["FBpp0071677","FBpp0071678","FBpp0099961","FBpp0309745","FBpp0082828","FBpp0082829","FBpp0289712","FBpp0297433","FBpp0082823","FBpp0082824"]
-  method: awk -F '\t' '!/^#/&&$10&&!a[$10]++{print $10 "\t" $11}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+  method: awk -F '\t' '!/^#/&&$10&&!a[$10]++{print $10 "\t" gensub("\r", "", "g", $11)}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 gea:
   label: GEA
   catalog: FIXME
