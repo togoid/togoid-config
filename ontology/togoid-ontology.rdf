@@ -181,6 +181,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#FlybaseProtein">
+    <dcterms:identifier>flybase_protein</dcterms:identifier>
+    <rdfs:label>FlyBase protein</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#FlybaseTranscript">
     <dcterms:identifier>flybase_transcript</dcterms:identifier>
     <rdfs:label>FlyBase transcript</rdfs:label>

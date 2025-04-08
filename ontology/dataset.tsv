@@ -20,6 +20,7 @@ ensembl_gene	Ensembl gene	Gene
 ensembl_protein	Ensembl protein	Protein
 ensembl_transcript	Ensembl transcript	Transcript
 flybase_gene	FlyBase gene	Gene
+flybase_protein	FlyBase protein	Protein
 flybase_transcript	FlyBase transcript	Transcript
 gea	GEA	Experiment
 geo_sample	GEO sample	Sample

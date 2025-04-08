@@ -329,6 +329,12 @@
     rdfs:label "FlyBase gene" ;
     rdfs:subClassOf :Gene, :Dataset .
 
+:FlybaseProtein
+    a owl:Class ;
+    dcterms:identifier "flybase_protein" ;
+    rdfs:label "FlyBase protein" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
 :FlybaseTranscript
     a owl:Class ;
     dcterms:identifier "flybase_transcript" ;
