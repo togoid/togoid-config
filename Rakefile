@@ -370,6 +370,8 @@ module TogoID
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
         return "prepare:taxonomy"
+      when /#{OUTPUT_TSV_DIR}zfin/
+        return "prepare:zfin"
       else
         File.open("input/update.txt", "w")
         return "input/update.txt"
@@ -507,7 +509,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -538,6 +540,7 @@ namespace :prepare do
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
+  directory INPUT_ZFIN_DIR        = "input/zfin"
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -1158,6 +1161,21 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_TAXONOMY_DIR, input_url)
         sh "mkdir -p #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for ZFIN"
+  task :zfin => INPUT_ZFIN_DIR do
+    $stderr.puts "## Prepare input files for ZFIN"
+    download_lock(INPUT_ZFIN_DIR) do
+      updated = false
+      input_file = "#{INPUT_ZFIN_DIR}/transcripts.txt"
+      input_url = "https://zfin.org/downloads/transcripts.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ZFIN_DIR, input_url)
         updated = true
       end
       updated

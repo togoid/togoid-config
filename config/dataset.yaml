@@ -1048,3 +1048,4 @@ zfin_transcript:
   prefix: 'http://identifiers.org/zfin/'
   examples:
     - ["ZDB-TSCRIPT-090929-12612","ZDB-TSCRIPT-121213-534","ZDB-TSCRIPT-131113-1447","ZDB-TSCRIPT-131113-2944","ZDB-TSCRIPT-131113-3950","ZDB-TSCRIPT-130528-437","ZDB-TSCRIPT-141209-570","ZDB-TSCRIPT-131113-1539","ZDB-TSCRIPT-131113-984","ZDB-TSCRIPT-131113-1525"]
+  method: awk -F '\t' '$7!~/^Withdrawn/{print $1 "\t" $3}' $TOGOID_ROOT/input/zfin/transcripts.txt
