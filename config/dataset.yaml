@@ -199,7 +199,7 @@ flybase_gene:
   prefix: 'http://identifiers.org/fb/'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
-  method: awk -F '\t' -v 'db=FLYBASE' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  method: awk -F '\t' '!/^#/&&!a[$3]++{print $3 "\t" $4}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 flybase_transcript:
   label: FlyBase transcript
   catalog: nbdc00064
@@ -208,6 +208,16 @@ flybase_transcript:
   prefix: 'http://identifiers.org/fb/'
   examples:
     - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
+  method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+flybase_protein:
+  label: FlyBase protein
+  catalog: nbdc00064
+  category: Protein
+  regex: '^(?<id>FBpp\d{7})$'
+  prefix: 'http://identifiers.org/fb/'
+  examples:
+    - ["FBpp0071677","FBpp0071678","FBpp0099961","FBpp0309745","FBpp0082828","FBpp0082829","FBpp0289712","FBpp0297433","FBpp0082823","FBpp0082824"]
+  method: awk -F '\t' '!/^#/&&$10&&!a[$10]++{print $10 "\t" $11}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 gea:
   label: GEA
   catalog: FIXME

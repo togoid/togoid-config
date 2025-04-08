@@ -324,6 +324,8 @@ module TogoID
         return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}flybase/
+        return "prepare:flybase"
       when /#{OUTPUT_TSV_DIR}glytoucan/
         return "prepare:glytoucan"
       when /#{OUTPUT_TSV_DIR}hgnc/
@@ -505,7 +507,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -513,6 +515,7 @@ namespace :prepare do
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
+  directory INPUT_FLYBASE_DIR     = "input/flybase"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
@@ -630,6 +633,26 @@ namespace :prepare do
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{taxonomy_file}"
         updated = true
       end
+      updated
+    end
+  end
+
+  desc "Prepare required files for FlyBase"
+  task :flybase => INPUT_FLYBASE_DIR do
+    $stderr.puts "## Prepare input files for FlyBase"
+    download_lock(INPUT_FLYBASE_DIR) do
+      updated = false
+      sh "wget ftp://ftp.flybase.net/releases/current/precomputed_files/genes/ --no-remove-listing --directory-prefix=#{INPUT_FLYBASE_DIR}"
+      current_filename = `grep -oE "fbgn_fbtr_fbpp_expanded_fb_.*\.tsv\.gz" #{INPUT_FLYBASE_DIR}/.listing`.strip
+      input_file = "#{INPUT_FLYBASE_DIR}/#{current_filename}"
+      if !File.exist?(input_file)
+        sh "rm -f #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_*.tsv.gz"
+        input_url = "ftp://ftp.flybase.net/releases/current/precomputed_files/genes/#{current_filename}"
+        download_file(INPUT_FLYBASE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_current.tsv"
+        updated = true
+      end
+      sh "rm -f #{INPUT_FLYBASE_DIR}/.listing #{INPUT_FLYBASE_DIR}/index.html"
       updated
     end
   end
