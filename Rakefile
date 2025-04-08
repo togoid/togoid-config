@@ -1048,13 +1048,13 @@ namespace :prepare do
         updated = true
       end
 
-      # input_file = "#{INPUT_RNACENTRAL_DIR}/rnacentral.gpi.gz"
-      # input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz"
-      # if update_input_file?(input_file, input_url)
-      #   download_file(INPUT_RNACENTRAL_DIR, input_url)
-      #   sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/rnacentral.gpi"
-      #   updated = true
-      # end
+      input_file = "#{INPUT_RNACENTRAL_DIR}/rnacentral.gpi.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/rnacentral.gpi"
+        updated = true
+      end
 
       updated
     end
