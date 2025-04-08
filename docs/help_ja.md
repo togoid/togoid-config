@@ -1,5 +1,17 @@
 # TogoID ver. 2.0
-Datasets last updated: 2025-04-03
+  - [About](#about)
+  - [動画マニュアル](#動画マニュアル)
+  - [統計](#統計)
+  - [Web UI](#web-ui)
+    - [EXPLORE](#explore)
+    - [NAVIGATE](#navigate)
+    - [Results ウインドウ](#results-ウインドウ)
+    - [LABEL2ID](#label2id)
+    - [DATASETS](#datasets)
+  - [API](#api)
+  - [論文](#論文)
+  - [紹介PDF･記事](#紹介pdf記事)
+  - [お問い合わせ](#お問い合わせ)
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) は、直感的なインターフェースにより生命科学系データベース(DB)間のつながりを探索的に確認しながらID変換を行うことができるウェブアプリケーションです。同一の実体を指すID間の変換だけでなく、関連する別のカテゴリーのIDへの変換も可能です。また、直接リンクされていないDBのID間でも、他のDBを経由した変換を探索することができます。
@@ -10,14 +22,14 @@ Datasets last updated: 2025-04-03
 ## 動画マニュアル
 - [TogoID ver. 2.0を使って生命科学系データベースのさまざまなIDを探索的に変換する](https://youtu.be/ORW1GGIaJsY)
 
-## 統計 (2025-04-03)
-- 対象データセット数 
+## 統計
+- 対象データセット数
     - 105 (73 のデータベースに由来)
 - 対象DBの詳細やID例については、"DATASETS" タブ からご覧いただけます。 
 
 一つのデータベースが複数の概念を取り扱っている場合、TogoID では概念ごとに「データセット」としてそのデータベースのレコードを分割して扱うことで、ID が指すものの曖昧性を排除しています。例えば、Ensembl データベースは Ensembl gene, Ensembl transcript, Ensembl protein の 3 つのデータセットとして扱っています。
 
-## Web user interface
+## Web UI
 
 ### EXPLORE
 EXPLORE タブでは、入力した ID を他のデータセットの ID に変換し、その変換された ID をさらに他のデータセットの ID に変換するというマルチステップな ID 変換を探索的に行うことができます。
@@ -138,3 +150,8 @@ TogoID が対象としているデータセットの詳細を閲覧できます�
 - [TogoID：生命科学系データベースのさまざまなIDを探索的に変換できるウェブアプリケーション](https://doi.org/10.18958/7013-00005-0000134-00)
     - 実験医学2022年5月号　クローズアップ実験法
     - DOI [10.18958/7013-00005-0000134-00](https://doi.org/10.18958/7013-00005-0000134-00)
+
+## お問い合わせ
+新規データセット追加のリクエストなどのお問い合わせには以下をご利用ください。
+- [Issues - TogoID-config](https://github.com/togoid/togoid-config/issues)
+- [お問い合わせ | DBCLS](https://dbcls.rois.ac.jp/contact.html)

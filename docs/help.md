@@ -1,5 +1,16 @@
 # TogoID ver. 2.0
-Datasets last updated: 2025-04-03
+  - [About](#about)
+  - [Video tutorial](#video-tutorial)
+  - [Statistics](#statistics)
+  - [Web user interface](#web-user-interface)
+    - [EXPLORE](#explore)
+    - [NAVIGATE](#navigate)
+    - [Results modal window](#results-modal-window)
+    - [LABEL2ID](#label2id)
+    - [DATASETS](#datasets)
+  - [API](#api)
+  - [Publications](#publications)
+  - [Contact](#contact)
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) is an ID conversion service implementing unique features with an intuitive web interface and an API for programmatic access. TogoID supports datasets from various biological categories such as gene, protein, chemical compound, pathway, disease, etc. TogoID users can perform exploratory multistep conversions to find a path among IDs. To guide the interpretation of biological meanings in the conversions, we crafted an [ontology](https://togoid.dbcls.jp/ontology) that defines the semantics of the dataset relations.
@@ -10,8 +21,8 @@ Datasets last updated: 2025-04-03
 ## Video tutorial
 - [How to use TogoID ver 2.0: an exploratory ID converter to bridge biological datasets](https://youtu.be/ORW1GGIaJsY)
 
-## Statistics (as of 2025-04-03)
-- Number of target datasets 
+## Statistics
+- Number of target datasets
     - 105 (from 73 databases)
 - For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 
 
@@ -131,7 +142,12 @@ Below are examples to obtain the result of the conversion from NCBI Gene IDs to 
 For LABEL2ID, TogoID uses [PubDictionaries](https://pubdictionaries.org/). [The dictionaries used in TogoID](https://pubdictionaries.org/users/togoid) is publicly available, and you can access it through the PubDictionaries API.  
 e.g. [Retrieve human gene symbols including synonyms and convert them to NCBI Gene IDs](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
 
-## Publication
+## Publications
 - Shuya Ikeda, Kiyoko F Aoki-Kinoshita, Hirokazu Chiba, Susumu Goto, Masae Hosoda, Shuichi Kawashima, Jin-Dong Kim, Yuki Moriya, Tazro Ohta, Hiromasa Ono, Terue Takatsuki, Yasunori Yamamoto, Toshiaki Katayama, Expanding the concept of ID conversion in TogoID by introducing multi-semantic and label features, J Biomed Semantics. 2025 Jan 8;16(1):1. [doi:10.1186/s13326-024-00322-1](https://doi.org/10.1186/s13326-024-00322-1).
 
 - Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
+
+## Contact
+For dataset addition requests or other inquiries, please use the following pages.
+- [Issues - TogoID-config](https://github.com/togoid/togoid-config/issues)
+- [Contact | DBCLS](https://dbcls.rois.ac.jp/contact-en.html)
