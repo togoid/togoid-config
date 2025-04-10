@@ -181,6 +181,18 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#FlybaseProtein">
+    <dcterms:identifier>flybase_protein</dcterms:identifier>
+    <rdfs:label>FlyBase protein</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#FlybaseTranscript">
+    <dcterms:identifier>flybase_transcript</dcterms:identifier>
+    <rdfs:label>FlyBase transcript</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Function">
     <rdfs:label>Function</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
@@ -342,6 +354,12 @@
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Literature">
     <rdfs:label>Literature</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#LncbookGene">
+    <dcterms:identifier>lncbook_gene</dcterms:identifier>
+    <rdfs:label>LncBook gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Lrg">
     <dcterms:identifier>lrg</dcterms:identifier>
@@ -619,6 +637,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Rfam">
+    <dcterms:identifier>rfam</dcterms:identifier>
+    <rdfs:label>Rfam</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Rgd">
     <dcterms:identifier>rgd</dcterms:identifier>
     <rdfs:label>RGD</rdfs:label>
@@ -630,6 +654,12 @@
     <rdfs:label>Rhea</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Reaction"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Rnacentral">
+    <dcterms:identifier>rnacentral</dcterms:identifier>
+    <rdfs:label>RNAcentral</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Sample">
     <rdfs:label>Sample</rdfs:label>
@@ -648,6 +678,12 @@
     <rdfs:label>SGD</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Sio">
+    <dcterms:identifier>sio</dcterms:identifier>
+    <rdfs:label>SIO</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Classification"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
   </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Smart">
     <dcterms:identifier>smart</dcterms:identifier>
@@ -1770,6 +1806,38 @@
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000132"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000134">
+    <display_label>contains transcript</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Structure"/>
+    <rdfs:label>3D structure contains transcript</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000135"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000135">
+    <display_label>is component of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:label>transcript is component of 3D structure</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Structure"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000134"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000136">
+    <display_label>is member of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:label>transcript is member of RNA family</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000131"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000137">
+    <display_label>has member</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:label>RNA family has member of transcript</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000130"/>
+  </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
     <rdfs:label>TAIR</rdfs:label>
@@ -1851,6 +1919,12 @@
     <rdfs:label>ZFIN gene</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#ZfinTranscript">
+    <dcterms:identifier>zfin_transcript</dcterms:identifier>
+    <rdfs:label>ZFIN transcript</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
   </owl:Class>
   <owl:DatatypeProperty rdf:about="http://togoid.dbcls.jp/ontology#display_label">
     <rdfs:comment>A label to be displayed on the TogoID web UI.</rdfs:comment>

@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000001
+  reverse: TIO_000001
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: awk -F '\t' -v db=ENSEMBL '$2==db{print $1 "_" $4 "\t" $3}' $TOGOID_ROOT/input/rnacentral/id_mapping.tsv
