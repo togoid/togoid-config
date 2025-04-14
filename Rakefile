@@ -1070,7 +1070,7 @@ namespace :prepare do
       input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/id_mapping/id_mapping.tsv.gz"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_RNACENTRAL_DIR, input_url)
-        sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/id_mapping.tsv"
+        sh "gzip -dc #{input_file} | sed -e 's/\r//g' > #{INPUT_RNACENTRAL_DIR}/id_mapping.tsv"
         updated = true
       end
 
