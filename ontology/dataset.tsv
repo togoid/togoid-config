@@ -20,6 +20,8 @@ ensembl_gene	Ensembl gene	Gene
 ensembl_protein	Ensembl protein	Protein
 ensembl_transcript	Ensembl transcript	Transcript
 flybase_gene	FlyBase gene	Gene
+flybase_protein	FlyBase protein	Protein
+flybase_transcript	FlyBase transcript	Transcript
 gea	GEA	Experiment
 geo_sample	GEO sample	Sample
 geo_series	GEO series	Project
@@ -41,6 +43,7 @@ iuphar_ligand	IUPHAR ligand	Compound
 jga_dataset	JGA Dataset	Project
 jga_study	JGA Study	Project
 lipidmaps	LIPID MAPS	Lipid
+lncbook_gene	LncBook gene	Gene
 lrg	LRG	Gene
 mbgd_gene	MBGD gene	Gene
 mbgd_organism	MBGD organism	Organism
@@ -80,9 +83,12 @@ reactome_reaction	Reactome reaction	Reaction
 refseq_genomic	RefSeq genomic	Gene
 refseq_protein	RefSeq protein	Protein
 refseq_rna	RefSeq RNA	Transcript
+rfam	Rfam	Transcript
 rgd	RGD	Gene
 rhea	Rhea	Reaction
+rnacentral	RNAcentral	Transcript
 sgd	SGD	Gene
+sio	SIO	Classification
 smart	SMART	Domain
 sra_accession	SRA accession	Submission
 sra_analysis	SRA analysis	Analysis
@@ -103,3 +109,4 @@ wikipathways	WikiPathways	Pathway
 wormbase_gene	WormBase gene	Gene
 xenbase_gene	Xenbase gene	Gene
 zfin_gene	ZFIN gene	Gene
+zfin_transcript	ZFIN transcript	Transcript

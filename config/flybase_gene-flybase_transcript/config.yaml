@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000035
+  reverse: TIO_000034
+  file: sample.tsv
+update:
+  frequency: Weekly
+  method: awk -F '\t' '!/^#/{print $3 "\t" $8}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv

@@ -324,6 +324,8 @@ module TogoID
         return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}flybase/
+        return "prepare:flybase"
       when /#{OUTPUT_TSV_DIR}glytoucan/
         return "prepare:glytoucan"
       when /#{OUTPUT_TSV_DIR}hgnc/
@@ -358,6 +360,8 @@ module TogoID
         return "prepare:refseq_rna"
       when /#{OUTPUT_TSV_DIR}rhea/
         return "prepare:rhea"
+      when /#{OUTPUT_TSV_DIR}rnacentral/
+        return "prepare:rnacentral"
       when /#{OUTPUT_TSV_DIR}sra/
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}swisslipids/
@@ -366,6 +370,8 @@ module TogoID
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
         return "prepare:taxonomy"
+      when /#{OUTPUT_TSV_DIR}zfin/
+        return "prepare:zfin"
       else
         File.open("input/update.txt", "w")
         return "input/update.txt"
@@ -503,7 +509,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -511,6 +517,7 @@ namespace :prepare do
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
+  directory INPUT_FLYBASE_DIR     = "input/flybase"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
@@ -528,10 +535,12 @@ namespace :prepare do
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
   directory INPUT_RHEA_DIR        = "input/rhea"
+  directory INPUT_RNACENTRAL_DIR  = "input/rnacentral"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
+  directory INPUT_ZFIN_DIR        = "input/zfin"
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -627,6 +636,26 @@ namespace :prepare do
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{taxonomy_file}"
         updated = true
       end
+      updated
+    end
+  end
+
+  desc "Prepare required files for FlyBase"
+  task :flybase => INPUT_FLYBASE_DIR do
+    $stderr.puts "## Prepare input files for FlyBase"
+    download_lock(INPUT_FLYBASE_DIR) do
+      updated = false
+      sh "wget ftp://ftp.flybase.net/releases/current/precomputed_files/genes/ --no-remove-listing --directory-prefix=#{INPUT_FLYBASE_DIR}"
+      current_filename = `grep -oE "fbgn_fbtr_fbpp_expanded_fb_.*\.tsv\.gz" #{INPUT_FLYBASE_DIR}/.listing`.strip
+      input_file = "#{INPUT_FLYBASE_DIR}/#{current_filename}"
+      if !File.exist?(input_file)
+        sh "rm -f #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_*.tsv.gz"
+        input_url = "ftp://ftp.flybase.net/releases/current/precomputed_files/genes/#{current_filename}"
+        download_file(INPUT_FLYBASE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_current.tsv"
+        updated = true
+      end
+      sh "rm -f #{INPUT_FLYBASE_DIR}/.listing #{INPUT_FLYBASE_DIR}/index.html"
       updated
     end
   end
@@ -1031,6 +1060,32 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for RNAcentral"
+  task :rnacentral => INPUT_RNACENTRAL_DIR do
+    $stderr.puts "## Prepare input files for RNAcentral"
+    download_lock(INPUT_RNACENTRAL_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_RNACENTRAL_DIR}/id_mapping.tsv.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/id_mapping/id_mapping.tsv.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/id_mapping.tsv"
+        updated = true
+      end
+
+      input_file = "#{INPUT_RNACENTRAL_DIR}/rnacentral.gpi.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/rnacentral.gpi"
+        updated = true
+      end
+
+      updated
+    end
+  end
+
   desc "Prepare required files for SRA"
   task :sra => INPUT_SRA_DIR do
     $stderr.puts "## Prepare input files for SRA"
@@ -1106,6 +1161,21 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_TAXONOMY_DIR, input_url)
         sh "mkdir -p #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for ZFIN"
+  task :zfin => INPUT_ZFIN_DIR do
+    $stderr.puts "## Prepare input files for ZFIN"
+    download_lock(INPUT_ZFIN_DIR) do
+      updated = false
+      input_file = "#{INPUT_ZFIN_DIR}/transcripts.txt"
+      input_url = "https://zfin.org/downloads/transcripts.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ZFIN_DIR, input_url)
         updated = true
       end
       updated
