@@ -1,17 +1,4 @@
 # TogoID ver. 2.0
-  - [About](#about)
-  - [動画マニュアル](#動画マニュアル)
-  - [統計](#統計)
-  - [Web UI](#web-ui)
-    - [EXPLORE](#explore)
-    - [NAVIGATE](#navigate)
-    - [Results ウインドウ](#results-ウインドウ)
-    - [LABEL2ID](#label2id)
-    - [DATASETS](#datasets)
-  - [API](#api)
-  - [論文](#論文)
-  - [紹介PDF･記事](#紹介pdf記事)
-  - [お問い合わせ](#お問い合わせ)
 
 ## About
 - [TogoID](https://togoid.dbcls.jp/) は、直感的なインターフェースにより生命科学系データベース(DB)間のつながりを探索的に確認しながらID変換を行うことができるウェブアプリケーションです。同一の実体を指すID間の変換だけでなく、関連する別のカテゴリーのIDへの変換も可能です。また、直接リンクされていないDBのID間でも、他のDBを経由した変換を探索することができます。
