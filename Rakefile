@@ -340,6 +340,8 @@ module TogoID
         return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
+      when /#{OUTPUT_TSV_DIR}lipidmaps/
+        return "prepare:lipidmaps"
       when /#{OUTPUT_TSV_DIR}mgi_gene/
         return "prepare:mgi_gene"
       when /#{OUTPUT_TSV_DIR}mgi_genotype/
@@ -509,7 +511,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -525,6 +527,7 @@ namespace :prepare do
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
+  directory INPUT_LIPIDMAPS_DIR   = "input/lipidmaps"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
@@ -792,6 +795,29 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_INTERPRO_DIR, input_url)
         sh "gzip -dc #{input_file} | python bin/interpro_xml2tsv.py > #{INPUT_INTERPRO_DIR}/interpro.tsv"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for LIPID MAPS"
+  task :lipidmaps => INPUT_LIPIDMAPS_DIR do
+    $stderr.puts "## Prepare input files for LIPID MAPS"
+    download_lock(INPUT_LIPIDMAPS_DIR) do
+      updated = false
+      input_file = "#{INPUT_LIPIDMAPS_DIR}/sdf.zip"
+      input_url  = "\"https://www.lipidmaps.org/files/?file=LMSD&ext=sdf.zip\""
+      ## Check only the file size because the timestamp is not available.
+      if check_remote_file_size(input_file, input_url)
+        opts = "--quiet --no-check-certificate"
+        begin
+          sh "wget #{opts} -O #{INPUT_LIPIDMAPS_DIR}/sdf.zip #{input_url}"
+        rescue StandardError => e
+          $stderr.puts "Error: download_file(#{INPUT_LIPIDMAPS_DIR}, #{input_url}): #{e.message}"
+        end
+        sh "unzip -o #{input_file} -d #{INPUT_LIPIDMAPS_DIR}/"
+        sh "awk -f bin/parse_lipidmaps_sdf.awk #{INPUT_LIPIDMAPS_DIR}/structures.sdf > #{INPUT_LIPIDMAPS_DIR}/lipidmaps.tsv"
         updated = true
       end
       updated

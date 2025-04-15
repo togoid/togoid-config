@@ -410,6 +410,7 @@ lipidmaps:
   prefix: 'http://identifiers.org/lipidmaps/'
   examples:
     - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
+  method: awk -F "\t" '$2=="NAME"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
 lncbook_gene:
   label: LncBook gene
   catalog: FIXME

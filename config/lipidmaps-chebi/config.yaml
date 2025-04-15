@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Weekly
-  method: sparql_csv2tsv.sh query.rq https://lipidmaps.org/sparql
+  method: awk -F "\t" '$2=="CHEBI_ID"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
