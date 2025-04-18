@@ -931,9 +931,15 @@ namespace :prepare do
           updated = true
         end
       end
-      if updated
-        sh "awk -F \"\t\" '$4==\"Ensembl\" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!=\"YEAST\"{print $2}' #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{INPUT_OMA_PROTEIN_DIR}/taxonomy.txt"
+
+      ensembl_taxonomy_file = "#{INPUT_OMA_PROTEIN_DIR}/ensembl_vertebrate_taxonomy.txt"
+      oma_ensembl_taxonomy_file = "#{INPUT_OMA_PROTEIN_DIR}/oma_ensembl_vertebrate_taxonomy.txt"
+      if updated || !File.exist?(ensembl_taxonomy_file)
+        sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{ensembl_taxonomy_file}"
+        sh "awk -F \"\t\" 'FNR==NR{a[$1]=1;next} a[$3]{print $3}' #{ensembl_taxonomy_file} #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{oma_ensembl_taxonomy_file}"
+        updated = true
       end
+
       updated
     end
   end
