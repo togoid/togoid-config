@@ -1,0 +1,88 @@
+Error: wget: Command failed with status (8): [wget ftp://ftp.flybase.net/releases/curren...]
+Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
+Error: Remote file is empty
+# Error: output/tsv/assembly_insdc-bioproject.tsv new file size per old 150 / 58955319 = 2.5442996924501418e-06 < 0.5
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-biosample.tsv new file size per old 150 / 60555966 = 2.4770474308014508e-06 < 0.5
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv new file size per old 150 / 63716447 = 2.3541802323032858e-06 < 0.5
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv new file size per old 150 / 2482918 = 6.041278850127149e-05 < 0.5
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
+# Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
+Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
+# Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
+# Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
+# Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
+# Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 252491 / 544502 = 0.46370995882476096 < 0.5
+# Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
+# Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
+# Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
+# Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-hp_phenotype.tsv or created file was empty
+# Error: output/tsv/mondo-meddra.tsv new file size per old 0 / 25262 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-meddra.tsv or created file was empty
+# Error: output/tsv/mondo-mesh.tsv new file size per old 0 / 133836 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-mesh.tsv or created file was empty
+# Error: output/tsv/mondo-omim_phenotype.tsv new file size per old 0 / 145395 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
+# Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 62368 / 470542 = 0.1325450225484654 < 0.5
