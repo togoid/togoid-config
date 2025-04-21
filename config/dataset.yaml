@@ -724,7 +724,9 @@ mondo:
   category: Phenotype
   regex: '^MONDO[:_](?<id>\d{7})$'
   prefix:
-    - label: 'rdf'
+    - label: 'Monarch'
+      uri: 'https://monarchinitiative.org/MONDO:'
+    - label: 'obo'
       uri: 'http://purl.obolibrary.org/obo/MONDO_'
       rdf: true
   format: ["MONDO:%s","MONDO_%s"]
