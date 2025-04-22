@@ -802,6 +802,15 @@ ncbigene:
         preferred: true
       - label: Synonym
         dictionary: togoid_ncbigene_synonym
+    sparqlist: label2id_ncbigene
+    label_types:
+      - label: NCBI Gene symbol
+        label_type: symbol
+        preferred: true
+      - label: Synonym
+        label_type: synonym
+      - label: Locus Tag
+        label_type: locus_tag
   annotations:
     - variable: type_of_gene
       label: Type of gene
