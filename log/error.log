@@ -1,5 +1,66 @@
+Error: wget: Command failed with status (8): [wget ftp://ftp.flybase.net/releases/curren...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
+# Error: output/tsv/assembly_insdc-bioproject.tsv new file size per old 150 / 58955319 = 2.5442996924501418e-06 < 0.5
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-biosample.tsv new file size per old 150 / 60555966 = 2.4770474308014508e-06 < 0.5
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-biosample.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv new file size per old 150 / 63716447 = 2.3541802323032858e-06 < 0.5
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <html>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </body>
+# Error: output/tsv/assembly_insdc-insdc_master.tsv seems to contain HTML </html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv new file size per old 150 / 2482918 = 6.041278850127149e-05 < 0.5
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <html>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML <hr><center>nginx</center>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </body>
+# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to contain HTML </html>
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
@@ -8,45 +69,6 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
 # Error: output/tsv/hgnc-ccds.tsv new file size per old 252491 / 544502 = 0.46370995882476096 < 0.5
-# Error: output/tsv/lipidmaps-chebi.tsv new file size per old 148 / 253350 = 0.000584172093941188 < 0.5
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-inchi_key.tsv new file size per old 148 / 1976727 = 7.487123917465588e-05 < 0.5
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-swisslipids.tsv new file size per old 148 / 284047 = 0.0005210405320246297 < 0.5
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
 # Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
@@ -63,8 +85,4 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/oma_protein-ensembl_gene.tsv new file size per old 0 / 75986584 = 0.0 < 0.5
-# Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/oma_protein-ensembl_transcript.tsv new file size per old 0 / 87628933 = 0.0 < 0.5
-# Error: Failed to create output/tsv/oma_protein-ensembl_transcript.tsv or created file was empty
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 62368 / 470542 = 0.1325450225484654 < 0.5
