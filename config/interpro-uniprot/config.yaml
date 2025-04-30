@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Bimonthly
-  method: awk -F "\t" '{print $2 "\t" $1}' $TOGOID_ROOT/input/interpro/protein2ipr.dat | sort | uniq
+  method: sort -c $TOGOID_ROOT/input/interpro/protein2ipr.dat && awk -F "\t" '{print $2 "\t" $1}' $TOGOID_ROOT/input/interpro/protein2ipr.dat | uniq
