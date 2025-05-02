@@ -119,7 +119,12 @@ module TogoID
               id, label = line.scrub.strip.split("\t")
               sbj = "#{@name}:#{id}"
               id_full = @prefix.gsub(/.+\//, "") + id
+              if !label
+                $stderr.puts "Warning: Updating #{@ttl_file}: #{id} does not have a label."
+                next
+              end
               label = label.gsub(/["\\]/, '\\\\\&')
+
               ttl_file.puts "#{sbj}\tdcterms:identifier\t\"#{id_full}\" ."
               ttl_file.puts "#{sbj}\trdfs:label\t\"#{label}\" ."
             end

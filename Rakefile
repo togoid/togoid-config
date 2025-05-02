@@ -200,7 +200,7 @@ module TogoID
     # Return true (needs update) when the TTL file does not exist or the size is zero
     def check_id_label_filesize(name)
       output = id_label_file_name(name)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs udpate) when the TSV file is older than the config file
