@@ -19,4 +19,6 @@ Basically, this config extracts the first and second columns from the input file
 
 Since `protein2ipr.dat` has been confirmed to be pre-sorted, this config does not need to sort it. `sort -c` can determine whether a file is sorted in linear time relative to its size. The updated method performs this check in advance to ensure that the process will terminate with an error even if the input file is later modified and becomes unsorted. With this guarantee in place, the subsequent command has been changed to simply execute `uniq`.
 
+The parameter `LC_ALL=C` for `sort -c` is required to recognize the input file is ordered.
+
 If the input file is actually modified in the future to become unsorted, a different solution will be required.
