@@ -27,7 +27,4 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/togovar-ensembl_transcript.tsv seems to be malformed tgv59293913
-# Error: output/tsv/uberon-ncit_tissue.tsv new file size per old 0 / 38722 = 0.0 < 0.5
-# Error: Failed to create output/tsv/uberon-ncit_tissue.tsv or created file was empty
 # Error: output/tsv/wikipathways-uniprot.tsv new file size per old 62354 / 470542 = 0.13251526962524068 < 0.5
