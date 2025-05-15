@@ -10,7 +10,7 @@
     - [DATASETS](#datasets)
   - [API](#api)
   - [論文](#論文)
-  - [紹介 PDF ･記事](#紹介 pdf 記事)
+  - [紹介PDF･記事](#紹介pdf･記事)
   - [お問い合わせ](#お問い合わせ)
 
 ## About
