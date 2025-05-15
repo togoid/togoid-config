@@ -10,7 +10,6 @@
     - [DATASETS](#datasets)
   - [API](#api)
   - [論文](#論文)
-  - [紹介PDF･記事](#紹介pdf･記事)
   - [お問い合わせ](#お問い合わせ)
 
 ## About
@@ -143,13 +142,6 @@ TogoID が対象としているデータセットの詳細を閲覧できます�
 - Shuya Ikeda, Kiyoko F Aoki-Kinoshita, Hirokazu Chiba, Susumu Goto, Masae Hosoda, Shuichi Kawashima, Jin-Dong Kim, Yuki Moriya, Tazro Ohta, Hiromasa Ono, Terue Takatsuki, Yasunori Yamamoto, Toshiaki Katayama, Expanding the concept of ID conversion in TogoID by introducing multi-semantic and label features, J Biomed Semantics. 2025 Jan 8;16(1):1. [doi:10.1186/s13326-024-00322-1](https://doi.org/10.1186/s13326-024-00322-1).
 
 - Shuya Ikeda, Hiromasa Ono, Tazro Ohta, Hirokazu Chiba, Yuki Naito, Yuki Moriya, Shuichi Kawashima, Yasunori Yamamoto, Shinobu Okamoto, Susumu Goto, Toshiaki Katayama, TogoID: an exploratory ID converter to bridge biological datasets, _Bioinformatics_, 2022;, btac491, [https://doi.org/10.1093/bioinformatics/btac491](https://doi.org/10.1093/bioinformatics/btac491)
-
-## 紹介PDF･記事
-- [TogoID: データベース統合の基盤となるID変換サービス](https://biosciencedbc.jp/event/symposium/togo2021/files/poster03_togo2021.pdf)
-    - 2021年10月トーゴーの日シンポジウムにて[発表](https://biosciencedbc.jp/event/symposium/togo2021/poster/003.html)
-- [TogoID：生命科学系データベースのさまざまなIDを探索的に変換できるウェブアプリケーション](https://doi.org/10.18958/7013-00005-0000134-00)
-    - 実験医学2022年5月号　クローズアップ実験法
-    - DOI [10.18958/7013-00005-0000134-00](https://doi.org/10.18958/7013-00005-0000134-00)
 
 ## お問い合わせ
 新規データセット追加のリクエストなどのお問い合わせには以下をご利用ください。
