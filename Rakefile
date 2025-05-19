@@ -650,8 +650,8 @@ namespace :prepare do
       updated = false
 
       begin
-        sh "wget ftp://ftp.flybase.net/releases/current/precomputed_files/genes/ --no-remove-listing --directory-prefix=#{INPUT_FLYBASE_DIR}"
-        current_filename = `grep -oE "fbgn_fbtr_fbpp_expanded_fb_.*\.tsv\.gz" #{INPUT_FLYBASE_DIR}/.listing`.strip
+        sh "wget https://s3ftp.flybase.org/releases/current/precomputed_files/genes/ --no-remove-listing --directory-prefix=#{INPUT_FLYBASE_DIR}"
+        current_filename = `grep -oP "fbgn_fbtr_fbpp_expanded_fb_.*?\.tsv\.gz" #{INPUT_FLYBASE_DIR}/index.html | head -1`.strip
         input_file = "#{INPUT_FLYBASE_DIR}/#{current_filename}"
       rescue StandardError => e
         $stderr.puts "Error: wget: #{e.message}"
@@ -660,12 +660,12 @@ namespace :prepare do
 
       if input_file != "" && !File.exist?(input_file)
         sh "rm -f #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_*.tsv.gz"
-        input_url = "ftp://ftp.flybase.net/releases/current/precomputed_files/genes/#{current_filename}"
+        input_url = "https://s3ftp.flybase.org/releases/current/precomputed_files/genes/#{current_filename}"
         download_file(INPUT_FLYBASE_DIR, input_url)
         sh "gzip -dc #{input_file} > #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_current.tsv"
         updated = true
       end
-      sh "rm -f #{INPUT_FLYBASE_DIR}/.listing #{INPUT_FLYBASE_DIR}/index.html"
+      sh "rm -f #{INPUT_FLYBASE_DIR}/index.html"
       updated
     end
   end
