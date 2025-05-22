@@ -309,6 +309,7 @@ ensembl_transcript:
     - variable: transcript_flag
       label: Transcript flags
       items: ["Ensembl canonical", "MANE Select", "GENCODE Basic", "TSL 1", "TSL 2", "TSL 3", "TSL 4", "TSL 5", "TSL NA", "APPRIS P1", "APPRIS P2", "APPRIS P3", "APPRIS P4", "APPRIS P5", "APPRIS ALT1", "APPRIS ALT2", "5' incomplete", "3' incomplete"]
+      is_list: true
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
 flybase_gene:
@@ -821,6 +822,7 @@ ncbigene:
       items: ["protein-coding", "ncRNA", "pseudo", "rRNA", "tRNA", "scRNA", "snRNA", "snoRNA", "miscRNA", "biological-region", "unknown", "other"]
     - variable: gene_synonym
       label: Synonym
+      is_list: true
     - variable: full_name
       label: Full name
 ncit_disease:
