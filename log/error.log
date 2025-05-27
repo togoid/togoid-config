@@ -1,29 +1,5 @@
-Error: wget: Command failed with status (8): [wget ftp://ftp.flybase.net/releases/curren...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
-Error: check_remote_file_time(input/interpro/interpro2go, https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/interpro2go): no time information in ""
-Error: check_remote_file_time(input/interpro/protein2ipr.dat.gz, https://ftp.ebi.ac.uk/pub/databases/interpro/current_release/protein2ipr.dat.gz): no time information in ""
-Error: Remote file is empty
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA13633	PRJNA8
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA13900	PRJNA15
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA15722	PRJNA45
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA13641	PRJNA74
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA608517	PRJNA84
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA15594	PRJNA97
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA15594	PRJNA99
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA15594	PRJNA100
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA15594	PRJNA101
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA117	PRJNA159383
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA1261993	PRJNA1260729
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA1261993	PRJNA1260730
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA1261995	PRJNA1260731
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA1261995	PRJNA1260732
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJEB89400	PRJEB89399
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJEB89402	PRJEB89401
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA1261142	PRJNA1261143
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJNA1262009	PRJNA1262010
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJEB89472	PRJEB89473
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv seems to be malformed PRJEB89472	PRJEB89474
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
