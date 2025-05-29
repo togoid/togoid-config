@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Weekly
-  method: awk -F "\t" '$2=="SWISSLIPIDS_ID"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
+  method: awk -F "\t" '$2=="SWISSLIPIDS_ID"{print $1 "\t" gensub(/^SLM:/, "", "g", $3)}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
