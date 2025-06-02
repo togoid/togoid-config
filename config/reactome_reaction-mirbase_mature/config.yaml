@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000077
+  reverse: TIO_000076
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: awk -F '\t' '$1~/^MIMAT/{print $2 "\t" $1}' $TOGOID_ROOT/input/reactome/miRBase2ReactomeReactions.txt
