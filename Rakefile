@@ -346,6 +346,8 @@ module TogoID
         return "prepare:mgi_gene"
       when /#{OUTPUT_TSV_DIR}mgi_genotype/
         return "prepare:mgi_genotype"
+      when /#{OUTPUT_TSV_DIR}mirbase/
+        return "prepare:mirbase"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}oma_protein/
@@ -513,7 +515,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -532,6 +534,7 @@ namespace :prepare do
   directory INPUT_LIPIDMAPS_DIR   = "input/lipidmaps"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
+  directory INPUT_MIRBASE_DIR    = "input/mirbase"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_OMA_PROTEIN_DIR = "input/oma_protein"
   directory INPUT_ORPHANET_PHENOTYPE_DIR = "input/orphanet_phenotype"
@@ -872,6 +875,26 @@ namespace :prepare do
       end
       if updated
         sh "ruby bin/query_mousemine.rb > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for MiRBase"
+  task :mirbase => INPUT_MIRBASE_DIR do
+    $stderr.puts "## Prepare input files for MiRBase"
+    download_lock(INPUT_MIRBASE_DIR) do
+      updated = false
+      filenames = ["mirna.txt", "mirna_mature.txt", "mirna_pre_mature.txt"]
+      filenames.each do |filename|
+        input_file = "#{INPUT_MIRBASE_DIR}/#{filename}"
+        input_url  = "https://www.mirbase.org/download/CURRENT/database_files/#{filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_MIRBASE_DIR, input_url)
+          tsv_filename = input_file.sub(/\.txt$/, '.tsv')
+          sh "sed -E 's@<br>@\\n@g; s@</?p>@@g' #{input_file} > #{tsv_filename}"
+          updated = true
+        end
       end
       updated
     end
