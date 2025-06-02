@@ -533,6 +533,12 @@
     rdfs:label "miRBase" ;
     rdfs:subClassOf :Transcript, :Dataset .
 
+:MirbaseMature
+    a owl:Class ;
+    dcterms:identifier "mirbase_mature" ;
+    rdfs:label "miRBase mature" ;
+    rdfs:subClassOf :Transcript, :Dataset .
+
 :Mondo
     a owl:Class ;
     dcterms:identifier "mondo" ;
@@ -1959,4 +1965,20 @@
     owl:inverseOf :TIO_000130 ;
     rdfs:label "RNA family has member of transcript" ;
     :display_label "has member" .
+
+:TIO_000138
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000139 ;
+    rdfs:label "transcript is precursor of mature miRNA" ;
+    :display_label "is precursor of" .
+
+:TIO_000139
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Transcript ;
+    rdfs:range :Transcript ;
+    owl:inverseOf :TIO_000138 ;
+    rdfs:label "mature miRNA is product of transcript" ;
+    :display_label "is product of" .
 

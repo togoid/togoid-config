@@ -54,6 +54,7 @@ mgi_allele	MGI allele	Variant
 mgi_gene	MGI gene	Gene
 mgi_genotype	MGI genotype	Genotype
 mirbase	miRBase	Transcript
+mirbase_mature	miRBase mature	Transcript
 mondo	MONDO	Phenotype
 mp	Mammalian Phenotype Ontology	Phenotype
 nando	NANDO	Phenotype
