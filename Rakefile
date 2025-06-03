@@ -880,9 +880,9 @@ namespace :prepare do
     end
   end
 
-  desc "Prepare required files for MiRBase"
+  desc "Prepare required files for miRBase"
   task :mirbase => INPUT_MIRBASE_DIR do
-    $stderr.puts "## Prepare input files for MiRBase"
+    $stderr.puts "## Prepare input files for miRBase"
     download_lock(INPUT_MIRBASE_DIR) do
       updated = false
       filenames = ["mirna.txt", "mirna_mature.txt", "mirna_pre_mature.txt"]
