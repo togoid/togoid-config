@@ -514,6 +514,15 @@ mirbase:
   examples:
     - ["MI0003587","MI0000252","MI0000811","MI0014201","MI0003578","MI0000293","MI0006384","MI0006361","MI0000480","MI0006419"]
   method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^miRBase:/)print gensub(/^.*:/,"","g",a[i]) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+mirbase_mature:
+  label: miRBase mature
+  catalog: nbdc00136
+  category: Transcript
+  regex: '^(?<id>MIMAT\d{7})$'
+  prefix: 'http://identifiers.org/mirbase.mature/'
+  examples:
+    - ["MIMAT0000001","MIMAT0015091","MIMAT0000002","MIMAT0015092","MIMAT0000003","MIMAT0000004","MIMAT0000005","MIMAT0015093","MIMAT0000006","MIMAT0000007"]
+  method: awk -F "\t" '{print $4 "\t" $2}' $TOGOID_ROOT/input/mirbase/mirna_mature.tsv
 mondo:
   label: MONDO
   catalog: nbdc02563

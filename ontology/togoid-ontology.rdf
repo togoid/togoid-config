@@ -421,6 +421,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#MirbaseMature">
+    <dcterms:identifier>mirbase_mature</dcterms:identifier>
+    <rdfs:label>miRBase mature</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Molecule">
     <rdfs:label>Molecule</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Category"/>
@@ -1837,6 +1843,22 @@
     <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000130"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000138">
+    <display_label>is precursor of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:label>transcript is precursor of mature miRNA</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000139"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://togoid.dbcls.jp/ontology#TIO_000139">
+    <display_label>is product of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:label>mature miRNA is product of transcript</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Transcript"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000138"/>
   </rdf:Description>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>

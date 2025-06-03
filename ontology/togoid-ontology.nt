@@ -400,6 +400,11 @@
 <http://togoid.dbcls.jp/ontology#Mirbase> <http://www.w3.org/2000/01/rdf-schema#label> "miRBase" .
 <http://togoid.dbcls.jp/ontology#Mirbase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#Mirbase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://purl.org/dc/terms/identifier> "mirbase_mature" .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/2000/01/rdf-schema#label> "miRBase mature" .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Mondo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Mondo> <http://purl.org/dc/terms/identifier> "mondo" .
 <http://togoid.dbcls.jp/ontology#Mondo> <http://www.w3.org/2000/01/rdf-schema#label> "MONDO" .
@@ -1500,3 +1505,15 @@
 <http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000130> .
 <http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2000/01/rdf-schema#label> "RNA family has member of transcript" .
 <http://togoid.dbcls.jp/ontology#TIO_000137> <http://togoid.dbcls.jp/ontology#display_label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000139> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#label> "transcript is precursor of mature miRNA" .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://togoid.dbcls.jp/ontology#display_label> "is precursor of" .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000138> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#label> "mature miRNA is product of transcript" .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://togoid.dbcls.jp/ontology#display_label> "is product of" .

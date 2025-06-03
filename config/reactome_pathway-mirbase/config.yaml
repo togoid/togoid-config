@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: awk -F '\t' '{print $2 "\t" $1}' $TOGOID_ROOT/input/reactome/miRBase2Reactome_All_Levels.txt
+  method: awk -F '\t' '$1~/^MI[0-9]+/{print $2 "\t" $1}' $TOGOID_ROOT/input/reactome/miRBase2Reactome_All_Levels.txt
