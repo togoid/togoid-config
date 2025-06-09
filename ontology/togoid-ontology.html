@@ -115,7 +115,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    149
+                                    150
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -268,6 +268,8 @@
 				tio:MgiGenotype</option>
 <option value="Mirbase">
 				tio:Mirbase</option>
+<option value="MirbaseMature">
+				tio:MirbaseMature</option>
 <option value="Molecule">
 				tio:Molecule</option>
 <option value="Mondo">
@@ -443,7 +445,7 @@
 <tr>
 <td><a style="subPropertySearch" href="#SubProperties">
                                     Sub properties (
-                                    137
+                                    139
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = window.location.hash = document.getElementById('navi5').value" id="navi5"><option value="TIO_000001">
@@ -719,7 +721,11 @@
 <option value="TIO_000136">
 				tio:TIO_000136</option>
 <option value="TIO_000137">
-				tio:TIO_000137</option></select></td>
+				tio:TIO_000137</option>
+<option value="TIO_000138">
+				tio:TIO_000138</option>
+<option value="TIO_000139">
+				tio:TIO_000139</option></select></td>
 </tr>
 <tr>
 <td><a href="#InstanceData">
@@ -3094,6 +3100,40 @@
 <td><a href="http://www.w3.org/2000/01/rdf-schema#label">
 					rdfs:label</a></td>
 <td>miRBase</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Transcript">
+				tio:Transcript</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#MirbaseMature"></a><tbody>
+<tr><th id="MirbaseMature">
+				tio:MirbaseMature<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>mirbase_mature</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>miRBase mature</td>
 </tr>
 <tr>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
@@ -11776,6 +11816,98 @@
 					owl:inverseOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#TIO_000130">
 				tio:TIO_000130</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000138"></a><tbody>
+<tr><th id="TIO_000138">
+				tio:TIO_000138<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is precursor of</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Transcript">
+				tio:Transcript</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>transcript is precursor of mature miRNA</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Transcript">
+				tio:Transcript</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000139">
+				tio:TIO_000139</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#TIO_000139"></a><tbody>
+<tr><th id="TIO_000139">
+				tio:TIO_000139<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Description">
+					rdf:Description</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://togoid.dbcls.jp/ontology#display_label">
+					tio:display_label</a></td>
+<td>is product of</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#domain">
+					rdfs:domain</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Transcript">
+				tio:Transcript</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>mature miRNA is product of transcript</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#range">
+					rdfs:range</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Transcript">
+				tio:Transcript</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+					rdfs:subPropertyOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#relation">
+				tio:relation</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2002/07/owl#inverseOf">
+					owl:inverseOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#TIO_000138">
+				tio:TIO_000138</a></td>
 </tr>
 </tbody>
 </table>
