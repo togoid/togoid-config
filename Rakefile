@@ -892,7 +892,7 @@ namespace :prepare do
         if update_input_file?(input_file, input_url)
           download_file(INPUT_MIRBASE_DIR, input_url)
           tsv_filename = input_file.sub(/\.txt$/, '.tsv')
-          sh "sed -E 's@<br>@\\n@g; s@</?p>@@g' #{input_file} > #{tsv_filename}"
+          sh "sed -E 's@<br>@\\n@g; s@</?p>@@g' #{input_file} | awk '$0' > #{tsv_filename}"
           updated = true
         end
       end
