@@ -129,6 +129,15 @@ clinvar:
   examples:
     - ["658761","619209","745342","11955","731668","724289","725734","743127","789913","5302"]
     - ["VCV000658761","VCV000619209","VCV000745342","VCV000011955","VCV000731668","VCV000724289","VCV000725734","VCV000743127","VCV000789913","VCV000005302"]
+cog:
+  label: COG
+  catalog: nbdc00397
+  category: Ortholog
+  regex: '^(?<id>COG\d{4})$'
+  prefix: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
+  examples:
+    - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
+  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
@@ -200,15 +209,6 @@ flybase_gene:
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
   method: awk -F '\t' '!/^#/&&!a[$3]++{print $3 "\t" $4}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
-flybase_transcript:
-  label: FlyBase transcript
-  catalog: nbdc00064
-  category: Transcript
-  regex: '^(?<id>FBtr\d{7})$'
-  prefix: 'http://identifiers.org/fb/'
-  examples:
-    - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
-  method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 flybase_protein:
   label: FlyBase protein
   catalog: nbdc00064
@@ -218,6 +218,15 @@ flybase_protein:
   examples:
     - ["FBpp0071677","FBpp0071678","FBpp0099961","FBpp0309745","FBpp0082828","FBpp0082829","FBpp0289712","FBpp0297433","FBpp0082823","FBpp0082824"]
   method: awk -F '\t' '!/^#/&&$10&&!a[$10]++{print $10 "\t" gensub("\r", "", "g", $11)}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+flybase_transcript:
+  label: FlyBase transcript
+  catalog: nbdc00064
+  category: Transcript
+  regex: '^(?<id>FBtr\d{7})$'
+  prefix: 'http://identifiers.org/fb/'
+  examples:
+    - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
+  method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 gea:
   label: GEA
   catalog: FIXME
@@ -242,14 +251,6 @@ geo_series:
   prefix: 'http://identifiers.org/geo/'
   examples:
     - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
-glytoucan:
-  label: GlyTouCan
-  catalog: nbdc01535
-  category: Glycan
-  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
-  prefix: 'http://identifiers.org/glytoucan/'
-  examples:
-    - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
 glycomotif:
   label: GlycoMotif
   catalog: FIXME
@@ -260,6 +261,14 @@ glycomotif:
   examples:
     - ["G64227KZ","G14091MR","G00552RX","G18625KA","G54733XO","G72557NR","G90598GO","G93805MV","G99524KA","G00029MO"]
     - ["GM.G64227KZ","GM.G14091MR","GM.G00552RX","GM.G18625KA","GM.G54733XO","GM.G72557NR","GM.G90598GO","GM.G93805MV","GM.G99524KA","GM.G00029MO"]
+glytoucan:
+  label: GlyTouCan
+  catalog: nbdc01535
+  category: Glycan
+  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
+  prefix: 'http://identifiers.org/glytoucan/'
+  examples:
+    - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
 go:
   label: Gene ontology
   catalog: nbdc00074
@@ -308,25 +317,6 @@ homologene:
   prefix: 'http://identifiers.org/homologene/'
   examples:
     - ["117","17","6","142","55","132","61","109","137","134"]
-cog:
-  label: COG
-  catalog: nbdc00397
-  category: Ortholog
-  regex: '^(?<id>COG\d{4})$'
-  prefix: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
-  examples:
-    - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
-  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
-hp_phenotype:
-  label: HP Phenotype
-  catalog: nbdc02559
-  category: Phenotype
-  regex: '^HP[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/HP_'
-  format: ["HP:%s","HP_%s"]
-  examples:
-    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
-    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 hp_inheritance:
   label: HP Inheritance
   catalog: nbdc02559
@@ -337,6 +327,16 @@ hp_inheritance:
   examples:
     - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
     - ["HP_0032382","HP_0001475","HP_0001417","HP_0010984","HP_0003745","HP_0001442","HP_0000007","HP_0025352","HP_0001426","HP_0001470"]
+hp_phenotype:
+  label: HP Phenotype
+  catalog: nbdc02559
+  category: Phenotype
+  regex: '^HP[:_](?<id>\d{7})$'
+  prefix: 'http://purl.obolibrary.org/obo/HP_'
+  format: ["HP:%s","HP_%s"]
+  examples:
+    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
+    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 inchi_key:
   label: InChIKey
   catalog: FIXME
@@ -378,6 +378,14 @@ interpro:
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
   method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
+iuphar_ligand:
+  label: IUPHAR ligand
+  catalog: FIXME
+  category: Compound
+  regex: '^(?<id>\d+)$'
+  prefix: 'http://identifiers.org/iuphar.ligand/'
+  examples:
+    - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 jga_dataset:
   label: JGA Dataset
   catalog: nbdc02152
@@ -394,14 +402,6 @@ jga_study:
   prefix: 'http://ddbj.nig.ac.jp/resource/jga-study/'
   examples:
     - ["JGAS000006","JGAS000008","JGAS000009","JGAS000012","JGAS000013","JGAS000014","JGAS000015","JGAS000016","JGAS000024","JGAS000026"]
-iuphar_ligand:
-  label: IUPHAR ligand
-  catalog: FIXME
-  category: Compound
-  regex: '^(?<id>\d+)$'
-  prefix: 'http://identifiers.org/iuphar.ligand/'
-  examples:
-    - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 lipidmaps:
   label: LIPID MAPS
   catalog: FIXME
@@ -748,16 +748,6 @@ pubchem_compound:
   examples:
     - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
     - ["CID9548669","CID160419","CID9869929","CID76333303","CID9868491","CID27854","CID76329169","CID3448","CID296","CID10371227"]
-pubchem_substance:
-  label: PubChem substance
-  catalog: nbdc00642
-  category: Compound
-  regex: '^(?:SID)?(?<id>\d+)$'
-  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
-  format: ["%s","SID%s"]
-  examples:
-    - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
-    - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
 pubchem_pathway:
   label: PubChem pathway
   catalog: nbdc02626
@@ -769,6 +759,16 @@ pubchem_pathway:
     - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
     - ["PWID10572","PWID1","PWID10576","PWID10577","PWID10579","PWID10573","PWID10582","PWID10574","PWID10575","PWID10581"]
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pubchem_pathway_label.rq https://rdfportal.org/pubchem/sparql
+pubchem_substance:
+  label: PubChem substance
+  catalog: nbdc00642
+  category: Compound
+  regex: '^(?:SID)?(?<id>\d+)$'
+  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
+  format: ["%s","SID%s"]
+  examples:
+    - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
+    - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
 pubmed:
   label: PubMed
   catalog: nbdc00179
