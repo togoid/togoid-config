@@ -268,7 +268,7 @@ glytoucan:
   regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
   prefix: 'http://identifiers.org/glytoucan/'
   examples:
-    - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
+    - ["G42293RF","G00065MO","G90562PB","G00035MO","G49108TO","G45395BF","G60687RJ","G00055MO","G18625KA","G50361AJ"]
 go:
   label: Gene ontology
   catalog: nbdc00074
@@ -824,8 +824,8 @@ refseq_rna:
   regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
   prefix: 'http://identifiers.org/refseq/'
   examples:
-    - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
-    - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
+    - ["XM_017013006","NM_001199636","NM_001110","NR_170162","NR_027673","XR_388511","NR_175316","NM_115904","NM_129829","NM_130477"]
+    - ["XM_017013006.1","NM_001199636.2","NM_001110.4","NR_170162.1","NR_027673.1","XR_388511.5","NR_175316.1","NM_115904.3","NM_129829.4","NM_130477.4"]
   method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv
 rfam:
   label: Rfam
