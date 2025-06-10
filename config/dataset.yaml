@@ -513,7 +513,7 @@ mirbase:
   prefix: 'http://identifiers.org/mirbase/'
   examples:
     - ["MI0003587","MI0000252","MI0000811","MI0014201","MI0003578","MI0000293","MI0006384","MI0006361","MI0000480","MI0006419"]
-  method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^miRBase:/)print gensub(/^.*:/,"","g",a[i]) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  method: cut -f2,3 $TOGOID_ROOT/input/mirbase/mirna.tsv
 mirbase_mature:
   label: miRBase mature
   catalog: nbdc00136
