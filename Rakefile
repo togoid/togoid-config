@@ -101,7 +101,7 @@ module TogoID
           if validate_tsv_output(pair)
             $stderr.puts "# Success: #{tsv_file_name(pair)} is updated"
             if File.exist?(tsv_file_name_old(pair))
-              # Remove prevous TSV output
+              # Remove previous TSV output
               sh "rm #{tsv_file_name_old(pair)}", verbose: false
             end
           else
@@ -152,10 +152,26 @@ module TogoID
         if check_id_label_filesize(name) or check_id_label_timestamp(name)
           $stderr.puts "## Update #{id_label_file_name(name)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{name}"
+          if File.exist?(id_label_file_name(name))
+            sh "mv #{id_label_file_name(name)} #{id_label_file_name_old(name)}", verbose: false
+          end
           sh "togoid-rdfize-id-label #{name}"
+          if validate_id_label_output(name)
+            $stderr.puts "# Success: #{id_label_file_name(name)} is updated"
+            if File.exist?(id_label_file_name_old(name))
+              # Remove previous TTL output
+              sh "rm #{id_label_file_name_old(name)}", verbose: false
+            end
+          else
+            $stderr.puts "# Failure: #{id_label_file_name(name)} is not updated"
+            if File.exist?(id_label_file_name_old(name))
+              # Revert previous TTL output"
+              sh "mv #{id_label_file_name_old(name)} #{id_label_file_name(name)}", verbose: false
+            end
+          end
           $stderr.puts "> #{`date +%FT%T`.strip} #{name}"
         else
-          $stderr.puts "# => Preserving #{ttl_file_name(name)}"
+          $stderr.puts "# => Preserving #{id_label_file_name(name)}"
         end
       end
       return "config/dataset.yaml"
@@ -183,6 +199,10 @@ module TogoID
 
     def id_label_file_name(name)
       "#{OUTPUT_ID_LABEL_TTL_DIR}#{name}.ttl"
+    end
+
+    def id_label_file_name_old(name)
+      "#{OUTPUT_ID_LABEL_TTL_DIR}#{name}.ttl.old"
     end
 
     # Return true (needs update) when the TSV file does not exist or the size is zero
@@ -302,6 +322,35 @@ module TogoID
       else
         $stderr.puts "# Error: Failed to create #{tsv} or created file was empty" if $verbose
         check = false
+      end
+      return check
+    end
+
+    def validate_id_label_output(name)
+      ttl = id_label_file_name(name)
+      old = id_label_file_name_old(name)
+      check = true
+      if File.exist?(ttl) and File.exist?(old)
+        ratio = 1.0 * File.size(ttl) / File.size(old)
+        # New file is not smaller than a half of old file size
+        if ratio < $minratio
+          $stderr.puts "# Error: #{ttl} new file size per old #{File.size(ttl)} / #{File.size(old)} = #{ratio} < #{$minratio}" if $verbose
+          check = false
+        end
+      end
+      # Check if new TTL is valid
+      if check and File.exist?(ttl) and File.size(ttl) > 0
+        sh "rapper -i turtle -c #{ttl}" do |ok, status|
+          if !ok
+            $stderr.puts "# Error: #{ttl} is not valid" if $verbose
+            check = false
+          end
+        end
+      else
+        if check
+          $stderr.puts "# Error: Failed to create #{ttl} or created file was empty" if $verbose
+          check = false
+        end
       end
       return check
     end
