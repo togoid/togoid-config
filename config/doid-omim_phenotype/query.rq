@@ -3,10 +3,10 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 SELECT DISTINCT ?do_id ?omim_id
 FROM <http://rdfportal.org/dataset/bioportal/doid>
 WHERE {
-  ?do_uri 
+  ?do_uri
     oboInOwl:hasDbXref ?omim ;
     oboInOwl:id ?do .
-  FILTER (strstarts(?omim,'OMIM:'))
-  BIND (strafter(str(?omim), 'OMIM:') AS ?omim_id)
+  FILTER (strstarts(?omim,'MIM:'))
+  BIND (strafter(str(?omim), 'MIM:') AS ?omim_id)
   BIND (strafter(str(?do), 'DOID:') AS ?do_id)
 }
