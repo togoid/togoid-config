@@ -1,7 +1,7 @@
 # Endpoint: https://rdfportal.org/bioportal/sparql
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 SELECT DISTINCT ?do_id ?omim_id
-FROM <http://rdf.integbio.jp/dataset/bioportal/doid>
+FROM <http://rdfportal.org/dataset/bioportal/doid>
 WHERE {
   ?do_uri 
     oboInOwl:hasDbXref ?omim ;

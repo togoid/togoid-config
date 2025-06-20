@@ -1,7 +1,7 @@
 # Endpoint: https://rdfportal.org/bioportal/sparql
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>                                                                          
 SELECT DISTINCT ?mondo_id ?orphanet_id
-FROM <http://rdfportal.org/ontology/mondo>
+FROM <http://rdfportal.org/dataset/bioportal/mondo>
 WHERE {
   ?mondo_uri
     oboInOwl:hasDbXref ?orphanet ;
