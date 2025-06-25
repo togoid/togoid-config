@@ -416,7 +416,7 @@ lncbook_gene:
   catalog: FIXME
   category: Gene
   regex: '^(?<id>HSALNG[0-9]{7})$'
-  prefix: 'https://ngdc.cncb.ac.cn/lncbook/gene?geneid='
+  prefix: 'http://identifiers.org/lncbook/'
   examples:
     - ["HSALNG0044971","HSALNG0063621","HSALNG0088821","HSALNG0028312","HSALNG0083434","HSALNG0115829","HSALNG0072678","HSALNG0031034","HSALNG0038414","HSALNG0011632"]
 lrg:
