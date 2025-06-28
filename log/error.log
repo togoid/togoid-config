@@ -6,12 +6,6 @@ Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbas
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/doid-mesh.tsv new file size per old 0 / 56961 = 0.0 < 0.5
-# Error: Failed to create output/tsv/doid-mesh.tsv or created file was empty
-# Error: output/tsv/doid-ncit_disease.tsv new file size per old 0 / 58395 = 0.0 < 0.5
-# Error: Failed to create output/tsv/doid-ncit_disease.tsv or created file was empty
-# Error: output/tsv/doid-omim_phenotype.tsv new file size per old 0 / 82860 = 0.0 < 0.5
-# Error: Failed to create output/tsv/doid-omim_phenotype.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
@@ -24,40 +18,9 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
-# Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
-# Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-hp_phenotype.tsv or created file was empty
-# Error: output/tsv/mondo-meddra.tsv new file size per old 0 / 25262 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-meddra.tsv or created file was empty
-# Error: output/tsv/mondo-mesh.tsv new file size per old 0 / 133836 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-mesh.tsv or created file was empty
-# Error: output/tsv/mondo-omim_phenotype.tsv new file size per old 0 / 145395 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
-# Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/nando-mondo.tsv new file size per old 0 / 38240 = 0.0 < 0.5
-# Error: Failed to create output/tsv/nando-mondo.tsv or created file was empty
-# Error: output/tsv/orphanet_gene-ensembl_gene.tsv new file size per old 0 / 99337 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_gene-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/orphanet_gene-hgnc.tsv new file size per old 0 / 54005 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_gene-hgnc.tsv or created file was empty
-# Error: output/tsv/orphanet_gene-omim_gene.tsv new file size per old 0 / 60424 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_gene-omim_gene.tsv or created file was empty
-# Error: output/tsv/orphanet_gene-uniprot.tsv new file size per old 0 / 60188 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_gene-uniprot.tsv or created file was empty
-# Error: output/tsv/orphanet_phenotype-meddra.tsv new file size per old 0 / 17104 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_phenotype-meddra.tsv or created file was empty
-# Error: output/tsv/orphanet_phenotype-mesh.tsv new file size per old 0 / 23642 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_phenotype-mesh.tsv or created file was empty
-# Error: output/tsv/orphanet_phenotype-omim_phenotype.tsv new file size per old 0 / 90706 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_phenotype-omim_phenotype.tsv or created file was empty
-# Error: output/tsv/orphanet_phenotype-orphanet_gene.tsv new file size per old 0 / 103255 = 0.0 < 0.5
-# Error: Failed to create output/tsv/orphanet_phenotype-orphanet_gene.tsv or created file was empty
+# Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
 # Error: output/tsv/pubchem_compound-chebi.tsv new file size per old 2765633 / 7886019 = 0.35070077817464046 < 0.5
-rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/bioproject.ttl:5560 - syntax error at '"'
-# Error: output/ttl/label/bioproject.ttl is not valid
 rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/biosample.ttl:1 - out of dynamic memory in turtle_lexer__scan_bytes()
 # Error: output/ttl/label/biosample.ttl is not valid
-/data/togoid/git/togoid-config/lib/togoid-config.rb:121:in `+': no implicit conversion of nil into String (TypeError)
-rake aborted!
+rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/rnacentral.ttl:1 - out of dynamic memory in turtle_lexer__scan_bytes()
+# Error: output/ttl/label/rnacentral.ttl is not valid
