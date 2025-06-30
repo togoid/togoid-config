@@ -5,6 +5,7 @@ FROM <http://rdfportal.org/dataset/bioportal/doid>
 WHERE {
   ?do_uri 
     oboInOwl:hasDbXref ?mesh ;
+    oboInOwl:hasOBONamespace "disease_ontology" ;
     oboInOwl:id ?do .
   FILTER (strstarts(?mesh,'MESH:'))
   BIND (strafter(str(?mesh), 'MESH:') AS ?mesh_id)
