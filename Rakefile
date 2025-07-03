@@ -340,10 +340,28 @@ module TogoID
       end
       # Check if new TTL is valid
       if check and File.exist?(ttl) and File.size(ttl) > 0
-        sh "rapper -i turtle -c #{ttl}" do |ok, status|
-          if !ok
-            $stderr.puts "# Error: #{ttl} is not valid" if $verbose
-            check = false
+        # For large files, to avoid rapper's OOM, split files.
+        if File.size(ttl) > 1_000_000_000
+          chunk_size = 10_000_000
+          sh "awk -v lim=#{chunk_size} 'BEGIN{filenum=0}/^@prefix/{prefix=prefix \"\\n\" $0;next}$1{if(n%lim==0){file=FILENAME \".temp.\" filenum; filenum++ ;n=0; print prefix >> file};n++; print >> file}' #{ttl}"
+          split_files = Dir.glob(ttl + ".temp.*")
+          for split_file in split_files
+            puts split_file
+            sh "rapper -i turtle -c #{split_file}" do |ok, status|
+              if !ok
+                $stderr.puts "# Error: #{ttl} is not valid" if $verbose
+                check = false
+                break
+              end
+            end
+            sh "rm #{split_file}"
+          end
+        else
+          sh "rapper -i turtle -c #{ttl}" do |ok, status|
+            if !ok
+              $stderr.puts "# Error: #{ttl} is not valid" if $verbose
+              check = false
+            end
           end
         end
       else

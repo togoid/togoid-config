@@ -2,7 +2,7 @@
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?ordo_id ?mesh_id
-FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
+FROM <http://rdfportal.org/dataset/bioportal/ordo>
 WHERE {
   ?ordo_uri oboInOwl:hasDbXref ?mesh.
   FILTER (strstarts(?mesh,'MeSH:'))

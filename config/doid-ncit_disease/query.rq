@@ -2,7 +2,7 @@
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?do_id ?ncit_id
-FROM <http://rdf.integbio.jp/dataset/bioportal/doid>
+FROM <http://rdfportal.org/dataset/bioportal/doid>
 WHERE {
   ?do_uri
     oboInOwl:hasDbXref ?ncit ;

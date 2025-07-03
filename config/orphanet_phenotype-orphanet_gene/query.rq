@@ -6,7 +6,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT DISTINCT ?disease_id ?gene_id
-FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
+FROM <http://rdfportal.org/dataset/bioportal/ordo>
 WHERE {
   VALUES ?prop {
     ordo:317343	 # "disease-causing germline mutation(s) in"

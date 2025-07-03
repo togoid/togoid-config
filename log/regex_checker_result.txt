@@ -1,4 +1,4 @@
-Sat Jun 14 11:58:10 JST 2025
+Sat Jun 28 10:44:39 JST 2025
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HUMGAPDH/M33197_3_at	2597
 AFFX-HUMGAPDH/M33197_5_at	2597
@@ -93,19 +93,19 @@ COG0004	SQF99300
 COG0005	SQF97834
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/cog-refseq_protein.tsv | grep -vP '^(COG\d{4})	([ANXYWZ]P_\d+)(?:\.\d+)?$' | head
 awk -F '	' '{print "DOID_" $1 "	" "" $2}' output/tsv/doid-mesh.tsv | grep -vP '^DO(?:ID)?[:_](\d+)	([CD]\d{6,9})$' | head
+DOID_	D003863
 awk -F '	' '{print "DOID_" $1 "	" "NCIT_" $2}' output/tsv/doid-ncit_disease.tsv | grep -vP '^DO(?:ID)?[:_](\d+)	NCIT?[:_](C\d+)$' | head
-DOID_0080925	NCIT_131302
 awk -F '	' '{print "DOID_" $1 "	" "" $2}' output/tsv/doid-omim_phenotype.tsv | grep -vP '^DO(?:ID)?[:_](\d+)	(?:O?MIM:)?(\d{6})$' | head
-DOID_14448	PS400044
-DOID_14748	PS117550
-DOID_2121	PS305100
-DOID_4621	PS236100
-DOID_6457	PS158350
-DOID_0050120	PS267700
-DOID_0050328	PS275200
-DOID_0050425	PS102300
-DOID_14791	PS204000
-DOID_2583	PS601495
+DOID_0050628	PS604348
+DOID_0060233	PS115150
+DOID_0060240	PS600630
+DOID_0060247	PS607326
+DOID_0060294	PS272430
+DOID_0070221	PS211600
+DOID_0080954	PS617468
+DOID_0081332	PS176670
+DOID_0110273	PS603511
+DOID_0110274	PS253600
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-affy_probeset.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(\d{3,}(?:_[a-z])?_at)$' | head
 ENSG00000275708	AFFX-HUMRGE/M10098_5_at
 ENSG00000277437	AFFX-HUMRGE/M10098_5_at
@@ -237,10 +237,7 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/mirbase-mirbase_mature.tsv | gre
 awk -F '	' '{print "MONDO_" $1 "	" "DOID_" $2}' output/tsv/mondo-doid.tsv | grep -vP '^MONDO[:_](\d{7})	DO(?:ID)?[:_](\d+)$' | head
 awk -F '	' '{print "MONDO_" $1 "	" "HP_" $2}' output/tsv/mondo-hp_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	HP[:_](\d{7})$' | head
 awk -F '	' '{print "MONDO_" $1 "	" "" $2}' output/tsv/mondo-meddra.tsv | grep -vP '^MONDO[:_](\d{7})	(?:(?:MedDRA|meddra):)?(\d+)$' | head
-MONDO_0018872	C0023462
-MONDO_0700092	C1535926
 awk -F '	' '{print "MONDO_" $1 "	" "" $2}' output/tsv/mondo-mesh.tsv | grep -vP '^MONDO[:_](\d{7})	([CD]\d{6,9})$' | head
-MONDO_0000890	1622152
 awk -F '	' '{print "MONDO_" $1 "	" "" $2}' output/tsv/mondo-omim_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "MONDO_" $1 "	" "Orphanet_" $2}' output/tsv/mondo-orphanet_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "MONDO_" $2}' output/tsv/nando-mondo.tsv | grep -vP '^NANDO[:_](\d{7})	MONDO[:_](\d{7})$' | head
@@ -304,7 +301,6 @@ awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-hgnc.tsv 
 awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-omim_gene.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-uniprot.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_phenotype-meddra.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:(?:MedDRA|meddra):)?(\d+)$' | head
-Orphanet_615943	C0239495
 awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_phenotype-mesh.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	([CD]\d{6,9})$' | head
 awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_phenotype-omim_phenotype.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "Orphanet_" $1 "	" "Orphanet_" $2}' output/tsv/orphanet_phenotype-orphanet_gene.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
@@ -397,17 +393,7 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rhea-uniprot.tsv | grep -vP '^(\
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-ensembl_transcript.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-flybase_transcript.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(FBtr\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-hgnc.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
-awk -F '	' '{print "" $1 "	" "gene?geneid=" $2}' output/tsv/rnacentral-lncbook_gene.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(HSALNG[0-9]{7})$' | head
-URS0000000055_9606	gene?geneid=HSALNG0050810
-URS00000000C9_9606	gene?geneid=HSALNG0043383
-URS00000000FD_9606	gene?geneid=HSALNG0023447
-URS0000000185_9606	gene?geneid=HSALNG0104603
-URS0000000351_9606	gene?geneid=HSALNG0060752
-URS00000005D1_9606	gene?geneid=HSALNG0122334
-URS0000000787_9606	gene?geneid=HSALNG0134219
-URS0000000AA1_9606	gene?geneid=HSALNG0116003
-URS0000000C0D_9606	gene?geneid=HSALNG0145258
-URS0000000CF3_9606	gene?geneid=HSALNG0018258
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-lncbook_gene.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(HSALNG[0-9]{7})$' | head
 awk -F '	' '{print "" $1 "	" "MGI:" $2}' output/tsv/rnacentral-mgi_gene.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:MGI|mgi):(\d{5,})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-mirbase_mature.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(MIMAT\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-mirbase.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(MI\d{7})$' | head
@@ -475,22 +461,13 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-refseq_protein.tsv | gre
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-taxonomy.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-uniprot_mnemonic.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	([A-Z0-9]+_[A-Z0-9]{0,5})$' | head
 awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/wikipathways-chebi.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:CHEBI[:_])?(\d+)$' | head
-WP4900	CHEBI_16761 
 WP5420	CHEBI_
-WP5488	CHEBI_Q8NFF5
-WP5488	CHEBI_cHEBI:58210
-WP5420	CHEBI_Q8NFF5
-WP5420	CHEBI_cHEBI:58210
-WP5494	CHEBI_PA10040
-WP5494	CHEBI_PA162373091
-WP538	CHEBI_I57972
 awk -F '	' '{print "" $1 "	" "DOID_" $2}' output/tsv/wikipathways-doid.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	DO(?:ID)?[:_](\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-hmdb.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:hmdb:)?(HMDB\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-lipidmaps.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$' | head
-WP5424	8-F2t-IsoP
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 WP1981	PP51178
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Jun 14 13:07:07 JST 2025
+Sat Jun 28 11:58:19 JST 2025

@@ -42,7 +42,7 @@ bioproject:
   prefix: 'http://identifiers.org/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
-  method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
+  method: awk -F "\t" '$2=="Title"{print $1 "\t" gensub("\r"," ","g",$3)}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
 bioproject_umbrella:
   label: BioProject umbrella
   catalog: nbdc00476
@@ -416,7 +416,7 @@ lncbook_gene:
   catalog: FIXME
   category: Gene
   regex: '^(?<id>HSALNG[0-9]{7})$'
-  prefix: 'https://ngdc.cncb.ac.cn/lncbook/gene?geneid='
+  prefix: 'http://identifiers.org/lncbook/'
   examples:
     - ["HSALNG0044971","HSALNG0063621","HSALNG0088821","HSALNG0028312","HSALNG0083434","HSALNG0115829","HSALNG0072678","HSALNG0031034","HSALNG0038414","HSALNG0011632"]
 lrg:
