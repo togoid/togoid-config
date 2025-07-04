@@ -229,6 +229,16 @@
 <http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#label> "FlyBase gene" .
 <http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#FlybaseGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#FlybaseProtein> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#FlybaseProtein> <http://purl.org/dc/terms/identifier> "flybase_protein" .
+<http://togoid.dbcls.jp/ontology#FlybaseProtein> <http://www.w3.org/2000/01/rdf-schema#label> "FlyBase protein" .
+<http://togoid.dbcls.jp/ontology#FlybaseProtein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#FlybaseProtein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#FlybaseTranscript> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#FlybaseTranscript> <http://purl.org/dc/terms/identifier> "flybase_transcript" .
+<http://togoid.dbcls.jp/ontology#FlybaseTranscript> <http://www.w3.org/2000/01/rdf-schema#label> "FlyBase transcript" .
+<http://togoid.dbcls.jp/ontology#FlybaseTranscript> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#FlybaseTranscript> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Gea> <http://purl.org/dc/terms/identifier> "gea" .
 <http://togoid.dbcls.jp/ontology#Gea> <http://www.w3.org/2000/01/rdf-schema#label> "GEA" .
@@ -335,6 +345,11 @@
 <http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#label> "LIPID MAPS" .
 <http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Lipid> .
 <http://togoid.dbcls.jp/ontology#Lipidmaps> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#LncbookGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#LncbookGene> <http://purl.org/dc/terms/identifier> "lncbook_gene" .
+<http://togoid.dbcls.jp/ontology#LncbookGene> <http://www.w3.org/2000/01/rdf-schema#label> "LncBook gene" .
+<http://togoid.dbcls.jp/ontology#LncbookGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
+<http://togoid.dbcls.jp/ontology#LncbookGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Lrg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Lrg> <http://purl.org/dc/terms/identifier> "lrg" .
 <http://togoid.dbcls.jp/ontology#Lrg> <http://www.w3.org/2000/01/rdf-schema#label> "LRG" .
@@ -385,6 +400,11 @@
 <http://togoid.dbcls.jp/ontology#Mirbase> <http://www.w3.org/2000/01/rdf-schema#label> "miRBase" .
 <http://togoid.dbcls.jp/ontology#Mirbase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#Mirbase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://purl.org/dc/terms/identifier> "mirbase_mature" .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/2000/01/rdf-schema#label> "miRBase mature" .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#MirbaseMature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Mondo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Mondo> <http://purl.org/dc/terms/identifier> "mondo" .
 <http://togoid.dbcls.jp/ontology#Mondo> <http://www.w3.org/2000/01/rdf-schema#label> "MONDO" .
@@ -530,6 +550,11 @@
 <http://togoid.dbcls.jp/ontology#RefseqRna> <http://www.w3.org/2000/01/rdf-schema#label> "RefSeq RNA" .
 <http://togoid.dbcls.jp/ontology#RefseqRna> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#RefseqRna> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Rfam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Rfam> <http://purl.org/dc/terms/identifier> "rfam" .
+<http://togoid.dbcls.jp/ontology#Rfam> <http://www.w3.org/2000/01/rdf-schema#label> "Rfam" .
+<http://togoid.dbcls.jp/ontology#Rfam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#Rfam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Rgd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Rgd> <http://purl.org/dc/terms/identifier> "rgd" .
 <http://togoid.dbcls.jp/ontology#Rgd> <http://www.w3.org/2000/01/rdf-schema#label> "RGD" .
@@ -540,6 +565,11 @@
 <http://togoid.dbcls.jp/ontology#Rhea> <http://www.w3.org/2000/01/rdf-schema#label> "Rhea" .
 <http://togoid.dbcls.jp/ontology#Rhea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Reaction> .
 <http://togoid.dbcls.jp/ontology#Rhea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Rnacentral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Rnacentral> <http://purl.org/dc/terms/identifier> "rnacentral" .
+<http://togoid.dbcls.jp/ontology#Rnacentral> <http://www.w3.org/2000/01/rdf-schema#label> "RNAcentral" .
+<http://togoid.dbcls.jp/ontology#Rnacentral> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#Rnacentral> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Sgd> <http://purl.org/dc/terms/identifier> "sgd" .
 <http://togoid.dbcls.jp/ontology#Sgd> <http://www.w3.org/2000/01/rdf-schema#label> "SGD" .
@@ -651,175 +681,210 @@
 <http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#label> "ZFIN gene" .
 <http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#ZfinGene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#ZfinTranscript> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#ZfinTranscript> <http://purl.org/dc/terms/identifier> "zfin_transcript" .
+<http://togoid.dbcls.jp/ontology#ZfinTranscript> <http://www.w3.org/2000/01/rdf-schema#label> "ZFIN transcript" .
+<http://togoid.dbcls.jp/ontology#ZfinTranscript> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#ZfinTranscript> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://www.w3.org/2000/01/rdf-schema#label> "is nearly equivalent to" .
 <http://togoid.dbcls.jp/ontology#TIO_000001> <http://togoid.dbcls.jp/ontology#display_label> "is nearly equivalent to" .
+<http://togoid.dbcls.jp/ontology#TIO_000002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000002> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000002> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000002> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000002> <http://www.w3.org/2000/01/rdf-schema#label> "is equivalent to" .
 <http://togoid.dbcls.jp/ontology#TIO_000002> <http://togoid.dbcls.jp/ontology#display_label> "is equivalent to" .
+<http://togoid.dbcls.jp/ontology#TIO_000003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000003> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000003> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000003> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000003> <http://www.w3.org/2000/01/rdf-schema#label> "variant has corresponding variant" .
 <http://togoid.dbcls.jp/ontology#TIO_000003> <http://togoid.dbcls.jp/ontology#display_label> "has corresponding variant" .
+<http://togoid.dbcls.jp/ontology#TIO_000004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000004> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000004> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000004> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Go> .
 <http://togoid.dbcls.jp/ontology#TIO_000004> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000007> .
 <http://togoid.dbcls.jp/ontology#TIO_000004> <http://www.w3.org/2000/01/rdf-schema#label> "has GO annotation" .
 <http://togoid.dbcls.jp/ontology#TIO_000004> <http://togoid.dbcls.jp/ontology#display_label> "has GO annotation" .
+<http://togoid.dbcls.jp/ontology#TIO_000005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000005> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000005> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000005> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Go> .
 <http://togoid.dbcls.jp/ontology#TIO_000005> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000008> .
 <http://togoid.dbcls.jp/ontology#TIO_000005> <http://www.w3.org/2000/01/rdf-schema#label> "has GO biological process" .
 <http://togoid.dbcls.jp/ontology#TIO_000005> <http://togoid.dbcls.jp/ontology#display_label> "has GO biological process" .
+<http://togoid.dbcls.jp/ontology#TIO_000006> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000006> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000006> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000006> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Go> .
 <http://togoid.dbcls.jp/ontology#TIO_000006> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000009> .
 <http://togoid.dbcls.jp/ontology#TIO_000006> <http://www.w3.org/2000/01/rdf-schema#label> "has GO cellular component" .
 <http://togoid.dbcls.jp/ontology#TIO_000006> <http://togoid.dbcls.jp/ontology#display_label> "has GO cellular component" .
+<http://togoid.dbcls.jp/ontology#TIO_000007> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000007> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000007> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Go> .
 <http://togoid.dbcls.jp/ontology#TIO_000007> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000007> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000004> .
 <http://togoid.dbcls.jp/ontology#TIO_000007> <http://www.w3.org/2000/01/rdf-schema#label> "is GO annotation of" .
 <http://togoid.dbcls.jp/ontology#TIO_000007> <http://togoid.dbcls.jp/ontology#display_label> "is GO annotation of" .
+<http://togoid.dbcls.jp/ontology#TIO_000008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000008> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000008> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Go> .
 <http://togoid.dbcls.jp/ontology#TIO_000008> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000008> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000005> .
 <http://togoid.dbcls.jp/ontology#TIO_000008> <http://www.w3.org/2000/01/rdf-schema#label> "is GO biological process of" .
 <http://togoid.dbcls.jp/ontology#TIO_000008> <http://togoid.dbcls.jp/ontology#display_label> "is GO biological process of" .
+<http://togoid.dbcls.jp/ontology#TIO_000009> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000009> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000009> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Go> .
 <http://togoid.dbcls.jp/ontology#TIO_000009> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000009> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000006> .
 <http://togoid.dbcls.jp/ontology#TIO_000009> <http://www.w3.org/2000/01/rdf-schema#label> "is GO cellular component of" .
 <http://togoid.dbcls.jp/ontology#TIO_000009> <http://togoid.dbcls.jp/ontology#display_label> "is GO cellular component of" .
+<http://togoid.dbcls.jp/ontology#TIO_000010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000010> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000010> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000010> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000010> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000011> .
 <http://togoid.dbcls.jp/ontology#TIO_000010> <http://www.w3.org/2000/01/rdf-schema#label> "has related phenotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000010> <http://togoid.dbcls.jp/ontology#display_label> "has related phenotype" .
+<http://togoid.dbcls.jp/ontology#TIO_000011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000011> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000011> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000011> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000011> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000010> .
 <http://togoid.dbcls.jp/ontology#TIO_000011> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype is related with" .
 <http://togoid.dbcls.jp/ontology#TIO_000011> <http://togoid.dbcls.jp/ontology#display_label> "is related with" .
+<http://togoid.dbcls.jp/ontology#TIO_000012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000012> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000012> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000012> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000012> <http://www.w3.org/2000/01/rdf-schema#label> "molecule interacts with molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000012> <http://togoid.dbcls.jp/ontology#display_label> "interacts with" .
+<http://togoid.dbcls.jp/ontology#TIO_000013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000013> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000013> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000013> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000013> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000015> .
 <http://togoid.dbcls.jp/ontology#TIO_000013> <http://www.w3.org/2000/01/rdf-schema#label> "protein has protein domain" .
 <http://togoid.dbcls.jp/ontology#TIO_000013> <http://togoid.dbcls.jp/ontology#display_label> "has protein domain" .
+<http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000016> .
 <http://togoid.dbcls.jp/ontology#TIO_000014> <http://www.w3.org/2000/01/rdf-schema#label> "structure has protein domain" .
 <http://togoid.dbcls.jp/ontology#TIO_000014> <http://togoid.dbcls.jp/ontology#display_label> "has protein domain" .
+<http://togoid.dbcls.jp/ontology#TIO_000015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000015> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000015> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000015> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000015> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000013> .
 <http://togoid.dbcls.jp/ontology#TIO_000015> <http://www.w3.org/2000/01/rdf-schema#label> "protein domain is in protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000015> <http://togoid.dbcls.jp/ontology#display_label> "is in protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000016> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000016> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000016> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000016> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#TIO_000016> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000014> .
 <http://togoid.dbcls.jp/ontology#TIO_000016> <http://www.w3.org/2000/01/rdf-schema#label> "protein domain is in structure" .
 <http://togoid.dbcls.jp/ontology#TIO_000016> <http://togoid.dbcls.jp/ontology#display_label> "is in structure" .
+<http://togoid.dbcls.jp/ontology#TIO_000017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000017> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000017> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000017> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000017> <http://www.w3.org/2000/01/rdf-schema#label> "sequence is orthologous to sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000017> <http://togoid.dbcls.jp/ontology#display_label> "is orthologous to" .
+<http://togoid.dbcls.jp/ontology#TIO_000018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000018> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000018> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Ortholog> .
 <http://togoid.dbcls.jp/ontology#TIO_000018> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000018> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000019> .
 <http://togoid.dbcls.jp/ontology#TIO_000018> <http://www.w3.org/2000/01/rdf-schema#label> "orthologous group has member sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000018> <http://togoid.dbcls.jp/ontology#display_label> "has orthologous group member" .
+<http://togoid.dbcls.jp/ontology#TIO_000019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000019> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000019> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000019> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Ortholog> .
 <http://togoid.dbcls.jp/ontology#TIO_000019> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000018> .
 <http://togoid.dbcls.jp/ontology#TIO_000019> <http://www.w3.org/2000/01/rdf-schema#label> "sequence is member of orthologous group" .
 <http://togoid.dbcls.jp/ontology#TIO_000019> <http://togoid.dbcls.jp/ontology#display_label> "is member of orthologous group" .
+<http://togoid.dbcls.jp/ontology#TIO_000020> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000020> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000020> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000020> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#InchiKey> .
 <http://togoid.dbcls.jp/ontology#TIO_000020> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000021> .
 <http://togoid.dbcls.jp/ontology#TIO_000020> <http://www.w3.org/2000/01/rdf-schema#label> "compound is represented as InChIKey" .
 <http://togoid.dbcls.jp/ontology#TIO_000020> <http://togoid.dbcls.jp/ontology#display_label> "is represented as" .
+<http://togoid.dbcls.jp/ontology#TIO_000021> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000021> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000021> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#InchiKey> .
 <http://togoid.dbcls.jp/ontology#TIO_000021> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000021> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000020> .
 <http://togoid.dbcls.jp/ontology#TIO_000021> <http://www.w3.org/2000/01/rdf-schema#label> "InChIKey represents compound" .
 <http://togoid.dbcls.jp/ontology#TIO_000021> <http://togoid.dbcls.jp/ontology#display_label> "represents" .
+<http://togoid.dbcls.jp/ontology#TIO_000022> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000022> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000022> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000022> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Synonym> .
 <http://togoid.dbcls.jp/ontology#TIO_000022> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000023> .
 <http://togoid.dbcls.jp/ontology#TIO_000022> <http://www.w3.org/2000/01/rdf-schema#label> "has synonym" .
 <http://togoid.dbcls.jp/ontology#TIO_000022> <http://togoid.dbcls.jp/ontology#display_label> "has synonym" .
+<http://togoid.dbcls.jp/ontology#TIO_000023> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000023> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000023> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Synonym> .
 <http://togoid.dbcls.jp/ontology#TIO_000023> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000023> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000022> .
 <http://togoid.dbcls.jp/ontology#TIO_000023> <http://www.w3.org/2000/01/rdf-schema#label> "is synonym of" .
 <http://togoid.dbcls.jp/ontology#TIO_000023> <http://togoid.dbcls.jp/ontology#display_label> "is synonym of" .
+<http://togoid.dbcls.jp/ontology#TIO_000024> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000024> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000024> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000024> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000024> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000025> .
 <http://togoid.dbcls.jp/ontology#TIO_000024> <http://www.w3.org/2000/01/rdf-schema#label> "protein is product of gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000024> <http://togoid.dbcls.jp/ontology#display_label> "is product of gene" .
+<http://togoid.dbcls.jp/ontology#TIO_000025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000025> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000025> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000025> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000025> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000024> .
 <http://togoid.dbcls.jp/ontology#TIO_000025> <http://www.w3.org/2000/01/rdf-schema#label> "gene has protein as product" .
 <http://togoid.dbcls.jp/ontology#TIO_000025> <http://togoid.dbcls.jp/ontology#display_label> "has gene product" .
+<http://togoid.dbcls.jp/ontology#TIO_000026> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000026> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000026> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000026> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#TIO_000026> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000027> .
 <http://togoid.dbcls.jp/ontology#TIO_000026> <http://www.w3.org/2000/01/rdf-schema#label> "protein has 3D structure" .
 <http://togoid.dbcls.jp/ontology#TIO_000026> <http://togoid.dbcls.jp/ontology#display_label> "has 3D structure" .
+<http://togoid.dbcls.jp/ontology#TIO_000027> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000027> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000027> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#TIO_000027> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000027> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000026> .
 <http://togoid.dbcls.jp/ontology#TIO_000027> <http://www.w3.org/2000/01/rdf-schema#label> "is 3D structure of protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000027> <http://togoid.dbcls.jp/ontology#display_label> "is 3D structure of" .
+<http://togoid.dbcls.jp/ontology#TIO_000028> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000028> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000028> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000028> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Ec> .
 <http://togoid.dbcls.jp/ontology#TIO_000028> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000029> .
 <http://togoid.dbcls.jp/ontology#TIO_000028> <http://www.w3.org/2000/01/rdf-schema#label> "sequence has EC number" .
 <http://togoid.dbcls.jp/ontology#TIO_000028> <http://togoid.dbcls.jp/ontology#display_label> "has EC number" .
+<http://togoid.dbcls.jp/ontology#TIO_000029> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000029> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000029> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Ec> .
 <http://togoid.dbcls.jp/ontology#TIO_000029> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000029> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000028> .
 <http://togoid.dbcls.jp/ontology#TIO_000029> <http://www.w3.org/2000/01/rdf-schema#label> "is EC number of sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000029> <http://togoid.dbcls.jp/ontology#display_label> "is EC number of" .
+<http://togoid.dbcls.jp/ontology#TIO_000030> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000030> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000030> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000030> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
@@ -827,6 +892,7 @@
 <http://togoid.dbcls.jp/ontology#TIO_000030> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000031> .
 <http://togoid.dbcls.jp/ontology#TIO_000030> <http://www.w3.org/2000/01/rdf-schema#label> "gene or transcript is target of probe" .
 <http://togoid.dbcls.jp/ontology#TIO_000030> <http://togoid.dbcls.jp/ontology#display_label> "is target of" .
+<http://togoid.dbcls.jp/ontology#TIO_000031> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000031> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000031> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Probe> .
 <http://togoid.dbcls.jp/ontology#TIO_000031> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
@@ -834,615 +900,759 @@
 <http://togoid.dbcls.jp/ontology#TIO_000031> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000030> .
 <http://togoid.dbcls.jp/ontology#TIO_000031> <http://www.w3.org/2000/01/rdf-schema#label> "probe detects gene or transcript" .
 <http://togoid.dbcls.jp/ontology#TIO_000031> <http://togoid.dbcls.jp/ontology#display_label> "detects" .
+<http://togoid.dbcls.jp/ontology#TIO_000032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000032> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000032> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000032> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Literature> .
 <http://togoid.dbcls.jp/ontology#TIO_000032> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000033> .
 <http://togoid.dbcls.jp/ontology#TIO_000032> <http://www.w3.org/2000/01/rdf-schema#label> "has reference" .
 <http://togoid.dbcls.jp/ontology#TIO_000032> <http://togoid.dbcls.jp/ontology#display_label> "has reference" .
+<http://togoid.dbcls.jp/ontology#TIO_000033> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000033> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000033> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Literature> .
 <http://togoid.dbcls.jp/ontology#TIO_000033> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000033> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000032> .
 <http://togoid.dbcls.jp/ontology#TIO_000033> <http://www.w3.org/2000/01/rdf-schema#label> "is reference of" .
 <http://togoid.dbcls.jp/ontology#TIO_000033> <http://togoid.dbcls.jp/ontology#display_label> "is reference of" .
+<http://togoid.dbcls.jp/ontology#TIO_000034> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000034> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000034> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#TIO_000034> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000034> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000035> .
 <http://togoid.dbcls.jp/ontology#TIO_000034> <http://www.w3.org/2000/01/rdf-schema#label> "transcript is transcribed from gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000034> <http://togoid.dbcls.jp/ontology#display_label> "is transcribed from" .
+<http://togoid.dbcls.jp/ontology#TIO_000035> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000035> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000035> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000035> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#TIO_000035> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000034> .
 <http://togoid.dbcls.jp/ontology#TIO_000035> <http://www.w3.org/2000/01/rdf-schema#label> "gene is transcribed to transcript" .
 <http://togoid.dbcls.jp/ontology#TIO_000035> <http://togoid.dbcls.jp/ontology#display_label> "is transcribed to" .
+<http://togoid.dbcls.jp/ontology#TIO_000036> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000036> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000036> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#TIO_000036> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000036> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000037> .
 <http://togoid.dbcls.jp/ontology#TIO_000036> <http://www.w3.org/2000/01/rdf-schema#label> "transcript is translated to protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000036> <http://togoid.dbcls.jp/ontology#display_label> "is translated to" .
+<http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000036> .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://www.w3.org/2000/01/rdf-schema#label> "protein is translated from transcript" .
 <http://togoid.dbcls.jp/ontology#TIO_000037> <http://togoid.dbcls.jp/ontology#display_label> "is translated from" .
+<http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Analysis> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000048> .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://www.w3.org/2000/01/rdf-schema#label> "submission includes analysis" .
 <http://togoid.dbcls.jp/ontology#TIO_000038> <http://togoid.dbcls.jp/ontology#display_label> "includes analysis" .
+<http://togoid.dbcls.jp/ontology#TIO_000039> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000039> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000039> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000039> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000039> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000049> .
 <http://togoid.dbcls.jp/ontology#TIO_000039> <http://www.w3.org/2000/01/rdf-schema#label> "submission includes experiment" .
 <http://togoid.dbcls.jp/ontology#TIO_000039> <http://togoid.dbcls.jp/ontology#display_label> "includes experiment" .
+<http://togoid.dbcls.jp/ontology#TIO_000040> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000040> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000040> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000040> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000040> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000050> .
 <http://togoid.dbcls.jp/ontology#TIO_000040> <http://www.w3.org/2000/01/rdf-schema#label> "project performs experiment" .
 <http://togoid.dbcls.jp/ontology#TIO_000040> <http://togoid.dbcls.jp/ontology#display_label> "performs experiment" .
+<http://togoid.dbcls.jp/ontology#TIO_000041> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000041> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000041> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000041> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000041> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000051> .
 <http://togoid.dbcls.jp/ontology#TIO_000041> <http://www.w3.org/2000/01/rdf-schema#label> "submission includes project" .
 <http://togoid.dbcls.jp/ontology#TIO_000041> <http://togoid.dbcls.jp/ontology#display_label> "includes project" .
+<http://togoid.dbcls.jp/ontology#TIO_000042> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000042> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000042> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000042> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000042> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000052> .
 <http://togoid.dbcls.jp/ontology#TIO_000042> <http://www.w3.org/2000/01/rdf-schema#label> "submission includes sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000042> <http://togoid.dbcls.jp/ontology#display_label> "includes sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000043> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000043> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000043> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000043> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000043> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000053> .
 <http://togoid.dbcls.jp/ontology#TIO_000043> <http://www.w3.org/2000/01/rdf-schema#label> "experiment captures sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000043> <http://togoid.dbcls.jp/ontology#display_label> "captures sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000044> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000044> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000044> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000044> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000044> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000054> .
 <http://togoid.dbcls.jp/ontology#TIO_000044> <http://www.w3.org/2000/01/rdf-schema#label> "sequence run is produced from sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000044> <http://togoid.dbcls.jp/ontology#display_label> "is produced from sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000045> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000045> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000045> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000045> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000045> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000055> .
 <http://togoid.dbcls.jp/ontology#TIO_000045> <http://www.w3.org/2000/01/rdf-schema#label> "submission includes sequence run" .
 <http://togoid.dbcls.jp/ontology#TIO_000045> <http://togoid.dbcls.jp/ontology#display_label> "includes sequence run" .
+<http://togoid.dbcls.jp/ontology#TIO_000046> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000046> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000046> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000046> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000046> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000056> .
 <http://togoid.dbcls.jp/ontology#TIO_000046> <http://www.w3.org/2000/01/rdf-schema#label> "project produces sequence run" .
 <http://togoid.dbcls.jp/ontology#TIO_000046> <http://togoid.dbcls.jp/ontology#display_label> "produces sequence run" .
+<http://togoid.dbcls.jp/ontology#TIO_000047> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000047> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000047> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000047> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000047> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000057> .
 <http://togoid.dbcls.jp/ontology#TIO_000047> <http://www.w3.org/2000/01/rdf-schema#label> "experiment produces sequence run" .
 <http://togoid.dbcls.jp/ontology#TIO_000047> <http://togoid.dbcls.jp/ontology#display_label> "produces sequence run" .
+<http://togoid.dbcls.jp/ontology#TIO_000048> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000048> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000048> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Analysis> .
 <http://togoid.dbcls.jp/ontology#TIO_000048> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000048> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000038> .
 <http://togoid.dbcls.jp/ontology#TIO_000048> <http://www.w3.org/2000/01/rdf-schema#label> "analysis belongs to submission" .
 <http://togoid.dbcls.jp/ontology#TIO_000048> <http://togoid.dbcls.jp/ontology#display_label> "belongs to submission" .
+<http://togoid.dbcls.jp/ontology#TIO_000049> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000049> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000049> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000049> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000049> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000039> .
 <http://togoid.dbcls.jp/ontology#TIO_000049> <http://www.w3.org/2000/01/rdf-schema#label> "experiment belongs to submission" .
 <http://togoid.dbcls.jp/ontology#TIO_000049> <http://togoid.dbcls.jp/ontology#display_label> "belongs to submission" .
+<http://togoid.dbcls.jp/ontology#TIO_000050> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000050> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000050> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000050> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000050> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000040> .
 <http://togoid.dbcls.jp/ontology#TIO_000050> <http://www.w3.org/2000/01/rdf-schema#label> "experiment belongs to project" .
 <http://togoid.dbcls.jp/ontology#TIO_000050> <http://togoid.dbcls.jp/ontology#display_label> "belongs to project" .
+<http://togoid.dbcls.jp/ontology#TIO_000051> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000051> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000051> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000051> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000051> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000041> .
 <http://togoid.dbcls.jp/ontology#TIO_000051> <http://www.w3.org/2000/01/rdf-schema#label> "project belongs to submission" .
 <http://togoid.dbcls.jp/ontology#TIO_000051> <http://togoid.dbcls.jp/ontology#display_label> "belongs to submission" .
+<http://togoid.dbcls.jp/ontology#TIO_000052> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000052> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000052> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000052> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000052> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000042> .
 <http://togoid.dbcls.jp/ontology#TIO_000052> <http://www.w3.org/2000/01/rdf-schema#label> "sample belongs to submission" .
 <http://togoid.dbcls.jp/ontology#TIO_000052> <http://togoid.dbcls.jp/ontology#display_label> "belongs to submission" .
+<http://togoid.dbcls.jp/ontology#TIO_000053> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000053> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000053> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000053> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000053> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000043> .
 <http://togoid.dbcls.jp/ontology#TIO_000053> <http://www.w3.org/2000/01/rdf-schema#label> "sample is captured to perform experiment" .
 <http://togoid.dbcls.jp/ontology#TIO_000053> <http://togoid.dbcls.jp/ontology#display_label> "is captured to perform experiment" .
+<http://togoid.dbcls.jp/ontology#TIO_000054> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000054> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000054> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000054> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000054> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000044> .
 <http://togoid.dbcls.jp/ontology#TIO_000054> <http://www.w3.org/2000/01/rdf-schema#label> "sample is captured to produce sequence run" .
 <http://togoid.dbcls.jp/ontology#TIO_000054> <http://togoid.dbcls.jp/ontology#display_label> "is captured to produce sequence run" .
+<http://togoid.dbcls.jp/ontology#TIO_000055> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000055> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000055> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000055> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Submission> .
 <http://togoid.dbcls.jp/ontology#TIO_000055> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000045> .
 <http://togoid.dbcls.jp/ontology#TIO_000055> <http://www.w3.org/2000/01/rdf-schema#label> "sequence run belongs to submission" .
 <http://togoid.dbcls.jp/ontology#TIO_000055> <http://togoid.dbcls.jp/ontology#display_label> "belongs to submission" .
+<http://togoid.dbcls.jp/ontology#TIO_000056> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000056> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000056> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000056> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000056> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000046> .
 <http://togoid.dbcls.jp/ontology#TIO_000056> <http://www.w3.org/2000/01/rdf-schema#label> "sequence run belongs to project" .
 <http://togoid.dbcls.jp/ontology#TIO_000056> <http://togoid.dbcls.jp/ontology#display_label> "belongs to project" .
+<http://togoid.dbcls.jp/ontology#TIO_000057> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000057> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000057> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#SequenceRun> .
 <http://togoid.dbcls.jp/ontology#TIO_000057> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Experiment> .
 <http://togoid.dbcls.jp/ontology#TIO_000057> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000047> .
 <http://togoid.dbcls.jp/ontology#TIO_000057> <http://www.w3.org/2000/01/rdf-schema#label> "sequence run is produced in experiment" .
 <http://togoid.dbcls.jp/ontology#TIO_000057> <http://togoid.dbcls.jp/ontology#display_label> "is produced in experiment" .
+<http://togoid.dbcls.jp/ontology#TIO_000058> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000058> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000058> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000058> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000058> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000059> .
 <http://togoid.dbcls.jp/ontology#TIO_000058> <http://www.w3.org/2000/01/rdf-schema#label> "variant has clinical significance" .
 <http://togoid.dbcls.jp/ontology#TIO_000058> <http://togoid.dbcls.jp/ontology#display_label> "has clinical significance" .
+<http://togoid.dbcls.jp/ontology#TIO_000059> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000059> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000059> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000059> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000059> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000058> .
 <http://togoid.dbcls.jp/ontology#TIO_000059> <http://www.w3.org/2000/01/rdf-schema#label> "is clinical significance of" .
 <http://togoid.dbcls.jp/ontology#TIO_000059> <http://togoid.dbcls.jp/ontology#display_label> "is clinical significance of" .
+<http://togoid.dbcls.jp/ontology#TIO_000060> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000061> .
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is attached to protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000060> <http://togoid.dbcls.jp/ontology#display_label> "is attached to" .
+<http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000060> .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://www.w3.org/2000/01/rdf-schema#label> "protein is modified with glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000061> <http://togoid.dbcls.jp/ontology#display_label> "is modified with" .
+<http://togoid.dbcls.jp/ontology#TIO_000062> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000062> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000062> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000062> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000062> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000063> .
 <http://togoid.dbcls.jp/ontology#TIO_000062> <http://www.w3.org/2000/01/rdf-schema#label> "variant is located in sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000062> <http://togoid.dbcls.jp/ontology#display_label> "is located in" .
+<http://togoid.dbcls.jp/ontology#TIO_000063> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000063> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000063> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000063> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000063> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000062> .
 <http://togoid.dbcls.jp/ontology#TIO_000063> <http://www.w3.org/2000/01/rdf-schema#label> "sequence has variant" .
 <http://togoid.dbcls.jp/ontology#TIO_000063> <http://togoid.dbcls.jp/ontology#display_label> "has variant" .
+<http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Organism> .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000065> .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://www.w3.org/2000/01/rdf-schema#label> "is gene of organism" .
 <http://togoid.dbcls.jp/ontology#TIO_000064> <http://togoid.dbcls.jp/ontology#display_label> "is gene of organism" .
+<http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000064> .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://www.w3.org/2000/01/rdf-schema#label> "organism has gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000065> <http://togoid.dbcls.jp/ontology#display_label> "has gene" .
+<http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000067> .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://www.w3.org/2000/01/rdf-schema#label> "compound targets to phenotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000066> <http://togoid.dbcls.jp/ontology#display_label> "targets to" .
+<http://togoid.dbcls.jp/ontology#TIO_000067> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000067> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000067> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000067> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000067> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000066> .
 <http://togoid.dbcls.jp/ontology#TIO_000067> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype is targeted by compound" .
 <http://togoid.dbcls.jp/ontology#TIO_000067> <http://togoid.dbcls.jp/ontology#display_label> "is targeted by" .
+<http://togoid.dbcls.jp/ontology#TIO_000068> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000068> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000068> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000068> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000068> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000069> .
 <http://togoid.dbcls.jp/ontology#TIO_000068> <http://www.w3.org/2000/01/rdf-schema#label> "pathway has participant molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000068> <http://togoid.dbcls.jp/ontology#display_label> "has participant molecule" .
+<http://togoid.dbcls.jp/ontology#TIO_000069> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000069> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000069> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000069> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000069> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000068> .
 <http://togoid.dbcls.jp/ontology#TIO_000069> <http://www.w3.org/2000/01/rdf-schema#label> "molecule participates in pathway" .
 <http://togoid.dbcls.jp/ontology#TIO_000069> <http://togoid.dbcls.jp/ontology#display_label> "participates in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000070> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000070> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000070> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000070> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Reaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000070> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000071> .
 <http://togoid.dbcls.jp/ontology#TIO_000070> <http://www.w3.org/2000/01/rdf-schema#label> "pathway has participant reaction" .
 <http://togoid.dbcls.jp/ontology#TIO_000070> <http://togoid.dbcls.jp/ontology#display_label> "has participant reaction" .
+<http://togoid.dbcls.jp/ontology#TIO_000071> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000071> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000071> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Reaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000071> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000071> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000070> .
 <http://togoid.dbcls.jp/ontology#TIO_000071> <http://www.w3.org/2000/01/rdf-schema#label> "reaction participates in pathway" .
 <http://togoid.dbcls.jp/ontology#TIO_000071> <http://togoid.dbcls.jp/ontology#display_label> "participates in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000072> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000072> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000072> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000072> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000072> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000073> .
 <http://togoid.dbcls.jp/ontology#TIO_000072> <http://www.w3.org/2000/01/rdf-schema#label> "pathway has protein domain" .
 <http://togoid.dbcls.jp/ontology#TIO_000072> <http://togoid.dbcls.jp/ontology#display_label> "has protein domain in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000073> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000073> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000073> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000073> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000073> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000072> .
 <http://togoid.dbcls.jp/ontology#TIO_000073> <http://www.w3.org/2000/01/rdf-schema#label> "protein domain participates in pathway" .
 <http://togoid.dbcls.jp/ontology#TIO_000073> <http://togoid.dbcls.jp/ontology#display_label> "participates in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Interaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000075> .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://www.w3.org/2000/01/rdf-schema#label> "molecule participates in interaction" .
 <http://togoid.dbcls.jp/ontology#TIO_000074> <http://togoid.dbcls.jp/ontology#display_label> "participates in interaction" .
+<http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Interaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000074> .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://www.w3.org/2000/01/rdf-schema#label> "interaction has participant molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000075> <http://togoid.dbcls.jp/ontology#display_label> "has participant molecule" .
+<http://togoid.dbcls.jp/ontology#TIO_000076> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000076> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000076> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000076> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Reaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000076> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000077> .
 <http://togoid.dbcls.jp/ontology#TIO_000076> <http://www.w3.org/2000/01/rdf-schema#label> "molecule participates in reaction" .
 <http://togoid.dbcls.jp/ontology#TIO_000076> <http://togoid.dbcls.jp/ontology#display_label> "participates in reaction" .
+<http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Reaction> .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000076> .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://www.w3.org/2000/01/rdf-schema#label> "reaction has participant molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000077> <http://togoid.dbcls.jp/ontology#display_label> "has participant molecule" .
+<http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000079> .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://www.w3.org/2000/01/rdf-schema#label> "genome is sequenced in project" .
 <http://togoid.dbcls.jp/ontology#TIO_000078> <http://togoid.dbcls.jp/ontology#display_label> "is sequenced in" .
+<http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000078> .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://www.w3.org/2000/01/rdf-schema#label> "project determines genome sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000079> <http://togoid.dbcls.jp/ontology#display_label> "determines genome sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000081> .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://www.w3.org/2000/01/rdf-schema#label> "genome is sequenced with sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000080> <http://togoid.dbcls.jp/ontology#display_label> "is sequenced with" .
+<http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000080> .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://www.w3.org/2000/01/rdf-schema#label> "sample is used to sequence genome" .
 <http://togoid.dbcls.jp/ontology#TIO_000081> <http://togoid.dbcls.jp/ontology#display_label> "is used to sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#CellLine> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000083> .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://www.w3.org/2000/01/rdf-schema#label> "cell line is model of phenotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000082> <http://togoid.dbcls.jp/ontology#display_label> "is model of" .
+<http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#CellLine> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000082> .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype is observed in cell line" .
 <http://togoid.dbcls.jp/ontology#TIO_000083> <http://togoid.dbcls.jp/ontology#display_label> "is observed in" .
+<http://togoid.dbcls.jp/ontology#TIO_000084> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000084> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000084> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000084> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000084> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000085> .
 <http://togoid.dbcls.jp/ontology#TIO_000084> <http://www.w3.org/2000/01/rdf-schema#label> "pathway has participant gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000084> <http://togoid.dbcls.jp/ontology#display_label> "has participant gene" .
+<http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000084> .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://www.w3.org/2000/01/rdf-schema#label> "gene participates in pathway" .
 <http://togoid.dbcls.jp/ontology#TIO_000085> <http://togoid.dbcls.jp/ontology#display_label> "participates in pathway" .
+<http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000087> .
 <http://togoid.dbcls.jp/ontology#TIO_000086> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype is observed in anatomic site" .
 <http://togoid.dbcls.jp/ontology#TIO_000086> <http://togoid.dbcls.jp/ontology#display_label> "is observed in anatomic site" .
+<http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000086> .
 <http://togoid.dbcls.jp/ontology#TIO_000087> <http://www.w3.org/2000/01/rdf-schema#label> "anatomic site can have phenotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000087> <http://togoid.dbcls.jp/ontology#display_label> "can have phenotype" .
+<http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Drug> .
 <http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000089> .
 <http://togoid.dbcls.jp/ontology#TIO_000088> <http://www.w3.org/2000/01/rdf-schema#label> "drug classification classifies compound" .
 <http://togoid.dbcls.jp/ontology#TIO_000088> <http://togoid.dbcls.jp/ontology#display_label> "classifies" .
+<http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Drug> .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000088> .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://www.w3.org/2000/01/rdf-schema#label> "compound is classified as drug classification" .
 <http://togoid.dbcls.jp/ontology#TIO_000089> <http://togoid.dbcls.jp/ontology#display_label> "is classified as" .
+<http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Proteome> .
 <http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Organism> .
 <http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000091> .
 <http://togoid.dbcls.jp/ontology#TIO_000090> <http://www.w3.org/2000/01/rdf-schema#label> "is proteome of organism" .
 <http://togoid.dbcls.jp/ontology#TIO_000090> <http://togoid.dbcls.jp/ontology#display_label> "is proteome of" .
+<http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
 <http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Proteome> .
 <http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000090> .
 <http://togoid.dbcls.jp/ontology#TIO_000091> <http://www.w3.org/2000/01/rdf-schema#label> "organism has proteome" .
 <http://togoid.dbcls.jp/ontology#TIO_000091> <http://togoid.dbcls.jp/ontology#display_label> "has proteome" .
+<http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Proteome> .
 <http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000093> .
 <http://togoid.dbcls.jp/ontology#TIO_000092> <http://www.w3.org/2000/01/rdf-schema#label> "proteome is coded by genome" .
 <http://togoid.dbcls.jp/ontology#TIO_000092> <http://togoid.dbcls.jp/ontology#display_label> "is coded by" .
+<http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genome> .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Proteome> .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000092> .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://www.w3.org/2000/01/rdf-schema#label> "genome codes proteome" .
 <http://togoid.dbcls.jp/ontology#TIO_000093> <http://togoid.dbcls.jp/ontology#display_label> "codes" .
+<http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000095> .
 <http://togoid.dbcls.jp/ontology#TIO_000094> <http://www.w3.org/2000/01/rdf-schema#label> "project analyzes sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000094> <http://togoid.dbcls.jp/ontology#display_label> "analyzes" .
+<http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000094> .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://www.w3.org/2000/01/rdf-schema#label> "sample is analyzed in project" .
 <http://togoid.dbcls.jp/ontology#TIO_000095> <http://togoid.dbcls.jp/ontology#display_label> "is analyzed in" .
+<http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000097> .
 <http://togoid.dbcls.jp/ontology#TIO_000096> <http://www.w3.org/2000/01/rdf-schema#label> "3D structure has compound" .
 <http://togoid.dbcls.jp/ontology#TIO_000096> <http://togoid.dbcls.jp/ontology#display_label> "has compound" .
+<http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Structure> .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000096> .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://www.w3.org/2000/01/rdf-schema#label> "compound is component of 3D structure" .
 <http://togoid.dbcls.jp/ontology#TIO_000097> <http://togoid.dbcls.jp/ontology#display_label> "is component of" .
+<http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000099> .
 <http://togoid.dbcls.jp/ontology#TIO_000098> <http://www.w3.org/2000/01/rdf-schema#label> "gene codes protein to process glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000098> <http://togoid.dbcls.jp/ontology#display_label> "codes protein to process glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000098> .
 <http://togoid.dbcls.jp/ontology#TIO_000099> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is processed by protein coded by gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000099> <http://togoid.dbcls.jp/ontology#display_label> "is processed by protein coded by gene" .
+<http://togoid.dbcls.jp/ontology#TIO_000100> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000100> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000100> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000100> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000100> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000101> .
 <http://togoid.dbcls.jp/ontology#TIO_000100> <http://www.w3.org/2000/01/rdf-schema#label> "disease has symptom" .
 <http://togoid.dbcls.jp/ontology#TIO_000100> <http://togoid.dbcls.jp/ontology#display_label> "has symptom" .
+<http://togoid.dbcls.jp/ontology#TIO_000101> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000101> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000101> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000101> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000101> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000100> .
 <http://togoid.dbcls.jp/ontology#TIO_000101> <http://www.w3.org/2000/01/rdf-schema#label> "symptom is observed in disease" .
 <http://togoid.dbcls.jp/ontology#TIO_000101> <http://togoid.dbcls.jp/ontology#display_label> "is observed in disease" .
+<http://togoid.dbcls.jp/ontology#TIO_000102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000102> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000102> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000102> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Symptom> .
 <http://togoid.dbcls.jp/ontology#TIO_000102> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000103> .
 <http://togoid.dbcls.jp/ontology#TIO_000102> <http://www.w3.org/2000/01/rdf-schema#label> "gene is related with symptom" .
 <http://togoid.dbcls.jp/ontology#TIO_000102> <http://togoid.dbcls.jp/ontology#display_label> "is related with symptom" .
+<http://togoid.dbcls.jp/ontology#TIO_000103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000103> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000103> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Symptom> .
 <http://togoid.dbcls.jp/ontology#TIO_000103> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000103> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000102> .
 <http://togoid.dbcls.jp/ontology#TIO_000103> <http://www.w3.org/2000/01/rdf-schema#label> "symptom is related with gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000103> <http://togoid.dbcls.jp/ontology#display_label> "is related with gene" .
+<http://togoid.dbcls.jp/ontology#TIO_000104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000104> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000104> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000104> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Classification> .
 <http://togoid.dbcls.jp/ontology#TIO_000104> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000105> .
 <http://togoid.dbcls.jp/ontology#TIO_000104> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype has mode of inheritance" .
 <http://togoid.dbcls.jp/ontology#TIO_000104> <http://togoid.dbcls.jp/ontology#display_label> "has mode of inferitance" .
+<http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Classification> .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000104> .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://www.w3.org/2000/01/rdf-schema#label> "is mode of inheritance of phenotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000105> <http://togoid.dbcls.jp/ontology#display_label> "is mode of inheritance of" .
+<http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000107> .
 <http://togoid.dbcls.jp/ontology#TIO_000106> <http://www.w3.org/2000/01/rdf-schema#label> "has member" .
 <http://togoid.dbcls.jp/ontology#TIO_000106> <http://togoid.dbcls.jp/ontology#display_label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Category> .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000106> .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://www.w3.org/2000/01/rdf-schema#label> "is member of" .
 <http://togoid.dbcls.jp/ontology#TIO_000107> <http://togoid.dbcls.jp/ontology#display_label> "is member of" .
+<http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000109> .
 <http://togoid.dbcls.jp/ontology#TIO_000108> <http://www.w3.org/2000/01/rdf-schema#label> "sequence is determined in project" .
 <http://togoid.dbcls.jp/ontology#TIO_000108> <http://togoid.dbcls.jp/ontology#display_label> "is determined in project" .
+<http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
 <http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000108> .
 <http://togoid.dbcls.jp/ontology#TIO_000109> <http://www.w3.org/2000/01/rdf-schema#label> "project determines sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000109> <http://togoid.dbcls.jp/ontology#display_label> "determines sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000111> .
 <http://togoid.dbcls.jp/ontology#TIO_000110> <http://www.w3.org/2000/01/rdf-schema#label> "sequence is determined using sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000110> <http://togoid.dbcls.jp/ontology#display_label> "is determined using sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
 <http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sequence> .
 <http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000110> .
 <http://togoid.dbcls.jp/ontology#TIO_000111> <http://www.w3.org/2000/01/rdf-schema#label> "sample is used to determine sequence" .
 <http://togoid.dbcls.jp/ontology#TIO_000111> <http://togoid.dbcls.jp/ontology#display_label> "is used to determine sequence" .
+<http://togoid.dbcls.jp/ontology#TIO_000112> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000112> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000112> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000112> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000112> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000113> .
 <http://togoid.dbcls.jp/ontology#TIO_000112> <http://www.w3.org/2000/01/rdf-schema#label> "gene codes protein participating in pathway" .
 <http://togoid.dbcls.jp/ontology#TIO_000112> <http://togoid.dbcls.jp/ontology#display_label> "codes protein participating in" .
+<http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Pathway> .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000112> .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://www.w3.org/2000/01/rdf-schema#label> "pathway has component coded by gene" .
 <http://togoid.dbcls.jp/ontology#TIO_000113> <http://togoid.dbcls.jp/ontology#display_label> "has component coded by" .
+<http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Function> .
 <http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000115> .
 <http://togoid.dbcls.jp/ontology#TIO_000114> <http://www.w3.org/2000/01/rdf-schema#label> "domain has annotation rule" .
 <http://togoid.dbcls.jp/ontology#TIO_000114> <http://togoid.dbcls.jp/ontology#display_label> "has annotation rule" .
+<http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Function> .
 <http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Domain> .
 <http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000114> .
 <http://togoid.dbcls.jp/ontology#TIO_000115> <http://www.w3.org/2000/01/rdf-schema#label> "is annotation rule of" .
 <http://togoid.dbcls.jp/ontology#TIO_000115> <http://togoid.dbcls.jp/ontology#display_label> "is annotation rule of" .
+<http://togoid.dbcls.jp/ontology#TIO_000116> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000116> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000116> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Genotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000116> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000116> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000117> .
 <http://togoid.dbcls.jp/ontology#TIO_000116> <http://www.w3.org/2000/01/rdf-schema#label> "genotype is composed of allele" .
 <http://togoid.dbcls.jp/ontology#TIO_000116> <http://togoid.dbcls.jp/ontology#display_label> "is composed of allele" .
+<http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Genotype> .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000116> .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://www.w3.org/2000/01/rdf-schema#label> "allele composes genotype" .
 <http://togoid.dbcls.jp/ontology#TIO_000117> <http://togoid.dbcls.jp/ontology#display_label> "composes genotype" .
+<http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000119> .
 <http://togoid.dbcls.jp/ontology#TIO_000118> <http://www.w3.org/2000/01/rdf-schema#label> "protein processes glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000118> <http://togoid.dbcls.jp/ontology#display_label> "processes" .
+<http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000118> .
 <http://togoid.dbcls.jp/ontology#TIO_000119> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is processed by protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000119> <http://togoid.dbcls.jp/ontology#display_label> "is processed by" .
+<http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000121> .
 <http://togoid.dbcls.jp/ontology#TIO_000120> <http://www.w3.org/2000/01/rdf-schema#label> "compound targets to molecule" .
 <http://togoid.dbcls.jp/ontology#TIO_000120> <http://togoid.dbcls.jp/ontology#display_label> "targets to" .
+<http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Molecule> .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Compound> .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000120> .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://www.w3.org/2000/01/rdf-schema#label> "molecule is targeted by compound" .
 <http://togoid.dbcls.jp/ontology#TIO_000121> <http://togoid.dbcls.jp/ontology#display_label> "is targeted by" .
+<http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000123> .
 <http://togoid.dbcls.jp/ontology#TIO_000122> <http://www.w3.org/2000/01/rdf-schema#label> "glycan has motif" .
 <http://togoid.dbcls.jp/ontology#TIO_000122> <http://togoid.dbcls.jp/ontology#display_label> "has motif" .
+<http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000122> .
 <http://togoid.dbcls.jp/ontology#TIO_000123> <http://www.w3.org/2000/01/rdf-schema#label> "motif appears in glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000123> <http://togoid.dbcls.jp/ontology#display_label> "appears in glycan" .
+<http://togoid.dbcls.jp/ontology#TIO_000124> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000124> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000124> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000124> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Organism> .
 <http://togoid.dbcls.jp/ontology#TIO_000124> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000125> .
 <http://togoid.dbcls.jp/ontology#TIO_000124> <http://www.w3.org/2000/01/rdf-schema#label> "is protein of organism" .
 <http://togoid.dbcls.jp/ontology#TIO_000124> <http://togoid.dbcls.jp/ontology#display_label> "is protein of organism" .
+<http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000124> .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://www.w3.org/2000/01/rdf-schema#label> "organism has protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000125> <http://togoid.dbcls.jp/ontology#display_label> "has protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000127> .
 <http://togoid.dbcls.jp/ontology#TIO_000126> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is acceptor of enzymatic reaction by protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000126> <http://togoid.dbcls.jp/ontology#display_label> "is acceptor of enzymatic reaction by" .
+<http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000126> .
 <http://togoid.dbcls.jp/ontology#TIO_000127> <http://www.w3.org/2000/01/rdf-schema#label> "protein enzymatically processes glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000127> <http://togoid.dbcls.jp/ontology#display_label> "enzymatically processes" .
+<http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000129> .
 <http://togoid.dbcls.jp/ontology#TIO_000128> <http://www.w3.org/2000/01/rdf-schema#label> "glycan is product of enzymatic reaction by protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000128> <http://togoid.dbcls.jp/ontology#display_label> "is product of enzymatic reaction by" .
+<http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Glycan> .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000128> .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://www.w3.org/2000/01/rdf-schema#label> "protein enzymatically produces glycan" .
 <http://togoid.dbcls.jp/ontology#TIO_000129> <http://togoid.dbcls.jp/ontology#display_label> "enzymatically produces" .
+<http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000131> .
 <http://togoid.dbcls.jp/ontology#TIO_000130> <http://www.w3.org/2000/01/rdf-schema#label> "protein is member of protein family" .
 <http://togoid.dbcls.jp/ontology#TIO_000130> <http://togoid.dbcls.jp/ontology#display_label> "is member of" .
+<http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000130> .
 <http://togoid.dbcls.jp/ontology#TIO_000131> <http://www.w3.org/2000/01/rdf-schema#label> "protein family has member of protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000131> <http://togoid.dbcls.jp/ontology#display_label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000133> .
 <http://togoid.dbcls.jp/ontology#TIO_000132> <http://www.w3.org/2000/01/rdf-schema#label> "protein is component of protein complex" .
 <http://togoid.dbcls.jp/ontology#TIO_000132> <http://togoid.dbcls.jp/ontology#display_label> "is component of" .
+<http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000132> .
 <http://togoid.dbcls.jp/ontology#TIO_000133> <http://www.w3.org/2000/01/rdf-schema#label> "protein complex includes protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000133> <http://togoid.dbcls.jp/ontology#display_label> "includes" .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Structure> .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000135> .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://www.w3.org/2000/01/rdf-schema#label> "3D structure contains transcript" .
+<http://togoid.dbcls.jp/ontology#TIO_000134> <http://togoid.dbcls.jp/ontology#display_label> "contains transcript" .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Structure> .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000134> .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://www.w3.org/2000/01/rdf-schema#label> "transcript is component of 3D structure" .
+<http://togoid.dbcls.jp/ontology#TIO_000135> <http://togoid.dbcls.jp/ontology#display_label> "is component of" .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000131> .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://www.w3.org/2000/01/rdf-schema#label> "transcript is member of RNA family" .
+<http://togoid.dbcls.jp/ontology#TIO_000136> <http://togoid.dbcls.jp/ontology#display_label> "is member of" .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000130> .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://www.w3.org/2000/01/rdf-schema#label> "RNA family has member of transcript" .
+<http://togoid.dbcls.jp/ontology#TIO_000137> <http://togoid.dbcls.jp/ontology#display_label> "has member" .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000139> .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://www.w3.org/2000/01/rdf-schema#label> "transcript is precursor of mature miRNA" .
+<http://togoid.dbcls.jp/ontology#TIO_000138> <http://togoid.dbcls.jp/ontology#display_label> "is precursor of" .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Transcript> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000138> .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#label> "mature miRNA is product of transcript" .
+<http://togoid.dbcls.jp/ontology#TIO_000139> <http://togoid.dbcls.jp/ontology#display_label> "is product of" .

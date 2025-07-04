@@ -1,13 +1,14 @@
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?pathbank_id ?label
 FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/pathway>
 WHERE {
   ?pathway a bp:Pathway;
            dcterms:title ?label ;
-           owl:sameAs ?orig .
+           rdfs:seeAlso ?orig .
   FILTER(STRSTARTS(STR(?orig), "http://pathbank.org/view/"))
   BIND(STRAFTER(STR(?orig), "http://pathbank.org/view/") AS ?pathbank_id)
 }

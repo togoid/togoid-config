@@ -4,5 +4,5 @@ link:
   file: sample.tsv
 update:
   frequency: Irregular
-  method: awk -F '\t' 'FNR!=1 && !a[$1 $25]++ && $25 {print gensub("SLM:","","g",$1) "\t" $25}'
+  method: awk -F '\t' 'FNR!=1 && !a[$1 $25]++ && $25 {split($25,b," | ");for(i in b){chebi=gensub(" ","","g",b[i]); if(chebi~/^[0-9]+$/){print gensub("SLM:","","g",$1) "\t" chebi}}}'
     $TOGOID_ROOT/input/swisslipids/lipids.tsv

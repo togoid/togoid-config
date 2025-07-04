@@ -1,98 +1,26 @@
-Error: check_remote_file_time(input/bioproject/bioproject2biosample.tsv, https://ddbj.nig.ac.jp/public/dblink/bioproject-biosample/bioproject2biosample.tsv): no time information in ""
-Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
-# Error: output/tsv/assembly_insdc-bioproject.tsv new file size per old 0 / 58955319 = 0.0 < 0.5
-# Error: Failed to create output/tsv/assembly_insdc-bioproject.tsv or created file was empty
-# Error: output/tsv/assembly_insdc-biosample.tsv new file size per old 0 / 60555966 = 0.0 < 0.5
-# Error: Failed to create output/tsv/assembly_insdc-biosample.tsv or created file was empty
-# Error: output/tsv/assembly_insdc-insdc_master.tsv new file size per old 0 / 63716447 = 0.0 < 0.5
-# Error: Failed to create output/tsv/assembly_insdc-insdc_master.tsv or created file was empty
-# Error: output/tsv/bioproject_umbrella-bioproject.tsv new file size per old 0 / 2475955 = 0.0 < 0.5
-# Error: Failed to create output/tsv/bioproject_umbrella-bioproject.tsv or created file was empty
+Error: Remote file is empty
+Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
+Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
+Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/gea-bioproject.tsv new file size per old 0 / 3032 = 0.0 < 0.5
-# Error: Failed to create output/tsv/gea-bioproject.tsv or created file was empty
-# Error: output/tsv/gea-biosample.tsv new file size per old 0 / 121104 = 0.0 < 0.5
-# Error: Failed to create output/tsv/gea-biosample.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
 # Error: output/tsv/hgnc-ccds.tsv new file size per old 252491 / 544502 = 0.46370995882476096 < 0.5
-# Error: output/tsv/insdc-bioproject.tsv new file size per old 0 / 1191557755 = 0.0 < 0.5
-# Error: Failed to create output/tsv/insdc-bioproject.tsv or created file was empty
-# Error: output/tsv/insdc-biosample.tsv new file size per old 0 / 4269980335 = 0.0 < 0.5
-# Error: Failed to create output/tsv/insdc-biosample.tsv or created file was empty
-# Error: output/tsv/insdc_master-bioproject.tsv new file size per old 0 / 41801168 = 0.0 < 0.5
-# Error: Failed to create output/tsv/insdc_master-bioproject.tsv or created file was empty
-# Error: output/tsv/insdc_master-biosample.tsv new file size per old 0 / 43765492 = 0.0 < 0.5
-# Error: Failed to create output/tsv/insdc_master-biosample.tsv or created file was empty
-# Error: output/tsv/jga_study-jga_dataset.tsv new file size per old 0 / 4378 = 0.0 < 0.5
-# Error: Failed to create output/tsv/jga_study-jga_dataset.tsv or created file was empty
-# Error: output/tsv/jga_study-nbdc_human_db.tsv new file size per old 0 / 5795 = 0.0 < 0.5
-# Error: Failed to create output/tsv/jga_study-nbdc_human_db.tsv or created file was empty
-# Error: output/tsv/jga_study-pubmed.tsv new file size per old 0 / 2597 = 0.0 < 0.5
-# Error: Failed to create output/tsv/jga_study-pubmed.tsv or created file was empty
-# Error: output/tsv/lipidmaps-chebi.tsv new file size per old 148 / 253350 = 0.000584172093941188 < 0.5
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-chebi.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-inchi_key.tsv new file size per old 148 / 1976727 = 7.487123917465588e-05 < 0.5
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-inchi_key.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-swisslipids.tsv new file size per old 148 / 284047 = 0.0005210405320246297 < 0.5
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <html><head>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <title>403 Forbidden</title>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </head><body>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <h1>Forbidden</h1>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML <p>You don't have permission to access this resource.</p>
-# Error: output/tsv/lipidmaps-swisslipids.tsv seems to contain HTML </body></html>
+# Error: output/tsv/hp_inheritance-omim_phenotype.tsv new file size per old 0 / 132840 = 0.0 < 0.5
+# Error: Failed to create output/tsv/hp_inheritance-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
-# Error: output/tsv/mondo-doid.tsv new file size per old 0 / 155460 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-doid.tsv or created file was empty
-# Error: output/tsv/mondo-hp_phenotype.tsv new file size per old 0 / 9184 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-hp_phenotype.tsv or created file was empty
-# Error: output/tsv/mondo-meddra.tsv new file size per old 0 / 25262 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-meddra.tsv or created file was empty
-# Error: output/tsv/mondo-mesh.tsv new file size per old 0 / 133836 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-mesh.tsv or created file was empty
-# Error: output/tsv/mondo-omim_phenotype.tsv new file size per old 0 / 145395 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-omim_phenotype.tsv or created file was empty
-# Error: output/tsv/mondo-orphanet_phenotype.tsv new file size per old 0 / 146923 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mondo-orphanet_phenotype.tsv or created file was empty
-# Error: output/tsv/pubchem_pathway-reactome_pathway.tsv new file size per old 0 / 56888 = 0.0 < 0.5
-# Error: Failed to create output/tsv/pubchem_pathway-reactome_pathway.tsv or created file was empty
-# Error: output/tsv/pubchem_pathway-wikipathways.tsv new file size per old 0 / 16836 = 0.0 < 0.5
-# Error: Failed to create output/tsv/pubchem_pathway-wikipathways.tsv or created file was empty
-# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 62368 / 470542 = 0.1325450225484654 < 0.5
+# Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
+# Error: output/tsv/pubchem_compound-chebi.tsv new file size per old 2765633 / 7886019 = 0.35070077817464046 < 0.5
+rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/biosample.ttl:1 - out of dynamic memory in turtle_lexer__scan_bytes()
+# Error: output/ttl/label/biosample.ttl is not valid
+rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/rnacentral.ttl:1 - out of dynamic memory in turtle_lexer__scan_bytes()
+# Error: output/ttl/label/rnacentral.ttl is not valid

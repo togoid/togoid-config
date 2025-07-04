@@ -22,8 +22,8 @@
 - [How to use TogoID ver 2.0: an exploratory ID converter to bridge biological datasets](https://youtu.be/ORW1GGIaJsY)
 
 ## Statistics
-- Number of target datasets 
-    - 105 (from 73 databases)
+- Number of target datasets
+    - 112 (from 76 databases)
 - For details on the target DBs and ID examples, please refer to the "DATASETS" tab. 
 
 Some databases include records in multiple categories of concepts. In TogoID, such databases are subdivided into "datasets" to avoid ambiguity in what an ID mean. For example, the Ensembl database is subdivided into three datasets: Ensembl gene, Ensembl transcript, and Ensembl protein.

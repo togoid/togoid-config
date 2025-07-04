@@ -67,6 +67,7 @@ fn==2 {
 
 fn==3 {
     print ":" $1
+    print "    a owl:ObjectProperty ;"
     print "    rdfs:subPropertyOf :relation ;"
     if ($5 != "-") {
         print "    rdfs:domain :" gensub(", ", ", :", "g", $5) " ;"

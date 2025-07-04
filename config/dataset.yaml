@@ -71,7 +71,7 @@ bioproject:
       uri: 'https://ddbj.nig.ac.jp/search/entry/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
-  method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
+  method: awk -F "\t" '$2=="Title"{print $1 "\t" gensub("\r"," ","g",$3)}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
 bioproject_umbrella:
   label: BioProject umbrella
   catalog: nbdc00476
@@ -198,6 +198,18 @@ clinvar:
   examples:
     - ["658761","619209","745342","11955","731668","724289","725734","743127","789913","5302"]
     - ["VCV000658761","VCV000619209","VCV000745342","VCV000011955","VCV000731668","VCV000724289","VCV000725734","VCV000743127","VCV000789913","VCV000005302"]
+cog:
+  label: COG
+  catalog: nbdc00397
+  category: Ortholog
+  regex: '^(?<id>COG\d{4})$'
+  prefix:
+    - label: 'rdf'
+      uri: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
+      rdf: true
+  examples:
+    - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
+  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
@@ -325,7 +337,25 @@ flybase_gene:
       uri: 'https://www.alliancegenome.org/gene/FB:'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
-  method: awk -F '\t' -v 'db=FLYBASE' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  method: awk -F '\t' '!/^#/&&!a[$3]++{print $3 "\t" $4}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+flybase_protein:
+  label: FlyBase protein
+  catalog: nbdc00064
+  category: Protein
+  regex: '^(?<id>FBpp\d{7})$'
+  prefix: 'http://identifiers.org/fb/'
+  examples:
+    - ["FBpp0071677","FBpp0071678","FBpp0099961","FBpp0309745","FBpp0082828","FBpp0082829","FBpp0289712","FBpp0297433","FBpp0082823","FBpp0082824"]
+  method: awk -F '\t' '!/^#/&&$10&&!a[$10]++{print $10 "\t" gensub("\r", "", "g", $11)}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+flybase_transcript:
+  label: FlyBase transcript
+  catalog: nbdc00064
+  category: Transcript
+  regex: '^(?<id>FBtr\d{7})$'
+  prefix: 'http://identifiers.org/fb/'
+  examples:
+    - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
+  method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 gea:
   label: GEA
   catalog: FIXME
@@ -359,17 +389,6 @@ geo_series:
       rdf: true
   examples:
     - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
-glytoucan:
-  label: GlyTouCan
-  catalog: nbdc01535
-  category: Glycan
-  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
-  prefix:
-    - label: 'rdf'
-      uri: 'http://identifiers.org/glytoucan/'
-      rdf: true
-  examples:
-    - ["G88006IV","G53085MI","G17896UT","G50341PG","G19379ID","G08110WX","G70101JE","G45504EY","G81263BG","G02815KT"]
 glycomotif:
   label: GlycoMotif
   catalog: FIXME
@@ -383,6 +402,17 @@ glycomotif:
   examples:
     - ["G64227KZ","G14091MR","G00552RX","G18625KA","G54733XO","G72557NR","G90598GO","G93805MV","G99524KA","G00029MO"]
     - ["GM.G64227KZ","GM.G14091MR","GM.G00552RX","GM.G18625KA","GM.G54733XO","GM.G72557NR","GM.G90598GO","GM.G93805MV","GM.G99524KA","GM.G00029MO"]
+glytoucan:
+  label: GlyTouCan
+  catalog: nbdc01535
+  category: Glycan
+  regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/glytoucan/'
+      rdf: true
+  examples:
+    - ["G42293RF","G00065MO","G90562PB","G00035MO","G49108TO","G45395BF","G60687RJ","G00055MO","G18625KA","G50361AJ"]
 go:
   label: Gene ontology
   catalog: nbdc00074
@@ -446,31 +476,6 @@ homologene:
       rdf: true
   examples:
     - ["117","17","6","142","55","132","61","109","137","134"]
-cog:
-  label: COG
-  catalog: nbdc00397
-  category: Ortholog
-  regex: '^(?<id>COG\d{4})$'
-  prefix:
-    - label: 'rdf'
-      uri: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
-      rdf: true
-  examples:
-    - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
-  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
-hp_phenotype:
-  label: HP Phenotype
-  catalog: nbdc02559
-  category: Phenotype
-  regex: '^HP[:_](?<id>\d{7})$'
-  prefix:
-    - label: 'rdf'
-      uri: 'http://purl.obolibrary.org/obo/HP_'
-      rdf: true
-  format: ["HP:%s","HP_%s"]
-  examples:
-    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
-    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 hp_inheritance:
   label: HP Inheritance
   catalog: nbdc02559
@@ -484,6 +489,19 @@ hp_inheritance:
   examples:
     - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
     - ["HP_0032382","HP_0001475","HP_0001417","HP_0010984","HP_0003745","HP_0001442","HP_0000007","HP_0025352","HP_0001426","HP_0001470"]
+hp_phenotype:
+  label: HP Phenotype
+  catalog: nbdc02559
+  category: Phenotype
+  regex: '^HP[:_](?<id>\d{7})$'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/HP_'
+      rdf: true
+  format: ["HP:%s","HP_%s"]
+  examples:
+    - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
+    - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 inchi_key:
   label: InChIKey
   catalog: FIXME
@@ -552,6 +570,17 @@ interpro:
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
   method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
+iuphar_ligand:
+  label: IUPHAR ligand
+  catalog: FIXME
+  category: Compound
+  regex: '^(?<id>\d+)$'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/iuphar.ligand/'
+      rdf: true
+  examples:
+    - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 jga_dataset:
   label: JGA Dataset
   catalog: nbdc02152
@@ -574,17 +603,6 @@ jga_study:
       rdf: true
   examples:
     - ["JGAS000006","JGAS000008","JGAS000009","JGAS000012","JGAS000013","JGAS000014","JGAS000015","JGAS000016","JGAS000024","JGAS000026"]
-iuphar_ligand:
-  label: IUPHAR ligand
-  catalog: FIXME
-  category: Compound
-  regex: '^(?<id>\d+)$'
-  prefix:
-    - label: 'rdf'
-      uri: 'http://identifiers.org/iuphar.ligand/'
-      rdf: true
-  examples:
-    - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 lipidmaps:
   label: LIPID MAPS
   catalog: FIXME
@@ -596,6 +614,15 @@ lipidmaps:
       rdf: true
   examples:
     - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
+  method: awk -F "\t" '$2=="NAME"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
+lncbook_gene:
+  label: LncBook gene
+  catalog: FIXME
+  category: Gene
+  regex: '^(?<id>HSALNG[0-9]{7})$'
+  prefix: 'http://identifiers.org/lncbook/'
+  examples:
+    - ["HSALNG0044971","HSALNG0063621","HSALNG0088821","HSALNG0028312","HSALNG0083434","HSALNG0115829","HSALNG0072678","HSALNG0031034","HSALNG0038414","HSALNG0011632"]
 lrg:
   catalog: nbdc02566
   category: Gene
@@ -666,7 +693,7 @@ mesh:
       uri: 'http://id.nlm.nih.gov/mesh/'
       rdf: true
   examples:
-    - ["D002065","C562829","C566582","D010623","D003327","D001715","D000453","D010260","C537322","C563418"]
+    - ["D006965","C562829","C566582","D010623","D003327","D001715","D000453","D010260","C537322","C563418"]
 mgi_allele:
   label: MGI allele
   catalog: nbdc00135
@@ -722,7 +749,16 @@ mirbase:
       rdf: true
   examples:
     - ["MI0003587","MI0000252","MI0000811","MI0014201","MI0003578","MI0000293","MI0006384","MI0006361","MI0000480","MI0006419"]
-  method: awk -F '\t' 'FNR!=1{split($6,a,"|");for(i in a){if(a[i]~/^miRBase:/)print gensub(/^.*:/,"","g",a[i]) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  method: cut -f2,3 $TOGOID_ROOT/input/mirbase/mirna.tsv
+mirbase_mature:
+  label: miRBase mature
+  catalog: nbdc00136
+  category: Transcript
+  regex: '^(?<id>MIMAT\d{7})$'
+  prefix: 'http://identifiers.org/mirbase.mature/'
+  examples:
+    - ["MIMAT0000001","MIMAT0015091","MIMAT0000002","MIMAT0015092","MIMAT0000003","MIMAT0000004","MIMAT0000005","MIMAT0015093","MIMAT0000006","MIMAT0000007"]
+  method: awk -F "\t" '{print $4 "\t" $2}' $TOGOID_ROOT/input/mirbase/mirna_mature.tsv
 mondo:
   label: MONDO
   catalog: nbdc02563
@@ -1033,19 +1069,6 @@ pubchem_compound:
   examples:
     - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
     - ["CID9548669","CID160419","CID9869929","CID76333303","CID9868491","CID27854","CID76329169","CID3448","CID296","CID10371227"]
-pubchem_substance:
-  label: PubChem substance
-  catalog: nbdc00642
-  category: Compound
-  regex: '^(?:SID)?(?<id>\d+)$'
-  prefix:
-    - label: 'rdf'
-      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
-      rdf: true
-  format: ["%s","SID%s"]
-  examples:
-    - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
-    - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
 pubchem_pathway:
   label: PubChem pathway
   catalog: nbdc02626
@@ -1060,6 +1083,19 @@ pubchem_pathway:
     - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
     - ["PWID10572","PWID1","PWID10576","PWID10577","PWID10579","PWID10573","PWID10582","PWID10574","PWID10575","PWID10581"]
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pubchem_pathway_label.rq https://rdfportal.org/pubchem/sparql
+pubchem_substance:
+  label: PubChem substance
+  catalog: nbdc00642
+  category: Compound
+  regex: '^(?:SID)?(?<id>\d+)$'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
+      rdf: true
+  format: ["%s","SID%s"]
+  examples:
+    - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
+    - ["SID15229855","SID15277848","SID15782795","SID16076657","SID16035895","SID12012900","SID15378994","SID14850434","SID14847540","SID15271473"]
 pubmed:
   label: PubMed
   catalog: nbdc00179
@@ -1133,9 +1169,17 @@ refseq_rna:
       uri: 'http://identifiers.org/refseq/'
       rdf: true
   examples:
-    - ["XR_001747779","XM_017013006","NM_001199636","XM_011532496","NM_001110","NR_170162","NM_020113","NM_001031805","NR_027673","XR_934019"]
-    - ["XR_001747779.1","XM_017013006.1","NM_001199636.2","XM_011532496.1","NM_001110.4","NR_170162.1","NM_020113.3","NM_001031805.1","NR_027673.1","XR_934019.3"]
+    - ["XM_017013006","NM_001199636","NM_001110","NR_170162","NR_027673","XR_388511","NR_175316","NM_115904","NM_129829","NM_130477"]
+    - ["XM_017013006.1","NM_001199636.2","NM_001110.4","NR_170162.1","NR_027673.1","XR_388511.5","NR_175316.1","NM_115904.3","NM_129829.4","NM_130477.4"]
   method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv
+rfam:
+  label: Rfam
+  catalog: nbdc00654
+  category: Transcript
+  regex: '^(?<id>RF\d{5})?$'
+  prefix: 'http://identifiers.org/rfam/'
+  examples:
+    - ["RF00001","RF01502","RF00017","RF00906","RF00013","RF00163","RF00005","RF01787","RF00100","RF04272"]
 rgd:
   label: RGD
   catalog: nbdc00188
@@ -1164,6 +1208,15 @@ rhea:
       rdf: true
   examples:
     - ["10253","10818","13517","11136","13729","10240","11728","16870","10732","11278"]
+rnacentral:
+  label: RNAcentral
+  catalog: FIXME
+  category: Transcript
+  regex: '^(?<id>URS[0-9A-F]{10}\_\d+)$'
+  prefix: 'http://identifiers.org/rnacentral/'
+  examples:
+    - ["URS00000004BF_6239","URS0000000A43_6239","URS0000001328_3702","URS000000B038_7227","URS00000121A3_3702","URS0000014B59_559292","URS00000561D6_10090","URS0000060CC3_10116","URS0000118C49_9606","URS0000001E80_9606"]
+  method: awk -F '\t' 'FNR>=2{print $2 "\t" $4}' $TOGOID_ROOT/input/rnacentral/rnacentral.gpi
 sgd:
   label: SGD
   catalog: nbdc00202
@@ -1498,3 +1551,12 @@ zfin_gene:
   examples:
     - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
   method: awk -F '\t' -v 'db=ZFIN' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+zfin_transcript:
+  label: ZFIN transcript
+  catalog: nbdc00746
+  category: Transcript
+  regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
+  prefix: 'http://identifiers.org/zfin/'
+  examples:
+    - ["ZDB-TSCRIPT-090929-12612","ZDB-TSCRIPT-121213-534","ZDB-TSCRIPT-131113-1447","ZDB-TSCRIPT-131113-2944","ZDB-TSCRIPT-131113-3950","ZDB-TSCRIPT-130528-437","ZDB-TSCRIPT-141209-570","ZDB-TSCRIPT-131113-1539","ZDB-TSCRIPT-131113-984","ZDB-TSCRIPT-131113-1525"]
+  method: awk -F '\t' '$7!~/^Withdrawn/{print $1 "\t" $3}' $TOGOID_ROOT/input/zfin/transcripts.txt

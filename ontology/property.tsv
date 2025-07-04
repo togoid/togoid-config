@@ -131,3 +131,9 @@ TIO_000130	protein is member of protein family	is member of	TIO_000131	Protein	P
 TIO_000131	protein family has member of protein	has member	TIO_000130	Protein	Protein
 TIO_000132	protein is component of protein complex	is component of	TIO_000133	Protein	Protein
 TIO_000133	protein complex includes protein	includes	TIO_000132	Protein	Protein
+TIO_000134	3D structure contains transcript	contains transcript	TIO_000135	Structure	Transcript
+TIO_000135	transcript is component of 3D structure	is component of	TIO_000134	Transcript	Structure
+TIO_000136	transcript is member of RNA family	is member of	TIO_000131	Transcript	Transcript
+TIO_000137	RNA family has member of transcript	has member	TIO_000130	Transcript	Transcript
+TIO_000138	transcript is precursor of mature miRNA	is precursor of	TIO_000139	Transcript	Transcript
+TIO_000139	mature miRNA is product of transcript	is product of	TIO_000138	Transcript	Transcript

@@ -101,7 +101,7 @@ module TogoID
           if validate_tsv_output(pair)
             $stderr.puts "# Success: #{tsv_file_name(pair)} is updated"
             if File.exist?(tsv_file_name_old(pair))
-              # Remove prevous TSV output
+              # Remove previous TSV output
               sh "rm #{tsv_file_name_old(pair)}", verbose: false
             end
           else
@@ -152,10 +152,26 @@ module TogoID
         if check_id_label_filesize(name) or check_id_label_timestamp(name)
           $stderr.puts "## Update #{id_label_file_name(name)}"
           $stderr.puts "< #{`date +%FT%T`.strip} #{name}"
+          if File.exist?(id_label_file_name(name))
+            sh "mv #{id_label_file_name(name)} #{id_label_file_name_old(name)}", verbose: false
+          end
           sh "togoid-rdfize-id-label #{name}"
+          if validate_id_label_output(name)
+            $stderr.puts "# Success: #{id_label_file_name(name)} is updated"
+            if File.exist?(id_label_file_name_old(name))
+              # Remove previous TTL output
+              sh "rm #{id_label_file_name_old(name)}", verbose: false
+            end
+          else
+            $stderr.puts "# Failure: #{id_label_file_name(name)} is not updated"
+            if File.exist?(id_label_file_name_old(name))
+              # Revert previous TTL output"
+              sh "mv #{id_label_file_name_old(name)} #{id_label_file_name(name)}", verbose: false
+            end
+          end
           $stderr.puts "> #{`date +%FT%T`.strip} #{name}"
         else
-          $stderr.puts "# => Preserving #{ttl_file_name(name)}"
+          $stderr.puts "# => Preserving #{id_label_file_name(name)}"
         end
       end
       return "config/dataset.yaml"
@@ -185,6 +201,10 @@ module TogoID
       "#{OUTPUT_ID_LABEL_TTL_DIR}#{name}.ttl"
     end
 
+    def id_label_file_name_old(name)
+      "#{OUTPUT_ID_LABEL_TTL_DIR}#{name}.ttl.old"
+    end
+
     # Return true (needs update) when the TSV file does not exist or the size is zero
     def check_tsv_filesize(pair)
       output = tsv_file_name(pair)
@@ -200,7 +220,7 @@ module TogoID
     # Return true (needs update) when the TTL file does not exist or the size is zero
     def check_id_label_filesize(name)
       output = id_label_file_name(name)
-      return ! (File.exists?(output) and File.size(output) > 0)
+      return ! (File.exist?(output) and File.size(output) > 0)
     end
 
     # Return true (needs udpate) when the TSV file is older than the config file
@@ -305,6 +325,53 @@ module TogoID
       end
       return check
     end
+
+    def validate_id_label_output(name)
+      ttl = id_label_file_name(name)
+      old = id_label_file_name_old(name)
+      check = true
+      if File.exist?(ttl) and File.exist?(old)
+        ratio = 1.0 * File.size(ttl) / File.size(old)
+        # New file is not smaller than a half of old file size
+        if ratio < $minratio
+          $stderr.puts "# Error: #{ttl} new file size per old #{File.size(ttl)} / #{File.size(old)} = #{ratio} < #{$minratio}" if $verbose
+          check = false
+        end
+      end
+      # Check if new TTL is valid
+      if check and File.exist?(ttl) and File.size(ttl) > 0
+        # For large files, to avoid rapper's OOM, split files.
+        if File.size(ttl) > 1_000_000_000
+          chunk_size = 10_000_000
+          sh "awk -v lim=#{chunk_size} 'BEGIN{filenum=0}/^@prefix/{prefix=prefix \"\\n\" $0;next}$1{if(n%lim==0){file=FILENAME \".temp.\" filenum; filenum++ ;n=0; print prefix >> file};n++; print >> file}' #{ttl}"
+          split_files = Dir.glob(ttl + ".temp.*")
+          for split_file in split_files
+            puts split_file
+            sh "rapper -i turtle -c #{split_file}" do |ok, status|
+              if !ok
+                $stderr.puts "# Error: #{ttl} is not valid" if $verbose
+                check = false
+                break
+              end
+            end
+            sh "rm #{split_file}"
+          end
+        else
+          sh "rapper -i turtle -c #{ttl}" do |ok, status|
+            if !ok
+              $stderr.puts "# Error: #{ttl} is not valid" if $verbose
+              check = false
+            end
+          end
+        end
+      else
+        if check
+          $stderr.puts "# Error: Failed to create #{ttl} or created file was empty" if $verbose
+          check = false
+        end
+      end
+      return check
+    end
   end
 
   # Methods for preparation
@@ -324,6 +391,8 @@ module TogoID
         return "prepare:clinvar"
       when /#{OUTPUT_TSV_DIR}ensembl/
         return "prepare:ensembl"
+      when /#{OUTPUT_TSV_DIR}flybase/
+        return "prepare:flybase"
       when /#{OUTPUT_TSV_DIR}glytoucan/
         return "prepare:glytoucan"
       when /#{OUTPUT_TSV_DIR}hgnc/
@@ -338,14 +407,20 @@ module TogoID
         return "prepare:cog"
       when /#{OUTPUT_TSV_DIR}interpro/
         return "prepare:interpro"
+      when /#{OUTPUT_TSV_DIR}lipidmaps/
+        return "prepare:lipidmaps"
       when /#{OUTPUT_TSV_DIR}mgi_gene/
         return "prepare:mgi_gene"
       when /#{OUTPUT_TSV_DIR}mgi_genotype/
         return "prepare:mgi_genotype"
+      when /#{OUTPUT_TSV_DIR}mirbase/
+        return "prepare:mirbase"
       when /#{OUTPUT_TSV_DIR}ncbigene/
         return "prepare:ncbigene"
       when /#{OUTPUT_TSV_DIR}oma_protein/
         return "prepare:oma_protein"
+      when /#{OUTPUT_TSV_DIR}orphanet_phenotype/
+        return "prepare:orphanet_phenotype"
       when /#{OUTPUT_TSV_DIR}pmc/
         return "prepare:pmc"
       when /#{OUTPUT_TSV_DIR}prosite/
@@ -358,6 +433,8 @@ module TogoID
         return "prepare:refseq_rna"
       when /#{OUTPUT_TSV_DIR}rhea/
         return "prepare:rhea"
+      when /#{OUTPUT_TSV_DIR}rnacentral/
+        return "prepare:rnacentral"
       when /#{OUTPUT_TSV_DIR}sra/
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}swisslipids/
@@ -366,6 +443,8 @@ module TogoID
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
         return "prepare:taxonomy"
+      when /#{OUTPUT_TSV_DIR}zfin/
+        return "prepare:zfin"
       else
         File.open("input/update.txt", "w")
         return "input/update.txt"
@@ -503,7 +582,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :mgi_gene, :mgi_genotype, :ncbigene, :oma_protein, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :sra, :swisslipids, :uniprot, :taxonomy ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -511,6 +590,7 @@ namespace :prepare do
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
+  directory INPUT_FLYBASE_DIR     = "input/flybase"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
@@ -518,20 +598,25 @@ namespace :prepare do
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
+  directory INPUT_LIPIDMAPS_DIR   = "input/lipidmaps"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
+  directory INPUT_MIRBASE_DIR    = "input/mirbase"
   directory INPUT_NCBIGENE_DIR    = "input/ncbigene"
   directory INPUT_OMA_PROTEIN_DIR = "input/oma_protein"
+  directory INPUT_ORPHANET_PHENOTYPE_DIR = "input/orphanet_phenotype"
   directory INPUT_PROSITE_DIR     = "input/prosite"
   directory INPUT_PMC_DIR     = "input/pmc"
   directory INPUT_REACTOME_DIR    = "input/reactome"
   directory INPUT_REFSEQ_PROTEIN_DIR  = "input/refseq_protein"
   directory INPUT_REFSEQ_RNA_DIR  = "input/refseq_rna"
   directory INPUT_RHEA_DIR        = "input/rhea"
+  directory INPUT_RNACENTRAL_DIR  = "input/rnacentral"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
+  directory INPUT_ZFIN_DIR        = "input/zfin"
 
 =begin
   desc "Prepare required files for Drugbank"
@@ -627,6 +712,33 @@ namespace :prepare do
         sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{taxonomy_file}"
         updated = true
       end
+      updated
+    end
+  end
+
+  desc "Prepare required files for FlyBase"
+  task :flybase => INPUT_FLYBASE_DIR do
+    $stderr.puts "## Prepare input files for FlyBase"
+    download_lock(INPUT_FLYBASE_DIR) do
+      updated = false
+
+      begin
+        sh "wget https://s3ftp.flybase.org/releases/current/precomputed_files/genes/ --no-remove-listing --directory-prefix=#{INPUT_FLYBASE_DIR}"
+        current_filename = `grep -oP "fbgn_fbtr_fbpp_expanded_fb_.*?\.tsv\.gz" #{INPUT_FLYBASE_DIR}/index.html | head -1`.strip
+        input_file = "#{INPUT_FLYBASE_DIR}/#{current_filename}"
+      rescue StandardError => e
+        $stderr.puts "Error: wget: #{e.message}"
+        input_file = ""
+      end
+
+      if input_file != "" && !File.exist?(input_file)
+        sh "rm -f #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_*.tsv.gz"
+        input_url = "https://s3ftp.flybase.org/releases/current/precomputed_files/genes/#{current_filename}"
+        download_file(INPUT_FLYBASE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_current.tsv"
+        updated = true
+      end
+      sh "rm -f #{INPUT_FLYBASE_DIR}/index.html"
       updated
     end
   end
@@ -769,6 +881,29 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for LIPID MAPS"
+  task :lipidmaps => INPUT_LIPIDMAPS_DIR do
+    $stderr.puts "## Prepare input files for LIPID MAPS"
+    download_lock(INPUT_LIPIDMAPS_DIR) do
+      updated = false
+      input_file = "#{INPUT_LIPIDMAPS_DIR}/sdf.zip"
+      input_url  = "\"https://www.lipidmaps.org/files/?file=LMSD&ext=sdf.zip\""
+      ## Check only the file size because the timestamp is not available.
+      if check_remote_file_size(input_file, input_url)
+        opts = "--quiet --no-check-certificate"
+        begin
+          sh "wget #{opts} -O #{INPUT_LIPIDMAPS_DIR}/sdf.zip #{input_url}"
+        rescue StandardError => e
+          $stderr.puts "Error: download_file(#{INPUT_LIPIDMAPS_DIR}, #{input_url}): #{e.message}"
+        end
+        sh "unzip -o #{input_file} -d #{INPUT_LIPIDMAPS_DIR}/"
+        sh "awk -f bin/parse_lipidmaps_sdf.awk #{INPUT_LIPIDMAPS_DIR}/structures.sdf > #{INPUT_LIPIDMAPS_DIR}/lipidmaps.tsv"
+        updated = true
+      end
+      updated
+    end
+  end
+
   desc "Prepare required files for MGI gene"
   task :mgi_gene => INPUT_MGI_GENE_DIR do
     $stderr.puts "## Prepare input files for MGI_GENE"
@@ -807,6 +942,26 @@ namespace :prepare do
       end
       if updated
         sh "ruby bin/query_mousemine.rb > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for miRBase"
+  task :mirbase => INPUT_MIRBASE_DIR do
+    $stderr.puts "## Prepare input files for miRBase"
+    download_lock(INPUT_MIRBASE_DIR) do
+      updated = false
+      filenames = ["mirna.txt", "mirna_mature.txt", "mirna_pre_mature.txt"]
+      filenames.each do |filename|
+        input_file = "#{INPUT_MIRBASE_DIR}/#{filename}"
+        input_url  = "https://www.mirbase.org/download/CURRENT/database_files/#{filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_MIRBASE_DIR, input_url)
+          tsv_filename = input_file.sub(/\.txt$/, '.tsv')
+          sh "sed -E 's@<br>@\\n@g; s@</?p>@@g' #{input_file} | awk '$0' > #{tsv_filename}"
+          updated = true
+        end
       end
       updated
     end
@@ -876,8 +1031,30 @@ namespace :prepare do
           updated = true
         end
       end
-      if updated
-        sh "awk -F \"\t\" '$4==\"Ensembl\" && $5~/Ensembl (Vertebrates )?[0-9]+;/ && $1!=\"YEAST\"{print $2}' #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{INPUT_OMA_PROTEIN_DIR}/taxonomy.txt"
+
+      ensembl_taxonomy_file = "#{INPUT_OMA_PROTEIN_DIR}/ensembl_vertebrate_taxonomy.txt"
+      oma_ensembl_taxonomy_file = "#{INPUT_OMA_PROTEIN_DIR}/oma_ensembl_vertebrate_taxonomy.txt"
+      if updated || !File.exist?(ensembl_taxonomy_file)
+        sh "sparql_csv2tsv.sh #{INPUT_ENSEMBL_DIR}/taxonomy.rq https://rdfportal.org/ebi/sparql > #{ensembl_taxonomy_file}"
+        sh "awk -F \"\t\" 'FNR==NR{a[$1]=1;next} a[$3]{print $3}' #{ensembl_taxonomy_file} #{INPUT_OMA_PROTEIN_DIR}/oma-species.txt > #{oma_ensembl_taxonomy_file}"
+        updated = true
+      end
+
+      updated
+    end
+  end
+
+  desc "Prepare required files for Orphanet phenotype"
+  task :orphanet_phenotype => INPUT_ORPHANET_PHENOTYPE_DIR do
+    $stderr.puts "## Prepare input files for Orphanet phenotype"
+    download_lock(INPUT_ORPHANET_PHENOTYPE_DIR) do
+      updated = false
+      input_file = "#{INPUT_ORPHANET_PHENOTYPE_DIR}/Homo_sapiens.gene_info.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ORPHANET_PHENOTYPE_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_ORPHANET_PHENOTYPE_DIR}/Homo_sapiens.gene_info"
+        updated = true
       end
       updated
     end
@@ -1031,6 +1208,32 @@ namespace :prepare do
     end
   end
 
+  desc "Prepare required files for RNAcentral"
+  task :rnacentral => INPUT_RNACENTRAL_DIR do
+    $stderr.puts "## Prepare input files for RNAcentral"
+    download_lock(INPUT_RNACENTRAL_DIR) do
+      updated = false
+
+      input_file = "#{INPUT_RNACENTRAL_DIR}/id_mapping.tsv.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/id_mapping/id_mapping.tsv.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        sh "gzip -dc #{input_file} | sed -e 's/\r//g' > #{INPUT_RNACENTRAL_DIR}/id_mapping.tsv"
+        updated = true
+      end
+
+      input_file = "#{INPUT_RNACENTRAL_DIR}/rnacentral.gpi.gz"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        sh "gzip -dc #{input_file} > #{INPUT_RNACENTRAL_DIR}/rnacentral.gpi"
+        updated = true
+      end
+
+      updated
+    end
+  end
+
   desc "Prepare required files for SRA"
   task :sra => INPUT_SRA_DIR do
     $stderr.puts "## Prepare input files for SRA"
@@ -1106,6 +1309,21 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_TAXONOMY_DIR, input_url)
         sh "mkdir -p #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for ZFIN"
+  task :zfin => INPUT_ZFIN_DIR do
+    $stderr.puts "## Prepare input files for ZFIN"
+    download_lock(INPUT_ZFIN_DIR) do
+      updated = false
+      input_file = "#{INPUT_ZFIN_DIR}/transcripts.txt"
+      input_url = "https://zfin.org/downloads/transcripts.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ZFIN_DIR, input_url)
         updated = true
       end
       updated

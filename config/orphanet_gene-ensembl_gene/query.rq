@@ -5,7 +5,7 @@ PREFIX ordo: <http://www.orpha.net/ORDO/Orphanet_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?gene_id ?ensembl_id
-FROM <http://rdf.integbio.jp/dataset/bioportal/ordo>
+FROM <http://rdfportal.org/dataset/bioportal/ordo>
 WHERE {
   VALUES ?gene_class {ordo:410298 ordo:410299}
   ?gene rdfs:subClassOf ?gene_class ;

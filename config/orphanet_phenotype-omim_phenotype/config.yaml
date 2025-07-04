@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Irregular
-  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/bioportal/sparql
+  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/bioportal/sparql | awk -F "\t" 'FNR==NR{split($6, xrefs, "|"); for(i in xrefs){if(xrefs[i]~/^MIM:/){is_gene[substr(xrefs[i], 5)]=1}} next}!is_gene[$2]' $TOGOID_ROOT/input/orphanet_phenotype/Homo_sapiens.gene_info -

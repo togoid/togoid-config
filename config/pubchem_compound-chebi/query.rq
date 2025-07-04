@@ -2,21 +2,16 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 PREFIX source: <http://rdf.ncbi.nlm.nih.gov/pubchem/source/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 
-SELECT (substr(str(?cid), 49) as ?pubchem_id) ?chebi_id {
-SELECT DISTINCT ?cid ?chebi_id
+SELECT DISTINCT ?pubchem_id ?chebi_id
 FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/substance>
 WHERE {
-#  {
-#    [] sio:is-attribute-of ?cid ;
-#       a sio:CHEMINF_000407 ; # ChEBI identifier
-#       sio:has-value ?chebi_a .
-#       BIND (substr(str(?chebi_a), 7) AS ?chebi_id)
-#   } UNION {
-    [] cheminf:CHEMINF_000477 ?cid ; # has PubChem normalized counterpart
-       dcterms:source source:ChEBI ;
-       a ?chebi_b .
-       BIND (substr(str(?chebi_b), 38) AS ?chebi_id)
-#   }
-}
+  ?substance a pubchemv:Substance ;
+             a ?chebi_class ;
+             cheminf:CHEMINF_000477 ?cid ; # has PubChem normalized counterpart
+             dcterms:source source:ChEBI .
+  FILTER(?chebi_class != pubchemv:Substance)
+  BIND (STRAFTER(STR(?chebi_class), "http://purl.obolibrary.org/obo/CHEBI_") AS ?chebi_id)
+  BIND (STRAFTER(STR(?cid), "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID") AS ?pubchem_id)
 }

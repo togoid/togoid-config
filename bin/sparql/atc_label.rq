@@ -2,11 +2,12 @@
 
 PREFIX concept: <http://rdf.ncbi.nlm.nih.gov/pubchem/concept/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pubchemv: <http://rdf.ncbi.nlm.nih.gov/pubchem/vocabulary#>
 
 SELECT DISTINCT ?id ?label
 FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/concept>
 WHERE {
-  ?s a skos:concept ;
+  ?s a pubchemv:Concept ;
      skos:prefLabel ?label .
   BIND(STRAFTER(STR(?s), "http://rdf.ncbi.nlm.nih.gov/pubchem/concept/ATC_") AS ?id)
 }

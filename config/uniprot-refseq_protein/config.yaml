@@ -4,5 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: uniprot_idmapping2tsv.rb ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz RefSeq
-    | perl -pe 's/\.\d+$//;s/-\d+\t/\t/'
+  method: gzip -dc ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz | awk -F "\t" '$2=="RefSeq"{u=gensub(/-[0-9]+$/,"","g",$1); r=gensub(/\.[0-9]+$/,"","g",$3); if(!a[u,r]++){print u "\t" r}}'

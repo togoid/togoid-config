@@ -1,0 +1,473 @@
+Sat Jun 28 10:44:39 JST 2025
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
+AFFX-HUMGAPDH/M33197_3_at	2597
+AFFX-HUMGAPDH/M33197_5_at	2597
+AFFX-HUMGAPDH/M33197_M_at	2597
+AFFX-HUMISGF3A/M97935_3_at	6772
+AFFX-HUMISGF3A/M97935_5_at	6772
+AFFX-HUMISGF3A/M97935_MA_at	6772
+AFFX-HUMISGF3A/M97935_MB_at	6772
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/assembly_insdc-bioproject.tsv | grep -vP '^(GCA_\d{9})(\.\d+)?	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/assembly_insdc-biosample.tsv | grep -vP '^(GCA_\d{9})(\.\d+)?	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/assembly_insdc-insdc_master.tsv | grep -vP '^(GCA_\d{9})(\.\d+)?	(?:insdc:)?([A-Z]{4,6}\d{8,10})(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/bioproject-biosample.tsv | grep -vP '^(PRJ[DEN][A-Z]\d+)	(SAM[NED]\w?\d+)$' | head
+BioProject	SAMN02351597
+bioproject	SAMN02567760
+BioProject	SAMN02597923
+BioProject	SAMN02597924
+BioProject	SAMN02597925
+BioProject	SAMN02597926
+BioProject	SAMN02597927
+BioProject	SAMN02597928
+BioProject	SAMN02597929
+BioProject	SAMN02597930
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/bioproject-geo_series.tsv | grep -vP '^(PRJ[DEN][A-Z]\d+)	(GSE\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/bioproject-pubmed.tsv | grep -vP '^(PRJ[DEN][A-Z]\d+)	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/bioproject_umbrella-bioproject.tsv | grep -vP '^(PRJ[DEN][A-Z]\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/biosample-bioproject.tsv | grep -vP '^(SAM[NED]\w?\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+SAMN02351597	BioProject
+SAMN02567760	bioproject
+SAMN02597923	BioProject
+SAMN02597924	BioProject
+SAMN02597925	BioProject
+SAMN02597926	BioProject
+SAMN02597927	BioProject
+SAMN02597928	BioProject
+SAMN02597929	BioProject
+SAMN02597930	BioProject
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/biosample-geo_sample.tsv | grep -vP '^(SAM[NED]\w?\d+)	(GSM\d+)$' | head
+awk -F '	' '{print "CVCL_" $1 "	" "NCIT_" $2}' output/tsv/cellosaurus-ncit_disease.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	NCIT?[:_](C\d+)$' | head
+awk -F '	' '{print "CVCL_" $1 "	" "Orphanet_" $2}' output/tsv/cellosaurus-orphanet_phenotype.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "CHEBI_" $1 "	" "" $2}' output/tsv/chebi-glytoucan.tsv | grep -vP '^(?:CHEBI[:_])?(\d+)	(G[0-9]{5}[A-Z]{2})$' | head
+awk -F '	' '{print "CHEBI_" $1 "	" "" $2}' output/tsv/chebi-inchi_key.tsv | grep -vP '^(?:CHEBI[:_])?(\d+)	([A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/chembl_compound-chebi.tsv | grep -vP '^(CHEMBL\d+)	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-chembl_target-TIO_000012.tsv | grep -vP '^(CHEMBL\d+)	(CHEMBL\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-chembl_target-TIO_000120.tsv | grep -vP '^(CHEMBL\d+)	(CHEMBL\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-chembl_target.tsv | grep -vP '^(CHEMBL\d+)	(CHEMBL\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-drugbank.tsv | grep -vP '^(CHEMBL\d+)	(DB\d{5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-hmdb.tsv | grep -vP '^(CHEMBL\d+)	(?:hmdb:)?(HMDB\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-inchi_key.tsv | grep -vP '^(CHEMBL\d+)	([A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-mesh.tsv | grep -vP '^(CHEMBL\d+)	([CD]\d{6,9})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-pdb_ccd.tsv | grep -vP '^(CHEMBL\d+)	(\w{1,3})$' | head
+awk -F '	' '{print "" $1 "	" "CID" $2}' output/tsv/chembl_compound-pubchem_compound.tsv | grep -vP '^(CHEMBL\d+)	(?:CID)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "SID" $2}' output/tsv/chembl_compound-pubchem_substance.tsv | grep -vP '^(CHEMBL\d+)	(?:SID)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-pubmed.tsv | grep -vP '^(CHEMBL\d+)	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-ensembl_gene.tsv | grep -vP '^(CHEMBL\d+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/chembl_target-go.tsv | grep -vP '^(CHEMBL\d+)	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-interpro.tsv | grep -vP '^(CHEMBL\d+)	(IPR\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-pdb.tsv | grep -vP '^(CHEMBL\d+)	([0-9][A-Za-z0-9]{3})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-pfam.tsv | grep -vP '^(CHEMBL\d+)	(PF\d{5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-reactome_pathway.tsv | grep -vP '^(CHEMBL\d+)	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-uniprot-TIO_000002.tsv | grep -vP '^(CHEMBL\d+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-uniprot-TIO_000130.tsv | grep -vP '^(CHEMBL\d+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-uniprot-TIO_000132.tsv | grep -vP '^(CHEMBL\d+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-uniprot.tsv | grep -vP '^(CHEMBL\d+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/clinvar-dbsnp.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(rs\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/clinvar-hgnc.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/clinvar-medgen.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(CN?\d{4,7})$' | head
+awk -F '	' '{print "" $1 "	" "MONDO_" $2}' output/tsv/clinvar-mondo.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	MONDO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/clinvar-ncbigene.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/clinvar-omim_phenotype.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(?:O?MIM:)?(\d{6})$' | head
+9	PS235200
+10	PS235200
+11	PS235200
+12	PS235200
+19	PS235200
+36	PS120970
+36	PS268000
+37	PS268000
+38	PS268000
+41	PS251200
+awk -F '	' '{print "" $1 "	" "Orphanet_" $2}' output/tsv/clinvar-orphanet_phenotype.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/clinvar-uniprot.tsv | grep -vP '^(VCV0*)?((\d{1,9}))	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/cog-insdc.tsv | grep -vP '^(COG\d{4})	(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$' | head
+COG0001	SQF97626
+COG0001	SQG00569
+COG0001	VEH67718
+COG0001	VEH67719
+COG0001	VEH67720
+COG0001	VEH67721
+COG0002	SQG00692
+COG0004	SQF93562
+COG0004	SQF99300
+COG0005	SQF97834
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/cog-refseq_protein.tsv | grep -vP '^(COG\d{4})	([ANXYWZ]P_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "DOID_" $1 "	" "" $2}' output/tsv/doid-mesh.tsv | grep -vP '^DO(?:ID)?[:_](\d+)	([CD]\d{6,9})$' | head
+DOID_	D003863
+awk -F '	' '{print "DOID_" $1 "	" "NCIT_" $2}' output/tsv/doid-ncit_disease.tsv | grep -vP '^DO(?:ID)?[:_](\d+)	NCIT?[:_](C\d+)$' | head
+awk -F '	' '{print "DOID_" $1 "	" "" $2}' output/tsv/doid-omim_phenotype.tsv | grep -vP '^DO(?:ID)?[:_](\d+)	(?:O?MIM:)?(\d{6})$' | head
+DOID_0050628	PS604348
+DOID_0060233	PS115150
+DOID_0060240	PS600630
+DOID_0060247	PS607326
+DOID_0060294	PS272430
+DOID_0070221	PS211600
+DOID_0080954	PS617468
+DOID_0081332	PS176670
+DOID_0110273	PS603511
+DOID_0110274	PS253600
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-affy_probeset.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(\d{3,}(?:_[a-z])?_at)$' | head
+ENSG00000275708	AFFX-HUMRGE/M10098_5_at
+ENSG00000277437	AFFX-HUMRGE/M10098_5_at
+ENSG00000264462	AFFX-HUMRGE/M10098_5_at
+ENSG00000264063	AFFX-HUMRGE/M10098_5_at
+ENSG00000075624	AFFX-HSAC07/X00351_M_at
+ENSG00000075624	AFFX-HSAC07/X00351_3_at
+ENSG00000075624	AFFX-HSAC07/X00351_5_at
+ENSG00000111640	AFFX-HUMGAPDH/M33197_5_at
+ENSG00000111640	AFFX-HUMGAPDH/M33197_3_at
+ENSG00000111640	AFFX-HUMGAPDH/M33197_M_at
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-ensembl_protein.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(?:(?:(ENS[A-Z]*P\d{11})(?:\.\d+)?)|(FBpp\d{7})|(?:(MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(LRG_\d+p\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4}))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-ensembl_transcript.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+FBgn0013687	FBgn0013687_df_pt
+FBtr0309643_df_nrg	FBtr0309643
+FBtr0309644_df_nrg	FBtr0309644
+FBtr0309646_df_nrg	FBtr0309646
+FBtr0309647_df_nrg	FBtr0309647
+FBtr0309649_df_nrg	FBtr0309649
+FBtr0309650_df_nrg	FBtr0309650
+FBtr0309652_df_nrg	FBtr0309652
+FBtr0309653_df_nrg	FBtr0309653
+FBtr0309655_df_nrg	FBtr0309655
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-hgnc.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-ncbigene.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_gene-uniprot.tsv | grep -vP '^(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_protein-ensembl_transcript.tsv | grep -vP '^(?:(?:(ENS[A-Z]*P\d{11})(?:\.\d+)?)|(FBpp\d{7})|(?:(MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(LRG_\d+p\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4}))	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_transcript-affy_probeset.tsv | grep -vP '^(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))	(\d{3,}(?:_[a-z])?_at)$' | head
+ENST00000615959	AFFX-HUMRGE/M10098_5_at
+ENST00000614492	AFFX-HUMRGE/M10098_5_at
+ENST00000581792	AFFX-HUMRGE/M10098_5_at
+ENST00000577708	AFFX-HUMRGE/M10098_5_at
+ENST00000674681	AFFX-HSAC07/X00351_M_at
+ENST00000674681	AFFX-HSAC07/X00351_3_at
+ENST00000674681	AFFX-HSAC07/X00351_5_at
+ENST00000642480	AFFX-HSAC07/X00351_M_at
+ENST00000642480	AFFX-HSAC07/X00351_3_at
+ENST00000642480	AFFX-HSAC07/X00351_5_at
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/ensembl_transcript-go.tsv | grep -vP '^(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_transcript-hgnc.tsv | grep -vP '^(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ensembl_transcript-refseq_rna.tsv | grep -vP '^(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))	((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$' | head
+FBti0215214-RA	NR_026601
+FBti0215221-RA	NR_125437
+FBti0215222-RA	NR_125438
+FBti0215223-RA	NR_026611
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/flybase_gene-flybase_transcript.tsv | grep -vP '^(FBgn\d{7})	(FBtr\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/flybase_transcript-flybase_protein.tsv | grep -vP '^(FBtr\d{7})	(FBpp\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/gea-bioproject.tsv | grep -vP '^(E-GEAD-\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/gea-biosample.tsv | grep -vP '^(E-GEAD-\d+)	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "GM." $1 "	" "" $2}' output/tsv/glycomotif-glytoucan.tsv | grep -vP '^(?:GM\.)?(G[0-9]{5}[A-Z]{2})	(G[0-9]{5}[A-Z]{2})$' | head
+awk -F '	' '{print "" $1 "	" "DOID_" $2}' output/tsv/glytoucan-doid.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	DO(?:ID)?[:_](\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-ncbigene.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000060.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000126.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000128.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ccds.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(CCDS\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ec.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:EC:)?(\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$' | head
+8918	3.4.24.B15
+2295	1.11.1.27 
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ensembl_gene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-hgnc_symbol.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	([A-Z0-9_(orf)\-]+\@?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-insdc.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-lrg.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(LRG_\d+)$' | head
+awk -F '	' '{print "" $1 "	" "MGI:" $2}' output/tsv/hgnc-mgi_gene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:MGI|mgi):(\d{5,})$' | head
+32579	MGI::32579
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-mirbase.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(MI\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ncbigene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-omim_gene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-pubmed.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-refseq_genomic.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	((?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-refseq_rna.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-rgd.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:(?:RGD|rgd):)?(\d{4,})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-uniprot.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/hmdb-chebi.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hmdb-inchi_key.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	([A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hmdb-pdb_ccd.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	(\w{1,3})$' | head
+awk -F '	' '{print "" $1 "	" "CID" $2}' output/tsv/hmdb-pubchem_compound.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	(?:CID)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/homologene-ncbigene.tsv | grep -vP '^(\d+)	(\d+)$' | head
+awk -F '	' '{print "HP_" $1 "	" "" $2}' output/tsv/hp_inheritance-omim_phenotype.tsv | grep -vP '^HP[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "HP_" $1 "	" "" $2}' output/tsv/hp_phenotype-ncbigene.tsv | grep -vP '^HP[:_](\d{7})	(\d+)$' | head
+awk -F '	' '{print "HP_" $1 "	" "" $2}' output/tsv/hp_phenotype-omim_phenotype.tsv | grep -vP '^HP[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "HP_" $1 "	" "Orphanet_" $2}' output/tsv/hp_phenotype-orphanet_phenotype.tsv | grep -vP '^HP[:_](\d{7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/insdc-bioproject.tsv | grep -vP '^(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/insdc-biosample.tsv | grep -vP '^(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/insdc_master-bioproject.tsv | grep -vP '^(?:insdc:)?([A-Z]{4,6}\d{8,10})(?:\.\d+)?	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/insdc_master-biosample.tsv | grep -vP '^(?:insdc:)?([A-Z]{4,6}\d{8,10})(?:\.\d+)?	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/interpro-go.tsv | grep -vP '^(IPR\d{6})	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-pdb.tsv | grep -vP '^(IPR\d{6})	([0-9][A-Za-z0-9]{3})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-pfam.tsv | grep -vP '^(IPR\d{6})	(PF\d{5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-prosite.tsv | grep -vP '^(IPR\d{6})	(PS\d{5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-pubmed.tsv | grep -vP '^(IPR\d{6})	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-reactome_pathway.tsv | grep -vP '^(IPR\d{6})	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-smart.tsv | grep -vP '^(IPR\d{6})	(SM\d{5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/interpro-uniprot.tsv | grep -vP '^(IPR\d{6})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/jga_study-jga_dataset.tsv | grep -vP '^(JGAS\d{6})	(JGAD\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/jga_study-nbdc_human_db.tsv | grep -vP '^(JGAS\d{6})	(hum\d{4})([.\-]v\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/jga_study-pubmed.tsv | grep -vP '^(JGAS\d{6})	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/lipidmaps-chebi.tsv | grep -vP '^(LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/lipidmaps-inchi_key.tsv | grep -vP '^(LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)	([A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$' | head
+awk -F '	' '{print "" $1 "	" "SLM:" $2}' output/tsv/lipidmaps-swisslipids.tsv | grep -vP '^(LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)	SLM[:_](\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/mbgd_gene-uniprot.tsv | grep -vP '^([a-z0-9]+:[A-Z0-9_\.-]+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/mbgd_organism-taxonomy.tsv | grep -vP '^([a-z0-9]+)	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "HP_" $2}' output/tsv/medgen-hp_phenotype.tsv | grep -vP '^(CN?\d{4,7})	HP[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/medgen-mesh.tsv | grep -vP '^(CN?\d{4,7})	([CD]\d{6,9})$' | head
+C0000846	Q000002
+C0007994	Q000139
+C0220797	Q000473
+C0220810	Q000002
+C0243066	Q000002
+C0243069	Q000002
+C0243082	Q000150
+C0243083	Q000150
+C0243085	Q000150
+C0243087	Q000150
+awk -F '	' '{print "" $1 "	" "MONDO_" $2}' output/tsv/medgen-mondo.tsv | grep -vP '^(CN?\d{4,7})	MONDO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/medgen-ncbigene.tsv | grep -vP '^(CN?\d{4,7})	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/medgen-omim_phenotype.tsv | grep -vP '^(CN?\d{4,7})	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "Orphanet_" $2}' output/tsv/medgen-orphanet_phenotype.tsv | grep -vP '^(CN?\d{4,7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "MGI:" $1 "	" "" $2}' output/tsv/mgi_gene-ensembl_gene.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "MGI:" $1 "	" "" $2}' output/tsv/mgi_gene-hgnc.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "MGI:" $1 "	" "MGI:" $2}' output/tsv/mgi_gene-mgi_allele.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	(?:MGI|mgi):(\d{5,})$' | head
+awk -F '	' '{print "MGI:" $1 "	" "" $2}' output/tsv/mgi_gene-ncbigene.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	(\d+)$' | head
+awk -F '	' '{print "MGI:" $1 "	" "" $2}' output/tsv/mgi_gene-uniprot.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "MGI:" $1 "	" "DOID_" $2}' output/tsv/mgi_genotype-doid.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	DO(?:ID)?[:_](\d+)$' | head
+awk -F '	' '{print "MGI:" $1 "	" "MGI:" $2}' output/tsv/mgi_genotype-mgi_allele.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	(?:MGI|mgi):(\d{5,})$' | head
+awk -F '	' '{print "MGI:" $1 "	" "MP:" $2}' output/tsv/mgi_genotype-mp.tsv | grep -vP '^(?:MGI|mgi):(\d{5,})	MP[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/mirbase-mirbase_mature.tsv | grep -vP '^(MI\d{7})	(MIMAT\d{7})$' | head
+awk -F '	' '{print "MONDO_" $1 "	" "DOID_" $2}' output/tsv/mondo-doid.tsv | grep -vP '^MONDO[:_](\d{7})	DO(?:ID)?[:_](\d+)$' | head
+awk -F '	' '{print "MONDO_" $1 "	" "HP_" $2}' output/tsv/mondo-hp_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	HP[:_](\d{7})$' | head
+awk -F '	' '{print "MONDO_" $1 "	" "" $2}' output/tsv/mondo-meddra.tsv | grep -vP '^MONDO[:_](\d{7})	(?:(?:MedDRA|meddra):)?(\d+)$' | head
+awk -F '	' '{print "MONDO_" $1 "	" "" $2}' output/tsv/mondo-mesh.tsv | grep -vP '^MONDO[:_](\d{7})	([CD]\d{6,9})$' | head
+awk -F '	' '{print "MONDO_" $1 "	" "" $2}' output/tsv/mondo-omim_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "MONDO_" $1 "	" "Orphanet_" $2}' output/tsv/mondo-orphanet_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "NANDO_" $1 "	" "MONDO_" $2}' output/tsv/nando-mondo.tsv | grep -vP '^NANDO[:_](\d{7})	MONDO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_gene.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+11405157	gene31145
+11405158	gene31151
+11405160	gene31167
+11405162	gene32499
+11405164	gene41553
+11405167	gene41580
+11405168	gene41589
+11405169	gene31192
+11405171	gene32564
+11405172	gene32586
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_protein.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*P\d{11})(?:\.\d+)?)|(FBpp\d{7})|(?:(MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(LRG_\d+p\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4}))$' | head
+11405157	RHN55867
+11405158	RHN55873
+11405160	RHN55888
+11405162	RHN57016
+11405164	RHN47008
+11405167	RHN47031
+11405168	RHN47039
+11405169	RHN55907
+11405172	RHN57090
+11405173	RHN57092
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_transcript.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+11405157	rna31145
+11405158	rna31151
+11405160	rna31167
+11405162	rna32499
+11405164	rna41553
+11405167	rna41580
+11405168	rna41589
+11405169	rna31192
+11405172	rna32586
+11405173	rna32589
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-flybase_gene.tsv | grep -vP '^(\d+)	(FBgn\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/ncbigene-go.tsv | grep -vP '^(\d+)	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-hgnc.tsv | grep -vP '^(\d+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "MGI:" $2}' output/tsv/ncbigene-mgi_gene.tsv | grep -vP '^(\d+)	(?:MGI|mgi):(\d{5,})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-mirbase.tsv | grep -vP '^(\d+)	(MI\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-omim_gene.tsv | grep -vP '^(\d+)	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-refseq_genomic.tsv | grep -vP '^(\d+)	((?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-refseq_protein.tsv | grep -vP '^(\d+)	([ANXYWZ]P_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-refseq_rna.tsv | grep -vP '^(\d+)	((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-rgd.tsv | grep -vP '^(\d+)	(?:(?:RGD|rgd):)?(\d{4,})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-sgd.tsv | grep -vP '^(\d+)	(S\d{9})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-tair.tsv | grep -vP '^(\d+)	(AT.G\d{5})(\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-taxonomy.tsv | grep -vP '^(\d+)	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-vgnc.tsv | grep -vP '^(\d+)	((VGNC|vgnc):)?(\d{1,9})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-wormbase_gene.tsv | grep -vP '^(\d+)	(WBGene\d{8})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-xenbase_gene.tsv | grep -vP '^(\d+)	(XB\-[A-Z]+\-\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-zfin_gene.tsv | grep -vP '^(\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
+awk -F '	' '{print "NCIT_" $1 "	" "NCIT_" $2}' output/tsv/ncit_disease-ncit_tissue.tsv | grep -vP '^NCIT?[:_](C\d+)	NCIT?[:_](C\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/oma_protein-ensembl_gene.tsv | grep -vP '^([A-Z]{3}[A-Z0-9]{2}[0-9]{5,6})	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/oma_protein-ensembl_transcript.tsv | grep -vP '^([A-Z]{3}[A-Z0-9]{2}[0-9]{5,6})	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/oma_protein-ncbigene.tsv | grep -vP '^([A-Z]{3}[A-Z0-9]{2}[0-9]{5,6})	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/oma_protein-uniprot.tsv | grep -vP '^([A-Z]{3}[A-Z0-9]{2}[0-9]{5,6})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-ensembl_gene.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-hgnc.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-omim_gene.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_gene-uniprot.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_phenotype-meddra.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:(?:MedDRA|meddra):)?(\d+)$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_phenotype-mesh.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	([CD]\d{6,9})$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "" $2}' output/tsv/orphanet_phenotype-omim_phenotype.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "Orphanet_" $1 "	" "Orphanet_" $2}' output/tsv/orphanet_phenotype-orphanet_gene.tsv | grep -vP '^(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/pdb-go.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-interpro.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	(IPR\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-pdb_ccd.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	(\w{1,3})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-pfam.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	(PF\d{5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-uniprot.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+5FUI	GOL2L9
+1KCL	p43379
+1KYP	p42212
+1KQY	p23472
+1KR1	p23472
+1KR0	p23472
+1KYR	p42212
+1KYS	p42212
+1KQZ	p23472
+1M0V	p08538
+awk -F '	' '{print "PMC" $1 "	" "" $2}' output/tsv/pmc-pubmed.tsv | grep -vP '^(?:PMC)?(\d+)	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/prosite-prosite_prorule.tsv | grep -vP '^(PS\d{5})	(PRU\d{5})$' | head
+awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-atc.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]\d{2}[A-Z]{2}\d{2})$' | head
+awk -F '	' '{print "CID" $1 "	" "CHEBI_" $2}' output/tsv/pubchem_compound-chebi.tsv | grep -vP '^(?:CID)?(\d+)	(?:CHEBI[:_])?(\d+)$' | head
+CID10153663	CHEBI_ocabulary#Substance
+CID9915743	CHEBI_ocabulary#Substance
+CID946	CHEBI_ocabulary#Substance
+CID100217	CHEBI_ocabulary#Substance
+CID10129	CHEBI_ocabulary#Substance
+CID101707	CHEBI_ocabulary#Substance
+CID9605257	CHEBI_ocabulary#Substance
+CID100393	CHEBI_ocabulary#Substance
+CID10137150	CHEBI_ocabulary#Substance
+CID10148744	CHEBI_ocabulary#Substance
+awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-chembl_compound.tsv | grep -vP '^(?:CID)?(\d+)	(CHEMBL\d+)$' | head
+awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-drugbank.tsv | grep -vP '^(?:CID)?(\d+)	(DB\d{5})$' | head
+CID72	db03946
+CID54675866	db03946
+CID2014	db04336
+CID449303	db04496
+CID5289110	db04760
+CID445132	db03668
+CID135	db04242
+CID54675830	db04242
+CID446801	db03218
+CID17754176	db03874
+awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-glytoucan.tsv | grep -vP '^(?:CID)?(\d+)	(G[0-9]{5}[A-Z]{2})$' | head
+awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-inchi_key.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$' | head
+awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-ncbigene.tsv | grep -vP '^(?:PWID)?(\d+)	(\d+)$' | head
+awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-pathbank.tsv | grep -vP '^(?:PWID)?(\d+)	(SMP\d+)$' | head
+awk -F '	' '{print "PWID" $1 "	" "CID" $2}' output/tsv/pubchem_pathway-pubchem_compound.tsv | grep -vP '^(?:PWID)?(\d+)	(?:CID)?(\d+)$' | head
+awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-reactome_pathway.tsv | grep -vP '^(?:PWID)?(\d+)	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-uniprot.tsv | grep -vP '^(?:PWID)?(\d+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-wikipathways.tsv | grep -vP '^(?:PWID)?(\d+)	(WP\d{1,5})(?:\_r\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/reactome_pathway-chebi.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/reactome_pathway-go.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_pathway-iuphar_ligand.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_pathway-mirbase_mature.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(MIMAT\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_pathway-mirbase.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(MI\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_pathway-reactome_reaction.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_pathway-uniprot.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/reactome_reaction-chebi.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/reactome_reaction-go.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_reaction-iuphar_ligand.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_reaction-mirbase_mature.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(MIMAT\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_reaction-mirbase.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(MI\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/reactome_reaction-uniprot.tsv | grep -vP '^(R-[A-Z]{3}-\d+)(?:\.\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_protein-uniprot.tsv | grep -vP '^([ANXYWZ]P_\d+)(?:\.\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-dbsnp.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	(rs\d+)$' | head
+NR_038942	rsrs17037418
+NR_003366	rsrs1679285241
+NR_145819	rsrs1555879253
+NR_145819	rsrs1980414439
+NR_145819	rsrs1166740608
+NR_145819	rsrs1286799434
+NR_145819	rsrs1555879255
+NR_145819	rsrs1236011974
+NR_145819	rsrs1470478123
+NR_145819	rsrs1298730175
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-hgnc.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-ncbigene.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-omim_gene.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-pubmed.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-refseq_protein.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	([ANXYWZ]P_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/refseq_rna-taxonomy.tsv | grep -vP '^((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/rhea-chebi.tsv | grep -vP '^(\d{5})	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rhea-ec.tsv | grep -vP '^(\d{5})	(?:EC:)?(\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/rhea-go.tsv | grep -vP '^(\d{5})	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rhea-pubmed.tsv | grep -vP '^(\d{5})	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rhea-reactome_reaction.tsv | grep -vP '^(\d{5})	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rhea-uniprot.tsv | grep -vP '^(\d{5})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-ensembl_transcript.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-flybase_transcript.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(FBtr\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-hgnc.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-lncbook_gene.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(HSALNG[0-9]{7})$' | head
+awk -F '	' '{print "" $1 "	" "MGI:" $2}' output/tsv/rnacentral-mgi_gene.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:MGI|mgi):(\d{5,})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-mirbase_mature.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(MIMAT\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-mirbase.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(MI\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-pdb.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	([0-9][A-Za-z0-9]{3})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-refseq_rna.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-rfam.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(RF\d{5})?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-rgd.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(?:(?:RGD|rgd):)?(\d{4,})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-sgd.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(S\d{9})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-tair.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(AT.G\d{5})(\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-wormbase_gene.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(WBGene\d{8})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/rnacentral-zfin_transcript.tsv | grep -vP '^(URS[0-9A-F]{10}\_\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-bioproject.tsv | grep -vP '^([SED]RA\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-biosample.tsv | grep -vP '^([SED]RA\d+)	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-sra_analysis.tsv | grep -vP '^([SED]RA\d+)	([SED]RZ\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-sra_experiment.tsv | grep -vP '^([SED]RA\d+)	([SED]RX\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-sra_project.tsv | grep -vP '^([SED]RA\d+)	([SED]RP\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-sra_run.tsv | grep -vP '^([SED]RA\d+)	([SED]RR\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_accession-sra_sample.tsv | grep -vP '^([SED]RA\d+)	([SED]RS\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_experiment-bioproject.tsv | grep -vP '^([SED]RX\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_experiment-biosample.tsv | grep -vP '^([SED]RX\d+)	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_experiment-sra_project.tsv | grep -vP '^([SED]RX\d+)	([SED]RP\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_experiment-sra_sample.tsv | grep -vP '^([SED]RX\d+)	([SED]RS\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_project-bioproject.tsv | grep -vP '^([SED]RP\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_run-bioproject.tsv | grep -vP '^([SED]RR\d+)	(PRJ[DEN][A-Z]\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_run-biosample.tsv | grep -vP '^([SED]RR\d+)	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_run-sra_experiment.tsv | grep -vP '^([SED]RR\d+)	([SED]RX\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_run-sra_project.tsv | grep -vP '^([SED]RR\d+)	([SED]RP\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_run-sra_sample.tsv | grep -vP '^([SED]RR\d+)	([SED]RS\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/sra_sample-biosample.tsv | grep -vP '^([SED]RS\d+)	(SAM[NED]\w?\d+)$' | head
+awk -F '	' '{print "SLM:" $1 "	" "CHEBI_" $2}' output/tsv/swisslipids-chebi.tsv | grep -vP '^SLM[:_](\d+)	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "SLM:" $1 "	" "" $2}' output/tsv/swisslipids-hmdb.tsv | grep -vP '^SLM[:_](\d+)	(?:hmdb:)?(HMDB\d+)$' | head
+awk -F '	' '{print "SLM:" $1 "	" "" $2}' output/tsv/swisslipids-inchi_key.tsv | grep -vP '^SLM[:_](\d+)	([A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/taxonomy-pubmed.tsv | grep -vP '^(\d+)	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-clinvar.tsv | grep -vP '^(tgv\d+)	(VCV0*)?((\d{1,9}))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-dbsnp.tsv | grep -vP '^(tgv\d+)	(rs\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-ensembl_gene.tsv | grep -vP '^(tgv\d+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-ensembl_transcript.tsv | grep -vP '^(tgv\d+)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-hgnc.tsv | grep -vP '^(tgv\d+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-medgen.tsv | grep -vP '^(tgv\d+)	(CN?\d{4,7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-ncbigene.tsv | grep -vP '^(tgv\d+)	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-pubmed.tsv | grep -vP '^(tgv\d+)	(?:pmid:|PMID:)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/togovar-refseq_rna.tsv | grep -vP '^(tgv\d+)	((?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "UBERON_" $1 "	" "NCIT_" $2}' output/tsv/uberon-ncit_tissue.tsv | grep -vP '^UBERON[:_](\d{7})	NCIT?[:_](C\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-chembl_target.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(CHEMBL\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-dbsnp.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(rs\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-ec.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:EC:)?(\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-ensembl_gene.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-ensembl_protein.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:(?:(ENS[A-Z]*P\d{11})(?:\.\d+)?)|(FBpp\d{7})|(?:(MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(LRG_\d+p\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4}))$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-ensembl_transcript.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
+awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/uniprot-go.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	GO[:_](\d{7})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-hgnc.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-insdc.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-intact.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(EBI\-[0-9]+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-ncbigene.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-oma_group.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	([A-Z]+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-omim_gene.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-omim_phenotype.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:O?MIM:)?(\d{6})$' | head
+awk -F '	' '{print "" $1 "	" "Orphanet_" $2}' output/tsv/uniprot-orphanet_phenotype.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-pdb.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	([0-9][A-Za-z0-9]{3})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot_proteome-assembly_insdc.tsv | grep -vP '^(UP\d{0,9})	(GCA_\d{9})(\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot_proteome-assembly_refseq.tsv | grep -vP '^(UP\d{0,9})	(GCF_\d{9})(\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot_proteome-taxonomy.tsv | grep -vP '^(UP\d{0,9})	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-reactome_pathway.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-refseq_protein.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	([ANXYWZ]P_\d+)(?:\.\d+)?$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-taxonomy.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-uniprot_mnemonic.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	([A-Z0-9]+_[A-Z0-9]{0,5})$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/wikipathways-chebi.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:CHEBI[:_])?(\d+)$' | head
+WP5420	CHEBI_
+awk -F '	' '{print "" $1 "	" "DOID_" $2}' output/tsv/wikipathways-doid.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	DO(?:ID)?[:_](\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-hmdb.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:hmdb:)?(HMDB\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-lipidmaps.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
+WP1981	PP51178
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
+no related gene	ZDB-TSCRIPT-200330-1
+Sat Jun 28 11:58:19 JST 2025
