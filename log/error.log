@@ -19,8 +19,4 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
-# Error: output/tsv/pubchem_compound-chebi.tsv new file size per old 2765633 / 7886019 = 0.35070077817464046 < 0.5
-rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/biosample.ttl:1 - out of dynamic memory in turtle_lexer__scan_bytes()
-# Error: output/ttl/label/biosample.ttl is not valid
-rapper: Error - URI file:///data/togoid/git/togoid-config/output/ttl/label/rnacentral.ttl:1 - out of dynamic memory in turtle_lexer__scan_bytes()
-# Error: output/ttl/label/rnacentral.ttl is not valid
+rake aborted!
