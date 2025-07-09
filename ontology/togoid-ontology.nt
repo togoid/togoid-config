@@ -209,6 +209,11 @@
 <http://togoid.dbcls.jp/ontology#Ec> <http://www.w3.org/2000/01/rdf-schema#label> "Enzyme nomenclature" .
 <http://togoid.dbcls.jp/ontology#Ec> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Function> .
 <http://togoid.dbcls.jp/ontology#Ec> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#EfoDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#EfoDisease> <http://purl.org/dc/terms/identifier> "efo_disease" .
+<http://togoid.dbcls.jp/ontology#EfoDisease> <http://www.w3.org/2000/01/rdf-schema#label> "EFO disease" .
+<http://togoid.dbcls.jp/ontology#EfoDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Phenotype> .
+<http://togoid.dbcls.jp/ontology#EfoDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#EnsemblGene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#EnsemblGene> <http://purl.org/dc/terms/identifier> "ensembl_gene" .
 <http://togoid.dbcls.jp/ontology#EnsemblGene> <http://www.w3.org/2000/01/rdf-schema#label> "Ensembl gene" .

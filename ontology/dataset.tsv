@@ -16,6 +16,7 @@ dbsnp	dbSNP	Variant
 doid	Disease ontology	Phenotype
 drugbank	DrugBank	Drug
 ec	Enzyme nomenclature	Function
+efo_disease	EFO disease	Phenotype
 ensembl_gene	Ensembl gene	Gene
 ensembl_protein	Ensembl protein	Protein
 ensembl_transcript	Ensembl transcript	Transcript

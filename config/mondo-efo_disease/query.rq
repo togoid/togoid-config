@@ -1,0 +1,13 @@
+# Endpoint: https://rdfportal.org/bioportal/sparql
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?mondo_id ?efo_id
+FROM <http://rdfportal.org/dataset/bioportal/mondo>
+WHERE {
+  ?mondo_uri
+    oboInOwl:hasDbXref ?efo ;
+    oboInOwl:id ?mondo .
+  FILTER (strstarts(?efo, 'EFO:'))
+  BIND (strafter(str(?efo), 'EFO:') AS ?efo_id)
+  BIND (strafter(str(?mondo), 'MONDO:') AS ?mondo_id)
+}

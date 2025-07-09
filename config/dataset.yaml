@@ -176,6 +176,16 @@ ec:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/ec_label.rq https://rdfportal.org/sib/sparql
+efo_disease:
+  label: EFO disease
+  catalog: FIXME
+  category: Phenotype
+  regex: '^EFO[:_](?<id>\d{7})$'
+  prefix: 'http://www.ebi.ac.uk/efo/EFO_'
+  format: ["EFO:%s","EFO_%s"]
+  examples:
+    - ["EFO:0009491","EFO:0009549","EFO:0001365","EFO:0002427","EFO:0005531","EFO:0005539","EFO:0005583","EFO:0007308","EFO:0008560","EFO:0000779"]
+    - ["EFO_0009491","EFO_0009549","EFO_0001365","EFO_0002427","EFO_0005531","EFO_0005539","EFO_0005583","EFO_0007308","EFO_0008560","EFO_0000779"]
 ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
