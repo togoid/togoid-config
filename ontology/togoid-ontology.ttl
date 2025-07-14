@@ -305,6 +305,12 @@
     rdfs:label "Enzyme nomenclature" ;
     rdfs:subClassOf :Function, :Dataset .
 
+:EfoDisease
+    a owl:Class ;
+    dcterms:identifier "efo_disease" ;
+    rdfs:label "EFO disease" ;
+    rdfs:subClassOf :Phenotype, :Dataset .
+
 :EnsemblGene
     a owl:Class ;
     dcterms:identifier "ensembl_gene" ;
