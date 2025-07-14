@@ -3,7 +3,10 @@ affy_probeset:
   catalog: FIXME
   category: Probe
   regex: '^(?<id>\d{3,}(?:_[a-z])?_at)$'
-  prefix: 'http://identifiers.org/affy.probeset/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/affy.probeset/'
+      rdf: true
   examples:
     - ["1553582_a_at","211531_x_at","202573_at","201640_x_at","205117_at","201017_at","205099_s_at","200614_at","201895_at","202666_s_at"]
   description: "The microarray probe set provided by Affymetrix."
@@ -12,7 +15,14 @@ assembly_insdc:
   catalog: FIXME
   category: Genome
   regex: '^(?<id>GCA_\d{9})(\.\d+)?$'
-  prefix: 'http://identifiers.org/insdc.gca/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.gca/'
+      rdf: true
+    - label: 'NCBI Genome Assembly'
+      uri: 'https://www.ncbi.nlm.nih.gov/datasets/genome/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
   examples:
     - ["GCA_000001215","GCA_000001405","GCA_000001545","GCA_000001635","GCA_000001735","GCA_000001765","GCA_000001895","GCA_000001905","GCA_000001985","GCA_000002035"]
     - ["GCA_000001215.4","GCA_000001405.29","GCA_000001545.3","GCA_000001635.9","GCA_000001735.2","GCA_000001765.3","GCA_000001895.4","GCA_000001905.1","GCA_000001985.1","GCA_000002035.4"]
@@ -21,7 +31,14 @@ assembly_refseq:
   catalog: FIXME
   category: Genome
   regex: '^(?<id>GCF_\d{9})(\.\d+)?$'
-  prefix: 'http://identifiers.org/insdc.gca/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.gca/'
+      rdf: true
+    - label: 'NCBI Genome Assembly'
+      uri: 'https://www.ncbi.nlm.nih.gov/datasets/genome/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
   examples:
     - ["GCF_000002035","GCF_009870125","GCF_000840205","GCF_000004195","GCF_000475195","GCF_000296755","GCF_000151885","GCF_000715135","GCF_001039355","GCF_000331145"]
     - ["GCF_000002035.6","GCF_009870125.1","GCF_000840205.1","GCF_000004195.4","GCF_000475195.1","GCF_000296755.1","GCF_000151885.1","GCF_000715135.1","GCF_001039355.2","GCF_000331145.1"]
@@ -30,7 +47,10 @@ atc:
   catalog: FIXME
   category: Drug
   regex: '^(?<id>[A-Z]\d{2}[A-Z]{2}\d{2})$'
-  prefix: 'http://identifiers.org/atc/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/atc/'
+      rdf: true
   examples:
     - ["J01DD11","B02BA02","A03AD30","R03AC17","J01CA05","D07AB07","D07XB03","G04CA01","S01BC11","G03DB05"]
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/atc_label.rq https://rdfportal.org/pubchem/sparql
@@ -39,7 +59,16 @@ bioproject:
   catalog: nbdc00476
   category: Project
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
-  prefix: 'http://identifiers.org/bioproject/'
+  prefix:
+    - label: 'NCBI BioProject'
+      uri: 'https://www.ncbi.nlm.nih.gov/bioproject?term='
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/bioproject/'
+      rdf: true
+    - label: 'EBI BioProject'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ BioProject'
+      uri: 'https://ddbj.nig.ac.jp/search/entry/bioproject/'
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
   method: awk -F "\t" '$2=="Title"{print $1 "\t" gensub("\r"," ","g",$3)}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
@@ -48,7 +77,16 @@ bioproject_umbrella:
   catalog: nbdc00476
   category: Project
   regex: '^(?<id>PRJ[DEN][A-Z]\d+)$'
-  prefix: 'http://identifiers.org/bioproject/'
+  prefix:
+    - label: 'NCBI BioProject'
+      uri: 'https://www.ncbi.nlm.nih.gov/bioproject?term='
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/bioproject/'
+      rdf: true
+    - label: 'EBI BioProject'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ BioProject'
+      uri: 'https://ddbj.nig.ac.jp/search/entry/bioproject/'
   examples:
     - ["PRJDB10770","PRJDB14691","PRJEB55721","PRJEB56110","PRJNA388429","PRJNA510115","PRJNA834739","PRJNA561326","PRJNA672702","PRJNA248220"]
 biosample:
@@ -57,7 +95,16 @@ biosample:
   catalog: nbdc01983
   category: Sample
   regex: '^(?<id>SAM[NED]\w?\d+)$'
-  prefix: 'http://identifiers.org/biosample/'
+  prefix:
+    - label: 'NCBI BioSample'
+      uri: 'https://www.ncbi.nlm.nih.gov/biosample?term='
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/biosample/'
+      rdf: true
+    - label: 'EBI BioSamples'
+      uri: 'https://www.ebi.ac.uk/biosamples/sample/'
+    - label: 'DDBJ BioSample'
+      uri: 'https://ddbj.nig.ac.jp/search/entry/biosample/'
   examples:
     - ["SAMD00003683","SAMD00006315","SAMD00003741","SAMD00011226","SAMN13091859","SAMN05877962","SAMN05877838","SAMEA104232303","SAMEA4760552","SAMEA1572228"]
   method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
@@ -66,7 +113,10 @@ ccds:
   catalog: nbdc00023
   category: Gene
   regex: '^(?<id>CCDS\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/ccds/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/ccds/'
+      rdf: true
   examples:
     - ["CCDS1471","CCDS10913","CCDS14790","CCDS35175","CCDS2395","CCDS58412","CCDS55555","CCDS34401","CCDS41889","CCDS9052"]
     - ["CCDS1471.1","CCDS10913.1","CCDS14790.1","CCDS35175.2","CCDS2395.1","CCDS58412.1","CCDS55555.1","CCDS34401.2","CCDS41889.1","CCDS9052.1"]
@@ -75,7 +125,10 @@ cellosaurus:
   catalog: nbdc02180
   category: CellLine
   regex: '^CVCL[:_](?<id>[A-Z0-9]{4})$'
-  prefix: 'http://www.cellosaurus.org/CVCL_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://www.cellosaurus.org/CVCL_'
+      rdf: true
   format: ["CVCL:%s","CVCL_%s"]
   examples:
     - ["CVCL:7T24","CVCL:SE45","CVCL:XG73","CVCL:B6HT","CVCL:WM34","CVCL:7891","CVCL:FV52","CVCL:0367","CVCL:9Z18","CVCL:CG19"]
@@ -86,7 +139,10 @@ chebi:
   catalog: nbdc00027
   category: Compound
   regex: '^(?:CHEBI[:_])?(?<id>\d+)$'
-  prefix: 'http://purl.obolibrary.org/obo/CHEBI_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/CHEBI_'
+      rdf: true
   format: ["%s","CHEBI:%s","CHEBI_%s"]
   examples:
     - ["84824","40167","32807","87666","57524","64860","94440","18005","4806","50158"]
@@ -102,13 +158,20 @@ chebi:
         dictionary: togoid_chebi_exact_synonym
       - label: Related synonym
         dictionary: togoid_chebi_related_synonym
+  annotations:
+    - variable: mass
+      label: Molecular mass
+      numerical: true
 chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02555
   category: Compound
   # FIXME: use 'http://rdf.ebi.ac.uk/resource/chembl/molecule/#' ?
   regex: '^(?<id>CHEMBL\d+)$'
-  prefix: 'http://identifiers.org/chembl.compound/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/chembl.compound/'
+      rdf: true
   examples:
     - ["CHEMBL121649","CHEMBL190334","CHEMBL3103282","CHEMBL69329","CHEMBL2105131","CHEMBL2177390","CHEMBL3091820","CHEMBL1200335","CHEMBL3094412","CHEMBL67367"]
 chembl_target:
@@ -116,7 +179,10 @@ chembl_target:
   catalog: nbdc02555
   category: Protein
   regex: '^(?<id>CHEMBL\d+)$'
-  prefix: 'http://identifiers.org/chembl.target/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/chembl.target/'
+      rdf: true
   examples:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
 clinvar:
@@ -124,7 +190,10 @@ clinvar:
   catalog: nbdc01514
   category: Variant
   regex: '^(VCV0*)?(?<id>(\d{1,9}))$'
-  prefix: 'http://identifiers.org/clinvar/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/clinvar/'
+      rdf: true
   format: ["%s","VCV%09d"]
   examples:
     - ["658761","619209","745342","11955","731668","724289","725734","743127","789913","5302"]
@@ -134,7 +203,10 @@ cog:
   catalog: nbdc00397
   category: Ortholog
   regex: '^(?<id>COG\d{4})$'
-  prefix: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
+  prefix:
+    - label: 'rdf'
+      uri: 'https://www.ncbi.nlm.nih.gov/research/cog/cog/'
+      rdf: true
   examples:
     - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
   method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
@@ -143,7 +215,16 @@ dbsnp:
   catalog: nbdc00206
   category: Variant
   regex: '^(?<id>rs\d+)$'
-  prefix: 'http://identifiers.org/dbsnp/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/dbsnp/'
+      rdf: true
+    - label: 'GWAS Catalog'
+      uri: 'https://www.ebi.ac.uk/gwas/variants/'
+    - label: 'Ensembl'
+      uri: 'https://www.ensembl.org/Homo_sapiens/Variation/Explore?v='
+    - label: 'GTEx'
+      uri: 'https://www.gtexportal.org/home/snp/'
   examples:
     - ["rs746303788","rs1407020249","rs374003162","rs4647297","rs549539526","rs1387864740","rs1177577242","rs769848663","rs16961655","rs79135400"]
 doid:
@@ -151,7 +232,10 @@ doid:
   catalog: nbdc00261
   category: Phenotype
   regex: '^DO(?:ID)?[:_](?<id>\d+)$'
-  prefix: 'http://purl.obolibrary.org/obo/DOID_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/DOID_'
+      rdf: true
   format: ["DO:%s","DOID:%s","DOID_%s"]
   examples:
     - ["DO:9036","DO:3159","DO:10964","DO:12698","DO:0060459","DO:11840","DO:11339","DO:914","DO:9945","DO:1407"]
@@ -162,7 +246,10 @@ drugbank:
   catalog: nbdc01071
   category: Drug
   regex: '^(?<id>DB\d{5})$'
-  prefix: 'http://identifiers.org/drugbank/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/drugbank/'
+      rdf: true
   examples:
     - ["DB15589","DB13471","DB05830","DB07423","DB07074","DB08912","DB02908","DB05088","DB05229","DB08910"]
 ec:
@@ -170,7 +257,20 @@ ec:
   catalog: nbdc01883
   category: Function
   regex: '^(?:EC:)?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
-  prefix: 'http://identifiers.org/ec-code/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/ec-code/'
+      rdf: true
+    - label: 'BRENDA'
+      uri: 'https://www.brenda-enzymes.org/enzyme.php?ecno='
+    - label: 'Expasy ENZYME'
+      uri: 'https://enzyme.expasy.org/EC/'
+    - label: 'ExplorEnz'
+      uri: 'https://www.enzyme-database.org/query.php?ec='
+    - label: 'IntEnz'
+      uri: 'https://www.ebi.ac.uk/intenz/query?cmd=SearchEC&ec='
+    - label: 'KEGG'
+      uri: 'https://www.genome.jp/dbget-bin/www_bget?ec:'
   format: ["%s","EC:%s"]
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
@@ -191,7 +291,20 @@ ensembl_gene:
   catalog: nbdc00054
   category: Gene
   regex: '^(?:(?:(?<id1>ENS[A-Z]*G\d{11})(?:\.\d+)?)|(?<id2>FBgn\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+)|(?<id5>WBGene\d{8})|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4})|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?)|(?<id9>snR\d+-?[A-Za-z]?)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$'
-  prefix: 'http://identifiers.org/ensembl/'
+  prefix:
+    - label: 'Ensembl'
+      uri: 'https://www.ensembl.org/id/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/ensembl/'
+      rdf: true
+    - label: 'Expression Atlas'
+      uri: 'http://www.ebi.ac.uk/gxa/genes/'
+    - label: 'Bgee'
+      uri: 'https://www.bgee.org/gene/'
+    - label: 'GTEx (Only human IDs)'
+      uri: 'https://www.gtexportal.org/home/gene/'
+    - label: 'Human Protein Atlas  (Only human IDs)'
+      uri: 'https://www.proteinatlas.org/'
   examples:
     - ["ENSG00000186283","ENSAMEG00000018238","ENSG00000167916","ENSG00000213417","ENSG00000133328","ENSG00000274404","ENSG00000184363","FBgn0021742","FBgn0030057","FBgn0265139"]
 ensembl_protein:
@@ -199,7 +312,10 @@ ensembl_protein:
   catalog: nbdc00054
   category: Protein
   regex: '^(?:(?:(?<id1>ENS[A-Z]*P\d{11})(?:\.\d+)?)|(?<id2>FBpp\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+p\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4}))$'
-  prefix: 'http://identifiers.org/ensembl/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/ensembl/'
+      rdf: true
   examples:
     - ["ENSP00000365411","ENSP00000420674","ENSAZOP00000020796","FBpp0070277","FBpp0070535","ENSAZOP00000019433","ENSP00000372042","ENSAZOP00000017910","ENSP00000370977","ENSP00000481894"]
 ensembl_transcript:
@@ -207,7 +323,15 @@ ensembl_transcript:
   catalog: nbdc00054
   category: Transcript
   regex: '^(?:(?:(?<id1>ENS[A-Z]*T\d{11})(?:\.\d+)?)|(?<id2>FBtr\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+t\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(?<id7>Q\d{4}_[a-z]{1,3}RNA)|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(?<id9>snR\d+-?[A-Za-z]?_sno?RNA)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$'
-  prefix: 'http://identifiers.org/ensembl/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/ensembl/'
+      rdf: true
+  annotations:
+    - variable: transcript_flag
+      label: Transcript flags
+      items: ["Ensembl canonical", "MANE Select", "GENCODE Basic", "TSL 1", "TSL 2", "TSL 3", "TSL 4", "TSL 5", "TSL NA", "APPRIS P1", "APPRIS P2", "APPRIS P3", "APPRIS P4", "APPRIS P5", "APPRIS ALT1", "APPRIS ALT2", "5' incomplete", "3' incomplete"]
+      is_list: true
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
 flybase_gene:
@@ -215,7 +339,12 @@ flybase_gene:
   catalog: nbdc00064
   category: Gene
   regex: '^(?<id>FBgn\d{7})$'
-  prefix: 'http://identifiers.org/fb/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/fb/'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/FB:'
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
   method: awk -F '\t' '!/^#/&&!a[$3]++{print $3 "\t" $4}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
@@ -242,7 +371,10 @@ gea:
   catalog: FIXME
   category: Experiment
   regex: '^(?<id>E-GEAD-\d+)$'
-  prefix: 'https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/'
+  prefix:
+    - label: 'rdf'
+      uri: 'https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/'
+      rdf: true
   examples:
     - ["E-GEAD-446","E-GEAD-519","E-GEAD-328","E-GEAD-349","E-GEAD-284","E-GEAD-448","E-GEAD-460","E-GEAD-348","E-GEAD-344","E-GEAD-385"]
 geo_sample:
@@ -250,7 +382,10 @@ geo_sample:
   catalog: nbdc00080
   category: Sample
   regex: '^(?<id>GSM\d+)$'
-  prefix: 'http://identifiers.org/geo/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/geo/'
+      rdf: true
   examples:
     - ["GSM3683883","GSM6900216","GSM2660556","GSM6582742","GSM4471614","GSM3395982","GSM2500217","GSM2748246","GSM4402543","GSM586869"]
 geo_series:
@@ -258,7 +393,10 @@ geo_series:
   catalog: nbdc00080
   category: Project
   regex: '^(?<id>GSE\d+)$'
-  prefix: 'http://identifiers.org/geo/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/geo/'
+      rdf: true
   examples:
     - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
 glycomotif:
@@ -266,7 +404,10 @@ glycomotif:
   catalog: FIXME
   category: Glycan
   regex: '^(?:GM\.)?(?<id>G[0-9]{5}[A-Z]{2})$'
-  prefix: 'http://glycomotif.glyomics.org/glycomotif/GM.'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://glycomotif.glyomics.org/glycomotif/GM.'
+      rdf: true
   format: ["%s","GM.%s"]
   examples:
     - ["G64227KZ","G14091MR","G00552RX","G18625KA","G54733XO","G72557NR","G90598GO","G93805MV","G99524KA","G00029MO"]
@@ -276,7 +417,10 @@ glytoucan:
   catalog: nbdc01535
   category: Glycan
   regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
-  prefix: 'http://identifiers.org/glytoucan/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/glytoucan/'
+      rdf: true
   examples:
     - ["G42293RF","G00065MO","G90562PB","G00035MO","G49108TO","G45395BF","G60687RJ","G00055MO","G18625KA","G50361AJ"]
 go:
@@ -284,7 +428,10 @@ go:
   catalog: nbdc00074
   category: Function
   regex: '^GO[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/GO_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/GO_'
+      rdf: true
   format: ["GO:%s","GO_%s"]
   examples:
     - ["GO:0005643","GO:0097110","GO:0097225","GO:0052855","GO:2000012","GO:0042921","GO:0019774","GO:0085018","GO:0009508","GO:0046470"]
@@ -294,7 +441,10 @@ hgnc:
   catalog: nbdc01774
   category: Gene
   regex: '^(?:(?:HGNC|hgnc):)?(?<id>\d{1,5})$'
-  prefix: 'http://identifiers.org/hgnc/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/hgnc/'
+      rdf: true
   format: ["%s","HGNC:%s","hgnc:%s"]
   examples:
     - ["26199","38937","14027","21498","18185","1314","25960","2206","22224","19741"]
@@ -305,7 +455,10 @@ hgnc_symbol:
   catalog: nbdc01774
   category: Gene
   regex: '^(?<id>[A-Z0-9_(orf)\-]+\@?)$'
-  prefix: 'http://identifiers.org/hgnc.symbol/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/hgnc.symbol/'
+      rdf: true
   examples:
     - ["MBNL2","RGS20","LINC02011","IGHV1-14","SH3RF2","SPATA13","HNRNPCP10","LINC00334","TMEM241","RN7SL753P"]
 hmdb:
@@ -313,7 +466,10 @@ hmdb:
   catalog: nbdc00909
   category: Compound
   regex: '^(?:hmdb:)?(?<id>HMDB\d+)$'
-  prefix: 'http://identifiers.org/hmdb/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/hmdb/'
+      rdf: true
   format: ["%s","hmdb:%s"]
   examples:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
@@ -324,7 +480,10 @@ homologene:
   catalog: nbdc00101
   category: Ortholog
   regex: '^(?<id>\d+)$'
-  prefix: 'http://identifiers.org/homologene/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/homologene/'
+      rdf: true
   examples:
     - ["117","17","6","142","55","132","61","109","137","134"]
 hp_inheritance:
@@ -332,7 +491,10 @@ hp_inheritance:
   catalog: nbdc02559
   category: Classification
   regex: '^HP[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/HP_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/HP_'
+      rdf: true
   format: ["HP:%s","HP_%s"]
   examples:
     - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
@@ -342,7 +504,10 @@ hp_phenotype:
   catalog: nbdc02559
   category: Phenotype
   regex: '^HP[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/HP_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/HP_'
+      rdf: true
   format: ["HP:%s","HP_%s"]
   examples:
     - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
@@ -352,7 +517,12 @@ inchi_key:
   catalog: FIXME
   category: Compound
   regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$'
-  prefix: 'http://identifiers.org/inchikey/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/inchikey/'
+      rdf: true
+    - label: 'PubChem RDF'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/'
   examples:
     - ["RYYVLZVUVIJVGH-UHFFFAOYSA-N","RZWGTXHSYZGXKF-UHFFFAOYSA-N","RQQIIXFYTHWFKW-ZETCQYMHSA-N","RALAARQREFCZJO-UHFFFAOYSA-N","HVFRJJDZWVSUIB-UHFFFAOYSA-N","KVNZVXVZQFTXNA-UHFFFAOYSA-N","KVQUJTYBWCGJRS-UHFFFAOYSA-N","AFGLQVAJWVTAJT-UHFFFAOYSA-N","LHISABQPMWXWCC-UHFFFAOYSA-N","ZSXCHLJCWRSMMS-UHFFFAOYSA-N"]
 insdc:
@@ -360,7 +530,16 @@ insdc:
   catalog: nbdc02567
   category: Gene
   regex: '^(?:insdc:)?(?<id>[A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/insdc/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc/'
+      rdf: true
+    - label: 'GenBank'
+      uri: 'https://www.ncbi.nlm.nih.gov/nuccore/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ'
+      uri: 'https://getentry.ddbj.nig.ac.jp/getentry?database=ddbj&accession_number='
   examples:
     - ["U10991","AF116914","AK056978","DQ440258","U91725","AY301270","U32907","AY261360","AK001332","U13261"]
 insdc_master:
@@ -368,7 +547,14 @@ insdc_master:
   catalog: nbdc02567
   category: Project
   regex: '^(?:insdc:)?(?<id>[A-Z]{4,6}\d{8,10})(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/insdc/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc/'
+      rdf: true
+    - label: 'GenBank'
+      uri: 'https://www.ncbi.nlm.nih.gov/nuccore/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
   examples:
     - ["ABGA00000000","AADE00000000","AABR00000000","AAGU00000000","ABAR00000000","AADD00000000","ABBA00000000","AAHY00000000","AADG00000000","AAGJ00000000"]
 intact:
@@ -376,7 +562,10 @@ intact:
   catalog: nbdc00507
   category: Interaction
   regex: '^(?<id>EBI\-[0-9]+)$'
-  prefix: 'http://identifiers.org/intact/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/intact/'
+      rdf: true
   examples:
     - ["EBI-7947422","EBI-15714708","EBI-16225271","EBI-4406290","EBI-9026465","EBI-6403471","EBI-1113651","EBI-562824","EBI-9014072","EBI-1784742"]
 interpro:
@@ -384,7 +573,10 @@ interpro:
   catalog: nbdc00108
   category: Domain
   regex: '^(?<id>IPR\d{6})$'
-  prefix: 'http://identifiers.org/interpro/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/interpro/'
+      rdf: true
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
   method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
@@ -393,7 +585,10 @@ iuphar_ligand:
   catalog: FIXME
   category: Compound
   regex: '^(?<id>\d+)$'
-  prefix: 'http://identifiers.org/iuphar.ligand/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/iuphar.ligand/'
+      rdf: true
   examples:
     - ["11152", "2355", "2870", "4047", "50", "5714", "6382", "7792", "8339", "965"]
 jga_dataset:
@@ -401,7 +596,10 @@ jga_dataset:
   catalog: nbdc02152
   category: Project
   regex: '^(?<id>JGAD\d{6})$'
-  prefix: 'http://ddbj.nig.ac.jp/resource/jga-dataset/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://ddbj.nig.ac.jp/resource/jga-dataset/'
+      rdf: true
   examples:
     - ["JGAD000006","JGAD000008","JGAD000009","JGAD000012","JGAD000013","JGAD000014","JGAD000015","JGAD000016","JGAD000024","JGAD000026"]
 jga_study:
@@ -409,7 +607,10 @@ jga_study:
   catalog: nbdc02152
   category: Project
   regex: '^(?<id>JGAS\d{6})$'
-  prefix: 'http://ddbj.nig.ac.jp/resource/jga-study/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://ddbj.nig.ac.jp/resource/jga-study/'
+      rdf: true
   examples:
     - ["JGAS000006","JGAS000008","JGAS000009","JGAS000012","JGAS000013","JGAS000014","JGAS000015","JGAS000016","JGAS000024","JGAS000026"]
 lipidmaps:
@@ -417,7 +618,10 @@ lipidmaps:
   catalog: FIXME
   category: Lipid
   regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
-  prefix: 'http://identifiers.org/lipidmaps/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/lipidmaps/'
+      rdf: true
   examples:
     - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
   method: awk -F "\t" '$2=="NAME"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
@@ -434,7 +638,10 @@ lrg:
   category: Gene
   label: LRG
   regex: '^(?<id>LRG_\d+)$'
-  prefix: 'http://identifiers.org/lrg/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/lrg/'
+      rdf: true
   examples:
     - ["LRG_41","LRG_356","LRG_147","LRG_660","LRG_498","LRG_364","LRG_203","LRG_162","LRG_1271","LRG_884"]
 mbgd_gene:
@@ -443,7 +650,10 @@ mbgd_gene:
   category: Gene
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+:[A-Z0-9_\.-]+)$'
-  prefix: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://mbgd.genome.ad.jp/rdf/resource/gene/'
+      rdf: true
   examples:
     - ["ash:AL1_RS04670","ash:AL1_RS08245","ash:AL1_RS02870","ash:AL1_RS06610","ash:AL1_RS06290","ash:AL1_RS07260","ash:AL1_RS08410","ash:AL1_RS01705","ash:AL1_RS02510","ash:AL1_RS07245"]
 mbgd_organism:
@@ -452,7 +662,10 @@ mbgd_organism:
   category: Organism
   # FIXME: valid in RDF?
   regex: '^(?<id>[a-z0-9]+)$'
-  prefix: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://mbgd.genome.ad.jp/rdf/resource/organism/'
+      rdf: true
   examples:
     - ["lac","pfl","cou","bvn","btd","ctjt","sha","lmoj","dpi","arp"]
 meddra:
@@ -460,7 +673,10 @@ meddra:
   catalog: nbdc02564
   category: Phenotype
   regex: '^(?:(?:MedDRA|meddra):)?(?<id>\d+)$'
-  prefix: 'http://identifiers.org/meddra/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/meddra/'
+      rdf: true
   format: ["%s","MedDRA:%s","meddra:%s"]
   examples:
     - ["10008033","10027710","10062506","10040493","10013611","10065857","10063143","10022599","10042342","10047883"]
@@ -471,7 +687,10 @@ medgen:
   catalog: nbdc02560
   category: Phenotype
   regex: '^(?<id>CN?\d{4,7})$'
-  prefix: 'http://identifiers.org/medgen/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/medgen/'
+      rdf: true
   examples:
     - ["C0264897","C0028860","C0018818","C1848392","C0006389","C0020517","C0000364","CN227118","CN203043","CN292950"]
 mesh:
@@ -479,7 +698,10 @@ mesh:
   catalog: nbdc00132
   category: Phenotype
   regex: '^(?<id>[CD]\d{6,9})$'
-  prefix: 'http://id.nlm.nih.gov/mesh/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://id.nlm.nih.gov/mesh/'
+      rdf: true
   examples:
     - ["D006965","C562829","C566582","D010623","D003327","D001715","D000453","D010260","C537322","C563418"]
 mgi_allele:
@@ -487,7 +709,10 @@ mgi_allele:
   catalog: nbdc00135
   category: Variant
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
-  prefix: 'http://identifiers.org/mgi/MGI:'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mgi/MGI:'
+      rdf: true
   format: ["MGI:%s","mgi:%s"]
   examples:
     - ["MGI:1857242","MGI:1857411","MGI:1857502","MGI:1857508","MGI:1857422","MGI:1857421","MGI:1857473","MGI:1856155","MGI:1857491","MGI:1857496"]
@@ -498,7 +723,12 @@ mgi_gene:
   catalog: nbdc00135
   category: Gene
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
-  prefix: 'http://identifiers.org/mgi/MGI:'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/mgi/MGI:'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/MGI:'
   format: ["MGI:%s","mgi:%s"]
   examples:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
@@ -509,7 +739,10 @@ mgi_genotype:
   catalog: nbdc00135
   category: Genotype
   regex: '^(?:MGI|mgi):(?<id>\d{5,})$'
-  prefix: 'http://identifiers.org/mgi/MGI:'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mgi/MGI:'
+      rdf: true
   format: ["MGI:%s","mgi:%s"]
   examples:
     - ["MGI:2166359","MGI:2166381","MGI:2166442","MGI:2166483","MGI:2166498","MGI:2166566","MGI:2166570","MGI:2166662","MGI:2166806","MGI:2166814"]
@@ -520,7 +753,10 @@ mirbase:
   catalog: nbdc00136
   category: Transcript
   regex: '^(?<id>MI\d{7})$'
-  prefix: 'http://identifiers.org/mirbase/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mirbase/'
+      rdf: true
   examples:
     - ["MI0003587","MI0000252","MI0000811","MI0014201","MI0003578","MI0000293","MI0006384","MI0006361","MI0000480","MI0006419"]
   method: cut -f2,3 $TOGOID_ROOT/input/mirbase/mirna.tsv
@@ -538,7 +774,12 @@ mondo:
   catalog: nbdc02563
   category: Phenotype
   regex: '^MONDO[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/MONDO_'
+  prefix:
+    - label: 'Monarch'
+      uri: 'https://monarchinitiative.org/MONDO:'
+    - label: 'obo'
+      uri: 'http://purl.obolibrary.org/obo/MONDO_'
+      rdf: true
   format: ["MONDO:%s","MONDO_%s"]
   examples:
     - ["MONDO:0000115","MONDO:0002345","MONDO:0011571","MONDO:0020035","MONDO:0020920","MONDO:0004627","MONDO:0005480","MONDO:0010852","MONDO:0002053","MONDO:0015758"]
@@ -560,7 +801,10 @@ mp:
   catalog: FIXME
   category: Phenotype
   regex: '^MP[:_](?<id>\d{7})$'
-  prefix: 'http://identifiers.org/mp/MP:'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mp/MP:'
+      rdf: true
   format: ["MP:%s","MP_%s"]
   examples:
     - ["MP:0000600","MP:0001716","MP:0001698","MP:0001092","MP:0000961","MP:0000245","MP:0000828","MP:0000826","MP:0005039","MP:0002840"]
@@ -570,7 +814,10 @@ nando:
   catalog: nbdc02557
   category: Phenotype
   regex: '^NANDO[:_](?<id>\d{7})$'
-  prefix: 'http://nanbyodata.jp/ontology/NANDO_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://nanbyodata.jp/ontology/NANDO_'
+      rdf: true
   format: ["NANDO:%s","NANDO_%s"]
   examples:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
@@ -580,7 +827,10 @@ nbdc_human_db:
   catalog: nbdc01348
   category: Project
   regex: '^(?<id>hum\d{4})([.\-]v\d+)?$'
-  prefix: 'http://humandbs.biosciencedbc.jp/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://humandbs.biosciencedbc.jp/'
+      rdf: true
   examples:
     - ["hum0004","hum0006","hum0007","hum0008","hum0010","hum0001","hum0011","hum0012","hum0018","hum0019"]
     - ["hum0004.v1","hum0006.v5","hum0007.v1","hum0008.v1","hum0010.v1","hum0001.v1","hum0011.v1","hum0012.v1","hum0018.v1","hum0019.v1"]
@@ -589,7 +839,10 @@ ncbigene:
   catalog: nbdc00073
   category: Gene
   regex: '^(?<id>\d+)$'
-  prefix: 'http://identifiers.org/ncbigene/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/ncbigene/'
+      rdf: true
   examples:
     - ["63962027","1046","63961921","102606930","100472895","407025","84148","88","31157","100463227"]
   label_resolver:
@@ -600,12 +853,33 @@ ncbigene:
         preferred: true
       - label: Synonym
         dictionary: togoid_ncbigene_synonym
+    sparqlist: label2id_ncbigene
+    label_types:
+      - label: NCBI Gene symbol
+        label_type: symbol
+        preferred: true
+      - label: Synonym
+        label_type: synonym
+      - label: Locus Tag
+        label_type: locus_tag
+  annotations:
+    - variable: type_of_gene
+      label: Type of gene
+      items: ["protein-coding", "ncRNA", "pseudo", "rRNA", "tRNA", "scRNA", "snRNA", "snoRNA", "miscRNA", "biological-region", "unknown", "other"]
+    - variable: gene_synonym
+      label: Synonym
+      is_list: true
+    - variable: full_name
+      label: Full name
 ncit_disease:
   label: NCIt disease
   catalog: FIXME
   category: Phenotype
   regex: '^NCIT?[:_](?<id>C\d+)$'
-  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/NCIT_'
+      rdf: true
   format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
   examples:
     - ["NCIT:C48829","NCIT:C136825","NCIT:C48613","NCIT:C122795","NCIT:C67107","NCIT:C8417","NCIT:C8936","NCIT:C8644","NCIT:C80331","NCIT:C80342"]
@@ -617,7 +891,10 @@ ncit_tissue:
   catalog: FIXME
   category: Anatomy
   regex: '^NCIT?[:_](?<id>C\d+)$'
-  prefix: 'http://purl.obolibrary.org/obo/NCIT_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/NCIT_'
+      rdf: true
   format: ["NCIT:%s","NCIT_%s","NCI:%s","NCI_%s"]
   examples:
     - ["NCIT:C12279","NCIT:C94820","NCIT:C77674","NCIT:C32082","NCIT:C12971","NCIT:C34285","NCIT:C97112","NCIT:C105446","NCIT:C12846","NCIT:C12845"]
@@ -629,7 +906,10 @@ oma_group:
   catalog: nbdc02221
   category: Ortholog
   regex: '^(?<id>[A-Z]+)$'
-  prefix: 'http://identifiers.org/oma.grp/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/oma.grp/'
+      rdf: true
   examples:
     - ["RVAAYKY","LFVHAIL","EMSPITC","NQSHFFA","AYTHYSY","PRPKYDP","WSRIHIV","DFGGWKI","FHVAHGE","PYVYVTH"]
 oma_protein:
@@ -637,7 +917,10 @@ oma_protein:
   catalog: nbdc02221
   category: Protein
   regex: '^(?<id>[A-Z]{3}[A-Z0-9]{2}[0-9]{5,6})$'
-  prefix: 'http://identifiers.org/oma.protein/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/oma.protein/'
+      rdf: true
   examples:
     - ["ACIB400217","ACIB400465","HUMAN00333","HUMAN01170","HUMAN00470","HUMAN03367","ACIB400486","HUMAN01061","HUMAN02190","HUMAN02112"]
 omim_gene:
@@ -645,7 +928,10 @@ omim_gene:
   catalog: nbdc00154
   category: Gene
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
-  prefix: 'http://identifiers.org/mim/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mim/'
+      rdf: true
   format: ["%s","OMIM:%s","MIM:%s"]
   examples:
     - ["604810","115460","608706","300181","102575","601280","602832","601604","177075","608977"]
@@ -656,7 +942,10 @@ omim_phenotype:
   catalog: nbdc00154
   category: Phenotype
   regex: '^(?:O?MIM:)?(?<id>\d{6})$'
-  prefix: 'http://identifiers.org/mim/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mim/'
+      rdf: true
   format: ["%s","OMIM:%s","MIM:%s"]
   examples:
     - ["207780","236100","237500","300716","125310","165199","617175","137600","600089","601317"]
@@ -667,7 +956,10 @@ orphanet_gene:
   catalog: nbdc01422
   category: Gene
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
-  prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+      rdf: true
   format: ["ORPHA:%s","ORDO:%s","Orphanet:%s","Orphanet_%s"]
   examples:
     - ["ORPHA:217124","ORPHA:218033","ORPHA:218036","ORPHA:218040","ORPHA:218045","ORPHA:218049","ORPHA:218358","ORPHA:218376","ORPHA:218672","ORPHA:218675"]
@@ -679,7 +971,10 @@ orphanet_phenotype:
   catalog: nbdc01422
   category: Phenotype
   regex: '^(?:ORPHA|ORDO|Orphanet)[:_](?<id>[A-Z0-9]+)$'
-  prefix: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/orphanet.ordo/Orphanet_'
+      rdf: true
   format: ["ORPHA:%s","ORDO:%s","Orphanet:%s","Orphanet_%s"]
   examples:
     - ["ORPHA:101078","ORPHA:596","ORPHA:1934","ORPHA:1047","ORPHA:60025","ORPHA:166090","ORPHA:275745","ORPHA:1171","ORPHA:93277","ORPHA:247598"]
@@ -691,7 +986,10 @@ pathbank:
   catalog: FIXME
   category: Pathway
   regex: '^(?<id>SMP\d+)$'
-  prefix: 'http://pathbank.org/view/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://pathbank.org/view/'
+      rdf: true
   examples:
     - ["SMP0000055","SMP0000057","SMP0000029","SMP0000044","SMP0000048","SMP0000046","SMP0000059","SMP0000067","SMP0000007","SMP0000004"]
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pathbank_label.rq https://rdfportal.org/pubchem/sparql
@@ -700,7 +998,10 @@ pdb:
   catalog: nbdc00156
   category: Structure
   regex: '^(?<id>[0-9][A-Za-z0-9]{3})$'
-  prefix: 'http://rdf.wwpdb.org/pdb/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://rdf.wwpdb.org/pdb/'
+      rdf: true
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
     - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
@@ -709,7 +1010,10 @@ pdb_ccd:
   catalog: nbdc01766
   category: Compound
   regex: '^(?<id>\w{1,3})$'
-  prefix: 'http://identifiers.org/pdb-ccd/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/pdb-ccd/'
+      rdf: true
   examples:
     - ["D5Y","P2B","A6L","M35","A6M","S1P","D5Z","M36","P2C","P2D"]
 pfam:
@@ -717,7 +1021,10 @@ pfam:
   catalog: nbdc00163
   category: Domain
   regex: '^(?<id>PF\d{5})$'
-  prefix: 'http://identifiers.org/pfam/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/pfam/'
+      rdf: true
   examples:
     - ["PF03719","PF03726","PF02809","PF00105","PF00250","PF00412","PF01412","PF00459","PF02532","PF01226"]
   method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro/interpro.tsv $TOGOID_ROOT/input/interpro/interpro.tsv
@@ -726,7 +1033,12 @@ pmc:
   catalog: nbdc01836
   category: Literature
   regex: '^(?:PMC)?(?<id>\d+)$'
-  prefix: 'http://identifiers.org/pmc/PMC'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/pmc/PMC'
+      rdf: true
+    - label: 'Europe PMC'
+      uri: 'http://europepmc.org/articles/'
   examples:
     - ["PMC7857752","PMC10139720","PMC3815299","PMC4990340","PMC6885017","PMC5286597","PMC8035296","PMC46450","PMC11138896","PMC9528096"]
     - ["7857752","10139720","3815299","4990340","6885017","5286597","8035296","46450","11138896","9528096"]
@@ -735,7 +1047,10 @@ prosite:
   catalog: nbdc00241
   category: Domain
   regex: '^(?<id>PS\d{5})$'
-  prefix: 'http://identifiers.org/prosite/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/prosite/'
+      rdf: true
   examples:
     - ["PS01177","PS00516","PS01065","PS00418","PS01085","PS01086","PS01293","PS00355","PS01253","PS00992"]
   method: awk 'BEGIN{FS="\n"; RS="//\n"}FNR>=2{for(i=1;i<=NF;i++){if($i~/^DE   /){label=substr($i,6)}if($i~/AC   /){split($i,b,";");id=substr(b[1],6)}}print id "\t" label}' $TOGOID_ROOT/input/prosite/prosite.dat
@@ -744,7 +1059,10 @@ prosite_prorule:
   catalog: nbdc00241
   category: AnnotationRule
   regex: '^(?<id>PRU\d{5})$'
-  prefix: 'https://prosite.expasy.org/rule/'
+  prefix:
+    - label: 'rdf'
+      uri: 'https://prosite.expasy.org/rule/'
+      rdf: true
   examples:
     - ["PRU00498","PRU00672","PRU00673","PRU00293","PRU00499","PRU10142","PRU10001","PRU10002","PRU10004","PRU10005"]
   method: awk 'BEGIN{FS="\n"; RS="//\n"}FNR>=2{for(i=1;i<=NF;i++){if($i~/^Names/){label=substr($i,8)}if($i~/AC   /){split($i,b,";");id=substr(b[1],6)}}print id "\t" label}' $TOGOID_ROOT/input/prosite/prorule.dat
@@ -753,7 +1071,10 @@ pubchem_compound:
   catalog: nbdc00641
   category: Compound
   regex: '^(?:CID)?(?<id>\d+)$'
-  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID'
+      rdf: true
   format: ["%s","CID%s"]
   examples:
     - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
@@ -763,7 +1084,10 @@ pubchem_pathway:
   catalog: nbdc02626
   category: Pathway
   regex: '^(?:PWID)?(?<id>\d+)$'
-  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/pathway/PWID'
+      rdf: true
   format: ["%s","PWID%s"]
   examples:
     - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
@@ -774,7 +1098,10 @@ pubchem_substance:
   catalog: nbdc00642
   category: Compound
   regex: '^(?:SID)?(?<id>\d+)$'
-  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
+      rdf: true
   format: ["%s","SID%s"]
   examples:
     - ["15229855","15277848","15782795","16076657","16035895","12012900","15378994","14850434","14847540","15271473"]
@@ -784,7 +1111,10 @@ pubmed:
   catalog: nbdc00179
   category: Literature
   regex: '^(?:pmid:|PMID:)?(?<id>\d+)$'
-  prefix: 'http://rdf.ncbi.nlm.nih.gov/pubmed/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubmed/'
+      rdf: true
   format: ["%s","pmid:%s","PMID:%s"]
   examples:
     - ["19281226","19879151","20858243","10773016","16527252","28499733","10397770","15149666","23861362","10577920"]
@@ -795,7 +1125,10 @@ reactome_pathway:
   catalog: nbdc00185
   category: Pathway
   regex: '^(?<id>R-[A-Z]{3}-\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/reactome/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/reactome/'
+      rdf: true
   examples:
     - ["R-HSA-165159","R-DRE-1630316","R-SCE-9634635","R-DRE-140834","R-HSA-2142753","R-BTA-383280","R-MMU-5218900","R-RNO-5654219","R-MMU-8875791","R-MMU-9648025"]
 reactome_reaction:
@@ -803,7 +1136,10 @@ reactome_reaction:
   catalog: nbdc00185
   category: Reaction
   regex: '^(?<id>R-[A-Z]{3}-\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/reactome/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/reactome/'
+      rdf: true
   examples:
     - ["R-DRE-1482961","R-DRE-6814409","R-HSA-2395869","R-HSA-1222722","R-HSA-893583","R-MMU-158484","R-HSA-8875071","R-HSA-372519","R-HSA-6797627","R-DRE-975814"]
 refseq_genomic:
@@ -812,7 +1148,10 @@ refseq_genomic:
   category: Gene
   # NC_; AC_; NG_; NT_; NW_; NZ_
   regex: '^(?<id>(?:AC_|N[CGTW]_|NZ_[A-Z]+)\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/refseq/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/refseq/'
+      rdf: true
   examples:
     - ["NG_004671","NG_011844","NG_008481","NG_007973","NG_001091","NG_008005","NG_023230","NG_046394","NG_009617","NG_016421","NG_021472"]
     - ["NG_004671.3","NG_011844.2","NG_008481.4","NG_007973.1","NG_001091.7","NG_008005.1","NG_023230.1","NG_046394.1","NG_009617.1","NG_016421.2","NG_021472.2"]
@@ -822,7 +1161,10 @@ refseq_protein:
   category: Protein
   # NP_; XP_; AP_; YP_; WP_; ZP_
   regex: '^(?<id>[ANXYWZ]P_\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/refseq/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/refseq/'
+      rdf: true
   examples:
     - ["NP_001171968","NP_001365494","NP_000015","XP_011522750","XP_011516190","XP_005265876","WP_016919164","WP_080513319","YP_001687722","YP_001966380"]
     - ["NP_001171968.1","NP_001365494.1","NP_000015.2","XP_011522750.1","XP_011516190.1","XP_005265876.1","WP_016919164.1","WP_080513319.1","YP_001687722.1","YP_001966380.1"]
@@ -832,7 +1174,10 @@ refseq_rna:
   category: Transcript
   # NM_; NR_; XM_; XR_
   regex: '^(?<id>(?:NM|NR|XM|XR)_\d+)(?:\.\d+)?$'
-  prefix: 'http://identifiers.org/refseq/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/refseq/'
+      rdf: true
   examples:
     - ["XM_017013006","NM_001199636","NM_001110","NR_170162","NR_027673","XR_388511","NR_175316","NM_115904","NM_129829","NM_130477"]
     - ["XM_017013006.1","NM_001199636.2","NM_001110.4","NR_170162.1","NR_027673.1","XR_388511.5","NR_175316.1","NM_115904.3","NM_129829.4","NM_130477.4"]
@@ -850,7 +1195,12 @@ rgd:
   catalog: nbdc00188
   category: Gene
   regex: '^(?:(?:RGD|rgd):)?(?<id>\d{4,})$'
-  prefix: 'http://identifiers.org/rgd/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/rgd/'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/RGD:'
   format: ["%s","RGD:%s","rgd:%s"]
   examples:
     - ["1308312","1311120","1309724","1565514","7683241","1307957","71036","1307876","1308965","1305482"]
@@ -862,7 +1212,10 @@ rhea:
   catalog: nbdc02083
   category: Reaction
   regex: '^(?<id>\d{5})$'
-  prefix: 'http://identifiers.org/rhea/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/rhea/'
+      rdf: true
   examples:
     - ["10253","10818","13517","11136","13729","10240","11728","16870","10732","11278"]
 rnacentral:
@@ -879,16 +1232,37 @@ sgd:
   catalog: nbdc00202
   category: Gene
   regex: '^(?<id>S\d{9})$'
-  prefix: 'http://identifiers.org/sgd/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/sgd/'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/SGD:'
   examples:
     - ["S000003096","S000003789","S000005770","S000028467","S000006377","S000001180","S000003769","S000001459","S000004428","S000006021"]
   method: awk -F '\t' -v 'db=SGD' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+sio:
+  label: SIO
+  catalog: FIXME
+  category: Classification
+  regex: '^SIO[:_](?<id>\d{6})$'
+  format: ["SIO:%s","SIO_%s"]
+  prefix:
+    - label: 'rdf'
+      uri: 'http://semanticscience.org/resource/'
+      rdf: true
+  examples:
+    - ["SIO:000008","SIO:000095","SIO:000216","SIO:000253","SIO:000628","SIO:000772","SIO:000061","SIO:000223","SIO:000300"]
+    - ["SIO_000008","SIO_000095","SIO_000216","SIO_000253","SIO_000628","SIO_000772","SIO_000061","SIO_000223","SIO_000300"]
 smart:
   label: SMART
   catalog: nbdc00682
   category: Domain
   regex: '^(?<id>SM\d{5})$'
-  prefix: 'http://identifiers.org/smart/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/smart/'
+      rdf: true
   examples:
     - ["SM00130","SM00239","SM00043","SM00091","SM00104","SM01001","SM00135","SM00281","SM00996","SM00015"]
 sra_accession:
@@ -896,7 +1270,16 @@ sra_accession:
   catalog: nbdc00687
   category: Submission
   regex: '^(?<id>[SED]RA\d+)$'
-  prefix: 'http://identifiers.org/insdc.sra/'
+  prefix:
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.sra/'
+      rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-submission/'
   examples:
     - ["DRA000741","DRA000768","DRA001014","DRA000833","SRA000144","SRA000605","SRA008879","ERA007227","ERA011638","ERA013580"]
 sra_analysis:
@@ -904,7 +1287,16 @@ sra_analysis:
   catalog: nbdc00687
   category: Analysis
   regex: '^(?<id>[SED]RZ\d+)$'
-  prefix: 'http://identifiers.org/insdc.sra/'
+  prefix:
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.sra/'
+      rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-analysis/'
   examples:
     - ["DRZ000249","DRZ000087","DRZ003045","DRZ000829","SRZ168127","SRZ008405","SRZ010259","SRZ011419","SRZ006662","SRZ010567"]
 sra_experiment:
@@ -912,7 +1304,18 @@ sra_experiment:
   catalog: nbdc00687
   category: Experiment
   regex: '^(?<id>[SED]RX\d+)$'
-  prefix: 'http://identifiers.org/insdc.sra/'
+  prefix:
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.sra/'
+      rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-experiment/'
+    - label: 'ChIP-Atlas'
+      uri: 'https://chip-atlas.org/view?id='
   examples:
     - ["DRX000585","DRX000114","DRX000613","DRX000681","SRX000921","SRX000254","SRX000626","ERX149204","ERX001260","ERX000427"]
 sra_project:
@@ -920,7 +1323,16 @@ sra_project:
   catalog: nbdc00687
   category: Project
   regex: '^(?<id>[SED]RP\d+)$'
-  prefix: 'http://identifiers.org/insdc.sra/'
+  prefix:
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.sra/'
+      rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-study/'
   examples:
     - ["DRP000994","DRP000877","DRP000649","DRP000147","SRP266466","SRP297268","SRP000065","ERP001266","ERP007720","ERP104141"]
 sra_run:
@@ -928,7 +1340,16 @@ sra_run:
   catalog: nbdc00687
   category: SequenceRun
   regex: '^(?<id>[SED]RR\d+)$'
-  prefix: 'http://identifiers.org/insdc.sra/'
+  prefix:
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.sra/'
+      rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-run/'
   examples:
     - ["DRR000834","DRR000683","DRR000264","DRR000453","SRR029947","SRR000290","SRR004854","ERR499402","ERR004130","ERR000715"]
 sra_sample:
@@ -936,7 +1357,16 @@ sra_sample:
   catalog: nbdc00687
   category: Sample
   regex: '^(?<id>[SED]RS\d+)$'
-  prefix: 'http://identifiers.org/insdc.sra/'
+  prefix:
+    - label: 'NCBI SRA'
+      uri: 'https://www.ncbi.nlm.nih.gov/sra/'
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.sra/'
+      rdf: true
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/'
+    - label: 'DDBJ SRA'
+      uri: 'https://ddbj.nig.ac.jp/resource/sra-sample/'
   examples:
     - ["DRS001431","DRS001371","DRS000894","DRS000386","SRS2618009","SRS7846025","SRS000159","ERS452503","ERS000126","ERS010423"]
 swisslipids:
@@ -944,7 +1374,10 @@ swisslipids:
   catalog: nbdc02026
   category: Lipid
   regex: '^SLM[:_](?<id>\d+)$'
-  prefix: 'http://identifiers.org/slm/SLM:'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/slm/SLM:'
+      rdf: true
   format: ["SLM:%s","SLM_%s"]
   examples:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
@@ -955,7 +1388,10 @@ tair:
   catalog: nbdc00697
   category: Gene
   regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
-  prefix: 'http://identifiers.org/tair.name/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/tair.name/'
+      rdf: true
   examples:
     - ["AT3G60400","AT1G26300","AT2G03160","AT1G25340","AT3G22470","AT3G58030","AT2G42680","AT4G05600","AT2G47480","AT4G30420"]
   method: awk -F '\t' -v 'db=TAIR' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -964,7 +1400,18 @@ taxonomy:
   catalog: nbdc00700
   category: Organism
   regex: '^(?<id>\d+)$'
-  prefix: 'http://identifiers.org/taxonomy/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/taxonomy/'
+      rdf: true
+    - label: 'NCBI Taxonomy'
+      uri: 'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id='
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/data/view/Taxon:'
+    - label: 'UniProt'
+      uri: 'https://purl.uniprot.org/taxonomy/'
+    - label: 'OLS'
+      uri: 'https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon/terms?short_form=NCBITaxon_'
   examples:
     - ["1171376","484906","1214242","1124991","1037911","1266844","243277","696747","263820","713604"]
 togovar:
@@ -973,7 +1420,10 @@ togovar:
   category: Variant
   # FIXME: valid in RDF?
   regex: '^(?<id>tgv\d+)$'
-  prefix: 'http://identifiers.org/togovar/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/togovar/'
+      rdf: true
   examples:
     - ["tgv100005930","tgv100000890","tgv16331","tgv10000341","tgv21330879","tgv15847","tgv1354996","tgv100002132","tgv16568524","tgv62035164"]
 uberon:
@@ -981,7 +1431,10 @@ uberon:
   catalog: FIXME
   category: Anatomy
   regex: '^UBERON[:_](?<id>\d{7})$'
-  prefix: 'http://purl.obolibrary.org/obo/UBERON_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/UBERON_'
+      rdf: true
   format: ["UBERON:%s","UBERON_%s"]
   examples:
     - ["UBERON:0002115","UBERON:0001004","UBERON:0000007","UBERON:0001044","UBERON:0001825","UBERON:0001361","UBERON:0002186","UBERON:0000945","UBERON:0036068","UBERON:0001017"]
@@ -991,15 +1444,39 @@ uniprot:
   catalog: nbdc00221
   category: Protein
   regex: '^(?:(?<id1>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|(?<id2>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$'
-  prefix: 'http://purl.uniprot.org/uniprot/'
+  prefix:
+    - label: 'UniProt'
+      uri: 'http://purl.uniprot.org/uniprot/'
+      rdf: true
+    - label: 'InterPro'
+      uri: 'https://www.ebi.ac.uk/interpro/protein/'
+    - label: 'jPOST'
+      uri: 'https://globe.jpostdb.org/protein?id='
+    - label: 'GlyCosmos'
+      uri: 'https://glycosmos.org/glycoproteins/show/uniprot/'
+    - label: 'Pharos'
+      uri: 'https://pharos.nih.gov/targets/'
+    - label: 'IntAct'
+      uri: 'https://www.ebi.ac.uk/intact/search?query=id:'
+    - label: 'AlphaFold DB'
+      uri: 'https://alphafold.ebi.ac.uk/entry/'
   examples:
     - ["A0A174V9D2","A0A1V4U2Y9","Q7NXD4","P0AAM3","O43423","D4IJI4","Q66SS1","B5IDU9","D3TBR4","D4ILS5"]
+  annotations:
+    - variable: reviewed
+      label: SwissProt
+      items: ["true", "false"]
+    - variable: short_name
+      label: Short name
 uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221
   category: Protein
   regex: '^(?<id>[A-Z0-9]+_[A-Z0-9]{0,5})$'
-  prefix: 'http://purl.uniprot.org/uniprot/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.uniprot.org/uniprot/'
+      rdf: true
   examples:
     - ["2ABA_ORYSJ","33K_ADES1","1003L_ASFK5","1A1D_VARPS","1B02_GORGO","1003L_ASFP4","1433B_MACFA","1107L_ASFWA","3BHS1_MOUSE","14331_SCHMA"]
 uniprot_proteome:
@@ -1007,7 +1484,10 @@ uniprot_proteome:
   catalog: nbdc00221
   category: Proteome
   regex: '^(?<id>UP\d{0,9})$'
-  prefix: 'http://purl.uniprot.org/proteomes/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.uniprot.org/proteomes/'
+      rdf: true
   examples:
     - ["UP000005640","UP000002311","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
   method: zcat $TOGOID_ROOT/input/uniprot/uniprot_proteome.tab.gz | awk -F "\t" 'FNR>=2&&$1&&$4{print $1 "\t" $4}'
@@ -1018,7 +1498,10 @@ vgnc:
   category: Gene
   regex: '^((VGNC|vgnc):)?(?<id>\d{1,9})$'
   format: ["%s","VGNC:%s","vgnc:%s"]
-  prefix: 'http://identifiers.org/vgnc/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/vgnc/'
+      rdf: true
   examples:
     - ["39230","49608","85188","76040","72808","73601","9436","78821","74596","5304"]
     - ["VGNC:39230","VGNC:49608","VGNC:85188","VGNC:76040","VGNC:72808","VGNC:73601","VGNC:9436","VGNC:78821","VGNC:74596","VGNC:5304"]
@@ -1029,7 +1512,10 @@ wikipathways:
   catalog: nbdc02116
   category: Pathway
   regex: '^(?<id>WP\d{1,5})(?:\_r\d+)?$'
-  prefix: 'http://identifiers.org/wikipathways/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/wikipathways/'
+      rdf: true
   examples:
     - ["WP1531","WP4312","WP4877","WP5020","WP4400","WP4474","WP4183","WP3650","WP4545","WP4462"]
     - ["WP1531_r107120","WP4312_r104287","WP4877_r116595","WP5020_r114721","WP4400_r108112","WP4474_r102094","WP4183_r106890","WP3650_r110699","WP4545_r116235","WP4462_r102079"]
@@ -1038,7 +1524,12 @@ wormbase_gene:
   catalog: nbdc00740
   category: Gene
   regex: '^(?<id>WBGene\d{8})$'
-  prefix: 'http://identifiers.org/wb/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/wb/'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/WB:'
   examples:
     - ["WBGene00016754","WBGene00015101","WBGene00186327","WBGene00061034","WBGene00053829","WBGene00084107","WBGene00073019","WBGene00018190","WBGene00011286","WBGene00062378"]
   method: awk -F '\t' -v 'db=AllianceGenome:WB' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -1047,7 +1538,12 @@ xenbase_gene:
   catalog: nbdc01892
   category: Gene
   regex: '^(?<id>XB\-[A-Z]+\-\d+)$'
-  prefix: 'http://identifiers.org/xenbase/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/xenbase/'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/Xenbase:'
   examples:
     - ["XB-GENE-877040","XB-GENE-22060981","XB-GENE-17344257","XB-GENE-487684","XB-GENE-1014349","XB-GENE-17335133","XB-GENE-1012537","XB-GENE-494019","XB-GENE-5952945","XB-GENE-957742"]
   method: awk -F '\t' -v 'db=Xenbase' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
@@ -1056,7 +1552,12 @@ zfin_gene:
   catalog: nbdc00746
   category: Gene
   regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
-  prefix: 'http://identifiers.org/zfin/'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/zfin/'
+      rdf: true
+    - label: 'Alliance of Genome Resources'
+      uri: 'https://www.alliancegenome.org/gene/ZFIN:'
   examples:
     - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
   method: awk -F '\t' -v 'db=ZFIN' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
