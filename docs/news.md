@@ -1,4 +1,7 @@
 Datasets last updated: 2025-07-03
+# *NOTICE*
+Due to a scheduled system update, the TogoID service may be temporarily unavailable on Thursday, July 17, 2025, between 09:00 and 18:00 (JST). We apologize for any incovenience caused.
+
 # 2025-06-10
 - A new dataset [miRBase mature](https://togoid.dbcls.jp/?route=mirbase_mature&ids=MIMAT0000001%2CMIMAT0015091%2CMIMAT0000002%2CMIMAT0015092%2CMIMAT0000003%2CMIMAT0000004%2CMIMAT0000005%2CMIMAT0015093%2CMIMAT0000006%2CMIMAT0000007) has been added.
 
