@@ -281,7 +281,10 @@ efo_disease:
   catalog: FIXME
   category: Phenotype
   regex: '^EFO[:_](?<id>\d{7})$'
-  prefix: 'http://www.ebi.ac.uk/efo/EFO_'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://www.ebi.ac.uk/efo/EFO_'
+      rdf: true
   format: ["EFO:%s","EFO_%s"]
   examples:
     - ["EFO:0009491","EFO:0009549","EFO:0001365","EFO:0002427","EFO:0005531","EFO:0005539","EFO:0005583","EFO:0007308","EFO:0008560","EFO:0000779"]
@@ -353,7 +356,10 @@ flybase_protein:
   catalog: nbdc00064
   category: Protein
   regex: '^(?<id>FBpp\d{7})$'
-  prefix: 'http://identifiers.org/fb/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/fb/'
+      rdf: true
   examples:
     - ["FBpp0071677","FBpp0071678","FBpp0099961","FBpp0309745","FBpp0082828","FBpp0082829","FBpp0289712","FBpp0297433","FBpp0082823","FBpp0082824"]
   method: awk -F '\t' '!/^#/&&$10&&!a[$10]++{print $10 "\t" gensub("\r", "", "g", $11)}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
@@ -362,7 +368,10 @@ flybase_transcript:
   catalog: nbdc00064
   category: Transcript
   regex: '^(?<id>FBtr\d{7})$'
-  prefix: 'http://identifiers.org/fb/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/fb/'
+      rdf: true
   examples:
     - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
   method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
@@ -630,7 +639,10 @@ lncbook_gene:
   catalog: FIXME
   category: Gene
   regex: '^(?<id>HSALNG[0-9]{7})$'
-  prefix: 'http://identifiers.org/lncbook/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/lncbook/'
+      rdf: true
   examples:
     - ["HSALNG0044971","HSALNG0063621","HSALNG0088821","HSALNG0028312","HSALNG0083434","HSALNG0115829","HSALNG0072678","HSALNG0031034","HSALNG0038414","HSALNG0011632"]
 lrg:
@@ -765,7 +777,10 @@ mirbase_mature:
   catalog: nbdc00136
   category: Transcript
   regex: '^(?<id>MIMAT\d{7})$'
-  prefix: 'http://identifiers.org/mirbase.mature/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/mirbase.mature/'
+      rdf: true
   examples:
     - ["MIMAT0000001","MIMAT0015091","MIMAT0000002","MIMAT0015092","MIMAT0000003","MIMAT0000004","MIMAT0000005","MIMAT0015093","MIMAT0000006","MIMAT0000007"]
   method: awk -F "\t" '{print $4 "\t" $2}' $TOGOID_ROOT/input/mirbase/mirna_mature.tsv
@@ -1187,7 +1202,10 @@ rfam:
   catalog: nbdc00654
   category: Transcript
   regex: '^(?<id>RF\d{5})?$'
-  prefix: 'http://identifiers.org/rfam/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/rfam/'
+      rdf: true
   examples:
     - ["RF00001","RF01502","RF00017","RF00906","RF00013","RF00163","RF00005","RF01787","RF00100","RF04272"]
 rgd:
@@ -1223,7 +1241,10 @@ rnacentral:
   catalog: FIXME
   category: Transcript
   regex: '^(?<id>URS[0-9A-F]{10}\_\d+)$'
-  prefix: 'http://identifiers.org/rnacentral/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/rnacentral/'
+      rdf: true
   examples:
     - ["URS00000004BF_6239","URS0000000A43_6239","URS0000001328_3702","URS000000B038_7227","URS00000121A3_3702","URS0000014B59_559292","URS00000561D6_10090","URS0000060CC3_10116","URS0000118C49_9606","URS0000001E80_9606"]
   method: awk -F '\t' 'FNR>=2{print $2 "\t" $4}' $TOGOID_ROOT/input/rnacentral/rnacentral.gpi
@@ -1566,7 +1587,10 @@ zfin_transcript:
   catalog: nbdc00746
   category: Transcript
   regex: '^(?<id>ZDB\-[A-Z]+\-\d{6}\-\d+)$'
-  prefix: 'http://identifiers.org/zfin/'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://identifiers.org/zfin/'
+      rdf: true
   examples:
     - ["ZDB-TSCRIPT-090929-12612","ZDB-TSCRIPT-121213-534","ZDB-TSCRIPT-131113-1447","ZDB-TSCRIPT-131113-2944","ZDB-TSCRIPT-131113-3950","ZDB-TSCRIPT-130528-437","ZDB-TSCRIPT-141209-570","ZDB-TSCRIPT-131113-1539","ZDB-TSCRIPT-131113-984","ZDB-TSCRIPT-131113-1525"]
   method: awk -F '\t' '$7!~/^Withdrawn/{print $1 "\t" $3}' $TOGOID_ROOT/input/zfin/transcripts.txt
