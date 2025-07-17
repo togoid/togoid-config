@@ -1,6 +1,11 @@
 Datasets last updated: 2025-07-03
-# *NOTICE*
-Due to a scheduled system update, the TogoID service may be temporarily unavailable on Thursday, July 17, 2025, between 09:00 and 18:00 (JST). We apologize for any incovenience caused.
+
+# 2025-07-17
+*New features released!*
+- Various annotations associated with database records are now retrievable from the results table. Some annotations, such as transcript flags, are available for filtering the results. The available annotations can be found in the ANNOTATIONS section under the DATASETS tab and will be expanded in future.
+- The destination URL format for converted IDs is now selectable.
+- The process for converting gene symbols to NCBI Gene IDs in the LABEL2ID tab has been significantly improved in speed.
+- Several minor improvements and bug fixes have also been implemented.
 
 # 2025-06-10
 - A new dataset [miRBase mature](https://togoid.dbcls.jp/?route=mirbase_mature&ids=MIMAT0000001%2CMIMAT0015091%2CMIMAT0000002%2CMIMAT0015092%2CMIMAT0000003%2CMIMAT0000004%2CMIMAT0000005%2CMIMAT0015093%2CMIMAT0000006%2CMIMAT0000007) has been added.
