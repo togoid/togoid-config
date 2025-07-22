@@ -18,8 +18,8 @@ FNR==NR {
     if ($0~/ +regex:/) {
         regex[namespace] = gensub(/(^ *regex: *'\^)|(\$'$)|(\?<id[0-9]*>)/, "", "g", $0)
     }
-    if ($0~/ +prefix:/) {
-        prefix[namespace] = gensub(/(^ *prefix: *'.+\/)|('$)/, "", "g", $0)
+    if ($0~/ +uri:/ && !prefix[namespace]) {
+        prefix[namespace] = gensub(/(^ *uri: *'.+\/)|('$)/, "", "g", $0)
     }
     next
 }
