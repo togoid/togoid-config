@@ -15,11 +15,12 @@ FNR==NR {
     if ($0~/^[^ ]+: *$/) {
         namespace = gensub(/: */, "", "g", $1)
     }
-    if ($0~/ +regex:/) {
+    if ($0~/^ +regex:/) {
         regex[namespace] = gensub(/(^ *regex: *'\^)|(\$'$)|(\?<id[0-9]*>)/, "", "g", $0)
     }
-    if ($0~/ +uri:/ && !prefix[namespace]) {
-        prefix[namespace] = gensub(/(^ *uri: *'.+\/)|('$)/, "", "g", $0)
+    if ($0~/^ +uri:/ && !is_prefix_defined[namespace]) {
+        prefix[namespace] = gensub(/(^ *uri: *'.+[\/=])|('$)/, "", "g", $0)
+        is_prefix_defined[namespace] = 1
     }
     next
 }
