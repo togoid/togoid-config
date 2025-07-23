@@ -888,18 +888,18 @@ namespace :prepare do
       updated = false
       input_file = "#{INPUT_LIPIDMAPS_DIR}/sdf.zip"
       input_url  = "\"https://www.lipidmaps.org/files/?file=LMSD&ext=sdf.zip\""
-      ## Check only the file size because the timestamp is not available.
-      if check_remote_file_size(input_file, input_url)
-        opts = "--quiet --no-check-certificate"
-        begin
-          sh "wget #{opts} -O #{INPUT_LIPIDMAPS_DIR}/sdf.zip #{input_url}"
-        rescue StandardError => e
-          $stderr.puts "Error: download_file(#{INPUT_LIPIDMAPS_DIR}, #{input_url}): #{e.message}"
-        end
-        sh "unzip -o #{input_file} -d #{INPUT_LIPIDMAPS_DIR}/"
-        sh "awk -f bin/parse_lipidmaps_sdf.awk #{INPUT_LIPIDMAPS_DIR}/structures.sdf > #{INPUT_LIPIDMAPS_DIR}/lipidmaps.tsv"
-        updated = true
+      ## Do not check the file size and the timestamp because they are not available in the http header.
+      ## As a result, the lipidmaps related pairs will be always updated.
+      opts = "--quiet --no-check-certificate"
+      begin
+        sh "wget #{opts} -O #{INPUT_LIPIDMAPS_DIR}/sdf.zip #{input_url}"
+      rescue StandardError => e
+        $stderr.puts "Error: download_file(#{INPUT_LIPIDMAPS_DIR}, #{input_url}): #{e.message}"
       end
+      sh "unzip -o #{input_file} -d #{INPUT_LIPIDMAPS_DIR}/"
+      sh "awk -f bin/parse_lipidmaps_sdf.awk #{INPUT_LIPIDMAPS_DIR}/structures.sdf > #{INPUT_LIPIDMAPS_DIR}/lipidmaps.tsv"
+      updated = true
+
       updated
     end
   end

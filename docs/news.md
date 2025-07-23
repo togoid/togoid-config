@@ -1,4 +1,4 @@
-Datasets last updated: 2025-07-03
+Datasets last updated: 2025-07-23
 
 # 2025-07-17
 *New features released!*
@@ -6,6 +6,9 @@ Datasets last updated: 2025-07-03
 - The destination URL format for converted IDs is now selectable.
 - The process for converting gene symbols to NCBI Gene IDs in the LABEL2ID tab has been significantly improved in speed.
 - Several minor improvements and bug fixes have also been implemented.
+
+# 2025-07-23
+- A new dataset [EFO disease](https://togoid.dbcls.jp/?route=efo_disease&ids=EFO%3A0009491%2CEFO%3A0009549%2CEFO%3A0001365%2CEFO%3A0002427%2CEFO%3A0005531%2CEFO%3A0005539%2CEFO%3A0005583%2CEFO%3A0007308%2CEFO%3A0008560%2CEFO%3A0000779) has been added.
 
 # 2025-06-10
 - A new dataset [miRBase mature](https://togoid.dbcls.jp/?route=mirbase_mature&ids=MIMAT0000001%2CMIMAT0015091%2CMIMAT0000002%2CMIMAT0015092%2CMIMAT0000003%2CMIMAT0000004%2CMIMAT0000005%2CMIMAT0015093%2CMIMAT0000006%2CMIMAT0000007) has been added.
