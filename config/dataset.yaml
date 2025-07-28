@@ -427,7 +427,9 @@ glytoucan:
   category: Glycan
   regex: '^(?<id>G[0-9]{5}[A-Z]{2})$'
   prefix:
-    - label: 'rdf'
+    - label: 'GlyCosmos'
+      uri: 'https://glycosmos.org/glycans/'
+    - label: 'identifiers.org'
       uri: 'http://identifiers.org/glytoucan/'
       rdf: true
   examples:
