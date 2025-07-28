@@ -1438,6 +1438,13 @@ taxonomy:
       uri: 'https://purl.uniprot.org/taxonomy/'
     - label: 'OLS'
       uri: 'https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon/terms?short_form=NCBITaxon_'
+  annotations:
+    - variable: genbank_common_name
+      label: Genbank common name
+      is_list: true
+    - variable: common_name
+      label: Common name
+      is_list: true
   examples:
     - ["1171376","484906","1214242","1124991","1037911","1266844","243277","696747","263820","713604"]
 togovar:
