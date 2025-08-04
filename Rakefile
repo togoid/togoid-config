@@ -785,7 +785,7 @@ namespace :prepare do
       input_url  = "https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip"
       if update_input_file?(input_file, input_url)
         if download_file(INPUT_HMDB_DIR, input_url)
-          sh "unzip #{input_file} -d #{INPUT_HMDB_DIR}/"
+          sh "unzip -o #{input_file} -d #{INPUT_HMDB_DIR}/"
           sh "python bin/hmdb_xml2tsv_sax.py #{INPUT_HMDB_DIR}/hmdb_metabolites.xml > #{INPUT_HMDB_DIR}/hmdb_metabolites.tsv"
           updated = true
         end
