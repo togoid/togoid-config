@@ -2,6 +2,7 @@ link:
   forward: TIO_000022
   reverse: TIO_000023
   file: sample.tsv
+  description: "The dataset \"HGNC symbol\" only includes the current official HGNC symbols. If you can not find HGNC IDs corresponding to your input symbols by this conversion, they may be outdated or synonyms of the genes. In such cases, please consider using the LABEL2ID tab."
 update:
   frequency: Bimonthly
   method: awk -F "\t" 'FNR>=2&&$2{print substr($1,6) "\t" $2}' $TOGOID_ROOT/input/hgnc/hgnc_complete_set.txt
