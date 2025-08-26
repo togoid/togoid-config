@@ -7,8 +7,6 @@ bioproject-pubmed.tsv
 bioproject_umbrella-bioproject.tsv
 biosample-bioproject.tsv
 biosample-geo_sample.tsv
-cellosaurus-ncit_disease.tsv
-cellosaurus-orphanet_phenotype.tsv
 chembl_compound-chembl_target.tsv
 clinvar-dbsnp.tsv
 clinvar-hgnc.tsv
@@ -17,6 +15,7 @@ clinvar-mondo.tsv
 clinvar-ncbigene.tsv
 clinvar-omim_phenotype.tsv
 clinvar-orphanet_phenotype.tsv
+clinvar-uniprot.tsv
 hgnc-ec.tsv
 hgnc-ensembl_gene.tsv
 hgnc-hgnc_symbol.tsv
@@ -25,14 +24,12 @@ hgnc-mgi_gene.tsv
 hgnc-ncbigene.tsv
 hgnc-omim_gene.tsv
 hgnc-pubmed.tsv
+hgnc-refseq_genomic.tsv
 hgnc-refseq_rna.tsv
 hgnc-rgd.tsv
 hgnc-uniprot.tsv
-hp_phenotype-omim_phenotype.tsv
-hp_phenotype-orphanet_phenotype.tsv
 insdc_master-bioproject.tsv
 insdc_master-biosample.tsv
-lipidmaps-chebi.tsv
 lipidmaps-inchi_key.tsv
 mgi_gene-ensembl_gene.tsv
 mgi_gene-hgnc.tsv
@@ -42,9 +39,10 @@ ncbigene-ensembl_gene.tsv
 ncbigene-ensembl_protein.tsv
 ncbigene-ensembl_transcript.tsv
 ncbigene-go.tsv
+ncbigene-hgnc.tsv
 ncbigene-mgi_gene.tsv
+ncbigene-mirbase.tsv
 ncbigene-omim_gene.tsv
-ncbigene-refseq_genomic.tsv
 ncbigene-refseq_protein.tsv
 ncbigene-refseq_rna.tsv
 ncbigene-taxonomy.tsv
@@ -54,6 +52,7 @@ pubchem_compound-inchi_key.tsv
 refseq_protein-uniprot.tsv
 sra_accession-bioproject.tsv
 sra_accession-biosample.tsv
+sra_accession-sra_analysis.tsv
 sra_accession-sra_experiment.tsv
 sra_accession-sra_project.tsv
 sra_accession-sra_run.tsv
@@ -71,10 +70,4 @@ sra_run-sra_sample.tsv
 sra_sample-biosample.tsv
 taxonomy-pubmed.tsv
 uberon-ncit_tissue.tsv
-wikipathways-chebi.tsv
-wikipathways-doid.tsv
-wikipathways-hmdb.tsv
-wikipathways-lipidmaps.tsv
-wikipathways-ncbigene.tsv
-wikipathways-uniprot.tsv
 zfin_gene-zfin_transcript.tsv
