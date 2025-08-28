@@ -2127,3 +2127,21 @@
     rdfs:label "mature miRNA is product of transcript" ;
     :display_label "is product of" .
 
+:TIO_000140
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Sample ;
+    rdfs:range :Organism ;
+    owl:inverseOf :TIO_000141 ;
+    rdfs:label "sample is sample of organism" ;
+    :display_label "is sample of" .
+
+:TIO_000141
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Organism ;
+    rdfs:range :Sample ;
+    owl:inverseOf :TIO_000140 ;
+    rdfs:label "organism is analyzed using sample" ;
+    :display_label "is analyzed using" .
+

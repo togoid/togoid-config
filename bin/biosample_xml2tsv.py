@@ -16,6 +16,7 @@ class XMLHandler(xml.sax.ContentHandler):
         self.current_content = ""
         self.current_db = ""
         self.current_title = ""
+        self.current_taxonomy = ""
         self.current_link_label = ""
         self.current_link_target = ""
 
@@ -33,6 +34,9 @@ class XMLHandler(xml.sax.ContentHandler):
                 self.current_link_label = attrs.getValue("label")
             if attrs.__contains__("target"):
                 self.current_link_target = attrs.getValue("target")
+        elif self.tag_stack == ["BioSampleSet", "BioSample", "Description", "Organism"]:
+            self.current_taxonomy = attrs.getValue("taxonomy_id")
+
 
     def characters(self, content):
         self.current_content += content.strip()
@@ -63,6 +67,7 @@ class XMLHandler(xml.sax.ContentHandler):
                 print(self.current_bsid, "GEO URL", self.current_geo_url, sep="\t")
             if self.current_title != "":
                 print(self.current_bsid, "Title", self.current_title, sep="\t")
+            print(self.current_bsid, "Taxonomy", self.current_taxonomy, sep="\t")
             for bpid in self.current_bpids:
                 print(self.current_bsid, "BioProject ID", bpid, sep="\t")
 

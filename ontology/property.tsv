@@ -137,3 +137,5 @@ TIO_000136	transcript is member of RNA family	is member of	TIO_000131	Transcript
 TIO_000137	RNA family has member of transcript	has member	TIO_000130	Transcript	Transcript
 TIO_000138	transcript is precursor of mature miRNA	is precursor of	TIO_000139	Transcript	Transcript
 TIO_000139	mature miRNA is product of transcript	is product of	TIO_000138	Transcript	Transcript
+TIO_000140	sample is sample of organism	is sample of	TIO_000141	Sample	Organism
+TIO_000141	organism is analyzed using sample	is analyzed using	TIO_000140	Organism	Sample

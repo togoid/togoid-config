@@ -1866,6 +1866,22 @@
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000138"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000140">
+    <display_label>is sample of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
+    <rdfs:label>sample is sample of organism</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Organism"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000141"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000141">
+    <display_label>is analyzed using</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Organism"/>
+    <rdfs:label>organism is analyzed using sample</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Sample"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000140"/>
+  </owl:ObjectProperty>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
     <rdfs:label>TAIR</rdfs:label>
