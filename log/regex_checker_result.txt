@@ -1,4 +1,4 @@
-Sat Aug 23 11:15:00 JST 2025
+Sat Aug 30 13:59:38 JST 2025
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HUMGAPDH/M33197_3_at	2597
 AFFX-HUMGAPDH/M33197_5_at	2597
@@ -36,6 +36,7 @@ SAMN02597928	BioProject
 SAMN02597929	BioProject
 SAMN02597930	BioProject
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/biosample-geo_sample.tsv | grep -vP '^(SAM[NED]\w?\d+)	(GSM\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/biosample-taxonomy.tsv | grep -vP '^(SAM[NED]\w?\d+)	(\d+)$' | head
 awk -F '	' '{print "CVCL_" $1 "	" "NCIT_" $2}' output/tsv/cellosaurus-ncit_disease.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	NCIT?[:_](C\d+)$' | head
 awk -F '	' '{print "CVCL_" $1 "	" "Orphanet_" $2}' output/tsv/cellosaurus-orphanet_phenotype.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
 awk -F '	' '{print "CHEBI_" $1 "	" "" $2}' output/tsv/chebi-glytoucan.tsv | grep -vP '^(?:CHEBI[:_])?(\d+)	(G[0-9]{5}[A-Z]{2})$' | head
@@ -470,4 +471,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Aug 23 12:31:49 JST 2025
+Sat Aug 30 15:15:04 JST 2025

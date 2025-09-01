@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000140
+  reverse: TIO_000141
+update:
+  frequency: Daily
+  method: awk -F "\t" '$2=="Taxonomy"{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv

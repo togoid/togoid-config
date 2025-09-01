@@ -1661,3 +1661,17 @@
 <http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000138> .
 <http://togoid.dbcls.jp/ontology#TIO_000139> <http://www.w3.org/2000/01/rdf-schema#label> "mature miRNA is product of transcript" .
 <http://togoid.dbcls.jp/ontology#TIO_000139> <http://togoid.dbcls.jp/ontology#display_label> "is product of" .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000141> .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://www.w3.org/2000/01/rdf-schema#label> "sample is sample of organism" .
+<http://togoid.dbcls.jp/ontology#TIO_000140> <http://togoid.dbcls.jp/ontology#display_label> "is sample of" .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Sample> .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000140> .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2000/01/rdf-schema#label> "organism is analyzed using sample" .
+<http://togoid.dbcls.jp/ontology#TIO_000141> <http://togoid.dbcls.jp/ontology#display_label> "is analyzed using" .

@@ -7,6 +7,7 @@ bioproject-pubmed.tsv
 bioproject_umbrella-bioproject.tsv
 biosample-bioproject.tsv
 biosample-geo_sample.tsv
+biosample-taxonomy.tsv
 chembl_compound-chembl_target.tsv
 clinvar-dbsnp.tsv
 clinvar-hgnc.tsv
@@ -30,8 +31,9 @@ hgnc-rgd.tsv
 hgnc-uniprot.tsv
 insdc_master-bioproject.tsv
 insdc_master-biosample.tsv
+lipidmaps-chebi.tsv
 lipidmaps-inchi_key.tsv
-mgi_gene-ensembl_gene.tsv
+lipidmaps-swisslipids.tsv
 mgi_gene-hgnc.tsv
 mgi_gene-mgi_allele.tsv
 mgi_gene-uniprot.tsv
@@ -40,16 +42,14 @@ ncbigene-ensembl_protein.tsv
 ncbigene-ensembl_transcript.tsv
 ncbigene-go.tsv
 ncbigene-hgnc.tsv
-ncbigene-mgi_gene.tsv
-ncbigene-mirbase.tsv
 ncbigene-omim_gene.tsv
 ncbigene-refseq_protein.tsv
 ncbigene-refseq_rna.tsv
 ncbigene-taxonomy.tsv
 ncbigene-zfin_gene.tsv
+ncit_disease-ncit_tissue.tsv
 pmc-pubmed.tsv
 pubchem_compound-inchi_key.tsv
-refseq_protein-uniprot.tsv
 sra_accession-bioproject.tsv
 sra_accession-biosample.tsv
 sra_accession-sra_analysis.tsv
