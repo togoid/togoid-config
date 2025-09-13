@@ -3,6 +3,19 @@ Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
+# Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 165 / 314378 = 0.0005248458861625177 < 0.5
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The document has moved <a href=https://errordocument.dbcls.jp/503>here</a>.</p>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </head><body>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Found</h1>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The document has moved <a href=https://errordocument.dbcls.jp/503>here</a>.</p>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
@@ -18,3 +31,6 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
+# Error: output/tsv/refseq_rna-dbsnp.tsv new file size per old 437200717 / 8320649523 = 0.05254406110862939 < 0.5
+# Error: output/tsv/refseq_rna-hgnc.tsv new file size per old 315150 / 4109895 = 0.07668079111510148 < 0.5
+# Error: output/tsv/refseq_rna-omim_gene.tsv new file size per old 128719 / 3731383 = 0.034496324821118605 < 0.5
