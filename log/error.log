@@ -3,18 +3,22 @@ Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-# Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 165 / 314378 = 0.0005248458861625177 < 0.5
+# Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 248 / 314378 = 0.000788859271323057 < 0.5
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
-# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </head><body>
-# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Found</h1>
-# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The document has moved <a href=https://errordocument.dbcls.jp/503>here</a>.</p>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
-# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>302 Found</title>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </head><body>
-# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Found</h1>
-# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The document has moved <a href=https://errordocument.dbcls.jp/503>here</a>.</p>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <h1>Service Unavailable</h1>
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <p>The server is temporarily unable to service your
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to be malformed request due to maintenance downtime or capacity
+# Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML problems. Please try again later.</p>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
