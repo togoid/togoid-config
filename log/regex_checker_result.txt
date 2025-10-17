@@ -1,4 +1,4 @@
-Sat Oct  4 13:18:25 JST 2025
+Sat Oct 11 05:43:25 JST 2025
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HUMGAPDH/M33197_3_at	2597
 AFFX-HUMGAPDH/M33197_5_at	2597
@@ -164,6 +164,10 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000128.tsv
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ccds.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(CCDS\d+)(?:\.\d+)?$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ec.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:EC:)?(\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$' | head
+54	7.6.2.3 
+61	7.6.2.- 
+66	7.6.2.- 
+13886	7.6.2.- 
 8918	3.4.24.B15
 2295	1.11.1.27 
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ensembl_gene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
@@ -471,4 +475,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Oct  4 14:28:55 JST 2025
+Sat Oct 11 06:54:58 JST 2025

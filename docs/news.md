@@ -1,4 +1,4 @@
-Datasets last updated: 2025-10-06
+Datasets last updated: 2025-10-15
 
 # 2025-09-01
 - A new pair `biosample-taxonomy` has been added.  
