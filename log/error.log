@@ -1,4 +1,4 @@
-Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
+Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): no time information in ""
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
@@ -36,5 +36,3 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
-# Error: output/tsv/togovar-ensembl_transcript.tsv new file size per old 3755394548 / 8069270901 = 0.46539453118801666 < 0.5
-# Error: output/tsv/togovar-ensembl_transcript.tsv seems to be malformed tgv41344
