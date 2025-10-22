@@ -443,6 +443,8 @@ module TogoID
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
         return "prepare:taxonomy"
+      when /#{OUTPUT_TSV_DIR}uniparc/
+        return "prepare:uniparc"
       when /#{OUTPUT_TSV_DIR}zfin/
         return "prepare:zfin"
       else
@@ -584,7 +586,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :zfin ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -618,6 +620,7 @@ namespace :prepare do
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
+  directory INPUT_UNIPARC_DIR     = "input/uniparc"
   directory INPUT_ZFIN_DIR        = "input/zfin"
 
 =begin
@@ -1312,6 +1315,27 @@ namespace :prepare do
       if update_input_file?(input_file, input_url)
         download_file(INPUT_TAXONOMY_DIR, input_url)
         sh "mkdir -p #{INPUT_TAXONOMY_DIR}/taxdump && tar xzf #{INPUT_TAXONOMY_DIR}/taxdump.tar.gz -C #{INPUT_TAXONOMY_DIR}/taxdump/"
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for uniparc"
+  task :uniparc => INPUT_UNIPARC_DIR do
+    $stderr.puts "## Prepare input files for UniParc"
+    download_lock(INPUT_UNIPARC_DIR) do
+      updated = false
+      input_file = "#{INPUT_UNIPARC_DIR}/RELEASE.metalink"
+      input_url = "https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/RELEASE.metalink"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_UNIPARC_DIR, input_url)
+        sh "wget https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/ --no-remove-listing --directory-prefix=#{INPUT_UNIPARC_DIR}"
+        sh "grep -oP \"uniparc_p\\d+.xml.gz\" #{INPUT_UNIPARC_DIR}/index.html | awk '!a[$0]++' > #{INPUT_UNIPARC_DIR}/file_list.txt"
+        sh "rm -f #{INPUT_UNIPARC_DIR}/uniparc.tsv"
+        script_path = "bin/uniparc_xml2tsv.py"
+        sh "cat #{INPUT_UNIPARC_DIR}/file_list.txt | xargs -L 1 -i sh -c 'curl -s https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/{} | zcat | python3 #{script_path} >> #{INPUT_UNIPARC_DIR}/uniparc.tsv'"
+        sh "rm -f #{INPUT_UNIPARC_DIR}/index.html"
         updated = true
       end
       updated
