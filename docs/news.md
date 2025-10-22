@@ -1,4 +1,9 @@
-Datasets last updated: 2025-10-15
+Datasets last updated: 2025-10-22
+
+# *NOTICE*
+Some of the features of TogoID (the LABEL2ID function and the annotaion display features) will be temporarily unavailable due to our system maintenance from November 3, 2025, to November 7, 2025 (JST).  
+The *ID-to-ID conversion function will remain available* as usual throughout the maintenance period.  
+We apologize for any incovenience caused.
 
 # 2025-09-01
 - A new pair `biosample-taxonomy` has been added.  
