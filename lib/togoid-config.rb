@@ -1,5 +1,6 @@
 require 'fileutils'
 require 'uri'
+require 'cgi'
 
 module TogoID
 
@@ -268,17 +269,41 @@ module TogoID
     #SED_PN_LOCAL_ESC = 's/[-_.~!$&,;=#@%\/\?\*\+\(\)]/\\\\&/g'
     #SED_PN_LOCAL_ESC = 's/[~!$&,;=#@%\/\?\*\+\(\)]/\\\\&/g'
 
+    def qname_local_ok?(s)
+      return false if s.nil? || s.empty?
+      return false if s.end_with?(".")       # 末尾ドットは不可
+      return false if s.include?(":")        # ローカル名に ":" は不可
+      # 使用禁止文字（空白類, %, /, \, 引用符, 制御/記号の一部）
+      return false if s =~ /[[:space:]%\/\\'"<>\#\?\@\`\|\{\}]/
+      true
+    end
+
+    # IRI 用のパスセグメントエスケープ（space を %20 に）
+    def uri_escape_path_segment(seg)
+      CGI.escape(seg.to_s).gsub("+", "%20")
+    end
+    
+    # prefix と namespace IRI を渡して、QName か <IRI> を返す
+    def node_repr(prefix, ns_iri, local)
+      if qname_local_ok?(local)
+        "#{prefix}:#{local}"
+      else
+        "<#{ns_iri}#{uri_escape_path_segment(local)}>"
+      end
+    end
+    
     def tsv2ttl(tsv, ttl)
-      # To reduce method call
       fwd_predicate = set_predicate(@link.fwd)
       rev_predicate = set_predicate(@link.rev)
-      # Should check whether source_id or target_id contains chars that need to be escaped in Turtle
-      ## Use URL encoding instead of backslash escaping
-      # Kernel.open("| sed -e '#{SED_PN_LOCAL_ESC}' #{tsv}").each do |line|
+      
       File.readlines(tsv).each do |line|
-        source_id, target_id, = line.strip.split(/\s+/).map{|s| URI.encode_www_form_component(s)}
-        ttl.puts triple("#{@source_ns}:#{source_id}", "#{fwd_predicate}", "#{@target_ns}:#{target_id}") if fwd_predicate
-        ttl.puts triple("#{@target_ns}:#{target_id}", "#{rev_predicate}", "#{@source_ns}:#{source_id}") if rev_predicate
+        source_id, target_id, = line.strip.split(/\s+/)
+        
+        s = node_repr(@source_ns,  @source.prefix,  source_id)
+        t = node_repr(@target_ns,  @target.prefix,  target_id)
+        
+        ttl.puts triple(s, fwd_predicate, t) if fwd_predicate
+        ttl.puts triple(t, rev_predicate, s) if rev_predicate
       end
     end
 
