@@ -1,0 +1,19 @@
+# Endpoint: https://rdfportal.org/ebi/sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
+
+SELECT DISTINCT ?ensp_id ?uniparc_id
+FROM <http://rdfportal.org/dataset/ensembl>
+WHERE {
+  VALUES ?taxon { taxon:{{taxon}} }
+  ?ensg obo:RO_0002162 ?taxon .
+  ?enst so:transcribed_from ?ensg .
+  ?ensp so:translation_of ?enst ;
+        rdfs:seeAlso ?uniparc ;
+        dcterms:identifier ?ensp_id .
+  FILTER (STRSTARTS (STR(?uniparc), "http://identifiers.org/uniparc/"))
+  BIND (STRAFTER(STR(?uniparc), "uniparc/") AS ?uniparc_id)
+}
