@@ -1,7 +1,7 @@
 import xml.sax
 import sys
 
-target_dbs = {"UniProtKB/Swiss-Prot", "UniProtKB/TrEMBL", "Ensembl", "RefSeq", "PDB", "UniProtKB/Swiss-Prot protein isoforms"}
+target_dbs = {"RefSeq", "PDB", "UniProtKB/Swiss-Prot protein isoforms"}
 
 class XMLHandler(xml.sax.ContentHandler):
     def __init__(self):
