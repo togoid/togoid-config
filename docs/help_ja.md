@@ -129,14 +129,25 @@ TogoID が対象としているデータセットの詳細を閲覧できます�
 3. ID 例。入力可能な ID パターンも示しています。HP phenotype では "HP:" と "HP_" というプレフィックスのパターンが使えることを示しています。クリックすると ID 入力欄に入力され、変換を試すことができます。
 
 ## API
-ウェブインターフェイスだけでなく、APIも用意しており、他のアプリケーションからのID変換にも利用することができます。  
-利用方法の詳細は [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/) をご覧ください。  
-以下は、NCBI Gene ID を UniProt ID 経由で PDB ID に変換した結果を取得する例です。  
+### ID 変換
+詳細は [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/) をご覧ください。  
+例: NCBI Gene ID を UniProt ID 経由で PDB ID に変換した結果を取得する  
 1. [変換できなかった ID も含めて json で取得する](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=json&report=full)
 2. [入力とターゲットの対応関係を tsv で取得する](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=tsv&report=pair)
 
-また、LABEL2ID の機能には [PubDictionaries](https://pubdictionaries.org/) を利用しています。[TogoID で用いている辞書](https://pubdictionaries.org/users/togoid) は公開されているので、PubDictionaries の API を使用してアクセスすることができます。  
-例: [シノニムを含めてヒトの遺伝子シンボルを検索し NCBI Gene ID に変換する](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
+### LABEL2ID
+曖昧一致を許したラベルのマッチングには、[PubDictionaries](https://pubdictionaries.org/) を利用しています。[TogoID で用いている辞書](https://pubdictionaries.org/users/togoid) は公開されているので、PubDictionaries の API を使用してアクセスすることができます。  
+例: [Label または Exact synonym を対象に Mondo の疾患 ID を検索する](https://pubdictionaries.org/find_ids.json?label=lung+cancr%0D%0Aanemia&use_ngram_similarity=true&threshold=0.5&tags=&verbose=true&dictionaries=togoid_mondo_exact_synonym%2Ctogoid_mondo_label&commit=Submit)
+
+
+遺伝子シンボルの変換には [SPARQList](https://dx.dbcls.jp/togoid/sparqlist/label2id_ncbigene)を使用しています。  
+例: [シノニムを含めてヒトの遺伝子シンボルを検索し NCBI Gene ID に変換する](https://dx.dbcls.jp/togoid/sparqlist/api/label2id_ncbigene?labels=ACE2%2CHIF2A%2CND1%2COCT4&taxon=9606&label_types=symbol%2Csynonym)
+
+### ラベルやアノテーションの取得
+[Grasp](https://dx.dbcls.jp/grasp-togoid) を使用しています。GraphQL のクエリにより、RDF からデータを取得することができます。  
+例: Ensembl Transcript のリストに Transcript Flag の情報を付与し、MANE Select フラグの付いたものにフィルタリングする  
+`$ curl 'https://dx.dbcls.jp/grasp-togoid' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: https://dx.dbcls.jp' --data-binary '{"query":"query {\n  ensembl_transcript(id: [\"ENST00000259915\", \"ENST00000441888\", \"ENST00000461401\", \"ENST00000471529\", \"ENST00000512818\", \"ENST00000513407\", \"ENST00000606567\"], transcript_flag: [\"MANE Select\"]){\n   label\n    id\n    transcript_flag\n  }\n}"}' --compressed`
+
 
 ## 論文
 - Shuya Ikeda, Kiyoko F Aoki-Kinoshita, Hirokazu Chiba, Susumu Goto, Masae Hosoda, Shuichi Kawashima, Jin-Dong Kim, Yuki Moriya, Tazro Ohta, Hiromasa Ono, Terue Takatsuki, Yasunori Yamamoto, Toshiaki Katayama, Expanding the concept of ID conversion in TogoID by introducing multi-semantic and label features, J Biomed Semantics. 2025 Jan 8;16(1):1. [doi:10.1186/s13326-024-00322-1](https://doi.org/10.1186/s13326-024-00322-1).
