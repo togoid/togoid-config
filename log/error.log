@@ -3,7 +3,6 @@ Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-Error: check_remote_file_time(input/reactome/miRBase2ReactomeReactions.txt, https://reactome.org/download/current/miRBase2ReactomeReactions.txt): no time information in ""
 # Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 248 / 314378 = 0.000788859271323057 < 0.5
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
@@ -23,8 +22,6 @@ Error: check_remote_file_time(input/reactome/miRBase2ReactomeReactions.txt, http
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML </body></html>
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/ensembl_transcript-affy_probeset.tsv new file size per old 0 / 11451717 = 0.0 < 0.5
-# Error: Failed to create output/tsv/ensembl_transcript-affy_probeset.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
@@ -38,3 +35,6 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
+# Error: output/tsv/pubchem_compound-chebi.tsv new file size per old 2765633 / 7886019 = 0.35070077817464046 < 0.5
+# Error: output/tsv/rnacentral-mirbase.tsv new file size per old 1132012 / 2713273 = 0.4172127168921078 < 0.5
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 76975 / 470542 = 0.16358794751584343 < 0.5
