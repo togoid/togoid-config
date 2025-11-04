@@ -222,7 +222,7 @@ rnacentral-hgnc.tsv	9024
 rnacentral-lncbook_gene.tsv	322793
 rnacentral-mgi_gene.tsv	17524
 rnacentral-mirbase_mature.tsv	48885
-rnacentral-mirbase.tsv	87467
+rnacentral-mirbase.tsv	38582
 rnacentral-pdb.tsv	18967
 rnacentral-refseq_rna.tsv	131191
 rnacentral-rfam.tsv	7415984
@@ -293,4 +293,4 @@ wikipathways-lipidmaps.tsv	1481
 wikipathways-ncbigene.tsv	30691
 wikipathways-uniprot.tsv	5577
 zfin_gene-zfin_transcript.tsv	48741
-total	5210263608
+total	5210214723
