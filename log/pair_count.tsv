@@ -178,7 +178,7 @@ pdb-uniprot.tsv	341431
 pmc-pubmed.tsv	10599513
 prosite-prosite_prorule.tsv	1467
 pubchem_compound-atc.tsv	4924
-pubchem_compound-chebi.tsv	358443
+pubchem_compound-chebi.tsv	180005
 pubchem_compound-chembl_compound.tsv	2474455
 pubchem_compound-drugbank.tsv	10788
 pubchem_compound-glytoucan.tsv	84665
@@ -293,4 +293,4 @@ wikipathways-lipidmaps.tsv	1481
 wikipathways-ncbigene.tsv	30691
 wikipathways-uniprot.tsv	5577
 zfin_gene-zfin_transcript.tsv	48741
-total	5210442046
+total	5210263608
