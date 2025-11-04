@@ -133,14 +133,23 @@ The DATASETS tab shows the details of the datasets TogoID covers.
 3. Example IDs. This also shows ID patterns that can be entered. For HP phenotype, patterns with the prefixes "HP:" and "HP_" are available. Clicking this will enter the IDs into the ID input field and you can try converting them.
 
 ## API
-TogoID is also available as an API, which allows other applications to use it for ID conversion.  
+### ID Conversion
 For details, see [API Documentation (Swagger)](https://togoid.dbcls.jp/apidoc/).  
-Below are examples to obtain the result of the conversion from NCBI Gene IDs to PDB IDs via UniProt IDs.
+Example: Retrieve the conversion result of NCBI Gene IDs to PDB IDs via UniProt IDs  
 1. [Obtain as JSON with unconverted IDs](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=json&report=full)
 2. [Obtain only source and target IDs as tsv](https://api.togoid.dbcls.jp/convert?ids=5460,6657,9314,4609&route=ncbigene,uniprot,pdb&format=tsv&report=pair)
 
-For LABEL2ID, TogoID uses [PubDictionaries](https://pubdictionaries.org/). [The dictionaries used in TogoID](https://pubdictionaries.org/users/togoid) is publicly available, and you can access it through the PubDictionaries API.  
-e.g. [Retrieve human gene symbols including synonyms and convert them to NCBI Gene IDs](https://pubdictionaries.org/find_ids.json?labels=ACE2%7CHIF2A&dictionaries=togoid_ncbigene_symbol,togoid_ncbigene_synonym&tags=9606&threshold=1&verbose=true)
+### LABEL2ID
+For label matching with partial or fuzzy matches, TogoID uses [PubDictionaries](https://pubdictionaries.org/). [The dictionaries used in TogoID](https://pubdictionaries.org/users/togoid) is publicly available, and you can access it through the PubDictionaries API.  
+Example: [Search for Mondo disease IDs by label or exact synonym](https://pubdictionaries.org/find_ids.json?label=lung+cancr%0D%0Aanemia&use_ngram_similarity=true&threshold=0.5&tags=&verbose=true&dictionaries=togoid_mondo_exact_synonym%2Ctogoid_mondo_label&commit=Submit)
+
+For gene symbol conversion, [SPARQList](https://dx.dbcls.jp/togoid/sparqlist/label2id_ncbigene) is used.  
+Example: [Search for human gene symbols (including synonyms) and convert them to NCBI Gene IDs](https://dx.dbcls.jp/togoid/sparqlist/api/label2id_ncbigene?labels=ACE2%2CHIF2A%2CND1%2COCT4&taxon=9606&label_types=symbol%2Csynonym)
+
+### Retrieving Labels and Annotations
+[Grasp](https://dx.dbcls.jp/grasp-togoid) is used to retrieve data from RDF using GraphQL queries.  
+Example: Add transcript flag information to a list of Ensembl Transcripts and filter for those with the “MANE Select” flag  
+`$ curl 'https://dx.dbcls.jp/grasp-togoid' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: https://dx.dbcls.jp' --data-binary '{"query":"query {\n  ensembl_transcript(id: [\"ENST00000259915\", \"ENST00000441888\", \"ENST00000461401\", \"ENST00000471529\", \"ENST00000512818\", \"ENST00000513407\", \"ENST00000606567\"], transcript_flag: [\"MANE Select\"]){\n   label\n    id\n    transcript_flag\n  }\n}"}' --compressed`
 
 ## Publications
 - Shuya Ikeda, Kiyoko F Aoki-Kinoshita, Hirokazu Chiba, Susumu Goto, Masae Hosoda, Shuichi Kawashima, Jin-Dong Kim, Yuki Moriya, Tazro Ohta, Hiromasa Ono, Terue Takatsuki, Yasunori Yamamoto, Toshiaki Katayama, Expanding the concept of ID conversion in TogoID by introducing multi-semantic and label features, J Biomed Semantics. 2025 Jan 8;16(1):1. [doi:10.1186/s13326-024-00322-1](https://doi.org/10.1186/s13326-024-00322-1).

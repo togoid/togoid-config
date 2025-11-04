@@ -16,6 +16,7 @@ clinvar-mondo.tsv
 clinvar-ncbigene.tsv
 clinvar-omim_phenotype.tsv
 clinvar-orphanet_phenotype.tsv
+clinvar-uniprot.tsv
 hgnc-ccds.tsv
 hgnc-ec.tsv
 hgnc-ensembl_gene.tsv
@@ -29,10 +30,10 @@ hgnc-pubmed.tsv
 hgnc-refseq_rna.tsv
 hgnc-rgd.tsv
 hgnc-uniprot.tsv
-hp_phenotype-omim_phenotype.tsv
-hp_phenotype-orphanet_phenotype.tsv
 insdc_master-bioproject.tsv
 insdc_master-biosample.tsv
+lipidmaps-chebi.tsv
+lipidmaps-inchi_key.tsv
 mgi_gene-ensembl_gene.tsv
 mgi_gene-hgnc.tsv
 mgi_gene-mgi_allele.tsv
@@ -56,5 +57,7 @@ sra_run-sra_project.tsv
 sra_run-sra_sample.tsv
 sra_sample-biosample.tsv
 taxonomy-pubmed.tsv
-uberon-ncit_tissue.tsv
+uniprot_proteome-assembly_insdc.tsv
+uniprot_proteome-taxonomy.tsv
+wikipathways-uniprot.tsv
 zfin_gene-zfin_transcript.tsv
