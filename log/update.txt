@@ -60,4 +60,5 @@ taxonomy-pubmed.tsv
 togovar-refseq_rna.tsv
 uniprot_proteome-assembly_insdc.tsv
 uniprot_proteome-taxonomy.tsv
+wikipathways-uniprot.tsv
 zfin_gene-zfin_transcript.tsv
