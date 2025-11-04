@@ -57,7 +57,6 @@ sra_run-sra_project.tsv
 sra_run-sra_sample.tsv
 sra_sample-biosample.tsv
 taxonomy-pubmed.tsv
-togovar-refseq_rna.tsv
 uniprot_proteome-assembly_insdc.tsv
 uniprot_proteome-taxonomy.tsv
 wikipathways-uniprot.tsv
