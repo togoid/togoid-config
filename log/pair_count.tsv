@@ -1,11 +1,11 @@
 affy_probeset-ncbigene.tsv	19063
-assembly_insdc-bioproject.tsv	3043632
-assembly_insdc-biosample.tsv	2965961
-assembly_insdc-insdc_master.tsv	2844095
+assembly_insdc-bioproject.tsv	3046470
+assembly_insdc-biosample.tsv	2968799
+assembly_insdc-insdc_master.tsv	2846920
 bioproject-biosample.tsv	36211665
 bioproject-geo_series.tsv	244474
 bioproject-pubmed.tsv	305050
-bioproject_umbrella-bioproject.tsv	138071
+bioproject_umbrella-bioproject.tsv	138217
 biosample-bioproject.tsv	36211665
 biosample-geo_sample.tsv	10469228
 biosample-taxonomy.tsv	49626469
@@ -96,8 +96,8 @@ hp_phenotype-omim_phenotype.tsv	139985
 hp_phenotype-orphanet_phenotype.tsv	114719
 insdc-bioproject.tsv	59409158
 insdc-biosample.tsv	193975949
-insdc_master-bioproject.tsv	2949636
-insdc_master-biosample.tsv	2948858
+insdc_master-bioproject.tsv	2952744
+insdc_master-biosample.tsv	2951966
 interpro-go.tsv	30253
 interpro-pdb.tsv	1846474
 interpro-pfam.tsv	24759
@@ -293,4 +293,4 @@ wikipathways-lipidmaps.tsv	1720
 wikipathways-ncbigene.tsv	32066
 wikipathways-uniprot.tsv	5577
 zfin_gene-zfin_transcript.tsv	48741
-total	5278532968
+total	5278547831
