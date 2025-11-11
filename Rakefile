@@ -1332,9 +1332,8 @@ namespace :prepare do
         download_file(INPUT_UNIPARC_DIR, input_url)
         sh "wget https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/ --no-remove-listing --directory-prefix=#{INPUT_UNIPARC_DIR}"
         sh "grep -oP \"uniparc_p\\d+.xml.gz\" #{INPUT_UNIPARC_DIR}/index.html | awk '!a[$0]++' > #{INPUT_UNIPARC_DIR}/file_list.txt"
-        sh "rm -f #{INPUT_UNIPARC_DIR}/uniparc.tsv"
         script_path = "bin/uniparc_xml2tsv.py"
-        sh "cat #{INPUT_UNIPARC_DIR}/file_list.txt | while read f; do curl -s https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/$f | zcat | python3 #{script_path} > #{INPUT_UNIPARC_DIR}/${f%xml.gz}tsv; done"
+        sh "cat #{INPUT_UNIPARC_DIR}/file_list.txt | while read f; do date 1>&2; echo $f 1>&2; curl -s https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/$f | zcat | python3 #{script_path} > #{INPUT_UNIPARC_DIR}/${f%xml.gz}tsv; done"
         sh "rm -f #{INPUT_UNIPARC_DIR}/uniparc*tsv.gz"
         sh "gzip #{INPUT_UNIPARC_DIR}/uniparc*tsv "
         sh "rm -f #{INPUT_UNIPARC_DIR}/index.html"
