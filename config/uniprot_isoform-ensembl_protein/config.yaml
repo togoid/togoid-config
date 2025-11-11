@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000002
+  reverse: TIO_000002
+  file: sample.tsv
+update:
+  frequency: Monthly
+  method: gzip -dc ${TOGOID_ROOT}/input/uniprot/idmapping.dat.gz | awk -F "\t" '$1~/-/&&$2=="Ensembl_PRO"{print $1 "\t" gensub(/\.[0-9]+$/,"","",$3)}'

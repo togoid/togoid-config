@@ -827,10 +827,22 @@
     rdfs:label "UBERON" ;
     rdfs:subClassOf :Anatomy, :Dataset .
 
+:Uniparc
+    a owl:Class ;
+    dcterms:identifier "uniparc" ;
+    rdfs:label "UniParc" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
 :Uniprot
     a owl:Class ;
     dcterms:identifier "uniprot" ;
     rdfs:label "UniProt" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:UniprotIsoform
+    a owl:Class ;
+    dcterms:identifier "uniprot_isoform" ;
+    rdfs:label "UniProt isoform" ;
     rdfs:subClassOf :Protein, :Dataset .
 
 :UniprotMnemonic

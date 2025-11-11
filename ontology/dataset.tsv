@@ -103,7 +103,9 @@ tair	TAIR	Gene
 taxonomy	Taxonomy	Organism
 togovar	TogoVar variant	Variant
 uberon	UBERON	Anatomy
+uniparc	UniParc	Protein
 uniprot	UniProt	Protein
+uniprot_isoform	UniProt isoform	Protein
 uniprot_mnemonic	UniProt mnemonic	Protein, Synonym
 uniprot_proteome	UniProt proteome	Proteome
 vgnc	VGNC	Gene
