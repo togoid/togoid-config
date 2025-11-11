@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: gzip -dc ${TOGOID_ROOT}/input/uniparc/uniparc*.tsv.gz | python ${TOGOID_ROOT}/bin/uniparc_xml2tsv.py
+  method: gzip -dc ${TOGOID_ROOT}/input/uniparc/uniparc*.tsv.gz | awk -F "\t" '$2=="RefSeq"{print $1 "\t" $3}'
