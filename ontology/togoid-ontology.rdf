@@ -1882,6 +1882,22 @@
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000140"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000142">
+    <display_label>has isoform</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:label>protein has protein isoform</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000143"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000143">
+    <display_label>is isoform of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:label>protein is isoform of protein</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000142"/>
+  </owl:ObjectProperty>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
     <rdfs:label>TAIR</rdfs:label>

@@ -2157,3 +2157,21 @@
     rdfs:label "organism is analyzed using sample" ;
     :display_label "is analyzed using" .
 
+:TIO_000142
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000143 ;
+    rdfs:label "protein has protein isoform" ;
+    :display_label "has isoform" .
+
+:TIO_000143
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000142 ;
+    rdfs:label "protein is isoform of protein" ;
+    :display_label "is isoform of" .
+
