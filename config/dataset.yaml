@@ -153,11 +153,14 @@ chebi:
     dictionaries:
       - label: Name
         dictionary: togoid_chebi_label
+        label_type: label
         preferred: true
       - label: Exact synonym
         dictionary: togoid_chebi_exact_synonym
+        label_type: exact_synonym
       - label: Related synonym
         dictionary: togoid_chebi_related_synonym
+        label_type: related_synonym
   annotations:
     - variable: mass
       label: Molecular mass
@@ -806,13 +809,17 @@ mondo:
     dictionaries:
       - label: Name
         dictionary: togoid_mondo_label
+        label_type: label
         preferred: true
       - label: Exact synonym
         dictionary: togoid_mondo_exact_synonym
+        label_type: exact_synonym
       - label: Related synonym
         dictionary: togoid_mondo_related_synonym
+        label_type: related_synonym
       - label: Broad synonym
         dictionary: togoid_mondo_broad_synonym
+        label_type: broad_synonym
 mp:
   label: Mammalian Phenotype Ontology
   catalog: FIXME
