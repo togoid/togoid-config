@@ -139,3 +139,5 @@ TIO_000138	transcript is precursor of mature miRNA	is precursor of	TIO_000139	Tr
 TIO_000139	mature miRNA is product of transcript	is product of	TIO_000138	Transcript	Transcript
 TIO_000140	sample is sample of organism	is sample of	TIO_000141	Sample	Organism
 TIO_000141	organism is analyzed using sample	is analyzed using	TIO_000140	Organism	Sample
+TIO_000142	protein has protein isoform	has isoform	TIO_000143	Protein	Protein
+TIO_000143	protein is isoform of protein	is isoform of	TIO_000142	Protein	Protein

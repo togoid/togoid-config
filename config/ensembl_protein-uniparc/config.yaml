@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000002
+  reverse: TIO_000002
+  file: sample.tsv
+update:
+  frequency: Quarterly
+  method: sparql_taxon.rb query.rq https://rdfportal.org/ebi/sparql $TOGOID_ROOT/input/ensembl/taxonomy.txt

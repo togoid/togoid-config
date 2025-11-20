@@ -1472,6 +1472,17 @@ uberon:
   examples:
     - ["UBERON:0002115","UBERON:0001004","UBERON:0000007","UBERON:0001044","UBERON:0001825","UBERON:0001361","UBERON:0002186","UBERON:0000945","UBERON:0036068","UBERON:0001017"]
     - ["UBERON_0002115","UBERON_0001004","UBERON_0000007","UBERON_0001044","UBERON_0001825","UBERON_0001361","UBERON_0002186","UBERON_0000945","UBERON_0036068","UBERON_0001017"]
+uniparc:
+  label: UniParc
+  catalog: nbdc00221
+  category: Protein
+  regex: '^(?<id>UPI[A-F0-9]{10})$'
+  prefix:
+    - label: 'rdf'
+      uri: 'https://identifiers.org/uniparc/'
+      rdf: true
+  examples:
+    - ["UPI000013EEF6","UPI00000F412B","UPI000007FBD3","UPI000006DD65","UPI000007386D","UPI00000E8877","UPI0000070C01","UPI0000470B17","UPI0000DA5A0B","UPI000005FC62"]
 uniprot:
   label: UniProt
   catalog: nbdc00221
@@ -1501,6 +1512,17 @@ uniprot:
       items: ["true", "false"]
     - variable: short_name
       label: Short name
+uniprot_isoform:
+  label: UniProt isoform
+  catalog: nbdc00221
+  category: Protein
+  regex: '^(?:(?<id1>[A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+))|(?<id2>[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)))$'
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.uniprot.org/isoforms/'
+      rdf: true
+  examples:
+    - ["Q9DAS1-4","P18433-5","P48740-3","Q8IXM2-1","Q8TB40-2","O96553-2","P29294-1","O14874-3","P32020-2","P10827-3"]
 uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221

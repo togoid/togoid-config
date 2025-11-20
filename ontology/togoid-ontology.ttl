@@ -827,10 +827,22 @@
     rdfs:label "UBERON" ;
     rdfs:subClassOf :Anatomy, :Dataset .
 
+:Uniparc
+    a owl:Class ;
+    dcterms:identifier "uniparc" ;
+    rdfs:label "UniParc" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
 :Uniprot
     a owl:Class ;
     dcterms:identifier "uniprot" ;
     rdfs:label "UniProt" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
+:UniprotIsoform
+    a owl:Class ;
+    dcterms:identifier "uniprot_isoform" ;
+    rdfs:label "UniProt isoform" ;
     rdfs:subClassOf :Protein, :Dataset .
 
 :UniprotMnemonic
@@ -2144,4 +2156,22 @@
     owl:inverseOf :TIO_000140 ;
     rdfs:label "organism is analyzed using sample" ;
     :display_label "is analyzed using" .
+
+:TIO_000142
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000143 ;
+    rdfs:label "protein has protein isoform" ;
+    :display_label "has isoform" .
+
+:TIO_000143
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Protein ;
+    rdfs:range :Protein ;
+    owl:inverseOf :TIO_000142 ;
+    rdfs:label "protein is isoform of protein" ;
+    :display_label "is isoform of" .
 

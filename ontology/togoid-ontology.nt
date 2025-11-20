@@ -645,11 +645,21 @@
 <http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/2000/01/rdf-schema#label> "UBERON" .
 <http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#Uberon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Uniparc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Uniparc> <http://purl.org/dc/terms/identifier> "uniparc" .
+<http://togoid.dbcls.jp/ontology#Uniparc> <http://www.w3.org/2000/01/rdf-schema#label> "UniParc" .
+<http://togoid.dbcls.jp/ontology#Uniparc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#Uniparc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://purl.org/dc/terms/identifier> "uniprot" .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt" .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
 <http://togoid.dbcls.jp/ontology#Uniprot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#UniprotIsoform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#UniprotIsoform> <http://purl.org/dc/terms/identifier> "uniprot_isoform" .
+<http://togoid.dbcls.jp/ontology#UniprotIsoform> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt isoform" .
+<http://togoid.dbcls.jp/ontology#UniprotIsoform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#UniprotIsoform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://purl.org/dc/terms/identifier> "uniprot_mnemonic" .
 <http://togoid.dbcls.jp/ontology#UniprotMnemonic> <http://www.w3.org/2000/01/rdf-schema#label> "UniProt mnemonic" .
@@ -1675,3 +1685,17 @@
 <http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000140> .
 <http://togoid.dbcls.jp/ontology#TIO_000141> <http://www.w3.org/2000/01/rdf-schema#label> "organism is analyzed using sample" .
 <http://togoid.dbcls.jp/ontology#TIO_000141> <http://togoid.dbcls.jp/ontology#display_label> "is analyzed using" .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000143> .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://www.w3.org/2000/01/rdf-schema#label> "protein has protein isoform" .
+<http://togoid.dbcls.jp/ontology#TIO_000142> <http://togoid.dbcls.jp/ontology#display_label> "has isoform" .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000142> .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2000/01/rdf-schema#label> "protein is isoform of protein" .
+<http://togoid.dbcls.jp/ontology#TIO_000143> <http://togoid.dbcls.jp/ontology#display_label> "is isoform of" .
