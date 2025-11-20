@@ -1,4 +1,7 @@
-Datasets last updated: 2025-11-10
+Datasets last updated: 2025-11-20
+
+# 2025-11-20
+- New datasets `uniprot_isoform` and `uniparc` have been added.
 
 # 2025-09-01
 - A new pair `biosample-taxonomy` has been added.  
