@@ -1,4 +1,4 @@
-Datasets last updated: 2025-11-20
+Datasets last updated: 2025-11-26
 
 # 2025-11-20
 - New datasets `uniprot_isoform` and `uniparc` have been added.
