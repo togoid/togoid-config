@@ -13,7 +13,7 @@ WHERE {
     a ?type ;
     dc:source ?source .
   VALUES ?type { wp:Protein wp:GeneProduct }
-  VALUES ?source { "Uniprot-TrEMBL" "Uniprot-SwissProt" }
+  VALUES ?source { "UniProtKB" }
   # Wikipathways uses https: for identifiers.org URIs...
   BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
   BIND (strafter(str(?uniprot), "https://identifiers.org/uniprot/") AS ?uniprot_id)

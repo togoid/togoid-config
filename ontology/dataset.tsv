@@ -10,6 +10,7 @@ cellosaurus	Cellosaurus	CellLine
 chebi	ChEBI compound	Compound
 chembl_compound	ChEMBL compound	Compound
 chembl_target	ChEMBL target	Protein
+cl	Cell Ontology	Anatomy
 clinvar	ClinVar variant	Variant
 cog	COG	Ortholog
 dbsnp	dbSNP	Variant

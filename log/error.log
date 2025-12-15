@@ -27,7 +27,6 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
-# Error: output/tsv/hgnc-refseq_genomic.tsv new file size per old 89285 / 217029 = 0.4113966336296071 < 0.5
 # Error: output/tsv/hp_inheritance-omim_phenotype.tsv new file size per old 0 / 132840 = 0.0 < 0.5
 # Error: Failed to create output/tsv/hp_inheritance-omim_phenotype.tsv or created file was empty
 # Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
@@ -35,3 +34,5 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 0 / 72787 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-uniprot.tsv or created file was empty

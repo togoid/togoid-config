@@ -185,6 +185,19 @@ chembl_target:
       rdf: true
   examples:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
+cl:
+  label: Cell Ontology
+  catalog: FIXME
+  category: Anatomy
+  regex: '^CL[:_](?<id>\d{7})$'
+  format: ["CL:%s","CL_%s"]
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/CL_'
+      rdf: true
+  examples:
+    - ["CL:0000138","CL:0000129","CL:0000623","CL:0002676","CL:2000045","CL:0002552","CL:0000731","CL:0000127","CL:1000458","CL:1001609"]
+    - ["CL_0000138","CL_0000129","CL_0000623","CL_0002676","CL_2000045","CL_0002552","CL_0000731","CL_0000127","CL_1000458","CL_1001609"]
 clinvar:
   label: ClinVar variant
   catalog: nbdc01514

@@ -269,6 +269,12 @@
     rdfs:label "ChEMBL target" ;
     rdfs:subClassOf :Protein, :Dataset .
 
+:Cl
+    a owl:Class ;
+    dcterms:identifier "cl" ;
+    rdfs:label "Cell Ontology" ;
+    rdfs:subClassOf :Anatomy, :Dataset .
+
 :Clinvar
     a owl:Class ;
     dcterms:identifier "clinvar" ;
