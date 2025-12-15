@@ -12,7 +12,7 @@ WHERE {
     ?pathway a wp:Pathway .
     ?uniprot dct:isPartOf* ?pathway ;
              a wp:Protein ;
-             dc:source 'Uniprot-TrEMBL' .
+             dc:source 'UniProtKB' .
     BIND (strbefore(strafter(str(?pathway), "https://identifiers.org/wikipathways/"), "_r") AS ?pathway_id)
     BIND (strafter(str(?uniprot), "https://identifiers.org/uniprot/") AS ?uniprot_id)
   }
