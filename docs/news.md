@@ -1,4 +1,7 @@
-Datasets last updated: 2025-12-23
+Datasets last updated: 2025-12-31
+
+# 2025-12-31
+- A new pair `refseq_protein-taxonomy` has been added.  
 
 # 2025-11-20
 - New datasets `uniprot_isoform` and `uniparc` have been added.
