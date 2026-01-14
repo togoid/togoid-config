@@ -1,4 +1,4 @@
-Datasets last updated: 2026-01-07
+Datasets last updated: 2026-01-14
 
 # 2025-12-31
 - A new pair `refseq_protein-taxonomy` has been added.  
