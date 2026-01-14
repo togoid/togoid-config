@@ -167,17 +167,79 @@ module TogoID
     end
   end
 
+  class Configs
+    attr_reader :configs
+    def initialize(config_file)
+      begin
+        @configs = []
+        configs = YAML.load(File.read(config_file))
+        if configs.is_a? Array
+          for i in 0..configs.length-1
+            @configs[i] = Config.new(config_file, i)
+          end
+        else
+          @configs[0] = Config.new(config_file)
+        end
+        @path = File.dirname(config_file)
+        @source_ns, @target_ns = File.basename(@path).split('-')
+      rescue => error
+        puts "Error: #{error.message}"
+        exit 1
+      end
+    end
+
+    def exec_update
+      for config in @configs
+        config.exec_update
+      end
+    end
+
+    def exec_convert
+      prefixes = []
+      ttl_dir = "output/ttl/relation"
+      ttl_file = "#{ttl_dir}/#{@source_ns}-#{@target_ns}.ttl"
+      for config in @configs
+        prefixes = prefixes | config.prefix
+      end
+
+      tsv_files_exist = true
+      for config in @configs
+        tsv_files_exist = tsv_files_exist && File.exist?(config.tsv_file)
+      end
+
+      if tsv_files_exist
+        File.open(ttl_file, "w") do |ttl_file|
+          ttl_file.puts prefixes
+          ttl_file.puts
+          for config in @configs
+            config.tsv2ttl(config.tsv_file, ttl_file)
+          end
+        end
+      else
+        $stderr.puts "Error: TogoID TSV file to create #{ttl_file} is not found. Run update first."
+      end
+    end
+
+    def exec_check
+      $stderr.puts pp(self)
+      $stderr.puts
+    end
+  end
+
   class Config
     class NoConfigError < StandardError; end
 
-    attr_reader :source, :target, :link, :update
-    def initialize(config_file)
+    attr_reader :source, :target, :link, :update, :tsv_file
+    def initialize(config_file, idx=0)
       begin
+        @idx = idx
         configs = YAML.load(File.read(config_file))
         if configs.is_a? Array
-          config = configs[0]
+          config = configs[idx]
+          @configs_size = configs.length
         else
           config = configs
+          @configs_size = 1
         end
         @path = File.dirname(config_file)
         @source_ns, @target_ns = File.basename(@path).split('-')
@@ -211,8 +273,13 @@ module TogoID
     def setup_files
       @tsv_dir = "output/tsv"
       @ttl_dir = "output/ttl/relation"
-      @tsv_file = "#{@tsv_dir}/#{@source_ns}-#{@target_ns}.tsv"
-      @ttl_file = "#{@ttl_dir}/#{@source_ns}-#{@target_ns}.ttl"
+      if @configs_size == 1
+        @tsv_file = "#{@tsv_dir}/#{@source_ns}-#{@target_ns}.tsv"
+        @ttl_file = "#{@ttl_dir}/#{@source_ns}-#{@target_ns}.ttl"
+      else
+        @tsv_file = "#{@tsv_dir}/#{@source_ns}-#{@target_ns}-#{@link.fwd}.tsv"
+        @ttl_file = "#{@ttl_dir}/#{@source_ns}-#{@target_ns}-#{@link.fwd}.ttl"
+      end
       FileUtils.mkdir_p(@tsv_dir)
       FileUtils.mkdir_p(@ttl_dir)
     end
@@ -245,7 +312,7 @@ module TogoID
           tsv2ttl(@tsv_file, ttl_file)
         end
       else
-        $stderr.puts "TogoID TSV file #{@tsv_file} not found. Run update first."
+        $stderr.puts "Error: TogoID TSV file #{@tsv_file} not found. Run update first."
       end
     end
 
@@ -292,6 +359,10 @@ module TogoID
             end
           end
         end
+      end
+      if @configs_size >= 2 && @idx == 0
+        tsv_file_wo_tio = "#{@tsv_dir}/#{@source_ns}-#{@target_ns}.tsv"
+        FileUtils.cp(@tsv_file, tsv_file_wo_tio)
       end
     end
 

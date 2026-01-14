@@ -1,10 +1,10 @@
-Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): no time information in ""
-Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
+Error: check_remote_file_time(input/uniparc/RELEASE.metalink, https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/RELEASE.metalink): no time information in ""
+Error: Remote file is empty
 # Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 248 / 314378 = 0.000788859271323057 < 0.5
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>

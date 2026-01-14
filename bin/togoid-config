@@ -27,14 +27,14 @@ else
   exit 1
 end
 
-config = TogoID::Config.new(yaml)
+configs = TogoID::Configs.new(yaml)
 
 case mode
 when "convert"
-  config.exec_convert
+  configs.exec_convert
 when "update"
-  config.exec_update
+  configs.exec_update
 else
-  config.exec_check
+  configs.exec_check
 end
 
