@@ -9,8 +9,6 @@ SELECT DISTINCT
 FROM <https://nanbyodata.jp/rdf/nanbyodata>
 FROM <https://nanbyodata.jp/rdf/pcf>
 WHERE {
-  ?nando  sio:SIO_000352 ?blank.
-  ?blank  rdfs:seeAlso ?gene.
-FILTER(CONTAINS(STR(?gene), "http://identifiers.org/ncbigene/"))
-  }
-ORDER BY ?nando_id
+  ?nando sio:SIO_000352 / rdfs:seeAlso ?gene .
+  FILTER(STRSTARTS(STR(?gene), "http://identifiers.org/ncbigene/"))
+}

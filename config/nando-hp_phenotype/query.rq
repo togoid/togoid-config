@@ -16,15 +16,13 @@ FROM <https://nanbyodata.jp/rdf/pcf>
 WHERE {
   ?nando a owl:Class .
   OPTIONAL {
-    {
-      ?nando skos:closeMatch | skos:exactMatch ?mondo .
-    }
-    ?mondo oboInOwl:id ?mondo_id.
+    ?nando skos:closeMatch | skos:exactMatch ?mondo .
+    ?mondo oboInOwl:id ?mondo_id .
   }
-    ?an rdf:type oa:Annotation ;
+  ?an rdf:type oa:Annotation ;
       oa:hasTarget [rdfs:seeAlso ?mondo] ;
       oa:hasBody ?hpo_url ;
       dcterms:source [dcterms:creator ?creator] .
   FILTER(?creator NOT IN("Database Center for Life Science"))
-  ?hpo_url oboInOwl:id ?hpo_id.
+  ?hpo_url oboInOwl:id ?hpo_id .
 }
