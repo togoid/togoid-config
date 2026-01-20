@@ -1288,7 +1288,7 @@ sio:
   format: ["SIO:%s","SIO_%s"]
   prefix:
     - label: 'rdf'
-      uri: 'http://semanticscience.org/resource/'
+      uri: 'http://semanticscience.org/resource/SIO_'
       rdf: true
   examples:
     - ["SIO:000008","SIO:000095","SIO:000216","SIO:000253","SIO:000628","SIO:000772","SIO:000061","SIO:000223","SIO:000300"]

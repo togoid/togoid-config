@@ -1,0 +1,14 @@
+PREFIX nando: <http://nanbyodata.jp/ontology/NANDO_>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+
+SELECT DISTINCT
+(STRAFTER(STR(?nando), "NANDO_") AS ?nando_id)
+(STRAFTER(STR(?gene), "http://identifiers.org/ncbigene/") AS ?gene_id)
+FROM <https://nanbyodata.jp/rdf/nanbyodata>
+FROM <https://nanbyodata.jp/rdf/pcf>
+WHERE {
+  ?nando sio:SIO_000352 / rdfs:seeAlso ?gene .
+  FILTER(STRSTARTS(STR(?gene), "http://identifiers.org/ncbigene/"))
+}

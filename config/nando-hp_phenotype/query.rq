@@ -1,0 +1,28 @@
+PREFIX : <http://nanbyodata.jp/ontology/nando#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+SELECT DISTINCT
+(STRAFTER(STR(?nando), "http://nanbyodata.jp/ontology/NANDO_") AS ?nando_id)
+(STRAFTER(STR(?hpo_url), "http://purl.obolibrary.org/obo/HP_") AS ?hpo_id)
+FROM <https://nanbyodata.jp/rdf/ontology/nando>
+FROM <https://nanbyodata.jp/rdf/ontology/mondo>
+FROM <https://nanbyodata.jp/rdf/ontology/hp>
+FROM <https://nanbyodata.jp/rdf/pcf>
+WHERE {
+  ?nando a owl:Class .
+  OPTIONAL {
+    ?nando skos:closeMatch | skos:exactMatch ?mondo .
+    ?mondo oboInOwl:id ?mondo_id .
+  }
+  ?an rdf:type oa:Annotation ;
+      oa:hasTarget [rdfs:seeAlso ?mondo] ;
+      oa:hasBody ?hpo_url ;
+      dcterms:source [dcterms:creator ?creator] .
+  FILTER(?creator NOT IN("Database Center for Life Science"))
+  ?hpo_url oboInOwl:id ?hpo_id .
+}
