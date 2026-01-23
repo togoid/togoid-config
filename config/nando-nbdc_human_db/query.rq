@@ -3,12 +3,12 @@ PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio:     <http://semanticscience.org/resource/>
 
 SELECT DISTINCT
- (STRAFTER(STR(?nando), "http://nanbyodata.jp/ontology/NANDO_") AS ?nando_id)
- STR(?hum_id_o) AS ?hum_id
+  (STRAFTER(STR(?nando), "http://nanbyodata.jp/ontology/NANDO_") AS ?nando_id)
+  STR(?hum_id_o) AS ?hum_id
 FROM <https://nanbyodata.jp/rdf/nanbyodata>
 WHERE {
   ?hum_uri a sio:SIO_000756 ;
            rdfs:seeAlso ?nando ;
            dcterms:identifier ?hum_id_o .
-  FILTER(CONTAINS(STR(?nando), "http://nanbyodata.jp/ontology/NANDO_"))
+  FILTER(STRSTARTS(STR(?nando), "http://nanbyodata.jp/ontology/NANDO_"))
 }
