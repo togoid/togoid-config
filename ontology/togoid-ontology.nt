@@ -1704,3 +1704,17 @@
 <http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000142> .
 <http://togoid.dbcls.jp/ontology#TIO_000143> <http://www.w3.org/2000/01/rdf-schema#label> "protein is isoform of protein" .
 <http://togoid.dbcls.jp/ontology#TIO_000143> <http://togoid.dbcls.jp/ontology#display_label> "is isoform of" .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Phenotype> .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000145> .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://www.w3.org/2000/01/rdf-schema#label> "project investigates phenotype" .
+<http://togoid.dbcls.jp/ontology#TIO_000144> <http://togoid.dbcls.jp/ontology#display_label> "investigates" .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Project> .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000144> .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype is investigated in project" .
+<http://togoid.dbcls.jp/ontology#TIO_000145> <http://togoid.dbcls.jp/ontology#display_label> "is investigated in" .

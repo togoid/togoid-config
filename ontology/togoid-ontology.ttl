@@ -2181,3 +2181,21 @@
     rdfs:label "protein is isoform of protein" ;
     :display_label "is isoform of" .
 
+:TIO_000144
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Project ;
+    rdfs:range :Phenotype ;
+    owl:inverseOf :TIO_000145 ;
+    rdfs:label "project investigates phenotype" ;
+    :display_label "investigates" .
+
+:TIO_000145
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Phenotype ;
+    rdfs:range :Project ;
+    owl:inverseOf :TIO_000144 ;
+    rdfs:label "phenotype is investigated in project" ;
+    :display_label "is investigated in" .
+

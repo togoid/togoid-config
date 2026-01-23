@@ -141,3 +141,5 @@ TIO_000140	sample is sample of organism	is sample of	TIO_000141	Sample	Organism
 TIO_000141	organism is analyzed using sample	is analyzed using	TIO_000140	Organism	Sample
 TIO_000142	protein has protein isoform	has isoform	TIO_000143	Protein	Protein
 TIO_000143	protein is isoform of protein	is isoform of	TIO_000142	Protein	Protein
+TIO_000144	project investigates phenotype	investigates	TIO_000145	Project	Phenotype
+TIO_000145	phenotype is investigated in project	is investigated in	TIO_000144	Phenotype	Project
