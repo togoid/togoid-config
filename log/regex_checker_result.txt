@@ -1,4 +1,4 @@
-Sat Jan 17 09:44:22 JST 2026
+Sat Jan 24 10:16:21 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HUMGAPDH/M33197_3_at	2597
 AFFX-HUMGAPDH/M33197_5_at	2597
@@ -256,7 +256,18 @@ awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-meddra.tsv | grep -v
 awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-mesh.tsv | grep -vP '^MONDO[:_](\d{7})	([CD]\d{6,9})$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-omim_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "Orphanet_" $2}' output/tsv/mondo-orphanet_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "NANDO_" $1 "	" "HP_" $2}' output/tsv/nando-hp_phenotype.tsv | grep -vP '^NANDO[:_](\d{7})	HP[:_](\d{7})$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "MONDO:" $2}' output/tsv/nando-mondo.tsv | grep -vP '^NANDO[:_](\d{7})	MONDO[:_](\d{7})$' | head
+awk -F '	' '{print "NANDO_" $1 "	" "" $2}' output/tsv/nando-nbdc_human_db.tsv | grep -vP '^NANDO[:_](\d{7})	(hum\d{4})([.\-]v\d+)?$' | head
+awk -F '	' '{print "NANDO_" $1 "	" "" $2}' output/tsv/nando-ncbigene.tsv | grep -vP '^NANDO[:_](\d{7})	(\d+)$' | head
+NANDO_1200511	-
+NANDO_1200518	-
+NANDO_1200527	-
+NANDO_1200528	-
+NANDO_1200530	-
+NANDO_1200678	-
+NANDO_2200410	-
+NANDO_2201014	-
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_gene.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$' | head
 18507023	Tc04v2_g006410
 18507026	Tc05v2_g007220
@@ -483,4 +494,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Jan 17 10:48:39 JST 2026
+Sat Jan 24 11:20:45 JST 2026

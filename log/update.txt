@@ -16,12 +16,13 @@ clinvar-mondo.tsv
 clinvar-ncbigene.tsv
 clinvar-omim_phenotype.tsv
 clinvar-orphanet_phenotype.tsv
-clinvar-uniprot.tsv
+ensembl_protein-ensembl_transcript.tsv
 hgnc-ccds.tsv
 hgnc-ec.tsv
 hgnc-ensembl_gene.tsv
 hgnc-hgnc_symbol.tsv
 hgnc-insdc.tsv
+hgnc-lrg.tsv
 hgnc-mgi_gene.tsv
 hgnc-ncbigene.tsv
 hgnc-omim_gene.tsv
@@ -38,6 +39,9 @@ mgi_gene-ensembl_gene.tsv
 mgi_gene-hgnc.tsv
 mgi_gene-mgi_allele.tsv
 mgi_gene-uniprot.tsv
+nando-hp_phenotype.tsv
+nando-nbdc_human_db.tsv
+nando-ncbigene.tsv
 ncbigene-ensembl_gene.tsv
 ncbigene-ensembl_protein.tsv
 ncbigene-ensembl_transcript.tsv
@@ -48,7 +52,7 @@ ncbigene-refseq_protein.tsv
 ncbigene-refseq_rna.tsv
 ncbigene-rgd.tsv
 ncbigene-taxonomy.tsv
-ncbigene-zfin_gene.tsv
+ncbigene-xenbase_gene.tsv
 pmc-pubmed.tsv
 pubchem_compound-inchi_key.tsv
 sra_accession-bioproject.tsv
@@ -69,10 +73,4 @@ sra_run-sra_project.tsv
 sra_run-sra_sample.tsv
 sra_sample-biosample.tsv
 taxonomy-pubmed.tsv
-wikipathways-chebi.tsv
-wikipathways-doid.tsv
-wikipathways-hmdb.tsv
-wikipathways-lipidmaps.tsv
-wikipathways-ncbigene.tsv
-wikipathways-uniprot.tsv
 zfin_gene-zfin_transcript.tsv
