@@ -153,11 +153,14 @@ chebi:
     dictionaries:
       - label: Name
         dictionary: togoid_chebi_label
+        label_type: label
         preferred: true
       - label: Exact synonym
         dictionary: togoid_chebi_exact_synonym
+        label_type: exact_synonym
       - label: Related synonym
         dictionary: togoid_chebi_related_synonym
+        label_type: related_synonym
   annotations:
     - variable: mass
       label: Molecular mass
@@ -819,13 +822,17 @@ mondo:
     dictionaries:
       - label: Name
         dictionary: togoid_mondo_label
+        label_type: label
         preferred: true
       - label: Exact synonym
         dictionary: togoid_mondo_exact_synonym
+        label_type: exact_synonym
       - label: Related synonym
         dictionary: togoid_mondo_related_synonym
+        label_type: related_synonym
       - label: Broad synonym
         dictionary: togoid_mondo_broad_synonym
+        label_type: broad_synonym
 mp:
   label: Mammalian Phenotype Ontology
   catalog: FIXME
@@ -1559,7 +1566,8 @@ uniprot_proteome:
   examples:
     - ["UP000005640","UP000002311","UP000000589","UP000000803","UP000000437","UP000001819","UP000008028","UP000008143","UP000079169"]
   method: zcat $TOGOID_ROOT/input/uniprot/uniprot_proteome.tab.gz | awk -F "\t" 'FNR>=2&&$1&&$4{print $1 "\t" $4}'
-  description: 'This is a proteome dataset defined by UniProt. UniProt assigns IDs to the set of proteins expressed by a single organism. Since multiple genomes are often sequenced for the same organism, and a proteome is defined for each genome, proteome IDs to distinguish individual proteomes from the same taxonomy identifier were introduced. More info: https://www.uniprot.org/help/proteome_id'
+  description: 'This is a proteome dataset defined by UniProt. UniProt assigns IDs to the set of proteins expressed by a single organism. Since multiple genomes are often sequenced for the same organism, and a proteome is defined for each genome, proteome IDs to distinguish individual proteomes from the same taxonomy identifier were introduced. [More info](https://www.uniprot.org/help/proteome_id)'
+  description_ja: 'UniProt によって定義されたプロテオームのデータセットで、単一の生物種が発現するタンパク質の集合に ID が割り当てられています。同じ生物種について複数のゲノム配列が決定されることがよくあり、それぞれのゲノムに対してプロテオームが定義されるため、同じ Taxonomy ID を持つ個々のプロテオームを区別するためにプロテオームの ID が導入されました。 [More info](https://www.uniprot.org/help/proteome_id)'
 vgnc:
   label: VGNC
   catalog: nbdc02624
