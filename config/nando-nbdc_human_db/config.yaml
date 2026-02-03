@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000145
+  reverse: TIO_000144
+  file: sample.tsv
+update:
+  frequency: Irregular
+  method: sparql_csv2tsv.sh query.rq https://nanbyodata.jp/sparql

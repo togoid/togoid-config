@@ -2,7 +2,8 @@
     forward: TIO_000012
     reverse: TIO_000012
     file: sample1.tsv
-    description: "This relation means that there is at least one assay in ChEMBL that evaluates the interaction between the compound and the target and that has a confidence score of 9, which means that a single protein target has been assigned with a high degree of confidence."
+    description: "This relation means that there is at least one assay in ChEMBL that evaluates the interaction between the compound and the target and that has a confidence score of 9, which means that a single protein target has been assigned with a high degree of confidence. [More info](https://chembl.gitbook.io/chembl-interface-documentation/frequently-asked-questions/chembl-data-questions#what-is-the-confidence-score)"
+    description_ja: "この関係は、化合物とターゲット間の相互作用を評価し、その confidence score が 9 であるアッセイが ChEMBL に少なくとも 1 つあることを意味します。Confidence score が 9 であることは、単一のタンパク質ターゲットが高度な信頼度で割り当てられていることを意味します。 [More info](https://chembl.gitbook.io/chembl-interface-documentation/frequently-asked-questions/chembl-data-questions#what-is-the-confidence-score)"
   update:
     frequency: Monthly
     method: sparql_thread.pl -t 4
@@ -11,6 +12,7 @@
     reverse: TIO_000121
     file: sample2.tsv
     description: "This is the relation between a drug or drug candidate compound and its target, as recorded in ChEMBL."
+    description_ja: "ChEMBL に記述された、薬剤や薬剤候補分子と、その標的の関係です。"
   update:
     frequency: Monthly
     method: sparql_csv2tsv.sh drug_target.rq https://rdfportal.org/ebi/sparql
