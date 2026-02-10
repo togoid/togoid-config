@@ -208,13 +208,13 @@ reactome_reaction-mirbase.tsv	228
 reactome_reaction-uniprot.tsv	723484
 refseq_protein-taxonomy.tsv	145485226
 refseq_protein-uniprot.tsv	175424647
-refseq_rna-dbsnp.tsv	331005230
-refseq_rna-hgnc.tsv	227125
-refseq_rna-ncbigene.tsv	74171924
-refseq_rna-omim_gene.tsv	192818
-refseq_rna-pubmed.tsv	6459572
-refseq_rna-refseq_protein.tsv	63976201
-refseq_rna-taxonomy.tsv	74202490
+refseq_rna-dbsnp.tsv	330794216
+refseq_rna-hgnc.tsv	227306
+refseq_rna-ncbigene.tsv	76247852
+refseq_rna-omim_gene.tsv	193150
+refseq_rna-pubmed.tsv	6478027
+refseq_rna-refseq_protein.tsv	65609555
+refseq_rna-taxonomy.tsv	76278418
 rhea-chebi.tsv	216654
 rhea-ec.tsv	7719
 rhea-go.tsv	4431
@@ -305,4 +305,4 @@ wikipathways-lipidmaps.tsv	1720
 wikipathways-ncbigene.tsv	32106
 wikipathways-uniprot.tsv	5245
 zfin_gene-zfin_transcript.tsv	48741
-total	6153536784
+total	6159129948
