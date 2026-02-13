@@ -1,4 +1,10 @@
-Datasets last updated: 2026-01-20
+Datasets last updated: 2026-02-13
+
+# 2025-02-13
+- New pairs have been added.
+  - `nando-ncbigene`
+  - `nando-hp_phenotype`
+  - `nando-nbdc_human_db`
 
 # 2025-12-31
 - A new pair `refseq_protein-taxonomy` has been added.  

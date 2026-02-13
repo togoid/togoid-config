@@ -1153,13 +1153,17 @@ namespace :prepare do
         # Unfortunately, NCBI http/https server won't accept wildcard or --accept option.
         # However, NCBI ftp server is currently broken.. You've Been Warned.
         # (It is reported that large files are contaminated by illegal bytes occationally)
-        input_file = "complete.*.rna.gbff.gz"
-        input_url  = "ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
-        download_file(INPUT_REFSEQ_RNA_DIR, input_url, input_file)
+        # 20260209 update: To avoid the issue of the illegal bytes contamination, use the http server.
+        input_base_url = "https://ftp.ncbi.nlm.nih.gov/refseq/release/complete/"
+        sh "rm -f #{INPUT_REFSEQ_RNA_DIR}/index.html"
+        sh "rm -f #{INPUT_REFSEQ_RNA_DIR}/.listing"
+        sh "wget -P #{INPUT_REFSEQ_RNA_DIR} -q --no-remove-listing ftp://ftp.ncbi.nlm.nih.gov:/refseq/release/complete/"
+        sh "awk '/complete\\.[0-9]+\\.rna\\.gbff/{print \"#{input_base_url}\" $NF}' #{INPUT_REFSEQ_RNA_DIR}/.listing | sed -e 's/\\r//g' > #{INPUT_REFSEQ_RNA_DIR}/file_list.txt"
+        sh "wget -P #{INPUT_REFSEQ_RNA_DIR} -q -i #{INPUT_REFSEQ_RNA_DIR}/file_list.txt"
 
         # Parse the gbff files and output all relations to a single tsv.
         # Each config extract columns from the tsv.
-        sh "gzip -dc #{INPUT_REFSEQ_RNA_DIR}/#{input_file} | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_RNA_DIR}/refseq_rna_summary.tsv"
+        sh "gzip -dc #{INPUT_REFSEQ_RNA_DIR}/complete.*.rna.gbff.gz | parse_refseq_rna_gbff.pl --summary > #{INPUT_REFSEQ_RNA_DIR}/refseq_rna_summary.tsv"
         updated = true
       end
       updated

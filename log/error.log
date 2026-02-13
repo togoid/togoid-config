@@ -1,8 +1,11 @@
+Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
+Error: Remote file is empty
 # Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 248 / 314378 = 0.000788859271323057 < 0.5
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
@@ -36,3 +39,14 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/nando-mondo.tsv new file size per old 4384 / 38240 = 0.11464435146443515 < 0.5
+# Error: output/tsv/refseq_rna-dbsnp.tsv new file size per old 0 / 8318026867 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-dbsnp.tsv or created file was empty
+# Error: output/tsv/refseq_rna-hgnc.tsv new file size per old 0 / 4118503 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-hgnc.tsv or created file was empty
+# Error: output/tsv/refseq_rna-ncbigene.tsv new file size per old 144998859 / 1689420575 = 0.08582756783342715 < 0.5
+# Error: output/tsv/refseq_rna-omim_gene.tsv new file size per old 0 / 3772513 = 0.0 < 0.5
+# Error: Failed to create output/tsv/refseq_rna-omim_gene.tsv or created file was empty
+# Error: output/tsv/refseq_rna-pubmed.tsv new file size per old 13014606 / 138351774 = 0.09406894919901786 < 0.5
+# Error: output/tsv/refseq_rna-refseq_protein.tsv new file size per old 146672962 / 1661694695 = 0.08826709409456229 < 0.5
+# Error: output/tsv/refseq_rna-taxonomy.tsv new file size per old 122165977 / 1422062850 = 0.08590757926064942 < 0.5
+# Error: output/ttl/label/refseq_rna.ttl new file size per old 1237459193 / 14439778562 = 0.08569793419523215 < 0.5
