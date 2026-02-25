@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: bash retrieve.sh
+  method: retrieve.sh https://rdfportal.org/pdb/sparql
