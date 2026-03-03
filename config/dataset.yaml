@@ -14,7 +14,7 @@ assembly_insdc:
   label: Assembly INSDC
   catalog: FIXME
   category: Genome
-  regex: '^(?<id>GCA_\d{9})(\.\d+)?$'
+  regex: '^(?<id>GCA_\d{9})(?:\.\d+)?$'
   prefix:
     - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.gca/'
@@ -30,7 +30,7 @@ assembly_refseq:
   label: Assembly RefSeq
   catalog: FIXME
   category: Genome
-  regex: '^(?<id>GCF_\d{9})(\.\d+)?$'
+  regex: '^(?<id>GCF_\d{9})(?:\.\d+)?$'
   prefix:
     - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.gca/'
@@ -205,7 +205,7 @@ clinvar:
   label: ClinVar variant
   catalog: nbdc01514
   category: Variant
-  regex: '^(VCV0*)?(?<id>(\d{1,9}))$'
+  regex: '^(?:VCV0*)?(?<id>\d{1,9})$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/clinvar/'
@@ -309,7 +309,7 @@ ensembl_gene:
   label: Ensembl gene
   catalog: nbdc00054
   category: Gene
-  regex: '^(?:(?:(?<id1>ENS[A-Z]*G\d{11})(?:\.\d+)?)|(?<id2>FBgn\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+)|(?<id5>WBGene\d{8})|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4})|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?)|(?<id9>snR\d+-?[A-Za-z]?)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?))$'
+  regex: '^(?:(?:(?<id1>ENS[A-Z]*G\d{11})(?:\.\d+)?)|(?<id2>FBgn\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+)|(?<id5>WBGene\d{8})|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(?<id7>Q\d{4})|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?)|(?<id9>snR\d+-?[A-Za-z]?)|(?<id10>t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?))$'
   prefix:
     - label: 'Ensembl'
       uri: 'https://www.ensembl.org/id/'
@@ -341,7 +341,7 @@ ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
   category: Transcript
-  regex: '^(?:(?:(?<id1>ENS[A-Z]*T\d{11})(?:\.\d+)?)|(?<id2>FBtr\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+t\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(?<id7>Q\d{4}_[a-z]{1,3}RNA)|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(?<id9>snR\d+-?[A-Za-z]?_sno?RNA)|(?<id10>t[A-Z]\([ACGUX]{3}\)[A-Z]\d?_tRNA))$'
+  regex: '^(?:(?:(?<id1>ENS[A-Z]*T\d{11})(?:\.\d+)?)|(?<id2>FBtr\d{7})|(?:(?<id3>MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(?<id4>LRG_\d+t\d+(?:-\d)?)|(?<id5>(?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(?<id6>Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(?<id7>Q\d{4}_[a-z]{1,3}RNA)|(?<id8>[A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(?<id9>snR\d+-?[A-Za-z]?_sno?RNA)|(?<id10>t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?_tRNA))$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/ensembl/'
@@ -485,7 +485,7 @@ hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
   category: Gene
-  regex: '^(?<id>[A-Z0-9_(orf)\-]+\@?)$'
+  regex: '^(?<id>[A-Z0-9_(?:orf)\-]+\@?)$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/hgnc.symbol/'
@@ -547,7 +547,7 @@ inchi_key:
   label: InChIKey
   catalog: FIXME
   category: Compound
-  regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(\-[A-Z])?)$'
+  regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$'
   prefix:
     - label: 'identifiers.org'
       uri: 'http://identifiers.org/inchikey/'
@@ -648,7 +648,7 @@ lipidmaps:
   label: LIPID MAPS
   catalog: FIXME
   category: Lipid
-  regex: '^(?<id>LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?)$'
+  regex: '^(?<id>LM(?:FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}(?:[0-9a-zA-Z]{4,6})?)$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/lipidmaps/'
@@ -870,7 +870,7 @@ nbdc_human_db:
   label: NBDC Human Database
   catalog: nbdc01348
   category: Project
-  regex: '^(?<id>hum\d{4})([.\-]v\d+)?$'
+  regex: '^(?<id>hum\d{4})(?:[.\-]v\d+)?$'
   prefix:
     - label: 'rdf'
       uri: 'http://humandbs.biosciencedbc.jp/'
@@ -1053,7 +1053,7 @@ pdb_ccd:
   label: PDB CCD
   catalog: nbdc01766
   category: Compound
-  regex: '^(?<id>\w{1,3})$'
+  regex: '^(?<id>(?:\w{5}|\w{1,3}))$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/pdb-ccd/'
@@ -1437,7 +1437,7 @@ tair:
   label: TAIR
   catalog: nbdc00697
   category: Gene
-  regex: '^(?<id>AT.G\d{5})(\.\d+)?$'
+  regex: '^(?<id>AT.G\d{5})(?:\.\d+)?$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/tair.name/'
@@ -1576,7 +1576,7 @@ vgnc:
   label: VGNC
   catalog: nbdc02624
   category: Gene
-  regex: '^((VGNC|vgnc):)?(?<id>\d{1,9})$'
+  regex: '^(?:(?:VGNC|vgnc):)?(?<id>\d{1,9})$'
   format: ["%s","VGNC:%s","vgnc:%s"]
   prefix:
     - label: 'rdf'
