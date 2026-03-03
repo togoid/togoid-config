@@ -1053,7 +1053,7 @@ pdb_ccd:
   label: PDB CCD
   catalog: nbdc01766
   category: Compound
-  regex: '^(?<id>\w{1,3})$'
+  regex: '^(?<id>(?:\w{5}|\w{1,3}))$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/pdb-ccd/'
