@@ -2,20 +2,7 @@ Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/s
 Error: Remote file is empty
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
-Error: check_remote_file_time(input/mgi_gene/MRK_List2.rpt, https://www.informatics.jax.org/downloads/reports/MRK_List2.rpt): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/mgi_gene/MGI_Gene_Model_Coord.rpt, https://www.informatics.jax.org/downloads/reports/MGI_Gene_Model_Coord.rpt): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/mgi_gene/MRK_SwissProt_TrEMBL.rpt, https://www.informatics.jax.org/downloads/reports/MRK_SwissProt_TrEMBL.rpt): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/mgi_gene/HGNC_AllianceHomology.rpt, https://www.informatics.jax.org/downloads/reports/HGNC_AllianceHomology.rpt): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/mgi_gene/MGI_PhenotypicAllele.rpt, https://www.informatics.jax.org/downloads/reports/MGI_PhenotypicAllele.rpt): no time information in ""
-Error: Remote file is empty
-Error: check_remote_file_time(input/mgi_genotype/MGI_DiseaseGeneModel.rpt, https://www.informatics.jax.org/downloads/reports/MGI_DiseaseGeneModel.rpt): no time information in ""
-Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
 Error: Remote file is empty
