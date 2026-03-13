@@ -840,17 +840,34 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for COG"
     download_lock(INPUT_COG_DIR) do
       updated = false
-      input_file = "#{INPUT_COG_DIR}/cog-20.cog.csv"
-      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_COG_DIR, input_url)
-        updated = true
+      input_base_url = "https://ftp.ncbi.nlm.nih.gov/pub/COG/"
+      begin
+        sh "curl -sS #{input_base_url} | awk '/<a href=[^>]*COG[0-9]+/{match($2, />[^<]*</); print substr($2, RSTART+1, RLENGTH-3)}' | sort > #{INPUT_COG_DIR}/cog_version.txt"
+        sh "cat #{INPUT_COG_DIR}/cog_version.txt"
+        cog_latest_version = `tail -1 #{INPUT_COG_DIR}/cog_version.txt`.strip
+      rescue StandardError => e
+          $stderr.puts "Error: update check: COG: #{e.message}"
+          return false
       end
-      input_file = "#{INPUT_COG_DIR}/cog-20.def.tab"
-      input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/cog-20.def.tab"
-      if update_input_file?(input_file, input_url)
-        download_file(INPUT_COG_DIR, input_url)
-        updated = true
+      if cog_latest_version != ""
+        cog_latest_version_short = cog_latest_version[-2..-1]
+        input_filename = "cog-#{cog_latest_version_short}.cog.csv"
+        input_file = "#{INPUT_COG_DIR}/#{input_filename}"
+        input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/#{cog_latest_version}/data/#{input_filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_COG_DIR, input_url)
+          sh "ln -fs #{input_filename} #{INPUT_COG_DIR}/cog-latest.cog.csv"
+          updated = true
+        end
+
+        input_filename = "cog-#{cog_latest_version_short}.def.tab"
+        input_file = "#{INPUT_COG_DIR}/#{input_filename}"
+        input_url  = "https://ftp.ncbi.nlm.nih.gov/pub/COG/#{cog_latest_version}/data/#{input_filename}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_COG_DIR, input_url)
+          sh "ln -fs #{input_filename} #{INPUT_COG_DIR}/cog-latest.def.tab"
+          updated = true
+        end
       end
       updated
     end
