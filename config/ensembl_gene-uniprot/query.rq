@@ -8,7 +8,7 @@ PREFIX so: <http://purl.obolibrary.org/obo/so#>
 SELECT DISTINCT ?ensg_id ?uniprot_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
-  VALUES ?taxon { taxon:{{taxon}} }
+  VALUES ?taxon { <{{taxon}}> }
   ?ensg obo:RO_0002162 ?taxon ;
         dcterms:identifier ?ensg_id .
   ?enst so:transcribed_from ?ensg ;
