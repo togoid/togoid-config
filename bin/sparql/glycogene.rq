@@ -1,0 +1,14 @@
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX edam: <http://edamontology.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?gene_id
+WHERE {
+  GRAPH <http://rdf.glycoinfo.org/ggdb> {
+    ?s a <http://purl.uniprot.org/core/Gene> .
+    ?s sio:SIO_000008 ?gene .
+    ?gene a edam:data_2295 ;  # Gene ID
+          dcterms:identifier ?gene_id .
+  }
+}

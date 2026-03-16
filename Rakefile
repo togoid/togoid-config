@@ -757,7 +757,9 @@ namespace :prepare do
       input_url  = "https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv"
       if update_input_file?(input_file, input_url)
         download_file(INPUT_GLYTOUCAN_DIR, input_url)
-        sh "sparql_csv2tsv.sh bin/sparql/glycogene-uniprot.rq https://ts.glycosmos.org/sparql > #{INPUT_GLYTOUCAN_DIR}/glycogene-uniprot.tsv"
+        sh "sparql_csv2tsv.sh bin/sparql/glycogene.rq https://ts.glycosmos.org/sparql | awk '{print \"geneid:\" $0}' > #{INPUT_GLYTOUCAN_DIR}/glycogene.txt"
+        sh "sed -e '/{{gene}}/{r #{INPUT_GLYTOUCAN_DIR}/glycogene.txt' -e 'd}' bin/sparql/glycogene-uniprot.rq > bin/sparql/glycogene-uniprot.sed.rq"
+        sh "sparql_csv2tsv.sh bin/sparql/glycogene-uniprot.sed.rq https://rdfportal.org/sib/sparql > #{INPUT_GLYTOUCAN_DIR}/glycogene-uniprot.tsv"
         updated = true
       end
       updated
