@@ -743,7 +743,7 @@ namespace :prepare do
         sh "gzip -dc #{input_file} > #{INPUT_FLYBASE_DIR}/fbgn_fbtr_fbpp_expanded_fb_current.tsv"
         updated = true
       end
-      sh "rm -f #{INPUT_FLYBASE_DIR}/index.html"
+      sh "mv #{INPUT_FLYBASE_DIR}/index.html #{INPUT_FLYBASE_DIR}/filelist.html"
       updated
     end
   end
