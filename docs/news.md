@@ -1,8 +1,4 @@
 Datasets last updated: 2026-03-11
-# *NOTICE*
-Some of the features of TogoID (the LABEL2ID function and the annotaion display features) will be temporarily unavailable due to our system maintenance from March 12, 2026, to March 15, 2026 (JST).  
-The *ID-to-ID conversion function will remain available* as usual throughout the maintenance period.  
-We apologize for any incovenience caused.
 
 # 2025-02-13
 - New pairs have been added.
