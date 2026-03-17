@@ -1,21 +1,9 @@
-PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX gene: <http://purl.uniprot.org/geneid/>
-PREFIX sio: <http://semanticscience.org/resource/>
-PREFIX edam: <http://edamontology.org/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geneid: <http://purl.uniprot.org/geneid/>
 
-SELECT DISTINCT ?gene_id ?uniprot_id
-WHERE {
-  GRAPH <http://rdf.glycoinfo.org/ggdb> {
-    ?s a <http://purl.uniprot.org/core/Gene> .
-    ?s sio:SIO_000008 ?gene .
-    ?gene a edam:data_2295 ;  # Gene ID
-          dcterms:identifier ?gene_id .
-    BIND (URI(CONCAT("http://purl.uniprot.org/geneid/", STR(?gene_id))) AS ?up_gene)
+SELECT DISTINCT (STRAFTER(STR(?gene), "http://purl.uniprot.org/geneid/") AS ?gene_id) (STRAFTER(STR(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id) {
+  VALUES ?gene {
+    {{gene}}
   }
-
-  GRAPH <http://rdf.glycosmos.org/uniprot_geneid> {
-    ?protein rdfs:seeAlso ?up_gene .
-  }
-  BIND(STRAFTER(STR(?protein), "http://purl.uniprot.org/uniprot/") AS ?uniprot_id)
+  ?uniprot rdfs:seeAlso ?gene .
 }

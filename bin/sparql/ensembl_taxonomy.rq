@@ -1,0 +1,12 @@
+# Endpoint: https://rdfportal.org/ebi/sparql
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
+
+SELECT DISTINCT ?ens_taxon
+FROM <http://rdfportal.org/dataset/ensembl>
+WHERE {
+  [] a terms:EnsemblGene ;
+       obo:RO_0002162 ?ens_taxon .  # in-taxon
+}

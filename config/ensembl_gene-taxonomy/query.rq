@@ -1,0 +1,23 @@
+# Endpoint: https://rdfportal.org/ebi/sparql
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX taxon: <http://identifiers.org/taxonomy/>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
+
+SELECT DISTINCT ?ensg_id ?taxon_id
+WHERE {
+  VALUES ?ens_taxon { <{{taxon}}> }
+  GRAPH <http://rdfportal.org/dataset/ensembl> {
+    ?ensg a terms:EnsemblGene ;
+          obo:RO_0002162 ?ens_taxon ;
+          dcterms:identifier ?ensg_id .
+  }
+  GRAPH <http://rdfportal.org/dataset/ensembl_taxonomy> {
+    ?ens_taxon skos:relatedMatch ?taxon .
+  }
+  GRAPH <http://rdfportal.org/ontology/taxonomy> {
+    ?taxon dcterms:identifier ?taxon_id .
+  }
+}
