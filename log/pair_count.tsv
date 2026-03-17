@@ -60,7 +60,7 @@ ensembl_protein-uniparc.tsv	14483896
 ensembl_transcript-affy_probeset.tsv	422464
 ensembl_transcript-go.tsv	88978683
 ensembl_transcript-hgnc.tsv	291383
-ensembl_transcript-refseq_rna.tsv	48984125
+ensembl_transcript-refseq_rna.tsv	49063935
 flybase_gene-flybase_transcript.tsv	35736
 flybase_transcript-flybase_protein.tsv	30836
 gea-bioproject.tsv	141
@@ -69,8 +69,8 @@ glycomotif-glytoucan.tsv	155799
 glytoucan-doid.tsv	290
 glytoucan-ncbigene.tsv	1270
 glytoucan-uniprot-TIO_000060.tsv	71887
-glytoucan-uniprot-TIO_000126.tsv	402
-glytoucan-uniprot-TIO_000128.tsv	310
+glytoucan-uniprot-TIO_000126.tsv	471
+glytoucan-uniprot-TIO_000128.tsv	386
 glytoucan-uniprot.tsv	71887
 hgnc-ccds.tsv	35541
 hgnc-ec.tsv	2218
