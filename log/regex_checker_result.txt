@@ -1,4 +1,4 @@
-Tue Mar 17 14:04:14 JST 2026
+Sat Mar 21 01:44:54 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HUMGAPDH/M33197_3_at	2597
 AFFX-HUMGAPDH/M33197_5_at	2597
@@ -163,12 +163,6 @@ FBti0215214-RA	NR_026601
 FBti0215221-RA	NR_125437
 FBti0215222-RA	NR_125438
 FBti0215223-RA	NR_026611
-<html>	
-  <head>	
-    <title>Error HTTP/1.1 503 Service Temporarily Unavailable</title>	
-  </head>	
-  <body>	
-    <h3>Error HTTP/1.1 503 Service Temporarily Unavailable</h3><pre>	
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/flybase_gene-flybase_transcript.tsv | grep -vP '^(FBgn\d{7})	(FBtr\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/flybase_transcript-flybase_protein.tsv | grep -vP '^(FBtr\d{7})	(FBpp\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/gea-bioproject.tsv | grep -vP '^(E-GEAD-\d+)	(PRJ[DEN][A-Z]\d+)$' | head
@@ -237,6 +231,16 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/jga_study-jga_dataset.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/jga_study-nbdc_human_db.tsv | grep -vP '^(JGAS\d{6})	(hum\d{4})(?:[.\-]v\d+)?$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/jga_study-pubmed.tsv | grep -vP '^(JGAS\d{6})	(?:pmid:|PMID:)?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/lipidmaps-chebi.tsv | grep -vP '^(LM(?:FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}(?:[0-9a-zA-Z]{4,6})?)	(?:CHEBI[:_])?(\d+)$' | head
+LMGL0102000	CHEBI_15850
+	CHEBI_18259
+	CHEBI_18056
+	CHEBI_62571
+	CHEBI_62649
+	CHEBI_27731
+	CHEBI_27938
+	CHEBI_17103
+	CHEBI_17292
+	CHEBI_90292
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/lipidmaps-inchi_key.tsv | grep -vP '^(LM(?:FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}(?:[0-9a-zA-Z]{4,6})?)	([A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$' | head
 awk -F '	' '{print "" $1 "	" "SLM:" $2}' output/tsv/lipidmaps-swisslipids.tsv | grep -vP '^(LM(?:FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}(?:[0-9a-zA-Z]{4,6})?)	SLM[:_](\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/mbgd_gene-uniprot.tsv | grep -vP '^([a-z0-9]+:[A-Z0-9_\.-]+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
@@ -510,4 +514,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Tue Mar 17 15:09:50 JST 2026
+Sat Mar 21 02:50:24 JST 2026
