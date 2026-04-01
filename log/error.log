@@ -26,6 +26,8 @@ Error: Remote file is empty
 # Error: output/tsv/chembl_compound-pdb_ccd.tsv new file size per old 83 / 250230 = 0.0003316948407465132 < 0.5
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
+# Error: output/tsv/ensembl_gene-affy_probeset.tsv new file size per old 0 / 1483748 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ensembl_gene-affy_probeset.tsv or created file was empty
 # Error: output/tsv/ensembl_gene-hgnc.tsv new file size per old 0 / 1033763 = 0.0 < 0.5
 # Error: Failed to create output/tsv/ensembl_gene-hgnc.tsv or created file was empty
 # Error: output/tsv/ensembl_transcript-hgnc.tsv new file size per old 0 / 6318372 = 0.0 < 0.5
