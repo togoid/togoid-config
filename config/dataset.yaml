@@ -1043,9 +1043,17 @@ pdb:
   category: Structure
   regex: '^(?<id>[0-9][A-Za-z0-9]{3})$'
   prefix:
+    - label: 'PDBj'
+      uri: 'https://pdbj.org/mine/summary/'
+    - label: 'RCSB PDB'
+      uri: 'https://www.rcsb.org/structure/'
+    - label: 'PDBe'
+      uri: 'https://www.ebi.ac.uk/pdbe/entry/pdb/'
     - label: 'rdf'
       uri: 'http://rdf.wwpdb.org/pdb/'
       rdf: true
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/pdb/'
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
     - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
