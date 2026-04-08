@@ -324,6 +324,12 @@ ensembl_gene:
       uri: 'https://www.gtexportal.org/home/gene/'
     - label: 'Human Protein Atlas  (Only human IDs)'
       uri: 'https://www.proteinatlas.org/'
+  annotations:
+    - variable: chromosome
+      label: Chromosome
+    - variable: is_alternate_seq
+      label: Alternate sequence
+      items: ["true", "false"]
   examples:
     - ["ENSG00000186283","ENSAMEG00000018238","ENSG00000167916","ENSG00000213417","ENSG00000133328","ENSG00000274404","ENSG00000184363","FBgn0021742","FBgn0030057","FBgn0265139"]
 ensembl_protein:
