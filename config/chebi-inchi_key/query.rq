@@ -2,11 +2,11 @@
 # Graph: http://rdf.ebi.ac.uk/dataset/chebi
 
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX chebi: <http://purl.obolibrary.org/obo/chebi/>
+PREFIX chemrof: <https://w3id.org/chemrof/>
 
-select DISTINCT   ?chebi_id ?chebi_inchikey
-from <http://rdf.ebi.ac.uk/dataset/chebi>
-where {
-  ?chebi chebi:inchikey ?chebi_inchikey.
+SELECT DISTINCT ?chebi_id ?chebi_inchikey
+FROM <http://rdf.ebi.ac.uk/dataset/chebi>
+WHERE {
+  ?chebi chemrof:inchi_key_string ?chebi_inchikey.
   BIND (strafter(str(?chebi), "CHEBI_") AS ?chebi_id)
-} 
+}
