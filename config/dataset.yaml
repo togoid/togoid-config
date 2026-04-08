@@ -324,6 +324,12 @@ ensembl_gene:
       uri: 'https://www.gtexportal.org/home/gene/'
     - label: 'Human Protein Atlas  (Only human IDs)'
       uri: 'https://www.proteinatlas.org/'
+  annotations:
+    - variable: chromosome
+      label: Chromosome
+    - variable: is_alternate_seq
+      label: Alternate sequence
+      items: ["true", "false"]
   examples:
     - ["ENSG00000186283","ENSAMEG00000018238","ENSG00000167916","ENSG00000213417","ENSG00000133328","ENSG00000274404","ENSG00000184363","FBgn0021742","FBgn0030057","FBgn0265139"]
 ensembl_protein:
@@ -1043,9 +1049,17 @@ pdb:
   category: Structure
   regex: '^(?<id>[0-9][A-Za-z0-9]{3})$'
   prefix:
+    - label: 'PDBj'
+      uri: 'https://pdbj.org/mine/summary/'
+    - label: 'RCSB PDB'
+      uri: 'https://www.rcsb.org/structure/'
+    - label: 'PDBe'
+      uri: 'https://www.ebi.ac.uk/pdbe/entry/pdb/'
     - label: 'rdf'
       uri: 'http://rdf.wwpdb.org/pdb/'
       rdf: true
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/pdb/'
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
     - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
@@ -1069,6 +1083,12 @@ pfam:
     - label: 'rdf'
       uri: 'http://identifiers.org/pfam/'
       rdf: true
+    - label: 'PDBj Chemie'
+      uri: 'https://pdbj.org/chemie/summary/'
+    - label: 'PDBe Ligand'
+      uri: 'https://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/'
+    - label: 'RCSB PDB Ligand'
+      uri: 'https://www.rcsb.org/ligand/'
   examples:
     - ["PF03719","PF03726","PF02809","PF00105","PF00250","PF00412","PF01412","PF00459","PF02532","PF01226"]
   method: awk -F "\t" 'FNR==NR&&$2=="name"{a[$1]=$3}FNR!=NR&&$2=="PFAM"{print $3 "\t" a[$1]}' $TOGOID_ROOT/input/interpro/interpro.tsv $TOGOID_ROOT/input/interpro/interpro.tsv
