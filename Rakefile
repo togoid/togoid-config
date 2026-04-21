@@ -966,7 +966,13 @@ namespace :prepare do
         end
       end
       if updated
-        sh "ruby bin/query_mousemine.rb > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
+        begin
+          sh "ruby bin/query_mousemine.rb > #{INPUT_MGI_GENOTYPE_DIR}/mousemine_genotype.tsv"
+        rescue StandardError => e
+          $stderr.puts "Error: ruby bin/query_mousemine.rb: #{e.message}"
+        end
+      end
+
       end
       updated
     end
