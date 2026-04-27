@@ -6,7 +6,7 @@
     description_ja: "Nando 内の記述で、skos:exactMatch または skos:closeMatch プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
   update:
     frequency: Irregular
-    method: sparql_csv2tsv.sh query_nearly_eq.rq https://rdfportal.org/bioportal/sparql
+    method: sparql_csv2tsv.sh query_nearly_eq.rq https://nanbyodata.jp/sparql
 
 - link:
     forward: TIO_000002
@@ -16,4 +16,4 @@
     description_ja: "Nando 内の記述で、skos:exactMatch プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
   update:
     frequency: Irregular
-    method: sparql_csv2tsv.sh query_eq.rq https://rdfportal.org/bioportal/sparql
+    method: sparql_csv2tsv.sh query_eq.rq https://nanbyodata.jp/sparql

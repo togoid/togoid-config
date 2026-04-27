@@ -1,9 +1,8 @@
-# Endpoint: https://togodx.dbcls.jp/human/sparql
+# Endpoint: https://nanbyodata.jp/sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?nando_id ?mondo_id
-FROM <http://rdfportal.org/dataset/bioportal/nando>
 WHERE {
   ?nando
     dcterms:identifier ?nandoid ;
