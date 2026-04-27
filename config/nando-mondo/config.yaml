@@ -1,7 +1,19 @@
-link:
-  forward: TIO_000001
-  reverse: TIO_000001
-  file: sample.tsv
-update:
-  frequency: Irregular
-  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/bioportal/sparql
+- link:
+    forward: TIO_000001
+    reverse: TIO_000001
+    file: sample1.tsv
+    description: "This relation includes both `skos:closeMatch` and `skos:exactMatch` in Nando."
+    description_ja: "Nando 内の記述で、skos:exactMatch または skos:closeMatch プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
+  update:
+    frequency: Irregular
+    method: sparql_csv2tsv.sh query_nearly_eq.rq https://rdfportal.org/bioportal/sparql
+
+- link:
+    forward: TIO_000002
+    reverse: TIO_000002
+    file: sample2.tsv
+    description: "This relation includes only `skos:exactMatch` in Nando."
+    description_ja: "Nando 内の記述で、skos:exactMatch プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
+  update:
+    frequency: Irregular
+    method: sparql_csv2tsv.sh query_eq.rq https://rdfportal.org/bioportal/sparql
