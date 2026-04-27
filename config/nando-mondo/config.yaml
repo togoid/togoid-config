@@ -2,8 +2,8 @@
     forward: TIO_000001
     reverse: TIO_000001
     file: sample1.tsv
-    description: "This relation includes both `skos:closeMatch` and `skos:exactMatch` in Nando."
-    description_ja: "Nando 内の記述で、skos:exactMatch または skos:closeMatch プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
+    description: "This relationship includes the relations between Nando and Mondo terms that are linked within Nando using the `skos:exactMatch` or `skos:closeMatch` properties."
+    description_ja: "Nando 内の記述で、`skos:exactMatch` または `skos:closeMatch` プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
   update:
     frequency: Irregular
     method: sparql_csv2tsv.sh query_nearly_eq.rq https://nanbyodata.jp/sparql
@@ -12,8 +12,8 @@
     forward: TIO_000002
     reverse: TIO_000002
     file: sample2.tsv
-    description: "This relation includes only `skos:exactMatch` in Nando."
-    description_ja: "Nando 内の記述で、skos:exactMatch プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
+    description: "This relationship only includes the relations between Nando and Mondo terms that are linked within Nando using the `skos:exactMatch` property."
+    description_ja: "Nando 内の記述で、`skos:exactMatch` プロパティで関係づけられた Nando と Mondo のターム間の関係です。"
   update:
     frequency: Irregular
     method: sparql_csv2tsv.sh query_eq.rq https://nanbyodata.jp/sparql
