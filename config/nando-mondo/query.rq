@@ -7,7 +7,7 @@ FROM <http://rdfportal.org/dataset/bioportal/nando>
 WHERE {
   ?nando 
     dcterms:identifier ?nandoid ;
-    skos:closeMatch ?mondo .
+    skos:closeMatch|skos:exactMatch ?mondo .
   BIND (strafter(str(?nandoid), 'NANDO:') AS ?nando_id)
   BIND (strafter(str(?mondo), 'http://purl.obolibrary.org/obo/MONDO_') AS ?mondo_id)
 }
