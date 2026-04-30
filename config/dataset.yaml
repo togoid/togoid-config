@@ -1136,6 +1136,8 @@ pubchem_compound:
   category: Compound
   regex: '^(?:CID)?(?<id>\d+)$'
   prefix:
+    - label: 'PubChem'
+      uri: 'https://pubchem.ncbi.nlm.nih.gov/compound/'
     - label: 'rdf'
       uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID'
       rdf: true
@@ -1163,6 +1165,8 @@ pubchem_substance:
   category: Compound
   regex: '^(?:SID)?(?<id>\d+)$'
   prefix:
+    - label: 'PubChem'
+      uri: 'https://pubchem.ncbi.nlm.nih.gov/substance/'
     - label: 'rdf'
       uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/substance/SID'
       rdf: true
