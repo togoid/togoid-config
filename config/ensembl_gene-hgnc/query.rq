@@ -7,7 +7,7 @@ PREFIX taxon: <http://identifiers.org/taxonomy/>
 SELECT DISTINCT ?ensg_id ?hgnc_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
-  ?ensg obo:RO_0002162 taxon:9606 ;
+  ?ensg obo:RO_0002162 <http://ensembl.org/Homo_sapiens> ;
         dcterms:identifier ?ensg_id ;
         rdfs:seeAlso ?hgnc .
   FILTER (STRSTARTS (STR(?hgnc), "http://identifiers.org/hgnc/"))

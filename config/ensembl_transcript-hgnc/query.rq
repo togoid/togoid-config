@@ -8,7 +8,7 @@ PREFIX so: <http://purl.obolibrary.org/obo/so#>
 SELECT DISTINCT ?enst_id ?hgnc_id
 FROM <http://rdfportal.org/dataset/ensembl>
 WHERE {
-  ?ensg obo:RO_0002162 taxon:9606 ;
+  ?ensg obo:RO_0002162 <http://ensembl.org/Homo_sapiens> ;
         rdfs:seeAlso ?hgnc .
   ?enst so:transcribed_from ?ensg ;
         dcterms:identifier ?enst_id .

@@ -973,7 +973,6 @@ namespace :prepare do
         end
       end
 
-      end
       updated
     end
   end

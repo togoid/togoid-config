@@ -1,0 +1,12 @@
+# Endpoint: https://nanbyodata.jp/sparql
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?nando_id ?mondo_id
+WHERE {
+  ?nando
+    dcterms:identifier ?nandoid ;
+    skos:exactMatch ?mondo .
+  BIND (strafter(str(?nandoid), 'NANDO:') AS ?nando_id)
+  BIND (strafter(str(?mondo), 'http://purl.obolibrary.org/obo/MONDO_') AS ?mondo_id)
+}
