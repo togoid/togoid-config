@@ -1,4 +1,4 @@
-Sat Apr 25 11:57:38 JST 2026
+Sat May  2 11:54:34 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HUMGAPDH/M33197_3_at	2597
 AFFX-HUMGAPDH/M33197_5_at	2597
@@ -50,8 +50,8 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-hmdb.tsv | grep 
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-inchi_key.tsv | grep -vP '^(CHEMBL\d+)	([A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-mesh.tsv | grep -vP '^(CHEMBL\d+)	([CD]\d{6,9})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-pdb_ccd.tsv | grep -vP '^(CHEMBL\d+)	((?:\w{5}|\w{1,3}))$' | head
-awk -F '	' '{print "" $1 "	" "CID" $2}' output/tsv/chembl_compound-pubchem_compound.tsv | grep -vP '^(CHEMBL\d+)	(?:CID)?(\d+)$' | head
-awk -F '	' '{print "" $1 "	" "SID" $2}' output/tsv/chembl_compound-pubchem_substance.tsv | grep -vP '^(CHEMBL\d+)	(?:SID)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-pubchem_compound.tsv | grep -vP '^(CHEMBL\d+)	(?:CID)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-pubchem_substance.tsv | grep -vP '^(CHEMBL\d+)	(?:SID)?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_compound-pubmed.tsv | grep -vP '^(CHEMBL\d+)	(?:pmid:|PMID:)?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/chembl_target-ensembl_gene.tsv | grep -vP '^(CHEMBL\d+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?))$' | head
 awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/chembl_target-go.tsv | grep -vP '^(CHEMBL\d+)	GO[:_](\d{7})$' | head
@@ -199,7 +199,7 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-uniprot.tsv | grep -vP '^(?
 awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/hmdb-chebi.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	(?:CHEBI[:_])?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hmdb-inchi_key.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	([A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hmdb-pdb_ccd.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	((?:\w{5}|\w{1,3}))$' | head
-awk -F '	' '{print "" $1 "	" "CID" $2}' output/tsv/hmdb-pubchem_compound.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	(?:CID)?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hmdb-pubchem_compound.tsv | grep -vP '^(?:hmdb:)?(HMDB\d+)	(?:CID)?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/homologene-ncbigene.tsv | grep -vP '^(\d+)	(\d+)$' | head
 awk -F '	' '{print "HP_" $1 "	" "" $2}' output/tsv/hp_inheritance-omim_phenotype.tsv | grep -vP '^HP[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "HP_" $1 "	" "" $2}' output/tsv/hp_phenotype-ncbigene.tsv | grep -vP '^HP[:_](\d{7})	(\d+)$' | head
@@ -278,6 +278,8 @@ awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-mesh.tsv | grep -vP 
 awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-omim_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "Orphanet_" $2}' output/tsv/mondo-orphanet_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "HP_" $2}' output/tsv/nando-hp_phenotype.tsv | grep -vP '^NANDO[:_](\d{7})	HP[:_](\d{7})$' | head
+awk -F '	' '{print "NANDO_" $1 "	" "MONDO:" $2}' output/tsv/nando-mondo-TIO_000001.tsv | grep -vP '^NANDO[:_](\d{7})	MONDO[:_](\d{7})$' | head
+awk -F '	' '{print "NANDO_" $1 "	" "MONDO:" $2}' output/tsv/nando-mondo-TIO_000002.tsv | grep -vP '^NANDO[:_](\d{7})	MONDO[:_](\d{7})$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "MONDO:" $2}' output/tsv/nando-mondo.tsv | grep -vP '^NANDO[:_](\d{7})	MONDO[:_](\d{7})$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "" $2}' output/tsv/nando-nbdc_human_db.tsv | grep -vP '^NANDO[:_](\d{7})	(hum\d{4})(?:[.\-]v\d+)?$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "" $2}' output/tsv/nando-ncbigene.tsv | grep -vP '^NANDO[:_](\d{7})	(\d+)$' | head
@@ -369,25 +371,25 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-uniprot.tsv | grep -vP '^([0
 1KR1	p23472
 awk -F '	' '{print "PMC" $1 "	" "" $2}' output/tsv/pmc-pubmed.tsv | grep -vP '^(?:PMC)?(\d+)	(?:pmid:|PMID:)?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/prosite-prosite_prorule.tsv | grep -vP '^(PS\d{5})	(PRU\d{5})$' | head
-awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-atc.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]\d{2}[A-Z]{2}\d{2})$' | head
-awk -F '	' '{print "CID" $1 "	" "CHEBI_" $2}' output/tsv/pubchem_compound-chebi.tsv | grep -vP '^(?:CID)?(\d+)	(?:CHEBI[:_])?(\d+)$' | head
-awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-chembl_compound.tsv | grep -vP '^(?:CID)?(\d+)	(CHEMBL\d+)$' | head
-awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-drugbank.tsv | grep -vP '^(?:CID)?(\d+)	(DB\d{5})$' | head
-CID72	db03946
-CID54675866	db03946
-CID2014	db04336
-CID449303	db04496
-CID5289110	db04760
-CID445132	db03668
-CID135	db04242
-CID54675830	db04242
-CID446801	db03218
-CID17754176	db03874
-awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-glytoucan.tsv | grep -vP '^(?:CID)?(\d+)	(G[0-9]{5}[A-Z]{2})$' | head
-awk -F '	' '{print "CID" $1 "	" "" $2}' output/tsv/pubchem_compound-inchi_key.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pubchem_compound-atc.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]\d{2}[A-Z]{2}\d{2})$' | head
+awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/pubchem_compound-chebi.tsv | grep -vP '^(?:CID)?(\d+)	(?:CHEBI[:_])?(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pubchem_compound-chembl_compound.tsv | grep -vP '^(?:CID)?(\d+)	(CHEMBL\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pubchem_compound-drugbank.tsv | grep -vP '^(?:CID)?(\d+)	(DB\d{5})$' | head
+72	db03946
+54675866	db03946
+2014	db04336
+449303	db04496
+5289110	db04760
+445132	db03668
+135	db04242
+54675830	db04242
+446801	db03218
+17754176	db03874
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pubchem_compound-glytoucan.tsv | grep -vP '^(?:CID)?(\d+)	(G[0-9]{5}[A-Z]{2})$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pubchem_compound-inchi_key.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$' | head
 awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-ncbigene.tsv | grep -vP '^(?:PWID)?(\d+)	(\d+)$' | head
 awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-pathbank.tsv | grep -vP '^(?:PWID)?(\d+)	(SMP\d+)$' | head
-awk -F '	' '{print "PWID" $1 "	" "CID" $2}' output/tsv/pubchem_pathway-pubchem_compound.tsv | grep -vP '^(?:PWID)?(\d+)	(?:CID)?(\d+)$' | head
+awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-pubchem_compound.tsv | grep -vP '^(?:PWID)?(\d+)	(?:CID)?(\d+)$' | head
 awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-reactome_pathway.tsv | grep -vP '^(?:PWID)?(\d+)	(R-[A-Z]{3}-\d+)(?:\.\d+)?$' | head
 awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-uniprot.tsv | grep -vP '^(?:PWID)?(\d+)	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "PWID" $1 "	" "" $2}' output/tsv/pubchem_pathway-wikipathways.tsv | grep -vP '^(?:PWID)?(\d+)	(WP\d{1,5})(?:\_r\d+)?$' | head
@@ -515,4 +517,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Apr 25 13:03:47 JST 2026
+Sat May  2 13:01:00 JST 2026
