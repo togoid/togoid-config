@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: curl -sSL https://grch38.togovar.org/public/togoid/tgvid2refseqmRNA.tsv
+  method: zcat $TOGOID_ROOT/input/togovar/tgvid2refseqmRNA.tsv.gz
