@@ -13,8 +13,7 @@ clinvar-mondo.tsv
 clinvar-ncbigene.tsv
 clinvar-omim_phenotype.tsv
 clinvar-orphanet_phenotype.tsv
-ensembl_gene-hgnc.tsv
-ensembl_transcript-hgnc.tsv
+clinvar-uniprot.tsv
 hgnc-ccds.tsv
 hgnc-ensembl_gene.tsv
 hgnc-hgnc_symbol.tsv
@@ -27,7 +26,6 @@ hgnc-refseq_genomic.tsv
 hgnc-refseq_rna.tsv
 hgnc-rgd.tsv
 hgnc-uniprot.tsv
-hp_inheritance-omim_phenotype.tsv
 lipidmaps-chebi.tsv
 lipidmaps-inchi_key.tsv
 mgi_gene-ensembl_gene.tsv
@@ -35,16 +33,12 @@ mgi_gene-hgnc.tsv
 mgi_gene-mgi_allele.tsv
 mgi_gene-uniprot.tsv
 nando-hp_phenotype.tsv
-nando-mondo-TIO_000001.tsv
-nando-mondo-TIO_000002.tsv
-nando-mondo.tsv
-ncbigene-ensembl_gene.tsv
 ncbigene-ensembl_protein.tsv
 ncbigene-ensembl_transcript.tsv
 ncbigene-go.tsv
 ncbigene-hgnc.tsv
+ncbigene-mgi_gene.tsv
 ncbigene-omim_gene.tsv
-ncbigene-refseq_genomic.tsv
 ncbigene-refseq_protein.tsv
 ncbigene-refseq_rna.tsv
 ncbigene-rgd.tsv
@@ -53,8 +47,6 @@ ncbigene-xenbase_gene.tsv
 ncbigene-zfin_gene.tsv
 pmc-pubmed.tsv
 pubchem_compound-inchi_key.tsv
-refseq_protein-taxonomy.tsv
-refseq_protein-uniprot.tsv
 sra_accession-bioproject.tsv
 sra_accession-biosample.tsv
 sra_accession-sra_analysis.tsv
@@ -74,5 +66,10 @@ sra_run-sra_project.tsv
 sra_run-sra_sample.tsv
 sra_sample-biosample.tsv
 taxonomy-pubmed.tsv
+togovar-dbsnp.tsv
+togovar-hgnc.tsv
+togovar-ncbigene.tsv
+togovar-pubmed.tsv
+togovar-refseq_rna.tsv
 uberon-ncit_tissue.tsv
 zfin_gene-zfin_transcript.tsv
