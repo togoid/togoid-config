@@ -4,4 +4,5 @@ link:
   file: sample.tsv
 update:
   frequency: Monthly
-  method: zcat $TOGOID_ROOT/input/togovar/tgvid2hgnc.tsv.gz
+  #  method: zcat $TOGOID_ROOT/input/togovar/tgvid2hgnc.tsv.gz
+  method: echo ""

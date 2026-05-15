@@ -1312,13 +1312,14 @@ namespace :prepare do
     download_lock(INPUT_TOGOVAR_DIR) do
       updated = false
       files = [
-        "tgvid2dbsnp.tsv.gz",
-        "tgvid2ensembl.tsv.gz",
-        "tgvid2ensembl.transcript.tsv.gz",
-        "tgvid2hgnc.tsv.gz",
-        "tgvid2ncbigene.tsv.gz",
-        "tgvid2pubmed.tsv.gz",
-        "tgvid2refseqmRNA.tsv.gz"
+        # "tgvid2dbsnp.tsv.gz",
+        # "tgvid2ensembl.tsv.gz",
+        # "tgvid2ensembl.transcript.tsv.gz",
+        # "tgvid2hgnc.tsv.gz",
+        # "tgvid2ncbigene.tsv.gz",
+        # "tgvid2pubmed.tsv.gz",
+        # "tgvid2refseqmRNA.tsv.gz"
+        "tgvid2pubmed.tsv.gz"
       ]
       for file in files do
         input_file = "#{INPUT_TOGOVAR_DIR}/#{file}"
