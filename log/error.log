@@ -5,8 +5,11 @@ Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_m
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
+Error: Remote file is empty
 Error: Remote file is empty
 Error: check_remote_file_time(input/prosite/prosite.dat, https://ftp.expasy.org/databases/prosite/prosite.dat): no time information in ""
 Error: Remote file is empty
@@ -18,7 +21,6 @@ Error: check_remote_file_time(input/rhea/rhea2uniprot_trembl.tsv.gz, https://ftp
 Error: Remote file is empty
 Error: check_remote_file_time(input/rhea/rhea2go.tsv, https://ftp.expasy.org/databases/rhea/tsv/rhea2go.tsv): no time information in ""
 Error: Remote file is empty
-Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2ensembl.tsv.gz): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 # Error: output/tsv/affy_probeset-ncbigene.tsv new file size per old 248 / 314378 = 0.000788859271323057 < 0.5
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <html><head>
 # Error: output/tsv/affy_probeset-ncbigene.tsv seems to contain HTML <title>503 Service Unavailable</title>
@@ -48,6 +50,15 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
-# Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 0 / 2035776572 = 0.0 < 0.5
-# Error: Failed to create output/tsv/togovar-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/togovar-ensembl_transcript.tsv seems to be malformed tgv317993720
+# Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-ensembl_transcript.tsv new file size per old 1 / 8069270901 = 1.2392693370550654e-10 < 0.5
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-hgnc.tsv new file size per old 1 / 5238219202 = 1.9090457299270538e-10 < 0.5
+# Error: output/tsv/togovar-hgnc.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-ncbigene.tsv new file size per old 1 / 5660195874 = 1.766723311808838e-10 < 0.5
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines
