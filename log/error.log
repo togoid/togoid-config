@@ -5,8 +5,11 @@ Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_m
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
+Error: Remote file is empty
 Error: Remote file is empty
 Error: check_remote_file_time(input/prosite/prosite.dat, https://ftp.expasy.org/databases/prosite/prosite.dat): no time information in ""
 Error: Remote file is empty
@@ -38,8 +41,6 @@ Error: Remote file is empty
 # Error: output/tsv/chembl_compound-pdb_ccd.tsv new file size per old 83 / 250230 = 0.0003316948407465132 < 0.5
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/ensembl_transcript-affy_probeset.tsv new file size per old 0 / 11451717 = 0.0 < 0.5
-# Error: Failed to create output/tsv/ensembl_transcript-affy_probeset.tsv or created file was empty
 Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
@@ -49,3 +50,15 @@ Error: HTTP Error 500: Internal Server Error: https://api.alpha.glycosmos.org/pa
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
+# Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
+# Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
+# Error: output/tsv/togovar-ensembl_gene.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-ensembl_transcript.tsv new file size per old 1 / 8069270901 = 1.2392693370550654e-10 < 0.5
+# Error: output/tsv/togovar-ensembl_transcript.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-hgnc.tsv new file size per old 1 / 5238219202 = 1.9090457299270538e-10 < 0.5
+# Error: output/tsv/togovar-hgnc.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-ncbigene.tsv new file size per old 1 / 5660195874 = 1.766723311808838e-10 < 0.5
+# Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
+# Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
+# Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines

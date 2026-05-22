@@ -439,6 +439,8 @@ module TogoID
         return "prepare:sra"
       when /#{OUTPUT_TSV_DIR}swisslipids/
         return "prepare:swisslipids"
+      when /#{OUTPUT_TSV_DIR}togovar/
+        return "prepare:togovar"
       when /#{OUTPUT_TSV_DIR}uniprot/
         return "prepare:uniprot"
       when /#{OUTPUT_TSV_DIR}taxonomy/
@@ -586,7 +588,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :uniprot, :taxonomy, :uniparc, :zfin ]
+  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
@@ -618,6 +620,7 @@ namespace :prepare do
   directory INPUT_RNACENTRAL_DIR  = "input/rnacentral"
   directory INPUT_SRA_DIR         = "input/sra"
   directory INPUT_SWISSLIPIDS_DIR = "input/swisslipids"
+  directory INPUT_TOGOVAR_DIR     = "input/togovar"
   directory INPUT_UNIPROT_DIR     = "input/uniprot"
   directory INPUT_TAXONOMY_DIR    = "input/taxonomy"
   directory INPUT_UNIPARC_DIR     = "input/uniparc"
@@ -1299,6 +1302,33 @@ namespace :prepare do
       sh "wget --quiet --no-check-certificate -O #{input_file} '#{input_url}'"
       sh "gzip -dc #{input_file} > #{INPUT_SWISSLIPIDS_DIR}/lipids2uniprot.tsv"
       updated = true
+      updated
+    end
+  end
+
+  desc "Prepare required files for togovar"
+  task :togovar => INPUT_TOGOVAR_DIR do
+    $stderr.puts "## Prepare input files for TogoVar"
+    download_lock(INPUT_TOGOVAR_DIR) do
+      updated = false
+      files = [
+        # "tgvid2dbsnp.tsv.gz",
+        # "tgvid2ensembl.tsv.gz",
+        # "tgvid2ensembl.transcript.tsv.gz",
+        # "tgvid2hgnc.tsv.gz",
+        # "tgvid2ncbigene.tsv.gz",
+        # "tgvid2pubmed.tsv.gz",
+        # "tgvid2refseqmRNA.tsv.gz"
+        "tgvid2pubmed.tsv.gz"
+      ]
+      for file in files do
+        input_file = "#{INPUT_TOGOVAR_DIR}/#{file}"
+        input_url  = "https://grch38.togovar.org/public/togoid/#{file}"
+        if update_input_file?(input_file, input_url)
+          download_file(INPUT_TOGOVAR_DIR, input_url)
+          updated = true
+        end
+      end
       updated
     end
   end
