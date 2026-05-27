@@ -9,7 +9,7 @@ affy_probeset:
       rdf: true
   examples:
     - ["1553582_a_at","211531_x_at","202573_at","201640_x_at","205117_at","201017_at","205099_s_at","200614_at","201895_at","202666_s_at"]
-  description: "The microarray probe set provided by Affymetrix."
+  description: "The microarray probe set of [Affymetrix Human Genome U133 Plus 2.0 Array](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570)."
 assembly_insdc:
   label: Assembly INSDC
   catalog: FIXME

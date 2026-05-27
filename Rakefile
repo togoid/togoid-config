@@ -381,6 +381,8 @@ module TogoID
       case taskname
 #      when /#{OUTPUT_TSV_DIR}drugbank/
 #        return "prepare:drugbank"
+      when /#{OUTPUT_TSV_DIR}affy_probeset/
+        return "prepare:affy_probeset"
       when /#{OUTPUT_TSV_DIR}bioproject/
         return "prepare:bioproject"
       when /#{OUTPUT_TSV_DIR}biosample/
@@ -588,9 +590,10 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
+  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
+  directory INPUT_AFFY_PROBESET_DIR    = "input/affy_probeset"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_BIOSAMPLE_DIR  = "input/biosample"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
@@ -638,6 +641,23 @@ namespace :prepare do
     end
   end
 =end
+
+  desc "Prepare required files for Affymetrix Probeset"
+  task :affy_probeset => INPUT_AFFY_PROBESET_DIR do
+    $stderr.puts "## Prepare input files for Affymetrix Probeset"
+    download_lock(INPUT_AFFY_PROBESET_DIR) do
+      updated = false
+      input_file = "#{INPUT_AFFY_PROBESET_DIR}/GPL570.annot.gz"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL570/annot/GPL570.annot.gz"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_AFFY_PROBESET_DIR, input_url)
+        sh "zcat #{INPUT_AFFY_PROBESET_DIR}/GPL570.annot.gz > #{INPUT_AFFY_PROBESET_DIR}/GPL570.annot.tsv"
+        updated = true
+      end
+
+      updated
+    end
+  end
 
   desc "Prepare required files for BioProject"
   task :bioproject => INPUT_BIOPROJECT_DIR do
