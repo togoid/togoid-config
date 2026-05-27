@@ -914,6 +914,7 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for LIPID MAPS"
     download_lock(INPUT_LIPIDMAPS_DIR) do
       updated = false
+      file_error = false
       input_file = "#{INPUT_LIPIDMAPS_DIR}/sdf.zip"
       input_url  = "\"https://www.lipidmaps.org/files/?file=LMSD&ext=sdf.zip\""
       ## Do not check the file size and the timestamp because they are not available in the http header.
@@ -923,10 +924,20 @@ namespace :prepare do
         sh "wget #{opts} -O #{INPUT_LIPIDMAPS_DIR}/sdf.zip #{input_url}"
       rescue StandardError => e
         $stderr.puts "Error: download_file(#{INPUT_LIPIDMAPS_DIR}, #{input_url}): #{e.message}"
+        file_error = true
       end
-      sh "unzip -o #{input_file} -d #{INPUT_LIPIDMAPS_DIR}/"
-      sh "awk -f bin/parse_lipidmaps_sdf.awk #{INPUT_LIPIDMAPS_DIR}/structures.sdf > #{INPUT_LIPIDMAPS_DIR}/lipidmaps.tsv"
-      updated = true
+      if !file_error
+        begin
+          sh "unzip -o #{input_file} -d #{INPUT_LIPIDMAPS_DIR}/"
+        rescue StandardError => e
+          $stderr.puts "Error: unzip: #{e.message}"
+          file_error = true
+        end
+      end
+      if !file_error
+        sh "awk -f bin/parse_lipidmaps_sdf.awk #{INPUT_LIPIDMAPS_DIR}/structures.sdf > #{INPUT_LIPIDMAPS_DIR}/lipidmaps.tsv"
+        updated = true
+      end
 
       updated
     end
