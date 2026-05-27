@@ -1,0 +1,8 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT *
+FROM <http://rdfportal.org/dataset/bioportal/hp>
+{
+  obo:hp.obo.owl owl:versionInfo ?o .
+}

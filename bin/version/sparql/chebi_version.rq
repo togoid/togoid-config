@@ -1,0 +1,9 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?date ?version_iri
+FROM <http://rdf.ebi.ac.uk/dataset/chebi>
+{
+  obo:chebi.owl owl:versionInfo ?date ;
+               owl:versionIRI ?version_iri .
+}

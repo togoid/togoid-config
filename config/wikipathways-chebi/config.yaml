@@ -5,3 +5,7 @@ link:
 update:
   frequency: Monthly
   method: retrieve.sh -l 10000 https://sparql.wikipathways.org/sparql
+version:
+    method:
+      date: date -r output/tsv/wikipathways-chebi.tsv +%Y-%m-%d
+    display: "[WikiPathways RDF](https://sparql.wikipathways.org/) Accessed at {date}"

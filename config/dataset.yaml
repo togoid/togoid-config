@@ -10,6 +10,10 @@ affy_probeset:
   examples:
     - ["1553582_a_at","211531_x_at","202573_at","201640_x_at","205117_at","201017_at","205099_s_at","200614_at","201895_at","202666_s_at"]
   description: "The microarray probe set of [Affymetrix Human Genome U133 Plus 2.0 Array](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570)."
+  version:
+    method:
+      date: awk '$1=="!Annotation_date"{print $3, $4, $5; exit}' $TOGOID_ROOT/input/affy_probeset/GPL570.annot.tsv
+    display: "[GPL570 on NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570) (Annotation date: {date})"
 assembly_insdc:
   label: Assembly INSDC
   catalog: FIXME
@@ -72,6 +76,11 @@ bioproject:
   examples:
     - ["PRJDB575","PRJDB1880","PRJDB478","PRJDA45949","PRJEB6285","PRJEA28961","PRJEB2222","PRJNA30641","PRJNA68235","PRJNA42549"]
   method: awk -F "\t" '$2=="Title"{print $1 "\t" gensub("\r"," ","g",$3)}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
+  version:
+    method:
+      date_1: date -r input/biosample/biosample_set.xml.gz +%Y-%m-%d
+      date_2: date -r input/bioproject/bioproject.xml +%Y-%m-%d
+    display: "BioSample [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) ({date_1}), BioProject [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) ({date_2})"
 bioproject_umbrella:
   label: BioProject umbrella
   catalog: nbdc00476
@@ -89,6 +98,10 @@ bioproject_umbrella:
       uri: 'https://ddbj.nig.ac.jp/search/entry/bioproject/'
   examples:
     - ["PRJDB10770","PRJDB14691","PRJEB55721","PRJEB56110","PRJNA388429","PRJNA510115","PRJNA834739","PRJNA561326","PRJNA672702","PRJNA248220"]
+  version:
+    method:
+      date: date -r input/bioproject/bioproject.xml +%Y-%m-%d
+    display: "BioProject [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) ({date})"
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
@@ -108,6 +121,10 @@ biosample:
   examples:
     - ["SAMD00003683","SAMD00006315","SAMD00003741","SAMD00011226","SAMN13091859","SAMN05877962","SAMN05877838","SAMEA104232303","SAMEA4760552","SAMEA1572228"]
   method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
+  version:
+    method:
+      date: date -r input/biosample/biosample_set.xml.gz +%Y-%m-%d
+    display: "BioSample [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) ({date})"
 ccds:
   label: Consensus CDS
   catalog: nbdc00023
@@ -134,6 +151,10 @@ cellosaurus:
     - ["CVCL:7T24","CVCL:SE45","CVCL:XG73","CVCL:B6HT","CVCL:WM34","CVCL:7891","CVCL:FV52","CVCL:0367","CVCL:9Z18","CVCL:CG19"]
     - ["CVCL_7T24","CVCL_SE45","CVCL_XG73","CVCL_B6HT","CVCL_WM34","CVCL_7891","CVCL_FV52","CVCL_0367","CVCL_9Z18","CVCL_CG19"]
   method: awk 'BEGIN{RS="\n//\n";FS="\n"}{label="";for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^ID/){label=substr($i,6)}};print ac "\t" label}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
+  version:
+    method:
+      version: awk '/^ Version:/{print "Cellosaurus Release " gensub(/\.[0-9]+$/,"","g",$2); exit}' cellosaurus.txt
+    display: "Cellosaurus Release {version} ([cellosaurus.txt](https://ftp.expasy.org/databases/cellosaurus/))"
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
@@ -165,6 +186,11 @@ chebi:
     - variable: mass
       label: Molecular mass
       numerical: true
+  version:
+    method:
+      date: sparql_csv2tsv.sh bin/version/sparql/chebi_version.rq https://rdfportal.org/ebi/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/chebi_version.rq https://rdfportal.org/ebi/sparql | cut -f 2
+    display: "[ChEBI (release {date})]({uri})"
 chembl_compound:
   label: ChEMBL compound
   catalog: nbdc02555
@@ -177,6 +203,10 @@ chembl_compound:
       rdf: true
   examples:
     - ["CHEMBL121649","CHEMBL190334","CHEMBL3103282","CHEMBL69329","CHEMBL2105131","CHEMBL2177390","CHEMBL3091820","CHEMBL1200335","CHEMBL3094412","CHEMBL67367"]
+  version:
+    method:
+      version: sparql_csv2tsv.sh bin/version/sparql/chembl_version.rq https://rdfportal.org/ebi/sparql
+    display: "[ChEMBL RDF release {version}](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBL-RDF/{version}/)"
 chembl_target:
   label: ChEMBL target
   catalog: nbdc02555
@@ -188,6 +218,10 @@ chembl_target:
       rdf: true
   examples:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
+  version:
+    method:
+      version: sparql_csv2tsv.sh bin/version/sparql/chembl_version.rq https://rdfportal.org/ebi/sparql
+    display: "[ChEMBL RDF release {version}](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBL-RDF/{version}/)"
 cl:
   label: Cell Ontology
   catalog: FIXME
@@ -214,6 +248,10 @@ clinvar:
   examples:
     - ["658761","619209","745342","11955","731668","724289","725734","743127","789913","5302"]
     - ["VCV000658761","VCV000619209","VCV000745342","VCV000011955","VCV000731668","VCV000724289","VCV000725734","VCV000743127","VCV000789913","VCV000005302"]
+  version:
+    method:
+      date: date -r input/clinvar/variant_summary.txt.gz +%Y-%m-%d
+    display: "ClinVar [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) ({date})"
 cog:
   label: COG
   catalog: nbdc00397
@@ -226,6 +264,10 @@ cog:
   examples:
     - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
   method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-latest.def.tab
+  version:
+    method:
+      version:   tail -1 input/cog/cog_version.txt
+    display: "[{version}](https://www.ncbi.nlm.nih.gov/research/cog)"
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
@@ -257,6 +299,11 @@ doid:
     - ["DO:9036","DO:3159","DO:10964","DO:12698","DO:0060459","DO:11840","DO:11339","DO:914","DO:9945","DO:1407"]
     - ["DOID:9036","DOID:3159","DOID:10964","DOID:12698","DOID:0060459","DOID:11840","DOID:11339","DOID:914","DOID:9945","DOID:1407"]
     - ["DOID_9036","DOID_3159","DOID_10964","DOID_12698","DOID_0060459","DOID_11840","DOID_11339","DOID_914","DOID_9945","DOID_1407"]
+  version:
+    method:
+      date: sparql_csv2tsv.sh bin/version/sparql/doid_version.rq https://rdfportal.org/bioportal/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/doid_version.rq https://rdfportal.org/bioportal/sparql | cut -f 2
+    display: "[Disease Ontology (release {date})]({uri})"
 drugbank:
   label: DrugBank
   catalog: nbdc01071

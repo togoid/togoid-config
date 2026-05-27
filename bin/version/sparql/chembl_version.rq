@@ -1,0 +1,6 @@
+PREFIX pav: <http://purl.org/pav/>
+SELECT DISTINCT ?version
+FROM <http://rdf.ebi.ac.uk/dataset/chembl>
+{
+  <http://rdf.ebi.ac.uk/dataset/chembl> pav:hasCurrentVersion / pav:version ?version .
+}
