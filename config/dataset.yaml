@@ -225,7 +225,7 @@ cog:
       rdf: true
   examples:
     - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
-  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
+  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-latest.def.tab
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
