@@ -9,7 +9,7 @@ affy_probeset:
       rdf: true
   examples:
     - ["1553582_a_at","211531_x_at","202573_at","201640_x_at","205117_at","201017_at","205099_s_at","200614_at","201895_at","202666_s_at"]
-  description: "The microarray probe set provided by Affymetrix."
+  description: "The microarray probe set of [Affymetrix Human Genome U133 Plus 2.0 Array](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570)."
 assembly_insdc:
   label: Assembly INSDC
   catalog: FIXME
@@ -225,7 +225,7 @@ cog:
       rdf: true
   examples:
     - ["COG0130","COG0663","COG0762","COG1186","COG1285","COG1390","COG3079","COG3354","COG4957","COG5379"]
-  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-20.def.tab
+  method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-latest.def.tab
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
