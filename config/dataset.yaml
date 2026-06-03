@@ -78,9 +78,9 @@ bioproject:
   method: awk -F "\t" '$2=="Title"{print $1 "\t" gensub("\r"," ","g",$3)}' $TOGOID_ROOT/input/bioproject/bioproject.tsv
   version:
     method:
-      date_1: date -r input/biosample/biosample_set.xml.gz +%Y-%m-%d
-      date_2: date -r input/bioproject/bioproject.xml +%Y-%m-%d
-    display: "BioSample [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) ({date_1}), BioProject [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) ({date_2})"
+      date_1: date -r $TOGOID_ROOT/input/biosample/biosample_set.xml.gz +%Y-%m-%d
+      date_2: date -r $TOGOID_ROOT/input/bioproject/bioproject.xml +%Y-%m-%d
+    display: "BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) ({date_1}), BioProject: [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) ({date_2})"
 bioproject_umbrella:
   label: BioProject umbrella
   catalog: nbdc00476
@@ -100,8 +100,8 @@ bioproject_umbrella:
     - ["PRJDB10770","PRJDB14691","PRJEB55721","PRJEB56110","PRJNA388429","PRJNA510115","PRJNA834739","PRJNA561326","PRJNA672702","PRJNA248220"]
   version:
     method:
-      date: date -r input/bioproject/bioproject.xml +%Y-%m-%d
-    display: "BioProject [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) ({date})"
+      date: date -r $TOGOID_ROOT/input/bioproject/bioproject.xml +%Y-%m-%d
+    display: "BioProject: [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) ({date})"
 biosample:
   label: BioSample
   # FIXME: DDBJ BioSample?
@@ -123,8 +123,8 @@ biosample:
   method: awk -F "\t" '$2=="Title"{print $1 "\t" $3}' $TOGOID_ROOT/input/biosample/biosample_set.tsv
   version:
     method:
-      date: date -r input/biosample/biosample_set.xml.gz +%Y-%m-%d
-    display: "BioSample [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) ({date})"
+      date: date -r $TOGOID_ROOT/input/biosample/biosample_set.xml.gz +%Y-%m-%d
+    display: "BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) ({date})"
 ccds:
   label: Consensus CDS
   catalog: nbdc00023
@@ -154,7 +154,7 @@ cellosaurus:
   version:
     method:
       version: awk '/^ Version:/{print "Cellosaurus Release " gensub(/\.[0-9]+$/,"","g",$2); exit}' cellosaurus.txt
-    display: "Cellosaurus Release {version} ([cellosaurus.txt](https://ftp.expasy.org/databases/cellosaurus/))"
+    display: "Cellosaurus Release {version}: [cellosaurus.txt](https://ftp.expasy.org/databases/cellosaurus/)"
 chebi:
   label: ChEBI compound
   catalog: nbdc00027
@@ -250,8 +250,8 @@ clinvar:
     - ["VCV000658761","VCV000619209","VCV000745342","VCV000011955","VCV000731668","VCV000724289","VCV000725734","VCV000743127","VCV000789913","VCV000005302"]
   version:
     method:
-      date: date -r input/clinvar/variant_summary.txt.gz +%Y-%m-%d
-    display: "ClinVar [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) ({date})"
+      date: date -r $TOGOID_ROOT/input/clinvar/variant_summary.txt.gz +%Y-%m-%d
+    display: "ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) ({date})"
 cog:
   label: COG
   catalog: nbdc00397
@@ -266,8 +266,9 @@ cog:
   method: cut -f 1,3 $TOGOID_ROOT/input/cog/cog-latest.def.tab
   version:
     method:
-      version:   tail -1 input/cog/cog_version.txt
-    display: "[{version}](https://www.ncbi.nlm.nih.gov/research/cog)"
+      version: tail -1 $TOGOID_ROOT/input/cog/cog_version.txt
+      version_lower: tail -1 $TOGOID_ROOT/input/cog/cog_version.txt | sed 's/COG/cog-/g'
+    display: "[{version}](https://www.ncbi.nlm.nih.gov/research/cog): [{version_lower}.cog.csv](https://ftp.ncbi.nlm.nih.gov/pub/COG/{version}/data/)"
 dbsnp:
   label: dbSNP
   catalog: nbdc00206
@@ -379,6 +380,10 @@ ensembl_gene:
       items: ["true", "false"]
   examples:
     - ["ENSG00000186283","ENSAMEG00000018238","ENSG00000167916","ENSG00000213417","ENSG00000133328","ENSG00000274404","ENSG00000184363","FBgn0021742","FBgn0030057","FBgn0265139"]
+  version:
+    method:
+      version: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/ensembl/metadata.yaml | awk -F \": \" '$1==\"version\"{print $2}'"
+    display: "[Ensembl {version}](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS."
 ensembl_protein:
   label: Ensembl protein
   catalog: nbdc00054
@@ -390,6 +395,10 @@ ensembl_protein:
       rdf: true
   examples:
     - ["ENSP00000365411","ENSP00000420674","ENSAZOP00000020796","FBpp0070277","FBpp0070535","ENSAZOP00000019433","ENSP00000372042","ENSAZOP00000017910","ENSP00000370977","ENSP00000481894"]
+  version:
+    method:
+      version: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/ensembl/metadata.yaml | awk -F \": \" '$1==\"version\"{print $2}'"
+    display: "[Ensembl {version}](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS."
 ensembl_transcript:
   label: Ensembl transcript
   catalog: nbdc00054
@@ -406,6 +415,10 @@ ensembl_transcript:
       is_list: true
   examples:
     - ["ENST00000638000","ENST00000307864","ENSTRUT00000006732","ENSAMET00000021072","ENSAZOT00000021040","ENST00000622541","ENST00000462612","ENSBTAT00000072441","ENSAZOT00000005048","ENST00000475822"]
+  version:
+    method:
+      version: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/ensembl/metadata.yaml | awk -F \": \" '$1==\"version\"{print $2}'"
+    display: "[Ensembl {version}](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS."
 flybase_gene:
   label: FlyBase gene
   catalog: nbdc00064
@@ -420,6 +433,10 @@ flybase_gene:
   examples:
     - ["FBgn0040373","FBgn0040372","FBgn0261446","FBgn0000316","FBgn0005427","FBgn0040370","FBgn0040371","FBgn0029521","FBgn0024989","FBgn0004034"]
   method: awk -F '\t' '!/^#/&&!a[$3]++{print $3 "\t" $4}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+  version:
+    method:
+      version: curl -sS https://s3ftp.flybase.org/releases/ | awk '/a href/&&/FB[0-9]{4}_[0-9]{2}/{match($0, />[^ ]+</); print substr($0, RSTART+1, RLENGTH-2)}' | sort | tail -1
+    display: "[FlyBase {version}](https://flybase.org/): [fbgn_fbtr_fbpp_expanded_fb_2026_01.tsv.gz](https://s3ftp.flybase.org/releases/current/precomputed_files/genes/)"
 flybase_protein:
   label: FlyBase protein
   catalog: nbdc00064
@@ -444,6 +461,10 @@ flybase_transcript:
   examples:
     - ["FBtr0304393","FBtr0479711","FBtr0309770","FBtr0475069","FBtr0085087","FBtr0346482","FBtr0332795","FBtr0309611","FBtr0309739","FBtr0308921"]
   method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
+  version:
+    method:
+      version: curl -sS https://s3ftp.flybase.org/releases/ | awk '/a href/&&/FB[0-9]{4}_[0-9]{2}/{match($0, />[^ ]+</); print substr($0, RSTART+1, RLENGTH-2)}' | sort | tail -1
+    display: "[FlyBase {version}](https://flybase.org/): [fbgn_fbtr_fbpp_expanded_fb_2026_01.tsv.gz](https://s3ftp.flybase.org/releases/current/precomputed_files/genes/)"
 gea:
   label: GEA
   catalog: FIXME
@@ -534,6 +555,10 @@ hgnc:
     - ["26199","38937","14027","21498","18185","1314","25960","2206","22224","19741"]
     - ["HGNC:26199","HGNC:38937","HGNC:14027","HGNC:21498","HGNC:18185","HGNC:1314","HGNC:25960","HGNC:2206","HGNC:22224","HGNC:19741"]
     - ["hgnc:26199","hgnc:38937","hgnc:14027","hgnc:21498","hgnc:18185","hgnc:1314","hgnc:25960","hgnc:2206","hgnc:22224","hgnc:19741"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/hgnc/hgnc_complete_set.txt +%Y-%m-%d
+    display: "[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) ({date})"
 hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
@@ -559,6 +584,10 @@ hmdb:
     - ["HMDB0029433","HMDB0015609","HMDB0000042","HMDB0002360","HMDB0003345","HMDB0003550","HMDB0036769","HMDB0000935","HMDB0002755","HMDB0004369"]
     - ["hmdb:HMDB0029433","hmdb:HMDB0015609","hmdb:HMDB0000042","hmdb:HMDB0002360","hmdb:HMDB0003345","hmdb:HMDB0003550","hmdb:HMDB0036769","hmdb:HMDB0000935","hmdb:HMDB0002755","hmdb:HMDB0004369"]
   method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/hmdb/hmdb_metabolites.tsv
+  version:
+    method:
+      version: head $TOGOID_ROOT/input/hmdb/hmdb_metabolites.xml | awk '/<version>/' | grep -oP "[\d\.]+"
+    display: "HMDB version {version}: [hmdb_metabolites.xml](https://www.hmdb.ca/downloads)"
 homologene:
   label: HomoloGene
   catalog: nbdc00101
@@ -570,6 +599,8 @@ homologene:
       rdf: true
   examples:
     - ["117","17","6","142","55","132","61","109","137","134"]
+  version:
+    display: "HomoloGene build 68, produced in 2014: [homologene.data](https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/last-archive/) NOTICE: HomoloGene has been retired and is no longer aligned with current data in NCBI Gene."
 hp_inheritance:
   label: HP Inheritance
   catalog: nbdc02559
@@ -583,6 +614,11 @@ hp_inheritance:
   examples:
     - ["HP:0032382","HP:0001475","HP:0001417","HP:0010984","HP:0003745","HP:0001442","HP:0000007","HP:0025352","HP:0001426","HP:0001470"]
     - ["HP_0032382","HP_0001475","HP_0001417","HP_0010984","HP_0003745","HP_0001442","HP_0000007","HP_0025352","HP_0001426","HP_0001470"]
+  version:
+    method:
+      date: sparql_csv2tsv.sh bin/version/sparql/hp_version.rq https://rdfportal.org/bioportal/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/hp_version.rq https://rdfportal.org/bioportal/sparql | cut -f 2
+    display: "[Human Phenotype Ontology (release {date})]({uri})"
 hp_phenotype:
   label: HP Phenotype
   catalog: nbdc02559
@@ -596,6 +632,11 @@ hp_phenotype:
   examples:
     - ["HP:0001947","HP:0031592","HP:0012085","HP:0000956","HP:0025238","HP:0002861","HP:0001680","HP:0004417","HP:0001701","HP:0025084"]
     - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
+  version:
+    method:
+      date: sparql_csv2tsv.sh bin/version/sparql/hp_version.rq https://rdfportal.org/bioportal/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/hp_version.rq https://rdfportal.org/bioportal/sparql | cut -f 2
+    display: "[Human Phenotype Ontology (release {date})]({uri})"
 inchi_key:
   label: InChIKey
   catalog: FIXME
@@ -664,6 +705,10 @@ interpro:
   examples:
     - ["IPR038152","IPR040448","IPR036748","IPR034266","IPR005479","IPR036365","IPR000174","IPR001334","IPR000731","IPR001767"]
   method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
+  version:
+    method:
+      version: gzip -dc $TOGOID_ROOT/input/interpro/interpro.xml.gz | python bin/interpro_version.py
+    display: "InterPro {version}: [interpro.xml.gz](https://ftp.ebi.ac.uk/pub/databases/interpro/releases/latest/)"
 iuphar_ligand:
   label: IUPHAR ligand
   catalog: FIXME
@@ -709,6 +754,10 @@ lipidmaps:
   examples:
     - ["LMST01060010","LMFA01020229","LMFA03020019","LMGP01010915","LMSP03010080","LMFA07070005","LMFA06000216","LMGP01030144","LMFA01170119","LMGP02011194"]
   method: awk -F "\t" '$2=="NAME"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/lipidmaps/structures.sdf +%Y-%m-%d
+    display: "LIPID MAPS: [structures.sdf](https://www.lipidmaps.org/databases/lmsd/download) ({date})"
 lncbook_gene:
   label: LncBook gene
   catalog: FIXME
@@ -780,6 +829,10 @@ medgen:
       rdf: true
   examples:
     - ["C0264897","C0028860","C0018818","C1848392","C0006389","C0020517","C0000364","CN227118","CN203043","CN292950"]
+  version:
+    method:
+      version: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/medgen/metadata.yaml | awk -F \": \" '$1==\"version\"{print $2}'"
+    display: "[{version}](https://rdfportal.org/dataset/medgen/)"
 mesh:
   label: MeSH
   catalog: nbdc00132
@@ -821,6 +874,10 @@ mgi_gene:
     - ["MGI:2387184","MGI:1920977","MGI:2442415","MGI:1098644","MGI:1196250","MGI:1914934","MGI:1914238","MGI:1919300","MGI:1914807","MGI:2145261"]
     - ["mgi:2387184","mgi:1920977","mgi:2442415","mgi:1098644","mgi:1196250","mgi:1914934","mgi:1914238","mgi:1919300","mgi:1914807","mgi:2145261"]
   method: awk -F "\t" 'FNR>=2{print gensub(/^MGI:/, "", "g", $1) "\t" $7}' $TOGOID_ROOT/input/mgi_gene/MRK_List2.rpt
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/mgi_gene/MGI_Gene_Model_Coord.rpt +%Y-%m-%d
+    display: "MGI: [MGI_Gene_Model_Coord.rpt](https://www.informatics.jax.org/downloads/reports/) ({date})"
 mgi_genotype:
   label: MGI genotype
   catalog: nbdc00135
@@ -835,6 +892,10 @@ mgi_genotype:
     - ["MGI:2166359","MGI:2166381","MGI:2166442","MGI:2166483","MGI:2166498","MGI:2166566","MGI:2166570","MGI:2166662","MGI:2166806","MGI:2166814"]
     - ["mgi:2166359","mgi:2166381","mgi:2166442","mgi:2166483","mgi:2166498","mgi:2166566","mgi:2166570","mgi:2166662","mgi:2166806","mgi:2166814"]
   method: awk -F "\t" '!a[$1]++{print gensub(/^MGI:/,"","g",$1) "\t" $2}' $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv +%Y-%m-%d
+    display: "MouseMine accessed at {date}"
 mirbase:
   label: miRBase
   catalog: nbdc00136
@@ -847,6 +908,10 @@ mirbase:
   examples:
     - ["MI0003587","MI0000252","MI0000811","MI0014201","MI0003578","MI0000293","MI0006384","MI0006361","MI0000480","MI0006419"]
   method: cut -f2,3 $TOGOID_ROOT/input/mirbase/mirna.tsv
+  version:
+    method:
+      version: curl -sS https://www.mirbase.org/download/CURRENT/ | awk '/THIS IS RELEASE/' | grep -oP "RELEASE [\d\.]+"
+    display: "miRBase version {version}: [mirna.txt, mirna_mature.txt, mirna_pre_mature.txt](https://www.mirbase.org/download/CURRENT/database_files)"
 mirbase_mature:
   label: miRBase mature
   catalog: nbdc00136
@@ -890,6 +955,11 @@ mondo:
       - label: Broad synonym
         dictionary: togoid_mondo_broad_synonym
         label_type: broad_synonym
+  version:
+    method:
+      date: sparql_csv2tsv.sh bin/version/sparql/mondo_version.rq https://rdfportal.org/bioportal/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/mondo_version.rq https://rdfportal.org/bioportal/sparql | cut -f 2
+    display: "[MONDO (release {date})]({uri})"
 mp:
   label: Mammalian Phenotype Ontology
   catalog: FIXME
@@ -919,6 +989,11 @@ nando:
   examples:
     - ["NANDO:1200461","NANDO:1200466","NANDO:1200851","NANDO:1200061","NANDO:1200315","NANDO:1200365","NANDO:1200922","NANDO:1200705","NANDO:2200074","NANDO:1200030"]
     - ["NANDO_1200461","NANDO_1200466","NANDO_1200851","NANDO_1200061","NANDO_1200315","NANDO_1200365","NANDO_1200922","NANDO_1200705","NANDO_2200074","NANDO_1200030"]
+  version:
+    method:
+      date: sparql_csv2tsv.sh bin/version/sparql/nando_version.rq https://nanbyodata.jp/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/nando_version.rq https://nanbyodata.jp/sparql | cut -f 2
+    display: "[NANDO (release {date})]({uri})"
 nbdc_human_db:
   label: NBDC Human Database
   catalog: nbdc01348

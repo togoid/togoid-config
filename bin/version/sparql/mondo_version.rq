@@ -1,0 +1,10 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo/>
+
+SELECT DISTINCT ?date ?version_iri
+FROM <http://rdfportal.org/dataset/bioportal/mondo>
+{
+  mondo:mondo-simple.owl owl:versionInfo ?date ;
+                         owl:versionIRI ?version_iri .
+}
