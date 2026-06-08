@@ -1,0 +1,8 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?version_info ?version_iri 
+FROM <http://purl.obolibrary.org/obo/merged/NCIT>
+WHERE {
+  ?s owl:versionIRI ?version_iri ;
+     owl:versionInfo ?version_info .
+}

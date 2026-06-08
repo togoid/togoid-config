@@ -1,0 +1,9 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?version ?version_iri
+FROM <http://rdfportal.org/dataset/bioportal/ordo>
+WHERE {
+  ?s a owl:Ontology ;
+     owl:versionInfo ?version ;
+     owl:versionIRI ?version_iri .
+}

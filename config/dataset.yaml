@@ -1043,6 +1043,10 @@ ncbigene:
       is_list: true
     - variable: full_name
       label: Full name
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/ncbigene/gene_info.gz +%Y-%m-%d
+    display: "NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) ({date})"
 ncit_disease:
   label: NCIt disease
   catalog: FIXME
@@ -1058,6 +1062,11 @@ ncit_disease:
     - ["NCIT_C48829","NCIT_C136825","NCIT_C48613","NCIT_C122795","NCIT_C67107","NCIT_C8417","NCIT_C8936","NCIT_C8644","NCIT_C80331","NCIT_C80342"]
     - ["NCI:C48829","NCI:C136825","NCI:C48613","NCI:C122795","NCI:C67107","NCI:C8417","NCI:C8936","NCI:C8644","NCI:C80331","NCI:C80342"]
     - ["NCI_C48829","NCI_C136825","NCI_C48613","NCI_C122795","NCI_C67107","NCI_C8417","NCI_C8936","NCI_C8644","NCI_C80331","NCI_C80342"]
+  version:
+    method:
+      version: sparql_csv2tsv.sh bin/version/sparql/ncit_version.rq https://sparql.hegroup.org/sparql/ | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/nando_version.rq https://sparql.hegroup.org/sparql/ | cut -f 2
+    display: "[NCI Thesaurus release {version}]({uri})"
 ncit_tissue:
   label: NCIt tissue
   catalog: FIXME
@@ -1138,6 +1147,11 @@ orphanet_gene:
     - ["ORDO:217124","ORDO:218033","ORDO:218036","ORDO:218040","ORDO:218045","ORDO:218049","ORDO:218358","ORDO:218376","ORDO:218672","ORDO:218675"]
     - ["Orphanet:217124","Orphanet:218033","Orphanet:218036","Orphanet:218040","Orphanet:218045","Orphanet:218049","Orphanet:218358","Orphanet:218376","Orphanet:218672","Orphanet:218675"]
     - ["Orphanet_217124","Orphanet_218033","Orphanet_218036","Orphanet_218040","Orphanet_218045","Orphanet_218049","Orphanet_218358","Orphanet_218376","Orphanet_218672","Orphanet_218675"]
+  version:
+    method:
+      version: sparql_csv2tsv.sh bin/version/sparql/orphanet_version.rq https://rdfportal.org/bioportal/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/orphanet_version.rq https://rdfportal.org/bioportal/sparql | cut -f 2
+    display: "[Orphanet (version {version})]({uri})"
 orphanet_phenotype:
   label: Orphanet phenotype
   catalog: nbdc01422
@@ -1153,6 +1167,11 @@ orphanet_phenotype:
     - ["ORDO:101078","ORDO:596","ORDO:1934","ORDO:1047","ORDO:60025","ORDO:166090","ORDO:275745","ORDO:1171","ORDO:93277","ORDO:247598"]
     - ["Orphanet:101078","Orphanet:596","Orphanet:1934","Orphanet:1047","Orphanet:60025","Orphanet:166090","Orphanet:275745","Orphanet:1171","Orphanet:93277","Orphanet:247598"]
     - ["Orphanet_101078","Orphanet_596","Orphanet_1934","Orphanet_1047","Orphanet_60025","Orphanet_166090","Orphanet_275745","Orphanet_1171","Orphanet_93277","Orphanet_247598"]
+  version:
+    method:
+      version: sparql_csv2tsv.sh bin/version/sparql/orphanet_version.rq https://rdfportal.org/bioportal/sparql | cut -f 1
+      uri: sparql_csv2tsv.sh bin/version/sparql/orphanet_version.rq https://rdfportal.org/bioportal/sparql | cut -f 2
+    display: "[Orphanet (version {version})]({uri})"
 pathbank:
   label: Pathbank
   catalog: FIXME
@@ -1185,6 +1204,11 @@ pdb:
   examples:
     - ["3PFQ","2OUY","6EBX","5GHP","6ETH","1Y28","6FB2","5JO3","2JQZ","5L5P"]
     - ["3pfq","2ouy","6ebx","5ghp","6eth","1y28","6fb2","5jo3","2jqz","5l5p"]
+  version:
+    method:
+      version: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/pdb/metadata.yaml | awk -F \": \" '$1==\"version\"{print $2}'"
+    display: "[PDB RDF {version}](https://rdfportal.org/dataset/pdb/)"
+mesh:
 pdb_ccd:
   label: PDB CCD
   catalog: nbdc01766
@@ -1228,6 +1252,10 @@ pmc:
   examples:
     - ["PMC7857752","PMC10139720","PMC3815299","PMC4990340","PMC6885017","PMC5286597","PMC8035296","PMC46450","PMC11138896","PMC9528096"]
     - ["7857752","10139720","3815299","4990340","6885017","5286597","8035296","46450","11138896","9528096"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/pmc/PMC-ids.csv.gz +%Y-%m-%d
+    display: "PMC: [PMC-ids.csv.gz](https://ftp.ncbi.nlm.nih.gov/pub/pmc/) ({date})"
 prosite:
   label: PROSITE
   catalog: nbdc00241
@@ -1240,6 +1268,10 @@ prosite:
   examples:
     - ["PS01177","PS00516","PS01065","PS00418","PS01085","PS01086","PS01293","PS00355","PS01253","PS00992"]
   method: awk 'BEGIN{FS="\n"; RS="//\n"}FNR>=2{for(i=1;i<=NF;i++){if($i~/^DE   /){label=substr($i,6)}if($i~/AC   /){split($i,b,";");id=substr(b[1],6)}}print id "\t" label}' $TOGOID_ROOT/input/prosite/prosite.dat
+  version:
+    method:
+      version:   awk '$2~/Release/{gsub(/^CC +/,""); print; exit}' $TOGOID_ROOT/input/prosite/prosite.dat
+    display: "PROSITE {version}: [prosite.dat](https://ftp.expasy.org/databases/prosite/)"
 prosite_prorule:
   label: PROSITE ProRule
   catalog: nbdc00241
@@ -1267,6 +1299,10 @@ pubchem_compound:
   examples:
     - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
     - ["CID9548669","CID160419","CID9869929","CID76333303","CID9868491","CID27854","CID76329169","CID3448","CID296","CID10371227"]
+  version:
+    method:
+      date: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/pubchem/metadata.yaml | awk -F \": \" '$1==\"issued\"{print $2}'"
+    display: "[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: {date})"
 pubchem_pathway:
   label: PubChem pathway
   catalog: nbdc02626
@@ -1281,6 +1317,10 @@ pubchem_pathway:
     - ["10572","1","10576","10577","10579","10573","10582","10574","10575","10581"]
     - ["PWID10572","PWID1","PWID10576","PWID10577","PWID10579","PWID10573","PWID10582","PWID10574","PWID10575","PWID10581"]
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/pubchem_pathway_label.rq https://rdfportal.org/pubchem/sparql
+  version:
+    method:
+      date: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/pubchem/metadata.yaml | awk -F \": \" '$1==\"issued\"{print $2}'"
+    display: "[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: {date})"
 pubchem_substance:
   label: PubChem substance
   catalog: nbdc00642
@@ -1358,6 +1398,10 @@ refseq_protein:
   examples:
     - ["NP_001171968","NP_001365494","NP_000015","XP_011522750","XP_011516190","XP_005265876","WP_016919164","WP_080513319","YP_001687722","YP_001966380"]
     - ["NP_001171968.1","NP_001365494.1","NP_000015.2","XP_011522750.1","XP_011516190.1","XP_005265876.1","WP_016919164.1","WP_080513319.1","YP_001687722.1","YP_001966380.1"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/refseq_protein/gene_refseq_uniprotkb_collab.gz +%Y-%m-%d
+    display: "RefSeq: [gene_refseq_uniprotkb_collab.gz](https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/) ({date})"
 refseq_rna:
   label: RefSeq RNA
   catalog: nbdc00187
@@ -1372,6 +1416,10 @@ refseq_rna:
     - ["XM_017013006","NM_001199636","NM_001110","NR_170162","NR_027673","XR_388511","NR_175316","NM_115904","NM_129829","NM_130477"]
     - ["XM_017013006.1","NM_001199636.2","NM_001110.4","NR_170162.1","NR_027673.1","XR_388511.5","NR_175316.1","NM_115904.3","NM_129829.4","NM_130477.4"]
   method: cut -f 1,11 $TOGOID_ROOT/input/refseq_rna/refseq_rna_summary.tsv
+  version:
+    method:
+      version: cat $TOGOID_ROOT/input/refseq_rna/RELEASE_NUMBER
+    display: "RefSeq release {version}"
 rfam:
   label: Rfam
   catalog: nbdc00654
@@ -1411,6 +1459,10 @@ rhea:
       rdf: true
   examples:
     - ["10253","10818","13517","11136","13729","10240","11728","16870","10732","11278"]
+  version:
+    method:
+      version: awk -F "=" '$1=="rhea.release.number"{print $2}' $TOGOID_ROOT/input/rhea/rhea-release.properties
+    display: "Rhea release {version}"
 rnacentral:
   label: RNAcentral
   catalog: FIXME
@@ -1423,6 +1475,10 @@ rnacentral:
   examples:
     - ["URS00000004BF_6239","URS0000000A43_6239","URS0000001328_3702","URS000000B038_7227","URS00000121A3_3702","URS0000014B59_559292","URS00000561D6_10090","URS0000060CC3_10116","URS0000118C49_9606","URS0000001E80_9606"]
   method: awk -F '\t' 'FNR>=2{print $2 "\t" $4}' $TOGOID_ROOT/input/rnacentral/rnacentral.gpi
+  version:
+    method:
+      version: grep -oP "Release \d+" $TOGOID_ROOT/input/rnacentral/release_notes.txt
+    display: "RNAcentral {version}: [id_mapping.tsv.gz](https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/id_mapping/)"
 sgd:
   label: SGD
   catalog: nbdc00202
@@ -1478,6 +1534,10 @@ sra_accession:
       uri: 'https://ddbj.nig.ac.jp/resource/sra-submission/'
   examples:
     - ["DRA000741","DRA000768","DRA001014","DRA000833","SRA000144","SRA000605","SRA008879","ERA007227","ERA011638","ERA013580"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/sra/SRA_Accessions.tab +%Y-%m-%d
+    display: "SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) ({date})"
 sra_analysis:
   label: SRA analysis
   catalog: nbdc00687
@@ -1514,6 +1574,10 @@ sra_experiment:
       uri: 'https://chip-atlas.org/view?id='
   examples:
     - ["DRX000585","DRX000114","DRX000613","DRX000681","SRX000921","SRX000254","SRX000626","ERX149204","ERX001260","ERX000427"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/sra/SRA_Accessions.tab +%Y-%m-%d
+    display: "SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) ({date})"
 sra_project:
   label: SRA project
   catalog: nbdc00687
@@ -1531,6 +1595,10 @@ sra_project:
       uri: 'https://ddbj.nig.ac.jp/resource/sra-study/'
   examples:
     - ["DRP000994","DRP000877","DRP000649","DRP000147","SRP266466","SRP297268","SRP000065","ERP001266","ERP007720","ERP104141"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/sra/SRA_Accessions.tab +%Y-%m-%d
+    display: "SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) ({date})"
 sra_run:
   label: SRA run
   catalog: nbdc00687
@@ -1548,6 +1616,10 @@ sra_run:
       uri: 'https://ddbj.nig.ac.jp/resource/sra-run/'
   examples:
     - ["DRR000834","DRR000683","DRR000264","DRR000453","SRR029947","SRR000290","SRR004854","ERR499402","ERR004130","ERR000715"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/sra/SRA_Accessions.tab +%Y-%m-%d
+    display: "SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) ({date})"
 sra_sample:
   label: SRA sample
   catalog: nbdc00687
@@ -1565,6 +1637,10 @@ sra_sample:
       uri: 'https://ddbj.nig.ac.jp/resource/sra-sample/'
   examples:
     - ["DRS001431","DRS001371","DRS000894","DRS000386","SRS2618009","SRS7846025","SRS000159","ERS452503","ERS000126","ERS010423"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/sra/SRA_Accessions.tab +%Y-%m-%d
+    display: "SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) ({date})"
 swisslipids:
   label: SwissLipids
   catalog: nbdc02026
@@ -1617,6 +1693,10 @@ taxonomy:
       is_list: true
   examples:
     - ["1171376","484906","1214242","1124991","1037911","1266844","243277","696747","263820","713604"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/taxonomy/taxdump.tar.gz +%Y-%m-%d
+    display: "NCBI Taxonomy: [taxdump.tar.gz](https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/) ({date})"
 togovar:
   label: TogoVar variant
   catalog: nbdc02359
@@ -1642,6 +1722,11 @@ uberon:
   examples:
     - ["UBERON:0002115","UBERON:0001004","UBERON:0000007","UBERON:0001044","UBERON:0001825","UBERON:0001361","UBERON:0002186","UBERON:0000945","UBERON:0036068","UBERON:0001017"]
     - ["UBERON_0002115","UBERON_0001004","UBERON_0000007","UBERON_0001044","UBERON_0001825","UBERON_0001361","UBERON_0002186","UBERON_0000945","UBERON_0036068","UBERON_0001017"]
+  version:
+    method:
+      uri: sparql_csv2tsv.sh bin/version/sparql/uberon_version.rq https://sparql.hegroup.org/sparql/
+      date: sparql_csv2tsv.sh bin/version/sparql/uberon_version.rq https://sparql.hegroup.org/sparql/ | grep -oP "\d{4}-\d{2}-\d{2}"
+    display: "[UBERON release {date}]({uri})"
 uniparc:
   label: UniParc
   catalog: nbdc00221
@@ -1653,6 +1738,10 @@ uniparc:
       rdf: true
   examples:
     - ["UPI000013EEF6","UPI00000F412B","UPI000007FBD3","UPI000006DD65","UPI000007386D","UPI00000E8877","UPI0000070C01","UPI0000470B17","UPI0000DA5A0B","UPI000005FC62"]
+  version:
+    method:
+      version: awk '/<version>/' $TOGOID_ROOT/input/uniparc/RELEASE.metalink | grep -oP "[\d_]+"
+    display: "[UniParc release {version}](https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/)"
 uniprot:
   label: UniProt
   catalog: nbdc00221
@@ -1682,6 +1771,10 @@ uniprot:
       items: ["true", "false"]
     - variable: short_name
       label: Short name
+  version:
+    method:
+      version: awk '/<version>/' $TOGOID_ROOT/input/uniprot/RELEASE.metalink | grep -oP "[\d_]+"
+    display: "UniProt release {version}: [idmapping.dat.gz](https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/)"
 uniprot_isoform:
   label: UniProt isoform
   catalog: nbdc00221
@@ -1693,6 +1786,10 @@ uniprot_isoform:
       rdf: true
   examples:
     - ["Q9DAS1-4","P18433-5","P48740-3","Q8IXM2-1","Q8TB40-2","O96553-2","P29294-1","O14874-3","P32020-2","P10827-3"]
+  version:
+    method:
+      version: awk '/<version>/' $TOGOID_ROOT/input/uniprot/RELEASE.metalink | grep -oP "[\d_]+"
+    display: "UniProt release {version}: [idmapping.dat.gz](https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/)"
 uniprot_mnemonic:
   label: UniProt mnemonic
   catalog: nbdc00221

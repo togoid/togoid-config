@@ -1180,7 +1180,8 @@ namespace :prepare do
         "Ensembl2Reactome_All_Levels.txt",
         "miRBase2Reactome_All_Levels.txt",
         "NCBI2Reactome_All_Levels.txt",
-        "GtoP2Reactome_All_Levels.txt"
+        "GtoP2Reactome_All_Levels.txt",
+        "reactome_stable_ids.txt"
       ]
       for file in files do
         input_file = "#{INPUT_REACTOME_DIR}/#{file}"
@@ -1250,6 +1251,13 @@ namespace :prepare do
     download_lock(INPUT_RHEA_DIR) do
       updated = false
 
+      input_file = "#{INPUT_RHEA_DIR}/rhea-release.properties"
+      input_url  = "https://ftp.expasy.org/databases/rhea/rhea-release.properties"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RHEA_DIR, input_url)
+        updated = true
+      end
+
       input_file = "#{INPUT_RHEA_DIR}/rhea2uniprot_sprot.tsv"
       input_url  = "https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv"
       if update_input_file?(input_file, input_url)
@@ -1281,6 +1289,13 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for RNAcentral"
     download_lock(INPUT_RNACENTRAL_DIR) do
       updated = false
+
+      input_file = "#{INPUT_RNACENTRAL_DIR}/release_notes.txt"
+      input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/release_notes.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_RNACENTRAL_DIR, input_url)
+        updated = true
+      end
 
       input_file = "#{INPUT_RNACENTRAL_DIR}/id_mapping.tsv.gz"
       input_url  = "https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/id_mapping/id_mapping.tsv.gz"
@@ -1369,6 +1384,14 @@ namespace :prepare do
     $stderr.puts "## Prepare input files for UniProt"
     download_lock(INPUT_UNIPROT_DIR) do
       updated = false
+
+      input_file = "#{INPUT_UNIPROT_DIR}/RELEASE.metalink"
+      input_url = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/RELEASE.metalink"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_UNIPROT_DIR, input_url)
+        updated = true
+      end
+
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping.dat.gz"
       #input_url  = "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
       input_url  = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping.dat.gz"
@@ -1376,6 +1399,7 @@ namespace :prepare do
         download_file(INPUT_UNIPROT_DIR, input_url)
         updated = true
       end
+
       input_file = "#{INPUT_UNIPROT_DIR}/idmapping_selected.tab.gz"
       input_url  = "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/idmapping/idmapping_selected.tab.gz"
       if update_input_file?(input_file, input_url)
