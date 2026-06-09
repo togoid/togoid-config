@@ -1,311 +1,311 @@
-affy_probeset-ncbigene.tsv	48899
-assembly_insdc-bioproject.tsv	3284407
-assembly_insdc-biosample.tsv	3203276
-assembly_insdc-insdc_master.tsv	3072187
-bioproject-biosample.tsv	39168578
-bioproject-geo_series.tsv	260747
-bioproject-pubmed.tsv	325248
-bioproject_umbrella-bioproject.tsv	139539
-biosample-bioproject.tsv	39168578
-biosample-geo_sample.tsv	11151564
-biosample-taxonomy.tsv	57079779
-cellosaurus-ncit_disease.tsv	78903
-cellosaurus-orphanet_phenotype.tsv	43131
-chebi-glytoucan.tsv	10604
-chebi-inchi_key.tsv	182605
-chembl_compound-chebi.tsv	39866
-chembl_compound-chembl_target-TIO_000012.tsv	3185042
-chembl_compound-chembl_target-TIO_000120.tsv	4946
-chembl_compound-chembl_target.tsv	3185042
-chembl_compound-drugbank.tsv	8766
-chembl_compound-hmdb.tsv	11760
-chembl_compound-inchi_key.tsv	1915414
-chembl_compound-mesh.tsv	55025
-chembl_compound-pdb_ccd.tsv	14371
-chembl_compound-pubchem_compound.tsv	1879197
-chembl_compound-pubchem_substance.tsv	433196
-chembl_compound-pubmed.tsv	1481254
-chembl_target-ensembl_gene.tsv	2126
-chembl_target-go.tsv	11591
-chembl_target-interpro.tsv	12293
-chembl_target-pdb.tsv	40840
-chembl_target-pfam.tsv	3959
-chembl_target-reactome_pathway.tsv	8615
-chembl_target-uniprot-TIO_000002.tsv	10962
-chembl_target-uniprot-TIO_000130.tsv	1568
-chembl_target-uniprot-TIO_000132.tsv	1601
-chembl_target-uniprot.tsv	10962
-clinvar-dbsnp.tsv	5794361
-clinvar-hgnc.tsv	4477102
-clinvar-medgen.tsv	6110228
-clinvar-mondo.tsv	2743980
-clinvar-ncbigene.tsv	4477632
-clinvar-omim_phenotype.tsv	2164245
-clinvar-orphanet_phenotype.tsv	2372114
-clinvar-uniprot.tsv	20825
-cog-insdc.tsv	300872
-cog-refseq_protein.tsv	5896037
-doid-mesh.tsv	4053
-doid-ncit_disease.tsv	4905
-doid-omim_phenotype.tsv	6233
-ensembl_gene-affy_probeset.tsv	55094
-ensembl_gene-ensembl_protein.tsv	15376115
-ensembl_gene-ensembl_transcript.tsv	19561609
-ensembl_gene-hgnc.tsv	48246
-ensembl_gene-ncbigene.tsv	45558265
-ensembl_gene-taxonomy.tsv	10405264
-ensembl_gene-uniprot.tsv	10916030
-ensembl_protein-ensembl_transcript.tsv	15372643
-ensembl_protein-uniparc.tsv	14483896
-ensembl_transcript-affy_probeset.tsv	422464
-ensembl_transcript-go.tsv	88978683
-ensembl_transcript-hgnc.tsv	414556
-ensembl_transcript-refseq_rna.tsv	49063935
-flybase_gene-flybase_transcript.tsv	35736
-flybase_transcript-flybase_protein.tsv	30836
-gea-bioproject.tsv	141
-gea-biosample.tsv	5046
-glycomotif-glytoucan.tsv	155799
-glytoucan-doid.tsv	290
-glytoucan-ncbigene.tsv	1270
-glytoucan-uniprot-TIO_000060.tsv	71887
-glytoucan-uniprot-TIO_000126.tsv	471
-glytoucan-uniprot-TIO_000128.tsv	386
-glytoucan-uniprot.tsv	71887
-hgnc-ccds.tsv	35505
-hgnc-ec.tsv	2222
-hgnc-ensembl_gene.tsv	42314
-hgnc-hgnc_symbol.tsv	44996
-hgnc-insdc.tsv	21137
-hgnc-lrg.tsv	1325
-hgnc-mgi_gene.tsv	24072
-hgnc-mirbase.tsv	1912
-hgnc-ncbigene.tsv	44382
-hgnc-omim_gene.tsv	17589
-hgnc-pubmed.tsv	35810
-hgnc-refseq_genomic.tsv	13648
-hgnc-refseq_rna.tsv	28938
-hgnc-rgd.tsv	18961
-hgnc-uniprot.tsv	20377
-hmdb-chebi.tsv	13701
-hmdb-inchi_key.tsv	217899
-hmdb-pdb_ccd.tsv	522
-hmdb-pubchem_compound.tsv	104230
-homologene-ncbigene.tsv	275237
-hp_inheritance-omim_phenotype.tsv	9104
-hp_phenotype-ncbigene.tsv	220065
-hp_phenotype-omim_phenotype.tsv	149008
-hp_phenotype-orphanet_phenotype.tsv	114943
-insdc-bioproject.tsv	59409158
-insdc-biosample.tsv	193975949
-insdc_master-bioproject.tsv	4285696
-insdc_master-biosample.tsv	4284915
-interpro-go.tsv	30200
-interpro-pdb.tsv	1909710
-interpro-pfam.tsv	26620
-interpro-prosite.tsv	1282
-interpro-pubmed.tsv	128044
-interpro-reactome_pathway.tsv	497598
-interpro-smart.tsv	1276
-interpro-uniprot.tsv	640753140
-jga_study-jga_dataset.tsv	199
-jga_study-nbdc_human_db.tsv	305
-jga_study-pubmed.tsv	130
-lipidmaps-chebi.tsv	14575
-lipidmaps-inchi_key.tsv	49908
-lipidmaps-swisslipids.tsv	12559
-mbgd_gene-uniprot.tsv	137319849
-mbgd_organism-taxonomy.tsv	6318
-medgen-hp_phenotype.tsv	18932
-medgen-mesh.tsv	17123
-medgen-mondo.tsv	22846
-medgen-ncbigene.tsv	7568
-medgen-omim_phenotype.tsv	11491
-medgen-orphanet_phenotype.tsv	9039
-mgi_gene-ensembl_gene.tsv	77476
-mgi_gene-hgnc.tsv	24592
-mgi_gene-mgi_allele.tsv	129169
-mgi_gene-ncbigene.tsv	90600
-mgi_gene-uniprot.tsv	79769
-mgi_genotype-doid.tsv	7861
-mgi_genotype-mgi_allele.tsv	125350
-mgi_genotype-mp.tsv	402537
-mirbase-mirbase_mature.tsv	53320
-mondo-doid.tsv	11638
-mondo-efo_disease.tsv	2400
-mondo-hp_phenotype.tsv	578
-mondo-meddra.tsv	1489
-mondo-mesh.tsv	8360
-mondo-omim_phenotype.tsv	10027
-mondo-orphanet_phenotype.tsv	10288
-nando-hp_phenotype.tsv	61547
-nando-mondo-TIO_000001.tsv	2238
-nando-mondo-TIO_000002.tsv	1967
-nando-mondo.tsv	2238
-nando-nbdc_human_db.tsv	221
-nando-ncbigene.tsv	4070
-ncbigene-ensembl_gene.tsv	13688832
-ncbigene-ensembl_protein.tsv	15424095
-ncbigene-ensembl_transcript.tsv	16036339
-ncbigene-flybase_gene.tsv	25078
-ncbigene-go.tsv	118714956
-ncbigene-hgnc.tsv	45014
-ncbigene-mgi_gene.tsv	71623
-ncbigene-mirbase.tsv	30412
-ncbigene-omim_gene.tsv	18967
-ncbigene-refseq_genomic.tsv	211886
-ncbigene-refseq_protein.tsv	83309617
-ncbigene-refseq_rna.tsv	81523084
-ncbigene-rgd.tsv	343481
-ncbigene-sgd.tsv	6471
-ncbigene-tair.tsv	32835
-ncbigene-taxonomy.tsv	68805408
-ncbigene-vgnc.tsv	112170
-ncbigene-wormbase_gene.tsv	46889
-ncbigene-xenbase_gene.tsv	49016
-ncbigene-zfin_gene.tsv	27589
-ncit_disease-ncit_tissue.tsv	36904
-oma_protein-ensembl_gene.tsv	2874812
-oma_protein-ensembl_transcript.tsv	3346050
-oma_protein-ncbigene.tsv	12000323
-oma_protein-uniprot.tsv	19992481
-orphanet_gene-ensembl_gene.tsv	4419
-orphanet_gene-hgnc.tsv	4443
-orphanet_gene-omim_gene.tsv	4417
-orphanet_gene-uniprot.tsv	4398
-orphanet_phenotype-meddra.tsv	1668
-orphanet_phenotype-mesh.tsv	3229
-orphanet_phenotype-omim_phenotype.tsv	7421
-orphanet_phenotype-orphanet_gene.tsv	8159
-pdb-go.tsv	1737378
-pdb-interpro.tsv	1310687
-pdb-pdb_ccd.tsv	643211
-pdb-pfam.tsv	419124
-pdb-uniprot.tsv	464143
-pmc-pubmed.tsv	11221104
-prosite-prosite_prorule.tsv	1484
-pubchem_compound-atc.tsv	4924
-pubchem_compound-chebi.tsv	180005
-pubchem_compound-chembl_compound.tsv	2474455
-pubchem_compound-drugbank.tsv	10788
-pubchem_compound-glytoucan.tsv	84665
-pubchem_compound-inchi_key.tsv	123880831
-pubchem_pathway-ncbigene.tsv	33861
-pubchem_pathway-pathbank.tsv	69387
-pubchem_pathway-pubchem_compound.tsv	1253884
-pubchem_pathway-reactome_pathway.tsv	2904
-pubchem_pathway-uniprot.tsv	615673
-pubchem_pathway-wikipathways.tsv	1267
-reactome_pathway-chebi.tsv	307067
-reactome_pathway-go.tsv	13810
-reactome_pathway-iuphar_ligand.tsv	63266
-reactome_pathway-mirbase_mature.tsv	9
-reactome_pathway-mirbase.tsv	463
-reactome_pathway-reactome_reaction.tsv	418602
-reactome_pathway-uniprot.tsv	934947
-reactome_reaction-chebi.tsv	222048
-reactome_reaction-go.tsv	4447
-reactome_reaction-iuphar_ligand.tsv	28325
-reactome_reaction-mirbase_mature.tsv	6
-reactome_reaction-mirbase.tsv	231
-reactome_reaction-uniprot.tsv	734129
-refseq_protein-taxonomy.tsv	147372613
-refseq_protein-uniprot.tsv	175532018
-refseq_rna-dbsnp.tsv	329545481
-refseq_rna-hgnc.tsv	227444
-refseq_rna-ncbigene.tsv	81093876
-refseq_rna-omim_gene.tsv	193440
-refseq_rna-pubmed.tsv	6514094
-refseq_rna-refseq_protein.tsv	69738027
-refseq_rna-taxonomy.tsv	81124747
-rhea-chebi.tsv	216654
-rhea-ec.tsv	7719
-rhea-go.tsv	4431
-rhea-pubmed.tsv	142680
-rhea-reactome_reaction.tsv	1511
-rhea-uniprot.tsv	41356311
-rnacentral-ensembl_transcript.tsv	1953212
-rnacentral-flybase_transcript.tsv	4535
-rnacentral-hgnc.tsv	9024
-rnacentral-lncbook_gene.tsv	322793
-rnacentral-mgi_gene.tsv	17524
-rnacentral-mirbase_mature.tsv	48885
-rnacentral-mirbase.tsv	38582
-rnacentral-pdb.tsv	18967
-rnacentral-refseq_rna.tsv	131191
-rnacentral-rfam.tsv	7415984
-rnacentral-rgd.tsv	11241
-rnacentral-sgd.tsv	438
-rnacentral-tair.tsv	4853
-rnacentral-wormbase_gene.tsv	26085
-rnacentral-zfin_transcript.tsv	1093
-sra_accession-bioproject.tsv	709670
-sra_accession-biosample.tsv	41447880
-sra_accession-sra_analysis.tsv	1816815
-sra_accession-sra_experiment.tsv	44875234
-sra_accession-sra_project.tsv	812780
-sra_accession-sra_run.tsv	50324830
-sra_accession-sra_sample.tsv	44802930
-sra_experiment-bioproject.tsv	39504857
-sra_experiment-biosample.tsv	39812811
-sra_experiment-sra_project.tsv	39851210
-sra_experiment-sra_sample.tsv	39868150
-sra_project-bioproject.tsv	709780
-sra_run-bioproject.tsv	41995221
-sra_run-biosample.tsv	42341263
-sra_run-sra_experiment.tsv	42410094
-sra_run-sra_project.tsv	42354349
-sra_run-sra_sample.tsv	42384583
-sra_sample-biosample.tsv	41471692
-swisslipids-chebi.tsv	4286
-swisslipids-hmdb.tsv	26026
-swisslipids-inchi_key.tsv	593217
-taxonomy-pubmed.tsv	50755
-togovar-clinvar.tsv	781585
-togovar-dbsnp.tsv	275026172
-togovar-ensembl_gene.tsv	72473309
-togovar-ensembl_transcript.tsv	287277970
-togovar-hgnc.tsv	282610640
-togovar-medgen.tsv	935843
-togovar-ncbigene.tsv	287432073
-togovar-pubmed.tsv	1540076
-togovar-refseq_rna.tsv	2251507237
-uberon-ncit_tissue.tsv	2578
-uniparc-refseq_protein.tsv	429753648
-uniprot-chembl_target.tsv	10474
-uniprot-dbsnp.tsv	66728
-uniprot-ec.tsv	41313492
-uniprot-ensembl_gene.tsv	9607433
-uniprot-ensembl_protein.tsv	9780401
-uniprot-ensembl_transcript.tsv	9780417
-uniprot-go.tsv	440290015
-uniprot-hgnc.tsv	82617
-uniprot-insdc.tsv	216294697
-uniprot-intact.tsv	237103
-uniprot_isoform-ensembl_protein.tsv	48596
-uniprot_isoform-ensembl_transcript.tsv	48596
-uniprot_isoform-refseq_protein.tsv	78902
-uniprot_isoform-uniparc.tsv	69790
-uniprot-ncbigene.tsv	24019000
-uniprot-oma_group.tsv	8212224
-uniprot-omim_gene.tsv	16357
-uniprot-omim_phenotype.tsv	7263
-uniprot-orphanet_phenotype.tsv	8157
-uniprot-pdb.tsv	446320
-uniprot_proteome-assembly_insdc.tsv	956500
-uniprot_proteome-assembly_refseq.tsv	181
-uniprot_proteome-taxonomy.tsv	1013422
-uniprot-reactome_pathway.tsv	282213
-uniprot-refseq_protein.tsv	101151393
-uniprot-taxonomy.tsv	203130941
-uniprot-uniparc.tsv	203130941
-uniprot-uniprot_isoform.tsv	67353
-uniprot-uniprot_mnemonic.tsv	203130941
-wikipathways-chebi.tsv	6168
-wikipathways-doid.tsv	1252
-wikipathways-hmdb.tsv	4146
-wikipathways-lipidmaps.tsv	1729
-wikipathways-ncbigene.tsv	32111
-wikipathways-uniprot.tsv	5248
-zfin_gene-zfin_transcript.tsv	48740
-total	9008216128
+affy_probeset-ncbigene.tsv	48899	48899	0	1
+assembly_insdc-bioproject.tsv	3284407	3284407	0	1
+assembly_insdc-biosample.tsv	3203276	3203276	0	1
+assembly_insdc-insdc_master.tsv	3072187	3072187	0	1
+bioproject-biosample.tsv	39168578	39102895	65683	1.00168
+bioproject-geo_series.tsv	260747	260248	499	1.00192
+bioproject-pubmed.tsv	325248	325033	215	1.00066
+bioproject_umbrella-bioproject.tsv	139539	139539	0	1
+biosample-bioproject.tsv	39168578	39102895	65683	1.00168
+biosample-geo_sample.tsv	11151564	11135084	16480	1.00148
+biosample-taxonomy.tsv	57079779	56988351	91428	1.0016
+cellosaurus-ncit_disease.tsv	78903	78903	0	1
+cellosaurus-orphanet_phenotype.tsv	43131	43131	0	1
+chebi-glytoucan.tsv	10604	10604	0	1
+chebi-inchi_key.tsv	182605	182605	0	1
+chembl_compound-chebi.tsv	39866	39866	0	1
+chembl_compound-chembl_target-TIO_000012.tsv	3185042	3185042	0	1
+chembl_compound-chembl_target-TIO_000120.tsv	4946	4946	0	1
+chembl_compound-chembl_target.tsv	3185042	3185042	0	1
+chembl_compound-drugbank.tsv	8766	8766	0	1
+chembl_compound-hmdb.tsv	11760	11760	0	1
+chembl_compound-inchi_key.tsv	1915414	1915414	0	1
+chembl_compound-mesh.tsv	55025	55025	0	1
+chembl_compound-pdb_ccd.tsv	14371	14371	0	1
+chembl_compound-pubchem_compound.tsv	1879197	1879197	0	1
+chembl_compound-pubchem_substance.tsv	433196	433196	0	1
+chembl_compound-pubmed.tsv	1481254	1481254	0	1
+chembl_target-ensembl_gene.tsv	2126	2126	0	1
+chembl_target-go.tsv	11591	11591	0	1
+chembl_target-interpro.tsv	12293	12293	0	1
+chembl_target-pdb.tsv	40840	40840	0	1
+chembl_target-pfam.tsv	3959	3959	0	1
+chembl_target-reactome_pathway.tsv	8615	8615	0	1
+chembl_target-uniprot-TIO_000002.tsv	10962	10962	0	1
+chembl_target-uniprot-TIO_000130.tsv	1568	1568	0	1
+chembl_target-uniprot-TIO_000132.tsv	1601	1601	0	1
+chembl_target-uniprot.tsv	10962	10962	0	1
+clinvar-dbsnp.tsv	5794361	5794349	12	1
+clinvar-hgnc.tsv	4477102	4476415	687	1.00015
+clinvar-medgen.tsv	6110228	6108813	1415	1.00023
+clinvar-mondo.tsv	2743980	2743371	609	1.00022
+clinvar-ncbigene.tsv	4477632	4476945	687	1.00015
+clinvar-omim_phenotype.tsv	2164245	2163707	538	1.00025
+clinvar-orphanet_phenotype.tsv	2372114	2371774	340	1.00014
+clinvar-uniprot.tsv	20825	20825	0	1
+cog-insdc.tsv	300872	300872	0	1
+cog-refseq_protein.tsv	5896037	5896037	0	1
+doid-mesh.tsv	4053	4053	0	1
+doid-ncit_disease.tsv	4905	4905	0	1
+doid-omim_phenotype.tsv	6233	6233	0	1
+ensembl_gene-affy_probeset.tsv	55094	55094	0	1
+ensembl_gene-ensembl_protein.tsv	15376115	15376115	0	1
+ensembl_gene-ensembl_transcript.tsv	19561609	19561609	0	1
+ensembl_gene-hgnc.tsv	48246	48246	0	1
+ensembl_gene-ncbigene.tsv	45558265	45558265	0	1
+ensembl_gene-taxonomy.tsv	10405264	10405264	0	1
+ensembl_gene-uniprot.tsv	10916030	10916030	0	1
+ensembl_protein-ensembl_transcript.tsv	15372643	15372643	0	1
+ensembl_protein-uniparc.tsv	14483896	14483896	0	1
+ensembl_transcript-affy_probeset.tsv	422464	422464	0	1
+ensembl_transcript-go.tsv	88978683	88978683	0	1
+ensembl_transcript-hgnc.tsv	414556	414556	0	1
+ensembl_transcript-refseq_rna.tsv	49063935	49063935	0	1
+flybase_gene-flybase_transcript.tsv	35736	35736	0	1
+flybase_transcript-flybase_protein.tsv	30836	30836	0	1
+gea-bioproject.tsv	141	141	0	1
+gea-biosample.tsv	5046	5046	0	1
+glycomotif-glytoucan.tsv	155799	155799	0	1
+glytoucan-doid.tsv	290	290	0	1
+glytoucan-ncbigene.tsv	1270	1270	0	1
+glytoucan-uniprot-TIO_000060.tsv	71887	71887	0	1
+glytoucan-uniprot-TIO_000126.tsv	471	471	0	1
+glytoucan-uniprot-TIO_000128.tsv	386	386	0	1
+glytoucan-uniprot.tsv	71887	71887	0	1
+hgnc-ccds.tsv	35505	35505	0	1
+hgnc-ec.tsv	2222	2222	0	1
+hgnc-ensembl_gene.tsv	42314	42313	1	1.00002
+hgnc-hgnc_symbol.tsv	44996	44996	0	1
+hgnc-insdc.tsv	21137	21138	-1	0.999953
+hgnc-lrg.tsv	1325	1325	0	1
+hgnc-mgi_gene.tsv	24072	24071	1	1.00004
+hgnc-mirbase.tsv	1912	1912	0	1
+hgnc-ncbigene.tsv	44382	44383	-1	0.999977
+hgnc-omim_gene.tsv	17589	17590	-1	0.999943
+hgnc-pubmed.tsv	35810	35810	0	1
+hgnc-refseq_genomic.tsv	13648	13648	0	1
+hgnc-refseq_rna.tsv	28938	28939	-1	0.999965
+hgnc-rgd.tsv	18961	18961	0	1
+hgnc-uniprot.tsv	20377	20377	0	1
+hmdb-chebi.tsv	13701	13701	0	1
+hmdb-inchi_key.tsv	217899	217899	0	1
+hmdb-pdb_ccd.tsv	522	522	0	1
+hmdb-pubchem_compound.tsv	104230	104230	0	1
+homologene-ncbigene.tsv	275237	275237	0	1
+hp_inheritance-omim_phenotype.tsv	9104	9104	0	1
+hp_phenotype-ncbigene.tsv	220065	220065	0	1
+hp_phenotype-omim_phenotype.tsv	149008	149008	0	1
+hp_phenotype-orphanet_phenotype.tsv	114943	114943	0	1
+insdc-bioproject.tsv	59409158	59409158	0	1
+insdc-biosample.tsv	193975949	193975949	0	1
+insdc_master-bioproject.tsv	4285696	4285696	0	1
+insdc_master-biosample.tsv	4284915	4284915	0	1
+interpro-go.tsv	30200	30200	0	1
+interpro-pdb.tsv	1909710	1909710	0	1
+interpro-pfam.tsv	26620	26620	0	1
+interpro-prosite.tsv	1282	1282	0	1
+interpro-pubmed.tsv	128044	128044	0	1
+interpro-reactome_pathway.tsv	497598	497598	0	1
+interpro-smart.tsv	1276	1276	0	1
+interpro-uniprot.tsv	640753140	640753140	0	1
+jga_study-jga_dataset.tsv	199	199	0	1
+jga_study-nbdc_human_db.tsv	305	305	0	1
+jga_study-pubmed.tsv	130	130	0	1
+lipidmaps-chebi.tsv	14575	14572	3	1.00021
+lipidmaps-inchi_key.tsv	49908	49882	26	1.00052
+lipidmaps-swisslipids.tsv	12559	12559	0	1
+mbgd_gene-uniprot.tsv	137319849	137319849	0	1
+mbgd_organism-taxonomy.tsv	6318	6318	0	1
+medgen-hp_phenotype.tsv	18932	18932	0	1
+medgen-mesh.tsv	17123	17123	0	1
+medgen-mondo.tsv	22846	22846	0	1
+medgen-ncbigene.tsv	7568	7568	0	1
+medgen-omim_phenotype.tsv	11491	11491	0	1
+medgen-orphanet_phenotype.tsv	9039	9039	0	1
+mgi_gene-ensembl_gene.tsv	77476	77476	0	1
+mgi_gene-hgnc.tsv	24592	24592	0	1
+mgi_gene-mgi_allele.tsv	129169	129127	42	1.00033
+mgi_gene-ncbigene.tsv	90600	90600	0	1
+mgi_gene-uniprot.tsv	79769	79769	0	1
+mgi_genotype-doid.tsv	7861	7861	0	1
+mgi_genotype-mgi_allele.tsv	125350	125350	0	1
+mgi_genotype-mp.tsv	402537	402537	0	1
+mirbase-mirbase_mature.tsv	53320	53320	0	1
+mondo-doid.tsv	11638	11638	0	1
+mondo-efo_disease.tsv	2400	2400	0	1
+mondo-hp_phenotype.tsv	578	578	0	1
+mondo-meddra.tsv	1489	1489	0	1
+mondo-mesh.tsv	8360	8360	0	1
+mondo-omim_phenotype.tsv	10027	10027	0	1
+mondo-orphanet_phenotype.tsv	10288	10288	0	1
+nando-hp_phenotype.tsv	61547	61547	0	1
+nando-mondo-TIO_000001.tsv	2238	2238	0	1
+nando-mondo-TIO_000002.tsv	1967	1967	0	1
+nando-mondo.tsv	2238	2238	0	1
+nando-nbdc_human_db.tsv	221	221	0	1
+nando-ncbigene.tsv	4070	4070	0	1
+ncbigene-ensembl_gene.tsv	13688832	13688833	-1	1
+ncbigene-ensembl_protein.tsv	15424095	15424100	-5	1
+ncbigene-ensembl_transcript.tsv	16036339	16036340	-1	1
+ncbigene-flybase_gene.tsv	25078	25078	0	1
+ncbigene-go.tsv	118714956	118714968	-12	1
+ncbigene-hgnc.tsv	45014	45014	0	1
+ncbigene-mgi_gene.tsv	71623	71623	0	1
+ncbigene-mirbase.tsv	30412	30412	0	1
+ncbigene-omim_gene.tsv	18967	18967	0	1
+ncbigene-refseq_genomic.tsv	211886	211885	1	1
+ncbigene-refseq_protein.tsv	83309617	83290259	19358	1.00023
+ncbigene-refseq_rna.tsv	81523084	81523009	75	1
+ncbigene-rgd.tsv	343481	343481	0	1
+ncbigene-sgd.tsv	6471	6471	0	1
+ncbigene-tair.tsv	32835	32835	0	1
+ncbigene-taxonomy.tsv	68805408	68785401	20007	1.00029
+ncbigene-vgnc.tsv	112170	112169	1	1.00001
+ncbigene-wormbase_gene.tsv	46889	46889	0	1
+ncbigene-xenbase_gene.tsv	49016	49016	0	1
+ncbigene-zfin_gene.tsv	27589	27589	0	1
+ncit_disease-ncit_tissue.tsv	36904	36904	0	1
+oma_protein-ensembl_gene.tsv	2874812	2874812	0	1
+oma_protein-ensembl_transcript.tsv	3346050	3346050	0	1
+oma_protein-ncbigene.tsv	12000323	8002945	3997378	1.49949
+oma_protein-uniprot.tsv	19992481	14432954	5559527	1.3852
+orphanet_gene-ensembl_gene.tsv	4419	4419	0	1
+orphanet_gene-hgnc.tsv	4443	4443	0	1
+orphanet_gene-omim_gene.tsv	4417	4417	0	1
+orphanet_gene-uniprot.tsv	4398	4398	0	1
+orphanet_phenotype-meddra.tsv	1668	1668	0	1
+orphanet_phenotype-mesh.tsv	3229	3229	0	1
+orphanet_phenotype-omim_phenotype.tsv	7421	7421	0	1
+orphanet_phenotype-orphanet_gene.tsv	8159	8159	0	1
+pdb-go.tsv	1737378	1737378	0	1
+pdb-interpro.tsv	1310687	1310687	0	1
+pdb-pdb_ccd.tsv	643211	643211	0	1
+pdb-pfam.tsv	419124	419124	0	1
+pdb-uniprot.tsv	464143	464143	0	1
+pmc-pubmed.tsv	11221104	11208122	12982	1.00116
+prosite-prosite_prorule.tsv	1484	1484	0	1
+pubchem_compound-atc.tsv	4924	4924	0	1
+pubchem_compound-chebi.tsv	180005	180005	0	1
+pubchem_compound-chembl_compound.tsv	2474455	2474455	0	1
+pubchem_compound-drugbank.tsv	10788	10788	0	1
+pubchem_compound-glytoucan.tsv	84665	84665	0	1
+pubchem_compound-inchi_key.tsv	123880831	123880831	0	1
+pubchem_pathway-ncbigene.tsv	33861	33861	0	1
+pubchem_pathway-pathbank.tsv	69387	69387	0	1
+pubchem_pathway-pubchem_compound.tsv	1253884	1253884	0	1
+pubchem_pathway-reactome_pathway.tsv	2904	2904	0	1
+pubchem_pathway-uniprot.tsv	615673	615673	0	1
+pubchem_pathway-wikipathways.tsv	1267	1267	0	1
+reactome_pathway-chebi.tsv	307067	307067	0	1
+reactome_pathway-go.tsv	13810	13810	0	1
+reactome_pathway-iuphar_ligand.tsv	63266	63266	0	1
+reactome_pathway-mirbase_mature.tsv	9	9	0	1
+reactome_pathway-mirbase.tsv	463	463	0	1
+reactome_pathway-reactome_reaction.tsv	418602	418602	0	1
+reactome_pathway-uniprot.tsv	934947	934947	0	1
+reactome_reaction-chebi.tsv	222048	222048	0	1
+reactome_reaction-go.tsv	4447	4447	0	1
+reactome_reaction-iuphar_ligand.tsv	28325	28325	0	1
+reactome_reaction-mirbase_mature.tsv	6	6	0	1
+reactome_reaction-mirbase.tsv	231	231	0	1
+reactome_reaction-uniprot.tsv	734129	734129	0	1
+refseq_protein-taxonomy.tsv	147372613	147372613	0	1
+refseq_protein-uniprot.tsv	175532018	175532018	0	1
+refseq_rna-dbsnp.tsv	329545481	329545481	0	1
+refseq_rna-hgnc.tsv	227444	227444	0	1
+refseq_rna-ncbigene.tsv	81093876	81093876	0	1
+refseq_rna-omim_gene.tsv	193440	193440	0	1
+refseq_rna-pubmed.tsv	6514094	6514094	0	1
+refseq_rna-refseq_protein.tsv	69738027	69738027	0	1
+refseq_rna-taxonomy.tsv	81124747	81124747	0	1
+rhea-chebi.tsv	216654	216654	0	1
+rhea-ec.tsv	7719	7719	0	1
+rhea-go.tsv	4431	4431	0	1
+rhea-pubmed.tsv	142680	142680	0	1
+rhea-reactome_reaction.tsv	1511	1511	0	1
+rhea-uniprot.tsv	41356311	41356311	0	1
+rnacentral-ensembl_transcript.tsv	1953212	1953212	0	1
+rnacentral-flybase_transcript.tsv	4535	4535	0	1
+rnacentral-hgnc.tsv	9024	9024	0	1
+rnacentral-lncbook_gene.tsv	322793	322793	0	1
+rnacentral-mgi_gene.tsv	17524	17524	0	1
+rnacentral-mirbase_mature.tsv	48885	48885	0	1
+rnacentral-mirbase.tsv	38582	38582	0	1
+rnacentral-pdb.tsv	18967	18967	0	1
+rnacentral-refseq_rna.tsv	131191	131191	0	1
+rnacentral-rfam.tsv	7415984	7415984	0	1
+rnacentral-rgd.tsv	11241	11241	0	1
+rnacentral-sgd.tsv	438	438	0	1
+rnacentral-tair.tsv	4853	4853	0	1
+rnacentral-wormbase_gene.tsv	26085	26085	0	1
+rnacentral-zfin_transcript.tsv	1093	1093	0	1
+sra_accession-bioproject.tsv	709670	709670	0	1
+sra_accession-biosample.tsv	41447880	41447880	0	1
+sra_accession-sra_analysis.tsv	1816815	1816815	0	1
+sra_accession-sra_experiment.tsv	44875234	44875234	0	1
+sra_accession-sra_project.tsv	812780	812780	0	1
+sra_accession-sra_run.tsv	50324830	50324830	0	1
+sra_accession-sra_sample.tsv	44802930	44802930	0	1
+sra_experiment-bioproject.tsv	39504857	39504857	0	1
+sra_experiment-biosample.tsv	39812811	39812811	0	1
+sra_experiment-sra_project.tsv	39851210	39851210	0	1
+sra_experiment-sra_sample.tsv	39868150	39868150	0	1
+sra_project-bioproject.tsv	709780	709780	0	1
+sra_run-bioproject.tsv	41995221	41995221	0	1
+sra_run-biosample.tsv	42341263	42341263	0	1
+sra_run-sra_experiment.tsv	42410094	42410094	0	1
+sra_run-sra_project.tsv	42354349	42354349	0	1
+sra_run-sra_sample.tsv	42384583	42384583	0	1
+sra_sample-biosample.tsv	41471692	41471692	0	1
+swisslipids-chebi.tsv	4286	4286	0	1
+swisslipids-hmdb.tsv	26026	26026	0	1
+swisslipids-inchi_key.tsv	593217	593217	0	1
+taxonomy-pubmed.tsv	50755	50764	-9	0.999823
+togovar-clinvar.tsv	781585	781585	0	1
+togovar-dbsnp.tsv	275026172	275026172	0	1
+togovar-ensembl_gene.tsv	72473309	72473309	0	1
+togovar-ensembl_transcript.tsv	287277970	287277970	0	1
+togovar-hgnc.tsv	282610640	282610640	0	1
+togovar-medgen.tsv	935843	935843	0	1
+togovar-ncbigene.tsv	287432073	287432073	0	1
+togovar-pubmed.tsv	1540076	1540076	0	1
+togovar-refseq_rna.tsv	2251507237	2251507237	0	1
+uberon-ncit_tissue.tsv	2578	2578	0	1
+uniparc-refseq_protein.tsv	429753648	429753648	0	1
+uniprot-chembl_target.tsv	10474	10474	0	1
+uniprot-dbsnp.tsv	66728	66728	0	1
+uniprot-ec.tsv	41313492	41313492	0	1
+uniprot-ensembl_gene.tsv	9607433	9607433	0	1
+uniprot-ensembl_protein.tsv	9780401	9780401	0	1
+uniprot-ensembl_transcript.tsv	9780417	9780417	0	1
+uniprot-go.tsv	440290015	440290015	0	1
+uniprot-hgnc.tsv	82617	82617	0	1
+uniprot-insdc.tsv	216294697	216294697	0	1
+uniprot-intact.tsv	237103	237103	0	1
+uniprot_isoform-ensembl_protein.tsv	48596	48596	0	1
+uniprot_isoform-ensembl_transcript.tsv	48596	48596	0	1
+uniprot_isoform-refseq_protein.tsv	78902	78902	0	1
+uniprot_isoform-uniparc.tsv	69790	69790	0	1
+uniprot-ncbigene.tsv	24019000	24019000	0	1
+uniprot-oma_group.tsv	8212224	8212224	0	1
+uniprot-omim_gene.tsv	16357	16357	0	1
+uniprot-omim_phenotype.tsv	7263	7263	0	1
+uniprot-orphanet_phenotype.tsv	8157	8157	0	1
+uniprot-pdb.tsv	446320	446320	0	1
+uniprot_proteome-assembly_insdc.tsv	956500	956500	0	1
+uniprot_proteome-assembly_refseq.tsv	181	181	0	1
+uniprot_proteome-taxonomy.tsv	1013422	1013422	0	1
+uniprot-reactome_pathway.tsv	282213	282213	0	1
+uniprot-refseq_protein.tsv	101151393	101151393	0	1
+uniprot-taxonomy.tsv	203130941	203130941	0	1
+uniprot-uniparc.tsv	203130941	203130941	0	1
+uniprot-uniprot_isoform.tsv	67353	67353	0	1
+uniprot-uniprot_mnemonic.tsv	203130941	203130941	0	1
+wikipathways-chebi.tsv	6168	6168	0	1
+wikipathways-doid.tsv	1252	1252	0	1
+wikipathways-hmdb.tsv	4146	4146	0	1
+wikipathways-lipidmaps.tsv	1729	1729	0	1
+wikipathways-ncbigene.tsv	32111	32111	0	1
+wikipathways-uniprot.tsv	5248	5248	0	1
+zfin_gene-zfin_transcript.tsv	48740	48740	0	1
+total	9008216128	8998362482	9853646	1.0011
