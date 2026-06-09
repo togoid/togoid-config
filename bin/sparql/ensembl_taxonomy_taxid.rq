@@ -1,0 +1,15 @@
+# Endpoint: https://rdfportal.org/ebi/sparql
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
+
+SELECT DISTINCT ?tax_id
+FROM <http://rdfportal.org/dataset/ensembl>
+FROM <http://rdfportal.org/dataset/ensembl_taxonomy>
+WHERE {
+  [] a terms:EnsemblGene ;
+       obo:RO_0002162 ?ens_taxon .  # in-taxon
+  ?ens_taxon skos:relatedMatch ?taxonomy .
+  BIND(STRAFTER(STR(?taxonomy), "http://identifiers.org/taxonomy/") AS ?tax_id)
+}
