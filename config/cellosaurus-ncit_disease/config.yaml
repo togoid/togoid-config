@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Quarterly
-  method: awk 'BEGIN{RS="\n//\n";FS="\n"}{ncit="";for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^DI   NCIt;/){split($i,b,"; ");ncit=b[2]}}if(ncit)print ac "\t" ncit}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
+  method: awk 'BEGIN{RS="\n//\n";FS="\n"}{n=0; for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^DI   NCIt;/){split($i,b,"; "); n++; ncit[n]=b[2]}}for(i=1;i<=n;i++){print ac "\t" ncit[i]} delete ncit}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
