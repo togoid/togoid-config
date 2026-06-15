@@ -1,0 +1,7 @@
+link:
+  forward: TIO_000146
+  reverse: TIO_000147
+  file: sample.tsv
+update:
+  frequency: Quarterly
+  method: awk 'BEGIN{RS="\n//\n";FS="\n"}{n=0; for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^OX   NCBI_TaxID=/){match($i, /NCBI_TaxID=[0-9]+/); n++; taxon[n]=substr($i, RSTART+11, RLENGTH-11)}}for(i=1;i<=n;i++){print ac "\t" taxon[i]} delete taxon}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
