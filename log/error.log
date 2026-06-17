@@ -7,6 +7,7 @@ Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
+Error: Remote file is empty
 Error: check_remote_file_time(input/prosite/prosite.dat, https://ftp.expasy.org/databases/prosite/prosite.dat): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/prosite/prorule.dat, https://ftp.expasy.org/databases/prosite/prorule.dat): no time information in ""
