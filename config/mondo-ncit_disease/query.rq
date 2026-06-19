@@ -1,0 +1,13 @@
+# Endpoint: https://rdfportal.org/bioportal/sparql
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>    
+
+SELECT DISTINCT ?mondo_id ?ncit_id
+FROM <http://rdfportal.org/dataset/bioportal/mondo>
+WHERE {
+  ?mondo_uri
+    oboinowl:hasDbXref ?ncit ;
+    oboinowl:id ?mondo .
+  FILTER (STRSTARTS(?ncit, 'NCIT:'))
+  BIND (STRAFTER(STR(?ncit), 'NCIT:') AS ?ncit_id)
+  BIND (STRAFTER(STR(?mondo), 'MONDO:') AS ?mondo_id)
+}
