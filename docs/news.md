@@ -1,10 +1,11 @@
-Datasets last updated: 2026-06-18
+Datasets last updated: 2026-06-25
 
-# *NOTICE*
-Due to a problem with the backend server, the label retrieval and ID annotation feature is currently unavailable for some datasets. This does not affect the ID conversion system.
-We apologize for any inconvenience this may cause.
+# 2026-06-25
+- New pairs have been added.
+  - `cellosaurus-taxonomy`
+  - `mondo-ncit_disease`
 
-# 2025-02-13
+# 2026-02-13
 - New pairs have been added.
   - `nando-ncbigene`
   - `nando-hp_phenotype`

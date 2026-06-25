@@ -12,6 +12,17 @@ Error: check_remote_file_time(input/prosite/prosite.dat, https://ftp.expasy.org/
 Error: Remote file is empty
 Error: check_remote_file_time(input/prosite/prorule.dat, https://ftp.expasy.org/databases/prosite/prorule.dat): no time information in ""
 Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
+Error: Remote file is empty
 Error: check_remote_file_time(input/rhea/rhea2uniprot_sprot.tsv, https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/rhea/rhea2uniprot_trembl.tsv.gz, https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_trembl.tsv.gz): no time information in ""

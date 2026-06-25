@@ -1,4 +1,4 @@
-Wed Jun 17 08:49:21 JST 2026
+Sat Jun 20 01:31:19 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HSAC07/X00351_3_at	60
 AFFX-HSAC07/X00351_5_at	60
@@ -42,6 +42,7 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/biosample-geo_sample.tsv | grep 
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/biosample-taxonomy.tsv | grep -vP '^(SAM[NED]\w?\d+)	(\d+)$' | head
 awk -F '	' '{print "CVCL_" $1 "	" "NCIT_" $2}' output/tsv/cellosaurus-ncit_disease.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	NCIT?[:_](C\d+)$' | head
 awk -F '	' '{print "CVCL_" $1 "	" "Orphanet_" $2}' output/tsv/cellosaurus-orphanet_phenotype.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
+awk -F '	' '{print "CVCL_" $1 "	" "" $2}' output/tsv/cellosaurus-taxonomy.tsv | grep -vP '^CVCL[:_]([A-Z0-9]{4})	(\d+)$' | head
 awk -F '	' '{print "CHEBI_" $1 "	" "" $2}' output/tsv/chebi-glytoucan.tsv | grep -vP '^(?:CHEBI[:_])?(\d+)	(G[0-9]{5}[A-Z]{2})$' | head
 awk -F '	' '{print "CHEBI_" $1 "	" "" $2}' output/tsv/chebi-inchi_key.tsv | grep -vP '^(?:CHEBI[:_])?(\d+)	([A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$' | head
 awk -F '	' '{print "" $1 "	" "CHEBI_" $2}' output/tsv/chembl_compound-chebi.tsv | grep -vP '^(CHEMBL\d+)	(?:CHEBI[:_])?(\d+)$' | head
@@ -278,6 +279,7 @@ awk -F '	' '{print "MONDO:" $1 "	" "EFO_" $2}' output/tsv/mondo-efo_disease.tsv 
 awk -F '	' '{print "MONDO:" $1 "	" "HP_" $2}' output/tsv/mondo-hp_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	HP[:_](\d{7})$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-meddra.tsv | grep -vP '^MONDO[:_](\d{7})	(?:(?:MedDRA|meddra):)?(\d+)$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-mesh.tsv | grep -vP '^MONDO[:_](\d{7})	([CD]\d{6,9})$' | head
+awk -F '	' '{print "MONDO:" $1 "	" "NCIT_" $2}' output/tsv/mondo-ncit_disease.tsv | grep -vP '^MONDO[:_](\d{7})	NCIT?[:_](C\d+)$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "" $2}' output/tsv/mondo-omim_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:O?MIM:)?(\d{6})$' | head
 awk -F '	' '{print "MONDO:" $1 "	" "Orphanet_" $2}' output/tsv/mondo-orphanet_phenotype.tsv | grep -vP '^MONDO[:_](\d{7})	(?:ORPHA|ORDO|Orphanet)[:_]([A-Z0-9]+)$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "HP_" $2}' output/tsv/nando-hp_phenotype.tsv | grep -vP '^NANDO[:_](\d{7})	HP[:_](\d{7})$' | head
@@ -512,4 +514,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Wed Jun 17 10:26:23 JST 2026
+Sat Jun 20 05:57:27 JST 2026
