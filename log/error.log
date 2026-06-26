@@ -22,7 +22,6 @@ Error: Remote file is empty
 Error: Remote file is empty
 Error: Remote file is empty
 Error: Remote file is empty
-Error: Remote file is empty
 Error: check_remote_file_time(input/rhea/rhea2uniprot_sprot.tsv, https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/rhea/rhea2uniprot_trembl.tsv.gz, https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_trembl.tsv.gz): no time information in ""
@@ -32,6 +31,8 @@ Error: Remote file is empty
 # Error: output/tsv/chembl_compound-pdb_ccd.tsv new file size per old 83 / 250230 = 0.0003316948407465132 < 0.5
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
+# Error: output/tsv/ensembl_gene-affy_probeset.tsv new file size per old 0 / 1537929 = 0.0 < 0.5
+# Error: Failed to create output/tsv/ensembl_gene-affy_probeset.tsv or created file was empty
 Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
 # Error: output/tsv/glycomotif-glytoucan.tsv new file size per old 0 / 2804382 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
@@ -45,6 +46,16 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/oma_protein-ensembl_transcript.tsv new file size per old 0 / 100243813 = 0.0 < 0.5
 # Error: Failed to create output/tsv/oma_protein-ensembl_transcript.tsv or created file was empty
+# Error: output/tsv/pdb-go.tsv new file size per old 0 / 22585914 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pdb-go.tsv or created file was empty
+# Error: output/tsv/pdb-interpro.tsv new file size per old 0 / 19660305 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pdb-interpro.tsv or created file was empty
+# Error: output/tsv/pdb-pdb_ccd.tsv new file size per old 0 / 5667244 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pdb-pdb_ccd.tsv or created file was empty
+# Error: output/tsv/pdb-pfam.tsv new file size per old 0 / 5448612 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pdb-pfam.tsv or created file was empty
+# Error: output/tsv/pdb-uniprot.tsv new file size per old 0 / 5704393 = 0.0 < 0.5
+# Error: Failed to create output/tsv/pdb-uniprot.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
 # Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
