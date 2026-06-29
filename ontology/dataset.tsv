@@ -12,6 +12,7 @@ chembl_compound	ChEMBL compound	Compound
 chembl_target	ChEMBL target	Protein
 cl	Cell Ontology	Anatomy
 clinvar	ClinVar variant	Variant
+clo	Cell Line Ontology	CellLine
 cog	COG	Ortholog
 dbsnp	dbSNP	Variant
 doid	Disease ontology	Phenotype

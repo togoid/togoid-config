@@ -281,6 +281,12 @@
     rdfs:label "ClinVar variant" ;
     rdfs:subClassOf :Variant, :Dataset .
 
+:Clo
+    a owl:Class ;
+    dcterms:identifier "clo" ;
+    rdfs:label "Cell Line Ontology" ;
+    rdfs:subClassOf :CellLine, :Dataset .
+
 :Cog
     a owl:Class ;
     dcterms:identifier "cog" ;
@@ -2198,4 +2204,22 @@
     owl:inverseOf :TIO_000144 ;
     rdfs:label "phenotype is investigated in project" ;
     :display_label "is investigated in" .
+
+:TIO_000146
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :CellLine ;
+    rdfs:range :Organism ;
+    owl:inverseOf :TIO_000147 ;
+    rdfs:label "cell line originates from organism" ;
+    :display_label "originates from" .
+
+:TIO_000147
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Organism ;
+    rdfs:range :CellLine ;
+    owl:inverseOf :TIO_000146 ;
+    rdfs:label "organism is origin of cell line" ;
+    :display_label "is origin of" .
 

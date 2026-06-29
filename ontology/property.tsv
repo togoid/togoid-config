@@ -143,3 +143,5 @@ TIO_000142	protein has protein isoform	has isoform	TIO_000143	Protein	Protein
 TIO_000143	protein is isoform of protein	is isoform of	TIO_000142	Protein	Protein
 TIO_000144	project investigates phenotype	investigates	TIO_000145	Project	Phenotype
 TIO_000145	phenotype is investigated in project	is investigated in	TIO_000144	Phenotype	Project
+TIO_000146	cell line originates from organism	originates from	TIO_000147	CellLine	Organism
+TIO_000147	organism is origin of cell line	is origin of	TIO_000146	Organism	CellLine

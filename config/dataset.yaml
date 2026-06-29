@@ -201,6 +201,19 @@ cl:
   examples:
     - ["CL:0000138","CL:0000129","CL:0000623","CL:0002676","CL:2000045","CL:0002552","CL:0000731","CL:0000127","CL:1000458","CL:1001609"]
     - ["CL_0000138","CL_0000129","CL_0000623","CL_0002676","CL_2000045","CL_0002552","CL_0000731","CL_0000127","CL_1000458","CL_1001609"]
+clo:
+  label: Cell Line Ontology
+  catalog: FIXME
+  category: CellLine
+  regex: '^CLO[:_](?<id>\d{7})$'
+  format: ["CLO:%s","CLO_%s"]
+  prefix:
+    - label: 'rdf'
+      uri: 'http://purl.obolibrary.org/obo/CLO_'
+      rdf: true
+  examples:
+    - ["CLO:0001018","CLO:0001019","CLO:0001020","CLO:0001021","CLO:0001022","CLO:0001023","CLO:0001024","CLO:0001025","CLO:0002500","CLO:0002501"]
+    - ["CLO_0001018","CLO_0001019","CLO_0001020","CLO_0001021","CLO_0001022","CLO_0001023","CLO_0001024","CLO_0001025","CLO_0002500","CLO_0002501"]
 clinvar:
   label: ClinVar variant
   catalog: nbdc01514
