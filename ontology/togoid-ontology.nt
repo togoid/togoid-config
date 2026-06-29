@@ -189,6 +189,11 @@
 <http://togoid.dbcls.jp/ontology#Clinvar> <http://www.w3.org/2000/01/rdf-schema#label> "ClinVar variant" .
 <http://togoid.dbcls.jp/ontology#Clinvar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Variant> .
 <http://togoid.dbcls.jp/ontology#Clinvar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#Clo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#Clo> <http://purl.org/dc/terms/identifier> "clo" .
+<http://togoid.dbcls.jp/ontology#Clo> <http://www.w3.org/2000/01/rdf-schema#label> "Cell Line Ontology" .
+<http://togoid.dbcls.jp/ontology#Clo> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#CellLine> .
+<http://togoid.dbcls.jp/ontology#Clo> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#Cog> <http://purl.org/dc/terms/identifier> "cog" .
 <http://togoid.dbcls.jp/ontology#Cog> <http://www.w3.org/2000/01/rdf-schema#label> "COG" .
@@ -1718,3 +1723,17 @@
 <http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000144> .
 <http://togoid.dbcls.jp/ontology#TIO_000145> <http://www.w3.org/2000/01/rdf-schema#label> "phenotype is investigated in project" .
 <http://togoid.dbcls.jp/ontology#TIO_000145> <http://togoid.dbcls.jp/ontology#display_label> "is investigated in" .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#CellLine> .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000147> .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://www.w3.org/2000/01/rdf-schema#label> "cell line originates from organism" .
+<http://togoid.dbcls.jp/ontology#TIO_000146> <http://togoid.dbcls.jp/ontology#display_label> "originates from" .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Organism> .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#CellLine> .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000146> .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://www.w3.org/2000/01/rdf-schema#label> "organism is origin of cell line" .
+<http://togoid.dbcls.jp/ontology#TIO_000147> <http://togoid.dbcls.jp/ontology#display_label> "is origin of" .
