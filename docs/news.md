@@ -1,4 +1,8 @@
-Datasets last updated: 2026-06-25
+Datasets last updated: 2026-06-30
+
+# 2026-06-30
+- New pairs have been added.
+  - `cellosaurus-clo`
 
 # 2026-06-25
 - New pairs have been added.
