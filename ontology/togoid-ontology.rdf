@@ -318,6 +318,12 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Gene"/>
   </owl:Class>
+  <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#InsdcCds">
+    <dcterms:identifier>insdc_cds</dcterms:identifier>
+    <rdfs:label>INSDC CDS</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Protein"/>
+  </owl:Class>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#InsdcMaster">
     <dcterms:identifier>insdc_master</dcterms:identifier>
     <rdfs:label>INSDC master</rdfs:label>

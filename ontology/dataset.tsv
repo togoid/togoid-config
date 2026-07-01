@@ -39,6 +39,7 @@ hp_inheritance	HP Inheritance	Classification
 hp_phenotype	HP Phenotype	Phenotype
 inchi_key	InChIKey	Compound
 insdc	GenBank/ENA/DDBJ	Gene
+insdc_cds	INSDC CDS	Protein
 insdc_master	INSDC master	Project
 intact	IntAct	Interaction
 interpro	InterPro	Domain
