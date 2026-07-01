@@ -592,6 +592,24 @@ insdc:
       uri: 'https://getentry.ddbj.nig.ac.jp/getentry?database=ddbj&accession_number='
   examples:
     - ["U10991","AF116914","AK056978","DQ440258","U91725","AY301270","U32907","AY261360","AK001332","U13261"]
+insdc_cds:
+  label: GenBank/ENA/DDBJ CDS
+  catalog: nbdc02567
+  category: Protein
+  regex: '^(?:insdc.cds:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{3}\d{5}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5})(\.\d+)?$'
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/insdc.cds/'
+      rdf: true
+    - label: 'GenBank'
+      uri: 'https://www.ncbi.nlm.nih.gov/protein/'
+    - label: 'ENA'
+      uri: 'https://www.ebi.ac.uk/ena/browser/view/'
+    - label: 'DDBJ'
+      uri: 'https://getentry.ddbj.nig.ac.jp/getentry/dad/'
+  examples:
+    - ["ABU85686","BAH11229","DAA12165","AAM68322","CAG33172","BAB22660","ABK55624","ABN77800","CCD67887","ABA88205"]
+
 insdc_master:
   label: INSDC master
   catalog: nbdc02567
