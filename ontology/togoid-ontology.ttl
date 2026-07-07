@@ -443,6 +443,12 @@
     rdfs:label "GenBank/ENA/DDBJ" ;
     rdfs:subClassOf :Gene, :Dataset .
 
+:InsdcCds
+    a owl:Class ;
+    dcterms:identifier "insdc_cds" ;
+    rdfs:label "INSDC CDS" ;
+    rdfs:subClassOf :Protein, :Dataset .
+
 :InsdcMaster
     a owl:Class ;
     dcterms:identifier "insdc_master" ;

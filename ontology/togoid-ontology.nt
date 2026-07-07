@@ -325,6 +325,11 @@
 <http://togoid.dbcls.jp/ontology#Insdc> <http://www.w3.org/2000/01/rdf-schema#label> "GenBank/ENA/DDBJ" .
 <http://togoid.dbcls.jp/ontology#Insdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Gene> .
 <http://togoid.dbcls.jp/ontology#Insdc> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
+<http://togoid.dbcls.jp/ontology#InsdcCds> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://togoid.dbcls.jp/ontology#InsdcCds> <http://purl.org/dc/terms/identifier> "insdc_cds" .
+<http://togoid.dbcls.jp/ontology#InsdcCds> <http://www.w3.org/2000/01/rdf-schema#label> "INSDC CDS" .
+<http://togoid.dbcls.jp/ontology#InsdcCds> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Protein> .
+<http://togoid.dbcls.jp/ontology#InsdcCds> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://togoid.dbcls.jp/ontology#Dataset> .
 <http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://togoid.dbcls.jp/ontology#InsdcMaster> <http://purl.org/dc/terms/identifier> "insdc_master" .
 <http://togoid.dbcls.jp/ontology#InsdcMaster> <http://www.w3.org/2000/01/rdf-schema#label> "INSDC master" .

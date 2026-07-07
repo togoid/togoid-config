@@ -115,7 +115,7 @@
 <tr>
 <td><a href="#Classes">
                                     Classes (
-                                    155
+                                    156
                                     )
                             </a></td>
 <td><select onChange="window.location.hash = document.getElementById('naviClass').value" id="naviClass"><option value="AffyProbeset">
@@ -232,6 +232,8 @@
 				tio:InchiKey</option>
 <option value="Insdc">
 				tio:Insdc</option>
+<option value="InsdcCds">
+				tio:InsdcCds</option>
 <option value="InsdcMaster">
 				tio:InsdcMaster</option>
 <option value="Intact">
@@ -2847,6 +2849,40 @@
 					rdfs:subClassOf</a></td>
 <td><a href="http://togoid.dbcls.jp/ontology#Gene">
 				tio:Gene</a></td>
+</tr>
+</tbody>
+</table>
+<table class="subsection">
+<a name="http://togoid.dbcls.jp/ontology#InsdcCds"></a><tbody>
+<tr><th id="InsdcCds">
+				tio:InsdcCds<span class="cp-type">
+								(rdf:type
+								<a href="http://www.w3.org/2002/07/owl#Class">
+					owl:Class</a>
+								)
+							</span>
+</th></tr>
+<tr>
+<td><a href="http://purl.org/dc/terms/identifier">
+                                        dcterms:identifier</a></td>
+<td>insdc_cds</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#label">
+					rdfs:label</a></td>
+<td>INSDC CDS</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Dataset">
+				tio:Dataset</a></td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+					rdfs:subClassOf</a></td>
+<td><a href="http://togoid.dbcls.jp/ontology#Protein">
+				tio:Protein</a></td>
 </tr>
 </tbody>
 </table>
