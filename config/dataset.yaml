@@ -596,7 +596,7 @@ insdc_cds:
   label: GenBank/ENA/DDBJ CDS
   catalog: nbdc02567
   category: Protein
-  regex: '^(?:insdc.cds:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{3}\d{5}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5})(\.\d+)?$'
+  regex: '^(?:insdc.cds:)?(?<id>([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{3}\d{5}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}))(?:\.\d+)?$'
   prefix:
     - label: 'identifiers.org'
       uri: 'http://identifiers.org/insdc.cds/'
