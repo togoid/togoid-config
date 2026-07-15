@@ -341,7 +341,7 @@ module TogoID
       return false if s.end_with?(".")       # 末尾ドットは不可
       return false if s.include?(":")        # ローカル名に ":" は不可
       # 使用禁止文字（空白類, %, /, \, 引用符, 制御/記号の一部）
-      return false if s =~ /[[:space:]%\/\\'"<>\#\?\@\`\|\{\}]/
+      return false if s =~ /[[:space:]%\/\\'"<>\#\?\@\`\|\{\}\(\)]/
       true
     end
 
