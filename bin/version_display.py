@@ -12,6 +12,7 @@ Usage:
     python version_display.py -t pair glytoucan-uniprot/config.yaml
 """
 
+from __future__ import annotations
 import argparse
 import subprocess
 import sys
