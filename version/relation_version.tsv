@@ -1,0 +1,314 @@
+affy_probeset-ncbigene	[GPL570 on NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570) (Annotation date: Aug 09 2016)
+assembly_insdc-bioproject	
+assembly_insdc-biosample	
+assembly_insdc-insdc_master	
+bioproject-biosample	BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) (2026-07-16), BioProject: [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) (2026-07-17)
+bioproject-geo_series	BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) (2026-07-16), BioProject: [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) (2026-07-17)
+bioproject-pubmed	BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) (2026-07-16), BioProject: [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) (2026-07-17)
+bioproject_umbrella-bioproject	BioProject: [bioproject.xml](https://ftp.ncbi.nih.gov/bioproject/) (2026-07-17)
+biosample-bioproject	BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) (2026-07-16)
+biosample-geo_sample	BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) (2026-07-16)
+biosample-taxonomy	BioSample: [biosample_set.xml.gz](https://ftp.ncbi.nih.gov/biosample/) (2026-07-16)
+cellosaurus-clo	
+cellosaurus-ncit_disease	
+cellosaurus-orphanet_phenotype	
+cellosaurus-taxonomy	
+chebi-glytoucan	
+chebi-inchi_key	
+chembl_compound-chebi	
+chembl_compound-chembl_target-TIO_000012	
+chembl_compound-chembl_target-TIO_000120	
+chembl_compound-chembl_target	
+chembl_compound-drugbank	
+chembl_compound-hmdb	
+chembl_compound-inchi_key	
+chembl_compound-mesh	
+chembl_compound-pdb_ccd	
+chembl_compound-pubchem_compound	
+chembl_compound-pubchem_substance	
+chembl_compound-pubmed	
+chembl_target-ensembl_gene	
+chembl_target-go	
+chembl_target-interpro	
+chembl_target-pdb	
+chembl_target-pfam	
+chembl_target-reactome_pathway	
+chembl_target-uniprot-TIO_000002	
+chembl_target-uniprot-TIO_000130	
+chembl_target-uniprot-TIO_000132	
+chembl_target-uniprot	
+clinvar-dbsnp	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-hgnc	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-medgen	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-mondo	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-ncbigene	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-omim_phenotype	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-orphanet_phenotype	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+clinvar-uniprot	ClinVar: [variant_summary.txt.gz](https://ftp.ncbi.nih.gov/pub/clinvar/tab_delimited/) (2026-07-16)
+cog-insdc	[COG2024](https://www.ncbi.nlm.nih.gov/research/cog): [cog-2024.cog.csv](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2024/data/)
+cog-refseq_protein	[COG2024](https://www.ncbi.nlm.nih.gov/research/cog): [cog-2024.cog.csv](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2024/data/)
+doid-mesh	
+doid-ncit_disease	
+doid-omim_phenotype	
+ensembl_gene-affy_probeset	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_gene-ensembl_protein	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_gene-ensembl_transcript	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_gene-hgnc	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_gene-ncbigene	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_gene-taxonomy	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_gene-uniprot	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_protein-ensembl_transcript	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_protein-uniparc	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_transcript-affy_probeset	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_transcript-go	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_transcript-hgnc	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+ensembl_transcript-refseq_rna	[Ensembl 115](https://ensembl.org/), RDFized by DBCLS. Based on [dumped table files](https://ftp.ensembl.org/pub/current_mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.
+flybase_gene-flybase_transcript	[FlyBase FB2026_02](https://flybase.org/): [fbgn_fbtr_fbpp_expanded_fb_2026_01.tsv.gz](https://s3ftp.flybase.org/releases/current/precomputed_files/genes/)
+flybase_transcript-flybase_protein	[FlyBase FB2026_02](https://flybase.org/): [fbgn_fbtr_fbpp_expanded_fb_2026_01.tsv.gz](https://s3ftp.flybase.org/releases/current/precomputed_files/genes/)
+gea-bioproject	
+gea-biosample	
+glycomotif-glytoucan	
+glytoucan-doid	
+glytoucan-ncbigene	
+glytoucan-uniprot-TIO_000060	
+glytoucan-uniprot-TIO_000126	
+glytoucan-uniprot-TIO_000128	
+glytoucan-uniprot	
+hgnc-ccds	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-ec	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-ensembl_gene	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-hgnc_symbol	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-insdc	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-lrg	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-mgi_gene	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-mirbase	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-ncbigene	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-omim_gene	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-pubmed	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-refseq_genomic	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-refseq_rna	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-rgd	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hgnc-uniprot	[HGNC](https://www.genenames.org/): [hgnc_complete_set.txt](https://www.genenames.org/download/statistics-and-files/) (2026-07-14)
+hmdb-chebi	HMDB version 5.0: [hmdb_metabolites.xml](https://www.hmdb.ca/downloads)
+hmdb-inchi_key	HMDB version 5.0: [hmdb_metabolites.xml](https://www.hmdb.ca/downloads)
+hmdb-pdb_ccd	HMDB version 5.0: [hmdb_metabolites.xml](https://www.hmdb.ca/downloads)
+hmdb-pubchem_compound	HMDB version 5.0: [hmdb_metabolites.xml](https://www.hmdb.ca/downloads)
+homologene-ncbigene	HomoloGene build 68, produced in 2014: [homologene.data](https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/last-archive/) NOTICE: HomoloGene has been retired and is no longer aligned with current data in NCBI Gene.
+hp_inheritance-omim_phenotype	
+hp_phenotype-ncbigene	
+hp_phenotype-omim_phenotype	
+hp_phenotype-orphanet_phenotype	
+insdc-bioproject	
+insdc-biosample	
+insdc_master-bioproject	
+insdc_master-biosample	
+interpro-go	
+interpro-pdb	
+interpro-pfam	
+interpro-prosite	
+interpro-pubmed	
+interpro-reactome_pathway	
+interpro-smart	
+interpro-uniprot	
+jga_study-jga_dataset	
+jga_study-nbdc_human_db	
+jga_study-pubmed	
+lipidmaps-chebi	LIPID MAPS: [structures.sdf](https://www.lipidmaps.org/databases/lmsd/download) (2026-07-17)
+lipidmaps-inchi_key	LIPID MAPS: [structures.sdf](https://www.lipidmaps.org/databases/lmsd/download) (2026-07-17)
+lipidmaps-swisslipids	LIPID MAPS: [structures.sdf](https://www.lipidmaps.org/databases/lmsd/download) (2026-07-17)
+mbgd_gene-uniprot	
+mbgd_organism-taxonomy	
+medgen-hp_phenotype	[Med2RDF version based on release_20250903](https://rdfportal.org/dataset/medgen/)
+medgen-mesh	[Med2RDF version based on release_20250903](https://rdfportal.org/dataset/medgen/)
+medgen-mondo	[Med2RDF version based on release_20250903](https://rdfportal.org/dataset/medgen/)
+medgen-ncbigene	[Med2RDF version based on release_20250903](https://rdfportal.org/dataset/medgen/)
+medgen-omim_phenotype	[Med2RDF version based on release_20250903](https://rdfportal.org/dataset/medgen/)
+medgen-orphanet_phenotype	[Med2RDF version based on release_20250903](https://rdfportal.org/dataset/medgen/)
+mgi_gene-ensembl_gene	MGI: [MGI_Gene_Model_Coord.rpt](https://www.informatics.jax.org/downloads/reports/) (2026-07-13)
+mgi_gene-hgnc	MGI: [MGI_Gene_Model_Coord.rpt](https://www.informatics.jax.org/downloads/reports/) (2026-07-13)
+mgi_gene-mgi_allele	MGI: [MGI_Gene_Model_Coord.rpt](https://www.informatics.jax.org/downloads/reports/) (2026-07-13)
+mgi_gene-ncbigene	MGI: [MGI_Gene_Model_Coord.rpt](https://www.informatics.jax.org/downloads/reports/) (2026-07-13)
+mgi_gene-uniprot	MGI: [MGI_Gene_Model_Coord.rpt](https://www.informatics.jax.org/downloads/reports/) (2026-07-13)
+mgi_genotype-doid	MouseMine accessed at 2026-07-17
+mgi_genotype-mgi_allele	MouseMine accessed at 2026-07-17
+mgi_genotype-mp	MouseMine accessed at 2026-07-17
+mirbase-mirbase_mature	miRBase version RELEASE 22.1: [mirna.txt, mirna_mature.txt, mirna_pre_mature.txt](https://www.mirbase.org/download/CURRENT/database_files)
+mondo-doid	
+mondo-efo_disease	
+mondo-hp_phenotype	
+mondo-meddra	
+mondo-mesh	
+mondo-ncit_disease	
+mondo-omim_phenotype	
+mondo-orphanet_phenotype	
+nando-hp_phenotype	
+nando-mondo-TIO_000001	
+nando-mondo-TIO_000002	
+nando-mondo	
+nando-nbdc_human_db	
+nando-ncbigene	
+ncbigene-ensembl_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-ensembl_protein	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-ensembl_transcript	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-flybase_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-go	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-hgnc	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-mgi_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-mirbase	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-omim_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-refseq_genomic	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-refseq_protein	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-refseq_rna	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-rgd	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-sgd	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-tair	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-taxonomy	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-vgnc	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-wormbase_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-xenbase_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncbigene-zfin_gene	NCBI Gene: [gene_info](https://ftp.ncbi.nih.gov/gene/DATA/) (2026-07-17)
+ncit_disease-ncit_tissue	
+oma_protein-ensembl_gene	
+oma_protein-ensembl_transcript	
+oma_protein-ncbigene	
+oma_protein-uniprot	
+orphanet_gene-ensembl_gene	
+orphanet_gene-hgnc	
+orphanet_gene-omim_gene	
+orphanet_gene-uniprot	
+orphanet_phenotype-meddra	
+orphanet_phenotype-mesh	
+orphanet_phenotype-omim_phenotype	
+orphanet_phenotype-orphanet_gene	
+pdb-go	[PDB RDF Release_20260619](https://rdfportal.org/dataset/pdb/)
+pdb-interpro	[PDB RDF Release_20260619](https://rdfportal.org/dataset/pdb/)
+pdb-pdb_ccd	[PDB RDF Release_20260619](https://rdfportal.org/dataset/pdb/)
+pdb-pfam	[PDB RDF Release_20260619](https://rdfportal.org/dataset/pdb/)
+pdb-uniprot	[PDB RDF Release_20260619](https://rdfportal.org/dataset/pdb/)
+pmc-pubmed	PMC: [PMC-ids.csv.gz](https://ftp.ncbi.nlm.nih.gov/pub/pmc/) (2026-07-17)
+prosite-prosite_prorule	PROSITE Release 2026_01 of 28-Jan-2026.: [prosite.dat](https://ftp.expasy.org/databases/prosite/)
+pubchem_compound-atc	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_compound-chebi	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_compound-chembl_compound	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_compound-drugbank	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_compound-glytoucan	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_compound-inchi_key	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_pathway-ncbigene	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_pathway-pathbank	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_pathway-pubchem_compound	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_pathway-reactome_pathway	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_pathway-uniprot	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+pubchem_pathway-wikipathways	[PubChem RDF](https://rdfportal.org/dataset/pubchem/) (issued: 2025-05-28)
+reactome_pathway-chebi	
+reactome_pathway-go	
+reactome_pathway-iuphar_ligand	
+reactome_pathway-mirbase	
+reactome_pathway-mirbase_mature	
+reactome_pathway-reactome_reaction	
+reactome_pathway-uniprot	
+reactome_reaction-chebi	
+reactome_reaction-go	
+reactome_reaction-iuphar_ligand	
+reactome_reaction-mirbase	
+reactome_reaction-mirbase_mature	
+reactome_reaction-uniprot	
+refseq_protein-taxonomy	RefSeq: [gene_refseq_uniprotkb_collab.gz](https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/) (2026-07-16)
+refseq_protein-uniprot	RefSeq: [gene_refseq_uniprotkb_collab.gz](https://ftp.ncbi.nlm.nih.gov/refseq/uniprotkb/) (2026-07-16)
+refseq_rna-dbsnp	RefSeq release 236
+refseq_rna-hgnc	RefSeq release 236
+refseq_rna-ncbigene	RefSeq release 236
+refseq_rna-omim_gene	RefSeq release 236
+refseq_rna-pubmed	RefSeq release 236
+refseq_rna-refseq_protein	RefSeq release 236
+refseq_rna-taxonomy	RefSeq release 236
+rhea-chebi	
+rhea-ec	
+rhea-go	
+rhea-pubmed	
+rhea-reactome_reaction	
+rhea-uniprot	
+rnacentral-ensembl_transcript	
+rnacentral-flybase_transcript	
+rnacentral-hgnc	
+rnacentral-lncbook_gene	
+rnacentral-mgi_gene	
+rnacentral-mirbase	
+rnacentral-mirbase_mature	
+rnacentral-pdb	
+rnacentral-refseq_rna	
+rnacentral-rfam	
+rnacentral-rgd	
+rnacentral-sgd	
+rnacentral-tair	
+rnacentral-wormbase_gene	
+rnacentral-zfin_transcript	
+sra_accession-bioproject	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_accession-biosample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_accession-sra_analysis	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_accession-sra_experiment	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_accession-sra_project	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_accession-sra_run	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_accession-sra_sample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_experiment-bioproject	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_experiment-biosample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_experiment-sra_project	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_experiment-sra_sample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_project-bioproject	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_run-bioproject	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_run-biosample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_run-sra_experiment	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_run-sra_project	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_run-sra_sample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+sra_sample-biosample	SRA: [SRA_Accessions.tab](https://ftp.ncbi.nih.gov/sra/reports/Metadata/) (2026-07-18)
+swisslipids-chebi	
+swisslipids-hmdb	
+swisslipids-inchi_key	
+taxonomy-pubmed	NCBI Taxonomy: [taxdump.tar.gz](https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/) (2026-07-18)
+togovar-clinvar	
+togovar-dbsnp	
+togovar-ensembl_gene	
+togovar-ensembl_transcript	
+togovar-hgnc	
+togovar-medgen	
+togovar-ncbigene	
+togovar-pubmed	
+togovar-refseq_rna	
+uberon-ncit_tissue	
+uniparc-refseq_protein	[UniParc release 2026_02](https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/)
+uniprot-chembl_target	
+uniprot-dbsnp	
+uniprot-ec	
+uniprot-ensembl_gene	
+uniprot-ensembl_protein	
+uniprot-ensembl_transcript	
+uniprot-go	
+uniprot-hgnc	
+uniprot-insdc	
+uniprot-insdc_cds	
+uniprot-intact	
+uniprot-ncbigene	
+uniprot-oma_group	
+uniprot-omim_gene	
+uniprot-omim_phenotype	
+uniprot-orphanet_phenotype	
+uniprot-pdb	
+uniprot-reactome_pathway	
+uniprot-refseq_protein	
+uniprot-taxonomy	
+uniprot-uniparc	
+uniprot-uniprot_isoform	
+uniprot-uniprot_mnemonic	
+uniprot_isoform-ensembl_protein	
+uniprot_isoform-ensembl_transcript	
+uniprot_isoform-refseq_protein	
+uniprot_isoform-uniparc	
+uniprot_proteome-assembly_insdc	
+uniprot_proteome-assembly_refseq	
+uniprot_proteome-taxonomy	
+wikipathways-chebi	
+wikipathways-doid	
+wikipathways-hmdb	
+wikipathways-lipidmaps	
+wikipathways-ncbigene	
+wikipathways-uniprot	
+zfin_gene-zfin_transcript	
