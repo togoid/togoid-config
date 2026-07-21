@@ -153,7 +153,7 @@ cellosaurus:
   method: awk 'BEGIN{RS="\n//\n";FS="\n"}{label="";for(i=1;i<=NF;i++){if($i~/^AC/){ac=substr($i,11)}if($i~/^ID/){label=substr($i,6)}};print ac "\t" label}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
   version:
     method:
-      version: awk '/^ Version:/{print "Cellosaurus Release " gensub(/\.[0-9]+$/,"","g",$2); exit}' cellosaurus.txt
+      version: awk '/^ Version:/{print "Cellosaurus Release " gensub(/\.[0-9]+$/,"","g",$2); exit}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
     display: "Cellosaurus Release {version}: [cellosaurus.txt](https://ftp.expasy.org/databases/cellosaurus/)"
 chebi:
   label: ChEBI compound
