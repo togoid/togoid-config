@@ -1,5 +1,7 @@
 Datasets last updated: 2026-07-21
 
+*NOTICE* The LABEL2ID feature is currently unavailable due to a temporary issue. We are working to restore the service as quickly as possible. We apologize for the inconvenience and appreciate your patience.
+
 # 2026-07-07
 - New pairs have been added.
   - `uniprot-insdc_cds`
