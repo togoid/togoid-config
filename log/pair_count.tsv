@@ -70,7 +70,7 @@ gea-biosample.tsv	5046	5046	0	1
 glycomotif-glytoucan.tsv	155799	155799	0	1
 glytoucan-doid.tsv	290	290	0	1
 glytoucan-ncbigene.tsv	1270	1270	0	1
-glytoucan-uniprot-TIO_000060.tsv	0	71887	-71887	0
+glytoucan-uniprot-TIO_000060.tsv	72716	71887	829	1.01153
 glytoucan-uniprot-TIO_000126.tsv	471	471	0	1
 glytoucan-uniprot-TIO_000128.tsv	386	386	0	1
 glytoucan-uniprot.tsv	71887	71887	0	1
@@ -237,7 +237,7 @@ rnacentral-mirbase.tsv	38582	24075	14507	1.60258
 rnacentral-pdb.tsv	21932	14137	7795	1.55139
 rnacentral-refseq_rna.tsv	132794	82740	50054	1.60496
 rnacentral-rfam.tsv	7275903	4544159	2731744	1.60116
-rnacentral-rgd.tsv	11241	11241	0	1
+rnacentral-rgd.tsv	5057	11241	-6184	0.44987
 rnacentral-sgd.tsv	438	263	175	1.6654
 rnacentral-tair.tsv	4853	2961	1892	1.63897
 rnacentral-wormbase_gene.tsv	25530	15821	9709	1.61368
@@ -312,4 +312,4 @@ wikipathways-lipidmaps.tsv	1729	1729	0	1
 wikipathways-ncbigene.tsv	32111	32111	0	1
 wikipathways-uniprot.tsv	5271	5271	0	1
 zfin_gene-zfin_transcript.tsv	48740	48740	0	1
-total	8616753828	8611638673	5115155	1.00059
+total	8616820360	8611638673	5181687	1.0006
