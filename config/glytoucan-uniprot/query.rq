@@ -1,13 +1,12 @@
 PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>
 PREFIX gco:<http://purl.jp/bio/12/glyco/conjugate#>
 PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX sio: <http://semanticscience.org/resource/>
 
 SELECT DISTINCT ?gtc_id ?uniprot_id
 WHERE {
  GRAPH <http://rdf.glycosmos.org/glycoprotein> {
-    ?protein gco:glycosylated_at [
-      gco:has_saccharide ?gtc
-    ] .
+    ?protein gco:glycosylated_at / sio:SIO_000255 / gco:has_saccharide ?gtc
   }
   BIND(strafter(str(?gtc), "http://rdf.glycoinfo.org/glycan/") as ?gtc_id)
   BIND(strafter(str(?protein), "http://glycosmos.org/glycoprotein/") as ?uniprot_id)
