@@ -3,10 +3,11 @@ PREFIX pdbo: <http://rdf.wwpdb.org/schema/pdbx-with-vrptx-v50.owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?pdb_id ?target_id
-FROM <http://rdfportal.org/dataset/pdbj>
+FROM <http://rdfportal.org/dataset/pdb>
 WHERE {
-  ?pdb pdbo:has_entityCategory/pdbo:has_entity ?entity .
-  ?entity pdbo:referenced_by_struct_ref/pdbo:link_to_uniprot ?target .
+  ?pdb pdbo:has_struct_refCategory/pdbo:has_struct_ref [
+    pdbo:struct_ref.db_name	"UNP" ;
+    pdbo:struct_ref.pdbx_db_accession ?target_id
+  ] .
   BIND (strafter(str(?pdb), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
-  BIND (strafter(str(?target), "http://purl.uniprot.org/uniprot/") AS ?target_id)
 }

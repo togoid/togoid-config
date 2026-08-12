@@ -1,4 +1,4 @@
-Sat Aug  1 07:18:25 JST 2026
+Sat Aug  8 07:51:20 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HSAC07/X00351_3_at	60
 AFFX-HSAC07/X00351_5_at	60
@@ -175,7 +175,6 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/gea-biosample.tsv | grep -vP '^(
 awk -F '	' '{print "GM." $1 "	" "" $2}' output/tsv/glycomotif-glytoucan.tsv | grep -vP '^(?:GM\.)?(G[0-9]{5}[A-Z]{2})	(G[0-9]{5}[A-Z]{2})$' | head
 awk -F '	' '{print "" $1 "	" "DOID_" $2}' output/tsv/glytoucan-doid.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	DO(?:ID)?[:_](\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-ncbigene.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(\d+)$' | head
-awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000060.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000126.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000128.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
@@ -290,38 +289,38 @@ awk -F '	' '{print "NANDO_" $1 "	" "MONDO:" $2}' output/tsv/nando-mondo.tsv | gr
 awk -F '	' '{print "NANDO_" $1 "	" "" $2}' output/tsv/nando-nbdc_human_db.tsv | grep -vP '^NANDO[:_](\d{7})	(hum\d{4})(?:[.\-]v\d+)?$' | head
 awk -F '	' '{print "NANDO_" $1 "	" "" $2}' output/tsv/nando-ncbigene.tsv | grep -vP '^NANDO[:_](\d{7})	(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_gene.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?))$' | head
-18507023	Tc04v2_g006410
-18507026	Tc05v2_g007220
-18507027	Tc05v2_g007210
-18507028	Tc08v2_g013380
-18507029	Tc02v2_g013900
-18507031	Tc03v2_g015480
-18507032	Tc03v2_g015490
-18507034	Tc07v2_g009960
-18507039	Tc03v2_g005690
-18507040	Tc03v2_g005680
+27215448	gene-A5N79_gp34
+27215449	gene-A5N79_gp30
+27215450	gene-A5N79_gt07
+27215451	gene-A5N79_gp15
+27215452	gene-A5N79_gp22
+27215453	gene-A5N79_gp32
+27215454	gene-A5N79_gp29
+27215455	gene-A5N79_gp12
+27215456	gene-A5N79_gp05
+27215457	gene-A5N79_gp17
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_protein.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*P\d{11})(?:\.\d+)?)|(FBpp\d{7})|(?:(MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(LRG_\d+p\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4}))$' | head
-18507023	Tc04v2_p006410
-18507026	Tc05v2_p007220
-18507028	Tc08v2_p013380
-18507029	Tc02v2_p013900
-18507031	Tc03v2_p015480
-18507032	Tc03v2_p015490
-18507034	Tc07v2_p009960
-18507039	Tc03v2_p005690
-18507040	Tc03v2_p005680
-18507041	Tc03v2_p005660
+27215448	YP_009243652
+27215449	YP_009243656
+27215451	YP_009243668
+27215452	YP_009243663
+27215453	YP_009243654
+27215454	YP_009243657
+27215455	YP_009243671
+27215456	YP_009243678
+27215458	YP_009243680
+27215459	YP_009243660
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_transcript.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
-18507023	Tc04v2_t006410
-18507026	Tc05v2_t007220
-18507028	Tc08v2_t013380
-18507029	Tc02v2_t013900
-18507031	Tc03v2_t015480
-18507032	Tc03v2_t015490
-18507034	Tc07v2_t009960
-18507039	Tc03v2_t005690
-18507040	Tc03v2_t005680
-18507041	Tc03v2_t005660
+104882799	rna-XM_010673718
+104882799	rna-XM_019248139
+104882800	rna-XM_010667230
+104882801	rna-XR_788453
+104882802	rna-XM_010667202
+104882803	rna-XM_010667203
+104882803	rna-XM_010667204
+104882804	rna-XM_010667214
+104882805	rna-XM_010667205
+104882806	rna-XM_010667206
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-flybase_gene.tsv | grep -vP '^(\d+)	(FBgn\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/ncbigene-go.tsv | grep -vP '^(\d+)	GO[:_](\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-hgnc.tsv | grep -vP '^(\d+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
@@ -526,4 +525,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Aug  1 08:52:35 JST 2026
+Sat Aug  8 09:26:19 JST 2026

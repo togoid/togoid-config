@@ -2,7 +2,7 @@
 PREFIX pdbo: <http://rdf.wwpdb.org/schema/pdbx-with-vrptx-v50.owl#>
 
 SELECT DISTINCT ?pdb_id ?pdbccd_id
-FROM <http://rdfportal.org/dataset/pdbj>
+FROM <http://rdfportal.org/dataset/pdb>
 WHERE {
   ?pdb a pdbo:datablock ;
        pdbo:has_pdbx_entity_nonpolyCategory/pdbo:has_pdbx_entity_nonpoly/pdbo:pdbx_entity_nonpoly.comp_id ?pdbccd_id .

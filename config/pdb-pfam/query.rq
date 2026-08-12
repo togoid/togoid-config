@@ -3,7 +3,7 @@ PREFIX pdbo: <http://rdf.wwpdb.org/schema/pdbx-with-vrptx-v50.owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?pdb_id ?target_id
-FROM <http://rdfportal.org/dataset/pdbj>
+FROM <http://rdfportal.org/dataset/pdb>
 WHERE {
   ?pdb pdbo:has_pdbx_sifts_xref_db_segmentsCategory/pdbo:has_pdbx_sifts_xref_db_segments [
     pdbo:pdbx_sifts_xref_db_segments.xref_db "Pfam" ;

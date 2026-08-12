@@ -458,11 +458,12 @@ module TogoID
     end
 
     # Check if the file is updated or the sizes differ or the file doesn't exist
-    def update_input_file?(file, url)
+    def update_input_file?(file, url, ignore_size: false)
       if File.exist?(file)
         # Both checks should be made as the local file can be newer than remote when the previous download fails
         # and the local file can be smaller or size 0 even when it exists
-        check_remote_file_time(file, url) || check_remote_file_size(file, url)
+        # If a server does not return a header with "Content-Length", set `ignore_size` true and then this does not check the file size.
+        check_remote_file_time(file, url) || (!ignore_size && check_remote_file_size(file, url))
       else
         true
       end
@@ -1185,7 +1186,7 @@ namespace :prepare do
       for file in files do
         input_file = "#{INPUT_REACTOME_DIR}/#{file}"
         input_url  = "https://reactome.org/download/current/#{file}"
-        if update_input_file?(input_file, input_url)
+        if update_input_file?(input_file, input_url, ignore_size: true)
           download_file(INPUT_REACTOME_DIR, input_url)
           updated = true
         end
