@@ -1,4 +1,4 @@
-Sat Aug  8 07:51:20 JST 2026
+Sat Aug 15 06:31:38 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HSAC07/X00351_3_at	60
 AFFX-HSAC07/X00351_5_at	60
@@ -175,6 +175,7 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/gea-biosample.tsv | grep -vP '^(
 awk -F '	' '{print "GM." $1 "	" "" $2}' output/tsv/glycomotif-glytoucan.tsv | grep -vP '^(?:GM\.)?(G[0-9]{5}[A-Z]{2})	(G[0-9]{5}[A-Z]{2})$' | head
 awk -F '	' '{print "" $1 "	" "DOID_" $2}' output/tsv/glytoucan-doid.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	DO(?:ID)?[:_](\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-ncbigene.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(\d+)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000060.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000126.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot-TIO_000128.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/glytoucan-uniprot.tsv | grep -vP '^(G[0-9]{5}[A-Z]{2})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
@@ -311,16 +312,16 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_protein.tsv | g
 27215458	YP_009243680
 27215459	YP_009243660
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-ensembl_transcript.tsv | grep -vP '^(\d+)	(?:(?:(ENS[A-Z]*T\d{11})(?:\.\d+)?)|(FBtr\d{7})|(?:(MGP_[A-Za-z0-9]+_T\d{7})(?:\.\d+)?)|(LRG_\d+t\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?(?:_[a-z]{1,3}RNA)?)|(Q\d{4}_[a-z]{1,3}RNA)|([A-Z]{3}\d{1,3}(?:-\d)?_[a-z]{1,3}RNA)|(snR\d+-?[A-Za-z]?_sno?RNA)|(t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?_tRNA))$' | head
-104882799	rna-XM_010673718
-104882799	rna-XM_019248139
-104882800	rna-XM_010667230
-104882801	rna-XR_788453
-104882802	rna-XM_010667202
-104882803	rna-XM_010667203
-104882803	rna-XM_010667204
-104882804	rna-XM_010667214
-104882805	rna-XM_010667205
-104882806	rna-XM_010667206
+115694673	rna-XM_030622017
+115694674	rna-XM_030621757
+115694675	rna-XM_030621759
+115694676	rna-XM_030621760
+115694677	rna-XM_030621761
+115694678	rna-XM_061116791
+115694679	rna-XM_061117846
+115694680	rna-XM_030621763
+115694681	rna-XM_061118228
+115694682	rna-XM_030621765
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-flybase_gene.tsv | grep -vP '^(\d+)	(FBgn\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/ncbigene-go.tsv | grep -vP '^(\d+)	GO[:_](\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/ncbigene-hgnc.tsv | grep -vP '^(\d+)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
@@ -357,15 +358,15 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-pdb_ccd.tsv | grep -vP '^([0
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-pfam.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	(PF\d{5})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pdb-uniprot.tsv | grep -vP '^([0-9][A-Za-z0-9]{3})	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 5FUI	GOL2L9
-1KCL	p43379
-1LS3	p07511
-1MOW	p21505
-1MOW	p05725
 1KR0	p23472
-1KQZ	p23472
-1KYS	p42212
+1KCL	p43379
 1KQY	p23472
+1KYS	p42212
+1KYR	p42212
+1KQZ	p23472
 1KR1	p23472
+1KYP	p42212
+1M0V	p08538
 awk -F '	' '{print "PMC" $1 "	" "" $2}' output/tsv/pmc-pubmed.tsv | grep -vP '^(?:PMC)?(\d+)	(?:pmid:|PMID:)?(\d+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/prosite-prosite_prorule.tsv | grep -vP '^(PS\d{5})	(PRU\d{5})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/pubchem_compound-atc.tsv | grep -vP '^(?:CID)?(\d+)	([A-Z]\d{2}[A-Z]{2}\d{2})$' | head
@@ -525,4 +526,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Aug  8 09:26:19 JST 2026
+Sat Aug 15 08:06:34 JST 2026
