@@ -3,13 +3,14 @@ Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/s
 Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
+/data/togoid/local/lib/ruby/gems/3.0.0/gems/intermine-1.05.00/lib/intermine/service.rb:176:in `rescue in initialize': Error fetching version at https://www.mousemine.org/mousemine/service/version: Connection reset by peer (InterMine::ServiceError)
 Error: ruby bin/query_mousemine.rb: Command failed with status (1): [ruby bin/query_mousemine.rb > input/mgi_ge...]
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: Remote file is empty
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
-Error: Remote file is empty
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-Error: Remote file is empty
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
 Error: download_file(input/prosite, https://ftp.expasy.org/databases/prosite/prosite.dat): Command failed with status (4): [wget --quiet --recursive --no-parent --no-...]
 Error: download_file(input/prosite, https://ftp.expasy.org/databases/prosite/prorule.dat): Command failed with status (4): [wget --quiet --recursive --no-parent --no-...]
 Error: download_file(input/rhea, https://ftp.expasy.org/databases/rhea/tsv/rhea2uniprot_sprot.tsv): Command failed with status (4): [wget --quiet --recursive --no-parent --no-...]
@@ -17,6 +18,8 @@ Error: download_file(input/rhea, https://ftp.expasy.org/databases/rhea/tsv/rhea2
 Error: download_file(input/rhea, https://ftp.expasy.org/databases/rhea/tsv/rhea2go.tsv): Command failed with status (4): [wget --quiet --recursive --no-parent --no-...]
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (8): [wget --quiet --recursive --no-parent --no-...]
+Error: check_remote_file_time(input/uniparc/RELEASE.metalink, https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/xml/all/RELEASE.metalink): no time information in ""
+Error: Remote file is empty
 # Error: output/tsv/chembl_compound-pdb_ccd.tsv new file size per old 83 / 250230 = 0.0003316948407465132 < 0.5
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
@@ -35,8 +38,10 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/mgi_genotype-doid.tsv new file size per old 0 / 114278 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mgi_genotype-doid.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-mgi_allele.tsv new file size per old 80 / 2005600 = 3.9888312724371757e-05 < 0.5
-# Error: output/tsv/mgi_genotype-mp.tsv new file size per old 1168 / 6440592 = 0.000181349788963499 < 0.5
+# Error: output/tsv/mgi_genotype-mgi_allele.tsv new file size per old 0 / 2005600 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mgi_genotype-mgi_allele.tsv or created file was empty
+# Error: output/tsv/mgi_genotype-mp.tsv new file size per old 0 / 6440592 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mgi_genotype-mp.tsv or created file was empty
 # Error: output/tsv/oma_protein-ensembl_gene.tsv new file size per old 0 / 86222314 = 0.0 < 0.5
 # Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
@@ -51,4 +56,4 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
 # Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines
-# Error: output/ttl/label/mgi_genotype.ttl new file size per old 754 / 10219056 = 7.378372327150375e-05 < 0.5
+# Error: output/ttl/label/mgi_genotype.ttl new file size per old 162 / 10219056 = 1.5852736299713006e-05 < 0.5
