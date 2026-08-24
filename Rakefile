@@ -2,6 +2,8 @@
 
 require 'time'
 require 'yaml'
+require 'fileutils'
+require 'uri'
 
 ENV['PATH'] = "bin:#{ENV['HOME']}/local/bin:#{ENV['PATH']}"
 
@@ -489,7 +491,7 @@ module TogoID
     end
 
     # Download files with wget
-    def download_file(dir, url, glob = nil)
+    def download_file_wget(dir, url, glob = nil)
       # When running Wget without -N, -nc, -r, or -p, downloading the same file in the same directory
       # will result in the original copy of file being preserved and the second copy being named file.1
       # The following opts are equivalent to "-q -r -np -nd -N"
@@ -507,6 +509,23 @@ module TogoID
       rescue StandardError => e
           $stderr.puts "Error: download_file(#{dir}, #{url}): #{e.message}"
           return false
+      end
+    end
+
+    def download_file(dir, url)
+      FileUtils.mkdir_p(dir)
+      filename = File.basename(URI.parse(url).path)
+      filepath = File.join(dir, filename)
+      # -f: treat HTTP errors as failures
+      # -R: keep timestamp
+      opts = "-sS -R -f -L"
+
+      begin
+        sh "curl #{opts} -o '#{filepath}' '#{url}'"
+        true
+      rescue StandardError => e
+        $stderr.puts "Error: download_file(#{dir}, #{url}): #{e.message}"
+        false
       end
     end
 
