@@ -504,7 +504,7 @@ hgnc_symbol:
   label: HGNC gene symbol
   catalog: nbdc01774
   category: Gene
-  regex: '^(?<id>[A-Z0-9_(?:orf)\-]+\@?)$'
+  regex: '^(?<id>[A-Z0-9_\-]+(?:orf[0-9]+[A-Z0-9\-]+)?\@?)$'
   prefix:
     - label: 'rdf'
       uri: 'http://identifiers.org/hgnc.symbol/'
