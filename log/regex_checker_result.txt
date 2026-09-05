@@ -1,4 +1,4 @@
-Sat Aug 29 06:39:46 JST 2026
+Sun Sep  6 01:03:27 JST 2026
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/affy_probeset-ncbigene.tsv | grep -vP '^(\d{3,}(?:_[a-z])?_at)	(\d+)$' | head
 AFFX-HSAC07/X00351_3_at	60
 AFFX-HSAC07/X00351_5_at	60
@@ -188,7 +188,7 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ec.tsv | grep -vP '^(?:(?:H
 8918	3.4.24.B15
 2295	1.11.1.27 
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-ensembl_gene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:(?:(ENS[A-Z]*G\d{11})(?:\.\d+)?)|(FBgn\d{7})|(?:(MGP_[A-Za-z0-9]+_G\d{7})(?:\.\d+)?)|(LRG_\d+)|(WBGene\d{8})|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4})|([A-Z]{3}\d{1,3}(?:-\d)?)|(snR\d+-?[A-Za-z]?)|(t[A-Z]\(?:[ACGUX]{3}\)[A-Z]\d?))$' | head
-awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-hgnc_symbol.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	([A-Z0-9_(?:orf)\-]+\@?)$' | head
+awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-hgnc_symbol.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	([A-Z0-9_\-]+(?:orf[0-9]+[A-Z0-9\-]+)?\@?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-insdc.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/hgnc-lrg.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(LRG_\d+)$' | head
 awk -F '	' '{print "" $1 "	" "MGI:" $2}' output/tsv/hgnc-mgi_gene.tsv | grep -vP '^(?:(?:HGNC|hgnc):)?(\d{1,5})	(?:MGI|mgi):(\d{5,})$' | head
@@ -485,16 +485,16 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-ensembl_transcript.tsv |
 awk -F '	' '{print "" $1 "	" "GO_" $2}' output/tsv/uniprot-go.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	GO[:_](\d{7})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-hgnc.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:(?:HGNC|hgnc):)?(\d{1,5})$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-insdc_cds.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:insdc.cds:)?(([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{3}\d{5}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}))(?:\.\d+)?$' | head
-E2RU97	KAE8304865
-A0ABT0FV20	MCK2216176
-A0A7J6K7N5	KAF4642501
-A0A4P1LYB6	KAH9482174
-H9A1V3	MBA5282450
-H9A1V3	MBA5282439
-A0A565D477	KAH9485139
-P78820	CAK9837485
-A0AAD6J5T3	KAJ6264049
-O94642	CAK9840816
+P48347	CAO7028292
+Q9S9Z8	CAO7029683
+Q9S9Z8	CAO7029684
+Q9C5W6	CAO7028722
+P42643	CAO7046453
+Q01525	CAO7033801
+P42644	CAO7054385
+P46077	CAO7029702
+P42645	CAO7052432
+P48349	CAO7051769
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-insdc.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(?:insdc:)?([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4}\d{8}|[A-J][A-Z]{2}\d{5}|[A-Z]{4,}\d{9})(?:\.\d+)?$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot-intact.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)	(EBI\-[0-9]+)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/uniprot_isoform-ensembl_protein.tsv | grep -vP '^(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+))|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)))	(?:(?:(ENS[A-Z]*P\d{11})(?:\.\d+)?)|(FBpp\d{7})|(?:(MGP_[A-Za-z0-9]+_P\d{7})(?:\.\d+)?)|(LRG_\d+p\d+(?:-\d)?)|((?:[A-Za-z0-9][A-Za-z0-9_]+)\.t?\d+[a-z]?(?:\.\d+)?)|(Y[A-Z]{2}\d{3}[A-Z](?:-[A-Z])?)|(Q\d{4}))$' | head
@@ -525,4 +525,4 @@ awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-ncbigene.tsv | grep
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/wikipathways-uniprot.tsv | grep -vP '^(WP\d{1,5})(?:\_r\d+)?	(?:([A-NR-Z][0-9](?:[A-Z][A-Z0-9][A-Z0-9][0-9]){1,2}(?:-\d+)?)|([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](?:-\d+)?)(?:\.\d+)?)$' | head
 awk -F '	' '{print "" $1 "	" "" $2}' output/tsv/zfin_gene-zfin_transcript.tsv | grep -vP '^(ZDB\-[A-Z]+\-\d{6}\-\d+)	(ZDB\-[A-Z]+\-\d{6}\-\d+)$' | head
 no related gene	ZDB-TSCRIPT-200330-1
-Sat Aug 29 08:13:52 JST 2026
+Sun Sep  6 02:38:19 JST 2026

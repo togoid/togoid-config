@@ -1,3 +1,6 @@
+Error: check_remote_file_time(input/glytoucan/glycosmos_ggdbs_pubmed.csv, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): no time information in ""
+curl: (22) The requested URL returned error: 524
+Error: download_file(input/glytoucan, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): Command failed with status (22): [curl -sS -R -f -L -o 'input/glytoucan/glyc...]
 Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): Command failed with status (22): [curl -sS -R -f -L -o 'input/hmdb/hmdb_meta...]
@@ -6,11 +9,14 @@ Error: Remote file is empty
 /data/togoid/local/lib/ruby/gems/3.0.0/gems/intermine-1.05.00/lib/intermine/service.rb:176:in `rescue in initialize': Error fetching version at https://www.mousemine.org/mousemine/service/version: Net::ReadTimeout with #<TCPSocket:(closed)> (InterMine::ServiceError)
 Error: ruby bin/query_mousemine.rb: Command failed with status (1): [ruby bin/query_mousemine.rb > input/mgi_ge...]
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (22): [curl -sS -R -f -L -o 'input/togovar/tgvid2...]
@@ -38,6 +44,8 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/mgi_genotype-mp.tsv or created file was empty
 # Error: output/tsv/oma_protein-ensembl_gene.tsv new file size per old 0 / 86222314 = 0.0 < 0.5
 # Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 15732849 = 0.0 < 0.5
+# Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
 # Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
