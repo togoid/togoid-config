@@ -1,0 +1,22 @@
+# Endpoint: https://sparql.hegroup.org/sparql/
+
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?source_id ?target_id
+FROM <http://purl.obolibrary.org/obo/merged/MONDO>
+{
+  ?mondo oboinowl:id ?mondo_id ;
+         rdfs:subClassOf* ?mondo_parent .
+  ?mondo_parent oboinowl:id ?mondo_parent_id ;
+                rdfs:subClassOf  [
+                  a owl:Restriction ;
+                  owl:onProperty obo:RO_0004026 ;  # disease has location
+                  owl:someValuesFrom ?location
+                ] .
+  FILTER (STRSTARTS(STR(?location), "http://purl.obolibrary.org/obo/CL_"))
+  BIND (STRAFTER(?mondo_id, "MONDO:") AS ?source_id)
+  BIND (STRAFTER(STR(?location), "CL_") AS ?target_id)
+}

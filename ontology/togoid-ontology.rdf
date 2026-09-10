@@ -1948,6 +1948,78 @@
     <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
     <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000146"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000148">
+    <display_label>derives from</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
+    <rdfs:label>cell line derives from cell</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000149"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000149">
+    <display_label>is origin of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>cell is origin of cell line</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000148"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000150">
+    <display_label>derives from</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
+    <rdfs:label>cell line derives from tissue</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000151"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000151">
+    <display_label>is origin of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>tissue is origin of cell line</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000150"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000152">
+    <display_label>derives from</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
+    <rdfs:label>cell line derives from metastatic tissue</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000153"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000153">
+    <display_label>is origin of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>metastatic tissue is origin of cell line</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#CellLine"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000152"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000155">
+    <display_label>is location of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>anatomical site is location of disease</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000154"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000156">
+    <display_label>has part</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>tissue has part cell</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000157"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TIO_000157">
+    <display_label>is part of</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:label>cell is part of tissue</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000156"/>
+  </owl:ObjectProperty>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Tair">
     <dcterms:identifier>tair</dcterms:identifier>
     <rdfs:label>TAIR</rdfs:label>
@@ -1960,6 +2032,14 @@
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Dataset"/>
     <rdfs:subClassOf rdf:resource="http://togoid.dbcls.jp/ontology#Organism"/>
   </owl:Class>
+  <owl:ObjectProperty rdf:about="http://togoid.dbcls.jp/ontology#TiO_000154">
+    <display_label>occurs in</display_label>
+    <rdfs:domain rdf:resource="http://togoid.dbcls.jp/ontology#Phenotype"/>
+    <rdfs:label>disease occurs in anatomical site</rdfs:label>
+    <rdfs:range rdf:resource="http://togoid.dbcls.jp/ontology#Anatomy"/>
+    <rdfs:subPropertyOf rdf:resource="http://togoid.dbcls.jp/ontology#relation"/>
+    <owl:inverseOf rdf:resource="http://togoid.dbcls.jp/ontology#TIO_000155"/>
+  </owl:ObjectProperty>
   <owl:Class rdf:about="http://togoid.dbcls.jp/ontology#Togovar">
     <dcterms:identifier>togovar</dcterms:identifier>
     <rdfs:label>TogoVar variant</rdfs:label>
