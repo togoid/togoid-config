@@ -2283,7 +2283,7 @@
     rdfs:label "metastatic tissue is origin of cell line" ;
     :display_label "is origin of (metastatic)" .
 
-:TiO_000154
+:TIO_000154
     a owl:ObjectProperty ;
     rdfs:subPropertyOf :relation ;
     rdfs:domain :Phenotype ;
