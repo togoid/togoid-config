@@ -1762,28 +1762,28 @@
 <http://togoid.dbcls.jp/ontology#TIO_000150> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#TIO_000150> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000151> .
 <http://togoid.dbcls.jp/ontology#TIO_000150> <http://www.w3.org/2000/01/rdf-schema#label> "cell line derives from tissue" .
-<http://togoid.dbcls.jp/ontology#TIO_000150> <http://togoid.dbcls.jp/ontology#display_label> "derives from" .
+<http://togoid.dbcls.jp/ontology#TIO_000150> <http://togoid.dbcls.jp/ontology#display_label> "derives from (in situ)" .
 <http://togoid.dbcls.jp/ontology#TIO_000151> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000151> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000151> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#TIO_000151> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#CellLine> .
 <http://togoid.dbcls.jp/ontology#TIO_000151> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000150> .
 <http://togoid.dbcls.jp/ontology#TIO_000151> <http://www.w3.org/2000/01/rdf-schema#label> "tissue is origin of cell line" .
-<http://togoid.dbcls.jp/ontology#TIO_000151> <http://togoid.dbcls.jp/ontology#display_label> "is origin of" .
+<http://togoid.dbcls.jp/ontology#TIO_000151> <http://togoid.dbcls.jp/ontology#display_label> "is origin of (in situ)" .
 <http://togoid.dbcls.jp/ontology#TIO_000152> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000152> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000152> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#CellLine> .
 <http://togoid.dbcls.jp/ontology#TIO_000152> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#TIO_000152> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000153> .
 <http://togoid.dbcls.jp/ontology#TIO_000152> <http://www.w3.org/2000/01/rdf-schema#label> "cell line derives from metastatic tissue" .
-<http://togoid.dbcls.jp/ontology#TIO_000152> <http://togoid.dbcls.jp/ontology#display_label> "derives from" .
+<http://togoid.dbcls.jp/ontology#TIO_000152> <http://togoid.dbcls.jp/ontology#display_label> "derives from (metastatic)" .
 <http://togoid.dbcls.jp/ontology#TIO_000153> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TIO_000153> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TIO_000153> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Anatomy> .
 <http://togoid.dbcls.jp/ontology#TIO_000153> <http://www.w3.org/2000/01/rdf-schema#range> <http://togoid.dbcls.jp/ontology#CellLine> .
 <http://togoid.dbcls.jp/ontology#TIO_000153> <http://www.w3.org/2002/07/owl#inverseOf> <http://togoid.dbcls.jp/ontology#TIO_000152> .
 <http://togoid.dbcls.jp/ontology#TIO_000153> <http://www.w3.org/2000/01/rdf-schema#label> "metastatic tissue is origin of cell line" .
-<http://togoid.dbcls.jp/ontology#TIO_000153> <http://togoid.dbcls.jp/ontology#display_label> "is origin of" .
+<http://togoid.dbcls.jp/ontology#TIO_000153> <http://togoid.dbcls.jp/ontology#display_label> "is origin of (metastatic)" .
 <http://togoid.dbcls.jp/ontology#TiO_000154> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://togoid.dbcls.jp/ontology#TiO_000154> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://togoid.dbcls.jp/ontology#relation> .
 <http://togoid.dbcls.jp/ontology#TiO_000154> <http://www.w3.org/2000/01/rdf-schema#domain> <http://togoid.dbcls.jp/ontology#Phenotype> .
