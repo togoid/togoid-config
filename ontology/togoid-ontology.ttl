@@ -2229,3 +2229,93 @@
     rdfs:label "organism is origin of cell line" ;
     :display_label "is origin of" .
 
+:TIO_000148
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :CellLine ;
+    rdfs:range :Anatomy ;
+    owl:inverseOf :TIO_000149 ;
+    rdfs:label "cell line derives from cell" ;
+    :display_label "derives from" .
+
+:TIO_000149
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Anatomy ;
+    rdfs:range :CellLine ;
+    owl:inverseOf :TIO_000148 ;
+    rdfs:label "cell is origin of cell line" ;
+    :display_label "is origin of" .
+
+:TIO_000150
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :CellLine ;
+    rdfs:range :Anatomy ;
+    owl:inverseOf :TIO_000151 ;
+    rdfs:label "cell line derives from tissue" ;
+    :display_label "derives from" .
+
+:TIO_000151
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Anatomy ;
+    rdfs:range :CellLine ;
+    owl:inverseOf :TIO_000150 ;
+    rdfs:label "tissue is origin of cell line" ;
+    :display_label "is origin of" .
+
+:TIO_000152
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :CellLine ;
+    rdfs:range :Anatomy ;
+    owl:inverseOf :TIO_000153 ;
+    rdfs:label "cell line derives from metastatic tissue" ;
+    :display_label "derives from" .
+
+:TIO_000153
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Anatomy ;
+    rdfs:range :CellLine ;
+    owl:inverseOf :TIO_000152 ;
+    rdfs:label "metastatic tissue is origin of cell line" ;
+    :display_label "is origin of" .
+
+:TiO_000154
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Phenotype ;
+    rdfs:range :Anatomy ;
+    owl:inverseOf :TIO_000155 ;
+    rdfs:label "disease occurs in anatomical site" ;
+    :display_label "occurs in" .
+
+:TIO_000155
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Anatomy ;
+    rdfs:range :Phenotype ;
+    owl:inverseOf :TIO_000154 ;
+    rdfs:label "anatomical site is location of disease" ;
+    :display_label "is location of" .
+
+:TIO_000156
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Anatomy ;
+    rdfs:range :Anatomy ;
+    owl:inverseOf :TIO_000157 ;
+    rdfs:label "tissue has part cell" ;
+    :display_label "has part" .
+
+:TIO_000157
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Anatomy ;
+    rdfs:range :Anatomy ;
+    owl:inverseOf :TIO_000156 ;
+    rdfs:label "cell is part of tissue" ;
+    :display_label "is part of" .
+

@@ -1,0 +1,16 @@
+- link:
+    forward: TIO_000150
+    reverse: TIO_000151
+    file: sample1.tsv
+  update:
+    frequency: Quarterly
+    method: |-
+      awk 'BEGIN{RS="\n//\n"; FS="\n"} {for(i=1; i<=NF; i++) {if($i ~ /^AC/){ac=substr($i, 11)} if($i ~ /^CC   Derived from site: In situ; .*; UBERON/) {num=$i; match($i, /UBERON_[0-9]+(\+UBERON_[0-9]+)*/); n=split(substr($i, RSTART, RLENGTH), uberon, "+"); for(j=1; j<=n; j++){print ac "\t" substr(uberon[j],8)}}}}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt
+- link:
+    forward: TIO_000152
+    reverse: TIO_000153
+    file: sample2.tsv
+  update:
+    frequency: Quarterly
+    method: |-
+      awk 'BEGIN{RS="\n//\n"; FS="\n"} {for(i=1; i<=NF; i++) {if($i ~ /^AC/){ac=substr($i, 11)} if($i ~ /^CC   Derived from site: Metastatic; .*; UBERON/) {num=$i; match($i, /UBERON_[0-9]+(\+UBERON_[0-9]+)*/); n=split(substr($i, RSTART, RLENGTH), uberon, "+"); for(j=1; j<=n; j++){print ac "\t" substr(uberon[j],8)}}}}' $TOGOID_ROOT/input/cellosaurus/cellosaurus.txt

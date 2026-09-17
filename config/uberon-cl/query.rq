@@ -1,0 +1,19 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?source_id ?target_id
+FROM <http://purl.obolibrary.org/obo/merged/UBERON>
+{
+  ?uberon rdfs:subClassOf* ?uberon_parent .
+  ?uberon_parent rdfs:subClassOf  [
+                   a owl:Restriction ;
+                   owl:onProperty obo:BFO_0000051 ;  # has part
+                   owl:someValuesFrom ?cell
+                 ] .
+  FILTER (STRSTARTS(STR(?uberon), "http://purl.obolibrary.org/obo/UBERON_"))
+  FILTER (STRSTARTS(STR(?cell), "http://purl.obolibrary.org/obo/CL_"))
+  BIND (STRAFTER(STR(?uberon), "UBERON_") AS ?source_id)
+  BIND (STRAFTER(STR(?cell), "CL_") AS ?target_id)
+}

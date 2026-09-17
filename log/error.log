@@ -1,25 +1,75 @@
-Error: check_remote_file_time(input/glytoucan/glycosmos_ggdbs_pubmed.csv, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): no time information in ""
-curl: (22) The requested URL returned error: 524
-Error: download_file(input/glytoucan, https://glycosmos.org/download/glycosmos_ggdbs_pubmed.csv): Command failed with status (22): [curl -sS -R -f -L -o 'input/glytoucan/glyc...]
 Error: check_remote_file_time(input/hmdb/hmdb_metabolites.zip, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): Command failed with status (22): [curl -sS -R -f -L -o 'input/hmdb/hmdb_meta...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
-/data/togoid/local/lib/ruby/gems/3.0.0/gems/intermine-1.05.00/lib/intermine/service.rb:176:in `rescue in initialize': Error fetching version at https://www.mousemine.org/mousemine/service/version: Net::ReadTimeout with #<TCPSocket:(closed)> (InterMine::ServiceError)
-Error: ruby bin/query_mousemine.rb: Command failed with status (1): [ruby bin/query_mousemine.rb > input/mgi_ge...]
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-curl: (22) The requested URL returned error: 500
-Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (28): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
-curl: (22) The requested URL returned error: 500
-Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (28): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
 curl: (22) The requested URL returned error: 500
 Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (22): [curl -sS -R -f -L -o 'input/togovar/tgvid2...]
+xml.parsers.expat.ExpatError: no element found: line 128781552, column 97
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 12843152, column 830
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
+xml.parsers.expat.ExpatError: no element found: line 1, column 0
+    self._err_handler.fatalError(exc)
+  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
 # Error: output/tsv/chembl_compound-pdb_ccd.tsv new file size per old 83 / 250230 = 0.0003316948407465132 < 0.5
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
@@ -32,20 +82,25 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
+# Error: output/tsv/hgnc-ccds.tsv new file size per old 259605 / 544397 = 0.4768670657626695 < 0.5
+# Error: output/tsv/hgnc-ec.tsv new file size per old 0 / 33039 = 0.0 < 0.5
+# Error: Failed to create output/tsv/hgnc-ec.tsv or created file was empty
+# Error: output/tsv/hgnc-lrg.tsv new file size per old 0 / 17966 = 0.0 < 0.5
+# Error: Failed to create output/tsv/hgnc-lrg.tsv or created file was empty
+# Error: output/tsv/hgnc-mirbase.tsv new file size per old 3283 / 30592 = 0.1073156380753138 < 0.5
+# Error: output/tsv/hgnc-omim_gene.tsv new file size per old 30592 / 221959 = 0.13782725638518825 < 0.5
+# Error: output/tsv/hgnc-refseq_genomic.tsv new file size per old 0 / 217444 = 0.0 < 0.5
+# Error: Failed to create output/tsv/hgnc-refseq_genomic.tsv or created file was empty
+# Error: output/tsv/hgnc-refseq_rna.tsv new file size per old 0 / 470165 = 0.0 < 0.5
+# Error: Failed to create output/tsv/hgnc-refseq_rna.tsv or created file was empty
+# Error: output/tsv/hgnc-rgd.tsv seems to be malformed 34	tions of the ATP-binding Cassette Transporter Retina
+# Error: output/tsv/hgnc-rgd.tsv seems to be malformed 15743	d Group Antigen Mutation Database
 # Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-doid.tsv new file size per old 0 / 114278 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mgi_genotype-doid.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-mgi_allele.tsv new file size per old 0 / 2005600 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mgi_genotype-mgi_allele.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-mp.tsv new file size per old 0 / 6440592 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mgi_genotype-mp.tsv or created file was empty
 # Error: output/tsv/oma_protein-ensembl_gene.tsv new file size per old 0 / 86222314 = 0.0 < 0.5
 # Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
-# Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 15732849 = 0.0 < 0.5
-# Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
 # Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
@@ -58,4 +113,3 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
 # Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines
-# Error: output/ttl/label/mgi_genotype.ttl new file size per old 162 / 10219056 = 1.5852736299713006e-05 < 0.5
