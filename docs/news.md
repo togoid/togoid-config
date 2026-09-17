@@ -1,5 +1,12 @@
 Datasets last updated: 2026-09-15
 
+# *NOTICE*
+The default behavior of API endpoints that take IDs as input and return IDs as output, such as the `convert` endpoint, will change.  
+Until now, IDs such as `GO` and `MONDO`, which are normally used with prefixes such as `GO:` or `MONDO:`, had to be provided to the API without their prefixes, and were also returned without prefixes in the output.  
+With the planned change, IDs in both input and output will include these prefixes.  
+The change is scheduled to take place on September 24, 2026 (JST).  
+To retain the current behavior, specify `prefix=no`.
+
 # 2026-09-15
 - New pairs have been added.
   - `cellosaurus-cl`
