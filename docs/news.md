@@ -1,5 +1,14 @@
 Datasets last updated: 2026-09-15
 
+# 2026-09-15
+- New pairs have been added.
+  - `cellosaurus-cl`
+  - `cellosaurus-uberon`
+  - `mondo-cl`
+  - `mondo-uberon`
+  - `cl-uberon`
+  - `uberon-cl`
+
 # 2026-07-07
 - New pairs have been added.
   - `uniprot-insdc_cds`
