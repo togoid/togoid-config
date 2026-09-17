@@ -2254,7 +2254,7 @@
     rdfs:range :Anatomy ;
     owl:inverseOf :TIO_000151 ;
     rdfs:label "cell line derives from tissue" ;
-    :display_label "derives from" .
+    :display_label "derives from (in situ)" .
 
 :TIO_000151
     a owl:ObjectProperty ;
@@ -2263,7 +2263,7 @@
     rdfs:range :CellLine ;
     owl:inverseOf :TIO_000150 ;
     rdfs:label "tissue is origin of cell line" ;
-    :display_label "is origin of" .
+    :display_label "is origin of (in situ)" .
 
 :TIO_000152
     a owl:ObjectProperty ;
@@ -2272,7 +2272,7 @@
     rdfs:range :Anatomy ;
     owl:inverseOf :TIO_000153 ;
     rdfs:label "cell line derives from metastatic tissue" ;
-    :display_label "derives from" .
+    :display_label "derives from (metastatic)" .
 
 :TIO_000153
     a owl:ObjectProperty ;
@@ -2281,7 +2281,7 @@
     rdfs:range :CellLine ;
     owl:inverseOf :TIO_000152 ;
     rdfs:label "metastatic tissue is origin of cell line" ;
-    :display_label "is origin of" .
+    :display_label "is origin of (metastatic)" .
 
 :TiO_000154
     a owl:ObjectProperty ;

@@ -147,10 +147,10 @@ TIO_000146	cell line originates from organism	originates from	TIO_000147	CellLin
 TIO_000147	organism is origin of cell line	is origin of	TIO_000146	Organism	CellLine
 TIO_000148	cell line derives from cell	derives from	TIO_000149	CellLine	Anatomy
 TIO_000149	cell is origin of cell line	is origin of	TIO_000148	Anatomy	CellLine
-TIO_000150	cell line derives from tissue	derives from	TIO_000151	CellLine	Anatomy
-TIO_000151	tissue is origin of cell line	is origin of	TIO_000150	Anatomy	CellLine
-TIO_000152	cell line derives from metastatic tissue	derives from	TIO_000153	CellLine	Anatomy
-TIO_000153	metastatic tissue is origin of cell line	is origin of	TIO_000152	Anatomy	CellLine
+TIO_000150	cell line derives from tissue	derives from (in situ)	TIO_000151	CellLine	Anatomy
+TIO_000151	tissue is origin of cell line	is origin of (in situ)	TIO_000150	Anatomy	CellLine
+TIO_000152	cell line derives from metastatic tissue	derives from (metastatic)	TIO_000153	CellLine	Anatomy
+TIO_000153	metastatic tissue is origin of cell line	is origin of (metastatic)	TIO_000152	Anatomy	CellLine
 TiO_000154	disease occurs in anatomical site	occurs in	TIO_000155	Phenotype	Anatomy
 TIO_000155	anatomical site is location of disease	is location of	TIO_000154	Anatomy	Phenotype
 TIO_000156	tissue has part cell	has part	TIO_000157	Anatomy	Anatomy
