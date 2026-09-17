@@ -151,7 +151,7 @@ TIO_000150	cell line derives from tissue	derives from (in situ)	TIO_000151	CellL
 TIO_000151	tissue is origin of cell line	is origin of (in situ)	TIO_000150	Anatomy	CellLine
 TIO_000152	cell line derives from metastatic tissue	derives from (metastatic)	TIO_000153	CellLine	Anatomy
 TIO_000153	metastatic tissue is origin of cell line	is origin of (metastatic)	TIO_000152	Anatomy	CellLine
-TiO_000154	disease occurs in anatomical site	occurs in	TIO_000155	Phenotype	Anatomy
+TIO_000154	disease occurs in anatomical site	occurs in	TIO_000155	Phenotype	Anatomy
 TIO_000155	anatomical site is location of disease	is location of	TIO_000154	Anatomy	Phenotype
 TIO_000156	tissue has part cell	has part	TIO_000157	Anatomy	Anatomy
 TIO_000157	cell is part of tissue	is part of	TIO_000156	Anatomy	Anatomy
