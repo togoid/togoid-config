@@ -83,7 +83,7 @@ hgnc-ccds.tsv	35503	35503	0	1
 hgnc-ec.tsv	2317	2317	0	1
 hgnc-ensembl_gene.tsv	42370	42370	0	1
 hgnc-hgnc_symbol.tsv	45054	45054	0	1
-hgnc-insdc.tsv	42687	42687	0	1
+hgnc-insdc.tsv	21136	42687	-21551	0.495139
 hgnc-lrg.tsv	1325	1325	0	1
 hgnc-mgi_gene.tsv	24081	24081	0	1
 hgnc-mirbase.tsv	1912	1912	0	1
@@ -320,4 +320,4 @@ wikipathways-lipidmaps.tsv	1729	1729	0	1
 wikipathways-ncbigene.tsv	32112	32112	0	1
 wikipathways-uniprot.tsv	5271	5271	0	1
 zfin_gene-zfin_transcript.tsv	48740	48740	0	1
-total	8619237189	8571424182	47813007	1.00558
+total	8619215638	8571424182	47791456	1.00558
