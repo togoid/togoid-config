@@ -1,11 +1,10 @@
-Datasets last updated: 2026-09-15
+Datasets last updated: 2026-09-19
 
-# *NOTICE*
-The default behavior of API endpoints that take IDs as input and return IDs as output, such as the `convert` endpoint, will change.  
-Until now, IDs such as `GO` and `MONDO`, which are normally used with prefixes such as `GO:` or `MONDO:`, were returned without prefixes in the API output.  
-With the planned change, IDs in output will include these prefixes.  
-The change is scheduled to take place on September 24, 2026 (JST).  
-To retain the current behavior, specify `prefix=no`.
+# *NOTICE* (2026-09-25)
+The default behavior of the API's `convert` endpoint, has been changed.  
+Previously, IDs such as `GO` and `MONDO`, which are normally used with prefixes such as `GO:` or `MONDO:`, were returned without prefixes in the API output.  
+With the change, IDs in output now include these prefixes ([example](https://api.togoid.dbcls.jp/convert?route=ncbigene,go&ids=9&report=full)).  
+To retain the previous behavior, specify `prefix=no` ([example](https://api.togoid.dbcls.jp/convert?route=ncbigene,go&ids=9&report=full&prefix=no)).
 
 # 2026-09-15
 - New pairs have been added.
