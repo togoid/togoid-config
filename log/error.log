@@ -3,12 +3,18 @@ curl: (22) The requested URL returned error: 403
 Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip): Command failed with status (22): [curl -sS -R -f -L -o 'input/hmdb/hmdb_meta...]
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
+/data/togoid/local/lib/ruby/gems/3.0.0/gems/intermine-1.05.00/lib/intermine/service.rb:176:in `rescue in initialize': Error fetching version at https://www.mousemine.org/mousemine/service/version: 503 (InterMine::ServiceError)
+: 503 (InterMine::ServiceError)
+Error: ruby bin/query_mousemine.rb: Command failed with status (1): [ruby bin/query_mousemine.rb > input/mgi_ge...]
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (22): [curl -sS -R -f -L -o 'input/togovar/tgvid2...]
@@ -24,13 +30,16 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
-# Error: output/tsv/hgnc-insdc.tsv new file size per old 300803 / 688960 = 0.43660444728286113 < 0.5
 # Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
-# Error: output/tsv/oma_protein-ensembl_gene.tsv new file size per old 0 / 86222314 = 0.0 < 0.5
-# Error: Failed to create output/tsv/oma_protein-ensembl_gene.tsv or created file was empty
+# Error: output/tsv/mgi_genotype-doid.tsv new file size per old 0 / 114278 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mgi_genotype-doid.tsv or created file was empty
+# Error: output/tsv/mgi_genotype-mgi_allele.tsv new file size per old 0 / 2005600 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mgi_genotype-mgi_allele.tsv or created file was empty
+# Error: output/tsv/mgi_genotype-mp.tsv new file size per old 0 / 6440592 = 0.0 < 0.5
+# Error: Failed to create output/tsv/mgi_genotype-mp.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
 # Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
@@ -43,3 +52,4 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
 # Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines
+# Error: output/ttl/label/mgi_genotype.ttl new file size per old 162 / 10219056 = 1.5852736299713006e-05 < 0.5
