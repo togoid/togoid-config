@@ -21,11 +21,20 @@ DB1ID3	DB2IDz
 
 Resolve dependencies of update procedure and preparation of common input files for each source DB.
 
-* Prepare: For each config/source-target configuration, prepare common input files of the source database to extract information (if any).
-* Prepare: Compare the timestamp and/or file sizes of remote files with local files previously downloaded.
-* Update: If the timestamp is newer than previously generated link data (TSV), execute the update procedure.
-* Update: For the databases which don't have timestamp (e.g., the data source is a SPARQL endpoint), execute the update procedure only when the TSV file is older than given age (e.g., >7 days).
-* Convert: If the timestamp of RDF data (TTL) is older than previously generated link data (TSV), execute the convert procedure.
+* Prepare: For each config/source-target configuration, prepare common input files of the source database under `input/<source>/` by the `prepare:<source>` task (if defined).
+  * Compare the timestamp and/or file sizes of remote files with local files previously downloaded, and download only when they are updated.
+  * When any file is downloaded, the timestamp of `input/<source>/download.lock` is updated.
+* Update: Execute the update procedure (`method` in config.yaml) and generate link data (`output/tsv/db1-db2.tsv`) when one of the following conditions is met:
+  * The TSV file does not exist or is empty.
+  * The TSV file is older than the config.yaml file.
+  * The TSV file is older than `input/<source>/download.lock`.
+  * For the databases which don't have `download.lock` (e.g., the data source is a SPARQL endpoint), the TSV file is older than 5 days (`$duration` in the Rakefile).
+* Validate: The newly generated TSV file is validated, and the previous TSV file is restored if the validation fails. The TSV file is regarded as invalid when:
+  * The file is empty.
+  * The file size is less than half of the previous one (`$minratio`).
+  * The first and last 10 lines (`$chklines`) contain lines other than "ID tab ID" (e.g., HTML tags, malformed lines, or 2 or more empty lines (`$maxblank`)).
+* Convert: Generate RDF data (`output/ttl/relation/db1-db2.ttl`) when the TTL file does not exist, is empty, or is older than the TSV file.
+* ID-label: For the datasets which have `method` in dataset.yaml, generate ID-label RDF data (`output/ttl/label/<dataset>.ttl`) when the TTL file does not exist, is empty, or is older than `input/<dataset>/download.lock` (or 5 days old if there is no `download.lock`). The result is validated in the same way as TSV files (file size and syntax check by rapper).
 
 ### dataset.yaml
 
@@ -181,7 +190,13 @@ Dependencies:
 * [ruby](https://www.ruby-lang.org/) and rake (default bundle in ruby)
 * [docker](https://www.docker.com/) described below or install all dependent UNIX commands used in the config.yaml files
 
-To update and convert all files:
+To list available tasks:
+
+```sh
+% rake -T
+```
+
+To prepare, update and convert all files (the default task runs `prepare:all`, `update`, `convert` and `id_label` in this order):
 
 ```
 % rake >& `date +%F`.log
@@ -193,7 +208,14 @@ To update and convert all files in parallel:
 % rake -m -j 4
 ```
 
-To update all TSV files:
+To prepare input files of all source databases, or of a specific database (e.g., HGNC):
+
+```sh
+% rake prepare:all
+% rake prepare:hgnc
+```
+
+To update all TSV files (input files are also prepared for each source database):
 
 ```sh
 % rake update
@@ -203,6 +225,12 @@ To convert all TSV files into Turtle files:
 
 ```sh
 % rake convert
+```
+
+To generate all ID-label Turtle files:
+
+```sh
+% rake id_label
 ```
 
 To update a 'output/tsv/db1-db2.tsv' file:
@@ -215,6 +243,28 @@ To obtain a 'output/ttl/relation/db1-db2.ttl' file:
 
 ```sh
 % rake output/ttl/relation/db1-db2.ttl
+```
+
+To obtain a 'output/ttl/label/dataset.ttl' file:
+
+```sh
+% rake output/ttl/label/dataset.ttl
+```
+
+#### Upload to AWS S3
+
+The following tasks require the [AWS CLI](https://aws.amazon.com/cli/). The bucket name and the path of the update list can be changed by the environment variables `S3_BUCKET_NAME` (default: `togo-id-production`) and `TOGOID_UPDATE_TXT` (default: `output/tsv/update.txt`).
+
+To show TSV files which differ from those in the S3 bucket:
+
+```sh
+% rake aws:show_updated
+```
+
+To create the list of updated TSV files (`update.txt`) and upload TSV files and the list to the S3 bucket:
+
+```sh
+% rake aws:update
 ```
 
 #### Rakefile in Docker
@@ -238,10 +288,10 @@ $ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v 
 
 ### togoid-config
 
-To test the syntax of the config YAML file:
+To check the syntax of the config YAML file (the parsed config is printed to STDERR; `check` is the default mode and can be omitted):
 
 ```sh
-% ruby bin/togoid-config config/db1-db2 test
+% ruby bin/togoid-config config/db1-db2 check
 ```
 
 To update link data (output/tsv/db1-db2.tsv) from the data source:
@@ -255,6 +305,8 @@ To generate a RDF/Turtle file (output/ttl/relation/db1-db2.ttl) for the given li
 ```sh
 % ruby bin/togoid-config config/db1-db2 convert
 ```
+
+Note that using `togoid-config` directly does not prepare input files nor validate the output; use the Rakefile (e.g., `rake output/tsv/db1-db2.tsv`) for these.
 
 ### togoid-config-summary
 
