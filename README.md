@@ -21,11 +21,20 @@ DB1ID3	DB2IDz
 
 Resolve dependencies of update procedure and preparation of common input files for each source DB.
 
-* Prepare: For each config/source-target configuration, prepare common input files of the source database to extract information (if any).
-* Prepare: Compare the timestamp and/or file sizes of remote files with local files previously downloaded.
-* Update: If the timestamp is newer than previously generated link data (TSV), execute the update procedure.
-* Update: For the databases which don't have timestamp (e.g., the data source is a SPARQL endpoint), execute the update procedure only when the TSV file is older than given age (e.g., >7 days).
-* Convert: If the timestamp of RDF data (TTL) is older than previously generated link data (TSV), execute the convert procedure.
+* Prepare: For each config/source-target configuration, prepare common input files of the source database under `input/<source>/` by the `prepare:<source>` task (if defined).
+  * Compare the timestamp and/or file sizes of remote files with local files previously downloaded, and download only when they are updated.
+  * When any file is downloaded, the timestamp of `input/<source>/download.lock` is updated.
+* Update: Execute the update procedure (`method` in config.yaml) and generate link data (`output/tsv/db1-db2.tsv`) when one of the following conditions is met:
+  * The TSV file does not exist or is empty.
+  * The TSV file is older than the config.yaml file.
+  * The TSV file is older than `input/<source>/download.lock`.
+  * For the databases which don't have `download.lock` (e.g., the data source is a SPARQL endpoint), the TSV file is older than 5 days (`$duration` in the Rakefile).
+* Validate: The newly generated TSV file is validated, and the previous TSV file is restored if the validation fails. The TSV file is regarded as invalid when:
+  * The file is empty.
+  * The file size is less than half of the previous one (`$minratio`).
+  * The first and last 10 lines (`$chklines`) contain lines other than "ID tab ID" (e.g., HTML tags, malformed lines, or 2 or more empty lines (`$maxblank`)).
+* Convert: Generate RDF data (`output/ttl/relation/db1-db2.ttl`) when the TTL file does not exist, is empty, or is older than the TSV file.
+* ID-label: For the datasets which have `method` in dataset.yaml, generate ID-label RDF data (`output/ttl/label/<dataset>.ttl`) when the TTL file does not exist, is empty, or is older than `input/<dataset>/download.lock` (or 5 days old if there is no `download.lock`). The result is validated in the same way as TSV files (file size and syntax check by rapper).
 
 ### dataset.yaml
 
@@ -37,37 +46,81 @@ ec:
   # Human readable label of the dataset (intended to be used in a Web UI)
   label: Enzyme nomenclature
   # Database identifier provided by the Integbio Database Catalog https://integbio.jp/dbcatalog/
+  # Use an empty string (catalog: "") if there is no corresponding catalog ID for the dataset.
   catalog: nbdc01883
   # Primary category of the database (category must be defined in the TogoID ontology)
   category: Function
   # Regular expression used for automatic detection of the dataset from identifiers given by users.
   # If only a part of the user input should be recognized as an identifier, use a named capture to indicate the part.
   regex: '^(?:EC:)?(?<id>\d+\.(?:(?:-\.-\.-)|\d+\.(?:(?:-\.-)|\d+\.(?:-|n?\d+))))$'
-  # URI prefix (intended to be used as a URI prefix in RDF)
-  prefix: http://identifiers.org/ec-code/
-  # (Optional) ID format that can be options for output (intended to be used in a Web UI)
-  format: ["EC:%s"]
+  # List of URI prefixes. Each item has a label and a URI prefix.
+  # Exactly one item must have `rdf: true`; its URI is used as the URI prefix in RDF.
+  # The other items are used as links to external resources (intended to be used in a Web UI).
+  prefix:
+    - label: 'identifiers.org'
+      uri: 'http://identifiers.org/ec-code/'
+      rdf: true
+    - label: 'BRENDA'
+      uri: 'https://www.brenda-enzymes.org/enzyme.php?ecno='
+    - label: 'KEGG'
+      uri: 'https://www.genome.jp/dbget-bin/www_bget?ec:'
+  # (Optional) ID formats that can be options for output (intended to be used in a Web UI)
+  format: ["%s","EC:%s"]
   # Example IDs which are accepted by the TogoID service (thus different types of IDs can be included)
   examples:
     - ["1.6.3.1","2.4.1.353","1.1.1.288","1.5.1.2","3.1.1.71","1.3.1.31","3.5.1.29","1.16.1.1","3.1.3.48","2.3.1.138"]
     - ["EC:1.6.3.1","EC:2.4.1.353","EC:1.1.1.288","EC:1.5.1.2","EC:3.1.1.71","EC:1.3.1.31","EC:3.5.1.29","EC:1.16.1.1","EC:3.1.3.48","EC:2.3.1.138"]
-  # (Optional) Command to create an id-label tsv file
+  # (Optional) Command to create an id-label tsv file (converted into output/ttl/label/<dataset>.ttl)
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/ec_label.rq https://rdfportal.org/sib/sparql
-hgnc:
-  label: HGNC
-  catalog: nbdc01774
-  category: Gene
-  prefix: http://identifiers.org/hgnc/
+  # (Optional) Description of the dataset in Markdown (English and Japanese)
+  description: "..."
+  description_ja: "..."
 pubchem_compound:
   label: PubChem compound
   catalog: nbdc00641
   category: Compound
-  prefix: 'https://identifiers.org/pubchem.compound/'
-pubchem_substance:
-  label: PubChem substance
-  catalog: nbdc00642
-  category: Compound
-  prefix: 'https://identifiers.org/pubchem.substance/'
+  regex: '^(?:CID)?(?<id>\d+)$'
+  prefix:
+    - label: 'PubChem'
+      uri: 'https://pubchem.ncbi.nlm.nih.gov/compound/'
+    - label: 'rdf'
+      uri: 'http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID'
+      rdf: true
+  format: ["%s","CID%s"]
+  examples:
+    - ["9548669","160419","9869929","76333303","9868491","27854","76329169","3448","296","10371227"]
+    - ["CID9548669","CID160419","CID9869929","CID76333303","CID9868491","CID27854","CID76329169","CID3448","CID296","CID10371227"]
+```
+
+Some datasets have additional optional keys used by the TogoID Web application:
+
+```yaml
+chebi:
+  # (Optional) Settings for converting labels (names, synonyms, etc.) given by users into IDs
+  label_resolver:
+    threshold: true
+    dictionaries:
+      - label: Name
+        dictionary: togoid_chebi_label
+        label_type: label
+        preferred: true
+      - label: Exact synonym
+        dictionary: togoid_chebi_exact_synonym
+        label_type: exact_synonym
+  # (Optional) Annotations (attributes) of the IDs which can be shown in a Web UI
+  annotations:
+    - variable: mass
+      label: Molecular mass
+      # Set true if the values are numerical
+      numerical: true
+ensembl_transcript:
+  annotations:
+    - variable: transcript_flag
+      label: Transcript flags
+      # Possible values of the annotation
+      items: ["Ensembl canonical", "MANE Select", "GENCODE Basic"]
+      # Set true if an ID can have multiple values
+      is_list: true
 ```
 
 ### config.yaml
@@ -89,18 +142,67 @@ update:
   # How often the source data is updated
   frequency: Bimonthly
   # Update procedure of link data (can be a script name or a command line)
-  method: sparql_csv2tsv.sh query.rq "http://sparql.med2rdf.org/sparql"
+  method: sparql_csv2tsv.sh query.rq https://rdfportal.org/sib/sparql
 ```
 
 Recommended to use Dublin Core's Frequency Vocabulary [DCFreq](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/) terms to specify the update frequency.
 
+The `method` is executed in the config directory (e.g., `config/db1-db2/`), and the config directory and `bin/` are added to `PATH`. Thus files placed in the config directory (e.g., `query.rq`) and scripts in `bin/` can be referred to directly. The environment variable `$TOGOID_ROOT` points to the root of this repository (e.g., `$TOGOID_ROOT/input/hgnc/hgnc_complete_set.txt`).
+
+#### Multiple relations in a pair
+
+When a pair of datasets has multiple relations (e.g., different predicates for subsets of the links), describe a list of `link` and `update` in a config.yaml file:
+
+```yaml
+- link:
+    forward: TIO_000002
+    reverse: TIO_000002
+    file: sample1.tsv
+  update:
+    frequency: Monthly
+    method: sparql_csv2tsv.sh single_protein.rq https://rdfportal.org/ebi/sparql
+- link:
+    forward: TIO_000130
+    reverse: TIO_000131
+    file: sample2.tsv
+    # (Optional) Description of the relation
+    description: "The ChEMBL Target entries in this relation are of protein families. Each UniProt entry is a member of the families."
+  update:
+    frequency: Monthly
+    method: sparql_csv2tsv.sh protein_family.rq https://rdfportal.org/ebi/sparql
+```
+
+In this case, link data of each relation is written to `output/tsv/db1-db2-<forward predicate>.tsv` (e.g., `output/tsv/chembl_target-uniprot-TIO_000130.tsv`), and a copy of the first one is also written to `output/tsv/db1-db2.tsv`. The RDF of all relations is merged into a single `output/ttl/relation/db1-db2.ttl` file.
+
 ## Ontology
 
+TogoID ontology ([TIO](http://togoid.dbcls.jp/ontology/)) is introduced to semantically describe the datasets and the relations between datasets in TogoID.
+
+The master data of the ontology is maintained in a Google Spreadsheet (editable only by the administrators), and the files in the `ontology/` directory are generated from it:
+
+* `property.tsv`, `class.tsv`, `dataset.tsv`: Sheets of the spreadsheet exported as TSV
+* `togoid-ontology.ttl`: The ontology in Turtle generated from the TSV files
+* `togoid-ontology.rdf`, `togoid-ontology.nt`: The ontology in RDF/XML and N-Triples (the N-Triples file is used by `bin/togoid-config-summary` and `bin/togoid-config-summary-dot`)
+* `togoid-ontology.html`: HTML documentation of the ontology
+
 Dependencies:
+* curl, gawk
 * rapper command in [raptor](https://librdf.org/raptor/)
 * xsltproc command in [libxml](http://www.xmlsoft.org/)
 
-TogoID ontology ([TIO](http://togoid.dbcls.jp/ontology/)) is introduced to semantically describe the datasets and the relations between datasets in TogoID.
+To update the ontology after editing the spreadsheet:
+
+```sh
+% cd ontology
+# Download the TSV files from the spreadsheet
+% sh download_ontology_tsv.sh
+# Generate togoid-ontology.ttl from the TSV files
+% sh tsv2ttl.sh
+# Generate togoid-ontology.rdf, togoid-ontology.nt and togoid-ontology.html (rapper fails here if the Turtle has syntax errors)
+% sh owl2xhtml.sh
+# Make sure that only the intended changes are included, then commit
+% git diff
+```
 
 ## Usage
 
@@ -110,7 +212,13 @@ Dependencies:
 * [ruby](https://www.ruby-lang.org/) and rake (default bundle in ruby)
 * [docker](https://www.docker.com/) described below or install all dependent UNIX commands used in the config.yaml files
 
-To update and convert all files:
+To list available tasks:
+
+```sh
+% rake -T
+```
+
+To prepare, update and convert all files (the default task runs `prepare:all`, `update`, `convert` and `id_label` in this order):
 
 ```
 % rake >& `date +%F`.log
@@ -122,7 +230,14 @@ To update and convert all files in parallel:
 % rake -m -j 4
 ```
 
-To update all TSV files:
+To prepare input files of all source databases, or of a specific database (e.g., HGNC):
+
+```sh
+% rake prepare:all
+% rake prepare:hgnc
+```
+
+To update all TSV files (input files are also prepared for each source database):
 
 ```sh
 % rake update
@@ -134,16 +249,44 @@ To convert all TSV files into Turtle files:
 % rake convert
 ```
 
+To generate all ID-label Turtle files:
+
+```sh
+% rake id_label
+```
+
 To update a 'output/tsv/db1-db2.tsv' file:
 
 ```sh
 % rake output/tsv/db1-db2.tsv
 ```
 
-To obtain a 'output/ttl/db1-db2.ttl' file:
+To obtain a 'output/ttl/relation/db1-db2.ttl' file:
 
 ```sh
-% rake output/ttl/db1-db2.ttl
+% rake output/ttl/relation/db1-db2.ttl
+```
+
+To obtain a 'output/ttl/label/dataset.ttl' file:
+
+```sh
+% rake output/ttl/label/dataset.ttl
+```
+
+#### Upload to AWS S3
+
+The following tasks require the [AWS CLI](https://aws.amazon.com/cli/). The bucket name and the path of the update list can be changed by the environment variables `S3_BUCKET_NAME` (default: `togo-id-production`) and `TOGOID_UPDATE_TXT` (default: `output/tsv/update.txt`).
+
+To show TSV files which differ from those in the S3 bucket:
+
+```sh
+% rake aws:show_updated
+```
+
+To create the list of updated TSV files (`update.txt`) and upload TSV files and the list to the S3 bucket:
+
+```sh
+% rake aws:update
 ```
 
 #### Rakefile in Docker
@@ -167,10 +310,10 @@ $ docker run -it --rm --user $(id -u):$(id -g) -v $(pwd)/input:/togoid/input -v 
 
 ### togoid-config
 
-To test the syntax of the config YAML file:
+To check the syntax of the config YAML file (the parsed config is printed to STDERR; `check` is the default mode and can be omitted):
 
 ```sh
-% ruby bin/togoid-config config/db1-db2 test
+% ruby bin/togoid-config config/db1-db2 check
 ```
 
 To update link data (output/tsv/db1-db2.tsv) from the data source:
@@ -179,11 +322,13 @@ To update link data (output/tsv/db1-db2.tsv) from the data source:
 % ruby bin/togoid-config config/db1-db2 update
 ```
 
-To generate a RDF/Turtle file (output/ttl/db1-db2.ttl) for the given link data:
+To generate a RDF/Turtle file (output/ttl/relation/db1-db2.ttl) for the given link data:
 
 ```sh
 % ruby bin/togoid-config config/db1-db2 convert
 ```
+
+Note that using `togoid-config` directly does not prepare input files nor validate the output; use the Rakefile (e.g., `rake output/tsv/db1-db2.tsv`) for these.
 
 ### togoid-config-summary
 

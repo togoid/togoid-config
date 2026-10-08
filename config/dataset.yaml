@@ -1,6 +1,6 @@
 affy_probeset:
   label: Affymetrix probeset
-  catalog: FIXME
+  catalog: ""
   category: Probe
   regex: '^(?<id>\d{3,}(?:_[a-z])?_at)$'
   prefix:
@@ -12,7 +12,7 @@ affy_probeset:
   description: "The microarray probe set of [Affymetrix Human Genome U133 Plus 2.0 Array](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570)."
 assembly_insdc:
   label: Assembly INSDC
-  catalog: FIXME
+  catalog: ""
   category: Genome
   regex: '^(?<id>GCA_\d{9})(?:\.\d+)?$'
   prefix:
@@ -28,7 +28,7 @@ assembly_insdc:
     - ["GCA_000001215.4","GCA_000001405.29","GCA_000001545.3","GCA_000001635.9","GCA_000001735.2","GCA_000001765.3","GCA_000001895.4","GCA_000001905.1","GCA_000001985.1","GCA_000002035.4"]
 assembly_refseq:
   label: Assembly RefSeq
-  catalog: FIXME
+  catalog: ""
   category: Genome
   regex: '^(?<id>GCF_\d{9})(?:\.\d+)?$'
   prefix:
@@ -44,7 +44,7 @@ assembly_refseq:
     - ["GCF_000002035.6","GCF_009870125.1","GCF_000840205.1","GCF_000004195.4","GCF_000475195.1","GCF_000296755.1","GCF_000151885.1","GCF_000715135.1","GCF_001039355.2","GCF_000331145.1"]
 atc:
   label: ATC classification
-  catalog: FIXME
+  catalog: ""
   category: Drug
   regex: '^(?<id>[A-Z]\d{2}[A-Z]{2}\d{2})$'
   prefix:
@@ -190,7 +190,7 @@ chembl_target:
     - ["CHEMBL2788","CHEMBL3091264","CHEMBL3831324","CHEMBL5524","CHEMBL5597","CHEMBL3983","CHEMBL4187","CHEMBL3391681","CHEMBL5135","CHEMBL1255130"]
 cl:
   label: Cell Ontology
-  catalog: FIXME
+  catalog: ""
   category: Anatomy
   regex: '^CL[:_](?<id>\d{7})$'
   format: ["CL:%s","CL_%s"]
@@ -203,7 +203,7 @@ cl:
     - ["CL_0000138","CL_0000129","CL_0000623","CL_0002676","CL_2000045","CL_0002552","CL_0000731","CL_0000127","CL_1000458","CL_1001609"]
 clo:
   label: Cell Line Ontology
-  catalog: FIXME
+  catalog: ""
   category: CellLine
   regex: '^CLO[:_](?<id>\d{7})$'
   format: ["CLO:%s","CLO_%s"]
@@ -307,7 +307,7 @@ ec:
   method: sparql_csv2tsv.sh -w $TOGOID_ROOT/bin/sparql/ec_label.rq https://rdfportal.org/sib/sparql
 efo_disease:
   label: EFO disease
-  catalog: FIXME
+  catalog: ""
   category: Phenotype
   regex: '^EFO[:_](?<id>\d{7})$'
   prefix:
@@ -412,7 +412,7 @@ flybase_transcript:
   method: awk -F '\t' '!/^#/&&!a[$8]++{print $8 "\t" $9}' $TOGOID_ROOT/input/flybase/fbgn_fbtr_fbpp_expanded_fb_current.tsv
 gea:
   label: GEA
-  catalog: FIXME
+  catalog: ""
   category: Experiment
   regex: '^(?<id>E-GEAD-\d+)$'
   prefix:
@@ -445,7 +445,7 @@ geo_series:
     - ["GSE1","GSE43529","GSE8355","GSE49922","GSE17593","GSE17181","GSE177048","GSE196322","GSE59420","GSE157526","GSE57361"]
 glycomotif:
   label: GlycoMotif
-  catalog: FIXME
+  catalog: ""
   category: Glycan
   regex: '^(?:GM\.)?(?<id>G[0-9]{5}[A-Z]{2})$'
   prefix:
@@ -564,7 +564,7 @@ hp_phenotype:
     - ["HP_0001947","HP_0031592","HP_0012085","HP_0000956","HP_0025238","HP_0002861","HP_0001680","HP_0004417","HP_0001701","HP_0025084"]
 inchi_key:
   label: InChIKey
-  catalog: FIXME
+  catalog: ""
   category: Compound
   regex: '^(?<id>[A-Z]{14}\-[A-Z]{10}(?:\-[A-Z])?)$'
   prefix:
@@ -650,7 +650,7 @@ interpro:
   method: awk -F "\t" '$2=="name"{print $1 "\t" $3}' $TOGOID_ROOT/input/interpro/interpro.tsv
 iuphar_ligand:
   label: IUPHAR ligand
-  catalog: FIXME
+  catalog: ""
   category: Compound
   regex: '^(?<id>\d+)$'
   prefix:
@@ -683,7 +683,7 @@ jga_study:
     - ["JGAS000006","JGAS000008","JGAS000009","JGAS000012","JGAS000013","JGAS000014","JGAS000015","JGAS000016","JGAS000024","JGAS000026"]
 lipidmaps:
   label: LIPID MAPS
-  catalog: FIXME
+  catalog: ""
   category: Lipid
   regex: '^(?<id>LM(?:FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}(?:[0-9a-zA-Z]{4,6})?)$'
   prefix:
@@ -695,7 +695,7 @@ lipidmaps:
   method: awk -F "\t" '$2=="NAME"{print $1 "\t" $3}' $TOGOID_ROOT/input/lipidmaps/lipidmaps.tsv
 lncbook_gene:
   label: LncBook gene
-  catalog: FIXME
+  catalog: ""
   category: Gene
   regex: '^(?<id>HSALNG[0-9]{7})$'
   prefix:
@@ -876,7 +876,7 @@ mondo:
         label_type: broad_synonym
 mp:
   label: Mammalian Phenotype Ontology
-  catalog: FIXME
+  catalog: ""
   category: Phenotype
   regex: '^MP[:_](?<id>\d{7})$'
   prefix:
@@ -954,7 +954,7 @@ ncbigene:
       label: Full name
 ncit_disease:
   label: NCIt disease
-  catalog: FIXME
+  catalog: ""
   category: Phenotype
   regex: '^NCIT?[:_](?<id>C\d+)$'
   prefix:
@@ -970,7 +970,7 @@ ncit_disease:
     - ["C48829","C136825","C48613","C122795","C67107","C8417","C8936","C8644","C80331","C80342"]
 ncit_tissue:
   label: NCIt tissue
-  catalog: FIXME
+  catalog: ""
   category: Anatomy
   regex: '^NCIT?[:_](?<id>C\d+)$'
   prefix:
@@ -1066,7 +1066,7 @@ orphanet_phenotype:
     - ["Orphanet_101078","Orphanet_596","Orphanet_1934","Orphanet_1047","Orphanet_60025","Orphanet_166090","Orphanet_275745","Orphanet_1171","Orphanet_93277","Orphanet_247598"]
 pathbank:
   label: Pathbank
-  catalog: FIXME
+  catalog: ""
   category: Pathway
   regex: '^(?<id>SMP\d+)$'
   prefix:
@@ -1324,7 +1324,7 @@ rhea:
     - ["10253","10818","13517","11136","13729","10240","11728","16870","10732","11278"]
 rnacentral:
   label: RNAcentral
-  catalog: FIXME
+  catalog: ""
   category: Transcript
   regex: '^(?<id>URS[0-9A-F]{10}\_\d+)$'
   prefix:
@@ -1350,7 +1350,7 @@ sgd:
   method: awk -F '\t' -v 'db=SGD' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
 sio:
   label: SIO
-  catalog: FIXME
+  catalog: ""
   category: Classification
   regex: '^SIO[:_](?<id>\d{6})$'
   format: ["SIO:%s","SIO_%s"]
@@ -1542,7 +1542,7 @@ togovar:
     - ["tgv100005930","tgv100000890","tgv16331","tgv10000341","tgv21330879","tgv15847","tgv1354996","tgv100002132","tgv16568524","tgv62035164"]
 uberon:
   label: UBERON
-  catalog: FIXME
+  catalog: ""
   category: Anatomy
   regex: '^UBERON[:_](?<id>\d{7})$'
   prefix:
