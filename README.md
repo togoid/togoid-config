@@ -176,11 +176,33 @@ In this case, link data of each relation is written to `output/tsv/db1-db2-<forw
 
 ## Ontology
 
+TogoID ontology ([TIO](http://togoid.dbcls.jp/ontology/)) is introduced to semantically describe the datasets and the relations between datasets in TogoID.
+
+The master data of the ontology is maintained in a Google Spreadsheet (editable only by the administrators), and the files in the `ontology/` directory are generated from it:
+
+* `property.tsv`, `class.tsv`, `dataset.tsv`: Sheets of the spreadsheet exported as TSV
+* `togoid-ontology.ttl`: The ontology in Turtle generated from the TSV files
+* `togoid-ontology.rdf`, `togoid-ontology.nt`: The ontology in RDF/XML and N-Triples (the N-Triples file is used by `bin/togoid-config-summary` and `bin/togoid-config-summary-dot`)
+* `togoid-ontology.html`: HTML documentation of the ontology
+
 Dependencies:
+* curl, gawk
 * rapper command in [raptor](https://librdf.org/raptor/)
 * xsltproc command in [libxml](http://www.xmlsoft.org/)
 
-TogoID ontology ([TIO](http://togoid.dbcls.jp/ontology/)) is introduced to semantically describe the datasets and the relations between datasets in TogoID.
+To update the ontology after editing the spreadsheet:
+
+```sh
+% cd ontology
+# Download the TSV files from the spreadsheet
+% sh download_ontology_tsv.sh
+# Generate togoid-ontology.ttl from the TSV files
+% sh tsv2ttl.sh
+# Generate togoid-ontology.rdf, togoid-ontology.nt and togoid-ontology.html (rapper fails here if the Turtle has syntax errors)
+% sh owl2xhtml.sh
+# Make sure that only the intended changes are included, then commit
+% git diff
+```
 
 ## Usage
 
