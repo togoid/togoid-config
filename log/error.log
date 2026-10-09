@@ -4,7 +4,7 @@ Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_m
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (28): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
+Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
@@ -28,12 +28,8 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-doid.tsv new file size per old 0 / 114278 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mgi_genotype-doid.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-mgi_allele.tsv new file size per old 0 / 2005600 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mgi_genotype-mgi_allele.tsv or created file was empty
-# Error: output/tsv/mgi_genotype-mp.tsv new file size per old 0 / 6440592 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mgi_genotype-mp.tsv or created file was empty
+# Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 15732849 = 0.0 < 0.5
+# Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
 # Error: output/tsv/togovar-dbsnp.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-ensembl_gene.tsv new file size per old 1 / 2035776572 = 4.912130406420651e-10 < 0.5
@@ -46,4 +42,15 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
 # Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines
-# Error: output/ttl/label/mgi_genotype.ttl new file size per old 162 / 10219056 = 1.5852736299713006e-05 < 0.5
+# Error: output/tsv/wikipathways-chebi.tsv new file size per old 0 / 79646 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-chebi.tsv or created file was empty
+# Error: output/tsv/wikipathways-doid.tsv new file size per old 0 / 16326 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-doid.tsv or created file was empty
+# Error: output/tsv/wikipathways-hmdb.tsv new file size per old 0 / 77651 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-hmdb.tsv or created file was empty
+# Error: output/tsv/wikipathways-lipidmaps.tsv new file size per old 0 / 34547 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-lipidmaps.tsv or created file was empty
+# Error: output/tsv/wikipathways-ncbigene.tsv new file size per old 0 / 394933 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-ncbigene.tsv or created file was empty
+# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 0 / 73536 = 0.0 < 0.5
+# Error: Failed to create output/tsv/wikipathways-uniprot.tsv or created file was empty
