@@ -4,11 +4,14 @@ Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_m
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (22): [curl -sS -R -f -L -o 'input/togovar/tgvid2...]
@@ -42,15 +45,3 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: output/tsv/togovar-ncbigene.tsv seems to contain >2 empty lines
 # Error: output/tsv/togovar-refseq_rna.tsv new file size per old 1 / 56951037604 = 1.7558942594748514e-11 < 0.5
 # Error: output/tsv/togovar-refseq_rna.tsv seems to contain >2 empty lines
-# Error: output/tsv/wikipathways-chebi.tsv new file size per old 0 / 79646 = 0.0 < 0.5
-# Error: Failed to create output/tsv/wikipathways-chebi.tsv or created file was empty
-# Error: output/tsv/wikipathways-doid.tsv new file size per old 0 / 16326 = 0.0 < 0.5
-# Error: Failed to create output/tsv/wikipathways-doid.tsv or created file was empty
-# Error: output/tsv/wikipathways-hmdb.tsv new file size per old 0 / 77651 = 0.0 < 0.5
-# Error: Failed to create output/tsv/wikipathways-hmdb.tsv or created file was empty
-# Error: output/tsv/wikipathways-lipidmaps.tsv new file size per old 0 / 34547 = 0.0 < 0.5
-# Error: Failed to create output/tsv/wikipathways-lipidmaps.tsv or created file was empty
-# Error: output/tsv/wikipathways-ncbigene.tsv new file size per old 0 / 394933 = 0.0 < 0.5
-# Error: Failed to create output/tsv/wikipathways-ncbigene.tsv or created file was empty
-# Error: output/tsv/wikipathways-uniprot.tsv new file size per old 0 / 73536 = 0.0 < 0.5
-# Error: Failed to create output/tsv/wikipathways-uniprot.tsv or created file was empty
