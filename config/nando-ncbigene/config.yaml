@@ -4,4 +4,4 @@ link:
   file: sample.tsv
 update:
   frequency: Irregular
-  method: sparql_csv2tsv.sh query.rq https://nanbyodata.jp/sparql
+  method: sparql_csv2tsv.sh query.rq https://nanbyodata.jp/sparql | awk -F "\t" '$2!="-"'
