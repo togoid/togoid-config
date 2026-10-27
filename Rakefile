@@ -234,11 +234,15 @@ module TogoID
 
     # Return true (needs update) when the TSV file is older than the timestamp file
     def check_tsv_timestamp(pair)
-      source = pair.split('-').first
-      input  = "input/#{source}/download.lock"
+      input  = input_lock_file(pair)
       output = tsv_file_name(pair)
       # If there is no timpestamp file (input), update the pair anyway
       file_older_than_stamp?(output, input)
+    end
+
+    # Timestamp file of the input directory prepared for the pair (e.g. input/ensembl/download.lock for ensembl_gene-ncbigene)
+    def input_lock_file(pair)
+      "input/#{prepare_name(pair) || pair.split('-').first}/download.lock"
     end
 
     # Return true (needs update) when the TTL file is older than the TSV file
@@ -378,81 +382,26 @@ module TogoID
 
   # Methods for preparation
   module Prepare
+    # Names of prepare tasks, which are also the directory names under input/ (drugbank is not implemented yet)
+    PREPARE_NAMES = %w[
+      affy_probeset bioproject biosample cellosaurus clinvar ensembl flybase glytoucan hgnc hmdb
+      homologene hp_phenotype cog interpro lipidmaps mgi_gene mgi_genotype mirbase ncbigene
+      oma_protein orphanet_phenotype pmc prosite reactome refseq_protein refseq_rna rhea rnacentral
+      sra swisslipids togovar uniprot taxonomy uniparc zfin
+    ]
+
+    # Return the prepare task name for the pair, or nil when no preparation is required
+    # The name matches the source dataset itself or its prefix followed by "_" (e.g. "ensembl" for "ensembl_gene-ncbigene")
+    def prepare_name(pair)
+      source = pair.split('-').first
+      PREPARE_NAMES.select { |name| source == name || source.start_with?("#{name}_") }.max_by(&:size)
+    end
+
     # Entry point for preparation
     def prepare_task(taskname)
-      case taskname
-#      when /#{OUTPUT_TSV_DIR}drugbank/
-#        return "prepare:drugbank"
-      when /#{OUTPUT_TSV_DIR}affy_probeset/
-        return "prepare:affy_probeset"
-      when /#{OUTPUT_TSV_DIR}bioproject/
-        return "prepare:bioproject"
-      when /#{OUTPUT_TSV_DIR}biosample/
-        return "prepare:biosample"
-      when /#{OUTPUT_TSV_DIR}cellosaurus/
-        return "prepare:cellosaurus"
-      when /#{OUTPUT_TSV_DIR}clinvar/
-        return "prepare:clinvar"
-      when /#{OUTPUT_TSV_DIR}ensembl/
-        return "prepare:ensembl"
-      when /#{OUTPUT_TSV_DIR}flybase/
-        return "prepare:flybase"
-      when /#{OUTPUT_TSV_DIR}glytoucan/
-        return "prepare:glytoucan"
-      when /#{OUTPUT_TSV_DIR}hgnc/
-        return "prepare:hgnc"
-      when /#{OUTPUT_TSV_DIR}hmdb/
-        return "prepare:hmdb"
-      when /#{OUTPUT_TSV_DIR}homologene/
-        return "prepare:homologene"
-      when /#{OUTPUT_TSV_DIR}hp_phenotype/
-        return "prepare:hp_phenotype"
-      when /#{OUTPUT_TSV_DIR}cog/
-        return "prepare:cog"
-      when /#{OUTPUT_TSV_DIR}interpro/
-        return "prepare:interpro"
-      when /#{OUTPUT_TSV_DIR}lipidmaps/
-        return "prepare:lipidmaps"
-      when /#{OUTPUT_TSV_DIR}mgi_gene/
-        return "prepare:mgi_gene"
-      when /#{OUTPUT_TSV_DIR}mgi_genotype/
-        return "prepare:mgi_genotype"
-      when /#{OUTPUT_TSV_DIR}mirbase/
-        return "prepare:mirbase"
-      when /#{OUTPUT_TSV_DIR}ncbigene/
-        return "prepare:ncbigene"
-      when /#{OUTPUT_TSV_DIR}oma_protein/
-        return "prepare:oma_protein"
-      when /#{OUTPUT_TSV_DIR}orphanet_phenotype/
-        return "prepare:orphanet_phenotype"
-      when /#{OUTPUT_TSV_DIR}pmc/
-        return "prepare:pmc"
-      when /#{OUTPUT_TSV_DIR}prosite/
-        return "prepare:prosite"
-      when /#{OUTPUT_TSV_DIR}reactome/
-        return "prepare:reactome"
-      when /#{OUTPUT_TSV_DIR}refseq_protein/
-        return "prepare:refseq_protein"
-      when /#{OUTPUT_TSV_DIR}refseq_rna/
-        return "prepare:refseq_rna"
-      when /#{OUTPUT_TSV_DIR}rhea/
-        return "prepare:rhea"
-      when /#{OUTPUT_TSV_DIR}rnacentral/
-        return "prepare:rnacentral"
-      when /#{OUTPUT_TSV_DIR}sra/
-        return "prepare:sra"
-      when /#{OUTPUT_TSV_DIR}swisslipids/
-        return "prepare:swisslipids"
-      when /#{OUTPUT_TSV_DIR}togovar/
-        return "prepare:togovar"
-      when /#{OUTPUT_TSV_DIR}uniprot/
-        return "prepare:uniprot"
-      when /#{OUTPUT_TSV_DIR}taxonomy/
-        return "prepare:taxonomy"
-      when /#{OUTPUT_TSV_DIR}uniparc/
-        return "prepare:uniparc"
-      when /#{OUTPUT_TSV_DIR}zfin/
-        return "prepare:zfin"
+      pair = taskname.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
+      if name = prepare_name(pair)
+        return "prepare:#{name}"
       else
         File.open("input/update.txt", "w")
         return "input/update.txt"
