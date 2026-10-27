@@ -1208,7 +1208,6 @@ pdb:
     method:
       version: "curl -sS https://raw.githubusercontent.com/rdfportal/website/refs/heads/main/assets/datasets/pdb/metadata.yaml | awk -F \": \" '$1==\"version\"{print $2}'"
     display: "[PDB RDF {version}](https://rdfportal.org/dataset/pdb/)"
-mesh:
 pdb_ccd:
   label: PDB CCD
   catalog: nbdc01766
