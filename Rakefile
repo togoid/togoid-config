@@ -1092,6 +1092,7 @@ namespace :prepare do
         input_url  = "https://omabrowser.org/All/#{filename}"
         if update_input_file?(input_file, input_url)
           download_file(INPUT_OMA_PROTEIN_DIR, input_url)
+          sh "curl -s https://omabrowser.org/api/version/ | jq -r '.oma_version' | sed -E 's/^All\.//g' > #{INPUT_OMA_PROTEIN_DIR}/oma_version.txt"
           updated = true
         end
       end

@@ -895,7 +895,7 @@ mgi_genotype:
   version:
     method:
       date: date -r $TOGOID_ROOT/input/mgi_genotype/mousemine_genotype.tsv +%Y-%m-%d
-    display: "MouseMine accessed at {date}"
+    display: "[MouseMine](https://www.mousemine.org/mousemine/api.do) accessed on {date}"
 mirbase:
   label: miRBase
   catalog: nbdc00136
@@ -1104,6 +1104,10 @@ oma_protein:
       rdf: true
   examples:
     - ["ACIB400217","ACIB400465","HUMAN00333","HUMAN01170","HUMAN00470","HUMAN03367","ACIB400486","HUMAN01061","HUMAN02190","HUMAN02112"]
+version:
+  method:
+    version: cat $TOGOID_ROOT/input/oma_protein/oma_version.txt
+  display: "OMA {version}"
 omim_gene:
   label: OMIM gene
   catalog: nbdc00154
@@ -1360,6 +1364,10 @@ reactome_pathway:
       rdf: true
   examples:
     - ["R-HSA-165159","R-DRE-1630316","R-SCE-9634635","R-DRE-140834","R-HSA-2142753","R-BTA-383280","R-MMU-5218900","R-RNO-5654219","R-MMU-8875791","R-MMU-9648025"]
+  version:
+    method:
+      version: head -1 $TOGOID_ROOT/input/reactome/reactome_stable_ids.txt | grep -oE "release [0-9]+"
+    display: "Reactome {version}"
 reactome_reaction:
   label: Reactome reaction
   catalog: nbdc00185
@@ -1371,6 +1379,10 @@ reactome_reaction:
       rdf: true
   examples:
     - ["R-DRE-1482961","R-DRE-6814409","R-HSA-2395869","R-HSA-1222722","R-HSA-893583","R-MMU-158484","R-HSA-8875071","R-HSA-372519","R-HSA-6797627","R-DRE-975814"]
+  version:
+    method:
+      version: head -1 $TOGOID_ROOT/input/reactome/reactome_stable_ids.txt | grep -oE "release [0-9]+"
+    display: "Reactome {version}"
 refseq_genomic:
   label: RefSeq genomic
   catalog: nbdc00187
@@ -1654,6 +1666,10 @@ swisslipids:
     - ["SLM:000000002","SLM:000000003","SLM:000000006","SLM:000000007","SLM:000000035", "SLM:000000042","SLM:000000043","SLM:000000044", "SLM:000000047","SLM:000000048"]
     - ["SLM_000000002","SLM_000000003","SLM_000000006","SLM_000000007","SLM_000000035", "SLM_000000042","SLM_000000043","SLM_000000044", "SLM_000000047","SLM_000000048"]
   method: awk -F "\t" 'FNR>=2{print gensub(/^SLM:/,"","g",$1) "\t" $3}' $TOGOID_ROOT/input/swisslipids/lipids.tsv
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/swisslipids/lipids.tsv +%Y-%m-%d
+    display: "SwissLipids: [lipids.tsv](https://www.swisslipids.org/#/downloads) ({date})"
 tair:
   label: TAIR
   catalog: nbdc00697
@@ -1814,6 +1830,10 @@ uniprot_proteome:
   method: zcat $TOGOID_ROOT/input/uniprot/uniprot_proteome.tab.gz | awk -F "\t" 'FNR>=2&&$1&&$4{print $1 "\t" $4}'
   description: 'This is a proteome dataset defined by UniProt. UniProt assigns IDs to the set of proteins expressed by a single organism. Since multiple genomes are often sequenced for the same organism, and a proteome is defined for each genome, proteome IDs to distinguish individual proteomes from the same taxonomy identifier were introduced. [More info](https://www.uniprot.org/help/proteome_id)'
   description_ja: 'UniProt によって定義されたプロテオームのデータセットで、単一の生物種が発現するタンパク質の集合に ID が割り当てられています。同じ生物種について複数のゲノム配列が決定されることがよくあり、それぞれのゲノムに対してプロテオームが定義されるため、同じ Taxonomy ID を持つ個々のプロテオームを区別するためにプロテオームの ID が導入されました。 [More info](https://www.uniprot.org/help/proteome_id)'
+  version:
+    method:
+      version: awk '/<version>/' $TOGOID_ROOT/input/uniprot/RELEASE.metalink | grep -oP "[\d_]+"
+    display: "UniProt release {version}: Proteome ID relations are retrieved from the UniProt REST API: [https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29](https://rest.uniprot.org/proteomes/stream?compressed=true&fields=upid%2Corganism_id%2Cgenome_assembly%2Corganism&format=tsv&query=%28%2A%29)"
 vgnc:
   label: VGNC
   catalog: nbdc02624
@@ -1841,6 +1861,10 @@ wikipathways:
   examples:
     - ["WP1531","WP4312","WP4877","WP5020","WP4400","WP4474","WP4183","WP3650","WP4545","WP4462"]
     - ["WP1531_r107120","WP4312_r104287","WP4877_r116595","WP5020_r114721","WP4400_r108112","WP4474_r102094","WP4183_r106890","WP3650_r110699","WP4545_r116235","WP4462_r102079"]
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/output/tsv/wikipathways-chebi.tsv +%Y-%m-%d
+    display: "[WikiPathways RDF](https://sparql.wikipathways.org/) accessed on {date}"
 wormbase_gene:
   label: WormBase gene
   catalog: nbdc00740
@@ -1883,6 +1907,10 @@ zfin_gene:
   examples:
     - ["ZDB-GENE-030131-9947","ZDB-GENE-030131-2670","ZDB-GENE-060929-100","ZDB-GENE-011101-3","ZDB-GENE-050411-94","ZDB-GENE-080204-28","ZDB-GENE-070424-32","ZDB-GENE-011205-22","ZDB-GENE-030131-3788","ZDB-GENE-130530-940"]
   method: awk -F '\t' -v 'db=ZFIN' 'match($6, db ":"){split($6,a,"|");for(k in a){if(match(a[k], "^" db ":"))print substr(a[k],length(db)+2) "\t" $3}}' $TOGOID_ROOT/input/ncbigene/gene_info
+  version:
+    method:
+      date: date -r $TOGOID_ROOT/input/zfin/transcripts.tsv +%Y-%m-%d
+    display: "ZFIN: [transcripts.txt](https://zfin.org/downloads) ({date})"
 zfin_transcript:
   label: ZFIN transcript
   catalog: nbdc00746
