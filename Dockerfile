@@ -7,6 +7,7 @@ RUN apt-get update -y && apt-get install -y \
       libany-uri-escape-perl=0.01-3 \
       libwww-perl=6.61-1 \
       curl \
+      jq \
       wget=1.21.2-2ubuntu1 \
       gawk=1:5.1.0-1build3 \
       python3=3.10.6-1~22.04.1 \

@@ -4,4 +4,4 @@ link:
   reverse: TIO_000033
 update:
   frequency: Monthly
-  method: curl -sS https://ddbj.nig.ac.jp/public/dblink/jga_study-pubmed_id/jga_study2pubmed_id.tsv
+  method: jq -r '.identifier as $id | .dbXrefs[] | select(.type == "pubmed") | [$id, .identifier] | @tsv' $TOGOID_ROOT/input/jga/jga_study.jsonl

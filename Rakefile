@@ -385,7 +385,7 @@ module TogoID
     # Names of prepare tasks, which are also the directory names under input/ (drugbank is not implemented yet)
     PREPARE_NAMES = %w[
       affy_probeset bioproject biosample cellosaurus clinvar ensembl flybase glytoucan hgnc hmdb
-      homologene hp_phenotype cog interpro lipidmaps mgi_gene mgi_genotype mirbase ncbigene
+      homologene hp_phenotype cog interpro jga lipidmaps mgi_gene mgi_genotype mirbase ncbigene
       oma_protein orphanet_phenotype pmc prosite reactome refseq_protein refseq_rna rhea rnacentral
       sra swisslipids togovar uniprot taxonomy uniparc zfin
     ]
@@ -559,7 +559,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
+  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :jga, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_AFFY_PROBESET_DIR    = "input/affy_probeset"
@@ -576,6 +576,7 @@ namespace :prepare do
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
+  directory INPUT_JGA_DIR         = "input/jga"
   directory INPUT_LIPIDMAPS_DIR   = "input/lipidmaps"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
@@ -862,6 +863,23 @@ namespace :prepare do
           sh "ln -fs #{input_filename} #{INPUT_COG_DIR}/cog-latest.def.tab"
           updated = true
         end
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for JGA"
+  task :jga => INPUT_JGA_DIR do
+    $stderr.puts "## Prepare input files for JGA"
+    download_lock(INPUT_JGA_DIR) do
+      updated = false
+      # Retrieve all JGA Study entries from DDBJ Search API and save them as JSON Lines (one entry per line)
+      input_file = "#{INPUT_JGA_DIR}/jga_study.jsonl"
+      if file_older_than_days?(input_file)
+        # Write to a temporary file first not to break the existing file when the retrieval fails
+        sh "python bin/ddbj_search_entries.py jga-study > #{input_file}.tmp"
+        mv "#{input_file}.tmp", input_file
+        updated = true
       end
       updated
     end
