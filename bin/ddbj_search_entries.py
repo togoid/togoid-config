@@ -19,6 +19,14 @@ def fetch(url):
         return json.load(res)
 
 
+def is_truncated(item):
+    """Return True when dbXrefs is truncated by dbXrefsLimit"""
+    counts = {}
+    for xref in item.get("dbXrefs") or []:
+        counts[xref["type"]] = counts.get(xref["type"], 0) + 1
+    return any(counts.get(t, 0) < n for t, n in (item.get("dbXrefsCount") or {}).items())
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit(f"Usage: {sys.argv[0]} <type>")
@@ -34,6 +42,10 @@ def main():
             if item["identifier"] in seen:
                 continue
             seen.add(item["identifier"])
+            if is_truncated(item):
+                # Retrieve all dbXrefs of the entry (e.g. E-GEAD-759 has more than 1000 BioSamples)
+                url = f"{API_URL}/{entry_type}/{urllib.parse.quote(item['identifier'])}/dbxrefs.json"
+                item["dbXrefs"] = fetch(url)["dbXrefs"]
             print(json.dumps(item, ensure_ascii=False))
         if not data["pagination"]["hasNext"]:
             break

@@ -384,7 +384,7 @@ module TogoID
   module Prepare
     # Names of prepare tasks, which are also the directory names under input/ (drugbank is not implemented yet)
     PREPARE_NAMES = %w[
-      affy_probeset bioproject biosample cellosaurus clinvar ensembl flybase glytoucan hgnc hmdb
+      affy_probeset bioproject biosample cellosaurus clinvar ensembl flybase gea glytoucan hgnc hmdb
       homologene hp_phenotype cog interpro jga lipidmaps mgi_gene mgi_genotype mirbase ncbigene
       oma_protein orphanet_phenotype pmc prosite reactome refseq_protein refseq_rna rhea rnacentral
       sra swisslipids togovar uniprot taxonomy uniparc zfin
@@ -559,7 +559,7 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :jga, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
+  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :gea, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :jga, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_AFFY_PROBESET_DIR    = "input/affy_probeset"
@@ -569,6 +569,7 @@ namespace :prepare do
   directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_FLYBASE_DIR     = "input/flybase"
+  directory INPUT_GEA_DIR         = "input/gea"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
@@ -737,6 +738,23 @@ namespace :prepare do
         updated = true
       end
       sh "mv #{INPUT_FLYBASE_DIR}/index.html #{INPUT_FLYBASE_DIR}/filelist.html"
+      updated
+    end
+  end
+
+  desc "Prepare required files for GEA"
+  task :gea => INPUT_GEA_DIR do
+    $stderr.puts "## Prepare input files for GEA"
+    download_lock(INPUT_GEA_DIR) do
+      updated = false
+      # Retrieve all GEA entries from DDBJ Search API and save them as JSON Lines (one entry per line)
+      input_file = "#{INPUT_GEA_DIR}/gea.jsonl"
+      if file_older_than_days?(input_file)
+        # Write to a temporary file first not to break the existing file when the retrieval fails
+        sh "python bin/ddbj_search_entries.py gea > #{input_file}.tmp"
+        mv "#{input_file}.tmp", input_file
+        updated = true
+      end
       updated
     end
   end
