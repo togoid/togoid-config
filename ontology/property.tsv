@@ -155,3 +155,5 @@ TIO_000154	disease occurs in anatomical site	occurs in	TIO_000155	Phenotype	Anat
 TIO_000155	anatomical site is location of disease	is location of	TIO_000154	Anatomy	Phenotype
 TIO_000156	tissue has part cell	has part	TIO_000157	Anatomy	Anatomy
 TIO_000157	cell is part of tissue	is part of	TIO_000156	Anatomy	Anatomy
+TIO_000158	is genome of organism	is genome of	TIO_000159	Organism	Genome
+TIO_000159	organism has genome	has genome	TIO_000158	Genome	Organism

@@ -1,0 +1,7 @@
+link:
+  file: sample.tsv
+  forward: TIO_000078
+  reverse: TIO_000079
+update:
+  frequency: Monthly
+  method: awk -F "\t" '!/^#/ && $2 != "na" { sub(/\.[0-9]+$/, "", $1); print $1 "\t" $2 }' $TOGOID_ROOT/input/assembly_refseq/assembly_summary_refseq.txt

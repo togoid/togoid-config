@@ -384,7 +384,7 @@ module TogoID
   module Prepare
     # Names of prepare tasks, which are also the directory names under input/ (drugbank is not implemented yet)
     PREPARE_NAMES = %w[
-      affy_probeset bioproject biosample cellosaurus clinvar ensembl flybase gea glytoucan hgnc hmdb
+      affy_probeset assembly_insdc assembly_refseq bioproject biosample cellosaurus clinvar ensembl flybase gea glytoucan hgnc hmdb
       homologene hp_phenotype cog interpro jga lipidmaps mgi_gene mgi_genotype mirbase ncbigene
       oma_protein orphanet_phenotype pmc prosite reactome refseq_protein refseq_rna rhea rnacentral
       sra swisslipids togovar uniprot taxonomy uniparc zfin
@@ -559,10 +559,12 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :gea, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :jga, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
+  task :all => [ :affy_probeset, :assembly_insdc, :assembly_refseq, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :gea, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :jga, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_AFFY_PROBESET_DIR    = "input/affy_probeset"
+  directory INPUT_ASSEMBLY_INSDC_DIR  = "input/assembly_insdc"
+  directory INPUT_ASSEMBLY_REFSEQ_DIR = "input/assembly_refseq"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_BIOSAMPLE_DIR  = "input/biosample"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
@@ -626,6 +628,36 @@ namespace :prepare do
         updated = true
       end
 
+      updated
+    end
+  end
+
+  desc "Prepare required files for Assembly (INSDC)"
+  task :assembly_insdc => INPUT_ASSEMBLY_INSDC_DIR do
+    $stderr.puts "## Prepare input files for Assembly (INSDC)"
+    download_lock(INPUT_ASSEMBLY_INSDC_DIR) do
+      updated = false
+      input_file = "#{INPUT_ASSEMBLY_INSDC_DIR}/assembly_summary_genbank.txt"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_genbank.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ASSEMBLY_INSDC_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for Assembly (RefSeq)"
+  task :assembly_refseq => INPUT_ASSEMBLY_REFSEQ_DIR do
+    $stderr.puts "## Prepare input files for Assembly (RefSeq)"
+    download_lock(INPUT_ASSEMBLY_REFSEQ_DIR) do
+      updated = false
+      input_file = "#{INPUT_ASSEMBLY_REFSEQ_DIR}/assembly_summary_refseq.txt"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ASSEMBLY_REFSEQ_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end
