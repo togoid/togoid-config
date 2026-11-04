@@ -14,6 +14,9 @@ class XMLHandler(xml.sax.ContentHandler):
         self.current_xrefdb = ""
         self.current_content = ""
         self.current_pmids = []
+        self.current_link_ref = ""
+        self.current_hierarchical_type = ""
+        self.current_umbrellas = []  # (member BioProject, umbrella BioProject)
 
     def startElement(self, tag, attrs):
         self.tag_stack.append(tag)
@@ -27,6 +30,14 @@ class XMLHandler(xml.sax.ContentHandler):
             self.current_pmids.append(attrs.getValue("id"))
         elif self.tag_stack == ["PackageSet", "Package", "Project", "Project", "ProjectDescr", "ExternalLink", "dbXREF"]:
             self.current_xrefdb = attrs.getValue("db")
+        elif self.tag_stack == ["PackageSet", "Package", "Project", "ProjectLinks", "Link", "ProjectIDRef"]:
+            self.current_link_ref = attrs.getValue("accession")
+        elif self.tag_stack == ["PackageSet", "Package", "Project", "ProjectLinks", "Link", "Hierarchical"]:
+            self.current_hierarchical_type = attrs.getValue("type")
+        elif self.tag_stack == ["PackageSet", "Package", "Project", "ProjectLinks", "Link", "Hierarchical", "MemberID"]:
+            # In a TopAdmin link, MemberID is the umbrella project of the project in ProjectIDRef
+            if self.current_hierarchical_type == "TopAdmin":
+                self.current_umbrellas.append((self.current_link_ref, attrs.getValue("accession")))
 
     def characters(self, content):
         if self.tag_stack == ["PackageSet", "Package", "Project", "Project", "ProjectDescr", "Title"]:
@@ -42,9 +53,14 @@ class XMLHandler(xml.sax.ContentHandler):
                 # ID might be PMC ID, DOI, etc. The type is not described in the xml.
                 if re.match(r"^[0-9]+$", pmid):
                     print(self.current_bpid, "PubMed", pmid, sep="\t")
+            for member, umbrella in self.current_umbrellas:
+                print(member, "Umbrella", umbrella, sep="\t")
         elif self.tag_stack == ["PackageSet", "Package", "Project", "Project", "ProjectDescr", "ExternalLink", "dbXREF", "ID"]:
             if self.current_xrefdb == "GEO":
                 print(self.current_bpid, "GEO", self.current_content, sep="\t")
+        elif self.tag_stack == ["PackageSet", "Package", "Project", "ProjectLinks", "Link"]:
+            self.current_link_ref = ""
+            self.current_hierarchical_type = ""
         self.tag_stack.pop()
         self.current_content = ""
 

@@ -234,11 +234,15 @@ module TogoID
 
     # Return true (needs update) when the TSV file is older than the timestamp file
     def check_tsv_timestamp(pair)
-      source = pair.split('-').first
-      input  = "input/#{source}/download.lock"
+      input  = input_lock_file(pair)
       output = tsv_file_name(pair)
       # If there is no timpestamp file (input), update the pair anyway
       file_older_than_stamp?(output, input)
+    end
+
+    # Timestamp file of the input directory prepared for the pair (e.g. input/ensembl/download.lock for ensembl_gene-ncbigene)
+    def input_lock_file(pair)
+      "input/#{prepare_name(pair) || pair.split('-').first}/download.lock"
     end
 
     # Return true (needs update) when the TTL file is older than the TSV file
@@ -378,81 +382,26 @@ module TogoID
 
   # Methods for preparation
   module Prepare
+    # Names of prepare tasks, which are also the directory names under input/ (drugbank is not implemented yet)
+    PREPARE_NAMES = %w[
+      affy_probeset assembly_insdc assembly_refseq bioproject biosample cellosaurus clinvar ensembl flybase gea glytoucan hgnc hmdb
+      homologene hp_phenotype cog interpro jga lipidmaps mgi_gene mgi_genotype mirbase ncbigene
+      oma_protein orphanet_phenotype pmc prosite reactome refseq_protein refseq_rna rhea rnacentral
+      sra swisslipids togovar uniprot taxonomy uniparc zfin
+    ]
+
+    # Return the prepare task name for the pair, or nil when no preparation is required
+    # The name matches the source dataset itself or its prefix followed by "_" (e.g. "ensembl" for "ensembl_gene-ncbigene")
+    def prepare_name(pair)
+      source = pair.split('-').first
+      PREPARE_NAMES.select { |name| source == name || source.start_with?("#{name}_") }.max_by(&:size)
+    end
+
     # Entry point for preparation
     def prepare_task(taskname)
-      case taskname
-#      when /#{OUTPUT_TSV_DIR}drugbank/
-#        return "prepare:drugbank"
-      when /#{OUTPUT_TSV_DIR}affy_probeset/
-        return "prepare:affy_probeset"
-      when /#{OUTPUT_TSV_DIR}bioproject/
-        return "prepare:bioproject"
-      when /#{OUTPUT_TSV_DIR}biosample/
-        return "prepare:biosample"
-      when /#{OUTPUT_TSV_DIR}cellosaurus/
-        return "prepare:cellosaurus"
-      when /#{OUTPUT_TSV_DIR}clinvar/
-        return "prepare:clinvar"
-      when /#{OUTPUT_TSV_DIR}ensembl/
-        return "prepare:ensembl"
-      when /#{OUTPUT_TSV_DIR}flybase/
-        return "prepare:flybase"
-      when /#{OUTPUT_TSV_DIR}glytoucan/
-        return "prepare:glytoucan"
-      when /#{OUTPUT_TSV_DIR}hgnc/
-        return "prepare:hgnc"
-      when /#{OUTPUT_TSV_DIR}hmdb/
-        return "prepare:hmdb"
-      when /#{OUTPUT_TSV_DIR}homologene/
-        return "prepare:homologene"
-      when /#{OUTPUT_TSV_DIR}hp_phenotype/
-        return "prepare:hp_phenotype"
-      when /#{OUTPUT_TSV_DIR}cog/
-        return "prepare:cog"
-      when /#{OUTPUT_TSV_DIR}interpro/
-        return "prepare:interpro"
-      when /#{OUTPUT_TSV_DIR}lipidmaps/
-        return "prepare:lipidmaps"
-      when /#{OUTPUT_TSV_DIR}mgi_gene/
-        return "prepare:mgi_gene"
-      when /#{OUTPUT_TSV_DIR}mgi_genotype/
-        return "prepare:mgi_genotype"
-      when /#{OUTPUT_TSV_DIR}mirbase/
-        return "prepare:mirbase"
-      when /#{OUTPUT_TSV_DIR}ncbigene/
-        return "prepare:ncbigene"
-      when /#{OUTPUT_TSV_DIR}oma_protein/
-        return "prepare:oma_protein"
-      when /#{OUTPUT_TSV_DIR}orphanet_phenotype/
-        return "prepare:orphanet_phenotype"
-      when /#{OUTPUT_TSV_DIR}pmc/
-        return "prepare:pmc"
-      when /#{OUTPUT_TSV_DIR}prosite/
-        return "prepare:prosite"
-      when /#{OUTPUT_TSV_DIR}reactome/
-        return "prepare:reactome"
-      when /#{OUTPUT_TSV_DIR}refseq_protein/
-        return "prepare:refseq_protein"
-      when /#{OUTPUT_TSV_DIR}refseq_rna/
-        return "prepare:refseq_rna"
-      when /#{OUTPUT_TSV_DIR}rhea/
-        return "prepare:rhea"
-      when /#{OUTPUT_TSV_DIR}rnacentral/
-        return "prepare:rnacentral"
-      when /#{OUTPUT_TSV_DIR}sra/
-        return "prepare:sra"
-      when /#{OUTPUT_TSV_DIR}swisslipids/
-        return "prepare:swisslipids"
-      when /#{OUTPUT_TSV_DIR}togovar/
-        return "prepare:togovar"
-      when /#{OUTPUT_TSV_DIR}uniprot/
-        return "prepare:uniprot"
-      when /#{OUTPUT_TSV_DIR}taxonomy/
-        return "prepare:taxonomy"
-      when /#{OUTPUT_TSV_DIR}uniparc/
-        return "prepare:uniparc"
-      when /#{OUTPUT_TSV_DIR}zfin/
-        return "prepare:zfin"
+      pair = taskname.sub(/#{OUTPUT_TSV_DIR}/, '').sub(/\.tsv$/, '')
+      if name = prepare_name(pair)
+        return "prepare:#{name}"
       else
         File.open("input/update.txt", "w")
         return "input/update.txt"
@@ -610,16 +559,19 @@ end
 
 namespace :prepare do
   desc "Prepare all"
-  task :all => [ :affy_probeset, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
+  task :all => [ :affy_probeset, :assembly_insdc, :assembly_refseq, :bioproject, :biosample, :cellosaurus, :clinvar, :ensembl, :flybase, :gea, :glytoucan, :hmdb, :hgnc, :homologene, :hp_phenotype, :cog, :interpro, :jga, :lipidmaps, :mgi_gene, :mgi_genotype, :mirbase, :ncbigene, :oma_protein, :orphanet_phenotype, :pmc, :prosite, :reactome, :refseq_protein, :refseq_rna, :rhea, :rnacentral, :sra, :swisslipids, :togovar, :uniprot, :taxonomy, :uniparc, :zfin ]
 
   directory INPUT_DRUGBANK_DIR    = "input/drugbank"
   directory INPUT_AFFY_PROBESET_DIR    = "input/affy_probeset"
+  directory INPUT_ASSEMBLY_INSDC_DIR  = "input/assembly_insdc"
+  directory INPUT_ASSEMBLY_REFSEQ_DIR = "input/assembly_refseq"
   directory INPUT_BIOPROJECT_DIR  = "input/bioproject"
   directory INPUT_BIOSAMPLE_DIR  = "input/biosample"
   directory INPUT_CELLOSAURUS_DIR = "input/cellosaurus"
   directory INPUT_CLINVAR_DIR     = "input/clinvar"
   directory INPUT_ENSEMBL_DIR     = "input/ensembl"
   directory INPUT_FLYBASE_DIR     = "input/flybase"
+  directory INPUT_GEA_DIR         = "input/gea"
   directory INPUT_HOMOLOGENE_DIR  = "input/homologene"
   directory INPUT_HP_PHENOTYPE_DIR  = "input/hp_phenotype"
   directory INPUT_COG_DIR         = "input/cog"
@@ -627,6 +579,7 @@ namespace :prepare do
   directory INPUT_HMDB_DIR        = "input/hmdb"
   directory INPUT_HGNC_DIR        = "input/hgnc"
   directory INPUT_INTERPRO_DIR    = "input/interpro"
+  directory INPUT_JGA_DIR         = "input/jga"
   directory INPUT_LIPIDMAPS_DIR   = "input/lipidmaps"
   directory INPUT_MGI_GENE_DIR    = "input/mgi_gene"
   directory INPUT_MGI_GENOTYPE_DIR    = "input/mgi_genotype"
@@ -675,6 +628,36 @@ namespace :prepare do
         updated = true
       end
 
+      updated
+    end
+  end
+
+  desc "Prepare required files for Assembly (INSDC)"
+  task :assembly_insdc => INPUT_ASSEMBLY_INSDC_DIR do
+    $stderr.puts "## Prepare input files for Assembly (INSDC)"
+    download_lock(INPUT_ASSEMBLY_INSDC_DIR) do
+      updated = false
+      input_file = "#{INPUT_ASSEMBLY_INSDC_DIR}/assembly_summary_genbank.txt"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_genbank.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ASSEMBLY_INSDC_DIR, input_url)
+        updated = true
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for Assembly (RefSeq)"
+  task :assembly_refseq => INPUT_ASSEMBLY_REFSEQ_DIR do
+    $stderr.puts "## Prepare input files for Assembly (RefSeq)"
+    download_lock(INPUT_ASSEMBLY_REFSEQ_DIR) do
+      updated = false
+      input_file = "#{INPUT_ASSEMBLY_REFSEQ_DIR}/assembly_summary_refseq.txt"
+      input_url  = "https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt"
+      if update_input_file?(input_file, input_url)
+        download_file(INPUT_ASSEMBLY_REFSEQ_DIR, input_url)
+        updated = true
+      end
       updated
     end
   end
@@ -787,6 +770,23 @@ namespace :prepare do
         updated = true
       end
       sh "mv #{INPUT_FLYBASE_DIR}/index.html #{INPUT_FLYBASE_DIR}/filelist.html"
+      updated
+    end
+  end
+
+  desc "Prepare required files for GEA"
+  task :gea => INPUT_GEA_DIR do
+    $stderr.puts "## Prepare input files for GEA"
+    download_lock(INPUT_GEA_DIR) do
+      updated = false
+      # Retrieve all GEA entries from DDBJ Search API and save them as JSON Lines (one entry per line)
+      input_file = "#{INPUT_GEA_DIR}/gea.jsonl"
+      if file_older_than_days?(input_file)
+        # Write to a temporary file first not to break the existing file when the retrieval fails
+        sh "python bin/ddbj_search_entries.py gea > #{input_file}.tmp"
+        mv "#{input_file}.tmp", input_file
+        updated = true
+      end
       updated
     end
   end
@@ -913,6 +913,23 @@ namespace :prepare do
           sh "ln -fs #{input_filename} #{INPUT_COG_DIR}/cog-latest.def.tab"
           updated = true
         end
+      end
+      updated
+    end
+  end
+
+  desc "Prepare required files for JGA"
+  task :jga => INPUT_JGA_DIR do
+    $stderr.puts "## Prepare input files for JGA"
+    download_lock(INPUT_JGA_DIR) do
+      updated = false
+      # Retrieve all JGA Study entries from DDBJ Search API and save them as JSON Lines (one entry per line)
+      input_file = "#{INPUT_JGA_DIR}/jga_study.jsonl"
+      if file_older_than_days?(input_file)
+        # Write to a temporary file first not to break the existing file when the retrieval fails
+        sh "python bin/ddbj_search_entries.py jga-study > #{input_file}.tmp"
+        mv "#{input_file}.tmp", input_file
+        updated = true
       end
       updated
     end

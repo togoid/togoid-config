@@ -4,11 +4,25 @@ Error: download_file(input/hmdb, https://hmdb.ca/system/downloads/current/hmdb_m
 Error: check_remote_file_time(input/homologene/homologene.data, https://ftp.ncbi.nlm.nih.gov/pub/HomoloGene/current/homologene.data): no time information in ""
 Error: Remote file is empty
 Error: check_remote_file_time(input/mirbase/mirna.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna....]
 Error: check_remote_file_time(input/mirbase/mirna_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
 Error: check_remote_file_time(input/mirbase/mirna_pre_mature.txt, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): no time information in ""
-Error: Remote file is empty
+curl: (22) The requested URL returned error: 500
+Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/database_files/mirna_pre_mature.txt): Command failed with status (22): [curl -sS -R -f -L -o 'input/mirbase/mirna_...]
+Error: check_remote_file_time(input/reactome/ChEBI2ReactomeReactions.txt, https://reactome.org/download/current/ChEBI2ReactomeReactions.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/Ensembl2ReactomeReactions.txt, https://reactome.org/download/current/Ensembl2ReactomeReactions.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/miRBase2ReactomeReactions.txt, https://reactome.org/download/current/miRBase2ReactomeReactions.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/NCBI2ReactomeReactions.txt, https://reactome.org/download/current/NCBI2ReactomeReactions.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/GtoP2ReactomeReactions.txt, https://reactome.org/download/current/GtoP2ReactomeReactions.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/UniProt2Reactome_All_Levels.txt, https://reactome.org/download/current/UniProt2Reactome_All_Levels.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/ChEBI2Reactome_All_Levels.txt, https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/Ensembl2Reactome_All_Levels.txt, https://reactome.org/download/current/Ensembl2Reactome_All_Levels.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/miRBase2Reactome_All_Levels.txt, https://reactome.org/download/current/miRBase2Reactome_All_Levels.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/NCBI2Reactome_All_Levels.txt, https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt): no time information in ""
+Error: check_remote_file_time(input/reactome/GtoP2Reactome_All_Levels.txt, https://reactome.org/download/current/GtoP2Reactome_All_Levels.txt): no time information in ""
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (22): [curl -sS -R -f -L -o 'input/togovar/tgvid2...]
@@ -24,8 +38,8 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/glycomotif-glytoucan.tsv or created file was empty
 # Error: output/tsv/glytoucan-doid.tsv new file size per old 0 / 4376 = 0.0 < 0.5
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
-# Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 0 / 4017692184 = 0.0 < 0.5
-# Error: Failed to create output/tsv/mbgd_gene-uniprot.tsv or created file was empty
+# Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 1 / 4017692184 = 2.4889910779685557e-10 < 0.5
+# Error: output/tsv/mbgd_gene-uniprot.tsv seems to contain >2 empty lines
 # Error: output/tsv/mbgd_organism-taxonomy.tsv new file size per old 0 / 81445 = 0.0 < 0.5
 # Error: Failed to create output/tsv/mbgd_organism-taxonomy.tsv or created file was empty
 # Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 15732849 = 0.0 < 0.5

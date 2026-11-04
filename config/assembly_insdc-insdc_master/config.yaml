@@ -4,4 +4,4 @@ link:
   reverse: TIO_000079
 update:
   frequency: Monthly
-  method: curl -sS https://ddbj.nig.ac.jp/public/dblink/assembly_genome-insdc/assembly_genome2insdc.tsv
+  method: awk -F "\t" '!/^#/ && $4 != "na" { sub(/\.[0-9]+$/, "", $1); sub(/\.[0-9]+$/, "", $4); print $1 "\t" $4 }' $TOGOID_ROOT/input/assembly_insdc/assembly_summary_genbank.txt

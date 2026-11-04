@@ -4,4 +4,4 @@ link:
   reverse: TIO_000107
 update:
   frequency: Monthly
-  method: curl -sS https://ddbj.nig.ac.jp/public/dblink/bioproject_umbrella-bioproject/bioproject_umbrella2bioproject.tsv | sed -e 's/\r//g'
+  method: awk -F "\t" '$2=="Umbrella"{print $3 "\t" $1}' $TOGOID_ROOT/input/bioproject/bioproject.tsv

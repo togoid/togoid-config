@@ -4,5 +4,5 @@ link:
   file: sample.tsv
 update:
   frequency: Yearly
-  method: sparql_csv2tsv.sh mbgd_organism.rq http://sparql.nibb.ac.jp/sparql > mbgd_organism.txt
-    && sparql_taxon.rb query.rq http://sparql.nibb.ac.jp/sparql mbgd_organism.txt
+  method: echo "" # sparql_csv2tsv.sh mbgd_organism.rq https://mbgd.nibb.ac.jp/sparql > mbgd_organism.txt
+    # && sparql_taxon.rb query.rq https://mbgd.nibb.ac.jp/sparql mbgd_organism.txt

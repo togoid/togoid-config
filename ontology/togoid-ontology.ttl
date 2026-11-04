@@ -2319,3 +2319,21 @@
     rdfs:label "cell is part of tissue" ;
     :display_label "is part of" .
 
+:TIO_000158
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Organism ;
+    rdfs:range :Genome ;
+    owl:inverseOf :TIO_000159 ;
+    rdfs:label "is genome of organism" ;
+    :display_label "is genome of" .
+
+:TIO_000159
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf :relation ;
+    rdfs:domain :Genome ;
+    rdfs:range :Organism ;
+    owl:inverseOf :TIO_000158 ;
+    rdfs:label "organism has genome" ;
+    :display_label "has genome" .
+
