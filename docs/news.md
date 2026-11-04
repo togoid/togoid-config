@@ -1,6 +1,14 @@
-Datasets last updated: 2026-10-24
+Datasets last updated: 2026-10-31
 
-# *NOTICE* (2026-09-25)
+# 2026-11-04
+- New pairs have been added.
+  - `assembly_insdc-taxonomy`
+  - `assembly_refseq-bioproject`
+  - `assembly_refseq-biosample`
+  - `assembly_refseq-insdc_master`
+  - `assembly_refseq-taxonomy`
+
+# 2026-09-25
 The default behavior of the API's `convert` endpoint, has been changed.  
 Previously, IDs such as `GO` and `MONDO`, which are normally used with prefixes such as `GO:` or `MONDO:`, were returned without prefixes in the API output.  
 With the change, IDs in output now include these prefixes ([example](https://api.togoid.dbcls.jp/convert?route=ncbigene,go&ids=9&report=full)).  
