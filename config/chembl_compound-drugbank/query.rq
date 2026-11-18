@@ -9,5 +9,5 @@ WHERE {
     cco:chemblId ?chembl_id ;
     cco:moleculeXref ?drugbank .
   FILTER (contains(str(?drugbank), "drugbank"))
-  BIND (strafter(str(?drugbank), "http://www.drugbank.ca/drugs/") AS ?drugbank_id)
+  BIND (strafter(str(?drugbank), "https://go.drugbank.com/drugs/") AS ?drugbank_id)
 }

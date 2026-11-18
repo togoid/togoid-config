@@ -8,6 +8,6 @@ WHERE {
     a cco:SmallMolecule ;
     cco:chemblId ?chembl_id ;
     cco:moleculeXref ?pdbccd .
-  FILTER (STRSTARTS(STR(?pdbccd), "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/"))
-  BIND (STRAFTER(STR(?pdbccd), "http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/") AS ?pdbccd_id)
+  FILTER (STRSTARTS(STR(?pdbccd), "https://www.rcsb.org/ligand/"))
+  BIND (STRAFTER(STR(?pdbccd), "https://www.rcsb.org/ligand/") AS ?pdbccd_id)
 }

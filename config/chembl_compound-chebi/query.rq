@@ -9,5 +9,5 @@ WHERE {
     cco:chemblId ?chembl_id ;
     cco:moleculeXref ?chebi .
   FILTER (contains(str(?chebi), "chebi"))
-  BIND (strafter(str(?chebi), "chebiId=CHEBI%3A") AS ?chebi_id)
+  BIND (strafter(str(?chebi), "CHEBI%3A") AS ?chebi_id)
 }
