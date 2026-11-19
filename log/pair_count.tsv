@@ -24,15 +24,15 @@ cellosaurus-uberon-TIO_000152.tsv	6659	6659	0	1
 cellosaurus-uberon.tsv	136592	136592	0	1
 chebi-glytoucan.tsv	10641	10604	37	1.00349
 chebi-inchi_key.tsv	190183	189844	339	1.00179
-chembl_compound-chebi.tsv	39866	39866	0	1
+chembl_compound-chebi.tsv	39936	39866	70	1.00176
 chembl_compound-chembl_target-TIO_000012.tsv	3187166	3185042	2124	1.00067
 chembl_compound-chembl_target-TIO_000120.tsv	4945	4946	-1	0.999798
 chembl_compound-chembl_target.tsv	3187166	3185042	2124	1.00067
-chembl_compound-drugbank.tsv	8766	8766	0	1
-chembl_compound-hmdb.tsv	11760	11760	0	1
+chembl_compound-drugbank.tsv	10872	8766	2106	1.24025
+chembl_compound-hmdb.tsv	11728	11760	-32	0.997279
 chembl_compound-inchi_key.tsv	1915066	1915414	-348	0.999818
 chembl_compound-mesh.tsv	55111	55025	86	1.00156
-chembl_compound-pdb_ccd.tsv	14371	14371	0	1
+chembl_compound-pdb_ccd.tsv	15425	14371	1054	1.07334
 chembl_compound-pubchem_compound.tsv	1883154	1879197	3957	1.00211
 chembl_compound-pubchem_substance.tsv	433196	433196	0	1
 chembl_compound-pubmed.tsv	1488269	1481254	7015	1.00474
@@ -287,7 +287,7 @@ togovar-pubmed.tsv	1540076	1540076	0	1
 togovar-refseq_rna.tsv	2251507237	2251507237	0	1
 uberon-cl.tsv	13935	13935	0	1
 uberon-ncit_tissue.tsv	2578	2578	0	1
-uniparc-refseq_protein.tsv	493175292	480601681	12573611	1.02616
+uniparc-refseq_protein.tsv	496330970	480601681	15729289	1.03273
 uniprot-chembl_target.tsv	11852	11852	0	1
 uniprot-dbsnp.tsv	68861	68861	0	1
 uniprot-ec.tsv	24980303	24980303	0	1
@@ -325,4 +325,4 @@ wikipathways-lipidmaps.tsv	2023	2023	0	1
 wikipathways-ncbigene.tsv	32141	32141	0	1
 wikipathways-uniprot.tsv	5286	5284	2	1.00038
 zfin_gene-zfin_transcript.tsv	48740	48740	0	1
-total	8734764947	8716417924	18347023	1.0021
+total	8737923823	8716417924	21505899	1.00247
