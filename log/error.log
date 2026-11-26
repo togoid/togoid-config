@@ -15,104 +15,14 @@ Error: download_file(input/mirbase, https://www.mirbase.org/download/CURRENT/dat
 Error: check_remote_file_time(input/togovar/tgvid2pubmed.tsv.gz, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): no time information in ""
 curl: (22) The requested URL returned error: 403
 Error: download_file(input/togovar, https://grch38.togovar.org/public/togoid/tgvid2pubmed.tsv.gz): Command failed with status (22): [curl -sS -R -f -L -o 'input/togovar/tgvid2...]
-xml.parsers.expat.ExpatError: no element found: line 49396054, column 866
-    self._err_handler.fatalError(exc)
-  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
-xml.parsers.expat.ExpatError: no element found: line 1, column 0
-    self._err_handler.fatalError(exc)
-  File "/data/togoid/local/lib/python3.9/xml/sax/handler.py", line 38, in fatalError
 Error: check_remote_file_time(input/zfin/transcripts.txt, https://zfin.org/downloads/transcripts.txt): no time information in ""
 Error: Remote file is empty
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1000
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL100116
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1020
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL104943
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1057
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1075788
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1075790
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1077
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1077896
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1079
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL3753077
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL3808492
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL4159348
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1604716
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1813874
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1823133
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1834086
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1834087
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1823114
-# Error: output/tsv/chembl_compound-chebi.tsv seems to be malformed CHEMBL1834755
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1000
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL100116
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1020
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL104943
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1057
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1075788
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1075790
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1077
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1077896
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1079
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL1315136
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL2105108
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL2105592
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL2106351
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL2106431
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL2106982
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL3833354
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL2106054
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL3142543
-# Error: output/tsv/chembl_compound-drugbank.tsv seems to be malformed CHEMBL4297476
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1000
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL100116
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1020
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL104943
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1057
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1077
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1077896
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1079
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1086
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1088
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL3185204
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL3559661
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL3560314
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL3957584
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1927325
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL2171712
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL3091852
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1237125
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1604716
-# Error: output/tsv/chembl_compound-hmdb.tsv seems to be malformed CHEMBL1834755
-# Error: output/tsv/chembl_compound-pdb_ccd.tsv new file size per old 0 / 250230 = 0.0 < 0.5
-# Error: Failed to create output/tsv/chembl_compound-pdb_ccd.tsv or created file was empty
 # Error: output/tsv/chembl_compound-pubchem_substance.tsv new file size per old 0 / 9822667 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_compound-pubchem_substance.tsv or created file was empty
 # Error: output/tsv/chembl_target-ensembl_gene.tsv new file size per old 0 / 61845 = 0.0 < 0.5
 # Error: Failed to create output/tsv/chembl_target-ensembl_gene.tsv or created file was empty
 # Error: output/tsv/ensembl_gene-affy_probeset.tsv new file size per old 0 / 1537929 = 0.0 < 0.5
 # Error: Failed to create output/tsv/ensembl_gene-affy_probeset.tsv or created file was empty
-# Error: output/tsv/ensembl_gene-ncbigene.tsv new file size per old 315844522 / 1319561141 = 0.2393557313764516 < 0.5
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML <hr><center>nginx/1.28.0</center>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML </body>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML </html>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML <body>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML <hr><center>nginx/1.28.0</center>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML </body>
-# Error: output/tsv/ensembl_gene-ncbigene.tsv seems to contain HTML </html>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv new file size per old 126858080 / 256791293 = 0.4940123884963654 < 0.5
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <body>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <hr><center>nginx/1.28.0</center>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML </body>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML </html>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <head><title>502 Bad Gateway</title></head>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <body>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <center><h1>502 Bad Gateway</h1></center>
-# Error: output/tsv/ensembl_gene-taxonomy.tsv seems to contain HTML <hr><center>nginx/1.28.0</center>
 # Error: output/tsv/ensembl_transcript-affy_probeset.tsv new file size per old 0 / 17477663 = 0.0 < 0.5
 # Error: Failed to create output/tsv/ensembl_transcript-affy_probeset.tsv or created file was empty
 Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?wurcs=WURCS%3D2.0%2F4%2C11%2C10%2F%5Ba2122h-1b_1-5%5D%5Ba2112h-1b_1-5%5D%5Ba2122h-1b_1-5_2%2ANCC%2F3%3DO%5D%5Ba1221m-1a_1-5%5D%2F1-2-3-2-3-2-3-4-2-3-2%2Fa4-b1_b3-c1_c4-d1_d3-e1_e4-f1_f3-g1_g3-h1_g4-i1_i3-j1_j4-k1&rootnode=true G64227KZ
