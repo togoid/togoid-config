@@ -32,6 +32,21 @@ Error: HTTP Error 403: Forbidden: https://api.alpha.glycosmos.org/partialmatch?w
 # Error: Failed to create output/tsv/glytoucan-doid.tsv or created file was empty
 # Error: output/tsv/mbgd_gene-uniprot.tsv new file size per old 1 / 4017692184 = 2.4889910779685557e-10 < 0.5
 # Error: output/tsv/mbgd_gene-uniprot.tsv seems to contain >2 empty lines
+# Error: output/tsv/pubchem_compound-inchi_key.tsv seems to be malformed 139437988
+# Error: output/tsv/sra_accession-bioproject.tsv new file size per old 0 / 17453927 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-bioproject.tsv or created file was empty
+# Error: output/tsv/sra_accession-biosample.tsv new file size per old 0 / 1094210629 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-biosample.tsv or created file was empty
+# Error: output/tsv/sra_accession-sra_analysis.tsv new file size per old 0 / 104884271 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-sra_analysis.tsv or created file was empty
+# Error: output/tsv/sra_accession-sra_experiment.tsv new file size per old 0 / 1083182497 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-sra_experiment.tsv or created file was empty
+# Error: output/tsv/sra_accession-sra_project.tsv new file size per old 0 / 18178073 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-sra_project.tsv or created file was empty
+# Error: output/tsv/sra_accession-sra_run.tsv new file size per old 0 / 1214448928 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-sra_run.tsv or created file was empty
+# Error: output/tsv/sra_accession-sra_sample.tsv new file size per old 0 / 1093585591 = 0.0 < 0.5
+# Error: Failed to create output/tsv/sra_accession-sra_sample.tsv or created file was empty
 # Error: output/tsv/togovar-clinvar.tsv new file size per old 0 / 15732849 = 0.0 < 0.5
 # Error: Failed to create output/tsv/togovar-clinvar.tsv or created file was empty
 # Error: output/tsv/togovar-dbsnp.tsv new file size per old 1 / 6930080952 = 1.4429845869425278e-10 < 0.5
